@@ -250,94 +250,143 @@
   }
   .quiet-link:hover { color: var(--seal); border-color: var(--seal); }
 
-  /* RIGHT side — the giant Chinese character */
+  /* RIGHT side — cover photograph + small character annotation
+     The photo is the cover. The character is a small editorial mark. */
   .cover-right {
     position: relative;
     height: 100%;
     min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 24px;
     padding: 0 0 0 60px;
   }
 
-  .glyph {
+  /* Cover photograph */
+  .cover-photo {
     position: relative;
+    overflow: hidden;
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    min-height: 480px;
+  }
+  .cover-photo img {
     width: 100%;
     height: 100%;
-    min-height: 480px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
+    filter: sepia(0.18) contrast(1.05) saturate(0.92) brightness(0.94);
+    display: block;
   }
-
-  .glyph .char {
-    font-family: var(--serif-cn);
-    font-size: clamp(280px, 36vw, 520px);
-    font-weight: 500;
-    line-height: 0.78;
-    color: var(--ink);
-    position: relative;
-    z-index: 1;
-    letter-spacing: 0;
-    /* Slight ink-bleed feel */
-    text-shadow: 0 0 1px rgba(26,22,17,0.4);
-  }
-  /* Vermilion seal — bottom right of the character */
-  .glyph .seal {
+  .cover-photo .photo-overlay {
     position: absolute;
-    right: 8%;
-    bottom: 12%;
-    width: 78px;
-    height: 78px;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(20,16,11,0.05) 0%, transparent 30%),
+      linear-gradient(0deg, rgba(20,16,11,0.45) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .cover-photo .photo-seal {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 56px;
+    height: 56px;
     background: var(--seal);
     color: var(--paper-light);
     font-family: var(--serif-cn);
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     line-height: 1;
-    z-index: 2;
-    transform: rotate(-2deg);
     letter-spacing: 0;
-    box-shadow: inset 0 0 0 2px rgba(244,237,224,0.3);
+    transform: rotate(-2deg);
+    box-shadow: inset 0 0 0 1.5px rgba(244,237,224,0.3);
+    z-index: 3;
   }
-  .glyph .seal::before {
+  .cover-photo .photo-caption {
+    position: absolute;
+    left: 22px;
+    bottom: 20px;
+    color: var(--paper-light);
+    font-family: var(--serif-en);
+    font-size: 13px;
+    line-height: 1.55;
+    z-index: 3;
+    max-width: 280px;
+  }
+  .cover-photo .photo-caption::before {
     content: "";
-    position: absolute;
-    inset: -3px;
-    border: 1px solid var(--seal);
-    opacity: 0.4;
-    transform: rotate(2deg);
+    display: block;
+    width: 36px;
+    height: 1px;
+    background: var(--seal);
+    margin-bottom: 10px;
   }
-  /* Glyph caption — pinyin / meaning */
-  .glyph .caption {
-    position: absolute;
-    left: 4%;
-    top: 8%;
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    line-height: 1.8;
-    z-index: 2;
-  }
-  .glyph .caption b { color: var(--seal); font-weight: 500; }
+  .cover-photo .photo-caption em { font-style: italic; }
 
-  /* Vertical Chinese title to right of glyph */
-  .glyph .vertical-title {
-    position: absolute;
-    right: -8px;
-    top: 8%;
+  /* Glyph strip — under the photo, like a footnote band */
+  .cover-glyph-strip {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 28px;
+    align-items: center;
+    padding: 18px 22px;
+    border: 1px solid var(--rule);
+    background: var(--paper-light);
+    position: relative;
+  }
+  .cover-glyph-strip .glyph-mini {
+    font-family: var(--serif-cn);
+    font-size: 80px;
+    line-height: 0.85;
+    color: var(--ink);
+    font-weight: 500;
+    letter-spacing: 0;
+    padding-right: 24px;
+    border-right: 1px solid var(--rule);
+  }
+  .cover-glyph-strip .glyph-info {
+    line-height: 1.5;
+  }
+  .cover-glyph-strip .glyph-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--seal);
+    margin-bottom: 4px;
+  }
+  .cover-glyph-strip .glyph-name {
+    font-family: var(--serif-en);
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .cover-glyph-strip .glyph-name i {
+    font-style: italic;
+    color: var(--seal);
+  }
+  .cover-glyph-strip .glyph-meaning {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .cover-glyph-strip .vertical-title {
     writing-mode: vertical-rl;
     font-family: var(--serif-cn);
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 0.6em;
-    color: var(--ink-soft);
+    color: var(--ink-faint);
     font-weight: 500;
+    border-left: 1px solid var(--rule);
+    padding-left: 12px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
   }
 
   /* Bottom — folio strip */
@@ -1662,8 +1711,10 @@
     .cover-top .left, .cover-top .right { justify-content: center; }
     .cover-top .right { display: none; }
     .cover-left { padding: 24px 0; }
-    .glyph .char { font-size: 280px; }
-    .glyph .seal { width: 56px; height: 56px; font-size: 20px; }
+    .cover-photo { min-height: 320px; }
+    .cover-glyph-strip { padding: 14px 16px; gap: 16px; }
+    .cover-glyph-strip .glyph-mini { font-size: 56px; padding-right: 16px; }
+    .cover-glyph-strip .vertical-title { display: none; }
     .cover-bottom { grid-template-columns: 1fr; gap: 6px; text-align: center; padding-top: 14px; }
     .cover-bottom .right { text-align: center; }
     .colophon { padding: 60px 20px; }
@@ -1739,15 +1790,24 @@
     </div>
 
     <div class="cover-right">
-      <div class="glyph">
-        <div class="caption">
-          The cover character<br>
-          <b>無 · wú</b><br>
-          not-doing, the unforced
+      <div class="cover-photo">
+        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1400&auto=format&fit=crop&q=80" alt="Cover plate — a mountain in unhurried mist">
+        <div class="photo-overlay"></div>
+        <div class="photo-seal">墨東</div>
+        <div class="photo-caption">
+          Cover plate · No. 001<br>
+          "Mountain, taking <em>its time</em>"<br>
+          Photographed for Issue 001
+        </div>
+      </div>
+      <div class="cover-glyph-strip">
+        <div class="glyph-mini">無</div>
+        <div class="glyph-info">
+          <div class="glyph-label">— this issue's character</div>
+          <div class="glyph-name"><i>Wú</i> · 無</div>
+          <div class="glyph-meaning">Not-forcing. The unforced.<br>The patience that does not push.</div>
         </div>
         <div class="vertical-title">無 為 而 無 不 為</div>
-        <div class="char">無</div>
-        <div class="seal">墨東</div>
       </div>
     </div>
   </div>
