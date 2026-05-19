@@ -61,58 +61,40 @@
 <body class="bg-paper text-ink">
 
 <div class="bg-ink text-paper text-xs font-mono px-6 py-2 flex items-center justify-between">
-  <span class="tracking-[0.16em] uppercase">Blog V2 · Footer only · Header kept for later</span>
+  <span class="tracking-[0.16em] uppercase">Blog V2 · V1 header (kept) + editorial footer</span>
   <span class="space-x-4">
     <a href="./index.html" class="underline decoration-dotted">← Back</a>
     <a href="./spatial-flow-blog-v1.html" class="underline decoration-dotted text-amber-300">Compare V1 (GPT) →</a>
   </span>
 </div>
 
-<!-- Top: real publishing context (replaces promo banner) -->
-<div class="border-b border-rule">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-2.5 font-mono text-[10px] tracking-[0.2em] text-inkFaint uppercase">
-    <span>Vol. IV · Issue 11 · May 2026</span>
-    <span class="hidden sm:inline">Published every other Sunday</span>
-    <span class="hidden md:inline">Reading time about 6 minutes</span>
-  </div>
+<!-- V1 original header (kept as-is per request) -->
+<div class="border-b border-stone-200 bg-[#eee7dc] px-4 py-2 text-center text-xs tracking-[0.16em] text-stone-600">
+  NEW JOURNAL NOTES ON SPACE, OBJECTS, AND EVERYDAY ATMOSPHERE
 </div>
 
-<!-- Masthead -->
-<header class="border-b border-rule">
-  <div class="mx-auto max-w-6xl px-6 py-10 md:py-14">
-    <div class="flex items-center justify-between">
-      <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-inkFaint">An editorial extension of <a href="#" class="text-inkSoft underline decoration-dotted underline-offset-4 hover:text-clay">Spatial Flow</a></p>
-      <div class="flex items-center gap-3 text-inkSoft">
-        <button type="button" aria-label="Search the journal" class="rounded-full p-1.5 transition hover:bg-paperIn hover:text-ink">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        </button>
-        <a href="#" aria-label="RSS feed" class="rounded-full p-1.5 transition hover:bg-paperIn hover:text-ink">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a14 14 0 0 1 14 14"/><path d="M5 11a8 8 0 0 1 8 8"/><circle cx="6" cy="18" r="1.4" fill="currentColor"/></svg>
-        </a>
-        <button type="button" aria-label="Open menu" class="rounded-full p-1.5 transition hover:bg-paperIn hover:text-ink md:hidden">
-          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
-        </button>
-      </div>
-    </div>
-
-    <div class="mt-8 text-center md:mt-12">
-      <p class="smallcaps text-[11px] tracking-[0.32em] text-inkSoft">Spatial Flow presents</p>
-      <h1 class="mt-3 font-serif text-5xl italic leading-none text-ink md:text-7xl">The Journal</h1>
-      <p class="mt-4 font-serif text-base text-inkSoft md:text-lg">of rooms, rituals, and quiet objects</p>
-      <div class="mx-auto mt-7 h-px w-44 rule-clay"></div>
-    </div>
-
-    <nav class="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 font-serif text-[15px] italic text-inkSoft md:mt-10" aria-label="Sections">
-      <a href="#" class="quiet-link hover:text-ink">Essays</a>
-      <span class="text-inkFaint">·</span>
-      <a href="#" class="quiet-link hover:text-ink">Notes</a>
-      <span class="text-inkFaint">·</span>
-      <a href="#" class="quiet-link hover:text-ink">Field Studies</a>
-      <span class="text-inkFaint">·</span>
-      <a href="#" class="quiet-link hover:text-ink">Index</a>
-      <span class="text-inkFaint">·</span>
-      <a href="#" class="quiet-link hover:text-ink">The Letter</a>
+<header class="sticky top-0 z-20 border-b border-stone-200 bg-[#f7f3ec]/95 backdrop-blur">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+    <a href="#" class="flex flex-col leading-none">
+      <span class="text-[10px] uppercase tracking-[0.28em] text-stone-500">Spatial Flow</span>
+      <strong class="mt-1 font-serif text-lg tracking-[0.14em] text-stone-950">JOURNAL</strong>
+    </a>
+    <nav class="hidden items-center gap-9 text-sm tracking-[0.12em] text-stone-700 md:flex">
+      <a href="#" class="transition hover:text-stone-950">Journal</a>
+      <a href="#" class="transition hover:text-stone-950">Topics</a>
+      <a href="#" class="transition hover:text-stone-950">Guides</a>
+      <a href="#" class="transition hover:text-stone-950">About</a>
+      <a href="#" class="transition hover:text-stone-950">Shop</a>
     </nav>
+    <div class="flex items-center gap-4 text-stone-700">
+      <button aria-label="Search" class="transition hover:text-stone-950">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+      <button aria-label="Saved" class="hidden transition hover:text-stone-950 sm:block">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4.5h10a1 1 0 0 1 1 1v15l-6-3.5-6 3.5v-15a1 1 0 0 1 1-1Z"/></svg>
+      </button>
+      <a href="#" class="hidden rounded-full border border-stone-300 px-4 py-2 text-xs uppercase tracking-[0.16em] text-stone-700 transition hover:border-stone-950 hover:text-stone-950 md:inline-flex">Visit Shop</a>
+    </div>
   </div>
 </header>
 
