@@ -87,8 +87,7 @@
 
   /* ============================================
      COVER — like the cover of a printed journal
-     One giant Chinese character. One small wordmark.
-     Nothing else.
+     Photograph above, character annotation below.
      ============================================ */
   .cover {
     min-height: 100vh;
@@ -250,31 +249,31 @@
   }
   .quiet-link:hover { color: var(--seal); border-color: var(--seal); }
 
-  /* RIGHT side — cover photograph + small character annotation
-     The photo is the cover. The character is a small editorial mark. */
+  /* RIGHT side — cover photograph (70%) + glyph annotation strip (30%)
+     ============================================ */
   .cover-right {
     position: relative;
     height: 100%;
     min-height: 60vh;
     display: grid;
-    grid-template-rows: 1fr auto;
-    gap: 24px;
+    grid-template-rows: 7fr 3fr;   /* 70% photo · 30% glyph annotation */
+    gap: 16px;
     padding: 0 0 0 60px;
   }
 
-  /* Cover photograph */
+  /* Cover photograph (70% of right column height) */
   .cover-photo {
     position: relative;
     overflow: hidden;
     border: 1px solid var(--ink);
     background: var(--ink);
-    min-height: 480px;
+    min-height: 0;
   }
   .cover-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: sepia(0.18) contrast(1.05) saturate(0.92) brightness(0.94);
+    filter: sepia(0.12) contrast(1.04) saturate(0.88) brightness(0.88);
     display: block;
   }
   .cover-photo .photo-overlay {
@@ -282,7 +281,7 @@
     inset: 0;
     background:
       linear-gradient(180deg, rgba(20,16,11,0.05) 0%, transparent 30%),
-      linear-gradient(0deg, rgba(20,16,11,0.45) 0%, transparent 60%);
+      linear-gradient(0deg, rgba(20,16,11,0.55) 0%, transparent 55%);
     pointer-events: none;
   }
   .cover-photo .photo-seal {
@@ -326,43 +325,44 @@
   }
   .cover-photo .photo-caption em { font-style: italic; }
 
-  /* Glyph strip — under the photo, like a footnote band */
+  /* Glyph strip — 30% of right column, sits under the photo as a footnote band */
   .cover-glyph-strip {
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 28px;
     align-items: center;
-    padding: 18px 22px;
+    padding: 22px 26px;
     border: 1px solid var(--rule);
     background: var(--paper-light);
     position: relative;
+    min-height: 0;
   }
   .cover-glyph-strip .glyph-mini {
     font-family: var(--serif-cn);
-    font-size: 80px;
+    font-size: 96px;
     line-height: 0.85;
     color: var(--ink);
     font-weight: 500;
     letter-spacing: 0;
-    padding-right: 24px;
+    padding-right: 26px;
     border-right: 1px solid var(--rule);
   }
   .cover-glyph-strip .glyph-info {
-    line-height: 1.5;
+    line-height: 1.55;
   }
   .cover-glyph-strip .glyph-label {
     font-family: var(--mono);
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--seal);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .cover-glyph-strip .glyph-name {
     font-family: var(--serif-en);
-    font-size: 18px;
+    font-size: 20px;
     color: var(--ink);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .cover-glyph-strip .glyph-name i {
     font-style: italic;
@@ -371,19 +371,19 @@
   .cover-glyph-strip .glyph-meaning {
     font-family: var(--serif-en);
     font-style: italic;
-    font-size: 13px;
+    font-size: 14px;
     color: var(--ink-soft);
-    line-height: 1.45;
+    line-height: 1.5;
   }
   .cover-glyph-strip .vertical-title {
     writing-mode: vertical-rl;
     font-family: var(--serif-cn);
-    font-size: 12px;
+    font-size: 13px;
     letter-spacing: 0.6em;
     color: var(--ink-faint);
     font-weight: 500;
     border-left: 1px solid var(--rule);
-    padding-left: 12px;
+    padding-left: 14px;
     align-self: stretch;
     display: flex;
     align-items: center;
@@ -1791,12 +1791,12 @@
 
     <div class="cover-right">
       <div class="cover-photo">
-        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1400&auto=format&fit=crop&q=80" alt="Cover plate — a mountain in unhurried mist">
+        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=1400&auto=format&fit=crop&q=80" alt="Cover plate — an old book, half-open, on a desk">
         <div class="photo-overlay"></div>
         <div class="photo-seal">墨東</div>
         <div class="photo-caption">
           Cover plate · No. 001<br>
-          "Mountain, taking <em>its time</em>"<br>
+          "An <em>old book</em>, half-read"<br>
           Photographed for Issue 001
         </div>
       </div>
