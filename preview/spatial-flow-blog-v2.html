@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journal — Spatial Flow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: {
+      paper:    '#f3eee4',
+      paperIn:  '#ebe4d6',
+      ink:      '#1d1814',
+      inkSoft:  '#5a4f47',
+      inkFaint: '#8a7d72',
+      clay:     '#a8745c',
+      clayDeep: '#7d5440',
+      rule:     'rgba(29,24,20,0.14)',
+    },
+    fontFamily: {
+      sans:  ['Inter', 'ui-sans-serif', 'system-ui'],
+      serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+      mono:  ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+    },
+  } } };
+</script>
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .font-mono  { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .smallcaps { font-variant: small-caps; letter-spacing: 0.08em; }
+  .rule-clay { background: linear-gradient(to right, transparent, #a8745c 30%, #a8745c 70%, transparent); height: 1px; }
+  .ornament::before {
+    content: '✦';
+    color: #a8745c;
+    margin-right: 0.6em;
+    font-size: 0.9em;
+    opacity: 0.85;
+  }
+  .quiet-link { position: relative; }
+  .quiet-link::after {
+    content: ''; position: absolute; left: 0; bottom: -2px;
+    width: 0; height: 1px; background: currentColor;
+    transition: width .35s ease;
+  }
+  .quiet-link:hover::after { width: 100%; }
+  .dropcap::first-letter {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 3.2em;
+    line-height: 0.9;
+    float: left;
+    margin: 0.05em 0.12em 0 -0.04em;
+    color: #a8745c;
+  }
+</style>
+</head>
+<body class="bg-paper text-ink">
+
+<div class="bg-ink text-paper text-xs font-mono px-6 py-2 flex items-center justify-between">
+  <span class="tracking-[0.16em] uppercase">Blog V2 · Editorial reset</span>
+  <span class="space-x-4">
+    <a href="./index.html" class="underline decoration-dotted">← Back</a>
+    <a href="./spatial-flow-blog-v1.html" class="underline decoration-dotted text-amber-300">Compare V1 (GPT) →</a>
+  </span>
+</div>
+
+<!-- Top: real publishing context (replaces promo banner) -->
+<div class="border-b border-rule">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-2.5 font-mono text-[10px] tracking-[0.2em] text-inkFaint uppercase">
+    <span>Vol. IV · Issue 11 · May 2026</span>
+    <span class="hidden sm:inline">Published every other Sunday</span>
+    <span class="hidden md:inline">Reading time about 6 minutes</span>
+  </div>
+</div>
+
+<!-- Masthead -->
+<header class="border-b border-rule">
+  <div class="mx-auto max-w-6xl px-6 py-10 md:py-14">
+    <div class="flex items-center justify-between">
+      <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-inkFaint">An editorial extension of <a href="#" class="text-inkSoft underline decoration-dotted underline-offset-4 hover:text-clay">Spatial Flow</a></p>
+      <div class="flex items-center gap-3 text-inkSoft">
+        <button type="button" aria-label="Search the journal" class="rounded-full p-1.5 transition hover:bg-paperIn hover:text-ink">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <a href="#" aria-label="RSS feed" class="rounded-full p-1.5 transition hover:bg-paperIn hover:text-ink">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a14 14 0 0 1 14 14"/><path d="M5 11a8 8 0 0 1 8 8"/><circle cx="6" cy="18" r="1.4" fill="currentColor"/></svg>
+        </a>
+        <button type="button" aria-label="Open menu" class="rounded-full p-1.5 transition hover:bg-paperIn hover:text-ink md:hidden">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center md:mt-12">
+      <p class="smallcaps text-[11px] tracking-[0.32em] text-inkSoft">Spatial Flow presents</p>
+      <h1 class="mt-3 font-serif text-5xl italic leading-none text-ink md:text-7xl">The Journal</h1>
+      <p class="mt-4 font-serif text-base text-inkSoft md:text-lg">of rooms, rituals, and quiet objects</p>
+      <div class="mx-auto mt-7 h-px w-44 rule-clay"></div>
+    </div>
+
+    <nav class="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 font-serif text-[15px] italic text-inkSoft md:mt-10" aria-label="Sections">
+      <a href="#" class="quiet-link hover:text-ink">Essays</a>
+      <span class="text-inkFaint">·</span>
+      <a href="#" class="quiet-link hover:text-ink">Notes</a>
+      <span class="text-inkFaint">·</span>
+      <a href="#" class="quiet-link hover:text-ink">Field Studies</a>
+      <span class="text-inkFaint">·</span>
+      <a href="#" class="quiet-link hover:text-ink">Index</a>
+      <span class="text-inkFaint">·</span>
+      <a href="#" class="quiet-link hover:text-ink">The Letter</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero: the featured essay, not a self-pitch -->
+<main>
+  <section class="mx-auto max-w-3xl px-6 py-20 md:py-28">
+    <p class="font-mono text-[10px] uppercase tracking-[0.28em] text-clay">Essays · This Week</p>
+    <h2 class="mt-5 font-serif text-4xl leading-[1.08] text-ink md:text-[56px]">
+      On the way a room <em class="text-clayDeep">remembers</em> the people who used to be in it.
+    </h2>
+    <p class="mt-6 font-mono text-[11px] uppercase tracking-[0.22em] text-inkFaint">
+      By the editor · 8 min read · 12 May 2026
+    </p>
+
+    <p class="dropcap mt-10 font-serif text-xl leading-[1.7] text-ink md:text-[22px]">
+      There is a particular feeling that arrives in the half-hour before guests come — when a room is finished but not yet used, and the air still belongs entirely to whoever lives there. We rarely write about that feeling, and yet it is the one most clearly designed by the objects we choose.
+    </p>
+
+    <a href="#" class="mt-10 inline-flex items-center gap-2 font-serif text-lg italic text-clay transition hover:text-clayDeep">
+      Read the essay
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+    </a>
+  </section>
+
+  <!-- From the Archive: real article cards (replaces "Reading Path" meta cards) -->
+  <section class="border-t border-rule bg-paperIn/60">
+    <div class="mx-auto max-w-6xl px-6 py-16">
+      <div class="flex items-end justify-between">
+        <div>
+          <p class="font-mono text-[10px] uppercase tracking-[0.28em] text-clay">From the Archive</p>
+          <h3 class="mt-3 font-serif text-3xl text-ink md:text-4xl">Other notes worth keeping.</h3>
+        </div>
+        <a href="#" class="hidden font-serif italic text-inkSoft hover:text-clay md:inline">View full index →</a>
+      </div>
+
+      <div class="mt-10 grid gap-10 md:grid-cols-3">
+        <article>
+          <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-inkFaint">Field Studies · Issue 09</p>
+          <h4 class="mt-3 font-serif text-2xl leading-snug text-ink hover:text-clayDeep"><a href="#" class="quiet-link self-start">A small altar in a Beijing studio.</a></h4>
+          <p class="mt-3 text-sm leading-7 text-inkSoft">What changes when an everyday surface is given a single piece of weight — a stone, a photograph, an unburned stick of incense.</p>
+          <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-inkFaint">14 April 2026 · 6 min</p>
+        </article>
+
+        <article>
+          <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-inkFaint">Essays · Issue 08</p>
+          <h4 class="mt-3 font-serif text-2xl leading-snug text-ink hover:text-clayDeep"><a href="#" class="quiet-link self-start">Quartz, attention, and the modern desk.</a></h4>
+          <p class="mt-3 text-sm leading-7 text-inkSoft">A note on why some objects feel useful before they are useful — and what we lose when we treat clarity as a feature.</p>
+          <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-inkFaint">31 March 2026 · 9 min</p>
+        </article>
+
+        <article>
+          <p class="font-mono text-[10px] uppercase tracking-[0.22em] text-inkFaint">Notes · Issue 07</p>
+          <h4 class="mt-3 font-serif text-2xl leading-snug text-ink hover:text-clayDeep"><a href="#" class="quiet-link self-start">Three rooms that feel like Sunday morning.</a></h4>
+          <p class="mt-3 text-sm leading-7 text-inkSoft">Soft light, slow surfaces, and one or two stones that have already absorbed enough mornings to feel familiar.</p>
+          <p class="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-inkFaint">17 March 2026 · 4 min</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Letter (newsletter, but written like a letter) -->
+  <section class="mx-auto max-w-3xl px-6 py-24 text-center">
+    <p class="ornament smallcaps text-[11px] tracking-[0.28em] text-inkSoft">The Letter</p>
+    <h3 class="mt-4 font-serif text-3xl italic leading-snug text-ink md:text-4xl">
+      A short note arrives every other Sunday — sometimes about a room, sometimes about a stone, occasionally about silence.
+    </h3>
+    <p class="mt-6 font-serif text-lg text-inkSoft">Written and signed by the editor. No promotions, no tracking. Two minutes of reading at most.</p>
+
+    <form class="mx-auto mt-10 flex max-w-md flex-col items-center gap-3 sm:flex-row" onsubmit="event.preventDefault()">
+      <input type="email" placeholder="you@quiet.house" aria-label="Email address"
+             class="min-h-12 flex-1 border-b border-ink/30 bg-transparent px-1 py-2 text-center font-serif text-lg italic text-ink outline-none transition placeholder:text-inkFaint focus:border-clay sm:text-left">
+      <button type="submit" class="font-serif text-lg italic text-clay transition hover:text-clayDeep">
+        Subscribe to the letter →
+      </button>
+    </form>
+  </section>
+</main>
+
+<!-- Footer / Colophon -->
+<footer class="border-t border-rule bg-paperIn/40">
+  <section class="mx-auto max-w-6xl px-6 py-14">
+    <div class="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr]">
+
+      <div>
+        <p class="font-mono text-[10px] uppercase tracking-[0.24em] text-inkFaint">A note from the editor</p>
+        <p class="mt-5 font-serif text-2xl leading-snug italic text-ink">
+          The Journal is a slow companion to Spatial Flow — written for readers who prefer to think before they buy, and sometimes to think instead of buying at all.
+        </p>
+        <p class="mt-5 font-mono text-[10px] uppercase tracking-[0.24em] text-inkFaint">
+          — Th, editor &amp; founder
+        </p>
+      </div>
+
+      <div>
+        <h3 class="smallcaps text-[11px] tracking-[0.22em] text-inkSoft">Sections</h3>
+        <nav class="mt-5 flex flex-col gap-2 font-serif text-base italic text-ink/85">
+          <a href="#" class="quiet-link self-start hover:text-clay">Essays</a>
+          <a href="#" class="quiet-link self-start hover:text-clay">Notes</a>
+          <a href="#" class="quiet-link self-start hover:text-clay">Field Studies</a>
+          <a href="#" class="quiet-link self-start hover:text-clay">Index &amp; Archive</a>
+          <a href="#" class="quiet-link self-start hover:text-clay">The Letter</a>
+        </nav>
+      </div>
+
+      <div>
+        <h3 class="smallcaps text-[11px] tracking-[0.22em] text-inkSoft">The Journal</h3>
+        <nav class="mt-5 flex flex-col gap-2 text-sm text-inkSoft">
+          <a href="#" class="quiet-link self-start hover:text-ink">About this Journal</a>
+          <a href="#" class="quiet-link self-start hover:text-ink">Editorial Approach</a>
+          <a href="#" class="quiet-link self-start hover:text-ink">Contributors</a>
+          <a href="#" class="quiet-link self-start hover:text-ink">Contact the Editor</a>
+          <a href="#" class="quiet-link self-start hover:text-ink">RSS Feed</a>
+        </nav>
+
+        <div class="mt-8 border-t border-rule pt-6">
+          <p class="font-mono text-[10px] uppercase tracking-[0.24em] text-inkFaint">Looking for objects?</p>
+          <a href="#" class="mt-2 inline-flex items-center gap-2 font-serif text-base italic text-clay hover:text-clayDeep">
+            Visit Spatial Flow shop
+            <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M9 7h8v8"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colophon -->
+  <section class="border-t border-rule">
+    <div class="mx-auto max-w-6xl px-6 py-8">
+      <div class="flex flex-col gap-5 text-center md:flex-row md:items-center md:justify-between md:text-left">
+        <p class="font-mono text-[10px] uppercase tracking-[0.24em] text-inkFaint">
+          Set in Cormorant Garamond &amp; Inter · Composed in the studio · © 2026 Spatial Flow Journal
+        </p>
+
+        <nav class="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[11px] text-inkSoft" aria-label="Legal">
+          <a href="#" class="quiet-link self-start hover:text-ink">Privacy</a>
+          <a href="#" class="quiet-link self-start hover:text-ink">Terms</a>
+          <a href="#" class="quiet-link self-start hover:text-ink">Cookies</a>
+          <a href="#" class="quiet-link self-start hover:text-ink">Accessibility</a>
+        </nav>
+
+        <div class="flex items-center justify-center gap-3 text-inkSoft">
+          <a href="#" aria-label="Instagram" class="rounded-full p-1.5 transition hover:bg-paperIn hover:text-ink">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="16.7" cy="7.3" r="0.8" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Pinterest" class="rounded-full p-1.5 transition hover:bg-paperIn hover:text-ink">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M10.6 17.3 12 11"/><path d="M11.3 13.7c.7.7 2 .7 3-.1 1.3-1 1.6-3 .3-4.2-1.6-1.5-4.7-1-5.4 1.5-.4 1.4.2 2.5 1.1 3"/></svg>
+          </a>
+          <a href="#" aria-label="RSS" class="rounded-full p-1.5 transition hover:bg-paperIn hover:text-ink">
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a14 14 0 0 1 14 14"/><path d="M5 11a8 8 0 0 1 8 8"/><circle cx="6" cy="18" r="1.4" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
+
+</body>
+</html>
