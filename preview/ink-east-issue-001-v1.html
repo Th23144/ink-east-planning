@@ -1,0 +1,2487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Issue 001 — Wu Wei is not laziness · Ink & East</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================
+     INK & EAST — ISSUE 001 inner page
+     "the quiet after the cover is turned"
+     ============================================ */
+  :root {
+    --paper:        #f4ede0;
+    --paper-light:  #faf5e9;
+    --paper-dark:   #e8dfce;
+    --ink:          #1a1611;
+    --ink-soft:     #4a4036;
+    --ink-faint:    #8a7f70;
+    --seal:         #a02d23;
+    --seal-deep:    #7a1f1a;
+    --rule:         rgba(26,22,17,0.28);
+    --rule-soft:    rgba(26,22,17,0.12);
+    --serif-en:     "EB Garamond", "Noto Serif SC", Georgia, serif;
+    --serif-cn:     "Noto Serif SC", "EB Garamond", serif;
+    --sans:         "Inter", -apple-system, "PingFang SC", sans-serif;
+    --mono:         "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    font-family: var(--serif-en);
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+    font-feature-settings: "liga" 1, "kern" 1, "onum" 1;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  ::selection { background: var(--seal); color: var(--paper-light); }
+
+  /* paper grain — same as homepage */
+  body::before {
+    content: ""; position: fixed; inset: 0; pointer-events: none;
+    z-index: 1000; opacity: 0.5; mix-blend-mode: multiply;
+    background-image:
+      radial-gradient(circle at 25% 30%, rgba(26,22,17,0.025) 0%, transparent 40%),
+      radial-gradient(circle at 75% 60%, rgba(26,22,17,0.02) 0%, transparent 35%),
+      radial-gradient(circle at 50% 80%, rgba(26,22,17,0.015) 0%, transparent 30%);
+  }
+
+
+  /* ============================================
+     BACKBAR (same as homepage)
+     ============================================ */
+  .backbar {
+    background: var(--ink); color: var(--paper-light);
+    padding: 8px 28px; font-family: var(--mono); font-size: 10px;
+    display: flex; justify-content: space-between;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .backbar a { color: var(--seal); border-bottom: 1px dashed var(--seal); padding-bottom: 1px; }
+
+  /* ============================================
+     RUNNING HEADER — like a printed book's
+     thin top strip that says where you are.
+     Sits below backbar, hairline, persistent.
+     ============================================ */
+  .running-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 14px 40px;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--paper);
+  }
+  .running-header .left { display: flex; gap: 24px; align-items: center; }
+  .running-header .left a { transition: color .2s; }
+  .running-header .left a:hover { color: var(--seal); }
+  .running-header .center {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+    color: var(--ink);
+  }
+  .running-header .center b {
+    font-family: var(--serif-cn); font-style: normal;
+    color: var(--seal); font-weight: 500;
+    letter-spacing: 0.1em; margin-right: 6px;
+  }
+  .running-header .right {
+    display: flex; gap: 18px; justify-content: flex-end; align-items: center;
+  }
+  .running-header .right .sep { color: var(--ink-faint); }
+  .running-header .right .seal-mini {
+    background: var(--seal); color: var(--paper-light);
+    font-family: var(--serif-cn); font-weight: 500;
+    padding: 3px 7px; letter-spacing: 0.1em; font-size: 11px;
+  }
+
+
+  /* ============================================
+     TITLE SPREAD (扉页) — quieter than cover
+     A breathing room before the issue starts.
+     The 「無」 character lives faintly in the
+     background like a watermark, not a stamp.
+     ============================================ */
+  .title-spread {
+    min-height: 88vh;
+    padding: 80px 40px 40px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  /* huge faint character — only visible if you look */
+  .title-spread::before {
+    content: "無";
+    position: absolute;
+    right: -8vw; top: 50%; transform: translateY(-50%);
+    font-family: var(--serif-cn); font-weight: 500;
+    font-size: clamp(420px, 60vw, 920px);
+    line-height: 0.85;
+    color: var(--ink);
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 1;
+    letter-spacing: 0;
+  }
+  /* hairline column rule down the middle — like a book gutter */
+  .title-spread::after {
+    content: "";
+    position: absolute;
+    top: 120px; bottom: 120px;
+    left: 50%; width: 1px;
+    background: var(--rule-soft);
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  /* top — issue navigation: prev | folio | next */
+  .ts-top {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    position: relative; z-index: 2;
+  }
+
+
+  .ts-top .prev, .ts-top .next {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 14px; letter-spacing: 0; text-transform: none;
+    color: var(--ink-soft);
+    transition: color .2s;
+  }
+  .ts-top .prev .ar, .ts-top .next .ar {
+    font-family: var(--serif-en); margin: 0 8px;
+    color: var(--seal); font-style: normal;
+  }
+  .ts-top .prev:hover, .ts-top .next:hover { color: var(--seal); }
+  .ts-top .prev .label, .ts-top .next .label {
+    display: block;
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--ink-faint); font-style: normal;
+    margin-bottom: 4px;
+  }
+  .ts-top .prev { text-align: left; }
+  .ts-top .next { text-align: right; }
+  .ts-top .center {
+    font-family: var(--serif-cn); font-size: 13px;
+    letter-spacing: 0.5em; color: var(--ink); font-weight: 500;
+  }
+
+  /* center — title block sits nearly centered, calmly */
+  .ts-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 40px 0;
+    position: relative; z-index: 2;
+    gap: 60px;
+  }
+  .ts-meta {
+    text-align: left;
+  }
+  .ts-meta .stamp {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--seal);
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .ts-meta .stamp::before {
+    content: ""; width: 32px; height: 1px;
+    background: var(--seal); opacity: 0.6;
+  }
+  .ts-meta h1 {
+    font-family: var(--serif-en);
+    font-size: clamp(48px, 6vw, 88px);
+    font-weight: 400; line-height: 1.05;
+    letter-spacing: -0.012em;
+    margin-bottom: 22px;
+    color: var(--ink);
+  }
+  .ts-meta h1 em { font-style: italic; color: var(--seal); font-weight: 400; }
+
+
+  .ts-meta .cn-title {
+    font-family: var(--serif-cn);
+    font-size: clamp(20px, 2vw, 28px);
+    font-weight: 400;
+    color: var(--ink-soft);
+    letter-spacing: 0.4em;
+    margin-bottom: 38px;
+  }
+  .ts-meta .opener {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 460px;
+    margin-bottom: 36px;
+    border-left: 2px solid var(--seal);
+    padding-left: 22px;
+  }
+  .ts-meta .opener em { font-style: normal; color: var(--ink); }
+  .ts-meta .meta-row {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex; flex-wrap: wrap; gap: 14px;
+  }
+  .ts-meta .meta-row .sep { color: var(--rule); }
+  .ts-meta .meta-row b { color: var(--ink-soft); font-weight: 500; }
+
+  /* right column — character + small annotation */
+  .ts-glyph {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+  }
+  .ts-glyph .glyph-frame {
+    border: 1px solid var(--ink);
+    padding: 60px 50px 40px;
+    background: var(--paper-light);
+    position: relative;
+    text-align: center;
+  }
+  .ts-glyph .glyph-frame::before {
+    content: ""; position: absolute; inset: 8px;
+    border: 1px solid var(--rule);
+    pointer-events: none;
+  }
+  .ts-glyph .glyph-kicker {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--seal); margin-bottom: 28px;
+  }
+
+
+  .ts-glyph .glyph-big {
+    font-family: var(--serif-cn);
+    font-size: clamp(180px, 22vw, 280px);
+    line-height: 0.85;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: 0;
+  }
+  .ts-glyph .glyph-pinyin {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 22px; color: var(--seal);
+    margin-bottom: 8px;
+  }
+  .ts-glyph .glyph-gloss {
+    font-family: var(--serif-en); font-size: 14px;
+    line-height: 1.55; color: var(--ink-soft);
+    max-width: 240px; margin: 0 auto;
+  }
+  .ts-glyph .glyph-frame .seal-stamp {
+    position: absolute;
+    top: -16px; right: -16px;
+    width: 50px; height: 50px;
+    background: var(--seal); color: var(--paper-light);
+    font-family: var(--serif-cn); font-size: 16px; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    transform: rotate(-3deg); line-height: 1;
+    box-shadow: inset 0 0 0 1.5px rgba(244,237,224,0.3);
+  }
+  .ts-glyph .vertical {
+    margin-top: 28px;
+    writing-mode: vertical-rl;
+    font-family: var(--serif-cn);
+    font-size: 14px; letter-spacing: 0.6em;
+    color: var(--ink-faint);
+    font-weight: 400;
+  }
+
+  /* bottom — folio strip */
+  .ts-bottom {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    position: relative; z-index: 2;
+  }
+  .ts-bottom .center {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+    color: var(--ink-soft);
+  }
+  .ts-bottom .right { text-align: right; }
+
+
+  /* turn-the-page chevron */
+  .ts-cue {
+    position: absolute;
+    bottom: 24px; left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+  }
+  .ts-cue .arrow {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 22px; color: var(--seal);
+    line-height: 1;
+  }
+  .ts-cue .label {
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ink-faint); margin-top: 8px;
+  }
+
+  /* ============================================
+     QUIET RULE — section divider, hairline + ※
+     Replaces the homepage's heavy black pull-quote
+     slabs. Lets the page breathe instead of shout.
+     ============================================ */
+  .quiet-rule {
+    display: flex; align-items: center; justify-content: center;
+    padding: 48px 40px;
+    gap: 28px;
+  }
+  .quiet-rule::before, .quiet-rule::after {
+    content: ""; flex: 1; max-width: 280px;
+    height: 1px; background: var(--rule);
+  }
+  .quiet-rule .glyph {
+    font-family: var(--serif-cn); font-weight: 500;
+    color: var(--seal); font-size: 18px;
+    letter-spacing: 0.4em;
+  }
+  .quiet-rule.cross::before, .quiet-rule.cross::after { background: var(--rule-soft); }
+  .quiet-rule.cross .glyph::before {
+    content: "※"; color: var(--seal);
+    font-family: var(--serif-en); margin-right: 14px;
+  }
+  .quiet-rule.cross .glyph::after {
+    content: "※"; color: var(--seal);
+    font-family: var(--serif-en); margin-left: 14px;
+  }
+
+  /* ============================================
+     EDITOR'S NOTE — full text
+     A reading column with margin annotations.
+     Single column. Lets the editor speak slowly.
+     ============================================ */
+  .ed-note {
+    padding: 110px 40px 80px;
+    background: var(--paper-light);
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+
+
+  .ed-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    gap: 64px;
+  }
+  .ed-side {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--seal);
+    position: sticky; top: 30px; align-self: start;
+  }
+  .ed-side .num {
+    font-family: var(--serif-cn);
+    font-size: 56px;
+    line-height: 1;
+    color: var(--seal);
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: 0;
+  }
+  .ed-side .kind { display: block; margin-bottom: 4px; }
+  .ed-side .kind-cn {
+    font-family: var(--serif-cn); color: var(--ink);
+    font-size: 18px; letter-spacing: 0.3em; font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .ed-side .reading {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint);
+    line-height: 1.9; margin-top: 24px;
+    padding-top: 16px; border-top: 1px solid var(--rule-soft);
+  }
+  .ed-side .reading b { color: var(--ink); font-weight: 500; }
+
+  /* main reading column */
+  .ed-main { max-width: 640px; }
+  .ed-main h2 {
+    font-family: var(--serif-en);
+    font-size: clamp(40px, 4.5vw, 64px);
+    font-weight: 400; line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+  .ed-main h2 em { font-style: italic; color: var(--seal); }
+  .ed-main .h2-cn {
+    font-family: var(--serif-cn); font-size: 17px;
+    letter-spacing: 0.4em; color: var(--ink-soft);
+    margin-bottom: 36px; font-weight: 400;
+  }
+  .ed-main .byline {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-faint);
+    padding-bottom: 36px;
+    margin-bottom: 36px;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 22px;
+  }
+
+
+  .ed-main .byline b {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 14px; letter-spacing: 0; text-transform: none;
+    color: var(--ink); font-weight: 500;
+  }
+  .ed-body p {
+    font-family: var(--serif-en);
+    font-size: 19px; line-height: 1.8;
+    color: var(--ink); margin-bottom: 24px;
+    font-weight: 400;
+  }
+  .ed-body p em { font-style: italic; color: var(--seal); }
+  .ed-body p:first-of-type::first-letter {
+    font-family: var(--serif-cn);
+    font-size: 92px;
+    float: left;
+    line-height: 0.85;
+    padding: 8px 18px 0 0;
+    color: var(--seal);
+    font-weight: 500;
+  }
+  /* inline pull quote inside editor's note */
+  .ed-pull {
+    margin: 40px -40px;
+    padding: 32px 40px 32px 44px;
+    border-left: 3px solid var(--seal);
+    background: var(--paper);
+  }
+  .ed-pull blockquote {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 26px; line-height: 1.45;
+    color: var(--ink); font-weight: 400;
+  }
+  .ed-pull .source {
+    margin-top: 14px;
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .ed-pull .source b {
+    font-family: var(--serif-cn); color: var(--seal);
+    font-weight: 500; letter-spacing: 0.15em;
+    margin-right: 8px;
+  }
+  /* footnote-style aside */
+  .ed-aside-inline {
+    background: var(--paper-dark);
+    padding: 22px 26px;
+    margin: 32px 0;
+    font-family: var(--serif-en); font-size: 14px;
+    line-height: 1.65; color: var(--ink-soft);
+    border-left: 1px solid var(--seal);
+  }
+  .ed-aside-inline .label {
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--seal); margin-bottom: 8px;
+  }
+  .ed-aside-inline em { font-style: italic; color: var(--ink); }
+
+
+  /* signature at end of editor's note */
+  .ed-sign {
+    margin-top: 40px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .ed-sign b {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 18px; letter-spacing: 0; text-transform: none;
+    color: var(--ink); font-weight: 500;
+  }
+  .ed-sign .seal-mini {
+    background: var(--seal); color: var(--paper-light);
+    font-family: var(--serif-cn); font-weight: 500;
+    padding: 4px 8px; letter-spacing: 0.1em;
+    font-size: 12px; transform: rotate(-2deg);
+    display: inline-block;
+  }
+
+  /* right margin — vertical chinese annotation */
+  .ed-margin {
+    position: sticky; top: 30px; align-self: start;
+    border-left: 1px solid var(--rule);
+    padding: 4px 0 4px 22px;
+  }
+  .ed-margin .label {
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--seal); margin-bottom: 18px;
+  }
+  .ed-margin .quote {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 16px; line-height: 1.65;
+    color: var(--ink); margin-bottom: 16px;
+  }
+  .ed-margin .quote-cn {
+    font-family: var(--serif-cn); font-size: 14px;
+    letter-spacing: 0.25em; line-height: 1.9;
+    color: var(--ink-soft); font-weight: 400;
+    margin-bottom: 18px;
+  }
+  .ed-margin .source {
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .ed-margin .source b {
+    font-family: var(--serif-cn); color: var(--seal);
+    font-weight: 500; letter-spacing: 0.15em;
+  }
+
+
+  /* ============================================
+     CONTENTS — full table of contents (8 plates)
+     Like a printed book's TOC: dotted leaders,
+     small caps section names, page numbers.
+     ============================================ */
+  .contents {
+    padding: 110px 40px 100px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .contents-head {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 40px;
+    align-items: end;
+    margin-bottom: 56px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .contents-head .num {
+    font-family: var(--serif-cn);
+    font-size: 56px; line-height: 1;
+    color: var(--seal); font-weight: 500;
+  }
+  .contents-head h2 {
+    font-family: var(--serif-en);
+    font-size: clamp(40px, 4.5vw, 64px);
+    font-weight: 400; line-height: 1;
+    letter-spacing: -0.01em;
+  }
+  .contents-head h2 em { font-style: italic; color: var(--ink-soft); font-weight: 400; }
+  .contents-head h2 .cn {
+    display: block;
+    font-family: var(--serif-cn); font-size: 0.32em;
+    letter-spacing: 0.4em; color: var(--ink-soft);
+    margin-top: 12px; font-weight: 400;
+  }
+  .contents-head .meta {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-soft); text-align: right;
+    line-height: 2;
+  }
+  .contents-head .meta b { color: var(--seal); font-weight: 500; }
+
+  .toc-list { border-top: 1px solid var(--ink); }
+  .toc-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 200px 60px 60px;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+    cursor: pointer;
+    transition: background .2s, padding .2s;
+    position: relative;
+  }
+  .toc-row:hover {
+    background: var(--paper-light);
+    padding-left: 14px; padding-right: 14px;
+  }
+
+
+  .toc-row .num {
+    font-family: var(--mono); font-size: 12px;
+    color: var(--ink-faint); letter-spacing: 0.1em;
+  }
+  .toc-row .num b { color: var(--seal); font-weight: 500; }
+  .toc-row .title {
+    font-family: var(--serif-en);
+    font-size: 22px; line-height: 1.25;
+    font-weight: 500; color: var(--ink);
+  }
+  .toc-row .title em { font-style: italic; font-weight: 400; }
+  .toc-row .title .cn {
+    display: block;
+    font-family: var(--serif-cn); font-size: 13px;
+    color: var(--ink-soft); letter-spacing: 0.18em;
+    margin-top: 6px; font-weight: 400;
+  }
+  .toc-row .title .author {
+    display: block;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; color: var(--ink-faint);
+    margin-top: 6px; font-weight: 400;
+  }
+  .toc-row .kind {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-soft); text-align: right;
+    line-height: 1.7;
+  }
+  .toc-row .kind .reading {
+    display: block;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 12px; letter-spacing: 0; text-transform: none;
+    color: var(--ink-faint);
+    margin-top: 4px;
+  }
+  .toc-row .kind.vip { color: var(--seal); }
+  .toc-row .access {
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-faint); text-align: center;
+  }
+  .toc-row .access b {
+    color: var(--ink-soft); font-weight: 500;
+    border: 1px solid var(--rule);
+    padding: 3px 7px; display: inline-block;
+  }
+  .toc-row .access.locked b {
+    color: var(--paper-light); background: var(--seal);
+    border-color: var(--seal);
+  }
+  .toc-row .access.reader b {
+    color: var(--ink); border-color: var(--ink);
+  }
+  .toc-row .page {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 19px; color: var(--ink); text-align: right;
+  }
+
+
+  /* mark plate 01 (already-read editor's note) */
+  .toc-row.read { opacity: 0.55; }
+  .toc-row.read .title::after {
+    content: " · 已讀";
+    font-family: var(--serif-cn);
+    color: var(--seal); font-size: 12px;
+    margin-left: 10px;
+    letter-spacing: 0.2em;
+  }
+
+  /* ============================================
+     PLATES — 8 detail spreads
+     Each plate is a self-contained mini-page
+     with: number / kind / title / excerpt /
+     byline / read CTA. Vertical stack.
+     ============================================ */
+  .plates {
+    padding: 0;
+  }
+  .plate {
+    padding: 90px 40px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .plate.alt { background: var(--paper-light); }
+  .plate.locked { background: var(--paper-dark); }
+
+  .plate-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: 200px 1fr 280px;
+    gap: 64px;
+    align-items: start;
+  }
+
+  /* left rail — number, kind, page */
+  .plate-rail {
+    position: sticky; top: 30px;
+    align-self: start;
+  }
+  .plate-rail .roman {
+    font-family: var(--serif-cn);
+    font-size: 64px; line-height: 1;
+    color: var(--seal); font-weight: 500;
+    margin-bottom: 18px;
+    letter-spacing: 0;
+  }
+  .plate-rail .plate-no {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+  .plate-rail .plate-no b { color: var(--seal); font-weight: 500; }
+  .plate-rail .plate-kind {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 6px;
+  }
+  .plate-rail .plate-kind-cn {
+    font-family: var(--serif-cn); font-size: 16px;
+    letter-spacing: 0.3em; color: var(--ink-soft);
+    font-weight: 500; margin-bottom: 28px;
+  }
+
+
+  .plate-rail .plate-stats {
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-faint);
+    line-height: 2;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .plate-rail .plate-stats b {
+    color: var(--ink); font-weight: 500;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+  }
+
+  /* center body */
+  .plate-body { max-width: 640px; }
+  .plate-body h3 {
+    font-family: var(--serif-en);
+    font-size: clamp(34px, 3.6vw, 52px);
+    font-weight: 500; line-height: 1.1;
+    letter-spacing: -0.005em;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+  .plate-body h3 em { font-style: italic; font-weight: 400; }
+  .plate-body .cn-title {
+    font-family: var(--serif-cn);
+    font-size: 18px; letter-spacing: 0.32em;
+    color: var(--ink-soft); margin-bottom: 28px;
+    font-weight: 400;
+  }
+  .plate-body .byline {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 22px; flex-wrap: wrap;
+    align-items: center;
+  }
+  .plate-body .byline b {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 14px; letter-spacing: 0; text-transform: none;
+    color: var(--ink); font-weight: 500;
+  }
+  .plate-body .byline .dot { color: var(--ink-faint); }
+  .plate-body .excerpt {
+    font-family: var(--serif-en);
+    font-size: 19px; line-height: 1.75;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .plate-body .excerpt em { font-style: italic; color: var(--ink); }
+  .plate-body .excerpt p { margin-bottom: 18px; }
+  .plate-body .excerpt p:first-child::first-letter {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 56px; float: left; line-height: 0.85;
+    padding: 6px 12px 0 0; color: var(--seal); font-weight: 500;
+  }
+
+
+  /* read this plate CTA */
+  .plate-cta {
+    display: inline-flex;
+    align-items: center; gap: 14px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink); border: 1px solid var(--ink);
+    padding: 16px 28px;
+    transition: all .25s;
+    margin-top: 14px;
+  }
+  .plate-cta:hover { background: var(--ink); color: var(--paper-light); }
+  .plate-cta .ar {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 16px; letter-spacing: 0; text-transform: none;
+  }
+  .plate-cta.locked {
+    background: var(--seal); color: var(--paper-light);
+    border-color: var(--seal);
+  }
+  .plate-cta.locked:hover { background: var(--seal-deep); border-color: var(--seal-deep); }
+  .plate-cta.locked::before {
+    content: "🔒"; filter: grayscale(1) brightness(2);
+    font-size: 12px; opacity: 0.8;
+  }
+  .plate-aux {
+    margin-top: 20px;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 14px; color: var(--ink-faint);
+  }
+  .plate-aux a {
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+    transition: all .2s;
+  }
+  .plate-aux a:hover { color: var(--seal); border-color: var(--seal); }
+
+  /* right rail — visual mark per plate */
+  .plate-mark {
+    position: relative;
+    padding-left: 32px;
+    border-left: 1px solid var(--rule);
+    align-self: start;
+    min-height: 280px;
+  }
+  .plate-mark .mark-cn {
+    font-family: var(--serif-cn);
+    font-size: clamp(120px, 14vw, 200px);
+    line-height: 0.85;
+    color: var(--ink); font-weight: 500;
+    opacity: 0.92;
+    letter-spacing: 0;
+    margin-bottom: 14px;
+  }
+  .plate.alt .plate-mark .mark-cn { color: var(--ink); }
+  .plate.locked .plate-mark .mark-cn { color: var(--seal); }
+
+
+  .plate-mark .mark-label {
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--seal); margin-bottom: 8px;
+  }
+  .plate-mark .mark-name {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 16px; color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .plate-mark .mark-name b {
+    font-family: var(--serif-cn); font-style: normal;
+    color: var(--ink); font-weight: 500;
+    letter-spacing: 0.15em;
+    margin-right: 6px;
+  }
+  /* a single plate uses an actual photo (field note plate) */
+  .plate-mark.with-photo {
+    padding-left: 0; border-left: none;
+  }
+  .plate-mark .photo-frame {
+    aspect-ratio: 4/5;
+    border: 1px solid var(--ink);
+    overflow: hidden;
+    position: relative;
+    background: var(--ink);
+  }
+  .plate-mark .photo-frame::before {
+    content: ""; position: absolute; inset: 8px;
+    border: 1px solid rgba(244,237,224,0.18);
+    z-index: 2; pointer-events: none;
+  }
+  .plate-mark .photo-frame img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: sepia(0.32) contrast(1.04) brightness(0.88) saturate(0.7);
+  }
+  .plate-mark .photo-frame .ink-cn {
+    position: absolute;
+    bottom: 18px; right: 18px;
+    font-family: var(--serif-cn);
+    font-size: 36px; color: var(--paper-light);
+    font-weight: 500; z-index: 3;
+    letter-spacing: 0; line-height: 1;
+    text-shadow: 0 0 8px rgba(0,0,0,0.4);
+  }
+  .plate-mark .photo-caption {
+    margin-top: 14px;
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ink-faint);
+    line-height: 1.7;
+  }
+
+
+  /* small per-plate folio at bottom */
+  .plate-folio {
+    margin-top: 56px; padding-top: 18px;
+    border-top: 1px solid var(--rule-soft);
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .plate-folio .center {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+  }
+
+  /* paywall hint inside locked plate */
+  .paywall-hint {
+    margin-top: 22px;
+    padding: 22px 26px;
+    border: 1px dashed var(--seal);
+    background: var(--paper);
+    font-family: var(--serif-en); font-size: 14px;
+    line-height: 1.65; color: var(--ink-soft);
+  }
+  .paywall-hint .label {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--seal); margin-bottom: 8px;
+  }
+  .paywall-hint b { color: var(--ink); font-weight: 500; }
+  .paywall-hint a {
+    color: var(--seal);
+    border-bottom: 1px solid var(--seal);
+    padding-bottom: 1px;
+  }
+
+  /* ============================================
+     ISSUE COLOPHON — like the inside back cover
+     of a printed magazine. Character closeup,
+     contributors, stats. Calm, dense.
+     ============================================ */
+  .issue-colo {
+    padding: 110px 40px 90px;
+    background: var(--ink);
+    color: var(--paper-light);
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .issue-colo::before {
+    content: "無";
+    position: absolute;
+    bottom: -180px; right: -80px;
+    font-family: var(--serif-cn); font-weight: 500;
+    font-size: 720px; line-height: 0.85;
+    color: rgba(244,237,224,0.04);
+    pointer-events: none;
+    letter-spacing: 0;
+  }
+
+
+  .issue-colo-inner {
+    max-width: 1280px; margin: 0 auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .colo-head {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--seal);
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .colo-head::before {
+    content: ""; width: 40px; height: 1px;
+    background: var(--seal);
+  }
+  .colo-left h3 {
+    font-family: var(--serif-en);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400; line-height: 1.1;
+    letter-spacing: -0.005em;
+    margin-bottom: 14px;
+  }
+  .colo-left h3 em { font-style: italic; color: var(--seal); }
+  .colo-left .cn {
+    font-family: var(--serif-cn); font-size: 18px;
+    letter-spacing: 0.4em; color: rgba(244,237,224,0.55);
+    margin-bottom: 36px; font-weight: 400;
+  }
+  .colo-left p {
+    font-family: var(--serif-en); font-size: 17px;
+    line-height: 1.75; color: rgba(244,237,224,0.78);
+    margin-bottom: 20px;
+  }
+  .colo-left p em { font-style: italic; color: var(--paper-light); }
+
+  /* big character feature */
+  .colo-glyph {
+    margin-top: 36px;
+    padding: 32px 28px;
+    border: 1px solid rgba(244,237,224,0.2);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .colo-glyph .glyph-big {
+    font-family: var(--serif-cn);
+    font-size: 140px; line-height: 0.85;
+    color: var(--paper-light); font-weight: 500;
+    letter-spacing: 0;
+  }
+  .colo-glyph .glyph-info {
+    font-family: var(--serif-en); font-size: 14px;
+    line-height: 1.75; color: rgba(244,237,224,0.78);
+  }
+
+
+  .colo-glyph .glyph-info b {
+    display: block;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 22px; color: var(--paper-light);
+    margin-bottom: 6px; font-weight: 500;
+  }
+  .colo-glyph .glyph-info .pinyin {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--seal); margin-bottom: 12px;
+  }
+
+  /* right column — stats + contributors */
+  .colo-right {
+    display: grid; gap: 40px;
+  }
+  .colo-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(244,237,224,0.2);
+  }
+  .colo-stat .num {
+    font-family: var(--serif-en);
+    font-size: 48px; font-weight: 500;
+    line-height: 1; color: var(--paper-light);
+    margin-bottom: 8px;
+  }
+  .colo-stat .num em { font-style: italic; color: var(--seal); font-weight: 400; }
+  .colo-stat .label {
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(244,237,224,0.55);
+    line-height: 1.7;
+  }
+  .colo-stat .label b {
+    color: var(--paper-light); font-weight: 500;
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 13px; letter-spacing: 0; text-transform: none;
+    display: block; margin-top: 2px;
+  }
+
+  .colo-contributors h4 {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--seal); margin-bottom: 24px;
+  }
+  .colo-contributors ul { list-style: none; }
+  .colo-contributors li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(244,237,224,0.15);
+  }
+
+
+  .colo-contributors .name {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 17px; color: var(--paper-light);
+    font-weight: 500;
+  }
+  .colo-contributors .name .cn {
+    font-family: var(--serif-cn); font-style: normal;
+    color: rgba(244,237,224,0.55);
+    margin-left: 10px; letter-spacing: 0.2em;
+    font-size: 13px;
+  }
+  .colo-contributors .role {
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(244,237,224,0.55);
+    text-align: right;
+    align-self: center;
+  }
+  .colo-contributors .role b { color: var(--seal); font-weight: 500; }
+
+  /* ============================================
+     ISSUE DISCUSSION — preview reader notes
+     about this issue. Phase-1 spec: single-layer,
+     no upvote, no hot-list. Editor can pin.
+     ============================================ */
+  .discussion {
+    padding: 110px 40px 100px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .disc-head {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 40px;
+    align-items: end;
+    margin-bottom: 56px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .disc-head .num {
+    font-family: var(--serif-cn); font-size: 56px;
+    line-height: 1; color: var(--seal); font-weight: 500;
+  }
+  .disc-head h2 {
+    font-family: var(--serif-en);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400; line-height: 1;
+    letter-spacing: -0.005em;
+  }
+  .disc-head h2 em { font-style: italic; color: var(--ink-soft); font-weight: 400; }
+  .disc-head h2 .cn {
+    display: block;
+    font-family: var(--serif-cn); font-size: 0.36em;
+    letter-spacing: 0.4em; color: var(--ink-soft);
+    margin-top: 12px; font-weight: 400;
+  }
+  .disc-head .cta {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-soft);
+    border-bottom: 1px solid var(--ink-soft);
+    padding-bottom: 3px; transition: all .2s;
+  }
+  .disc-head .cta:hover { color: var(--seal); border-color: var(--seal); }
+
+
+  .disc-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .disc-notes-head {
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--seal); margin-bottom: 24px;
+    display: flex; justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .disc-notes-head .sort {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 14px; letter-spacing: 0; text-transform: none;
+    color: var(--ink-soft);
+  }
+  .disc-notes-head .sort b {
+    color: var(--ink); font-weight: 500;
+    border-bottom: 1px solid var(--seal);
+    padding-bottom: 2px; margin-right: 14px;
+  }
+
+  .note {
+    padding: 26px 0;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .note .meta {
+    display: flex; justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .note .meta .name {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 15px; letter-spacing: 0; text-transform: none;
+    color: var(--ink); font-weight: 500;
+  }
+  .note .meta .name .tier {
+    font-family: var(--mono); font-style: normal;
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--seal); margin-left: 10px;
+    border: 1px solid var(--seal);
+    padding: 2px 6px; font-weight: 500;
+  }
+  .note .meta .name .tier.patron {
+    background: var(--seal); color: var(--paper-light);
+  }
+  .note.featured .meta .name::before {
+    content: "★"; color: var(--seal);
+    margin-right: 8px;
+  }
+  .note .meta .ref {
+    color: var(--ink-soft);
+  }
+  .note .meta .ref b {
+    color: var(--seal); font-weight: 500;
+  }
+
+
+  .note.featured {
+    background: var(--paper-light);
+    margin: 0 -28px;
+    padding: 26px 28px;
+    border-left: 3px solid var(--seal);
+  }
+  .note.featured::after {
+    content: "編 · Editor's Choice";
+    display: block;
+    margin-top: 14px;
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--seal);
+  }
+  .note .body {
+    font-family: var(--serif-en); font-size: 17px;
+    line-height: 1.7; color: var(--ink);
+  }
+  .note .body em { font-style: italic; color: var(--seal); }
+  .note .reply {
+    margin-top: 14px; padding-top: 14px;
+    padding-left: 24px;
+    border-left: 1px solid var(--rule);
+    border-top: 1px solid var(--rule-soft);
+  }
+  .note .reply .meta { margin-bottom: 8px; }
+  .note .reply .body { font-size: 15px; color: var(--ink-soft); }
+  .note .reply .body em { color: var(--ink); }
+  .note-actions {
+    margin-top: 14px;
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex; gap: 22px;
+  }
+  .note-actions a {
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px; transition: all .2s;
+  }
+  .note-actions a:hover { color: var(--seal); border-color: var(--seal); }
+
+  /* right column — submit + house rules */
+  .disc-aside {
+    border: 1px solid var(--ink);
+    padding: 36px 32px;
+    background: var(--paper-light);
+    position: sticky; top: 30px;
+    align-self: start;
+  }
+  .disc-aside .cn-stamp {
+    font-family: var(--serif-cn); font-size: 28px;
+    letter-spacing: 0.4em; color: var(--ink);
+    margin-bottom: 16px; font-weight: 500;
+  }
+
+
+  .disc-aside h4 {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 24px; font-weight: 400;
+    line-height: 1.25; color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .disc-aside p {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 16px; line-height: 1.65;
+    color: var(--ink-soft); margin-bottom: 22px;
+  }
+  .disc-aside .compose {
+    display: block; width: 100%;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--paper); background: var(--ink);
+    border: 1px solid var(--ink);
+    padding: 16px 22px;
+    text-align: center;
+    transition: all .25s;
+    margin-bottom: 16px;
+  }
+  .disc-aside .compose:hover { background: var(--seal); border-color: var(--seal); }
+  .disc-aside .signin {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 14px; color: var(--ink-soft);
+    text-align: center; display: block;
+  }
+  .disc-aside .signin a {
+    color: var(--ink); border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+  .disc-aside .rules {
+    margin-top: 32px; padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-faint);
+    line-height: 2;
+  }
+  .disc-aside .rules b { color: var(--seal); font-weight: 500; }
+
+  /* ============================================
+     ISSUE NAV END — prev / next issue
+     A spread you find at the very back: two
+     tall doors, one to the previous issue,
+     one to whatever comes next.
+     ============================================ */
+  .issue-nav-end {
+    padding: 0;
+    border-bottom: 1px solid var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--paper);
+  }
+  .ine-cell {
+    padding: 80px 60px;
+    border-right: 1px solid var(--rule);
+    cursor: pointer;
+    transition: background .25s;
+    position: relative;
+    overflow: hidden;
+  }
+  .ine-cell:last-child { border-right: none; }
+  .ine-cell:hover { background: var(--paper-light); }
+
+
+  .ine-cell .dir {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--seal); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .ine-cell.next .dir { justify-content: flex-end; }
+  .ine-cell .dir::before { content: "←"; font-family: var(--serif-en); font-size: 16px; }
+  .ine-cell.next .dir { flex-direction: row-reverse; }
+  .ine-cell.next .dir::before { content: "→"; }
+
+  .ine-cell .issue-no {
+    font-family: var(--serif-cn);
+    font-size: 88px; line-height: 1;
+    color: var(--ink); font-weight: 500;
+    margin-bottom: 18px;
+    letter-spacing: 0;
+  }
+  .ine-cell.next .issue-no { color: var(--ink-faint); }
+  .ine-cell.next { text-align: right; }
+
+  .ine-cell .issue-title {
+    font-family: var(--serif-en); font-style: italic;
+    font-size: 28px; line-height: 1.2;
+    color: var(--ink); font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .ine-cell.next .issue-title { color: var(--ink-soft); }
+  .ine-cell .issue-title-cn {
+    font-family: var(--serif-cn); font-size: 14px;
+    letter-spacing: 0.3em; color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .ine-cell .issue-meta {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .ine-cell .issue-meta b { color: var(--ink); font-weight: 500; }
+
+  /* center seam stamp */
+  .ine-cell.prev::after, .ine-cell.next::before {
+    /* center seam decoration */
+  }
+
+  /* ============================================
+     SLIM FOOTER (lighter than homepage)
+     The reader is deep inside the journal.
+     A long footer would break the spell.
+     ============================================ */
+  footer {
+    background: var(--paper);
+    color: var(--ink);
+    padding: 64px 40px 28px;
+  }
+
+
+  .foot-mark {
+    text-align: center;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 28px;
+  }
+  .foot-mark .ampers {
+    font-family: var(--serif-en);
+    font-size: clamp(48px, 6vw, 88px);
+    font-weight: 400; line-height: 0.85;
+    letter-spacing: -0.005em;
+  }
+  .foot-mark .ampers em { font-style: italic; color: var(--seal); }
+  .foot-mark .cn {
+    display: block;
+    font-family: var(--serif-cn); font-size: 14px;
+    letter-spacing: 0.5em; color: var(--ink-soft);
+    margin-top: 14px;
+  }
+  .foot-mark .sub {
+    display: block;
+    font-family: var(--mono); font-size: 9px;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--ink-faint); margin-top: 14px;
+  }
+  .foot-row {
+    font-family: var(--mono); font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-faint);
+    display: flex; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+  }
+  .foot-row a { transition: color .2s; }
+  .foot-row a:hover { color: var(--seal); }
+  .foot-row .center { color: var(--ink-soft); }
+  .foot-row .center b {
+    color: var(--seal); font-weight: 500;
+    font-family: var(--serif-cn);
+    letter-spacing: 0.15em;
+    margin: 0 4px;
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 1100px) {
+    .running-header { grid-template-columns: 1fr auto; padding: 12px 20px; }
+    .running-header .right { display: none; }
+    .title-spread { padding: 40px 20px 30px; }
+    .ts-center { grid-template-columns: 1fr; gap: 40px; }
+    .ts-glyph { min-height: auto; padding-top: 20px; }
+    .ed-inner { grid-template-columns: 1fr; gap: 36px; }
+    .ed-side { position: static; }
+    .ed-margin { position: static; border-left: none;
+      border-top: 1px solid var(--seal); padding: 18px 0 0; }
+    .plate-inner { grid-template-columns: 1fr; gap: 36px; }
+    .plate-rail { position: static; }
+    .plate-mark { padding-left: 0; border-left: none; }
+    .plate-mark.with-photo { max-width: 360px; }
+
+
+    .issue-colo-inner { grid-template-columns: 1fr; gap: 48px; }
+    .colo-stats { grid-template-columns: repeat(2, 1fr); }
+    .disc-grid { grid-template-columns: 1fr; gap: 40px; }
+    .disc-aside { position: static; }
+    .issue-nav-end { grid-template-columns: 1fr; }
+    .ine-cell { border-right: none; border-bottom: 1px solid var(--rule); }
+    .contents-head { grid-template-columns: 60px 1fr; }
+    .contents-head .meta { grid-column: 1 / -1; text-align: left; margin-top: 14px; }
+    .toc-row { grid-template-columns: 50px 1fr 90px 60px; }
+    .toc-row .access { display: none; }
+  }
+  @media (max-width: 720px) {
+    .backbar { padding: 6px 16px; font-size: 9px; }
+    .running-header { font-size: 9px; padding: 10px 16px; }
+    .running-header .left a { font-size: 9px; }
+    .title-spread { padding: 30px 18px 24px; min-height: auto; }
+    .ts-top { grid-template-columns: 1fr 1fr; gap: 8px; padding-bottom: 14px; }
+    .ts-top .center { display: none; }
+    .ts-meta h1 { font-size: 38px; }
+    .ts-meta .opener { font-size: 16px; padding-left: 16px; }
+    .ts-glyph .glyph-frame { padding: 36px 28px 24px; }
+    .ts-glyph .glyph-big { font-size: 140px; }
+    .ts-bottom { grid-template-columns: 1fr; gap: 6px; text-align: center; }
+    .ts-bottom .right { text-align: center; }
+    .ed-note { padding: 64px 20px 56px; }
+    .ed-main h2 { font-size: 32px; }
+    .ed-body p { font-size: 17px; }
+    .ed-body p:first-of-type::first-letter { font-size: 64px; }
+    .ed-pull { margin: 28px -20px; padding: 22px 20px 22px 24px; }
+    .ed-pull blockquote { font-size: 19px; }
+    .contents { padding: 64px 20px 56px; }
+    .contents-head .num { font-size: 40px; }
+    .toc-row { grid-template-columns: 36px 1fr 50px; gap: 14px; padding: 18px 0; }
+    .toc-row .kind, .toc-row .access { display: none; }
+    .toc-row .title { font-size: 18px; }
+    .plate { padding: 56px 20px; }
+    .plate-rail .roman { font-size: 44px; }
+    .plate-body h3 { font-size: 28px; }
+    .plate-body .excerpt { font-size: 17px; }
+    .plate-body .excerpt p:first-child::first-letter { font-size: 44px; }
+    .plate-mark .mark-cn { font-size: 96px; }
+    .quiet-rule { padding: 32px 20px; gap: 16px; }
+    .quiet-rule::before, .quiet-rule::after { max-width: 100px; }
+    .issue-colo { padding: 64px 20px 56px; }
+    .colo-glyph { grid-template-columns: 1fr; gap: 18px; padding: 24px 20px; }
+    .colo-glyph .glyph-big { font-size: 96px; text-align: center; }
+    .colo-stats { grid-template-columns: 1fr 1fr; gap: 18px; }
+    .colo-stat .num { font-size: 32px; }
+    .discussion { padding: 64px 20px 56px; }
+    .disc-head { grid-template-columns: 50px 1fr; gap: 16px; }
+    .disc-head .cta { display: none; }
+    .note.featured { margin: 0 -16px; padding: 22px 16px; }
+    .disc-aside { padding: 28px 22px; }
+    .ine-cell { padding: 48px 24px; }
+    .ine-cell .issue-no { font-size: 64px; }
+    .ine-cell .issue-title { font-size: 22px; }
+    footer { padding: 48px 20px 20px; }
+    .foot-row { flex-direction: column; gap: 8px; text-align: center; }
+  }
+</style>
+</head>
+
+
+<body>
+
+<!-- backbar (same as homepage) -->
+<div class="backbar">
+  <a href="./index.html">← back to directions</a>
+  <span>INK & EAST · ISSUE 001 · INNER PAGE · DRAFT V1</span>
+</div>
+
+<!-- running header — slim top strip persistent through scroll -->
+<div class="running-header">
+  <div class="left">
+    <a href="./ink-east-v1.html">Ink &amp; East</a>
+    <a href="./ink-east-v1.html#issues">Issues</a>
+    <a href="#">Reading Room</a>
+    <a href="#">Ask</a>
+    <a href="#">Studio</a>
+  </div>
+  <div class="center"><b>無</b> Issue 001 · <em>Wu Wei is not laziness</em></div>
+  <div class="right">
+    <a href="#">Sign in</a>
+    <span class="sep">·</span>
+    <span class="seal-mini">墨東</span>
+  </div>
+</div>
+
+<!-- ========================================
+     TITLE SPREAD (扉页)
+     The quiet page after you turn the cover.
+     Half a screen of breathing, then a chevron.
+     ======================================== -->
+<section class="title-spread">
+
+  <div class="ts-top">
+    <a class="prev" href="#">
+      <span class="label">Previous</span>
+      <span class="ar">←</span> Issue 000 · <i>Prologue</i>
+    </a>
+    <div class="center">本 期 · No. 001</div>
+    <a class="next" href="#">
+      <span class="label">Forthcoming</span>
+      Issue 002 · <i>On Filial Quiet</i> <span class="ar">→</span>
+    </a>
+  </div>
+
+  <div class="ts-center">
+    <div class="ts-meta">
+      <div class="stamp">Volume I · Issue No. 001 · Spring 2026</div>
+      <h1><em>Wu Wei</em><br>is not laziness.</h1>
+      <div class="cn-title">無 為 · 非 懶</div>
+      <p class="opener">An issue on the <em>unease of doing nothing</em> — read through Laozi, Zhuangzi, and the long Chinese tradition that treated rest not as failure but as a kind of intelligence.</p>
+      <div class="meta-row">
+        <span><b>8</b> Plates</span>
+        <span class="sep">·</span>
+        <span><b>1</b> Letter</span>
+        <span class="sep">·</span>
+        <span><b>≈ 86 min</b> reading</span>
+        <span class="sep">·</span>
+        <span>ISSN 2026.001</span>
+      </div>
+    </div>
+
+    <div class="ts-glyph">
+      <div class="glyph-frame">
+        <div class="seal-stamp">墨東</div>
+        <div class="glyph-kicker">— this issue's character</div>
+        <div class="glyph-big">無</div>
+        <div class="glyph-pinyin">Wú</div>
+        <div class="glyph-gloss">Not-forcing. The unforced.<br>The patience that does not push.</div>
+      </div>
+      <div class="vertical">無 為 而 無 不 為</div>
+    </div>
+  </div>
+
+  <div class="ts-bottom">
+    <div class="left">An independent digital journal · Made in Beijing</div>
+    <div class="center">— first of an unknown number —</div>
+    <div class="right">Folio 02 · Published 2026.04.20</div>
+  </div>
+
+  <div class="ts-cue">
+    <div class="arrow">↓</div>
+    <div class="label">turn the page</div>
+  </div>
+
+</section>
+
+
+<!-- quiet rule between title spread and editor's note -->
+<div class="quiet-rule">
+  <span class="glyph">序</span>
+</div>
+
+<!-- ========================================
+     EDITOR'S NOTE — full text
+     ======================================== -->
+<section class="ed-note">
+  <div class="ed-inner">
+
+    <aside class="ed-side">
+      <div class="num">壹</div>
+      <span class="kind">Plate I · Editor's Note</span>
+      <span class="kind-cn">編 者 按</span>
+      <div class="reading">
+        <b>≈ 6 min</b><br>
+        page 04 — 11<br>
+        — open access<br>
+        published 2026.04.20
+      </div>
+    </aside>
+
+    <article class="ed-main">
+      <h2><em>Wu Wei</em> is not laziness.</h2>
+      <div class="h2-cn">無 為 · 非 懶</div>
+      <div class="byline">
+        <span>Editor's Note</span>
+        <span>·</span>
+        <span>by <b>The Editors</b></span>
+        <span>·</span>
+        <span>2026.04.20 · Beijing</span>
+      </div>
+
+      <div class="ed-body">
+        <p>This issue began with a sentence I did not write. A reader, in a letter we received last winter, asked: <em>"Why do I feel guilty when I rest?"</em> I read the letter four times. I made tea. I read it again. Around it, slowly, an issue began to form.</p>
+
+        <p>The Chinese tradition has a long argument with this question. Not a sermon — an argument. Laozi said the empty space inside the bowl is what makes the bowl useful. Zhuangzi told the story of a cook who never sharpened his blade because he had stopped fighting the meat. Tao Yuanming, after thirteen years in office, walked back to a small house and wrote five poems about returning. None of them said: <em>do nothing.</em> They said something quieter — <em>do not force what does not yet need to move.</em></p>
+
+        <p>That is a sentence we have, in our century, almost lost the right to.</p>
+
+        <div class="ed-pull">
+          <blockquote>"The empty space inside the bowl is what makes the bowl useful."</blockquote>
+          <div class="source"><b>道德經 · 第十一章</b>Laozi · Chapter 11</div>
+        </div>
+
+        <p>We work to rest. We rest poorly, then call it lazy. We measure stillness in the same units as motion, and find it short. Most of what is sold to us as <em>"rest"</em> is in fact a softer kind of effort — a productive sleep, a working bath, a curated stillness. The old books would not recognise it. They would call it, plainly, more pushing.</p>
+
+        <div class="ed-aside-inline">
+          <div class="label">— a footnote, kept</div>
+          The Chinese phrase <em>無為</em> is often mistranslated as <em>"non-action"</em>. A more accurate gloss is <em>"unforced"</em> — action that does not push the river, only follows where it has already begun to go. The classical English idea closest to it is not laziness, but <em>tact</em>.
+        </div>
+
+
+        <p>So we have, in eight pieces, tried to listen to that argument <em>plainly, in English</em>, without dressing it up as anything other than what it is — a careful, patient idea about effort. There is a story, here, about a man who could not stop rearranging his room. There is an essay on why doing nothing is sometimes the hardest practice in a life. There are three short passages from Laozi, kept in their original Chinese alongside an honest English. There is a letter from a reader who rests but feels guilty, and a long, slow reply.</p>
+
+        <p>You will not find advice here. You will not find a method. You will not find a thing to buy that will <em>fix</em> the way you cannot rest. You will, I hope, find ways of seeing — old ways, that have outlived several empires and may outlive ours, kept as gently as we know how. That is, I think, what an old book is for.</p>
+
+        <p>Read in any order. Skip what does not speak today. Come back when something does.</p>
+
+        <div class="ed-sign">
+          <span><b>The Editors</b> · 編者</span>
+          <span class="seal-mini">墨東</span>
+          <span>2026 · Spring · Beijing</span>
+        </div>
+      </div><!-- /ed-body -->
+      </article>
+
+    <aside class="ed-margin">
+      <div class="label">— from this issue</div>
+      <p class="quote">"Heaven moves with vigour;<br>the noble do not force the moment."</p>
+      <p class="quote-cn">天行健<br>君子以自強不息</p>
+      <div class="source"><b>易 · 乾</b>Book of Changes · Qián</div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- quiet rule before contents -->
+<div class="quiet-rule cross">
+  <span class="glyph">目 錄</span>
+</div>
+
+
+<!-- ========================================
+     CONTENTS — full table of 8 plates
+     ======================================== -->
+<section class="contents">
+  <div class="contents-head">
+    <div class="num">貳</div>
+    <h2>The eight plates. <span class="cn">本 期 八 篇</span></h2>
+    <div class="meta">
+      Plate I — VIII<br>
+      <b>5</b> Open · <b>2</b> Reader · <b>1</b> Patron<br>
+      total ≈ 24,800 words
+    </div>
+  </div>
+
+  <div class="toc-list">
+
+    <a class="toc-row read" href="#plate-1">
+      <span class="num">No. <b>I</b></span>
+      <div class="title">
+        <em>Wu Wei</em> is not laziness.
+        <span class="cn">無為，非懶</span>
+        <span class="author">by The Editors</span>
+      </div>
+      <span class="kind">Editor's Note <span class="reading">≈ 6 min</span></span>
+      <span class="access reader"><b>Open</b></span>
+      <span class="page">p. 04</span>
+    </a>
+
+    <a class="toc-row" href="#plate-2">
+      <span class="num">No. <b>II</b></span>
+      <div class="title">
+        The man who could not stop <em>rearranging</em> his room.
+        <span class="cn">不停整理房間的人</span>
+        <span class="author">a short story by Lu Xian</span>
+      </div>
+      <span class="kind">Original Story <span class="reading">≈ 14 min</span></span>
+      <span class="access reader"><b>Open</b></span>
+      <span class="page">p. 12</span>
+    </a>
+
+    <a class="toc-row" href="#plate-3">
+      <span class="num">No. <b>III</b></span>
+      <div class="title">
+        Why doing nothing is sometimes the <em>hardest</em> practice.
+        <span class="cn">為什麼休息最難</span>
+        <span class="author">an essay by The Editors</span>
+      </div>
+      <span class="kind">Modern Essay <span class="reading">≈ 11 min</span></span>
+      <span class="access reader"><b>Open</b></span>
+      <span class="page">p. 24</span>
+    </a>
+
+
+    <a class="toc-row" href="#plate-4">
+      <span class="num">No. <b>IV</b></span>
+      <div class="title">
+        Three passages from Laozi, for <em>people who feel stuck</em>.
+        <span class="cn">老子 · 三章選讀</span>
+        <span class="author">edited &amp; rendered by The Editors</span>
+      </div>
+      <span class="kind">Classical Reading <span class="reading">≈ 9 min</span></span>
+      <span class="access reader"><b>Open</b></span>
+      <span class="page">p. 38</span>
+    </a>
+
+    <a class="toc-row" href="#plate-5">
+      <span class="num">No. <b>V</b></span>
+      <div class="title">
+        "I rest, but I still feel <em>guilty</em>. Why?"
+        <span class="cn">為何休息會愧疚</span>
+        <span class="author">a reader's letter, with reply</span>
+      </div>
+      <span class="kind">Reader's Letter <span class="reading">≈ 12 min</span></span>
+      <span class="access reader"><b>Open</b></span>
+      <span class="page">p. 48</span>
+    </a>
+
+    <a class="toc-row" href="#plate-6">
+      <span class="num">No. <b>VI</b></span>
+      <div class="title">
+        Control, exhaustion, and the ancient art of <em>not forcing life</em>.
+        <span class="cn">不勉強之術</span>
+        <span class="author">a long read for Patron readers</span>
+      </div>
+      <span class="kind vip">VIP Long Read <span class="reading">≈ 22 min</span></span>
+      <span class="access locked"><b>Patron</b></span>
+      <span class="page">p. 62</span>
+    </a>
+
+    <a class="toc-row" href="#plate-7">
+      <span class="num">No. <b>VII</b></span>
+      <div class="title">
+        A field note from <em>Wudang</em>: walking with monks who do not hurry.
+        <span class="cn">武當紀行</span>
+        <span class="author">by The Editors, on a winter visit</span>
+      </div>
+      <span class="kind">Field Note <span class="reading">≈ 8 min</span></span>
+      <span class="access reader"><b>Open</b></span>
+      <span class="page">p. 78</span>
+    </a>
+
+
+    <a class="toc-row" href="#plate-8">
+      <span class="num">No. <b>VIII</b></span>
+      <div class="title">
+        Archive — <em>three rest poems</em> from Tao Yuanming.
+        <span class="cn">陶淵明 · 歸去三首</span>
+        <span class="author">selected &amp; translated by The Editors</span>
+      </div>
+      <span class="kind">Archive Note <span class="reading">≈ 4 min</span></span>
+      <span class="access reader"><b>Open</b></span>
+      <span class="page">p. 92</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- quiet rule before plates -->
+<div class="quiet-rule cross">
+  <span class="glyph">章</span>
+</div>
+
+<!-- ========================================
+     PLATES — 8 detailed plate-spreads
+     Plate I (Editor's Note) is already
+     above; Plates II — VIII follow here.
+     ======================================== -->
+
+<div class="plates">
+
+
+
+  <!-- PLATE II — Original Story -->
+  <article class="plate" id="plate-2">
+    <div class="plate-inner">
+      <div class="plate-rail">
+        <div class="roman">貳</div>
+        <div class="plate-no">Plate No. <b>II</b></div>
+        <div class="plate-kind">Original Story</div>
+        <div class="plate-kind-cn">原 創</div>
+        <div class="plate-stats">
+          <b>≈ 14 min</b><br>
+          page 12 — 23<br>
+          3,840 words<br>
+          — open access
+        </div>
+      </div>
+
+      <div class="plate-body">
+        <h3>The man who could not stop <em>rearranging</em><br>his room.</h3>
+        <div class="cn-title">不 停 整 理 房 間 的 人</div>
+        <div class="byline">
+          <span>A short story</span>
+          <span class="dot">·</span>
+          <span>by <b>Lu Xian</b></span>
+          <span class="dot">·</span>
+          <span>Original · 5 plates of revision</span>
+        </div>
+        <div class="excerpt">
+          <p>He had been rearranging his room for eleven years. Not all the time — only at the edges of evenings, in the gap between dinner and not-quite-sleep, in the quiet half-hour after a phone call he had not wanted to take. He moved the desk three centimetres west. The lamp, by half an arm's length. He kept finding configurations that almost worked, and then, the next week, finding that they did not.</p>
+          <p>His mother, when she visited, said nothing. She put down her bag, sat on the bed, and looked at the corner where the chair had been. <em>"You moved it,"</em> she said, kindly. He nodded. He could not have explained, then, why moving it had felt necessary.</p>
+        </div>
+        <a class="plate-cta" href="#">Read this plate <span class="ar">→</span></a>
+        <p class="plate-aux">or, jump to <a href="#">the passage about his mother</a> · <a href="#">add to reading list</a></p>
+
+        <div class="plate-folio">
+          <span>p. 12 — 23</span>
+          <span class="center">a story for those who clean when something is wrong</span>
+          <span>無 · Issue 001</span>
+        </div>
+      </div>
+
+      <aside class="plate-mark">
+        <div class="mark-cn">整理</div>
+        <div class="mark-label">— central motif</div>
+        <div class="mark-name"><b>整理</b><i>zhěng lǐ</i> — to put in order; to set straight; to attend to.</div>
+      </aside>
+    </div>
+  </article>
+
+
+
+  <!-- PLATE III — Modern Essay -->
+  <article class="plate alt" id="plate-3">
+    <div class="plate-inner">
+      <div class="plate-rail">
+        <div class="roman">叄</div>
+        <div class="plate-no">Plate No. <b>III</b></div>
+        <div class="plate-kind">Modern Essay</div>
+        <div class="plate-kind-cn">現 代 隨 筆</div>
+        <div class="plate-stats">
+          <b>≈ 11 min</b><br>
+          page 24 — 37<br>
+          3,120 words<br>
+          — open access
+        </div>
+      </div>
+
+      <div class="plate-body">
+        <h3>Why doing nothing is sometimes<br>the <em>hardest</em> practice.</h3>
+        <div class="cn-title">為 什 麼 休 息 最 難</div>
+        <div class="byline">
+          <span>An essay</span>
+          <span class="dot">·</span>
+          <span>by <b>The Editors</b></span>
+          <span class="dot">·</span>
+          <span>Beijing, late winter</span>
+        </div>
+        <div class="excerpt">
+          <p>Sit in a quiet room for thirty minutes. Do not reach for your phone. Do not think about a project. Do not plan tomorrow. Notice what happens. Within four minutes — for most of us — a small panic enters the body. Within ten, an excuse appears, dressed as productivity. Within twenty, we have negotiated with ourselves and won permission to leave. We did not rest. We were chased out of rest by something the old books would have called <em>不安</em> — un-quiet — and we did not even notice the chase.</p>
+          <p>This essay is an attempt to take that chase seriously. To name what is doing the chasing. And to ask, with the patience of an older language, whether <em>doing nothing</em> is in fact the most demanding work a person can do — and why we have, in our century, almost forgotten how.</p>
+        </div>
+        <a class="plate-cta" href="#">Read this plate <span class="ar">→</span></a>
+        <p class="plate-aux">contains <a href="#">three exercises</a> · <a href="#">a printable card</a></p>
+
+        <div class="plate-folio">
+          <span>p. 24 — 37</span>
+          <span class="center">on the demanding silence of doing nothing</span>
+          <span>無 · Issue 001</span>
+        </div>
+      </div>
+
+      <aside class="plate-mark">
+        <div class="mark-cn">息</div>
+        <div class="mark-label">— central motif</div>
+        <div class="mark-name"><b>息</b><i>xī</i> — breath; to pause; to rest; both the stopping and what is stopped <em>for</em>.</div>
+      </aside>
+    </div>
+  </article>
+
+
+
+  <!-- PLATE IV — Classical Reading -->
+  <article class="plate" id="plate-4">
+    <div class="plate-inner">
+      <div class="plate-rail">
+        <div class="roman">肆</div>
+        <div class="plate-no">Plate No. <b>IV</b></div>
+        <div class="plate-kind">Classical Reading</div>
+        <div class="plate-kind-cn">古 書 解 讀</div>
+        <div class="plate-stats">
+          <b>≈ 9 min</b><br>
+          page 38 — 47<br>
+          2,560 words<br>
+          — open access
+        </div>
+      </div>
+
+      <div class="plate-body">
+        <h3>Three passages from <em>Laozi</em>,<br>for people who feel stuck.</h3>
+        <div class="cn-title">老 子 · 三 章 選 讀</div>
+        <div class="byline">
+          <span>Classical Reading</span>
+          <span class="dot">·</span>
+          <span>edited &amp; rendered by <b>The Editors</b></span>
+          <span class="dot">·</span>
+          <span>Chapter 11 · 22 · 48</span>
+        </div>
+        <div class="excerpt">
+          <p>The <em>Daodejing</em> is the most translated Chinese book in the world, and the most over-translated. It has been turned into a self-help manual, a leadership pamphlet, a yoga inscription, a tea-towel. We have, in this plate, tried to do the opposite — to leave it small. Three short passages, in their original Chinese, with an English that does not pretend to be wisdom; only an honest reading of what each line is actually doing.</p>
+          <p>The three we chose all speak to people who feel <em>stuck</em>. <em>"What is hollow can be used."</em> — Chapter 11. <em>"To bend is to be whole."</em> — Chapter 22. <em>"Day by day, less."</em> — Chapter 48. Three sentences from a small old book, kept gently here in case one of them is the one you need today.</p>
+        </div>
+        <a class="plate-cta" href="#">Read this plate <span class="ar">→</span></a>
+        <p class="plate-aux">side-by-side <a href="#">中文 · English</a> reading view available</p>
+
+        <div class="plate-folio">
+          <span>p. 38 — 47</span>
+          <span class="center">三 章 — three short passages, kept small</span>
+          <span>無 · Issue 001</span>
+        </div>
+      </div>
+
+      <aside class="plate-mark">
+        <div class="mark-cn">老</div>
+        <div class="mark-label">— source</div>
+        <div class="mark-name"><b>老子</b><i>Lǎozǐ</i> — c. 6th century BCE, traditionally. The book that gave Chinese the word for the unforced.</div>
+      </aside>
+    </div>
+  </article>
+
+
+
+  <!-- PLATE V — Reader's Letter -->
+  <article class="plate alt" id="plate-5">
+    <div class="plate-inner">
+      <div class="plate-rail">
+        <div class="roman">伍</div>
+        <div class="plate-no">Plate No. <b>V</b></div>
+        <div class="plate-kind">Reader's Letter</div>
+        <div class="plate-kind-cn">讀 者 來 信</div>
+        <div class="plate-stats">
+          <b>≈ 12 min</b><br>
+          page 48 — 61<br>
+          letter + reply<br>
+          — open access
+        </div>
+      </div>
+
+      <div class="plate-body">
+        <h3>"I rest, but I still feel<br><em>guilty</em>. Why?"</h3>
+        <div class="cn-title">為 何 休 息 會 愧 疚</div>
+        <div class="byline">
+          <span>Letter signed</span>
+          <span class="dot">·</span>
+          <span>by <b>"M., aged 31, Shanghai"</b></span>
+          <span class="dot">·</span>
+          <span>received Nov. 2025</span>
+        </div>
+        <div class="excerpt">
+          <p>The letter that started this issue. M. wrote, late one night, asking why every weekend felt like a debt — why even sleeping in registered, in her chest, as failing at something she had not been told to do. <em>"I rest, and the rest of me does not rest with me. Why?"</em></p>
+          <p>The reply, written slowly over three weeks, threads through Laozi, Zhuangzi, a small story about a tea master, and a passage from the I Ching. It does not solve M.'s guilt. It does, we hope, name it more clearly than guilt usually allows itself to be named — and offer the company of an older argument that her chest is not, in fact, the first chest to have made this complaint.</p>
+        </div>
+        <a class="plate-cta" href="#">Read the letter &amp; reply <span class="ar">→</span></a>
+        <p class="plate-aux">to send your own — <a href="#">Ask the Ancient Text · 問古書</a></p>
+
+        <div class="plate-folio">
+          <span>p. 48 — 61</span>
+          <span class="center">a letter, kept; an answer, slow</span>
+          <span>無 · Issue 001</span>
+        </div>
+      </div>
+
+      <aside class="plate-mark">
+        <div class="mark-cn">問</div>
+        <div class="mark-label">— letter no.</div>
+        <div class="mark-name"><b>第 047 信</b><i>The 47th letter</i> — selected from 312 received between Sept and Dec 2025.</div>
+      </aside>
+    </div>
+  </article>
+
+
+
+  <!-- PLATE VI — VIP Long Read (locked) -->
+  <article class="plate locked" id="plate-6">
+    <div class="plate-inner">
+      <div class="plate-rail">
+        <div class="roman">陸</div>
+        <div class="plate-no">Plate No. <b>VI</b></div>
+        <div class="plate-kind" style="color: var(--seal);">VIP Long Read</div>
+        <div class="plate-kind-cn" style="color: var(--seal);">護 持 長 讀</div>
+        <div class="plate-stats">
+          <b>≈ 22 min</b><br>
+          page 62 — 77<br>
+          6,200 words<br>
+          — Patron only
+        </div>
+      </div>
+
+      <div class="plate-body">
+        <h3>Control, exhaustion, and the<br>ancient art of <em>not forcing life</em>.</h3>
+        <div class="cn-title">不 勉 強 之 術</div>
+        <div class="byline">
+          <span>Patron · Long Read</span>
+          <span class="dot">·</span>
+          <span>by <b>The Editors</b></span>
+          <span class="dot">·</span>
+          <span>3 weeks of writing · 11 sources</span>
+        </div>
+        <div class="excerpt">
+          <p>This is the longest piece in the issue, and the slowest. It begins with a question that has bothered me for years: why does our generation, more than any before it, seem to confuse <em>control</em> with <em>care</em>? We control our calendars and call it discipline. We control our bodies and call it health. We control our partners and call it love. We control our own attention, second by second, and call it focus. And we are, almost without exception, exhausted.</p>
+          <p>The Chinese tradition has a different word for this kind of exhaustion. It does not call it burnout. It calls it <em>勉強</em> — <em>miǎnqiǎng</em> — <em>forcing what does not yet wish to move.</em> The plate that follows is a slow, threaded essay on what that word means, where it comes from, and what — if anything — the old books offer in its place.</p>
+        </div>
+
+        <div class="paywall-hint">
+          <div class="label">— Plate locked · Patron access</div>
+          This long read is part of the <b>Patron · 護持</b> tier. Patrons read the full plate, vote on the next issue's character, and submit up to three letters per month to <em>Ask the Ancient Text</em>.<br>
+          <a href="#">Become a Patron · $72/year →</a>
+        </div>
+
+        <a class="plate-cta locked" href="#">Unlock this plate <span class="ar">→</span></a>
+        <p class="plate-aux">already a Patron? <a href="#">sign in to continue reading</a></p>
+
+        <div class="plate-folio">
+          <span>p. 62 — 77</span>
+          <span class="center">a long, slow argument with the word <em>勉強</em></span>
+          <span>無 · Issue 001 · 護持</span>
+        </div>
+      </div>
+
+      <aside class="plate-mark">
+        <div class="mark-cn">勉</div>
+        <div class="mark-label">— central motif</div>
+        <div class="mark-name"><b>勉強</b><i>miǎnqiǎng</i> — to force; to push what does not yet need pushing. The word that started this long read.</div>
+      </aside>
+    </div>
+  </article>
+
+
+
+  <!-- PLATE VII — Field Note (with photo) -->
+  <article class="plate" id="plate-7">
+    <div class="plate-inner">
+      <div class="plate-rail">
+        <div class="roman">柒</div>
+        <div class="plate-no">Plate No. <b>VII</b></div>
+        <div class="plate-kind">Field Note</div>
+        <div class="plate-kind-cn">田 野 紀 行</div>
+        <div class="plate-stats">
+          <b>≈ 8 min</b><br>
+          page 78 — 91<br>
+          2,240 words · 6 photographs<br>
+          — open access
+        </div>
+      </div>
+
+      <div class="plate-body">
+        <h3>A field note from <em>Wudang</em>:<br>walking with monks who do not hurry.</h3>
+        <div class="cn-title">武 當 紀 行</div>
+        <div class="byline">
+          <span>Field Note</span>
+          <span class="dot">·</span>
+          <span>by <b>The Editors</b></span>
+          <span class="dot">·</span>
+          <span>Wudang Mountains, Hubei · Feb 2026</span>
+        </div>
+        <div class="excerpt">
+          <p>I walked, in February, three days on the mountain. The monks did not hurry. They did not, also, walk slowly in the way that English-speaking yoga retreats teach you to walk slowly — performatively, attentively, as if each foot were a small ceremony. They walked at the pace of the path. The path went up; they went up. The path turned; they turned. When I asked one of them, on the second day, what they thought about while walking, he looked at me with the small confusion of a man who has been asked a question in a language he no longer speaks.</p>
+          <p>Six photographs, taken on a borrowed camera. A short note on what each is, and what it is not. Three sentences I overheard and could not stop turning over for the next month. A field note, kept honestly, with no morals attached.</p>
+        </div>
+        <a class="plate-cta" href="#">Read this plate <span class="ar">→</span></a>
+        <p class="plate-aux">photographs by <a href="#">the editors</a> · printed in <a href="#">duotone</a></p>
+
+        <div class="plate-folio">
+          <span>p. 78 — 91</span>
+          <span class="center">三 日 — three days, on a mountain in Hubei</span>
+          <span>無 · Issue 001</span>
+        </div>
+      </div>
+
+      <aside class="plate-mark with-photo">
+        <div class="photo-frame">
+          <img src="https://images.unsplash.com/photo-1545569310-4cf6d18d5aa9?w=900&auto=format&fit=crop&q=80" alt="A misted Chinese mountain path with stone steps">
+          <span class="ink-cn">武當</span>
+        </div>
+        <div class="photo-caption">
+          Plate VII · figure 03<br>
+          stone steps before dawn · Wudang, Feb 2026
+        </div>
+      </aside>
+    </div>
+  </article>
+
+
+
+  <!-- PLATE VIII — Archive Note -->
+  <article class="plate alt" id="plate-8">
+    <div class="plate-inner">
+      <div class="plate-rail">
+        <div class="roman">捌</div>
+        <div class="plate-no">Plate No. <b>VIII</b></div>
+        <div class="plate-kind">Archive Note</div>
+        <div class="plate-kind-cn">檔 案 札 記</div>
+        <div class="plate-stats">
+          <b>≈ 4 min</b><br>
+          page 92 — 96<br>
+          three poems<br>
+          — open access
+        </div>
+      </div>
+
+      <div class="plate-body">
+        <h3>Archive — <em>three rest poems</em><br>from Tao Yuanming.</h3>
+        <div class="cn-title">陶 淵 明 · 歸 去 三 首</div>
+        <div class="byline">
+          <span>Archive Note</span>
+          <span class="dot">·</span>
+          <span>selected &amp; translated by <b>The Editors</b></span>
+          <span class="dot">·</span>
+          <span>c. 405 CE</span>
+        </div>
+        <div class="excerpt">
+          <p>Tao Yuanming, after thirteen years of small offices, walked back to a small house. He wrote, in the years that followed, a body of poems that the Chinese have, for sixteen centuries, kept on a shelf within reach. They are not heroic. They are not sad. They are, mostly, about beans, mist, a gate, the way a road looks when one has finally stopped using it for going somewhere.</p>
+          <p>We have selected three. They close this issue because they are what the issue, in the end, is about — not the absence of work, but a different relationship with what work is <em>for</em>. Kept here in their original Chinese, with an English that does not pretend to improve them.</p>
+        </div>
+        <a class="plate-cta" href="#">Read the three poems <span class="ar">→</span></a>
+        <p class="plate-aux">a printable <a href="#">letterpress card</a> of poem two is included for Reader members</p>
+
+        <div class="plate-folio">
+          <span>p. 92 — 96</span>
+          <span class="center">三 首 — three short poems, kept on a shelf</span>
+          <span>無 · Issue 001</span>
+        </div>
+      </div>
+
+      <aside class="plate-mark">
+        <div class="mark-cn">歸</div>
+        <div class="mark-label">— central motif</div>
+        <div class="mark-name"><b>歸去</b><i>guī qù</i> — to return; to go back. The first word of the most-loved Chinese poem about leaving a job.</div>
+      </aside>
+    </div>
+  </article>
+
+</div>
+<!-- /plates -->
+
+
+
+<!-- ========================================
+     ISSUE COLOPHON — about this issue
+     The inside back cover. Character, contributors,
+     stats, a small acknowledgement.
+     ======================================== -->
+<section class="issue-colo">
+  <div class="issue-colo-inner">
+
+    <div class="colo-left">
+      <div class="colo-head">
+        — about this issue
+      </div>
+      <h3>An issue made <em>slowly</em>,<br>from a small wooden table.</h3>
+      <div class="cn">第 一 期 · 編 後 記</div>
+      <p>This issue took five months to make and ten weeks to write. Some of it was rewritten three times; one plate, four. We threw away an essay we had spent six weeks on because, on rereading, it had begun to <em>perform</em> calm rather than be calm.</p>
+      <p>An issue is, for us, a small object — about the weight of a paperback. It is meant to be read in one or two evenings, not all in a sitting. The character of this first issue, <em>無</em>, was chosen by a reader's letter, not by us. The next issue's character will be chosen by our Patrons, in a small vote that opens at the end of this one.</p>
+
+      <div class="colo-glyph">
+        <div class="glyph-big">無</div>
+        <div class="glyph-info">
+          <b><i>Wú</i> — 無</b>
+          <div class="pinyin">— this issue's character</div>
+          Not nothing. The unforced. The space inside the bowl that lets the bowl be a bowl. The character that begins the most quoted line in Laozi.
+        </div>
+      </div>
+    </div>
+
+    <div class="colo-right">
+      <div class="colo-stats">
+        <div class="colo-stat">
+          <div class="num"><em>8</em></div>
+          <div class="label">plates<br><b>this issue</b></div>
+        </div>
+        <div class="colo-stat">
+          <div class="num">24,800</div>
+          <div class="label">words<br><b>≈ 86 min</b></div>
+        </div>
+        <div class="colo-stat">
+          <div class="num">312</div>
+          <div class="label">letters received<br><b>1 selected</b></div>
+        </div>
+        <div class="colo-stat">
+          <div class="num">5<span style="font-size: 24px; color: var(--seal); margin-left: 2px;">mo</span></div>
+          <div class="label">in editing<br><b>2026 winter</b></div>
+        </div>
+      </div>
+
+      <div class="colo-contributors">
+        <h4>Contributors · 撰 稿</h4>
+        <ul>
+          <li>
+            <span class="name">The Editors <span class="cn">編 者</span></span>
+            <span class="role">Plates I · III · IV · VI · VII · VIII</span>
+          </li>
+          <li>
+            <span class="name">Lu Xian <span class="cn">陸 弦</span></span>
+            <span class="role">Plate II · <b>Original Story</b></span>
+          </li>
+          <li>
+            <span class="name">"M., Shanghai" <span class="cn">化 名</span></span>
+            <span class="role">Plate V · <b>Letter</b></span>
+          </li>
+          <li>
+            <span class="name">Wudang Daoist Association <span class="cn">道 教 協 會</span></span>
+            <span class="role">Plate VII · permission &amp; access</span>
+          </li>
+          <li>
+            <span class="name">Tao Yuanming <span class="cn">陶 淵 明</span></span>
+            <span class="role">Plate VIII · c. 405 CE</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ========================================
+     ISSUE DISCUSSION — Reader Notes (Phase 1)
+     Single-layer · no upvote · editor can pin.
+     This is the per-issue discussion view; a
+     site-wide Discussion page exists separately.
+     ======================================== -->
+<section class="discussion">
+  <div class="disc-head">
+    <div class="num">玖</div>
+    <h2>This issue, discussed. <span class="cn">本 期 討 論</span></h2>
+    <a class="cta" href="#">all reader notes →</a>
+  </div>
+
+  <div class="disc-grid">
+
+    <div class="disc-notes">
+      <div class="disc-notes-head">
+        <span>Reader Notes · 讀者札記 · 28 entries</span>
+        <span class="sort"><b>Editor's Choice</b> · New</span>
+      </div>
+
+      <div class="note featured">
+        <div class="meta">
+          <span class="name">Y. (Hangzhou) <span class="tier patron">Patron</span></span>
+          <span class="ref">on <b>Plate V · Letter</b></span>
+        </div>
+        <div class="body">
+          I read M.'s letter on the train. I am M., somehow. I am 34, not 31, and in Beijing, not Shanghai, but I have written that exact sentence in my notes app at least eleven times this year. <em>Thank you for not solving it.</em> The reply is the first thing I have read on this question that did not, somewhere in the third paragraph, try to sell me a planner.
+        </div>
+        <div class="note-actions">
+          <a href="#">Reply</a>
+          <a href="#">Read in thread</a>
+        </div>
+      </div>
+
+      <div class="note">
+        <div class="meta">
+          <span class="name">J. Wen <span class="tier">Reader</span></span>
+          <span class="ref">on <b>Plate III · Modern Essay</b></span>
+        </div>
+        <div class="body">
+          The four-minute panic is real. I tried it last Sunday. Five minutes in I had reorganised my reasons for getting up. Reading this essay was, I think, the first time anyone has named that small panic out loud. <em>不安</em> — yes. That is exactly the word.
+        </div>
+        <div class="reply">
+          <div class="meta">
+            <span class="name">The Editors</span>
+            <span class="ref">— reply</span>
+          </div>
+          <div class="body">
+            J., the first time we wrote this essay it was twice as long, and read like a method. We threw it out. The four-minute panic deserves to be named, not <em>treated</em>. We are glad it landed.
+          </div>
+        </div>
+        <div class="note-actions">
+          <a href="#">Reply</a>
+          <a href="#">Permalink</a>
+        </div>
+      </div>
+
+
+      <div class="note">
+        <div class="meta">
+          <span class="name">陳 (Taipei) <span class="tier">Reader</span></span>
+          <span class="ref">on <b>Plate IV · Laozi</b></span>
+        </div>
+        <div class="body">
+          The side-by-side reading of Chapter 22 made me cry on a Tuesday afternoon for reasons I cannot fully account for. <em>「曲則全」</em> — I have read this line a dozen times in Chinese. This is the first English version that did not flatten it. Thank you for keeping it small.
+        </div>
+        <div class="note-actions">
+          <a href="#">Reply</a>
+          <a href="#">Permalink</a>
+        </div>
+      </div>
+
+      <div class="note">
+        <div class="meta">
+          <span class="name">A. Sato <span class="tier">Reader</span></span>
+          <span class="ref">on <b>Plate II · Story</b></span>
+        </div>
+        <div class="body">
+          I read this story twice. The first time I thought it was about OCD; the second time I realised it is about grief. I do not know what Lu Xian intended. I do not need to. <em>The chair, the chair, the chair.</em>
+        </div>
+        <div class="note-actions">
+          <a href="#">Reply</a>
+          <a href="#">Permalink</a>
+        </div>
+      </div>
+
+      <div class="note">
+        <div class="meta">
+          <span class="name">D. Park</span>
+          <span class="ref">on <b>Plate VII · Wudang</b></span>
+        </div>
+        <div class="body">
+          The line about the monk who could not understand the question — <em>"in a language he no longer speaks"</em> — has been in my head all week. I am 41 and I am still asking, in that language. This issue has, gently, suggested that I might learn another one.
+        </div>
+        <div class="note-actions">
+          <a href="#">Reply</a>
+          <a href="#">Permalink</a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--rule);">
+        <a href="#" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-soft); border-bottom: 1px solid var(--ink-soft); padding-bottom: 3px;">read all 28 notes →</a>
+      </div>
+    </div>
+
+
+    <aside class="disc-aside">
+      <div class="cn-stamp">札 記</div>
+      <h4>Add a note to <em>this issue</em>.</h4>
+      <p>Reader Notes are how readers write back to an issue. They are read by the editors and by other members. We do not have likes, votes, or hot lists — only a single layer of replies, and an editor's choice for the ones we want to keep close.</p>
+      <a class="compose" href="#">Write a note →</a>
+      <p class="signin">or, <a href="#">sign in</a> · only Reader members &amp; up may post</p>
+      <div class="rules">
+        — house rules<br>
+        Read · 讀<br>
+        Reply gently · 答<br>
+        No hot lists · <b>無 投 票</b><br>
+        Editors may pin or hide
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ========================================
+     END NAV — prev / next issue, two doors
+     ======================================== -->
+<nav class="issue-nav-end">
+  <a class="ine-cell prev" href="#">
+    <div class="dir">Previous issue</div>
+    <div class="issue-no">000</div>
+    <div class="issue-title"><em>Prologue</em> — what this journal is for</div>
+    <div class="issue-title-cn">卷 首 · 序 言</div>
+    <div class="issue-meta">
+      Volume I · Issue 000 · <b>Winter 2026</b><br>
+      4 plates · ≈ 32 min reading
+    </div>
+  </a>
+  <a class="ine-cell next" href="#">
+    <div class="dir">Forthcoming</div>
+    <div class="issue-no">002</div>
+    <div class="issue-title">On <em>filial quiet</em>, and the things parents do not say.</div>
+    <div class="issue-title-cn">第 二 期 · 孝 與 靜</div>
+    <div class="issue-meta">
+      Volume I · Issue 002 · <b>Summer 2026</b><br>
+      character to be voted by Patrons
+    </div>
+  </a>
+</nav>
+
+
+
+<!-- ========================================
+     SLIM FOOTER — lighter than homepage
+     ======================================== -->
+<footer>
+  <div class="foot-mark">
+    <div class="ampers">Ink <em>&amp;</em> East</div>
+    <span class="cn">墨 與 東 方</span>
+    <span class="sub">— end of Issue 001 —</span>
+  </div>
+  <div class="foot-row">
+    <div class="left">
+      <a href="./ink-east-v1.html">← back to home</a>
+    </div>
+    <div class="center">
+      An independent digital journal · <b>墨 東</b> · Edited slowly, from a small wooden table.
+    </div>
+    <div class="right">
+      <a href="#">Membership</a>
+      &nbsp;·&nbsp;
+      <a href="#">Archive</a>
+      &nbsp;·&nbsp;
+      <a href="#">Colophon</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
