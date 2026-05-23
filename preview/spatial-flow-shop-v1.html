@@ -845,36 +845,212 @@
   @media (max-width: 480px) {
     .grid { grid-template-columns: 1fr; }
   }
+
+  /* ───── V1-aligned global shell (overrides) ───── */
+  .masthead-strip-v1 {
+    padding: 12px 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(31,25,22,.62);
+    border-bottom: 1px solid rgba(31,25,22,.08);
+    background: var(--beige, #f6f1eb);
+  }
+  .masthead-strip-v1 .vol b { color: var(--terracotta, #a8745c); font-weight: 500; }
+  .masthead-strip-v1 .center { letter-spacing: 0.2em; color: var(--ink, #1f1916); }
+  .masthead-strip-v1 .right span { display: inline-block; width: 6px; height: 6px; background: var(--terracotta, #a8745c); border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+
+  .site-header-v1 {
+    padding: 32px 56px 28px;
+    border-bottom: 1px solid var(--ink, #1f1916);
+    background: var(--beige, #f6f1eb);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: baseline;
+    gap: 32px;
+  }
+  .site-header-v1 .primary { justify-self: start; }
+  .site-header-v1 .primary ul { list-style: none; display: flex; gap: 36px; padding: 0; margin: 0; }
+  .site-header-v1 .primary a {
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--ink, #1f1916);
+    padding-bottom: 4px;
+    text-decoration: none;
+    transition: color .25s;
+  }
+  .site-header-v1 .primary a:hover { color: var(--terracotta, #a8745c); }
+  .site-header-v1 .primary a.current { border-bottom: 1px solid var(--ink, #1f1916); }
+  .site-header-v1 .wordmark {
+    font-family: "Cormorant Garamond", "Noto Serif SC", Georgia, serif;
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-align: center;
+    line-height: 1;
+    color: var(--ink, #1f1916);
+    text-decoration: none;
+  }
+  .site-header-v1 .wordmark em { font-style: italic; }
+  .site-header-v1 .wordmark .sub {
+    display: block;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(31,25,22,.62);
+    margin-top: 10px;
+    font-weight: 400;
+  }
+  .site-header-v1 .utilities {
+    justify-self: end;
+    display: flex;
+    gap: 24px;
+    align-items: baseline;
+    font-size: 13px;
+  }
+  .site-header-v1 .utilities a {
+    letter-spacing: 0.05em;
+    color: var(--ink, #1f1916);
+    text-decoration: none;
+    transition: color .25s;
+  }
+  .site-header-v1 .utilities a:hover { color: var(--terracotta, #a8745c); }
+  .site-header-v1 .utilities .bag { font-weight: 500; }
+  .site-header-v1 .utilities .bag sup { color: var(--terracotta, #a8745c); font-weight: 600; }
+
+  .site-footer-v1 {
+    background: var(--ink, #1f1916);
+    color: var(--beige, #f6f1eb);
+    padding: 80px 56px 40px;
+    margin-top: 0;
+  }
+  .site-footer-v1 .brand-mark {
+    font-family: "Cormorant Garamond", "Noto Serif SC", serif;
+    font-size: clamp(28px, 3vw, 38px);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-align: center;
+    margin-bottom: 56px;
+    color: var(--beige, #f6f1eb);
+  }
+  .site-footer-v1 .brand-mark em { font-style: italic; }
+  .site-footer-v1 .brand-mark .sub {
+    display: block;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: 400;
+    color: rgba(246,241,235,.55);
+  }
+  .site-footer-v1 .cols {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid rgba(246,241,235,.12);
+  }
+  .site-footer-v1 .cols h5 {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--terracotta, #a8745c);
+    margin-bottom: 18px;
+  }
+  .site-footer-v1 .cols .mission {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.5;
+    color: rgba(246,241,235,.7);
+    max-width: 36ch;
+  }
+  .site-footer-v1 .cols ul { list-style: none; display: flex; flex-direction: column; gap: 10px; padding: 0; margin: 0; }
+  .site-footer-v1 .cols a {
+    font-size: 13px;
+    color: rgba(246,241,235,.7);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .site-footer-v1 .cols a:hover { color: var(--terracotta, #a8745c); }
+  .site-footer-v1 .colophon {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(246,241,235,.4);
+  }
+  @media (max-width: 1100px) {
+    .masthead-strip-v1 { padding: 10px 40px; }
+    .site-header-v1 { padding: 24px 40px 20px; }
+    .site-footer-v1 { padding: 60px 40px 32px; }
+    .site-footer-v1 .cols { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  @media (max-width: 720px) {
+    .masthead-strip-v1 { padding: 10px 24px; flex-wrap: wrap; gap: 8px; font-size: 10px; }
+    .masthead-strip-v1 .center { display: none; }
+    .site-header-v1 { padding: 20px 24px; grid-template-columns: 1fr auto; }
+    .site-header-v1 .primary { display: none; }
+    .site-footer-v1 { padding: 48px 24px 32px; }
+    .site-footer-v1 .cols { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .site-footer-v1 .colophon { flex-direction: column; gap: 8px; align-items: flex-start; }
+  }
 </style>
 </head>
 <body>
 
-<!-- Top bar -->
-<header class="top-bar">
-  <div class="top-inner">
-    <div class="brand">
-      Spatial Flow
-      <small>Objects · Spaces · Slow Living</small>
-    </div>
-    <nav class="nav">
-      <a href="spatial-flow-v1.html">Home</a>
-      <a href="#" class="active">Shop</a>
-      <a href="spatial-flow-journal-v1.html">Journal</a>
-      <a href="#">Studios</a>
-      <a href="#">About</a>
-    </nav>
-    <div class="top-utils">
-      <span>Search</span>
-      <span>Account</span>
-      <span class="bag">Bag</span>
-    </div>
+<!-- Masthead strip -->
+<div class="masthead-strip-v1">
+  <div class="vol">Volume <b>I</b> · Issue <b>03</b> · Spring 2026</div>
+  <div class="center">A Journal of Rooms, Rituals &amp; Quiet Objects</div>
+  <div class="right"><span></span>Free shipping over $80 worldwide</div>
+</div>
+
+<!-- Header -->
+<header class="site-header-v1">
+  <nav class="primary">
+    <ul>
+      <li><a href="spatial-flow-shop-v1.html" class="current">The Index</a></li>
+      <li><a href="spatial-flow-journal-v1.html">The Journal</a></li>
+      <li><a href="#">Consult</a></li>
+      <li><a href="#">Our Pages</a></li>
+    </ul>
+  </nav>
+  <a href="spatial-flow-v1.html" class="wordmark">
+    SPATIAL <em>FLOW</em>
+    <span class="sub">Est. 2026 · Est. in quiet rooms</span>
+  </a>
+  <div class="utilities">
+    <a href="#">Search</a>
+    <a href="#">Account</a>
+    <a href="spatial-flow-cart-v1.html" class="bag">Bag <sup>(3)</sup></a>
   </div>
 </header>
 
 <!-- Breadcrumb -->
 <nav class="crumb">
   <a href="spatial-flow-v1.html">Home</a><span class="sep">/</span>
-  <a href="#">Shop</a><span class="sep">/</span>
+  <a href="spatial-flow-shop-v1.html">Shop</a><span class="sep">/</span>
   <span class="here">Objects for the Quiet Room</span>
 </nav>
 
@@ -927,10 +1103,10 @@
     <div class="pick-foot">
       <div class="pick-price">
         <small>From</small>
-        £ 480
+        $ 480
       </div>
-      <a class="btn" href="#">View piece <span class="arrow">→</span></a>
-      <a class="btn btn-ghost" href="#">Read the studio note</a>
+      <a class="btn" href="spatial-flow-product-v1.html">View piece <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="spatial-flow-journal-v1.html">Read the studio note</a>
     </div>
   </div>
 </section>
@@ -944,131 +1120,131 @@
 <!-- Grid -->
 <section class="grid">
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-vase-1">
       <span class="tag new">New in</span>
       <div class="quick">View piece →</div>
     </div>
     <h4>Mori Stem Vase</h4>
     <div class="sub">Bizen stoneware · No. 02</div>
-    <div class="price">£ 280</div>
+    <div class="price">$ 280</div>
     <div class="place-note">Single stem on a stone ledge, half-shadowed.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-bowl-1">
       <span class="tag">Last 2</span>
       <div class="quick">View piece →</div>
     </div>
     <h4>Aoki Centre Bowl</h4>
     <div class="sub">Wheel-thrown porcelain</div>
-    <div class="price">£ 195</div>
+    <div class="price">$ 195</div>
     <div class="place-note">A long dining table, used daily, never empty.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-lamp-1">
       <span class="tag new">New in</span>
       <div class="quick">View piece →</div>
     </div>
     <h4>Ember Floor Lamp</h4>
     <div class="sub">Patinated brass · linen shade</div>
-    <div class="price">£ 640</div>
+    <div class="price">$ 640</div>
     <div class="place-note">Beside a low chair, replacing the overhead light at dusk.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-throw-1">
       <div class="quick">View piece →</div>
     </div>
     <h4>Tussore Throw — Clay</h4>
     <div class="sub">Hand-loomed wild silk</div>
-    <div class="price"><del>£ 320</del> £ 245</div>
+    <div class="price"><del>$ 320</del> $ 245</div>
     <div class="place-note">Folded over the arm of a reading chair you actually use.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-stool-1">
       <span class="tag last">Last 1</span>
       <div class="quick">View piece →</div>
     </div>
     <h4>Field Stool, Low</h4>
     <div class="sub">Solid white oak · oil finish</div>
-    <div class="price">£ 380</div>
+    <div class="price">$ 380</div>
     <div class="place-note">A side table by the bath; later, a step; later, a seat.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-cushion-1">
       <div class="quick">View piece →</div>
     </div>
     <h4>Linen Floor Cushion</h4>
     <div class="sub">Belgian linen · feather fill</div>
-    <div class="price">£ 165</div>
+    <div class="price">$ 165</div>
     <div class="place-note">In the corner where children read in winter sun.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-tray-1">
       <div class="quick">View piece →</div>
     </div>
     <h4>Negro Lacquer Tray</h4>
     <div class="sub">Urushi over chestnut</div>
-    <div class="price">£ 220</div>
+    <div class="price">$ 220</div>
     <div class="place-note">By the door, for keys, a watch, a folded letter.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-mirror-1">
       <span class="tag new">New in</span>
       <div class="quick">View piece →</div>
     </div>
     <h4>Petal Wall Mirror</h4>
     <div class="sub">Hand-cast bronze frame</div>
-    <div class="price">£ 720</div>
+    <div class="price">$ 720</div>
     <div class="place-note">A narrow hallway, hung lower than you'd think.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-rug-1">
       <div class="quick">View piece →</div>
     </div>
     <h4>Atlas Flatweave 200×300</h4>
     <div class="sub">Undyed wool · vegetable terracotta</div>
-    <div class="price">£ 1,180</div>
+    <div class="price">$ 1,180</div>
     <div class="place-note">Under a low table, covering most of the floor.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-candle-1">
       <span class="tag last">Last 3</span>
       <div class="quick">View piece →</div>
     </div>
     <h4>Hours Candle, Long</h4>
     <div class="sub">Beeswax · cotton wick · 60 hr</div>
-    <div class="price">£ 48</div>
+    <div class="price">$ 48</div>
     <div class="place-note">On the table you eat at, lit before anything is said.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-stack-1">
       <div class="quick">View piece →</div>
     </div>
     <h4>Reading Stack — Set of Four</h4>
     <div class="sub">Curated by the Spatial Flow editors</div>
-    <div class="price">£ 92</div>
+    <div class="price">$ 92</div>
     <div class="place-note">On the floor by the bed, never quite finished.</div>
-  </article>
+  </a>
 
-  <article class="card">
+  <a href="spatial-flow-product-v1.html" class="card" style="text-decoration:none;color:inherit;">
     <div class="card-img img-vase-1" style="filter: hue-rotate(170deg) saturate(0.7);">
       <div class="quick">View piece →</div>
     </div>
     <h4>Mori Stem Vase — Ash</h4>
     <div class="sub">Bizen stoneware · No. 04</div>
-    <div class="price">£ 280</div>
+    <div class="price">$ 280</div>
     <div class="place-note">A windowsill that catches the late afternoon.</div>
-  </article>
+  </a>
 
 </section>
 
@@ -1096,44 +1272,63 @@
   </div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <div class="foot-grid">
-    <div class="brand-block">
-      <div class="brand">Spatial Flow<small>Objects · Spaces · Slow Living</small></div>
-      <p>"Rooms ask less of you when their objects already feel at home."</p>
+<!-- Footer (V1-aligned) -->
+<footer class="site-footer-v1">
+  <div class="brand-mark">
+    SPATIAL <em>FLOW</em>
+    <span class="sub">A Journal of Rooms, Rituals &amp; Quiet Objects · Est. 2026</span>
+  </div>
+
+  <div class="cols">
+    <div>
+      <h5>— The Publisher</h5>
+      <p class="mission">An independent journal and shop about the rooms we live in, the objects that hold them together, and the quiet rituals that make them ours.</p>
     </div>
     <div>
-      <h5>Shop</h5>
+      <h5>— The Index</h5>
       <ul>
-        <li><a href="#">Vessels</a></li>
-        <li><a href="#">Textiles</a></li>
-        <li><a href="#">Lighting</a></li>
-        <li><a href="#">Furniture</a></li>
+        <li><a href="spatial-flow-shop-v1.html">Bracelets</a></li>
+        <li><a href="spatial-flow-shop-v1.html">Necklaces</a></li>
+        <li><a href="spatial-flow-shop-v1.html">Decorative pieces</a></li>
+        <li><a href="spatial-flow-shop-v1.html">All pieces</a></li>
+        <li><a href="#">Consult &amp; Customize</a></li>
       </ul>
     </div>
     <div>
-      <h5>Read</h5>
+      <h5>— The Journal</h5>
       <ul>
-        <li><a href="spatial-flow-journal-v1.html">Journal</a></li>
-        <li><a href="#">Studio visits</a></li>
-        <li><a href="#">Editor's notes</a></li>
-        <li><a href="#">Newsletter</a></li>
+        <li><a href="spatial-flow-journal-v1.html">Space &amp; Energy</a></li>
+        <li><a href="spatial-flow-journal-v1.html">Mind &amp; Emotion</a></li>
+        <li><a href="spatial-flow-journal-v1.html">Philosophy &amp; Insights</a></li>
+        <li><a href="spatial-flow-journal-v1.html">Lifestyle Guide</a></li>
+        <li><a href="spatial-flow-journal-v1.html">Crystals &amp; Botanicals</a></li>
       </ul>
     </div>
     <div>
-      <h5>Studio</h5>
+      <h5>— Care</h5>
       <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Trade programme</a></li>
-        <li><a href="#">Care &amp; repair</a></li>
+        <li><a href="#">Shipping</a></li>
+        <li><a href="#">Returns &amp; Refunds</a></li>
+        <li><a href="#">Track Order</a></li>
+        <li><a href="#">FAQ</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
+    <div>
+      <h5>— Our Pages</h5>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Consult</a></li>
+        <li><a href="spatial-flow-cart-v1.html">Your Bag</a></li>
+        <li><a href="#">Terms</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="foot-bot">
-    <span>© Spatial Flow Editions, MMXXVI</span>
-    <span>Lisbon · Tokyo · Copenhagen</span>
+
+  <div class="colophon">
+    <span>© 2026 Spatial Flow · Published slowly, from a small wooden table.</span>
+    <span>Set in Cormorant Garamond &amp; Inter · ISSN — 2026.03</span>
   </div>
 </footer>
 
