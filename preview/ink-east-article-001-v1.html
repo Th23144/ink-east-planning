@@ -212,6 +212,87 @@
   }
 
   /* ============================================
+     ARTICLE LAYOUT — sidebar + reading column
+     ============================================ */
+  .article-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Sidebar — sticky navigation
+     BLOCK: article-sidebar
+     SOURCE: auto-generated from post h2 headings
+     BEHAVIOR: highlights current section on scroll (JS)
+     WP NOTE: output by single-post template, reading headings from content
+  */
+  .article-sidebar {
+    padding: 80px 0 0 28px;
+    position: relative;
+  }
+  .sidebar-inner {
+    position: sticky;
+    top: 32px;
+  }
+  .sidebar-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--seal);
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .sidebar-nav { list-style: none; }
+  .sidebar-nav li {
+    margin-bottom: 14px;
+  }
+  .sidebar-nav a {
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-faint);
+    line-height: 1.4;
+    transition: color .2s;
+    display: block;
+    padding-left: 12px;
+    border-left: 2px solid transparent;
+  }
+  .sidebar-nav a:hover { color: var(--ink); }
+  .sidebar-nav a.active {
+    color: var(--ink);
+    border-left-color: var(--seal);
+  }
+  .sidebar-nav .num {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    font-style: normal;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .sidebar-back {
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .sidebar-back a {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    transition: color .2s;
+  }
+  .sidebar-back a:hover { color: var(--seal); }
+
+  /* ============================================
      ARTICLE BODY — single column reading
      ============================================ */
   .article-body {
@@ -835,6 +916,10 @@
   /* ============================================
      RESPONSIVE
      ============================================ */
+  @media (max-width: 1100px) {
+    .article-layout { grid-template-columns: 1fr; }
+    .article-sidebar { display: none; }
+  }
   @media (max-width: 900px) {
     .related-grid { grid-template-columns: 1fr; gap: 32px; }
     .author-card { grid-template-columns: 64px 1fr; gap: 18px; }
@@ -929,6 +1014,24 @@
            The locked content must never reach the
            browser when the user is not authorized.
      ============================================ -->
+<div class="article-layout">
+
+  <!-- SIDEBAR NAVIGATION — auto-generated from h2 in post_content -->
+  <aside class="article-sidebar">
+    <div class="sidebar-inner">
+      <div class="sidebar-label">In this essay</div>
+      <ol class="sidebar-nav">
+        <li><a href="#sec-grammar" class="active"><span class="num">§ 1</span>The grammar of leisure</a></li>
+        <li><a href="#sec-selfcare"><span class="num">§ 2</span>The trouble with "self-care"</a></li>
+        <li><a href="#sec-second-mind"><span class="num">§ 3</span>The second mind</a></li>
+        <li><a href="#sec-conclusion"><span class="num">§ 4</span>What rest actually asks of us</a></li>
+      </ol>
+      <div class="sidebar-back">
+        <a href="./ink-east-issue-001-v1.html">← Issue 001 目錄</a>
+      </div>
+    </div>
+  </aside>
+
 <section class="article-body">
   <div class="body-inner">
 
@@ -945,7 +1048,7 @@
     </p>
 
 
-    <div class="sub-head">
+    <div class="sub-head" id="sec-grammar">
       <h2>The grammar of <em>leisure</em>.</h2>
       <span class="cn">閒 之 文 法</span>
     </div>
@@ -974,7 +1077,7 @@
     </p>
 
 
-    <div class="sub-head">
+    <div class="sub-head" id="sec-selfcare">
       <h2>The trouble with "self-care."</h2>
       <span class="cn">自 我 照 顧 之 失</span>
     </div>
@@ -1048,6 +1151,8 @@
     </p>
   </aside>
 </div>
+
+</div><!-- /.article-layout -->
 
 
 <!-- ============================================
@@ -1159,13 +1264,13 @@
     <div>
       <h5>The Journal <span class="cn">關 於</span></h5>
       <p class="mission">Ink &amp; East publishes a single issue when a single issue is ready. Each one answers, in plain English, a modern question — through Chinese classical thought, original stories, and reader letters.</p>
-      <p class="also-by">Also kept by the editors —<br>a small shop of objects, <a href="#">Spatial Flow →</a></p>
+      <p class="also-by">Also kept by the editors —<br>a small shop of objects, <a href="./spatial-flow-v1.html">Spatial Flow →</a></p>
     </div>
     <div>
       <h5>Read <span class="cn">讀</span></h5>
       <ul>
-        <li><a href="#">This Issue · 001</a></li>
-        <li><a href="#">Public Archive</a></li>
+        <li><a href="./ink-east-issue-001-v1.html">This Issue · 001</a></li>
+        <li><a href="./ink-east-v1.html">Home</a></li>
         <li><a href="#">Reading Room (VIP)</a></li>
         <li><a href="#">Field Notes</a></li>
         <li><a href="#">Editor's Letters</a></li>

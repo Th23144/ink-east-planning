@@ -74,14 +74,25 @@ section.toc{padding:100px 56px;border-bottom:1px solid var(--rule)}
 .discuss-strip .btn{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);padding:14px 28px;transition:all .25s}
 .discuss-strip .btn:hover{background:var(--ink);color:var(--paper-light)}
 
-/* FOOTER (minimal) */
-footer{padding:60px 56px 28px;text-align:center}
-footer .mark{font-family:var(--serif-en);font-size:clamp(48px,8vw,100px);font-weight:400;line-height:.9;letter-spacing:-.005em;margin-bottom:12px}
-footer .mark em{font-style:italic;color:var(--seal)}
-footer .cn{font-family:var(--serif-cn);font-size:14px;letter-spacing:.5em;color:var(--ink-soft);margin-bottom:16px}
-footer .sub{font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-faint)}
-footer nav{margin-top:32px;padding-top:20px;border-top:1px solid var(--rule);display:flex;gap:28px;justify-content:center;font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
-footer nav a:hover{color:var(--seal)}
+/* FOOTER (full colophon) */
+footer{padding:90px 40px 28px;text-align:left}
+.foot-mark{text-align:center;padding-bottom:48px;border-bottom:1px solid var(--ink);margin-bottom:56px}
+.foot-mark .ampers{font-family:var(--serif-en);font-size:clamp(80px,12vw,200px);font-weight:400;line-height:.85;letter-spacing:-.01em}
+.foot-mark .ampers em{font-style:italic;color:var(--seal)}
+.foot-mark .cn{display:block;font-family:var(--serif-cn);font-size:18px;letter-spacing:.5em;color:var(--ink-soft);margin-top:18px}
+.foot-mark .sub{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px}
+.foot-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+footer h5{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:22px;font-weight:500}
+footer h5 .cn{font-family:var(--serif-cn);color:var(--ink-faint);margin-left:10px;letter-spacing:.3em}
+footer p.mission{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:380px;margin-bottom:22px}
+.also-by{font-family:var(--serif-en);font-size:13px;color:var(--ink-faint);line-height:1.7}
+.also-by a{font-style:italic;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.also-by a:hover{color:var(--seal);border-color:var(--seal)}
+footer ul{list-style:none}
+footer li{margin-bottom:11px}
+footer a{font-family:var(--serif-en);font-size:15px;color:var(--ink-soft);transition:color .2s}
+footer a:hover{color:var(--seal)}
+.colophon-final{padding-top:24px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 
 @media(max-width:900px){
 .issue-hero{grid-template-columns:1fr;padding:48px 20px 60px;gap:40px}
@@ -91,9 +102,12 @@ footer nav a:hover{color:var(--seal)}
 .toc-row .k{display:none}
 section.toc{padding:60px 20px}
 .editor-compact{padding:48px 20px}
+.foot-cols{grid-template-columns:1fr 1fr;gap:40px}
 .discuss-strip{padding:40px 20px}
-footer{padding:40px 20px 20px}
-footer nav{flex-wrap:wrap;gap:16px}
+footer{padding:60px 20px 20px}
+.foot-mark .ampers{font-size:56px}
+.foot-cols{grid-template-columns:1fr;gap:36px}
+.colophon-final{flex-direction:column;gap:6px;text-align:center}
 }
 </style>
 </head>
@@ -148,7 +162,7 @@ footer nav{flex-wrap:wrap;gap:16px}
   <div class="toc-list">
     <div class="toc-row"><span class="n">No. <b>01</b></span><div class="t"><em>Wu Wei</em> is not laziness.<span class="cn">無為，非懶</span></div><span class="k">Editor's Note</span><span class="p">p. 04</span></div>
     <div class="toc-row"><span class="n">No. <b>02</b></span><div class="t">The man who could not stop <em>rearranging</em> his room.<span class="cn">不停整理房間的人</span></div><span class="k">Original Story</span><span class="p">p. 12</span></div>
-    <div class="toc-row"><span class="n">No. <b>03</b></span><div class="t">Why doing nothing is sometimes the <em>hardest</em> practice.<span class="cn">為什麼休息最難</span></div><span class="k">Modern Essay</span><span class="p">p. 24</span></div>
+    <div class="toc-row"><span class="n">No. <b>03</b></span><div class="t"><a href="./ink-east-article-001-v1.html">Why doing nothing is sometimes the <em>hardest</em> practice.</a><span class="cn">為什麼休息最難</span></div><span class="k">Modern Essay</span><span class="p">p. 24</span></div>
     <div class="toc-row"><span class="n">No. <b>04</b></span><div class="t">Three passages from Laozi for <em>people who feel stuck</em>.<span class="cn">老子 · 三章選</span></div><span class="k">Classical Reading</span><span class="p">p. 38</span></div>
     <div class="toc-row"><span class="n">No. <b>05</b></span><div class="t">"I rest, but I still feel <em>guilty</em>. Why?"<span class="cn">為何休息會愧疚</span></div><span class="k">Reader's Letter</span><span class="p">p. 48</span></div>
     <div class="toc-row"><span class="n">No. <b>06</b></span><div class="t">Control, exhaustion, and the ancient art of <em>not forcing life</em>.<span class="cn">不勉強之術</span></div><span class="k vip">VIP Long Read</span><span class="p">p. 62</span></div>
@@ -165,18 +179,56 @@ footer nav{flex-wrap:wrap;gap:16px}
   <a href="#" class="btn">Open discussion →</a>
 </div>
 
-<!-- FOOTER (minimal for inner pages) -->
+<!-- FOOTER (full colophon — consistent across all Ink & East pages) -->
 <footer>
-  <div class="mark">Ink <em>&amp;</em> East</div>
-  <div class="cn">墨 與 東 方</div>
-  <div class="sub">Issue 001 · Wu Wei is not laziness · Spring 2026</div>
-  <nav>
-    <a href="./ink-east-v1.html">Home</a>
-    <a href="#">Reading Room</a>
-    <a href="#">Ask the Ancient Text</a>
-    <a href="#">Archive</a>
-    <a href="#">Subscribe</a>
-  </nav>
+  <div class="foot-mark">
+    <div class="ampers">Ink <em>&amp;</em> East</div>
+    <span class="cn">墨 與 東</span>
+    <span class="sub">An independent digital journal · Published when ready · Est. 2026</span>
+  </div>
+
+  <div class="foot-cols">
+    <div>
+      <h5>The Journal <span class="cn">關 於</span></h5>
+      <p class="mission">Ink &amp; East publishes a single issue when a single issue is ready. Each one answers, in plain English, a modern question — through Chinese classical thought, original stories, and reader letters.</p>
+      <p class="also-by">Also kept by the editors —<br>a small shop of objects, <a href="./spatial-flow-v1.html">Spatial Flow →</a></p>
+    </div>
+    <div>
+      <h5>Read <span class="cn">讀</span></h5>
+      <ul>
+        <li><a href="./ink-east-issue-001-v1.html">This Issue · 001</a></li>
+        <li><a href="./ink-east-v1.html">Home</a></li>
+        <li><a href="#">Reading Room (VIP)</a></li>
+        <li><a href="#">Field Notes</a></li>
+        <li><a href="#">Editor's Letters</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Speak <span class="cn">問</span></h5>
+      <ul>
+        <li><a href="#">Ask the Ancient Text</a></li>
+        <li><a href="#">Suggest an Issue Theme</a></li>
+        <li><a href="#">Vote · Patrons only</a></li>
+        <li><a href="#">Reader Notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Studio <span class="cn">寫</span></h5>
+      <ul>
+        <li><a href="#">Custom Ebook Studio</a></li>
+        <li><a href="#">Process &amp; Pricing</a></li>
+        <li><a href="#">Past Manuscripts</a></li>
+        <li><a href="#">Submit a brief</a></li>
+        <li><a href="#">Editorial standards</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="colophon-final">
+    <span>© 2026 Ink &amp; East · Published quietly</span>
+    <span>Set in EB Garamond, Inter &amp; Noto Serif SC</span>
+    <span>ISSN — 2026.001</span>
+  </div>
 </footer>
 
 </body>
