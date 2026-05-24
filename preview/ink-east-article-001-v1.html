@@ -450,24 +450,28 @@
   }
 
   /* ============================================
-     PAYWALL — invitation band
-     A chapter-break that spans page width on desktop.
-     Editor's voice, not SaaS pricing card.
+     SUPPORT BAND — end-of-essay invitation
+     This is NOT a paywall. The essay above is free
+     to read in full. This band sits at the foot of
+     every public essay as the journal's quiet,
+     donation-style ask. Visual rule: not a card
+     (no border, no fill) — instead, a chapter-end
+     opening in the page itself, marked by an ink
+     rule above and a vermilion bar that anchors it.
      ============================================ */
-  .paywall-wrap {
-    margin: 96px 0 0;
+  .support-band {
+    display: block;
+    max-width: 1100px;
+    margin: 96px auto 0;
     padding: 0 28px;
   }
-  .paywall {
-    max-width: 1100px;
-    margin: 0 auto;
-    background: var(--paper-light);
-    border: 1px solid var(--ink);
-    padding: 72px 56px 60px;
+  .support-card {
+    border-top: 1px solid var(--ink);
+    padding: 80px 28px 40px;
     position: relative;
     text-align: center;
   }
-  .paywall::before {
+  .support-card::before {
     content: "";
     position: absolute;
     top: -1px;
@@ -477,24 +481,24 @@
     background: var(--seal);
     transform: translateX(-50%);
   }
-  .paywall .pw-inner { max-width: 580px; margin: 0 auto; }
-  .paywall .pw-label {
+  .support-card .sb-inner { max-width: 600px; margin: 0 auto; }
+  .support-card .sb-label {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--seal);
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
-  .paywall .pw-cn {
+  .support-card .sb-cn {
     font-family: var(--serif-cn);
     font-size: 16px;
     letter-spacing: 0.5em;
     color: var(--ink-soft);
-    margin-bottom: 32px;
+    margin-bottom: 36px;
     font-weight: 400;
   }
-  .paywall h3 {
+  .support-card h3 {
     font-family: var(--serif-en);
     font-style: italic;
     font-size: clamp(22px, 2.4vw, 28px);
@@ -503,16 +507,16 @@
     line-height: 1.4;
     margin-bottom: 24px;
   }
-  .paywall h3 em { font-style: normal; color: var(--seal); }
-  .paywall p {
+  .support-card h3 em { font-style: normal; color: var(--seal); }
+  .support-card p {
     font-family: var(--serif-en);
     font-size: 16px;
     line-height: 1.75;
     color: var(--ink-soft);
     margin-bottom: 36px;
   }
-  .paywall p em { font-style: italic; color: var(--ink); }
-  .paywall .pw-cta {
+  .support-card p em { font-style: italic; color: var(--ink); }
+  .support-card .sb-cta {
     display: inline-flex;
     align-items: center;
     gap: 12px;
@@ -525,24 +529,24 @@
     padding: 16px 30px;
     transition: all .25s;
   }
-  .paywall .pw-cta:hover { background: var(--ink); color: var(--paper-light); }
-  .paywall .pw-cta::after { content: "→"; font-family: var(--serif-en); font-style: italic; font-size: 14px; }
-  .paywall .pw-quiet {
+  .support-card .sb-cta:hover { background: var(--ink); color: var(--paper-light); }
+  .support-card .sb-cta::after { content: "→"; font-family: var(--serif-en); font-style: italic; font-size: 14px; }
+  .support-card .sb-quiet {
     margin-top: 28px;
     font-family: var(--serif-en);
     font-style: italic;
     font-size: 14px;
     color: var(--ink-soft);
   }
-  .paywall .pw-quiet a {
+  .support-card .sb-quiet a {
     color: var(--ink);
     border-bottom: 1px solid var(--rule);
     padding-bottom: 1px;
     margin: 0 4px;
     transition: all .2s;
   }
-  .paywall .pw-quiet a:hover { color: var(--seal); border-color: var(--seal); }
-  .paywall .pw-divider { display: inline-block; color: var(--ink-faint); margin: 0 6px; }
+  .support-card .sb-quiet a:hover { color: var(--seal); border-color: var(--seal); }
+  .support-card .sb-divider { display: inline-block; color: var(--ink-faint); margin: 0 6px; }
 
   /* ============================================
      ARTICLE FOOTER — author / related / notes
@@ -899,8 +903,8 @@
     .body-inner > p.lede::first-letter { font-size: 64px; }
     .pull-quote { padding: 24px 0 24px 22px; }
     .pull-quote blockquote { font-size: 21px; }
-    .paywall-wrap { padding: 0 20px; }
-    .paywall { padding: 48px 24px 40px; }
+    .support-band { padding: 0 20px; }
+    .support-card { padding: 56px 4px 24px; }
     .post-foot { padding: 0 20px; }
     .notes-stub { padding: 0 20px 32px; }
     .notes-stub .empty { padding: 28px 20px; font-size: 15px; }
@@ -943,8 +947,6 @@
       <a href="./ink-east-issue-001-v1.html">Issue 001 · 無 · Wu Wei</a>
       <span class="dot">·</span>
       <span>Modern Essay · No. 03</span>
-      <span class="dot">·</span>
-      <span class="lock">Reader Room essay</span>
     </div>
 
     <h1 class="article-title">
@@ -968,12 +970,14 @@
 
 
 <!-- ============================================
-     BLOCK: article-body (PUBLIC PORTION ~30%)
-     RULE: server must render only the first 30%
-           when user is guest or free-tier.
-           Do NOT use display:none or CSS-based hide.
-           The locked content must never reach the
-           browser when the user is not authorized.
+     BLOCK: article-body (FULL POST CONTENT)
+     This essay is free to read in full. The
+     server renders the entire post_content for
+     all users — guest, member, or otherwise.
+     The end-of-essay invitation block (further
+     down in this file) is the only paid-related
+     surface on the page, and it is shown to
+     everyone, not as a wall.
      ============================================ -->
 <div class="article-layout">
 
@@ -1048,17 +1052,73 @@
     </p>
 
     <p>
-      The problem with this is not that it is wrong. The problem is that it is a technique — and like all techniques, it eventually becomes another item on the list of things you are failing to do well enough. You did not meditate for long enough. You did not sleep for the recommended hours. You did not journal in the recommended way. The hum returns,
+      The problem with this is not that it is wrong. The problem is that it is a technique — and like all techniques, it eventually becomes another item on the list of things you are failing to do well enough. You did not meditate for long enough. You did not sleep for the recommended hours. You did not journal in the recommended way. The hum returns, just at a different frequency. It scolds you now in the language of self-improvement instead of work. You are not less anxious. You are anxious about the right things now.
     </p>
 
-    <!-- Footnotes for the visible portion of the article.
-         When article is unlocked, this footnotes block
-         re-renders at the very end with all numbered notes. -->
+    <p>
+      The old texts seem to know something the technique-based answer to rest does not. The hum is not the symptom of an overwork-shaped life. The hum is the proof that you have learned something, very deeply, about how the world rewards attention: only if you keep pushing. Until that lesson is unlearned, no morning routine will hold.
+    </p>
+
+
+    <div class="sub-head" id="sec-second-mind">
+      <h2>The <em>second</em> mind.</h2>
+      <span class="cn">第 二 心 智</span>
+    </div>
+
+    <p>
+      There is a passage in the <em>Zhuangzi</em><a href="#fn-3" class="fn">3</a> in which Confucius's student Yan Hui says he has been practicing what he calls <em>xīn zhāi</em> — fasting of the heart-mind. He explains it like this: he has stopped listening with his ears. Then he stopped listening with his mind. Now, he says, he listens with his <em>qi</em>, his breath. The teacher approves: this, he says, is the only way to begin to know anything.
+    </p>
+
+    <p>
+      What he is describing, almost two and a half thousand years ago, is something cognitive scientists today have a name for — the <em>default mode network</em>, the layer of the brain that runs when you are not, on the surface, doing anything in particular. The voice in the back of the head. The small narrator that arrives the moment a task ends. The soft hum of <em>I should be</em>. The <em>Zhuangzi</em> calls it the second mind. Modern neuroscience calls it the default. Both are saying the same thing: there is a layer of you that is running even when you are not running it, and a great deal of your suffering comes from confusing this layer with the speaker.
+    </p>
+
+    <p>
+      To rest, in this older grammar, is not to silence this second mind. It is to recognize that you are not it. You hear it the way you hear a neighbour through a thin wall — with attention, but without obedience. This is harder than it sounds, because the second mind has, for most adults, been speaking continuously and without interruption for so long that we have stopped distinguishing it from ourselves. We mistake its anxieties for our preferences. We mistake its forecasts of disaster for prudence. We obey it because we have forgotten that there is anyone else.
+    </p>
+
+
+    <figure class="pull-quote">
+      <blockquote>
+        Rest, in this grammar, is not <em>silence</em>. It is the moment you realize you are not the voice in the next room — only the one who has been listening to it.
+      </blockquote>
+      <div class="pq-cn">休 者，非 寂 也 · 乃 知 言 之 出 於 鄰 室</div>
+    </figure>
+
+
+    <div class="sub-head" id="sec-conclusion">
+      <h2>What rest actually <em>asks</em> of us.</h2>
+      <span class="cn">休 之 為 何</span>
+    </div>
+
+    <p>
+      So what does rest actually ask of us? Less than the wellness industry suggests, and a little more than we want to admit. It does not ask us to optimize anything. It does not ask us to download an app, or to wake at five, or to drink the water with the lemon in it. It asks us, in fact, only to do less.
+    </p>
+
+    <p>
+      But "less" here is not subtraction. It is a willingness to let some things go on without our supervision. It is the moment you let the kettle boil without watching it. The moment you let the email sit without answering. The moment you let the day pass without making it produce anything you can show. This is the practice the old texts called <em>letting heaven be heaven</em><a href="#fn-4" class="fn">4</a> — letting the world arrange the parts of itself that it is, in any case, going to arrange, with or without your help.
+    </p>
+
+    <p>
+      What you discover, doing this, is that almost nothing collapses. The kettle boils. The email gets answered later, and was less urgent than it appeared. The day passes, and the world has, in your absence from its management, somehow continued. You learn, slowly, that you were not as necessary as you had been told.
+    </p>
+
+    <p>
+      This is the gift, if there is one, of the older grammar. It does not promise that you will be happier or more productive, or that you will sleep better. It promises only that you will, eventually, become smaller — in the precise way that a person becomes smaller when they stop carrying weights they were never asked to lift. The hum, when this happens, does not stop. But it begins to sound, for the first time, like the weather, rather than like a verdict. You learn to live with weather. That is the whole of it.
+    </p>
+
+
+    <!-- BLOCK: footnotes (full)
+         Re-rendered at the end of the post when the
+         article is read in full. Numbered notes match
+         <a class="fn"> anchors in body. -->
     <aside class="footnotes">
-      <div class="fn-label">Notes — read so far</div>
+      <div class="fn-label">Notes</div>
       <ol>
         <li id="fn-1"><b>Action that has stopped fighting the shape of things.</b> Paraphrased from Roger T. Ames &amp; David L. Hall, <em>Daodejing: A Philosophical Translation</em> (Ballantine, 2003), p. 64.</li>
         <li id="fn-2"><b>Xiāo yáo · 逍遙.</b> Title of the opening chapter of the <em>Zhuangzi</em>. Often rendered in English as "Free and Easy Wandering" — see Burton Watson, <em>The Complete Works of Chuang Tzu</em> (Columbia, 1968).</li>
+        <li id="fn-3"><b>Xīn zhāi · 心齋.</b> "Fasting of the heart-mind." From <em>Zhuangzi</em>, Inner Chapters, ch. 4. The description of listening "with the qi" follows Watson's translation; the gloss is the author's.</li>
+        <li id="fn-4"><b>Letting heaven be heaven.</b> Adapted from a recurring formulation in the <em>Zhuangzi</em> — usually rendered "let what is so by itself be so." See A. C. Graham, <em>Chuang-Tzu: The Inner Chapters</em> (Allen &amp; Unwin, 1981), pp. 86–88.</li>
       </ol>
     </aside>
 
@@ -1070,37 +1130,49 @@
 
 
 <!-- ============================================
-     BLOCK: paywall (invitation band)
-     STATE rendered: GUEST (not signed in)
-     ACCESS RULE: post.is_vip_locked == true
-                  AND user.role NOT IN [reader, patron]
-     SERVER-SIDE: this block REPLACES the remaining 70%
-                  of post_content. Locked content must
-                  never be sent to the browser.
+     BLOCK: support-band (end-of-essay invitation)
+     STATE rendered: ALWAYS shown to GUEST and to
+                     LOGGED-IN users who are NOT yet
+                     paying members. Hidden for users
+                     with role IN [reader, patron].
+     ROLE: This is NOT a paywall. The essay above is
+           free to read in full. This block is the
+           journal's quiet, donation-style invitation
+           that sits at the foot of every public
+           essay — closer in tone to NPR / Wikipedia
+           / Guardian end-of-article asks than to a
+           SaaS upsell.
      LINKS:
-       - main CTA      → /reading-room
-       - "membership"  → /membership
+       - main CTA      → /membership   (the "join us" page)
+       - "what membership includes" → /reading-room
+                         (member-facing product page)
        - "Sign in"     → wp-login.php?redirect_to={current}
        - "Restore"     → /account/restore-access
-     NOTE: NO prices/tiers here. Purchase decisions live
-           on /membership. This card is an invitation,
-           not a checkout.
+     COPY RULES (do not weaken):
+       - No prices, no tiers, no comparison table.
+       - No urgency words ("now", "today", "limited").
+       - First-person plural ("we", "us") only when
+         it sounds like editors, not marketers.
      ============================================ -->
-<aside class="paywall-wrap">
-  <div class="paywall">
-    <div class="pw-inner">
-      <div class="pw-label">— Continue reading —</div>
-      <div class="pw-cn">餘 在 室 內</div>
-      <h3>The rest of this essay is kept in the <em>Reading Room</em>.</h3>
+<aside class="support-band">
+  <div class="support-card">
+    <div class="sb-inner">
+      <div class="sb-label">— If you read this far —</div>
+      <div class="sb-cn">讀 至 此 處</div>
+
+      <h3>Ink &amp; East is kept alive by the small fees of those who read it.</h3>
+
       <p>
-        Ink &amp; East is read in part by everyone — and in full by those who pay a small fee to keep it <em>slow, carefully edited, and free of advertising</em> forever.
+        We publish slowly. We edit carefully. We carry no advertising and never will. The journal stays this way because some of its readers pay a small monthly fee to keep it that way — and if this essay was worth your time, the most useful thing you can do for it is <em>become one of them</em>.
       </p>
-      <a href="/reading-room" class="pw-cta">About the Reading Room</a>
-      <p class="pw-quiet">
-        or <a href="/membership">read about membership</a>
-        <span class="pw-divider">·</span>
+
+      <a href="/membership" class="sb-cta">Become a member</a>
+
+      <p class="sb-quiet">
+        or <a href="/reading-room">read what membership includes</a>
+        <span class="sb-divider">·</span>
         Already a member? <a href="/wp-login.php">Sign in</a>
-        <span class="pw-divider">·</span>
+        <span class="sb-divider">·</span>
         Lost access? <a href="/account/restore-access">Restore</a>
       </p>
     </div>
