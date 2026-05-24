@@ -143,6 +143,7 @@ ink-east-article-001-v1.html (文章)
 | 页面验收 checklist | BRIEF §二十八 L1079-1157 |
 | URL / SEO 规则 | BRIEF §二十 L793-835 |
 | 视觉系统两站对比 | DESIGN-CONSTRAINTS.md L114-148 |
+| **模块任务清单 / 每窗口规格** | **INK-EAST-ROADMAP.md** |
 
 ## 7. 已知现象（不是冲突）
 
