@@ -450,20 +450,20 @@
   }
 
   /* ============================================
-     PAYWALL CARD
-     Visual rule: restrained — like turning to a
-     page that says 'private'. NOT a marketing card.
-     Server-side rendered. CSS hide is not enough.
+     PAYWALL — invitation band
+     A chapter-break that spans page width on desktop.
+     Editor's voice, not SaaS pricing card.
      ============================================ */
   .paywall-wrap {
-    max-width: var(--col);
-    margin: 80px auto 0;
+    margin: 96px 0 0;
     padding: 0 28px;
   }
   .paywall {
+    max-width: 1100px;
+    margin: 0 auto;
     background: var(--paper-light);
     border: 1px solid var(--ink);
-    padding: 56px 32px 40px;
+    padding: 72px 56px 60px;
     position: relative;
     text-align: center;
   }
@@ -477,145 +477,72 @@
     background: var(--seal);
     transform: translateX(-50%);
   }
+  .paywall .pw-inner { max-width: 580px; margin: 0 auto; }
   .paywall .pw-label {
     font-family: var(--mono);
     font-size: 10px;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--seal);
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .paywall .pw-cn {
     font-family: var(--serif-cn);
-    font-size: 17px;
+    font-size: 16px;
     letter-spacing: 0.5em;
     color: var(--ink-soft);
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     font-weight: 400;
   }
   .paywall h3 {
     font-family: var(--serif-en);
     font-style: italic;
-    font-size: 22px;
+    font-size: clamp(22px, 2.4vw, 28px);
     font-weight: 400;
     color: var(--ink);
     line-height: 1.4;
-    max-width: 460px;
-    margin: 0 auto 8px;
+    margin-bottom: 24px;
   }
-  .paywall .pw-progress {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
+  .paywall h3 em { font-style: normal; color: var(--seal); }
+  .paywall p {
+    font-family: var(--serif-en);
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--ink-soft);
     margin-bottom: 36px;
   }
-  .paywall .pw-progress b { color: var(--seal); font-weight: 500; }
-
-  .paywall .tiers {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin: 0 0 28px;
-  }
-  .paywall .tier {
-    border: 1px solid var(--rule);
-    padding: 22px 20px 20px;
-    text-align: left;
-    background: var(--paper);
-    transition: all .2s;
-    cursor: pointer;
-    position: relative;
-  }
-  .paywall .tier:hover { border-color: var(--ink); }
-  .paywall .tier.featured {
-    border-color: var(--ink);
-    background: var(--paper);
-  }
-  .paywall .tier.featured::before {
-    content: "推 薦";
-    position: absolute;
-    top: -1px;
-    right: -1px;
-    background: var(--seal);
-    color: var(--paper-light);
-    font-family: var(--serif-cn);
-    font-size: 10px;
-    letter-spacing: 0.3em;
-    padding: 5px 10px 4px 12px;
-    line-height: 1;
-  }
-  .paywall .tier .name {
-    font-family: var(--serif-en);
-    font-style: italic;
-    font-size: 19px;
-    color: var(--ink);
-    margin-bottom: 4px;
-    font-weight: 500;
-  }
-  .paywall .tier .name-cn {
-    font-family: var(--serif-cn);
-    font-size: 11px;
-    color: var(--ink-faint);
-    letter-spacing: 0.3em;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--rule-soft);
-  }
-  .paywall .tier .price {
+  .paywall p em { font-style: italic; color: var(--ink); }
+  .paywall .pw-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
     font-family: var(--mono);
-    font-size: 13px;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
     color: var(--ink);
-    letter-spacing: 0.05em;
-    line-height: 1.55;
+    border: 1px solid var(--ink);
+    padding: 16px 30px;
+    transition: all .25s;
   }
-  .paywall .tier .price b {
-    color: var(--seal);
-    font-weight: 500;
-    font-family: var(--serif-en);
-    font-size: 26px;
-    font-style: italic;
-    letter-spacing: 0;
-    margin-right: 2px;
-  }
-  .paywall .tier .price .yr {
-    display: block;
-    font-size: 10px;
-    color: var(--ink-faint);
-    letter-spacing: 0.15em;
-    margin-top: 2px;
-  }
-  .paywall .tier .perks {
-    font-family: var(--serif-en);
-    font-style: italic;
-    font-size: 13.5px;
-    color: var(--ink-soft);
-    line-height: 1.6;
-    margin-top: 14px;
-    border-top: 1px solid var(--rule-soft);
-    padding-top: 12px;
-  }
-
+  .paywall .pw-cta:hover { background: var(--ink); color: var(--paper-light); }
+  .paywall .pw-cta::after { content: "→"; font-family: var(--serif-en); font-style: italic; font-size: 14px; }
   .paywall .pw-quiet {
+    margin-top: 28px;
     font-family: var(--serif-en);
     font-style: italic;
     font-size: 14px;
     color: var(--ink-soft);
-    margin-top: 18px;
   }
   .paywall .pw-quiet a {
     color: var(--ink);
     border-bottom: 1px solid var(--rule);
     padding-bottom: 1px;
     margin: 0 4px;
+    transition: all .2s;
   }
   .paywall .pw-quiet a:hover { color: var(--seal); border-color: var(--seal); }
-  .paywall .pw-divider {
-    display: inline-block;
-    color: var(--ink-faint);
-    margin: 0 8px;
-  }
+  .paywall .pw-divider { display: inline-block; color: var(--ink-faint); margin: 0 6px; }
 
   /* ============================================
      ARTICLE FOOTER — author / related / notes
@@ -973,8 +900,7 @@
     .pull-quote { padding: 24px 0 24px 22px; }
     .pull-quote blockquote { font-size: 21px; }
     .paywall-wrap { padding: 0 20px; }
-    .paywall { padding: 40px 24px 32px; }
-    .paywall .tiers { grid-template-columns: 1fr; }
+    .paywall { padding: 48px 24px 40px; }
     .post-foot { padding: 0 20px; }
     .notes-stub { padding: 0 20px 32px; }
     .notes-stub .empty { padding: 28px 20px; font-size: 15px; }
@@ -1140,54 +1066,46 @@
 </section>
 
 
+</div><!-- /.article-layout -->
+
+
 <!-- ============================================
-     BLOCK: paywall
+     BLOCK: paywall (invitation band)
      STATE rendered: GUEST (not signed in)
      ACCESS RULE: post.is_vip_locked == true
                   AND user.role NOT IN [reader, patron]
-     SERVER-SIDE: this block REPLACES the remaining
-                  70% of post_content. Locked content
-                  must never be sent to the browser.
-     PRICING SOURCE: site option (membership_tiers)
-                     OR Memberful / PMP plugin lookup
-     ACTIONS:
-       - "Become a Reader"  → /membership/reader
-       - "Become a Patron"  → /membership/patron
-       - "Sign in"          → wp-login.php?redirect_to={current}
-       - "Restore access"   → /account/restore-access
+     SERVER-SIDE: this block REPLACES the remaining 70%
+                  of post_content. Locked content must
+                  never be sent to the browser.
+     LINKS:
+       - main CTA      → /reading-room
+       - "membership"  → /membership
+       - "Sign in"     → wp-login.php?redirect_to={current}
+       - "Restore"     → /account/restore-access
+     NOTE: NO prices/tiers here. Purchase decisions live
+           on /membership. This card is an invitation,
+           not a checkout.
      ============================================ -->
-<div class="paywall-wrap">
-  <aside class="paywall">
-    <div class="pw-label">— Continue reading —</div>
-    <div class="pw-cn">為 員 篇</div>
-
-    <h3>"Why doing nothing is sometimes the hardest practice."</h3>
-    <p class="pw-progress">You've read about <b>30%</b> of this essay · the rest is for members</p>
-
-    <div class="tiers">
-      <a href="/membership/reader" class="tier">
-        <div class="name">Reader</div>
-        <div class="name-cn">讀 者</div>
-        <div class="price"><b>¥38</b>/ month<span class="yr">or ¥380 / year</span></div>
-        <div class="perks">All issue essays, in full. Reader Notes. Letters archive.</div>
-      </a>
-      <a href="/membership/patron" class="tier featured">
-        <div class="name">Patron</div>
-        <div class="name-cn">護 者</div>
-        <div class="price"><b>¥98</b>/ month<span class="yr">or ¥980 / year</span></div>
-        <div class="perks">Everything in Reader, plus VIP long reads, voting on themes, and the printed annual.</div>
-      </a>
+<aside class="paywall-wrap">
+  <div class="paywall">
+    <div class="pw-inner">
+      <div class="pw-label">— Continue reading —</div>
+      <div class="pw-cn">餘 在 室 內</div>
+      <h3>The rest of this essay is kept in the <em>Reading Room</em>.</h3>
+      <p>
+        Ink &amp; East is read in part by everyone — and in full by those who pay a small fee to keep it <em>slow, carefully edited, and free of advertising</em> forever.
+      </p>
+      <a href="/reading-room" class="pw-cta">About the Reading Room</a>
+      <p class="pw-quiet">
+        or <a href="/membership">read about membership</a>
+        <span class="pw-divider">·</span>
+        Already a member? <a href="/wp-login.php">Sign in</a>
+        <span class="pw-divider">·</span>
+        Lost access? <a href="/account/restore-access">Restore</a>
+      </p>
     </div>
-
-    <p class="pw-quiet">
-      Already a member? <a href="/wp-login.php">Sign in</a>
-      <span class="pw-divider">·</span>
-      Lost access? <a href="/account/restore-access">Restore</a>
-    </p>
-  </aside>
-</div>
-
-</div><!-- /.article-layout -->
+  </div>
+</aside>
 
 
 <!-- ============================================
