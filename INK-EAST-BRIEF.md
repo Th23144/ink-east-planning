@@ -1322,3 +1322,20 @@ Issue 页 (ink-east-issue-001-v1.html)
 - [ ] `.kiro/steering/ink-east-handoff.md` 还没建（建好后开新窗口可直接读这一份引导）
 - [ ] 价格、几档 tier、月付/年付的具体形式 — 待用户后续确定
 - [ ] 是否需要做"已登录免费用户"的 paywall 变体 — 待用户确定
+
+
+### 工作日志补遗 · steering 体系建立 + Paywall 模型修订
+
+- 建立 `.kiro/steering/ink-east-handoff.md`（auto-load），自此新窗口可自启动，免读全 BRIEF
+- handoff §1 加入「处理大文件的标准做法」，要求 sub-agent 委派纯净化（违反纪律 = 主 context 双倍开销）
+- 两个旧标记「冲突」澄清为已知现象（不是冲突）：
+  - 价格 ¥/$ 不一致 → 已知占位差异，真定价时统一
+  - Custom Ebook vs Custom Reading → 两个独立产品，详见工作日志 §3 + 主页 Studio 区块
+- **Paywall 模型修订（重要 · 推翻 §十九 + 工作日志旧表述）**：
+  - 99% 文章 = 全免费，根本无 paywall
+  - 极少数 VIP 板块文章 = **整篇仅会员可见**，非会员只见标题 + 邀请条占位
+  - **废止「免费用户阅读前 30%」规则**（§十九 L761-790）
+  - **废止「VIP 板块文章 30% 后锁」表述**（工作日志原 §3 三种内容类型表）
+  - 气质 = 捐款邀请 / 加入社群，不是 SaaS 升级
+  - 视觉参考：`preview/ink-east-article-001-v1.html` 末尾的横向 support-band（注释标 "NOT a paywall"，VIP paywall 复用同款 visual treatment，但替换正文位置而非追加在末尾）
+- commit: (本提交，见 git log 同期记录)
