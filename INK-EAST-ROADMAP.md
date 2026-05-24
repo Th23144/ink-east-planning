@@ -10,14 +10,20 @@
 | 0 | 让仍开着的旧窗口关掉重开 | — | — | ⏳ |
 | 1 | article-002-vip 示例 VIP 文章 | preview/ink-east-article-002-vip-v1.html | 无 | ⏳ |
 | 2 | Reading Room VIP 会员中心 | preview/ink-east-reading-room-v1.html | #1 | ⏳ |
-| 3 | Membership 套餐对比页 | preview/ink-east-membership-v1.html | #1 | ⏳ |
-| 4 | 定制解读服务页（**核心商业**） | preview/ink-east-custom-reading-v1.html | 无 | ⏳ |
+| 3 | 定制解读服务页（**核心商业**） | preview/ink-east-custom-reading-v1.html | 无（可与 #1/#2 并行） | ⏳ |
+| 4 | Membership 套餐对比页 | preview/ink-east-membership-v1.html | #1 #2 | ⏳ |
 | 5a | Reader Notes 组件 stub demo | preview/ink-east-reader-notes-component-v1.html | 无 | ⏳ |
 | 5b | /community 聚合页（可选，后期） | preview/ink-east-community-v1.html | 5a | 后期 |
 | 6 | Letters 投稿表单 + Thank You | preview/ink-east-letters-form-v1.html | 无 | ⏳ |
-| 7 | Custom Ebook Studio 服务详情 | preview/ink-east-custom-ebook-v1.html | #4 | ⏳ |
+| 7 | Custom Ebook Studio 服务详情 | preview/ink-east-custom-ebook-v1.html | #3 | ⏳ |
 
 完工后逐项把状态从 ⏳ 改为 ✓。链接死链未填的不算完工。
+
+**波次划分（推荐节奏）**：
+- **Wave 1** (#1 #2 #3 #4)：核心闭环 + 启动核心商业。完成后 paywall 路径活、Custom Reading 可接活。
+- **Wave 2** (#5a #6)：互动闭环。
+- **Wave 3** (#7)：商业补完，与 #3 互相导流。
+- **Backlog**：#5b /community、VIP Paywall 3 状态变体（已合并进 #1 单 guest 状态）。
 
 ---
 
@@ -28,20 +34,20 @@
 **前置**：无
 
 **3 件套（用户开窗口前决定）**：
-- 核心规格：文章标题（中英）/ Issue 号 / 假摘要 100-150 字 / 是否要 footnote stub
-- 权限矩阵：未登录 vs 已登录免费 视觉是否完全相同？（默认是）
+- 核心规格：文章标题（中英）/ Issue 号 / 假摘要 100-150 字 / 是否要 footnote stub。**建议直接对应 BRIEF §7.2 Issue 001 第 6 条 "Control, exhaustion, and the ancient art of not forcing life"**（已预定为 VIP Long Read，天然契合）
+- 权限矩阵：未登录 vs 已登录免费 视觉是否完全相同？（默认是，仅按钮文案 "Sign in" ↔ "Sign out" 变化）
 - WP 暗示：BLOCK 注释 = `paywall-band-vip` / 是否加 `data-tier="vip"` 属性
 
 **上下游链接**：
-- 来：ink-east-issue-001-v1.html TOC 某条目（你定哪条 / 是否新增 VIP 标记）
-- 去：invitation band 主按钮 → `/reading-room`（#2 完成后激活）/ 副链接 → `/membership`（#3 完成后激活）
+- 来：ink-east-issue-001-v1.html TOC 第 6 条（直接占用现有"VIP Long Read"位）
+- 去：invitation band 主按钮 → `/reading-room`（#2 完成后激活）/ 副链接 → `/membership`（#4 完成后激活）
 
 **验收**：
 - 复用 article-001 的视觉系统（color / 字体 / footer / sidebar）
 - guest 看不到正文，只看到标题 + 摘要 + 横向 invitation band 取代正文位置
 - band 文案邀请口吻，无价格 / 无 Tier / 无购物按钮
 - BLOCK 注释明示 WP 后端契约
-- Issue 页加入入口（避免新页死链）
+- Issue 页第 6 条加 VIP 角标 + 链接（避免新页死链）
 
 ---
 
@@ -68,11 +74,35 @@
 
 ---
 
-## 任务 3 · Membership 套餐对比页
+## 任务 3 · 定制解读服务页（**真正商业核心**）
 
-**目标**：未会员用户的"为什么加入"页。语气=邀请，**不是促销**。
+**目标**：BRIEF 工作日志 §3 的 Custom Reading Service 详情页 + Submit Brief 表单。**独立于会员系统，不依赖任何前置**——可在 Wave 1 中跟 #1/#2 并行推进。
 
-**前置**：#1
+**前置**：无（独立产品）
+
+**3 件套**：
+- 核心规格：表单字段清单（建议 = 古文/神话标题 + 你的迷茫点 + 期望深度 + deadline + 联系方式）
+- 权限矩阵：所有人都能提交（包括 guest），不需登录
+- WP 暗示：Fluent Forms 后端 / 自定义 post type `custom_reading_project`
+
+**上下游链接**：
+- 来：首页 Studio 区块（你定要不要新增独立 "Custom Reading" 区块） / Reading Room "定制解读优先排队"（#2 做完后激活） / 顶部导航
+- 去：Submit Brief / Custom Ebook Studio（"想要完整电子书? →" — #7 做完后激活）
+
+**验收**：
+- **不塞进 paywall 卡片**（BRIEF 工作日志 §3 强制）
+- 不像 Fiverr / 不像电商商品页
+- 顶部条款明示"这是定制解读，不是定制电子书"+ 双向链接到 Custom Ebook
+- 流程图清楚（即便占位）
+- 未来形态（社区联盟营销 / marketplace）淡淡提一下，不主推
+
+---
+
+## 任务 4 · Membership 套餐对比页
+
+**目标**：未会员用户的"为什么加入"页。语气=邀请，**不是促销**。**放在 #2 之后是因为 Reading Room 已存在，本页可截图引用"已是会员? 进 Reading Room"作为真实参考**。
+
+**前置**：#1 #2
 
 **3 件套**：
 - 核心规格：是否做退订入口 v1 上 / 价格是显示数字还是 "by donation, optional tier"
@@ -89,30 +119,6 @@
 - 文字段落叙述会员意义，不是 bullet checklist
 - 价格如显示，标 "占位 / placeholder"
 - 与 Reading Room 职责切分清晰：本页=未会员看的销售页，不重复 Reading Room 的内容入口
-
----
-
-## 任务 4 · 定制解读服务页（**真正商业核心**）
-
-**目标**：BRIEF 工作日志 §3 的 Custom Reading Service 详情页 + Submit Brief 表单。
-
-**前置**：无
-
-**3 件套**：
-- 核心规格：表单字段清单（建议 = 古文/神话标题 + 你的迷茫点 + 期望深度 + deadline + 联系方式）
-- 权限矩阵：所有人都能提交（包括 guest），不需登录
-- WP 暗示：Fluent Forms 后端 / 自定义 post type `custom_reading_project`
-
-**上下游链接**：
-- 来：首页 Studio 区块（你定要不要新增独立 "Custom Reading" 区块） / Reading Room "定制解读优先排队" / 顶部导航
-- 去：Submit Brief / Custom Ebook Studio（"想要完整电子书? →"）
-
-**验收**：
-- **不塞进 paywall 卡片**（BRIEF 工作日志 §3 强制）
-- 不像 Fiverr / 不像电商商品页
-- 顶部条款明示"这是定制解读，不是定制电子书"+ 双向链接到 Custom Ebook
-- 流程图清楚（即便占位）
-- 未来形态（社区联盟营销 / marketplace）淡淡提一下，不主推
 
 ---
 
@@ -173,9 +179,9 @@
 
 ## 任务 7 · Custom Ebook Studio 服务详情
 
-**目标**：BRIEF §四板块4 + §十七 商业条款的服务页。**与任务 #4 是两个独立产品**（handoff §7）。
+**目标**：BRIEF §四板块4 + §十七 商业条款的服务页。**与任务 #3 是两个独立产品**（handoff §7）。
 
-**前置**：#4（让两个 Custom 服务先后到位，互相导流）
+**前置**：#3（让两个 Custom 服务先后到位，互相导流）
 
 **3 件套**：
 - 核心规格：和 Custom Reading 表单的字段差异（建议 = 项目类型 / 字数预期 / 主题 / 客户素材是否提供）
@@ -209,9 +215,9 @@
 ```
 #1 article-002-vip
   ├─→ #2 Reading Room
-  └─→ #3 Membership
+  └─→ #4 Membership (also depends on #2)
 
-#4 Custom Reading
+#3 Custom Reading (independent, can parallel with Wave 1)
   └─→ #7 Custom Ebook（互相导流）
 
 #5a Reader Notes 组件
