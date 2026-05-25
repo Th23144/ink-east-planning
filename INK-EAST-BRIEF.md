@@ -1339,3 +1339,31 @@ Issue 页 (ink-east-issue-001-v1.html)
   - 气质 = 捐款邀请 / 加入社群，不是 SaaS 升级
   - 视觉参考：`preview/ink-east-article-001-v1.html` 末尾的横向 support-band（注释标 "NOT a paywall"，VIP paywall 复用同款 visual treatment，但替换正文位置而非追加在末尾）
 - commit: (本提交，见 git log 同期记录)
+
+
+
+### 工作日志补遗 · VIP 板块独立化（IA 二分）
+
+执行任务 #1（article-002-vip）时发现 BRIEF §7.2 / §四板块1 / §九 等多处隐含「Issue 内混排免费 + VIP 文章」的旧假设。该假设与店主真实意图（VIP 应该是独立板块、独立空间、独立窗口）冲突。本次正式废止该假设，确立新信息架构。
+
+**新 IA：站点二分（架构 A）**
+
+- **Issues 主线**：所有 Issue 1-N 内的文章 100% 免费。Issue 是期刊主体的免费内容容器。
+- **VIP Library（板块）**：独立空间，所有 VIP 文章集中在此。有自己的目录/索引页 `/vip-library`。
+- **Issues 与 VIP Library 内容永不交叉**。
+- 顶部导航新增"VIP Library"项（具体在哪条菜单待定）。
+
+**因此触发的修订**：
+
+- **废止 BRIEF §7.2 Issue 001 第 6 条 "Control, exhaustion, and the ancient art of not forcing life" 标 VIP Long Read 的旧设计**。Issue 001 该位的处理：暂保留 8 条 placeholder 不动数量；TOC 第 6 条不再链 article-002-vip。该条目的最终归属（降级为免费 / 删除 / 移到 VIP Library）由后续重新规划。
+- `preview/ink-east-article-002-vip-v1.html` 文件保留作为 VIP Library 板块的内容容器示例。**不再从 Issue 001 链入**。本次回退（VIP 角标 + article-002-vip 链接撤销）。
+- ROADMAP 新增任务 **#1.5 VIP Library 索引页**（`preview/ink-east-vip-library-v1.html`）。article-002-vip 改由该索引页链入。
+- Reading Room（任务 #2）= 已登录会员的家；VIP Library = 公开可见的 VIP 目录浏览页。两者不同页面但互相链接。
+- Membership（任务 #4）的"会员能看到什么"举例可截图引用 VIP Library，而不是单篇 article-002-vip。
+
+### 给后续窗口的提醒
+
+- 任何"VIP"内容相关页面规划，先确认它属于 Issues 主线还是 VIP Library 板块
+- 不要让 Issue 系列页面混入 VIP 文章
+- VIP Library 不限于"会员中心" —— 它是公开可见的目录（含被锁的内容卡）
+- "会员中心"（Reading Room）是会员登录后的功能聚合，包含 VIP Library 入口但不等于 VIP Library

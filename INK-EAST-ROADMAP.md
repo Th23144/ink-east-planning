@@ -8,8 +8,9 @@
 | # | 任务 | 文件 | 前置 | 状态 |
 |---|---|---|---|---|
 | 0 | 让仍开着的旧窗口关掉重开 | — | — | ⏳ |
-| 1 | article-002-vip 示例 VIP 文章 | preview/ink-east-article-002-vip-v1.html | 无 | ⏳ |
-| 2 | Reading Room VIP 会员中心 | preview/ink-east-reading-room-v1.html | #1 | ⏳ |
+| 1 | article-002-vip 示例 VIP 文章 | preview/ink-east-article-002-vip-v1.html | 无 | ✓（00bda26；Issue 001 TOC 接入已废止见日志补遗） |
+| 1.5 | **VIP Library 索引页**（NEW · IA 二分） | preview/ink-east-vip-library-v1.html | #1 | ⏳ |
+| 2 | Reading Room VIP 会员中心 | preview/ink-east-reading-room-v1.html | #1.5 | ⏳ |
 | 3 | 定制解读服务页（**核心商业**） | preview/ink-east-custom-reading-v1.html | 无（可与 #1/#2 并行） | ⏳ |
 | 4 | Membership 套餐对比页 | preview/ink-east-membership-v1.html | #1 #2 | ⏳ |
 | 5a | Reader Notes 组件 stub demo | preview/ink-east-reader-notes-component-v1.html | 无 | ⏳ |
@@ -20,7 +21,7 @@
 完工后逐项把状态从 ⏳ 改为 ✓。链接死链未填的不算完工。
 
 **波次划分（推荐节奏）**：
-- **Wave 1** (#1 #2 #3 #4)：核心闭环 + 启动核心商业。完成后 paywall 路径活、Custom Reading 可接活。
+- **Wave 1** (#1 ✓ → #1.5 → #2 → #3 → #4)：核心闭环 + 启动核心商业。完成后 paywall 路径活、Custom Reading 可接活。
 - **Wave 2** (#5a #6)：互动闭环。
 - **Wave 3** (#7)：商业补完，与 #3 互相导流。
 - **Backlog**：#5b /community、VIP Paywall 3 状态变体（已合并进 #1 单 guest 状态）。
@@ -28,6 +29,8 @@
 ---
 
 ## 任务 1 · article-002-vip 示例 VIP 文章
+
+> ⚠️ **已修订（IA 二分 · 2026-05-25）**：本任务输出文件保留作为 VIP Library 板块的内容容器示例，但 **Issue 001 TOC 接入部分已废止**（见 BRIEF 末尾日志补遗 · VIP 板块独立化）。article-002-vip 改由新 #1.5 VIP Library 索引页链入，**不再从 Issue 001 链入**。
 
 **目标**：仓库里第一篇 VIP 板块文章实物。Reading Room / Membership 都需要它作为内容容器示例。
 
@@ -48,6 +51,30 @@
 - band 文案邀请口吻，无价格 / 无 Tier / 无购物按钮
 - BLOCK 注释明示 WP 后端契约
 - Issue 页第 6 条加 VIP 角标 + 链接（避免新页死链）
+
+---
+
+## 任务 1.5 · VIP Library 索引页（NEW · IA 二分新增）
+
+**目标**：VIP 板块的独立"封面/目录"页。所有 VIP 文章集中在此。public-facing —— 任何人可见标题/简介/类别，但点进每篇 article 时正文被 paywall band 取代。
+
+**前置**：#1（需 article-002-vip 作为板块内首篇文章）
+
+**3 件套**：
+- 核心规格：板块定位文案（"VIP Library · 一个独立的小书房"语气）/ 是否按"期"组织（建议：独立的 vol.01 / vol.02 编号系统，与 Issues 主线分开） / 至少 3-5 条 placeholder 文章卡（其中 1 条真链 article-002-vip）
+- 权限矩阵：guest / 已登录免费 / Reader / Patron 都看到同一个 catalog；仅"Enter"按钮文案变化（guest = "Enter to subscribe" / 会员 = "Open"）
+- WP 暗示：URL = `/vip-library`；自定义 post type `vip_article`；BLOCK 注释 `<!-- BLOCK: vip-library-index -->`
+
+**上下游链接**：
+- 来：顶部导航新增 "VIP Library" 项 / Reading Room "VIP Library" section / Membership "会员能看到什么"举例
+- 去：每张文章卡 → 单篇 VIP article（首批仅 article-002-vip 真链，其它 placeholder 卡 `#` 死链 + TODO 注释）
+
+**验收**：
+- 视觉是"独立的小书房" —— 与 Issues 主线 cover 视觉**有意识地区分**（避免被误以为是 Issue 9 之类）
+- catalog 每张卡明示是 VIP（朱砂方印 / "VIP" 角标）
+- 不出现"购买 / 升级"等销售感词；最多 "Open" 或 "Enter"
+- 与 Reading Room 关系明示：本页 = catalog（公开浏览），Reading Room = 会员中心（含本页入口）
+- BLOCK 注释明示 WP 后端契约
 
 ---
 
@@ -213,9 +240,10 @@
 ## 任务之间的强依赖图
 
 ```
-#1 article-002-vip
-  ├─→ #2 Reading Room
-  └─→ #4 Membership (also depends on #2)
+#1 article-002-vip ✓
+  └─→ #1.5 VIP Library 索引页 (NEW · IA 二分)
+       ├─→ #2 Reading Room (含 VIP Library 入口)
+       └─→ #4 Membership (举例引用)
 
 #3 Custom Reading (independent, can parallel with Wave 1)
   └─→ #7 Custom Ebook（互相导流）
