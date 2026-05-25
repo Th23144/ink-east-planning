@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Reading — Ink & East</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================
+     INK & EAST · CUSTOM READING (定制解讀)
+     ============================================
+     URL on production:        /services/custom-reading
+     ROLE:    The journal's real commercial core. NOT a paywall,
+              NOT a membership tier, NOT an ebook order form.
+              An editorial service: a slow, written reading of
+              one classical Chinese passage, prepared by hand
+              for one reader.
+     OPEN TO: everyone — guest, logged-in free, Reader, Patron.
+              Tiers receive small courtesies (priority / discount)
+              but no role gates the form itself.
+     DEFAULT RENDERED STATE: guest (no Patron banner, no Reader
+              discount note). The two member variants live as
+              HTML comments inside the form block, marked for
+              server-side replacement.
+
+     SISTER PRODUCT: Custom Ebook Studio (roadmap #7 — todo).
+              A different, longer service. Cross-linked at the
+              top of this page so a reader who landed on the
+              wrong product can step across to the right one.
+
+     What MUST stay out of this view:
+       - "Add to Cart" / "Buy Now" buttons
+       - tier comparison cards / "推薦" badges
+       - urgency copy ("limited time", "starting today")
+       - any visual that reads as Fiverr / Etsy / e-commerce
+       - any conflation with Membership
+
+     Anchors: 朱砂方印「私」(hero), 中文 numerals on the process
+     steps, hairline rules between sections, footer = site-wide.
+     ============================================ -->
+
+<style>
+:root{--paper:#f4ede0;--paper-light:#faf5e9;--paper-dark:#e8dfce;--ink:#1a1611;--ink-soft:#4a4036;--ink-faint:#8a7f70;--seal:#a02d23;--seal-deep:#7a1f1a;--rule:rgba(26,22,17,.28);--rule-soft:rgba(26,22,17,.12);--serif-en:"EB Garamond","Noto Serif SC",Georgia,serif;--serif-cn:"Noto Serif SC","EB Garamond",serif;--sans:"Inter",-apple-system,"PingFang SC",sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;--col:680px}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--serif-en);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55;font-feature-settings:"liga" 1,"kern" 1,"onum" 1}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--seal);color:var(--paper-light)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.5;mix-blend-mode:multiply;background-image:radial-gradient(circle at 25% 30%,rgba(26,22,17,.025) 0%,transparent 40%),radial-gradient(circle at 75% 60%,rgba(26,22,17,.02) 0%,transparent 35%),radial-gradient(circle at 50% 80%,rgba(26,22,17,.015) 0%,transparent 30%)}
+
+/* BACKBAR — same family as the rest of the site */
+.backbar{background:var(--ink);color:var(--paper-light);padding:8px 28px;font-family:var(--mono);font-size:10px;display:flex;justify-content:space-between;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap;gap:14px;align-items:center}
+.backbar a{color:var(--seal);border-bottom:1px dashed var(--seal);padding-bottom:1px}
+.backbar .right{color:var(--ink-faint)}
+
+/* DISAMBIGUATION STRIP — top of page, before hero.
+   Clarifies "this is Custom Reading, not Custom Ebook".
+   Visual: quiet horizontal band, hairline rule, no fill. */
+.cr-disambig{padding:22px 28px;border-bottom:1px solid var(--rule-soft);background:var(--paper-light)}
+.cr-disambig .inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+.cr-disambig .you-here{color:var(--seal);font-weight:500}
+.cr-disambig .body{font-family:var(--serif-en);font-style:italic;font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink-soft);line-height:1.55}
+.cr-disambig .body em{font-style:normal;color:var(--ink)}
+.cr-disambig .other{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s;white-space:nowrap}
+.cr-disambig .other:hover{color:var(--seal);border-color:var(--seal)}
+.cr-disambig .other::after{content:" →";font-family:var(--serif-en);font-style:italic}
+
+/* HERO — single column, generous, no big character.
+   The seal mark sits to the right as a small stamp. */
+.cr-hero{padding:96px 28px 80px;border-bottom:1px solid var(--ink);text-align:center;position:relative}
+.cr-hero .inner{max-width:760px;margin:0 auto}
+.cr-hero .vlib-rule{width:64px;height:1px;background:var(--ink);margin:0 auto 28px;position:relative}
+.cr-hero .vlib-rule::after{content:"";position:absolute;left:50%;top:-3px;width:7px;height:7px;background:var(--seal);transform:translateX(-50%);border-radius:1px}
+.cr-hero .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:24px}
+.cr-hero h1{font-family:var(--serif-en);font-style:italic;font-size:clamp(40px,5.4vw,72px);font-weight:400;line-height:1.05;letter-spacing:-.012em;margin-bottom:20px;color:var(--ink)}
+.cr-hero h1 b{font-style:normal;font-weight:500}
+.cr-hero .cn-mark{font-family:var(--serif-cn);font-size:clamp(18px,2vw,24px);letter-spacing:.5em;color:var(--ink-soft);margin-bottom:36px;display:inline-block;padding-left:.5em;border-bottom:1px solid var(--rule-soft);padding-bottom:18px}
+.cr-hero .lede{font-family:var(--serif-en);font-style:italic;font-size:21px;line-height:1.65;color:var(--ink-soft);max-width:600px;margin:0 auto 40px}
+.cr-hero .lede em{font-style:normal;color:var(--ink)}
+.cr-hero .seal-stamp{position:absolute;top:36px;right:36px;width:60px;height:60px;background:var(--seal);color:var(--paper-light);font-family:var(--serif-cn);font-size:24px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;line-height:1;transform:rotate(-3deg);box-shadow:inset 0 0 0 1.5px rgba(244,237,224,.32),2px 3px 0 rgba(122,31,26,.18)}
+.cr-hero .meta{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.cr-hero .meta b{color:var(--seal);font-weight:500}
+.cr-hero .anchor-cta{margin-top:36px;display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);padding:14px 28px;transition:all .25s}
+.cr-hero .anchor-cta::after{content:"↓";font-family:var(--serif-en);font-style:italic}
+.cr-hero .anchor-cta:hover{background:var(--ink);color:var(--paper-light)}
+
+/* SECTION FRAME — every numbered block lives here */
+.cr-section{padding:80px 28px;border-bottom:1px solid var(--rule-soft)}
+.cr-section.dark-rule{border-bottom-color:var(--rule)}
+.cr-wrap{max-width:1100px;margin:0 auto}
+.cr-wrap.narrow{max-width:760px}
+.cr-head{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:end;padding-bottom:18px;margin-bottom:36px;border-bottom:1px solid var(--ink)}
+.cr-head .num{font-family:var(--serif-cn);font-size:32px;font-weight:500;color:var(--seal);line-height:1;letter-spacing:.05em}
+.cr-head h2{font-family:var(--serif-en);font-style:italic;font-size:clamp(24px,2.4vw,32px);font-weight:400;line-height:1;color:var(--ink)}
+.cr-head h2 b{font-style:normal;font-weight:500}
+.cr-head .cn{font-family:var(--serif-cn);font-size:13px;letter-spacing:.45em;color:var(--ink-faint);align-self:center}
+.cr-prose p{font-family:var(--serif-en);font-size:18px;line-height:1.78;color:var(--ink);margin-bottom:22px;max-width:680px}
+.cr-prose p em{font-style:italic;color:var(--seal)}
+.cr-prose p i{font-style:italic}
+
+/* §壹 — The premise */
+.cr-premise-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:start}
+.cr-premise-aside{padding:24px 28px;border-left:2px solid var(--seal);background:var(--paper-light)}
+.cr-premise-aside .label{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--seal);margin-bottom:12px}
+.cr-premise-aside p{font-family:var(--serif-en);font-style:italic;font-size:16px;line-height:1.7;color:var(--ink-soft);margin-bottom:14px}
+.cr-premise-aside p em{font-style:normal;color:var(--ink)}
+.cr-premise-aside .cn-q{font-family:var(--serif-cn);font-size:14px;letter-spacing:.3em;color:var(--ink-faint);line-height:1.8;border-top:1px solid var(--rule-soft);padding-top:14px;margin-top:6px}
+
+/* §貳 — What you get (deliverable) */
+.cr-deliv{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--rule-soft);margin-top:24px}
+.cr-deliv .depth{padding:32px 28px 28px 0;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);display:flex;flex-direction:column;gap:10px}
+.cr-deliv .depth:nth-child(3){border-right:none;padding-right:0}
+.cr-deliv .depth:nth-child(2),.cr-deliv .depth:nth-child(3){padding-left:28px}
+.cr-deliv .depth .num{font-family:var(--serif-cn);font-size:26px;color:var(--seal);font-weight:500;letter-spacing:.05em}
+.cr-deliv .depth h3{font-family:var(--serif-en);font-size:22px;font-weight:500;line-height:1.2;color:var(--ink)}
+.cr-deliv .depth h3 em{font-style:italic;font-weight:400}
+.cr-deliv .depth .cn{font-family:var(--serif-cn);font-size:13px;letter-spacing:.32em;color:var(--ink-soft)}
+.cr-deliv .depth p{font-family:var(--serif-en);font-style:italic;font-size:15px;line-height:1.65;color:var(--ink-soft);margin-top:6px}
+.cr-deliv .depth p em{font-style:normal;color:var(--ink)}
+.cr-deliv .depth .scope{margin-top:auto;padding-top:18px;border-top:1px dashed var(--rule-soft);font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint)}
+.cr-deliv .depth .scope b{color:var(--ink);font-weight:500}
+
+/* §叄 — Process steps */
+.cr-process{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule-soft);margin-top:18px}
+.cr-step{display:grid;grid-template-columns:80px 1fr auto;gap:32px;padding:28px 0;border-bottom:1px solid var(--rule-soft);align-items:start}
+.cr-step:last-child{border-bottom:none}
+.cr-step .step-num{font-family:var(--serif-cn);font-size:32px;color:var(--seal);line-height:1;font-weight:500}
+.cr-step .step-name{font-family:var(--serif-en);font-size:21px;font-weight:500;margin-bottom:6px;color:var(--ink)}
+.cr-step .step-name em{font-style:italic;font-weight:400}
+.cr-step .step-name .cn{font-family:var(--serif-cn);font-size:13px;color:var(--ink-soft);letter-spacing:.3em;margin-left:14px;font-weight:400}
+.cr-step .step-desc{font-family:var(--serif-en);font-size:16px;line-height:1.7;color:var(--ink-soft)}
+.cr-step .step-desc em{font-style:italic;color:var(--ink)}
+.cr-step .step-meta{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);text-align:right;line-height:1.7;white-space:nowrap}
+.cr-step .step-meta b{color:var(--ink);font-weight:500}
+
+/* §肆 — Pricing band */
+.cr-pricing{padding:36px 36px;border:1px solid var(--rule);background:var(--paper-light);margin-top:24px}
+.cr-pricing .head{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:22px}
+.cr-pricing-rows{display:grid;grid-template-columns:auto 1fr auto;gap:18px 36px;align-items:baseline;border-top:1px solid var(--rule-soft)}
+.cr-pricing-rows .lab{font-family:var(--serif-en);font-style:italic;font-size:18px;color:var(--ink);padding:18px 0 18px;border-bottom:1px dashed var(--rule-soft)}
+.cr-pricing-rows .lab b{font-style:normal;font-weight:500;border-bottom:1px solid var(--seal);padding-bottom:1px;margin-right:10px;color:var(--seal)}
+.cr-pricing-rows .desc{font-family:var(--serif-en);font-style:italic;font-size:15px;line-height:1.6;color:var(--ink-soft);padding:18px 0;border-bottom:1px dashed var(--rule-soft)}
+.cr-pricing-rows .price{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding:18px 0;border-bottom:1px dashed var(--rule-soft);text-align:right;white-space:nowrap}
+.cr-pricing-rows .price b{color:var(--seal);font-weight:500;font-family:var(--serif-en);font-style:italic;font-size:16px;letter-spacing:0;text-transform:none}
+.cr-pricing-rows > *:last-child,.cr-pricing-rows > *:nth-last-child(2),.cr-pricing-rows > *:nth-last-child(3){border-bottom:none}
+.cr-pricing-foot{margin-top:24px;font-family:var(--serif-en);font-style:italic;font-size:14px;color:var(--ink-faint);line-height:1.6;max-width:680px}
+.cr-pricing-foot em{font-style:normal;color:var(--ink-soft)}
+.cr-pricing-foot .placeholder-mark{font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--seal);margin-right:8px}
+
+/* §伍 — Future shape (marketplace) */
+.cr-future{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start;padding-top:8px}
+.cr-future .glyph{font-family:var(--serif-cn);font-size:88px;line-height:.85;color:var(--ink-faint);font-weight:400;letter-spacing:0;opacity:.7}
+.cr-future .copy p{font-family:var(--serif-en);font-style:italic;font-size:16px;line-height:1.7;color:var(--ink-soft);margin-bottom:12px;max-width:680px}
+.cr-future .copy p em{font-style:normal;color:var(--ink)}
+.cr-future .copy .quiet{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);margin-top:14px}
+
+/* §陸 — Submit Brief form */
+.cr-form-wrap{padding:96px 28px 88px;border-top:1px solid var(--ink);background:var(--paper-light)}
+.cr-form-inner{max-width:760px;margin:0 auto}
+.cr-form-head{text-align:center;margin-bottom:36px}
+.cr-form-head .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:18px}
+.cr-form-head h2{font-family:var(--serif-en);font-style:italic;font-size:clamp(34px,4vw,48px);font-weight:400;color:var(--ink);line-height:1.05;letter-spacing:-.012em;margin-bottom:14px}
+.cr-form-head h2 b{font-style:normal;font-weight:500}
+.cr-form-head .cn{font-family:var(--serif-cn);font-size:14px;letter-spacing:.5em;color:var(--ink-soft);margin-bottom:24px}
+.cr-form-head p{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:600px;margin:0 auto}
+.cr-form-head p em{font-style:normal;color:var(--ink)}
+
+/* Tier strip — default empty (guest); WP swaps in patron / reader variant */
+.cr-tier-strip{margin:32px 0 28px;padding:14px 22px;border:1px dashed var(--rule);background:var(--paper);font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--seal);text-align:center;display:none}
+.cr-tier-strip.is-patron,.cr-tier-strip.is-reader{display:block}
+.cr-tier-strip b{color:var(--ink);font-weight:500;font-family:var(--serif-en);font-style:italic;font-size:15px;letter-spacing:0;text-transform:none}
+.cr-tier-strip a{color:var(--seal);border-bottom:1px solid var(--seal);padding-bottom:1px}
+
+/* Form */
+.cr-form{margin-top:28px;background:var(--paper);border:1px solid var(--ink);padding:40px 36px}
+.cr-field{margin-bottom:28px;display:flex;flex-direction:column;gap:8px}
+.cr-field label{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+.cr-field label .opt{color:var(--ink-faint);font-family:var(--serif-en);font-style:italic;font-size:13px;letter-spacing:0;text-transform:none}
+.cr-field label .req{color:var(--seal);font-family:var(--serif-en);font-style:italic;font-size:13px;letter-spacing:0;text-transform:none}
+.cr-field .hint{font-family:var(--serif-en);font-style:italic;font-size:14px;color:var(--ink-soft);line-height:1.55}
+.cr-field input[type=text],.cr-field input[type=email],.cr-field textarea,.cr-field select{font-family:var(--serif-en);font-size:17px;color:var(--ink);background:var(--paper-light);border:1px solid var(--rule);padding:14px 16px;line-height:1.5;width:100%;outline:none;transition:border-color .2s,background .2s}
+.cr-field input:focus,.cr-field textarea:focus,.cr-field select:focus{border-color:var(--ink);background:var(--paper)}
+.cr-field textarea{min-height:120px;resize:vertical;font-style:italic}
+.cr-field textarea::placeholder,.cr-field input::placeholder{color:var(--ink-faint);font-style:italic}
+.cr-field select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-soft) 50%),linear-gradient(135deg,var(--ink-soft) 50%,transparent 50%);background-position:calc(100% - 18px) 22px,calc(100% - 13px) 22px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+
+/* Source-text block: 4 sub-fields share one frame */
+.cr-source-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:14px}
+.cr-source-grid .row-full{grid-column:1/-1}
+
+/* Depth radio band */
+.cr-depth{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid var(--rule);overflow:hidden}
+.cr-depth label{display:flex;flex-direction:column;gap:4px;padding:18px 16px;cursor:pointer;border-right:1px solid var(--rule);text-transform:none;letter-spacing:0;font-family:var(--serif-en);transition:background .2s}
+.cr-depth label:last-child{border-right:none}
+.cr-depth label:hover{background:var(--paper-light)}
+.cr-depth input{position:absolute;opacity:0;pointer-events:none}
+.cr-depth label .nm{font-style:italic;font-size:17px;color:var(--ink);font-weight:500}
+.cr-depth label .nm em{font-style:normal;color:var(--seal)}
+.cr-depth label .sub{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);font-weight:400}
+.cr-depth label.is-checked,.cr-depth label:has(input:checked){background:var(--ink);color:var(--paper-light)}
+.cr-depth label.is-checked .nm,.cr-depth label:has(input:checked) .nm{color:var(--paper-light)}
+.cr-depth label.is-checked .nm em,.cr-depth label:has(input:checked) .nm em{color:var(--seal)}
+.cr-depth label.is-checked .sub,.cr-depth label:has(input:checked) .sub{color:rgba(244,237,224,.65)}
+
+/* Public-toggle row */
+.cr-toggle{display:flex;gap:14px;align-items:flex-start;font-family:var(--serif-en);font-size:15px;line-height:1.55;color:var(--ink-soft)}
+.cr-toggle input{margin-top:5px;flex-shrink:0;accent-color:var(--seal)}
+.cr-toggle label{cursor:pointer}
+.cr-toggle em{font-style:italic;color:var(--ink)}
+.cr-toggle .ben{display:block;font-size:13px;color:var(--ink-faint);margin-top:4px;font-style:italic}
+
+/* Submit row */
+.cr-submit-row{margin-top:36px;padding-top:28px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.cr-submit-row .fineprint{font-family:var(--serif-en);font-style:italic;font-size:13px;color:var(--ink-faint);max-width:380px;line-height:1.5}
+.cr-submit{display:inline-flex;align-items:center;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper-light);background:var(--ink);border:1px solid var(--ink);padding:16px 30px;cursor:pointer;transition:all .25s}
+.cr-submit::after{content:"→";font-family:var(--serif-en);font-style:italic;font-size:14px}
+.cr-submit:hover{background:var(--seal);border-color:var(--seal)}
+
+/* FOOTER — verbatim from the rest of the site */
+footer{background:var(--paper);color:var(--ink);padding:90px 40px 28px;margin-top:0}
+.foot-mark{text-align:center;padding-bottom:48px;border-bottom:1px solid var(--ink);margin-bottom:56px}
+.foot-mark .ampers{font-family:var(--serif-en);font-size:clamp(80px,12vw,200px);font-weight:400;line-height:.85;letter-spacing:-.01em}
+.foot-mark .ampers em{font-style:italic;color:var(--seal)}
+.foot-mark .cn{display:block;font-family:var(--serif-cn);font-size:18px;letter-spacing:.5em;color:var(--ink-soft);margin-top:18px}
+.foot-mark .sub{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px}
+.foot-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+footer h5{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:22px;font-weight:500}
+footer h5 .cn{font-family:var(--serif-cn);color:var(--ink-faint);margin-left:10px;letter-spacing:.3em}
+footer p.mission{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:380px;margin-bottom:22px}
+.also-by{font-family:var(--serif-en);font-size:13px;color:var(--ink-faint);line-height:1.7}
+.also-by a{font-style:italic;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.also-by a:hover{color:var(--seal);border-color:var(--seal)}
+footer ul{list-style:none}
+footer li{margin-bottom:11px}
+footer a{font-family:var(--serif-en);font-size:15px;color:var(--ink-soft);transition:color .2s}
+footer a:hover{color:var(--seal)}
+.colophon-final{padding-top:24px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+.cr-disambig .inner{grid-template-columns:1fr;gap:14px;text-align:left}
+.cr-hero{padding:56px 22px 56px}
+.cr-hero .seal-stamp{position:static;display:inline-flex;margin-bottom:24px;transform:rotate(-2deg)}
+.cr-section{padding:56px 22px}
+.cr-form-wrap{padding:64px 22px 64px}
+.cr-form{padding:28px 22px}
+.cr-premise-grid{grid-template-columns:1fr;gap:32px}
+.cr-deliv{grid-template-columns:1fr}
+.cr-deliv .depth,.cr-deliv .depth:nth-child(3){border-right:none;padding-left:0;padding-right:0}
+.cr-deliv .depth:nth-child(2),.cr-deliv .depth:nth-child(3){padding-left:0}
+.cr-pricing{padding:24px 20px}
+.cr-pricing-rows{grid-template-columns:1fr;gap:8px}
+.cr-pricing-rows .lab,.cr-pricing-rows .desc,.cr-pricing-rows .price{padding:8px 0;border-bottom:none;text-align:left}
+.cr-pricing-rows .lab{padding-top:18px;border-top:1px dashed var(--rule-soft)}
+.cr-pricing-rows .lab:first-child{border-top:none}
+.cr-future{grid-template-columns:1fr;gap:18px}
+.cr-future .glyph{font-size:56px}
+.cr-source-grid{grid-template-columns:1fr}
+.cr-depth{grid-template-columns:1fr}
+.cr-depth label{border-right:none;border-bottom:1px solid var(--rule)}
+.cr-depth label:last-child{border-bottom:none}
+.cr-step{grid-template-columns:48px 1fr;gap:18px}
+.cr-step .step-meta{grid-column:1/-1;text-align:left;padding-top:8px;border-top:1px dashed var(--rule-soft)}
+.foot-cols{grid-template-columns:1fr 1fr;gap:40px}
+footer{padding:60px 20px 20px}
+.foot-mark .ampers{font-size:56px}
+}
+@media(max-width:560px){
+.cr-head{grid-template-columns:auto 1fr;gap:14px}
+.cr-head .cn{display:none}
+.foot-cols{grid-template-columns:1fr;gap:36px}
+.colophon-final{flex-direction:column;gap:6px;text-align:center}
+}
+</style>
+</head>
+
+<!-- data-tier defaults to "guest" so the cleanest, most editorial state
+     renders by default. Server replaces with "reader" / "patron" so the
+     tier strip inside the form switches state. The form itself stays open
+     to all roles — handoff §3 hard rule. -->
+<body data-tier="guest">
+
+<div class="backbar">
+  <a href="./ink-east-v1.html">← Back to Ink &amp; East</a>
+  <span>INK &amp; EAST · CUSTOM READING · 私 讀</span>
+  <span class="right">By appointment · Replies within a working week</span>
+</div>
+
+
+<!-- ============================================
+     BLOCK: cr-disambig
+     ROLE: First strip on the page. Tells a reader who landed
+           here looking for a custom ebook that they are in the
+           wrong room, and points them to /studio.
+     SOURCE:
+       - "you are here" label   → static
+       - "other product" link   → ./ink-east-v1.html#studio  (Custom
+         Ebook Studio entry; full /studio page is roadmap #7 — todo,
+         so for now we link to the home anchor that explains it).
+     COPY RULE: Do NOT compare price, depth, or audience. Just
+                name the two products and let the reader pick.
+     ============================================ -->
+<aside class="cr-disambig" data-section="cr-disambig">
+  <div class="inner">
+    <span class="you-here">You are here · 私 讀</span>
+    <p class="body">
+      <em>Custom Reading</em> is a written reading of a single classical passage you bring to us. Looking instead for a <em>custom ebook</em> — a longer manuscript written for you or your brand?
+    </p>
+    <!-- TODO · #7 待做 — when Custom Ebook Studio ships at
+         ./ink-east-custom-ebook-v1.html (or wherever roadmap #7 places it),
+         replace this href with the real file. For now it points to the
+         Studio anchor on the home page, which already describes the service. -->
+    <a href="./ink-east-v1.html#studio" class="other">Custom Ebook Studio</a>
+  </div>
+</aside>
+
+
+<!-- ============================================
+     BLOCK: cr-hero
+     SOURCE:
+       - title / dek    → static editorial copy (this page is a
+                          service detail page, not a CMS listing)
+       - meta numbers   → derived from custom_reading_project queries:
+                          • monthly cap         → get_option('cr_monthly_cap')
+                          • current free slots  → counted from CPT status
+                          • avg response window → static for v1
+     ROLE: Sets the editorial tone, places the seal, anchors a
+           "Submit a brief ↓" CTA that scrolls to §陸.
+     ============================================ -->
+<section class="cr-hero" data-section="cr-hero">
+  <div class="seal-stamp" aria-label="Custom reading seal">私</div>
+  <div class="inner">
+    <div class="vlib-rule"></div>
+    <div class="kicker">A service of the journal · 編 者 私 讀</div>
+    <h1>A reading,<br><i>written for</i> <b>one person</b>.</h1>
+    <div class="cn-mark">私 讀 · 為 一 人 而 寫</div>
+    <p class="lede">
+      A passage of classical Chinese — a poem, a fragment of Zhuangzi, a sentence in the <em>Liji</em> that has been catching on you for years — read slowly, in writing, by one editor, for you alone. <em>Not a translation. A reading.</em>
+    </p>
+    <div class="meta">
+      <span><b>by appointment</b></span>
+      <span>·</span>
+      <span>three to four readings a month</span>
+      <span>·</span>
+      <span>≈ 5 working days · first reply</span>
+    </div>
+    <a href="#submit-brief" class="anchor-cta">Submit a brief</a>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cr-premise
+     ROLE: Why this exists at all. Pain point + offer in editorial
+           voice — not a feature pitch.
+     SOURCE: static editorial copy (handoff §3 framing).
+     ============================================ -->
+<section class="cr-section" data-section="cr-premise">
+  <div class="cr-wrap">
+    <div class="cr-head">
+      <div class="num">壹</div>
+      <h2><b>The premise</b> <i>— why this exists</i></h2>
+      <div class="cn">所 以 然</div>
+    </div>
+
+    <div class="cr-premise-grid">
+      <div class="cr-prose">
+        <p>Most classical Chinese, in modern editions, is annotated for the <em>exam</em>, not for the reader. Footnotes label characters; they rarely explain what the line is <i>doing</i>. Even native readers, when they sit with a difficult passage, often find that the official commentary has answered the wrong question.</p>
+        <p>So sometimes a reader writes to us with a passage they have lived with — a couplet from a grandmother's funeral scroll, four lines of Tao Yuanming, a single sentence in the <em>Daodejing</em> they keep coming back to — and asks for the kind of reading the schoolbook never offered.</p>
+        <p>This page is for that letter. You bring the passage and the question. We bring slow attention and a careful pen.</p>
+      </div>
+
+      <aside class="cr-premise-aside">
+        <div class="label">A small example · 為 例</div>
+        <p>One reader sent us five lines from <em>Tao Yuanming's "Returning Home"</em>. She did not want a translation — she wanted to know <em>why the third line breaks the pattern</em> the first two had set. The reading we wrote for her was 4,200 words. It quoted four other Tang readings of the same poem, drew a short genealogy of the word <em>歸</em>, and ended with the line her father had loved.</p>
+        <div class="cn-q">陶 淵 明 · 歸 去 來 兮 辭 · 第 三 句 · 為 何 破 韻</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cr-deliverable
+     ROLE: What you actually get back. Three depth tiers but
+           described as editorial scope, not as "packages".
+           Visual: typeset columns, no card chrome, no "★ best value".
+     SOURCE: static for v1; eventually managed via WP option
+             group 'cr_depth_options' so editors can adjust copy.
+     ============================================ -->
+<section class="cr-section" data-section="cr-deliverable">
+  <div class="cr-wrap">
+    <div class="cr-head">
+      <div class="num">貳</div>
+      <h2><b>What you get back</b> <i>— three lengths, one rule</i></h2>
+      <div class="cn">所 得</div>
+    </div>
+
+    <div class="cr-prose">
+      <p>One reading, written for one reader. Delivered as a careful PDF, properly footnoted, with the source text reproduced in full. <em>The length depends on the question</em>, not on a tier.</p>
+    </div>
+
+    <div class="cr-deliv">
+      <article class="depth">
+        <div class="num">短</div>
+        <h3><i>Short</i> <em>reading</em></h3>
+        <div class="cn">短 讀 · 約 兩 千 字</div>
+        <p>For a single line, a couplet, or a small fragment that <em>has a clear question</em> attached to it. Often one source-text reproduction, one careful translation, two or three pages of plain commentary, and one footnoted gloss.</p>
+        <div class="scope">≈ 2,000 words · <b>1 source</b> · light footnoting</div>
+      </article>
+
+      <article class="depth">
+        <div class="num">中</div>
+        <h3><i>Standard</i> <em>reading</em></h3>
+        <div class="cn">中 讀 · 約 五 千 字</div>
+        <p>For a short poem, a chapter of a classical text, or a question that needs <em>one sideways comparison</em> — a Tang reading set against a Song one, a Confucian word read inside a Daoist sentence. Most readings sit here.</p>
+        <div class="scope">≈ 5,000 words · <b>1–3 sources</b> · careful footnoting</div>
+      </article>
+
+      <article class="depth">
+        <div class="num">長</div>
+        <h3><i>Long</i> <em>reading</em></h3>
+        <div class="cn">長 讀 · 萬 字 以 上</div>
+        <p>For a difficult passage, a contested commentary tradition, or a request that asks the editor to walk all the way around the question. Includes a short bibliography and, where useful, <em>a translator's note on the translation itself</em>.</p>
+        <div class="scope">≈ 10,000+ words · <b>3–6 sources</b> · full footnoting</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cr-process
+     ROLE: The 5 steps from brief to delivery. Each step shows a
+           rough time window and what the reader pays at that step.
+     SOURCE: static; the step list is the journal's editorial
+             SOP, not WP-managed content.
+     COPY RULE: every step is named in plain English first, with a
+                small Chinese gloss. Never "milestone 1 of 5".
+     ============================================ -->
+<section class="cr-section" data-section="cr-process">
+  <div class="cr-wrap">
+    <div class="cr-head">
+      <div class="num">叄</div>
+      <h2><b>How it works</b> <i>— from your letter to the reading</i></h2>
+      <div class="cn">流 程</div>
+    </div>
+
+    <div class="cr-prose">
+      <p>The journal takes <em>three to four custom readings a month</em>. Some briefs we decline — usually because the question fits an existing public essay better, or because we are not the right reader for it. We say so quickly.</p>
+    </div>
+
+    <div class="cr-process">
+      <article class="cr-step">
+        <span class="step-num">一</span>
+        <div>
+          <div class="step-name">You send a <em>brief</em><span class="cn">投 文 寄 信</span></div>
+          <div class="step-desc">Use the form below — the source passage, your question, your sense of how long a reading you'd like. Briefs can be in English or Chinese. <em>No fee at this step.</em></div>
+        </div>
+        <div class="step-meta">no fee<br><b>any time</b></div>
+      </article>
+
+      <article class="cr-step">
+        <span class="step-num">二</span>
+        <div>
+          <div class="step-name">We <em>read</em> it<span class="cn">編 者 過 目</span></div>
+          <div class="step-desc">Within a working week we reply — either with a "we can do this well, here is the shape we propose" note, or with a short, kind decline and a pointer to where the question might fit better.</div>
+        </div>
+        <div class="step-meta">no fee<br><b>≈ 5 working days</b></div>
+      </article>
+
+      <article class="cr-step">
+        <span class="step-num">三</span>
+        <div>
+          <div class="step-name"><em>Quote</em> &amp; outline<span class="cn">議 價 立 綱</span></div>
+          <div class="step-desc">If we proceed, we send a fixed quote (no surprises), a short outline of how we intend to read the passage, and a sample paragraph from a previous reading so you can hear the voice before you commit. <em>You can walk away here.</em></div>
+        </div>
+        <div class="step-meta">deposit on<br>your approval<br><b>1 week</b></div>
+      </article>
+
+      <article class="cr-step">
+        <span class="step-num">四</span>
+        <div>
+          <div class="step-name">We <em>write</em>; you read in installments<span class="cn">寫 與 對 讀</span></div>
+          <div class="step-desc">The editor writes. You receive the reading in two parts (or one, for short readings) and may request <em>up to two careful revisions</em>. The editor's writing time depends on length, but most readings are finished within four to six weeks of the deposit.</div>
+        </div>
+        <div class="step-meta">writing<br><b>4–6 weeks</b></div>
+      </article>
+
+      <article class="cr-step">
+        <span class="step-num">五</span>
+        <div>
+          <div class="step-name"><em>Delivery</em>, and one quiet question<span class="cn">交 稿 · 一 問</span></div>
+          <div class="step-desc">PDF, EPUB, and plain text. Yours, kept by you. We then ask, only once: <em>would you like this reading to live, in time, on the VIP Library shelf?</em> If yes, you receive a small thank-you (a year of membership, or a discount on a future reading). If no, the reading stays only with you. The editors keep nothing but a thank-you note.</div>
+        </div>
+        <div class="step-meta">final balance<br>at delivery</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cr-pricing
+     ROLE: Editorial pricing band — by quote, with starting
+           anchors. Clearly marked PLACEHOLDER until the editorial
+           team commits final numbers (handoff §3 + roadmap #3
+           note: "价格永远是占位 / placeholder").
+     SOURCE: static for v1. Final numbers come from
+             get_option('cr_starting_quote_table').
+     COPY RULE: No tier comparison card chrome. No "★ chosen".
+                The prose row IS the visual; the "from ¥X" is a
+                quiet tag, not a price tag.
+     ============================================ -->
+<section class="cr-section dark-rule" data-section="cr-pricing">
+  <div class="cr-wrap">
+    <div class="cr-head">
+      <div class="num">肆</div>
+      <h2><b>What it costs</b> <i>— by quote, with a starting price</i></h2>
+      <div class="cn">價 議</div>
+    </div>
+
+    <div class="cr-prose">
+      <p>We do not price by word count. We price by <em>how difficult the reading actually is</em> — how many sources we will need to walk through, how contested the line is, how long it takes to read the question itself. Below are the starting anchors. Final price is fixed, in writing, before any work begins.</p>
+    </div>
+
+    <div class="cr-pricing">
+      <div class="head">— Starting points · 起 點 ·  <span style="color:var(--ink-soft)">all figures are placeholder, pending editorial committal</span> —</div>
+      <div class="cr-pricing-rows">
+        <div class="lab"><b>短</b> <i>Short reading</i></div>
+        <div class="desc">A single line or fragment with a clear question.</div>
+        <div class="price">from <b>¥ 480</b></div>
+
+        <div class="lab"><b>中</b> <i>Standard reading</i></div>
+        <div class="desc">A short poem or one sideways comparison. <em>Most briefs sit here.</em></div>
+        <div class="price">from <b>¥ 1,200</b></div>
+
+        <div class="lab"><b>長</b> <i>Long reading</i></div>
+        <div class="desc">A difficult passage, contested tradition, or full chapter walk-around.</div>
+        <div class="price">from <b>¥ 2,800</b></div>
+      </div>
+      <p class="cr-pricing-foot"><span class="placeholder-mark">placeholder</span><em>The numbers above are sample anchors;</em> when the editorial team commits, this band switches to live values via <code>get_option('cr_starting_quote_table')</code>. Patrons receive a small standing courtesy on every reading; Readers receive a thank-you discount on their first one. Neither is a paywall — you do not have to be a member to commission a reading.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cr-future-marketplace
+     ROLE: Quietly admit the long-term plan — community-author
+           marketplace where outside writers can bid on briefs.
+           handoff §3: "未来形态: 可下放到社区联盟营销 / marketplace".
+           Visual rule: small, single paragraph, no CTA.
+     SOURCE: static.
+     ============================================ -->
+<section class="cr-section" data-section="cr-future-marketplace">
+  <div class="cr-wrap narrow">
+    <div class="cr-head">
+      <div class="num">伍</div>
+      <h2><b>One day</b> <i>— a quiet note on the future</i></h2>
+      <div class="cn">後 話</div>
+    </div>
+
+    <div class="cr-future">
+      <div class="glyph">後</div>
+      <div class="copy">
+        <p>For the first long while, every custom reading on this page is written by the editors of Ink &amp; East. As the journal grows, we may open a <em>small bench of outside readers</em> — careful writers, vetted by the editors — who can take on briefs that match their training. You would always know who wrote your reading; the editors would always read it before it left.</p>
+        <p>This is a future shape, not a current offer. We are mentioning it here only because some readers have asked, kindly, whether this might one day exist. <em>It might.</em> Quietly, and after the journal is sturdy enough.</p>
+        <div class="quiet">No marketplace today · One editor, one reading, one reader</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cr-form
+     ID:    submit-brief    (deep link target — used by hero CTA,
+            by Reading Room §陸 "Submit a brief", and by the home
+            Studio sibling line)
+     ROLE:  The actual brief. Fluent Forms backend; on submit
+            creates a custom_reading_project CPT in 'draft'
+            status. The editor reviews and either replies with
+            a quote (transitions to 'quoted') or declines
+            (transitions to 'declined-with-note').
+     SOURCE / SUBMISSION:
+       - render method:        Fluent Forms shortcode in WP template,
+                               this preview shows the visual contract
+       - REST endpoint:        POST /wp-json/ie/v1/custom-reading/brief
+       - on success:           creates custom_reading_project (draft)
+                               and emails the reader a confirmation
+                               + emails the editors with the brief
+       - tier strip server-side rule:
+           if user_tier === 'patron' → render .cr-tier-strip.is-patron
+           if user_tier === 'reader' → render .cr-tier-strip.is-reader
+           default (guest / logged-in free) → strip stays display:none
+     FIELD MAP (form name attr → CPT meta key):
+       - cr_source_title       → meta:source_title
+       - cr_source_author      → meta:source_author
+       - cr_source_dynasty     → meta:source_dynasty
+       - cr_source_translation → meta:known_translations
+       - cr_question           → meta:reader_question  (required)
+       - cr_depth              → meta:requested_depth  (short/standard/long)
+       - cr_deadline           → meta:requested_deadline (2w/1m/no-rush)
+       - cr_publish_consent    → meta:public_after_delivery (bool)
+       - cr_email              → meta:reader_email     (required)
+       - cr_name               → meta:reader_name      (optional)
+     COPY RULE: No "Submit Order", no "Pay now", no "Buy".
+                The button reads "Send the brief" and the field
+                labels are written like an editor's intake form.
+     ACCESS:    open to all roles (handoff §3 hard rule). The form
+                does NOT check is_user_logged_in().
+     ============================================ -->
+<section class="cr-form-wrap" id="submit-brief" data-section="cr-form">
+  <div class="cr-form-inner">
+    <div class="cr-form-head">
+      <div class="kicker">— Submit a brief —</div>
+      <h2><i>Tell us</i> <b>what you've been reading</b>.</h2>
+      <div class="cn">寄 一 封 信</div>
+      <p>The editors read every brief. We reply within <em>a working week</em>, even when we cannot take the work. There is no fee for sending one.</p>
+    </div>
+
+    <!-- TIER STRIP — default (guest) renders nothing visible.
+         WP server-side adds .is-patron OR .is-reader to switch state.
+         Hand-written variants below are kept ONLY as HTML comments;
+         the WP template builds the active variant from this template. -->
+    <div class="cr-tier-strip" data-default="guest"
+         aria-live="polite">
+      <!-- guest default: empty band, display:none -->
+    </div>
+    <!--
+    PATRON variant (server adds class="is-patron"):
+    <div class="cr-tier-strip is-patron">
+      You're already in the priority queue. Patron briefs receive
+      a <b>working-week reply</b>, and a small standing courtesy on
+      the final quote. <a href="./ink-east-reading-room-v1.html#rr-custom-reading">See your queue position</a>.
+    </div>
+
+    READER variant (server adds class="is-reader"):
+    <div class="cr-tier-strip is-reader">
+      As a Reader, your first custom reading carries a quiet
+      <b>thank-you discount</b> — applied at quote, not advertised here.
+    </div>
+    -->
+
+    <form class="cr-form" action="/wp-json/ie/v1/custom-reading/brief" method="post" onsubmit="event.preventDefault();">
+
+      <!-- BLOCK: cr-form / source -->
+      <div class="cr-field">
+        <label>The passage you want read <span class="req">required</span></label>
+        <p class="hint">A title, an author or dynasty if you know them, a translation you have already read — anything that points the editor at the right thing.</p>
+        <div class="cr-source-grid">
+          <input type="text" name="cr_source_title" placeholder="e.g. Returning Home (歸去來兮辭)" autocomplete="off">
+          <input type="text" name="cr_source_author" placeholder="Author · 陶淵明" autocomplete="off">
+          <input type="text" name="cr_source_dynasty" placeholder="Dynasty · Eastern Jin" autocomplete="off">
+          <input type="text" name="cr_source_translation" placeholder="Translation you've read · Burton Watson, 1971" autocomplete="off">
+          <textarea class="row-full" name="cr_source_excerpt" placeholder="Optional · Paste the lines you want read, or attach a photo in your reply email."></textarea>
+        </div>
+      </div>
+
+      <!-- BLOCK: cr-form / question -->
+      <div class="cr-field">
+        <label>What is catching on you? <span class="req">required</span></label>
+        <p class="hint">In your own words. <em>"I keep coming back to the third line, but I don't know why"</em> is the most useful kind of question.</p>
+        <textarea name="cr_question" required placeholder="Write as much or as little as you'd like. The editor reads carefully."></textarea>
+      </div>
+
+      <!-- BLOCK: cr-form / depth -->
+      <div class="cr-field">
+        <label>How long a reading do you have time for? <span class="opt">a sense, not a contract</span></label>
+        <p class="hint">If you are not sure, choose <em>standard</em>. The editor will adjust at the quote step if your question wants something different.</p>
+        <div class="cr-depth">
+          <label>
+            <input type="radio" name="cr_depth" value="short">
+            <span class="nm"><em>Short</em> · 短</span>
+            <span class="sub">≈ 2,000 words · 1 source</span>
+          </label>
+          <label>
+            <input type="radio" name="cr_depth" value="standard" checked>
+            <span class="nm"><em>Standard</em> · 中</span>
+            <span class="sub">≈ 5,000 words · 1–3 sources</span>
+          </label>
+          <label>
+            <input type="radio" name="cr_depth" value="long">
+            <span class="nm"><em>Long</em> · 長</span>
+            <span class="sub">≈ 10,000+ words · 3–6 sources</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- BLOCK: cr-form / deadline -->
+      <div class="cr-field">
+        <label>When would you like to have it by? <span class="opt">optional</span></label>
+        <select name="cr_deadline">
+          <option value="no-rush">No rush · whenever the reading wants to be finished</option>
+          <option value="1m">Within a month · standard pace</option>
+          <option value="2w">Within two weeks · only for short readings</option>
+          <option value="custom">There is a date in mind · I'll explain in the brief</option>
+        </select>
+      </div>
+
+      <!-- BLOCK: cr-form / publish-consent -->
+      <div class="cr-field">
+        <label>One question we ask only once <span class="opt">optional</span></label>
+        <div class="cr-toggle">
+          <input type="checkbox" name="cr_publish_consent" id="cr_publish_consent" value="open">
+          <label for="cr_publish_consent">
+            Yes — <em>once delivered</em>, the editors may ask whether this reading might one day live on the VIP Library shelf, with my permission and my name (or a pen name) on it.
+            <span class="ben">If you say yes here, you also receive a small thank-you when the reading is published — a year of membership, or a discount on a future reading. <em>You can change your mind any time before delivery.</em></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- BLOCK: cr-form / contact -->
+      <div class="cr-field">
+        <label>Where should we write back? <span class="req">required</span></label>
+        <div class="cr-source-grid">
+          <input type="email" name="cr_email" required placeholder="your email address">
+          <input type="text" name="cr_name" placeholder="What shall we call you? · optional">
+        </div>
+      </div>
+
+      <div class="cr-submit-row">
+        <p class="fineprint">By sending, you agree to receive one reply from the editors. We do not sell or share briefs. <em>Your passage stays yours.</em></p>
+        <button type="submit" class="cr-submit">Send the brief</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<footer>
+  <div class="foot-mark">
+    <div class="ampers">Ink <em>&amp;</em> East</div>
+    <span class="cn">墨 與 東</span>
+    <span class="sub">An independent digital journal · Published when ready · Est. 2026</span>
+  </div>
+
+  <div class="foot-cols">
+    <div>
+      <h5>The Journal <span class="cn">關 於</span></h5>
+      <p class="mission">Ink &amp; East publishes a single issue when a single issue is ready. Each one answers, in plain English, a modern question — through Chinese classical thought, original stories, and reader letters.</p>
+      <p class="also-by">Also kept by the editors —<br>a small shop of objects, <a href="./spatial-flow-v1.html">Spatial Flow →</a></p>
+    </div>
+    <div>
+      <h5>Read <span class="cn">讀</span></h5>
+      <ul>
+        <li><a href="./ink-east-issue-001-v1.html">This Issue · 001</a></li>
+        <li><a href="./ink-east-v1.html">Home</a></li>
+        <li><a href="./ink-east-vip-library-v1.html">VIP Library</a></li>
+        <li><a href="./ink-east-reading-room-v1.html">Reading Room</a></li>
+        <li><a href="./ink-east-custom-reading-v1.html">Custom Reading</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Speak <span class="cn">問</span></h5>
+      <ul>
+        <li><a href="#">Ask the Ancient Text</a></li>
+        <li><a href="#">Suggest an Issue Theme</a></li>
+        <li><a href="#">Vote · Patrons only</a></li>
+        <li><a href="#">Reader Notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Studio <span class="cn">寫</span></h5>
+      <ul>
+        <li><a href="./ink-east-custom-reading-v1.html">Custom Reading</a></li>
+        <li><a href="#">Custom Ebook Studio</a></li>
+        <li><a href="#">Process &amp; Pricing</a></li>
+        <li><a href="#">Past Manuscripts</a></li>
+        <li><a href="#">Submit a brief</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="colophon-final">
+    <span>© 2026 Ink &amp; East · Published quietly</span>
+    <span>Set in EB Garamond, Inter &amp; Noto Serif SC</span>
+    <span>ISSN — 2026.001</span>
+  </div>
+</footer>
+
+</body>
+</html>
