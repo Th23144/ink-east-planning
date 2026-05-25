@@ -9,7 +9,7 @@
 |---|---|---|---|---|
 | 0 | 让仍开着的旧窗口关掉重开 | — | — | ⏳ |
 | 1 | article-002-vip 示例 VIP 文章 | preview/ink-east-article-002-vip-v1.html | 无 | ✓（00bda26；Issue 001 TOC 接入已废止见日志补遗） |
-| 1.5 | **VIP Library 索引页**（NEW · IA 二分） | preview/ink-east-vip-library-v1.html | #1 | ⏳ |
+| 1.5 | **VIP Library 索引页**（NEW · IA 二分） | preview/ink-east-vip-library-v1.html | #1 | ✓（c090123） |
 | 2 | Reading Room VIP 会员中心 | preview/ink-east-reading-room-v1.html | #1.5 | ⏳ |
 | 3 | 定制解读服务页（**核心商业**） | preview/ink-east-custom-reading-v1.html | 无（可与 #1/#2 并行） | ⏳ |
 | 4 | Membership 套餐对比页 | preview/ink-east-membership-v1.html | #1 #2 | ⏳ |
@@ -21,7 +21,7 @@
 完工后逐项把状态从 ⏳ 改为 ✓。链接死链未填的不算完工。
 
 **波次划分（推荐节奏）**：
-- **Wave 1** (#1 ✓ → #1.5 → #2 → #3 → #4)：核心闭环 + 启动核心商业。完成后 paywall 路径活、Custom Reading 可接活。
+- **Wave 1** (#1 ✓ → #1.5 ✓ → #2 → #3 → #4)：核心闭环 + 启动核心商业。完成后 paywall 路径活、Custom Reading 可接活。
 - **Wave 2** (#5a #6)：互动闭环。
 - **Wave 3** (#7)：商业补完，与 #3 互相导流。
 - **Backlog**：#5b /community、VIP Paywall 3 状态变体（已合并进 #1 单 guest 状态）。
