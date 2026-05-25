@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Library · 藏書樓 — Ink & East</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     INK & EAST — VIP Library index page
+     ============================================================
+     ROLE:  Public catalog of the VIP Long Reads. This is the
+            ONLY entry point to individual VIP articles. Issues
+            main line stays 100% free; this shelf is independent.
+     URL:   /vip-library
+     POST TYPE BACKING THIS LIST: vip_article (custom, separate
+            from standard 'post' that powers Issues).
+     STATE RENDERED HERE: GUEST (not signed in). Catalog visual
+            is identical for guest / free / Reader / Patron — only
+            the per-card CTA text changes server-side
+            ("Read the invitation" → "Open" once unlocked).
+     IA NOTE (per BRIEF log addendum, commit 02074f0):
+            VIP Library and Issues are TWO SEPARATE BOARDS.
+            Never cross-link a VIP article from inside an Issue
+            TOC, and never cross-link an Issue article from inside
+            this catalog.
+     ============================================================ -->
+
+<style>
+:root{--paper:#f4ede0;--paper-light:#faf5e9;--paper-dark:#e8dfce;--ink:#1a1611;--ink-soft:#4a4036;--ink-faint:#8a7f70;--seal:#a02d23;--seal-deep:#7a1f1a;--rule:rgba(26,22,17,.28);--rule-soft:rgba(26,22,17,.12);--serif-en:"EB Garamond","Noto Serif SC",Georgia,serif;--serif-cn:"Noto Serif SC","EB Garamond",serif;--sans:"Inter",-apple-system,"PingFang SC",sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--serif-en);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55;font-feature-settings:"liga" 1,"kern" 1,"onum" 1}a{color:inherit;text-decoration:none}::selection{background:var(--seal);color:var(--paper-light)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.5;mix-blend-mode:multiply;background-image:radial-gradient(circle at 25% 30%,rgba(26,22,17,.025) 0%,transparent 40%),radial-gradient(circle at 75% 60%,rgba(26,22,17,.02) 0%,transparent 35%),radial-gradient(circle at 50% 80%,rgba(26,22,17,.015) 0%,transparent 30%)}
+
+/* BACKBAR — same family as issue-001 backbar but distinct copy */
+.backbar{background:var(--ink);color:var(--paper-light);padding:8px 28px;font-family:var(--mono);font-size:10px;display:flex;justify-content:space-between;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap;gap:14px}
+.backbar a{color:var(--seal);border-bottom:1px dashed var(--seal);padding-bottom:1px}
+.backbar .right{color:var(--ink-faint)}
+
+/* ============================================
+   VIP-LIBRARY HERO
+   Visual rule (vs Issue cover): NO giant single character.
+   Library is bookshelf-like — horizontal, plain, quieter.
+   The 4-character horizontal plaque "藏 書 樓" replaces the
+   theme-character device used by Issues, so a returning reader
+   knows by the silhouette alone that this is not Issue 9.
+   ============================================ */
+.vlib-hero{padding:88px 56px 76px;border-bottom:1px solid var(--ink);text-align:center;position:relative}
+.vlib-hero .inner{max-width:720px;margin:0 auto}
+.vlib-rule{width:120px;height:1px;background:var(--ink);margin:0 auto 28px;position:relative}
+.vlib-rule::after{content:"";position:absolute;left:50%;top:-3px;width:7px;height:7px;background:var(--seal);transform:translateX(-50%);border-radius:1px}
+.vlib-kicker{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:24px}
+.vlib-title{font-family:var(--serif-en);font-style:italic;font-size:clamp(48px,6vw,84px);font-weight:400;line-height:1;letter-spacing:-.012em;margin-bottom:18px;color:var(--ink)}
+.vlib-cn-mark{font-family:var(--serif-cn);font-size:clamp(20px,2.2vw,28px);font-weight:400;color:var(--ink-soft);letter-spacing:.6em;margin-bottom:36px;padding-left:.6em;display:inline-block;border-bottom:1px solid var(--rule-soft);padding-bottom:18px}
+.vlib-dek{font-family:var(--serif-en);font-style:italic;font-size:19px;line-height:1.7;color:var(--ink-soft);max-width:600px;margin:0 auto 36px}
+.vlib-dek em{font-style:normal;color:var(--ink)}
+.vlib-meta{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);display:flex;gap:18px;justify-content:center;flex-wrap:wrap}
+.vlib-meta b{color:var(--seal);font-weight:500}
+.vlib-stamp{margin-top:36px;display:inline-flex;align-items:center;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-faint)}
+.vlib-stamp .seal{width:36px;height:36px;background:var(--seal);color:var(--paper-light);font-family:var(--serif-cn);font-size:14px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;line-height:1;transform:rotate(-2deg);box-shadow:inset 0 0 0 1.5px rgba(244,237,224,.3)}
+
+/* ============================================
+   CATALOG GRID
+   2x2 on desktop, 1-col on mobile. Cards are textual,
+   no thumbnails (matches the journal's no-image rule).
+   ============================================ */
+section.vlib-catalog{padding:88px 56px;border-bottom:1px solid var(--rule)}
+.vc-head{max-width:1100px;margin:0 auto 48px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;padding-bottom:18px;border-bottom:1px solid var(--ink)}
+.vc-head h2{font-family:var(--serif-en);font-style:italic;font-size:clamp(28px,3vw,40px);font-weight:400;line-height:1;color:var(--ink)}
+.vc-head .vol{font-family:var(--mono);font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-soft)}
+.vc-head .vol b{color:var(--seal);font-weight:500}
+
+.vlib-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule-soft)}
+.vlib-card{padding:40px 36px;border-bottom:1px solid var(--rule-soft);border-right:1px solid var(--rule-soft);display:flex;flex-direction:column;gap:14px;transition:background .25s}
+.vlib-card:nth-child(2n){border-right:none}
+.vlib-card:hover{background:var(--paper-light)}
+.vlib-card.placeholder{opacity:.62}
+.vlib-card.placeholder:hover{opacity:.78}
+
+.vc-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--seal);display:flex;align-items:center;gap:10px}
+.vc-kicker .dot{color:var(--ink-faint);font-weight:400}
+.vc-kicker .vip-mark{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:var(--seal);color:var(--paper-light);font-family:var(--serif-cn);font-size:10px;font-weight:600;line-height:1;border-radius:1px;letter-spacing:0}
+.vc-title{font-family:var(--serif-en);font-size:24px;font-weight:500;line-height:1.25;letter-spacing:-.005em;color:var(--ink);margin-top:4px}
+.vc-title em{font-style:italic;font-weight:400}
+.vc-cn{font-family:var(--serif-cn);font-size:13px;letter-spacing:.32em;color:var(--ink-soft);font-weight:400}
+.vc-dek{font-family:var(--serif-en);font-style:italic;font-size:15px;line-height:1.6;color:var(--ink-soft);margin-top:6px}
+.vc-meta{margin-top:auto;padding-top:18px;border-top:1px solid var(--rule-soft);font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.vc-meta .by{font-family:var(--serif-en);font-style:italic;font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink-soft)}
+.vc-meta .by b{color:var(--ink);font-weight:500;font-style:normal}
+.vc-cta{margin-top:14px;align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding:0 0 3px;transition:all .2s}
+.vc-cta::after{content:" →";font-family:var(--serif-en);font-style:italic}
+.vc-cta:hover{color:var(--seal);border-color:var(--seal)}
+.vc-cta.locked{color:var(--ink-soft);border-color:var(--ink-soft)}
+.vc-cta.locked:hover{color:var(--seal);border-color:var(--seal)}
+
+/* ============================================
+   ABOUT-THE-LIBRARY
+   Three-block strip clarifying what VIP Library is NOT —
+   so it does not get confused with Reading Room (#2 todo)
+   or Membership (#4 todo). Each block ends with a future
+   link, kept as href="#" until those modules ship.
+   ============================================ */
+section.vlib-about{padding:80px 56px;border-bottom:1px solid var(--rule)}
+.va-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px}
+.va-block h4{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:14px}
+.va-block h4 .cn{font-family:var(--serif-cn);color:var(--ink-faint);margin-left:8px;letter-spacing:.3em}
+.va-block p{font-family:var(--serif-en);font-size:16px;line-height:1.7;color:var(--ink-soft);margin-bottom:14px}
+.va-block p em{font-style:italic;color:var(--ink)}
+.va-block .more{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.va-block .more:hover{color:var(--seal);border-color:var(--seal)}
+
+/* ============================================
+   FOOTER — verbatim from issue-001 / article-001 / ink-east-v1
+   ============================================ */
+footer{background:var(--paper);color:var(--ink);padding:90px 40px 28px;margin-top:0}
+.foot-mark{text-align:center;padding-bottom:48px;border-bottom:1px solid var(--ink);margin-bottom:56px}
+.foot-mark .ampers{font-family:var(--serif-en);font-size:clamp(80px,12vw,200px);font-weight:400;line-height:.85;letter-spacing:-.01em}
+.foot-mark .ampers em{font-style:italic;color:var(--seal)}
+.foot-mark .cn{display:block;font-family:var(--serif-cn);font-size:18px;letter-spacing:.5em;color:var(--ink-soft);margin-top:18px}
+.foot-mark .sub{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px}
+.foot-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+footer h5{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:22px;font-weight:500}
+footer h5 .cn{font-family:var(--serif-cn);color:var(--ink-faint);margin-left:10px;letter-spacing:.3em}
+footer p.mission{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:380px;margin-bottom:22px}
+.also-by{font-family:var(--serif-en);font-size:13px;color:var(--ink-faint);line-height:1.7}
+.also-by a{font-style:italic;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.also-by a:hover{color:var(--seal);border-color:var(--seal)}
+footer ul{list-style:none}
+footer li{margin-bottom:11px}
+footer a{font-family:var(--serif-en);font-size:15px;color:var(--ink-soft);transition:color .2s}
+footer a:hover{color:var(--seal)}
+.colophon-final{padding-top:24px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* ============================================ RESPONSIVE ============================================ */
+@media(max-width:900px){
+.vlib-hero{padding:64px 22px 56px}
+.vlib-grid{grid-template-columns:1fr}
+.vlib-card{border-right:none}
+section.vlib-catalog{padding:60px 22px}
+.va-grid{grid-template-columns:1fr;gap:32px}
+section.vlib-about{padding:56px 22px}
+.foot-cols{grid-template-columns:1fr 1fr;gap:40px}
+footer{padding:60px 20px 20px}
+.foot-mark .ampers{font-size:56px}
+}
+@media(max-width:560px){
+.foot-cols{grid-template-columns:1fr;gap:36px}
+.colophon-final{flex-direction:column;gap:6px;text-align:center}
+.vc-head{grid-template-columns:1fr;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- BACKBAR — links back to home, never to an Issue.
+     The "VIP LIBRARY" word in the center is what tells the
+     returning reader they have walked into a different board. -->
+<div class="backbar">
+  <a href="./ink-east-v1.html">← Back to Ink &amp; East</a>
+  <span>INK &amp; EAST · VIP LIBRARY · 藏 書 樓</span>
+  <span class="right">Updated when ready · Est. 2026</span>
+</div>
+
+
+<!-- ============================================
+     BLOCK: vip-library-hero
+     SOURCE:
+       - title-cn       → static copy (board name)
+       - dek            → static editorial positioning
+       - meta vol/count → derived from vip_article post type query
+     ============================================ -->
+<section data-section="vip-library">
+<header class="vlib-hero">
+  <div class="inner">
+    <div class="vlib-rule"></div>
+    <div class="vlib-kicker">An independent shelf · Inside Ink &amp; East</div>
+    <h1 class="vlib-title">VIP Library</h1>
+    <div class="vlib-cn-mark">藏 書 樓</div>
+
+    <p class="vlib-dek">
+      A small shelf inside the journal — a handful of long readings that do not fit the rhythm of the main Issues. <em>Patient essays, kept here for the readers who hold the journal up.</em> Updated when ready, three or four times a year. Not a magazine, not a store; closer to a private room with the door left ajar.
+    </p>
+
+    <div class="vlib-meta">
+      <span><b>vol.01</b> · in progress</span>
+      <span>·</span>
+      <span>4 readings</span>
+      <span>·</span>
+      <span>≈ 2 hours total</span>
+    </div>
+
+    <div class="vlib-stamp">
+      <span class="seal">藏</span>
+      <span>Kept by the editors</span>
+    </div>
+  </div>
+</header>
+
+
+<!-- ============================================
+     BLOCK: vip-library-index
+     SOURCE: WP_Query post_type='vip_article' ORDER BY menu_order
+     ACCESS:
+       - guest / free  → CTA text "Read the invitation" → article page
+                         renders paywall-band-vip (see article-002-vip)
+       - reader / patron → CTA text "Open" → article page renders
+                         full body (server-side switch on user.role)
+       - The catalog visual itself is identical across all roles.
+     PER-CARD WP CONTRACT (BLOCK: vip-card):
+       - kicker     → derived: vol + post.menu_order + "Long Read"
+       - title      → post_title
+       - cn         → ACF: title_cn
+       - dek        → post_excerpt OR ACF: card_dek (1-2 sentences)
+       - byline     → linked author CPT (author_bio_id)
+       - reading    → post_meta: estimated_reading_time
+       - cta        → permalink to vip article page
+     ============================================ -->
+<section class="vlib-catalog">
+  <div class="vc-head">
+    <h2>The shelf, <em>so far</em>.</h2>
+    <div class="vol">vol. <b>01</b> · spring–summer 2026</div>
+  </div>
+
+  <div class="vlib-grid">
+
+    <!-- BLOCK: vip-card — REAL ENTRY (article-002-vip) -->
+    <article class="vlib-card">
+      <div class="vc-kicker">
+        <span class="vip-mark">藏</span>
+        <span>vol.01 · No.01</span>
+        <span class="dot">·</span>
+        <span>Long Read</span>
+      </div>
+      <h3 class="vc-title">
+        Control, exhaustion, and the ancient art of <em>not forcing life</em>.
+      </h3>
+      <div class="vc-cn">控 之 疲、與 不 強 為 之 術</div>
+      <p class="vc-dek">
+        The modern self has been taught that effort is the universal answer. The classical Chinese tradition gently disagrees — and across two thousand years of patient writing, suggests that some of the most important things in a life arrive only when we stop forcing them.
+      </p>
+      <div class="vc-meta">
+        <span class="by">By <b>Han Yi</b> · 韓 一</span>
+        <span>≈ 38 min</span>
+      </div>
+      <a href="./ink-east-article-002-vip-v1.html" class="vc-cta">Read the invitation</a>
+    </article>
+
+    <!-- BLOCK: vip-card — PLACEHOLDER (no permalink yet) -->
+    <!-- TODO: replace href and copy when vip article ships -->
+    <article class="vlib-card placeholder">
+      <div class="vc-kicker">
+        <span class="vip-mark">藏</span>
+        <span>vol.01 · No.02</span>
+        <span class="dot">·</span>
+        <span>Long Read</span>
+      </div>
+      <h3 class="vc-title">
+        On <em>slowness</em>, and the difference between rushing and being late.
+      </h3>
+      <div class="vc-cn">緩 之 用</div>
+      <p class="vc-dek">
+        The hurry is not in the schedule — it is in the eye. A short essay on what changes when a reader, a cook, or a walker decides to slow only the looking, and lets the rest of the day move on without supervision.
+      </p>
+      <div class="vc-meta">
+        <span class="by">By <b>Lin Zhao</b> · 林 兆</span>
+        <span>≈ 28 min</span>
+      </div>
+      <a href="#" class="vc-cta locked">Read the invitation</a>
+    </article>
+
+    <!-- BLOCK: vip-card — PLACEHOLDER -->
+    <!-- TODO: replace href and copy when vip article ships -->
+    <article class="vlib-card placeholder">
+      <div class="vc-kicker">
+        <span class="vip-mark">藏</span>
+        <span>vol.01 · No.03</span>
+        <span class="dot">·</span>
+        <span>Long Read</span>
+      </div>
+      <h3 class="vc-title">
+        The art of <em>not finishing</em> — a defense of unfinished things.
+      </h3>
+      <div class="vc-cn">未 竟 之 美</div>
+      <p class="vc-dek">
+        Modern life rewards the finished thing — the published essay, the closed loop, the clean inbox. This piece argues, gently, that the unfinished may be the more honest shape, and the more difficult one to keep.
+      </p>
+      <div class="vc-meta">
+        <span class="by">By <b>Mei Su</b> · 梅 素</span>
+        <span>≈ 32 min</span>
+      </div>
+      <a href="#" class="vc-cta locked">Read the invitation</a>
+    </article>
+
+    <!-- BLOCK: vip-card — PLACEHOLDER -->
+    <!-- TODO: replace href and copy when vip article ships -->
+    <article class="vlib-card placeholder">
+      <div class="vc-kicker">
+        <span class="vip-mark">藏</span>
+        <span>vol.01 · No.04</span>
+        <span class="dot">·</span>
+        <span>Long Read</span>
+      </div>
+      <h3 class="vc-title">
+        What the old painters knew about <em>empty space</em>.
+      </h3>
+      <div class="vc-cn">留 白 之 學</div>
+      <p class="vc-dek">
+        The most expensive part of a Song-dynasty landscape is the part the painter did not paint. A short reading of empty space as instruction — for painters, for editors, and for anyone whose work has begun to feel too full.
+      </p>
+      <div class="vc-meta">
+        <span class="by">By <b>Wei Sheng</b> · 魏 笙</span>
+        <span>≈ 24 min</span>
+      </div>
+      <a href="#" class="vc-cta locked">Read the invitation</a>
+    </article>
+
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: about-the-library
+     ROLE: Disambiguates VIP Library from Reading Room
+           (member home, #2 todo) and Membership (the way
+           in, #4 todo). All three blocks end with a link
+           kept as href="#" until those pages ship.
+     COPY RULE: No prices, no tiers, no urgency. The three
+                blocks read as one slow paragraph in three
+                parts, not as a feature comparison.
+     ============================================ -->
+<section class="vlib-about">
+  <div class="va-grid">
+    <div class="va-block">
+      <h4>VIP Library <span class="cn">藏 書 樓</span></h4>
+      <p>The <em>public catalog</em>. Anyone can read this page. Each card opens onto a full essay only if you are a member; otherwise it opens onto the editor's invitation.</p>
+      <a href="#" class="more">You are here</a>
+    </div>
+    <div class="va-block">
+      <h4>Reading Room <span class="cn">讀 書 室</span></h4>
+      <p>The <em>member home</em>. Once you have joined, this is where the essays open in full, where Reader Notes happen, and where the next issue's vote lives.</p>
+      <a href="#" class="more">About the Reading Room →</a>
+    </div>
+    <div class="va-block">
+      <h4>Membership <span class="cn">入 室</span></h4>
+      <p>The <em>way in</em>. Joining is how the journal stays the way it is — slow, ad-free, edited by hand. Not a subscription to articles; a subscription to the room.</p>
+      <a href="#" class="more">About membership →</a>
+    </div>
+  </div>
+</section>
+</section><!-- /[data-section="vip-library"] -->
+
+
+<!-- ============================================
+     FOOTER — colophon (verbatim across Ink & East pages)
+     ============================================ -->
+<footer>
+  <div class="foot-mark">
+    <div class="ampers">Ink <em>&amp;</em> East</div>
+    <span class="cn">墨 與 東</span>
+    <span class="sub">An independent digital journal · Published when ready · Est. 2026</span>
+  </div>
+
+  <div class="foot-cols">
+    <div>
+      <h5>The Journal <span class="cn">關 於</span></h5>
+      <p class="mission">Ink &amp; East publishes a single issue when a single issue is ready. Each one answers, in plain English, a modern question — through Chinese classical thought, original stories, and reader letters.</p>
+      <p class="also-by">Also kept by the editors —<br>a small shop of objects, <a href="./spatial-flow-v1.html">Spatial Flow →</a></p>
+    </div>
+    <div>
+      <h5>Read <span class="cn">讀</span></h5>
+      <ul>
+        <li><a href="./ink-east-issue-001-v1.html">This Issue · 001</a></li>
+        <li><a href="./ink-east-v1.html">Home</a></li>
+        <li><a href="./ink-east-vip-library-v1.html">VIP Library</a></li>
+        <li><a href="#">Reading Room</a></li>
+        <li><a href="#">Field Notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Speak <span class="cn">問</span></h5>
+      <ul>
+        <li><a href="#">Ask the Ancient Text</a></li>
+        <li><a href="#">Suggest an Issue Theme</a></li>
+        <li><a href="#">Vote · Patrons only</a></li>
+        <li><a href="#">Reader Notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Studio <span class="cn">寫</span></h5>
+      <ul>
+        <li><a href="#">Custom Ebook Studio</a></li>
+        <li><a href="#">Process &amp; Pricing</a></li>
+        <li><a href="#">Past Manuscripts</a></li>
+        <li><a href="#">Submit a brief</a></li>
+        <li><a href="#">Editorial standards</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="colophon-final">
+    <span>© 2026 Ink &amp; East · Published quietly</span>
+    <span>Set in EB Garamond, Inter &amp; Noto Serif SC</span>
+    <span>ISSN — 2026.001</span>
+  </div>
+</footer>
+
+</body>
+</html>

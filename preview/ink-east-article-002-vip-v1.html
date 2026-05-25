@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- ============================================================
-     INK & EAST — Single Article Page (Issue 001 · No. 06 · VIP Long Read)
+     INK & EAST — Single Article Page (VIP Library · vol.01 · No.01)
      This file is BOTH a visual reference AND a product spec.
      Each major block is annotated with its WordPress contract.
      ============================================================
@@ -923,14 +923,18 @@
 <body>
 
 <!-- ============================================
-     BLOCK: issue-bar
-     SOURCE: dynamic — reads current post's issue_id
-     LINKS: back to issue index page
+     BLOCK: issue-bar (REPURPOSED for VIP Library)
+     This bar visually matches the Issue strip but is wired
+     to the VIP Library board, not to an Issue index. Per IA
+     revision (commit 02074f0), VIP articles never link back
+     to an Issue, only to /vip-library.
+     SOURCE: static — VIP articles always belong to VIP Library
+     LINKS: back to vip-library index page
      ============================================ -->
 <div class="issue-bar">
-  <a href="./ink-east-issue-001-v1.html">← Back to Issue 001 · Wu Wei is not laziness</a>
-  <span class="center">No. 001 · 無 · Wu Wei</span>
-  <span class="right">Spring 2026 · ISSN 2026.001</span>
+  <a href="./ink-east-vip-library-v1.html">← Back to VIP Library</a>
+  <span class="center">VIP LIBRARY · 藏 書 樓 · vol. 01</span>
+  <span class="right">Updated when ready · Est. 2026</span>
 </div>
 
 
@@ -950,9 +954,9 @@
 <header class="article-header">
   <div class="inner">
     <div class="kicker">
-      <a href="./ink-east-issue-001-v1.html">Issue 001 · 無 · Wu Wei</a>
+      <a href="./ink-east-vip-library-v1.html">VIP Library · vol. 01 · No. 01</a>
       <span class="dot">·</span>
-      <span>VIP Long Read · No. 06</span>
+      <span>Long Read</span>
     </div>
 
     <h1 class="article-title">
@@ -986,30 +990,27 @@
      footnotes — see article-001-v1 for visual
      contract).
      The sidebar (left) remains identical across
-     states: it is the Issue 001 table of contents,
-     not a per-essay nav.
+     states: it is the VIP Library catalog (mirror of
+     /vip-library), not a per-essay nav.
      ============================================ -->
 <div class="article-layout">
 
-  <!-- SIDEBAR NAVIGATION — Issue 001 table of contents.
-       Identical for guest / reader / patron. Current entry
-       (No.06) gets .active state; other entries link to
-       sibling articles by anchor in the issue index. -->
+  <!-- SIDEBAR NAVIGATION — VIP Library catalog (mirror of /vip-library).
+       Identical for guest / reader / patron. Current entry (No.01)
+       gets .active state; other entries link to sibling VIP articles
+       once they ship. Per IA revision (02074f0), this sidebar is the
+       VIP Library shelf, NOT an Issue TOC. -->
   <aside class="article-sidebar">
     <div class="sidebar-inner">
-      <div class="sidebar-label">Issue 001 · 目錄</div>
+      <div class="sidebar-label">VIP Library · 藏 書 樓</div>
       <ol class="sidebar-nav">
-        <li><a href="./ink-east-issue-001-v1.html#article-01"><span class="num">No. 01</span>Wu Wei is not laziness.</a></li>
-        <li><a href="./ink-east-issue-001-v1.html#article-02"><span class="num">No. 02</span>The man who could not stop rearranging.</a></li>
-        <li><a href="./ink-east-article-001-v1.html"><span class="num">No. 03</span>Why doing nothing is the hardest practice.</a></li>
-        <li><a href="./ink-east-issue-001-v1.html#article-04"><span class="num">No. 04</span>Three passages from Laozi.</a></li>
-        <li><a href="./ink-east-issue-001-v1.html#article-05"><span class="num">No. 05</span>"I rest, but I still feel guilty."</a></li>
-        <li><a href="#" class="active"><span class="num">No. 06</span>Control, exhaustion, and not forcing life. <em>· VIP</em></a></li>
-        <li><a href="./ink-east-issue-001-v1.html#article-07"><span class="num">No. 07</span>A field note from Wudang.</a></li>
-        <li><a href="./ink-east-issue-001-v1.html#article-08"><span class="num">No. 08</span>Archive: three rest poems from Tao Yuanming.</a></li>
+        <li><a href="#" class="active"><span class="num">vol.01 · No.01</span>Control, exhaustion, and not forcing life.</a></li>
+        <li><a href="./ink-east-vip-library-v1.html"><span class="num">vol.01 · No.02</span>On slowness, and rushing vs being late. <em>· placeholder</em></a></li>
+        <li><a href="./ink-east-vip-library-v1.html"><span class="num">vol.01 · No.03</span>The art of not finishing. <em>· placeholder</em></a></li>
+        <li><a href="./ink-east-vip-library-v1.html"><span class="num">vol.01 · No.04</span>What the old painters knew about empty space. <em>· placeholder</em></a></li>
       </ol>
       <div class="sidebar-back">
-        <a href="./ink-east-issue-001-v1.html">← Issue 001 目錄</a>
+        <a href="./ink-east-vip-library-v1.html">← VIP Library 藏書樓</a>
       </div>
     </div>
   </aside>
