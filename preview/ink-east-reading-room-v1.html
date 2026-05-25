@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading Room — Ink & East</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================
+     INK & EAST · READING ROOM (VIP 會員中心)
+     ============================================
+     URL on production:        /reading-room
+     Server-side gate:         is_user_logged_in() && user_can('ie_read_vip')
+     Default rendered state:   Patron 完整態
+     Tiers in WP:               reader (灰掉投票 section)
+                                patron (本稿默認展示)
+
+     Page intent: a private reading room, NOT a SaaS dashboard.
+     What MUST stay out of this view (also handled by Membership page):
+       - account balance / next billing date / auto-renew toggle
+       - upgrade-plan CTA / tier comparison cards / "立即升級" button
+       - sign-out / change-password / payment-method form
+
+     Anchors: 朱砂方印「墨東」(welcome strip), 中文章法字体 section
+     numerals 壹貳叄肆伍陸, hairline rules, footer = site-wide.
+     ============================================ -->
+
+<style>
+:root{--paper:#f4ede0;--paper-light:#faf5e9;--paper-dark:#e8dfce;--ink:#1a1611;--ink-soft:#4a4036;--ink-faint:#8a7f70;--seal:#a02d23;--seal-deep:#7a1f1a;--rule:rgba(26,22,17,.28);--rule-soft:rgba(26,22,17,.12);--serif-en:"EB Garamond","Noto Serif SC",Georgia,serif;--serif-cn:"Noto Serif SC","EB Garamond",serif;--sans:"Inter",-apple-system,"PingFang SC",sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}
+body{font-family:var(--serif-en);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55;font-feature-settings:"liga" 1,"kern" 1,"onum" 1}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--seal);color:var(--paper-light)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.5;mix-blend-mode:multiply;background-image:radial-gradient(circle at 25% 30%,rgba(26,22,17,.025) 0%,transparent 40%),radial-gradient(circle at 75% 60%,rgba(26,22,17,.02) 0%,transparent 35%),radial-gradient(circle at 50% 80%,rgba(26,22,17,.015) 0%,transparent 30%)}
+
+/* BACKBAR — same family as issue-001 / vip-library backbars */
+.backbar{background:var(--ink);color:var(--paper-light);padding:8px 28px;font-family:var(--mono);font-size:10px;display:flex;justify-content:space-between;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap;gap:14px}
+.backbar a{color:var(--seal);border-bottom:1px dashed var(--seal);padding-bottom:1px}
+.backbar .right{color:var(--ink-faint)}
+
+/* SITE NAV — verbatim from ink-east-v1 cover-top, kept inside a .nav-strip
+   so it can sit above any non-cover page. Reading Room item is .active. */
+.nav-strip{padding:20px 56px 0}
+.site-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.site-nav .left{display:flex;gap:28px;flex-wrap:wrap}
+.site-nav .center{font-family:var(--serif-cn);font-size:13px;letter-spacing:.5em;color:var(--ink);font-weight:500}
+.site-nav .right{display:flex;gap:28px;justify-content:flex-end}
+.site-nav a{transition:color .2s}
+.site-nav a:hover{color:var(--seal)}
+.site-nav a.active{color:var(--seal);border-bottom:1px solid var(--seal);padding-bottom:2px}
+
+/* WELCOME STRIP (rr-welcome) — the room's threshold.
+   Visual lineage: vlib-hero, but quieter, less ceremonial,
+   because this is a place the reader has already entered before. */
+.rr-welcome{padding:80px 56px 56px;border-bottom:1px solid var(--ink);position:relative}
+.rr-welcome .inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:end}
+.rr-welcome .left{max-width:680px}
+.rr-welcome .vlib-rule{width:64px;height:1px;background:var(--ink);margin-bottom:24px;position:relative}
+.rr-welcome .vlib-rule::after{content:"";position:absolute;left:0;top:-3px;width:7px;height:7px;background:var(--seal);border-radius:1px}
+.rr-welcome .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:20px}
+.rr-welcome h1{font-family:var(--serif-en);font-style:italic;font-size:clamp(36px,4.6vw,60px);font-weight:400;line-height:1.05;letter-spacing:-.012em;color:var(--ink);margin-bottom:18px}
+.rr-welcome h1 b{font-style:normal;font-weight:500}
+.rr-welcome .cn-mark{font-family:var(--serif-cn);font-size:14px;letter-spacing:.5em;color:var(--ink-soft);margin-bottom:24px}
+.rr-welcome p.note{font-family:var(--serif-en);font-style:italic;font-size:18px;line-height:1.7;color:var(--ink-soft);max-width:560px}
+.rr-welcome p.note em{font-style:normal;color:var(--ink)}
+.rr-welcome .now-reading{margin-top:24px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint)}
+.rr-welcome .now-reading a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.rr-welcome .now-reading a:hover{color:var(--seal);border-color:var(--seal)}
+
+/* TIER PLATE — the 朱砂方印, the only badge on this page.
+   Patron tier shows the 「贊」 seal; Reader tier (server-swap)
+   shows 「讀」 instead. No tier comparison, no "upgrade" link. */
+.rr-tier-plate{display:inline-flex;flex-direction:column;align-items:flex-end;gap:10px;font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-faint)}
+.rr-tier-plate .seal{width:64px;height:64px;background:var(--seal);color:var(--paper-light);font-family:var(--serif-cn);font-size:30px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;line-height:1;transform:rotate(-2.5deg);box-shadow:inset 0 0 0 2px rgba(244,237,224,.32),2px 3px 0 rgba(122,31,26,.18)}
+.rr-tier-plate .label{color:var(--ink)}
+.rr-tier-plate .label b{color:var(--seal);font-weight:500}
+.rr-tier-plate .since{color:var(--ink-faint)}
+
+/* SECTION FRAME — every BLOCK lives in one of these.
+   Visual rule: hairline divider between, no card bg, no shadow,
+   no rounded corners. The room feels assembled from paper. */
+.rr-section{padding:72px 56px;border-bottom:1px solid var(--rule)}
+.rr-section .wrap{max-width:1100px;margin:0 auto}
+.rr-head{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:end;padding-bottom:18px;margin-bottom:36px;border-bottom:1px solid var(--ink)}
+.rr-head .num{font-family:var(--serif-cn);font-size:36px;font-weight:500;color:var(--seal);line-height:1;letter-spacing:.05em}
+.rr-head h2{font-family:var(--serif-en);font-style:italic;font-size:clamp(26px,2.6vw,36px);font-weight:400;line-height:1;color:var(--ink)}
+.rr-head h2 b{font-style:normal;font-weight:500}
+.rr-head .cn{font-family:var(--serif-cn);font-size:13px;letter-spacing:.45em;color:var(--ink-faint);align-self:center}
+.rr-dek{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:680px;margin-bottom:36px}
+.rr-dek em{font-style:normal;color:var(--ink)}
+
+/* CTA — the only button style on this page. Looks like
+   a hand-stamped ticket, not a "Buy Now". */
+.rr-cta{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding:0 0 3px;transition:all .2s}
+.rr-cta::after{content:" →";font-family:var(--serif-en);font-style:italic}
+.rr-cta:hover{color:var(--seal);border-color:var(--seal)}
+.rr-cta.solid{padding:14px 28px;border:1px solid var(--ink);border-radius:0}
+.rr-cta.solid:hover{background:var(--ink);color:var(--paper-light);border-color:var(--ink)}
+
+/* §貳 VIP Library entry — a single-card pointer, not a re-listed catalog */
+.rr-vlib{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:start;padding:32px 0 8px}
+.rr-vlib .copy p{font-family:var(--serif-en);font-size:17px;line-height:1.75;color:var(--ink-soft);margin-bottom:14px}
+.rr-vlib .copy p em{font-style:italic;color:var(--ink)}
+.rr-vlib .recent{padding-left:32px;border-left:1px solid var(--rule-soft)}
+.rr-vlib .recent .head{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--seal);margin-bottom:18px}
+.rr-vlib .recent ul{list-style:none}
+.rr-vlib .recent li{padding:14px 0;border-bottom:1px dashed var(--rule-soft);font-family:var(--serif-en);font-size:15px;line-height:1.45;color:var(--ink)}
+.rr-vlib .recent li:last-child{border-bottom:none}
+.rr-vlib .recent li i{color:var(--ink-soft);font-size:13px;display:block;margin-top:3px;font-style:italic}
+.rr-vlib .recent li.placeholder{opacity:.55}
+
+/* §叄 Reader Notes — the writing entry */
+.rr-notes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--rule-soft);margin-bottom:36px}
+.rr-note{padding:28px 32px 28px 0;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);display:flex;flex-direction:column;gap:10px}
+.rr-note:nth-child(3n){border-right:none;padding-right:0}
+.rr-note:nth-child(2),.rr-note:nth-child(3){padding-left:32px}
+.rr-note .meta{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rr-note .meta .on{color:var(--seal)}
+.rr-note .meta b{color:var(--ink);font-weight:500}
+.rr-note p{font-family:var(--serif-en);font-style:italic;font-size:16px;line-height:1.65;color:var(--ink-soft)}
+.rr-note p em{font-style:normal;color:var(--ink)}
+.rr-note .ref{margin-top:auto;font-family:var(--serif-en);font-size:13px;color:var(--ink-faint);padding-top:12px}
+.rr-note .ref a{font-style:italic;color:var(--ink-soft);border-bottom:1px solid var(--rule-soft);padding-bottom:1px}
+.rr-note .ref a:hover{color:var(--seal);border-color:var(--seal)}
+.rr-notes-foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint)}
+
+/* §肆 Vote — Patron-only.
+   Server-side: hide for Reader, show for Patron.
+   Design preview shows it on, with a "patrons only" overline. */
+.rr-vote-band{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--seal);margin-bottom:22px}
+.rr-vote-band b{color:var(--ink);font-weight:500;border-bottom:1px solid var(--seal);padding-bottom:1px}
+.rr-vote-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--rule-soft)}
+.rr-vote-card{padding:28px 28px 24px 0;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:background .2s}
+.rr-vote-card:hover{background:var(--paper-light)}
+.rr-vote-card:nth-child(3){border-right:none;padding-right:0}
+.rr-vote-card:nth-child(2),.rr-vote-card:nth-child(3){padding-left:28px}
+.rr-vote-card .num{font-family:var(--serif-cn);font-size:18px;color:var(--seal);font-weight:500;letter-spacing:.1em;margin-bottom:4px}
+.rr-vote-card h3{font-family:var(--serif-en);font-size:21px;font-weight:500;line-height:1.25;color:var(--ink)}
+.rr-vote-card h3 em{font-style:italic;font-weight:400}
+.rr-vote-card .cn{font-family:var(--serif-cn);font-size:13px;letter-spacing:.32em;color:var(--ink-soft)}
+.rr-vote-card p{font-family:var(--serif-en);font-style:italic;font-size:15px;line-height:1.6;color:var(--ink-soft);margin-top:4px}
+.rr-vote-card .vote{margin-top:auto;padding-top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);border-top:1px solid var(--rule-soft);display:flex;justify-content:space-between;gap:12px;align-items:center}
+.rr-vote-card .vote .tally{color:var(--ink-faint)}
+.rr-vote-card .vote .pick{color:var(--seal);border-bottom:1px solid var(--seal);padding-bottom:1px}
+.rr-vote-foot{margin-top:28px;font-family:var(--serif-en);font-style:italic;font-size:14px;color:var(--ink-faint);max-width:680px}
+
+/* Reader-tier disabled overlay (visual reference only — kept commented in markup,
+   shown here as the .rr-vote-locked variant for completeness) */
+.rr-vote-locked{position:relative}
+.rr-vote-locked::after{content:"For Patrons · server-side gate hides this for Reader tier";position:absolute;inset:0;background:rgba(244,237,224,.84);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);text-align:center;padding:20px}
+
+/* §伍 Letters — table-ish status list, but typeset, not a grid */
+.rr-letters table{width:100%;border-collapse:collapse}
+.rr-letters th,.rr-letters td{text-align:left;padding:18px 16px 18px 0;border-bottom:1px dashed var(--rule-soft);font-family:var(--serif-en);font-size:15px;line-height:1.4;color:var(--ink)}
+.rr-letters th{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);font-weight:400;border-bottom:1px solid var(--ink);padding-bottom:10px}
+.rr-letters td.title{font-size:16px}
+.rr-letters td.title em{font-style:italic;color:var(--ink-soft);font-size:13px;display:block;margin-top:2px}
+.rr-letters td.status{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+.rr-letters .s-pending{color:var(--ink-faint)}
+.rr-letters .s-chosen{color:var(--seal)}
+.rr-letters .s-published{color:var(--ink)}
+.rr-letters .s-published::before{content:"✓ ";color:var(--seal)}
+.rr-letters td.ref a{color:var(--ink-soft);border-bottom:1px solid var(--rule-soft);padding-bottom:1px;font-style:italic}
+.rr-letters td.ref a:hover{color:var(--seal);border-color:var(--seal)}
+.rr-letters-foot{margin-top:28px}
+
+/* §陸 Custom Reading queue — door, not a sales page */
+.rr-cr{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start}
+.rr-cr .copy p{font-family:var(--serif-en);font-size:17px;line-height:1.75;color:var(--ink-soft);margin-bottom:14px}
+.rr-cr .copy p em{font-style:italic;color:var(--ink)}
+.rr-cr .queue{padding:28px;border:1px solid var(--rule);background:var(--paper-light)}
+.rr-cr .queue .head{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--seal);margin-bottom:14px}
+.rr-cr .queue p{font-family:var(--serif-en);font-style:italic;font-size:15px;line-height:1.6;color:var(--ink-soft);margin-bottom:14px}
+.rr-cr .queue .row{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);padding:10px 0;border-top:1px dashed var(--rule-soft)}
+.rr-cr .queue .row b{color:var(--ink);font-weight:500}
+.rr-cr .queue .row .ahead{color:var(--seal)}
+
+/* FOOTER — verbatim from ink-east-v1 / vip-library */
+footer{background:var(--paper);color:var(--ink);padding:90px 40px 28px;margin-top:0}
+.foot-mark{text-align:center;padding-bottom:48px;border-bottom:1px solid var(--ink);margin-bottom:56px}
+.foot-mark .ampers{font-family:var(--serif-en);font-size:clamp(80px,12vw,200px);font-weight:400;line-height:.85;letter-spacing:-.01em}
+.foot-mark .ampers em{font-style:italic;color:var(--seal)}
+.foot-mark .cn{display:block;font-family:var(--serif-cn);font-size:18px;letter-spacing:.5em;color:var(--ink-soft);margin-top:18px}
+.foot-mark .sub{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px}
+.foot-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+footer h5{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:22px;font-weight:500}
+footer h5 .cn{font-family:var(--serif-cn);color:var(--ink-faint);margin-left:10px;letter-spacing:.3em}
+footer p.mission{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:380px;margin-bottom:22px}
+.also-by{font-family:var(--serif-en);font-size:13px;color:var(--ink-faint);line-height:1.7}
+.also-by a{font-style:italic;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.also-by a:hover{color:var(--seal);border-color:var(--seal)}
+footer ul{list-style:none}
+footer li{margin-bottom:11px}
+footer a{font-family:var(--serif-en);font-size:15px;color:var(--ink-soft);transition:color .2s}
+footer a:hover{color:var(--seal)}
+.colophon-final{padding-top:24px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+.rr-welcome{padding:56px 22px 40px}
+.rr-welcome .inner{grid-template-columns:1fr;gap:32px}
+.rr-tier-plate{align-items:flex-start}
+.rr-section{padding:56px 22px}
+.rr-vlib{grid-template-columns:1fr;gap:36px}
+.rr-vlib .recent{padding-left:0;border-left:none;border-top:1px solid var(--rule-soft);padding-top:24px}
+.rr-notes{grid-template-columns:1fr}
+.rr-note,.rr-note:nth-child(3n){border-right:none;padding-left:0;padding-right:0}
+.rr-note:nth-child(2),.rr-note:nth-child(3){padding-left:0}
+.rr-vote-grid{grid-template-columns:1fr}
+.rr-vote-card,.rr-vote-card:nth-child(3){border-right:none;padding-left:0;padding-right:0}
+.rr-vote-card:nth-child(2),.rr-vote-card:nth-child(3){padding-left:0}
+.rr-cr{grid-template-columns:1fr;gap:32px}
+.nav-strip{padding:14px 22px 0}
+.site-nav{grid-template-columns:1fr;gap:14px;text-align:center}
+.site-nav .left,.site-nav .right{justify-content:center}
+.foot-cols{grid-template-columns:1fr 1fr;gap:40px}
+footer{padding:60px 20px 20px}
+.foot-mark .ampers{font-size:56px}
+}
+@media(max-width:560px){
+.foot-cols{grid-template-columns:1fr;gap:36px}
+.colophon-final{flex-direction:column;gap:6px;text-align:center}
+.rr-letters table,.rr-letters thead,.rr-letters tbody,.rr-letters tr,.rr-letters th,.rr-letters td{display:block;width:100%}
+.rr-letters thead{display:none}
+.rr-letters tr{padding:14px 0;border-bottom:1px dashed var(--rule-soft)}
+.rr-letters td{padding:4px 0;border:none}
+.rr-head{grid-template-columns:auto 1fr;gap:14px}
+.rr-head .cn{display:none}
+}
+</style>
+</head>
+
+<!-- data-tier is the ONE switch the WP server flips per-user.
+     Defaults to "patron" in the design preview so the full view
+     can be inspected. Server replaces with the real value
+     ("reader" | "patron") on render. -->
+<body data-tier="patron">
+
+<div class="backbar">
+  <a href="./ink-east-v1.html">← Back to Ink &amp; East</a>
+  <span>INK &amp; EAST · READING ROOM · 讀 書 室</span>
+  <span class="right">Members only · Updated as you read</span>
+</div>
+
+<!-- SITE NAV — same items as home cover-top, but Reading Room is .active.
+     The "Sign in" CTA is replaced for logged-in users by an account link. -->
+<div class="nav-strip">
+  <nav class="site-nav">
+    <div class="left">
+      <a href="./ink-east-v1.html">Home</a>
+      <a href="./ink-east-issue-001-v1.html">Issues</a>
+      <a class="active" href="./ink-east-reading-room-v1.html">Reading Room</a>
+      <a href="./ink-east-vip-library-v1.html">VIP Library</a>
+      <a href="#letters">Ask the Ancient</a>
+      <a href="#studio">Studio</a>
+    </div>
+    <div class="center">墨 與 東</div>
+    <div class="right">
+      <a href="#account">Account</a>
+      <a href="/wp-login.php?action=logout">Sign out</a>
+    </div>
+  </nav>
+</div>
+
+
+<!-- ============================================
+     BLOCK: rr-welcome
+     SOURCE:
+       - display_name      → wp_get_current_user()->display_name
+       - tier              → get_user_meta( $uid, 'ie_tier' ) → "reader" | "patron"
+       - member_since      → user_registered (formatted "yyyy")
+       - current_issue     → get_option( 'ie_current_issue' ) (post object)
+     RULES:
+       - Strip out anything that smells of "account settings".
+       - The seal is the only badge; Reader tier swaps 「贊」 for 「讀」.
+     ============================================ -->
+<section class="rr-welcome" data-section="rr-welcome">
+  <div class="inner">
+    <div class="left">
+      <div class="vlib-rule"></div>
+      <div class="kicker"><span style="font-family:var(--serif-cn);font-size:14px;color:var(--seal);letter-spacing:.05em;margin-right:14px;vertical-align:-1px">壹</span>Welcome back · 歸 來</div>
+      <h1>Welcome back, <b>Wei Chen</b>.<br><i>The room is exactly as you left it.</i></h1>
+      <div class="cn-mark">藏 書 之 室 · 為 你 而 留</div>
+      <p class="note">
+        Issue 001 is still on the desk — there are <em>two essays</em> you have not yet opened, and the Reader Notes from <em>last Friday</em> have one quiet reply waiting for you.
+      </p>
+      <div class="now-reading">
+        Currently on the desk · <a href="./ink-east-issue-001-v1.html">Issue 001 · Spring 2026 · 無</a>
+      </div>
+    </div>
+
+    <!-- Tier plate · Patron default. WP swap rule documented below. -->
+    <div class="rr-tier-plate" aria-label="Membership tier mark">
+      <span class="seal">贊</span>
+      <span class="label"><b>Patron</b> · 贊 助 者</span>
+      <span class="since">Since spring 2026</span>
+      <!-- server-side: if tier === "reader", render <span class="seal">讀</span>
+           and label "Reader · 讀 者". No upgrade-CTA in either case;
+           tier change happens on /membership, not here. -->
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: rr-vip-library-entry
+     SOURCE:
+       - latest 3 vip_article posts → /wp-json/ie/v1/vip-library/recent?limit=3
+       - the catalog itself lives on ink-east-vip-library-v1.html (do NOT
+         re-render the full grid here; this is a pointer, not a duplicate).
+     ============================================ -->
+<section class="rr-section" data-section="rr-vip-library-entry">
+  <div class="wrap">
+    <div class="rr-head">
+      <div class="num">貳</div>
+      <h2><b>The VIP Library</b> <i>— the longer shelf</i></h2>
+      <div class="cn">藏 書 樓</div>
+    </div>
+
+    <div class="rr-vlib">
+      <div class="copy">
+        <p>The Library is the slow shelf inside this room — long readings that did not fit the rhythm of the public Issues. Updated three or four times a year, when something <em>finally fits</em>.</p>
+        <p>Your membership opens the whole shelf. There is nothing else to do here, no further unlock — only the door, and the time to walk through it.</p>
+        <p style="margin-top:24px"><a class="rr-cta solid" href="./ink-east-vip-library-v1.html">Enter the Library</a></p>
+      </div>
+      <div class="recent">
+        <div class="head">Recently shelved</div>
+        <ul>
+          <li>
+            <a href="./ink-east-article-002-vip-v1.html"><i>The Quiet Hour Before the Hour</i></a>
+            <i>Liu Wen · ~14 min · placed on shelf last week</i>
+          </li>
+          <li class="placeholder">
+            Three more readings on the way<br>
+            <i>placeholder · WP fills from vip_article post type</i>
+          </li>
+          <li class="placeholder">
+            <i>—</i>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: rr-reader-notes
+     SOURCE:
+       - latest 3 reader_note posts authored by current user
+         → /wp-json/ie/v1/reader-notes?author=current&limit=3&order=desc
+       - "Write a new note" CTA → opens the global Reader Notes composer
+         (component spec lives in #5a Reader Notes stub demo, not here).
+     RULES:
+       - If the user has 0 notes, show the empty state copy
+         (handled server-side; design preview shows the populated case).
+     ============================================ -->
+<section class="rr-section" data-section="rr-reader-notes">
+  <div class="wrap">
+    <div class="rr-head">
+      <div class="num">叄</div>
+      <h2><b>Your Reader Notes</b> <i>— what you've sent in</i></h2>
+      <div class="cn">讀 者 札 記</div>
+    </div>
+    <p class="rr-dek">Reader Notes are the small responses you've left at the foot of essays — kept here as a private trail you can re-read on a quiet evening. <em>Three most recent shown.</em></p>
+
+    <div class="rr-notes">
+      <article class="rr-note">
+        <div class="meta"><span class="on">on <b>The Quiet Hour Before the Hour</b></span><span>14 May</span></div>
+        <p>The line about <em>"a chair pulled out before the guest arrives"</em> stayed with me for two days. I think of it now whenever I find myself preparing too eagerly.</p>
+        <div class="ref">↳ <a href="./ink-east-article-002-vip-v1.html">return to the essay</a></div>
+      </article>
+
+      <article class="rr-note">
+        <div class="meta"><span class="on">on <b>Issue 001 · 無</b></span><span>02 May</span></div>
+        <p>A small disagreement, kindly — Zhuangzi's butterfly was never <em>"resolved"</em>; it was simply put down. The translator's footnote here flattens that.</p>
+        <div class="ref">↳ <a href="./ink-east-issue-001-v1.html">return to the issue</a></div>
+      </article>
+
+      <article class="rr-note">
+        <div class="meta"><span class="on">on <b>Editor's Letter · 001</b></span><span>22 Apr</span></div>
+        <p>Thank you for the closing paragraph. I sent it to my mother in Suzhou; she read it twice and then asked me to <em>send the journal to her by post</em>.</p>
+        <div class="ref">↳ <a href="./ink-east-issue-001-v1.html">return to the letter</a></div>
+      </article>
+    </div>
+
+    <div class="rr-notes-foot">
+      <span>3 of 12 shown</span>
+      <a class="rr-cta" href="#all-notes">All your notes</a>
+      <a class="rr-cta solid" href="#new-note">Write a new note</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: rr-vote
+     SOURCE:
+       - active poll → /wp-json/ie/v1/issue-vote/active
+       - user's existing pick → /wp-json/ie/v1/issue-vote/me
+     PERMISSION (CRITICAL):
+       - server-side: if user_tier !== "patron", DO NOT RENDER this block.
+         A Reader-tier user sees this <section> entirely removed.
+       - the "locked overlay" CSS class is included in the stylesheet for
+         reference only; the production rule is hide-vs-show, not gray-out.
+       - we do NOT show an upgrade button here; that conversation lives
+         on /membership, not in the room.
+     ============================================ -->
+<section class="rr-section" data-section="rr-vote">
+  <div class="wrap">
+    <div class="rr-head">
+      <div class="num">肆</div>
+      <h2><b>Vote · Next issue's question</b></h2>
+      <div class="cn">下 期 之 問</div>
+    </div>
+
+    <div class="rr-vote-band"><b>For Patrons.</b> · Server hides this block for Reader tier — no upgrade prompt, no locked overlay shown to non-Patrons.</div>
+
+    <p class="rr-dek">We are choosing the next character to read through. Three are on the table. <em>Pick one;</em> change your mind any time before the issue is locked.</p>
+
+    <div class="rr-vote-grid">
+      <article class="rr-vote-card">
+        <div class="num">壹</div>
+        <h3><i>Stillness ·</i> <b>靜</b></h3>
+        <div class="cn">jìng</div>
+        <p>What classical texts mean by <em>quiet</em> — and why it almost never means silence.</p>
+        <div class="vote">
+          <span class="tally">412 picks</span>
+          <span class="pick">Cast your vote</span>
+        </div>
+      </article>
+
+      <article class="rr-vote-card">
+        <div class="num">貳</div>
+        <h3><i>The middle ·</i> <b>中</b></h3>
+        <div class="cn">zhōng</div>
+        <p>Not compromise. Not balance. The Confucian middle is a held tension, <em>not a soft place</em>.</p>
+        <div class="vote">
+          <span class="tally">298 picks · your pick</span>
+          <span class="pick">Change vote</span>
+        </div>
+      </article>
+
+      <article class="rr-vote-card">
+        <div class="num">叄</div>
+        <h3><i>Returning ·</i> <b>歸</b></h3>
+        <div class="cn">guī</div>
+        <p>The classical idea of <em>going back</em> as a form of progress — and the modern price of refusing it.</p>
+        <div class="vote">
+          <span class="tally">186 picks</span>
+          <span class="pick">Cast your vote</span>
+        </div>
+      </article>
+    </div>
+
+    <p class="rr-vote-foot">Voting closes when Issue 001 closes — currently <em>open</em>. The editors do not always pick the highest-voted character; they always read every comment that comes with a vote.</p>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: rr-letters
+     SOURCE:
+       - all letters authored by current user
+         → /wp-json/ie/v1/letters?author=current&order=desc
+       - status enum: pending | chosen | published
+       - "ref" column links back to: the letter's source article when
+         status=published, otherwise the public Letters intake page.
+     ============================================ -->
+<section class="rr-section" data-section="rr-letters">
+  <div class="wrap">
+    <div class="rr-head">
+      <div class="num">伍</div>
+      <h2><b>Your Letters</b> <i>— sent to the editors</i></h2>
+      <div class="cn">來 信 之 蹤</div>
+    </div>
+    <p class="rr-dek">Each letter you've written to the journal — and where it stands. Editors reply privately to every letter, and choose a small number to print in the next issue.</p>
+
+    <table class="rr-letters">
+      <thead>
+        <tr>
+          <th style="width:42%">Letter</th>
+          <th style="width:18%">Sent</th>
+          <th style="width:18%">Status</th>
+          <th style="width:22%">Where it lives</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="title">On Zhuangzi's butterfly, kindly disagreeing<em>"…the translator's footnote flattens it…"</em></td>
+          <td>18 May 2026</td>
+          <td class="status s-published">Published</td>
+          <td class="ref"><a href="./ink-east-issue-001-v1.html">Issue 001 · Letters</a></td>
+        </tr>
+        <tr>
+          <td class="title">A request for a reading on 「閒」<em>"my grandmother used the word, but I never asked…"</em></td>
+          <td>02 May 2026</td>
+          <td class="status s-chosen">Chosen for Issue 002</td>
+          <td class="ref"><a href="#">held by the editors</a></td>
+        </tr>
+        <tr>
+          <td class="title">A small note on the Editor's Letter<em>"…sent it to my mother in Suzhou…"</em></td>
+          <td>22 Apr 2026</td>
+          <td class="status s-pending">Pending</td>
+          <td class="ref"><a href="#">in the editors' inbox</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="rr-letters-foot">
+      <a class="rr-cta" href="#new-letter">Write a new letter</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: rr-custom-reading
+     SOURCE:
+       - user's queue position → /wp-json/ie/v1/custom-reading-queue?author=current
+       - service entry page    → /services/custom-reading (TODO · roadmap #3)
+     RULES:
+       - This is a DOORWAY, not a sales page. No price, no "buy now",
+         no Fiverr-style cards. The full pitch lives at #3.
+       - href="#" placeholder until /services/custom-reading ships.
+     TODO · #3 待做:
+       - replace href="#custom-reading" with ./ink-east-custom-reading-v1.html
+         once roadmap task #3 is built.
+     ============================================ -->
+<section class="rr-section" data-section="rr-custom-reading">
+  <div class="wrap">
+    <div class="rr-head">
+      <div class="num">陸</div>
+      <h2><b>Custom Reading</b> <i>— your priority queue</i></h2>
+      <div class="cn">私 讀 之 優 先</div>
+    </div>
+
+    <div class="rr-cr">
+      <div class="copy">
+        <p>If a passage of classical Chinese — or a myth, or a difficult line of poetry — keeps catching on you, the editors can write you a deep reading of it. <em>One person reading slowly, for one person who needs to.</em></p>
+        <p>Patrons hold a place near the front of the queue. Submit a brief, and we will respond within a working week.</p>
+        <p style="margin-top:24px"><a class="rr-cta solid" href="#custom-reading">Submit a brief</a> &nbsp; <a class="rr-cta" href="#custom-reading-about">Read how it works</a></p>
+      </div>
+
+      <aside class="queue">
+        <div class="head">Your standing</div>
+        <p>You haven't asked for a custom reading yet — when you do, you'll see your place in the queue here, with a quiet estimate of when the editors will reach it.</p>
+        <div class="row"><span>Patron priority</span><span class="ahead">≈ 2× faster</span></div>
+        <div class="row"><span>Editors currently working on</span><span><b>4 readings</b></span></div>
+        <div class="row"><span>Average response</span><span><b>5 working days</b></span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="foot-mark">
+    <div class="ampers">Ink <em>&amp;</em> East</div>
+    <span class="cn">墨 與 東</span>
+    <span class="sub">An independent digital journal · Published when ready · Est. 2026</span>
+  </div>
+
+  <div class="foot-cols">
+    <div>
+      <h5>The Journal <span class="cn">關 於</span></h5>
+      <p class="mission">Ink &amp; East publishes a single issue when a single issue is ready. Each one answers, in plain English, a modern question — through Chinese classical thought, original stories, and reader letters.</p>
+      <p class="also-by">Also kept by the editors —<br>a small shop of objects, <a href="./spatial-flow-v1.html">Spatial Flow →</a></p>
+    </div>
+    <div>
+      <h5>Read <span class="cn">讀</span></h5>
+      <ul>
+        <li><a href="./ink-east-issue-001-v1.html">This Issue · 001</a></li>
+        <li><a href="./ink-east-v1.html">Home</a></li>
+        <li><a href="./ink-east-vip-library-v1.html">VIP Library</a></li>
+        <li><a href="./ink-east-reading-room-v1.html">Reading Room</a></li>
+        <li><a href="#">Field Notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Speak <span class="cn">問</span></h5>
+      <ul>
+        <li><a href="#">Ask the Ancient Text</a></li>
+        <li><a href="#">Suggest an Issue Theme</a></li>
+        <li><a href="#">Vote · Patrons only</a></li>
+        <li><a href="#">Reader Notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Studio <span class="cn">寫</span></h5>
+      <ul>
+        <li><a href="#">Custom Ebook Studio</a></li>
+        <li><a href="#">Process &amp; Pricing</a></li>
+        <li><a href="#">Past Manuscripts</a></li>
+        <li><a href="#">Submit a brief</a></li>
+        <li><a href="#">Editorial standards</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="colophon-final">
+    <span>© 2026 Ink &amp; East · Published quietly</span>
+    <span>Set in EB Garamond, Inter &amp; Noto Serif SC</span>
+    <span>ISSN — 2026.001</span>
+  </div>
+</footer>
+
+</body>
+</html>
