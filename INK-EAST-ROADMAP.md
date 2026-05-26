@@ -16,15 +16,15 @@
 | 5a | Reader Notes 组件 stub demo | preview/ink-east-reader-notes-component-v1.html | 无 | ✓(6f0bb58) |
 | 5b | /community 聚合页（可选，后期） | preview/ink-east-community-v1.html | 5a | 后期 |
 | 6 | Letters 投稿表单 + Thank You | preview/ink-east-letters-form-v1.html | 无 | ✓(635c8b0) |
-| 7 | Custom Ebook Studio 服务详情 | preview/ink-east-custom-ebook-v1.html | #3 | ⏳ |
+| 7 | Custom Ebook Studio 服务详情 | preview/ink-east-custom-ebook-v1.html | #3 | ✓(ef3fb80) |
 
 完工后逐项把状态从 ⏳ 改为 ✓。链接死链未填的不算完工。
 
 **波次划分（推荐节奏）**：
 - **Wave 1 ✓ 完工** (#1 ✓ → #1.5 ✓ → #2 ✓ → #3 ✓ → #4 ✓)：核心闭环 + 启动核心商业完成。paywall 路径已活,Custom Reading 可接活,Membership 是第七 destination。
 - **Wave 2 ✓ 完工** (#5a ✓ → #6 ✓)：互动闭环完成。Letters 投稿 + Reader Notes 组件规范 + 9 文件 footer 整改全部到位。
-- **Wave 3** (#7)：商业补完，与 #3 互相导流。
-- **Backlog**：#5b /community、VIP Paywall 3 状态变体（已合并进 #1 单 guest 状态）。
+- **Wave 3 ✓ 完工** (#7 ✓)：Custom Ebook Studio 上线,与 #3 Custom Reading 互相导流。**ROADMAP 主线 7/8 任务 ✓ 全完**。
+- **Backlog**：#5b /community 聚合页(120+ 旧文章迁移后再起,见下方 Pre-launch 决定)、VIP Paywall 3 状态变体（已合并进 #1 单 guest 状态）。
 
 ---
 
