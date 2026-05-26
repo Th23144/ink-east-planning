@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership — Ink & East</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================
+     INK & EAST · MEMBERSHIP (加 入)
+     ============================================
+     URL on production:        /membership
+     Server-side gate:         NONE for the page itself.
+     Default rendered state:   GUEST (full invitation surface).
+     Member-state swap:        when is_user_logged_in() &&
+                               user_can('ie_read_vip'), the WP
+                               template REPLACES the entire
+                               .mb-join-surface block with the
+                               .mb-member-strip variant kept as
+                               an HTML comment below. Same swap
+                               pattern as the cr-tier-strip in
+                               preview/ink-east-custom-reading-v1.html.
+
+     Page intent: a quiet invitation, not a pricing surface.
+     The visual reference is closer to the way NPR, Wikipedia
+     or the Guardian ask their readers to support them than
+     to the way a SaaS service sells a plan.
+
+     What MUST stay out of this view (handoff §3 + ROADMAP §4):
+       - tier comparison cards (3-column with check marks)
+       - "★ best value" / "most popular" badges
+       - bullet-checklist of perks (Reader Notes ✓ / VIP Library ✓ ...)
+       - any number that resembles a price (¥, $, currency, monthly
+         figures, annual figures). The Stripe Checkout decides the
+         real number; the design surface stays mute about it.
+       - the words "unlock", "access", "premium", "exclusive",
+         "limited time", "now", "today" — none of those.
+       - duplicating the Reading Room's content list. Membership is
+         "join the journal as a supporter", not "open these doors".
+
+     The two tiers (Reader / Patron) are described in PROSE,
+     in two paragraphs, with a single quiet line at the end
+     of each that points at the Stripe Checkout. The fact that
+     Patron includes more than Reader is allowed to be carried
+     by the sentences themselves, not by a comparison table.
+     ============================================ -->
+
+<style>
+:root{--paper:#f4ede0;--paper-light:#faf5e9;--paper-dark:#e8dfce;--ink:#1a1611;--ink-soft:#4a4036;--ink-faint:#8a7f70;--seal:#a02d23;--seal-deep:#7a1f1a;--rule:rgba(26,22,17,.28);--rule-soft:rgba(26,22,17,.12);--serif-en:"EB Garamond","Noto Serif SC",Georgia,serif;--serif-cn:"Noto Serif SC","EB Garamond",serif;--sans:"Inter",-apple-system,"PingFang SC",sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}
+body{font-family:var(--serif-en);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55;font-feature-settings:"liga" 1,"kern" 1,"onum" 1}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--seal);color:var(--paper-light)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.5;mix-blend-mode:multiply;background-image:radial-gradient(circle at 25% 30%,rgba(26,22,17,.025) 0%,transparent 40%),radial-gradient(circle at 75% 60%,rgba(26,22,17,.02) 0%,transparent 35%),radial-gradient(circle at 50% 80%,rgba(26,22,17,.015) 0%,transparent 30%)}
+
+/* BACKBAR — same family as reading-room / vip-library / custom-reading */
+.backbar{background:var(--ink);color:var(--paper-light);padding:8px 28px;font-family:var(--mono);font-size:10px;display:flex;justify-content:space-between;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap;gap:14px}
+.backbar a{color:var(--seal);border-bottom:1px dashed var(--seal);padding-bottom:1px}
+.backbar .right{color:var(--ink-faint)}
+
+/* SITE NAV — verbatim from reading-room / custom-reading. Membership is .active.
+   nav.left now carries 7 items (Home · Issues · Reading Room · VIP Library ·
+   Ask the Ancient · Studio · Membership). flex-wrap on .left handles narrow
+   widths. */
+.nav-strip{padding:20px 56px 0}
+.site-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.site-nav .left{display:flex;gap:28px;flex-wrap:wrap}
+.site-nav .center{font-family:var(--serif-cn);font-size:13px;letter-spacing:.5em;color:var(--ink);font-weight:500}
+.site-nav .right{display:flex;gap:28px;justify-content:flex-end}
+.site-nav a{transition:color .2s}
+.site-nav a:hover{color:var(--seal)}
+.site-nav a.active{color:var(--seal);border-bottom:1px solid var(--seal);padding-bottom:2px}
+
+/* ===== JOIN SURFACE (hero + body) ============================
+   Wrapped in .mb-join-surface so the WP template can swap the
+   whole block for .mb-member-strip on a single hook. ============ */
+
+/* HERO — a quiet editorial portrait of "joining the journal".
+   Single-column, italic display type, no buttons clustered up
+   front. The CTA is one ticket-style link, not a button bar. */
+.mb-hero{padding:96px 56px 72px;border-bottom:1px solid var(--ink);position:relative}
+.mb-hero .inner{max-width:880px;margin:0 auto}
+.mb-hero .vlib-rule{width:64px;height:1px;background:var(--ink);margin-bottom:28px;position:relative}
+.mb-hero .vlib-rule::after{content:"";position:absolute;left:0;top:-3px;width:7px;height:7px;background:var(--seal);border-radius:1px}
+.mb-hero .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:22px}
+.mb-hero h1{font-family:var(--serif-en);font-style:italic;font-size:clamp(40px,5.4vw,68px);font-weight:400;line-height:1.04;letter-spacing:-.012em;color:var(--ink);margin-bottom:22px}
+.mb-hero h1 b{font-style:normal;font-weight:500}
+.mb-hero .cn-mark{font-family:var(--serif-cn);font-size:15px;letter-spacing:.5em;color:var(--ink-soft);margin-bottom:32px}
+.mb-hero p.lede{font-family:var(--serif-en);font-size:20px;line-height:1.7;color:var(--ink-soft);max-width:680px;margin-bottom:36px}
+.mb-hero p.lede em{font-style:italic;color:var(--ink)}
+
+/* CTA — same ticket-style as rr-cta. Single primary, single
+   quiet secondary. No "Buy Now" feel. */
+.mb-cta{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding:0 0 3px;transition:all .2s}
+.mb-cta::after{content:" →";font-family:var(--serif-en);font-style:italic}
+.mb-cta:hover{color:var(--seal);border-color:var(--seal)}
+.mb-cta.solid{padding:14px 28px;border:1px solid var(--ink);border-radius:0}
+.mb-cta.solid:hover{background:var(--ink);color:var(--paper-light);border-color:var(--ink)}
+.mb-hero .cta-row{display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.mb-hero .cta-row .quiet{font-family:var(--serif-en);font-style:italic;font-size:14px;color:var(--ink-faint)}
+
+/* WHY band — one paragraph, no headline. Sits between hero and tiers
+   like an editor's note. Hairline above and below. */
+.mb-why{padding:64px 56px;border-bottom:1px solid var(--rule)}
+.mb-why .inner{max-width:780px;margin:0 auto}
+.mb-why .label{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:18px;text-align:center}
+.mb-why p{font-family:var(--serif-en);font-style:italic;font-size:19px;line-height:1.75;color:var(--ink);text-align:center}
+.mb-why p em{font-style:normal}
+
+/* TIERS — TWO prose paragraphs, side by side on wide, stacked on narrow.
+   Each paragraph is a self-contained narrative, not a bullet list. The
+   hairline rules between them, not card backgrounds. NO badges, NO
+   "★ recommended", NO check-mark grids. */
+.mb-tiers{padding:88px 56px;border-bottom:1px solid var(--rule)}
+.mb-tiers .wrap{max-width:1100px;margin:0 auto}
+.mb-tiers .head{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:end;padding-bottom:18px;margin-bottom:48px;border-bottom:1px solid var(--ink)}
+.mb-tiers .head .num{font-family:var(--serif-cn);font-size:36px;font-weight:500;color:var(--seal);line-height:1;letter-spacing:.05em}
+.mb-tiers .head h2{font-family:var(--serif-en);font-style:italic;font-size:clamp(26px,2.6vw,36px);font-weight:400;line-height:1;color:var(--ink)}
+.mb-tiers .head h2 b{font-style:normal;font-weight:500}
+.mb-tiers .head .cn{font-family:var(--serif-cn);font-size:13px;letter-spacing:.45em;color:var(--ink-faint);align-self:center}
+.mb-tiers .dek{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:680px;margin-bottom:48px}
+.mb-tiers .dek em{font-style:normal;color:var(--ink)}
+
+.mb-two{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule-soft)}
+.mb-tier{padding:40px 40px 36px 0;border-right:1px solid var(--rule-soft);display:flex;flex-direction:column;gap:18px}
+.mb-tier:last-child{border-right:none;padding-right:0;padding-left:40px}
+.mb-tier .seal-line{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-faint)}
+.mb-tier .seal-line .seal{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;background:var(--seal);color:var(--paper-light);font-family:var(--serif-cn);font-size:18px;font-weight:600;line-height:1;transform:rotate(-2deg);box-shadow:inset 0 0 0 2px rgba(244,237,224,.32),1.5px 2px 0 rgba(122,31,26,.18)}
+.mb-tier .seal-line b{color:var(--ink);font-weight:500}
+.mb-tier h3{font-family:var(--serif-en);font-style:italic;font-size:30px;font-weight:400;line-height:1.15;color:var(--ink);margin-top:4px}
+.mb-tier h3 b{font-style:normal;font-weight:500}
+.mb-tier .cn{font-family:var(--serif-cn);font-size:13px;letter-spacing:.45em;color:var(--ink-soft);margin-top:-6px;margin-bottom:6px}
+.mb-tier p{font-family:var(--serif-en);font-size:17px;line-height:1.78;color:var(--ink);margin-bottom:14px}
+.mb-tier p em{font-style:italic;color:var(--ink)}
+.mb-tier p.note{font-style:italic;font-size:15px;color:var(--ink-soft);line-height:1.7}
+.mb-tier .join-line{margin-top:auto;padding-top:18px;border-top:1px dashed var(--rule-soft);font-family:var(--serif-en);font-style:italic;font-size:15px;color:var(--ink-soft)}
+.mb-tier .join-line a{font-family:var(--mono);font-style:normal;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;margin-left:4px}
+.mb-tier .join-line a::after{content:" →";font-family:var(--serif-en);font-style:italic}
+.mb-tier .join-line a:hover{color:var(--seal);border-color:var(--seal)}
+
+/* CUSTOM READING ASIDE — a small paragraph, clearly secondary, kept
+   far below the main offer so Custom Reading is not framed as the
+   reason to join. Visually softened to ink-soft. */
+.mb-cr-aside{padding:64px 56px;border-bottom:1px solid var(--rule)}
+.mb-cr-aside .inner{max-width:780px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:start}
+.mb-cr-aside .tag{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--seal);writing-mode:vertical-rl;transform:rotate(180deg);align-self:start;padding-top:6px}
+.mb-cr-aside p{font-family:var(--serif-en);font-style:italic;font-size:16px;line-height:1.75;color:var(--ink-soft)}
+.mb-cr-aside p em{font-style:normal;color:var(--ink)}
+.mb-cr-aside p a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;font-style:normal;transition:all .2s}
+.mb-cr-aside p a:hover{color:var(--seal);border-color:var(--seal)}
+
+/* FINEPRINT — refund / cancel / sign in / restore.
+   Bottom of page, well below the offer, NOT in the hero. Quiet copy. */
+.mb-fineprint{padding:56px 56px 80px;background:var(--paper-light);border-bottom:1px solid var(--rule)}
+.mb-fineprint .inner{max-width:780px;margin:0 auto;text-align:center}
+.mb-fineprint .label{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:22px}
+.mb-fineprint p{font-family:var(--serif-en);font-size:14px;line-height:1.85;color:var(--ink-soft)}
+.mb-fineprint p a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.mb-fineprint p a:hover{color:var(--seal);border-color:var(--seal)}
+.mb-fineprint p .sep{color:var(--ink-faint);margin:0 10px}
+
+/* MEMBER STRIP — replacement variant for already-paid users.
+   Lives commented in markup; CSS kept here so the swap renders
+   cleanly when the WP template injects it. Same visual family
+   as backbar, but on paper-light, not on ink. */
+.mb-member-strip{padding:36px 56px;border-bottom:1px solid var(--ink);background:var(--paper-light);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.mb-member-strip .left{display:flex;align-items:center;gap:18px;font-family:var(--serif-en);font-style:italic;font-size:19px;color:var(--ink);max-width:680px}
+.mb-member-strip .left .seal{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;background:var(--seal);color:var(--paper-light);font-family:var(--serif-cn);font-size:19px;font-weight:600;transform:rotate(-2deg);flex-shrink:0;box-shadow:inset 0 0 0 2px rgba(244,237,224,.32),1.5px 2px 0 rgba(122,31,26,.18)}
+.mb-member-strip .left em{font-style:normal;color:var(--ink-soft)}
+.mb-member-strip a.go{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px}
+.mb-member-strip a.go::after{content:" →";font-family:var(--serif-en);font-style:italic}
+.mb-member-strip a.go:hover{color:var(--seal);border-color:var(--seal)}
+
+/* FOOTER — verbatim from reading-room / vip-library */
+footer{background:var(--paper);color:var(--ink);padding:90px 40px 28px;margin-top:0}
+.foot-mark{text-align:center;padding-bottom:48px;border-bottom:1px solid var(--ink);margin-bottom:56px}
+.foot-mark .ampers{font-family:var(--serif-en);font-size:clamp(80px,12vw,200px);font-weight:400;line-height:.85;letter-spacing:-.01em}
+.foot-mark .ampers em{font-style:italic;color:var(--seal)}
+.foot-mark .cn{display:block;font-family:var(--serif-cn);font-size:18px;letter-spacing:.5em;color:var(--ink-soft);margin-top:18px}
+.foot-mark .sub{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px}
+.foot-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+footer h5{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:22px;font-weight:500}
+footer h5 .cn{font-family:var(--serif-cn);color:var(--ink-faint);margin-left:10px;letter-spacing:.3em}
+footer p.mission{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:380px;margin-bottom:22px}
+.also-by{font-family:var(--serif-en);font-size:13px;color:var(--ink-faint);line-height:1.7}
+.also-by a{font-style:italic;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.also-by a:hover{color:var(--seal);border-color:var(--seal)}
+footer ul{list-style:none}
+footer li{margin-bottom:11px}
+footer a{font-family:var(--serif-en);font-size:15px;color:var(--ink-soft);transition:color .2s}
+footer a:hover{color:var(--seal)}
+.colophon-final{padding-top:24px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+.mb-hero{padding:64px 22px 48px}
+.mb-why{padding:48px 22px}
+.mb-tiers{padding:64px 22px}
+.mb-two{grid-template-columns:1fr}
+.mb-tier{border-right:none;padding-right:0;padding-bottom:32px;border-bottom:1px solid var(--rule-soft)}
+.mb-tier:last-child{padding-left:0;padding-top:32px;border-bottom:none}
+.mb-cr-aside{padding:48px 22px}
+.mb-cr-aside .inner{grid-template-columns:1fr;gap:18px}
+.mb-cr-aside .tag{writing-mode:horizontal-tb;transform:none}
+.mb-fineprint{padding:48px 22px 64px}
+.mb-member-strip{padding:24px 22px}
+.nav-strip{padding:14px 22px 0}
+.site-nav{grid-template-columns:1fr;gap:14px;text-align:center}
+.site-nav .left,.site-nav .right{justify-content:center}
+.foot-cols{grid-template-columns:1fr 1fr;gap:40px}
+footer{padding:60px 20px 20px}
+.foot-mark .ampers{font-size:56px}
+}
+@media(max-width:560px){
+.foot-cols{grid-template-columns:1fr;gap:36px}
+.colophon-final{flex-direction:column;gap:6px;text-align:center}
+.mb-hero p.lede{font-size:18px}
+.mb-tiers .head{grid-template-columns:auto 1fr;gap:14px}
+.mb-tiers .head .cn{display:none}
+.mb-tier h3{font-size:26px}
+.mb-member-strip .left{font-size:17px}
+}
+</style>
+</head>
+
+<!-- data-tier mirrors the convention used in reading-room and
+     custom-reading. Default is "guest" so the design preview
+     renders the full invitation. The WP template overwrites
+     this attribute and ALSO triggers the hero swap below. -->
+<body data-tier="guest">
+
+<div class="backbar">
+  <a href="./ink-east-v1.html">← Back to Ink &amp; East</a>
+  <span>INK &amp; EAST · MEMBERSHIP · 加 入</span>
+  <span class="right">An invitation, not a pitch</span>
+</div>
+
+<!-- SITE NAV — same 7 items as every other top-level page after
+     Wave 1 collapse. Membership is .active here. The "Sign in"
+     CTA on the right is the guest-state default; for logged-in
+     users the WP template swaps it for "Account · Sign out".
+     This nav is NOT swapped for members — Membership stays in
+     the destination row, members simply do not click it. -->
+<div class="nav-strip">
+  <nav class="site-nav">
+    <div class="left">
+      <a href="./ink-east-v1.html">Home</a>
+      <a href="./ink-east-issue-001-v1.html">Issues</a>
+      <a href="./ink-east-reading-room-v1.html">Reading Room</a>
+      <a href="./ink-east-vip-library-v1.html">VIP Library</a>
+      <a href="./ink-east-v1.html#letters">Ask the Ancient</a>
+      <a href="./ink-east-v1.html#studio">Studio</a>
+      <a class="active" href="./ink-east-membership-v1.html">Membership</a>
+    </div>
+    <div class="center">墨 與 東</div>
+    <div class="right">
+      <a href="/wp-login.php">Sign in</a>
+    </div>
+  </nav>
+</div>
+
+
+<!-- ============================================
+     BLOCK: mb-join-surface (WRAPPING BLOCK)
+     SOURCE / SWAP RULE:
+       - default render → THIS .mb-join-surface block (guest /
+         logged-in free).
+       - if is_user_logged_in() && user_can('ie_read_vip')
+           → server REPLACES this entire wrapper with the
+             .mb-member-strip variant kept as an HTML comment
+             at the bottom of this surface.
+       - the swap is ONE hook on a single wrapper; nothing
+         smaller is conditionally rendered. This mirrors how
+         article-002-vip swaps its paywall band for the article
+         body, and how custom-reading swaps the cr-tier-strip.
+     FIELD MAP:
+       - tier_for_swap     → get_user_meta( $uid, 'ie_tier' )
+                             ∈ { reader, patron } triggers swap
+       - display_name      → wp_get_current_user()->display_name
+                             (used inside .mb-member-strip only)
+     ============================================ -->
+<div class="mb-join-surface" data-default="guest">
+
+
+  <!-- ============================================
+       BLOCK: mb-hero
+       SOURCE: all editorial copy is static (no CMS field).
+       LINKS:
+         - main CTA   → /checkout/stripe?plan=reader
+                        (TODO: live endpoint configured at #4
+                        Stripe ship time)
+         - quiet link → #mb-tiers (anchors down to the two-tier
+                        prose so the reader can read before
+                        choosing a level)
+       COPY RULES:
+         - No prices.
+         - No "★ best value", no comparison table.
+         - First-person plural reads as editors, not marketers.
+       ============================================ -->
+  <section class="mb-hero" data-section="mb-hero">
+    <div class="inner">
+      <div class="vlib-rule"></div>
+      <div class="kicker"><span style="font-family:var(--serif-cn);font-size:14px;color:var(--seal);letter-spacing:.05em;margin-right:14px;vertical-align:-1px">壹</span>An invitation · 加 入</div>
+      <h1>Help us keep <i>publishing</i> a journal that has<br>no advertisers, no sponsors and <b>no hurry</b>.</h1>
+      <div class="cn-mark">慢 慢 寫 · 慢 慢 讀</div>
+      <p class="lede">
+        Ink &amp; East is a small, independent journal of Chinese classical thought, original stories and reader letters. It is published when an issue is ready, not when a calendar says so. <em>Becoming a member is how a reader takes a quiet share in keeping it that way.</em>
+      </p>
+      <div class="cta-row">
+        <!-- TODO · #4 Stripe Checkout endpoint, configured at ship time.
+             Default tier on the hero CTA is Reader — chosen because the
+             two prose paragraphs below let the reader walk up to Patron
+             on their own. -->
+        <a href="#" data-stripe-plan="reader" class="mb-cta solid">Become a member</a>
+        <span class="quiet">or <a href="#mb-tiers" style="color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px">read what membership means</a></span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK: mb-why
+       ROLE: one quiet paragraph between the hero and the two
+             tiers, the way a small museum places one wall of
+             editor's text before the rooms begin. Sets the
+             register: this is a journal asking for support,
+             not a service selling a plan.
+       SOURCE: static copy.
+       ============================================ -->
+  <section class="mb-why" data-section="mb-why">
+    <div class="inner">
+      <div class="label">— A note from the editors —</div>
+      <p>
+        Ink &amp; East publishes a single issue when a single issue is ready. It carries no advertising and never will. The journal stays this way because some of its readers pay a small monthly fee to keep it that way — and that fee, however quiet, is the only thing that buys the editors the patience to keep publishing slowly.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK: mb-tiers
+       ROLE: TWO prose paragraphs, side by side. NOT a comparison
+             table. NO check-mark grid. NO "recommended" badge.
+             Each paragraph ends with one quiet line that links
+             to the Stripe Checkout for that tier.
+       SOURCE: static editorial copy.
+       LINKS:
+         - Reader join line → /checkout/stripe?plan=reader
+                              (TODO: live at #4 Stripe ship time)
+         - Patron join line → /checkout/stripe?plan=patron
+                              (TODO: live at #4 Stripe ship time)
+       COPY RULES (handoff §3 + ROADMAP §4 hard rules):
+         - No prices. The Stripe Checkout decides the number;
+           the design surface stays mute.
+         - No "unlock", no "access", no "premium content",
+           no "exclusive", no urgency words.
+         - The fact that Patron includes more than Reader is
+           carried by the sentences, not by a check-mark grid.
+         - Custom Reading is mentioned, but only inside the
+           Patron paragraph as a small standing courtesy, and
+           again in the .mb-cr-aside below. It is NEVER framed
+           as the reason to join.
+       ============================================ -->
+  <section class="mb-tiers" id="mb-tiers" data-section="mb-tiers">
+    <div class="wrap">
+      <div class="head">
+        <span class="num">貳</span>
+        <h2><i>Two ways</i> <b>to walk in</b>.</h2>
+        <span class="cn">兩 種 加 入</span>
+      </div>
+      <p class="dek">
+        Two levels, told as two short stories rather than as a comparison table. <em>Read them as paragraphs, not as a checklist.</em> The level you choose is mostly about how much you want to step in — not about which features you switch on.
+      </p>
+
+      <div class="mb-two">
+
+        <!-- Tier · Reader (讀) -->
+        <div class="mb-tier">
+          <div class="seal-line"><span class="seal">讀</span><b>Reader</b><span>· entry support</span></div>
+          <h3><i>For the reader</i> who wants the journal to <b>keep arriving</b>.</h3>
+          <div class="cn">讀 · 入 門</div>
+          <p>
+            To support at the <em>Reader</em> level is to keep the lights on for the journal — to make it possible for an issue to be quietly assembled and published when it is ready, instead of when an algorithm asks for it.
+          </p>
+          <p>
+            Readers see each new issue first, before it lands in the open archive a season later, and may write Reader Notes underneath the essays. Once a month they may send a Letter to the editors — the kind of slow correspondence that has been the heart of small journals since long before the internet.
+          </p>
+          <p class="note">
+            The first time a Reader commissions a Custom Reading, a quiet thank-you courtesy is folded into the quote — not advertised, not the reason to join, just a small return of the favour.
+          </p>
+          <div class="join-line">
+            Supported at the Reader level.
+            <!-- TODO · #4 Stripe Checkout endpoint, configured at ship time.
+                 Production href: /checkout/stripe?plan=reader -->
+            <a href="#" data-stripe-plan="reader">Join as a Reader</a>
+          </div>
+        </div>
+
+        <!-- Tier · Patron (贊) -->
+        <div class="mb-tier">
+          <div class="seal-line"><span class="seal">贊</span><b>Patron</b><span>· deeper support</span></div>
+          <h3><i>For the reader</i> who wants to <b>step in further</b>.</h3>
+          <div class="cn">贊 · 深 入</div>
+          <p>
+            To support at the <em>Patron</em> level is to step in further. Everything a Reader holds, a Patron holds — and a few quiet things besides.
+          </p>
+          <p>
+            A Patron has a vote in what the next issue investigates (the ballot lives inside the Reading Room, and we tally it together with the editorial team), may send up to three Letters in a month, and sits at the front of the queue when they commission a Custom Reading, with a small standing courtesy on the final quote.
+          </p>
+          <p>
+            Once a year, when the issues of the year are gathered into a single bound volume, a printed copy is sent in the post — the only physical object the journal makes.
+          </p>
+          <div class="join-line">
+            Supported at the Patron level.
+            <!-- TODO · #4 Stripe Checkout endpoint, configured at ship time.
+                 Production href: /checkout/stripe?plan=patron -->
+            <a href="#" data-stripe-plan="patron">Join as a Patron</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK: mb-cr-aside
+       ROLE: A small disambiguation paragraph for readers who
+             arrived from the Custom Reading page. Custom Reading
+             is an independent product (handoff §3 + ROADMAP §3)
+             — membership is NOT how you commission one. The
+             Patron standing courtesy is mentioned again here,
+             but the framing is "membership and Custom Reading
+             are kept apart on purpose".
+       SOURCE: static copy.
+       LINK: → ./ink-east-custom-reading-v1.html
+       ============================================ -->
+  <section class="mb-cr-aside" data-section="mb-cr-aside">
+    <div class="inner">
+      <span class="tag">— Aside —</span>
+      <p>
+        If you arrived here from the <a href="./ink-east-custom-reading-v1.html">Custom Reading</a> page, a small note: that is a separate service, kept at its own door. <em>Membership is not how you commission a Custom Reading.</em> Patrons happen to receive a small standing courtesy when they do, but the two products are kept apart on purpose — the Custom Reading editors take work from anyone, member or not.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================
+       BLOCK: mb-fineprint
+       ROLE: All the practical "what if" links, kept here at the
+             bottom rather than dressed up as primary CTAs.
+             cancel / sign in / refund / membership terms /
+             restore — every link a reader might need that is
+             not "join now". The cancel link is the v1 unsubscribe
+             entry point (per #4 spec).
+       LINKS:
+         - Cancel any time → /account/cancel
+                             (TODO: backend live at Stripe / Memberful
+                             ship time. Stripe billing portal will
+                             host the actual cancel UI; this preview
+                             links to a placeholder slug.)
+         - Sign in         → /wp-login.php
+         - Refund policy   → /legal/refund      (BRIEF §18.3)
+         - Membership terms→ /legal/membership  (BRIEF §18.4)
+         - Restore         → /account/restore-access
+       ============================================ -->
+  <section class="mb-fineprint" data-section="mb-fineprint">
+    <div class="inner">
+      <div class="label">— Practical notes —</div>
+      <p>
+        Cancel any time, with one click.
+        <!-- TODO · #4 Stripe billing portal cancel slug, live at ship time.
+             Production href: /account/cancel (Stripe customer portal). -->
+        <a href="#" data-cancel-slug>Cancel here.</a>
+        <span class="sep">·</span>
+        Already a member? <a href="/wp-login.php">Sign in.</a>
+        <span class="sep">·</span>
+        Trouble signing in?
+        <!-- TODO · #4 Restore endpoint, live at ship time.
+             Production href: /account/restore-access -->
+        <a href="#">Restore an old account.</a>
+      </p>
+      <p style="margin-top:14px;font-style:italic;font-size:13px;color:var(--ink-faint)">
+        <!-- TODO · legal pages still to write (BRIEF §十八). Production hrefs:
+             /legal/refund (§18.3) and /legal/membership (§18.4). -->
+        Refund policy at <a href="#">refund</a>, membership terms at <a href="#">membership terms</a>. The Stripe Checkout decides the number you pay; we do not negotiate it on this page.
+      </p>
+    </div>
+  </section>
+
+
+</div>
+<!-- /.mb-join-surface — END of guest surface ====================== -->
+
+
+<!-- ============================================
+     BLOCK: mb-member-strip (variant, server-side swap)
+     STATE: rendered ONLY when is_user_logged_in() &&
+            user_can('ie_read_vip').
+     SOURCE: display_name → wp_get_current_user()->display_name
+     ROLE:  the entire .mb-join-surface above is REPLACED with
+            this single horizontal strip — there is no upgrade
+            path, no second pricing surface, no "manage plan"
+            CTA. The strip simply walks the member back into the
+            Reading Room.
+     LINK:  → ./ink-east-reading-room-v1.html
+     The block is kept here as an HTML comment so the WP template
+     has a single, exact piece of markup to inject. Same swap
+     pattern as the .cr-tier-strip variants in
+     preview/ink-east-custom-reading-v1.html.
+
+<div class="mb-member-strip">
+  <div class="left">
+    <span class="seal">贊</span>
+    <span>You are already a member, <em>Wei Chen</em>. The room is exactly as you left it.</span>
+  </div>
+  <a class="go" href="./ink-east-reading-room-v1.html">Enter the Reading Room</a>
+</div>
+     ============================================ -->
+
+
+<footer>
+  <div class="foot-mark">
+    <div class="ampers">Ink <em>&amp;</em> East</div>
+    <span class="cn">墨 與 東</span>
+    <span class="sub">An independent digital journal · Published when ready · Est. 2026</span>
+  </div>
+
+  <div class="foot-cols">
+    <div>
+      <h5>The Journal <span class="cn">關 於</span></h5>
+      <p class="mission">Ink &amp; East publishes a single issue when a single issue is ready. Each one answers, in plain English, a modern question — through Chinese classical thought, original stories, and reader letters.</p>
+      <p class="also-by">Also kept by the editors —<br>a small shop of objects, <a href="./spatial-flow-v1.html">Spatial Flow →</a></p>
+    </div>
+    <div>
+      <h5>Read <span class="cn">讀</span></h5>
+      <ul>
+        <li><a href="./ink-east-issue-001-v1.html">This Issue · 001</a></li>
+        <li><a href="./ink-east-v1.html">Home</a></li>
+        <li><a href="./ink-east-vip-library-v1.html">VIP Library</a></li>
+        <li><a href="./ink-east-reading-room-v1.html">Reading Room</a></li>
+        <li><a href="./ink-east-custom-reading-v1.html">Custom Reading</a></li>
+        <li><a href="./ink-east-membership-v1.html">Become a member</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Speak <span class="cn">問</span></h5>
+      <ul>
+        <li><a href="#">Ask the Ancient Text</a></li>
+        <li><a href="#">Suggest an Issue Theme</a></li>
+        <li><a href="#">Vote · Patrons only</a></li>
+        <li><a href="#">Reader Notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Studio <span class="cn">寫</span></h5>
+      <ul>
+        <li><a href="./ink-east-custom-reading-v1.html">Custom Reading</a></li>
+        <li><a href="#">Custom Ebook Studio</a></li>
+        <li><a href="#">Process &amp; Pricing</a></li>
+        <li><a href="#">Past Manuscripts</a></li>
+        <li><a href="#">Submit a brief</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="colophon-final">
+    <span>© 2026 Ink &amp; East · Published quietly</span>
+    <span>Set in EB Garamond, Inter &amp; Noto Serif SC</span>
+    <span>ISSN — 2026.001</span>
+  </div>
+</footer>
+
+</body>
+</html>

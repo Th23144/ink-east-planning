@@ -38,6 +38,18 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;
 .backbar a{color:var(--seal);border-bottom:1px dashed var(--seal);padding-bottom:1px}
 .backbar .right{color:var(--ink-faint)}
 
+/* SITE NAV — added during Wave 1 collapse so VIP Library carries the same
+   seven-item canonical nav as the other top-level pages. Verbatim CSS from
+   reading-room / custom-reading. VIP Library is .active here. */
+.nav-strip{padding:20px 56px 0}
+.site-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.site-nav .left{display:flex;gap:28px;flex-wrap:wrap}
+.site-nav .center{font-family:var(--serif-cn);font-size:13px;letter-spacing:.5em;color:var(--ink);font-weight:500}
+.site-nav .right{display:flex;gap:28px;justify-content:flex-end}
+.site-nav a{transition:color .2s}
+.site-nav a:hover{color:var(--seal)}
+.site-nav a.active{color:var(--seal);border-bottom:1px solid var(--seal);padding-bottom:2px}
+
 /* ============================================
    VIP-LIBRARY HERO
    Visual rule (vs Issue cover): NO giant single character.
@@ -143,6 +155,9 @@ section.vlib-about{padding:56px 22px}
 .foot-cols{grid-template-columns:1fr 1fr;gap:40px}
 footer{padding:60px 20px 20px}
 .foot-mark .ampers{font-size:56px}
+.nav-strip{padding:14px 22px 0}
+.site-nav{grid-template-columns:1fr;gap:14px;text-align:center}
+.site-nav .left,.site-nav .right{justify-content:center}
 }
 @media(max-width:560px){
 .foot-cols{grid-template-columns:1fr;gap:36px}
@@ -160,6 +175,30 @@ footer{padding:60px 20px 20px}
   <a href="./ink-east-v1.html">← Back to Ink &amp; East</a>
   <span>INK &amp; EAST · VIP LIBRARY · 藏 書 樓</span>
   <span class="right">Updated when ready · Est. 2026</span>
+</div>
+
+
+<!-- SITE NAV — added at Wave 1 close-out (#4 ship). Same seven items as
+     reading-room / custom-reading / membership / home cover-top. VIP Library
+     is .active here. The "Sign in" link in nav.right is the guest-state
+     default; for logged-in users the WP template swaps it for
+     "Account · Sign out", same as on reading-room. -->
+<div class="nav-strip">
+  <nav class="site-nav">
+    <div class="left">
+      <a href="./ink-east-v1.html">Home</a>
+      <a href="./ink-east-issue-001-v1.html">Issues</a>
+      <a href="./ink-east-reading-room-v1.html">Reading Room</a>
+      <a class="active" href="./ink-east-vip-library-v1.html">VIP Library</a>
+      <a href="./ink-east-v1.html#letters">Ask the Ancient</a>
+      <a href="./ink-east-v1.html#studio">Studio</a>
+      <a href="./ink-east-membership-v1.html">Membership</a>
+    </div>
+    <div class="center">墨 與 東</div>
+    <div class="right">
+      <a href="/wp-login.php">Sign in</a>
+    </div>
+  </nav>
 </div>
 
 
@@ -375,6 +414,7 @@ footer{padding:60px 20px 20px}
         <li><a href="./ink-east-vip-library-v1.html">VIP Library</a></li>
         <li><a href="./ink-east-reading-room-v1.html">Reading Room</a></li>
         <li><a href="#">Field Notes</a></li>
+        <li><a href="./ink-east-membership-v1.html">Become a member</a></li>
       </ul>
     </div>
     <div>
