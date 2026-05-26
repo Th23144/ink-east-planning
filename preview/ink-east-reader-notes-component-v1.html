@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reader Notes — Component Specification — Ink &amp; East</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================
+     INK & EAST · READER NOTES (讀 者 筆 記)
+     ============================================
+     URL on production:        /reader-notes  (component spec doc)
+     ROLE:    A VISUAL CONTRACT, not a destination page.
+              The component itself is embedded inside article
+              pages and (eventually) the Community page (roadmap
+              #5b). This file shows engineers exactly what the
+              component must look like in every state, with an
+              architectural-style anatomy diagram annotating
+              each DOM hook. It is reachable from the footer
+              "Speak" column so a reader who clicks "Reader Notes"
+              still lands somewhere coherent.
+     OPEN TO: everyone — but the demo states themselves describe
+              what each tier sees (guest = read-only; Reader /
+              Patron = write + single-level reply; Editor admin
+              UI is NOT in this preview, see handoff §3).
+     DEFAULT RENDERED STATE: state #1 (empty · guest), so the
+              cleanest first-time view is what an unsigned reader
+              meets. All other states are stacked vertically with
+              mono caps labels naming what each one demonstrates.
+
+     What MUST stay out of this view:
+       - upvote / downvote / heart / like-count
+       - thread folding ("Show 14 more replies")
+       - nested replies past depth 1
+       - emoji tier badges, colored chip blocks
+       - "12 likes · 3 replies · 1d ago" SNS density
+       - "Post / Comment / Reply" submit copy
+       - Editor admin actions (pin, hide, ban) — that lives in
+         /wp-admin, not in the public preview
+       - any visual that reads as Reddit / 贴吧 / Disqus / wpDiscuz
+
+     Backend (BRIEF §六, hard rule):
+       - WordPress native wp_comments table
+       - Custom comment template (no wpDiscuz — it would break
+         the typography and ship its own chrome)
+       - max_depth = 1, server-enforced
+       - meta keys: editors_choice (bool), hidden_by_editor (bool)
+       - author_tier read from user_meta('ie_tier')
+
+     NOTE on the embedded stubs in article-001 / article-002-vip:
+       Those page-level Reader Notes stubs pre-date this spec.
+       They will be synced with this contract in a future pass,
+       not in this commit (#5a scope is the spec doc itself).
+
+     Anchors: 朱砂方印「編 選」(Editor's Choice mark), 中文 numerals
+     on the section heads, hairline rules between states, footer =
+     site-wide.
+     ============================================ -->
+
+
+<style>
+:root{--paper:#f4ede0;--paper-light:#faf5e9;--paper-dark:#e8dfce;--ink:#1a1611;--ink-soft:#4a4036;--ink-faint:#8a7f70;--seal:#a02d23;--seal-deep:#7a1f1a;--rule:rgba(26,22,17,.28);--rule-soft:rgba(26,22,17,.12);--serif-en:"EB Garamond","Noto Serif SC",Georgia,serif;--serif-cn:"Noto Serif SC","EB Garamond",serif;--sans:"Inter",-apple-system,"PingFang SC",sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;--col:680px}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--serif-en);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55;font-feature-settings:"liga" 1,"kern" 1,"onum" 1}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--seal);color:var(--paper-light)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.5;mix-blend-mode:multiply;background-image:radial-gradient(circle at 25% 30%,rgba(26,22,17,.025) 0%,transparent 40%),radial-gradient(circle at 75% 60%,rgba(26,22,17,.02) 0%,transparent 35%),radial-gradient(circle at 50% 80%,rgba(26,22,17,.015) 0%,transparent 30%)}
+
+/* BACKBAR — same family as the rest of the site */
+.backbar{background:var(--ink);color:var(--paper-light);padding:8px 28px;font-family:var(--mono);font-size:10px;display:flex;justify-content:space-between;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap;gap:14px;align-items:center}
+.backbar a{color:var(--seal);border-bottom:1px dashed var(--seal);padding-bottom:1px}
+.backbar .right{color:var(--ink-faint)}
+
+/* SITE NAV — verbatim from custom-reading / reading-room. No item is
+   .active here: this is a component spec, not one of the seven curated
+   destinations. Reachable via footer "Speak" → Reader Notes. */
+.nav-strip{padding:20px 56px 0}
+.site-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.site-nav .left{display:flex;gap:28px;flex-wrap:wrap}
+.site-nav .center{font-family:var(--serif-cn);font-size:13px;letter-spacing:.5em;color:var(--ink);font-weight:500}
+.site-nav .right{display:flex;gap:28px;justify-content:flex-end}
+.site-nav a{transition:color .2s}
+.site-nav a:hover{color:var(--seal)}
+.site-nav a.active{color:var(--seal);border-bottom:1px solid var(--seal);padding-bottom:2px}
+
+
+/* HERO */
+.rn-hero{padding:96px 28px 80px;border-bottom:1px solid var(--ink);text-align:center;position:relative}
+.rn-hero .inner{max-width:760px;margin:0 auto}
+.rn-hero .vlib-rule{width:64px;height:1px;background:var(--ink);margin:0 auto 28px;position:relative}
+.rn-hero .vlib-rule::after{content:"";position:absolute;left:50%;top:-3px;width:7px;height:7px;background:var(--seal);transform:translateX(-50%);border-radius:1px}
+.rn-hero .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:24px}
+.rn-hero h1{font-family:var(--serif-en);font-style:italic;font-size:clamp(38px,5vw,64px);font-weight:400;line-height:1.05;letter-spacing:-.012em;margin-bottom:20px;color:var(--ink)}
+.rn-hero h1 b{font-style:normal;font-weight:500}
+.rn-hero .cn-mark{font-family:var(--serif-cn);font-size:clamp(18px,2vw,24px);letter-spacing:.5em;color:var(--ink-soft);margin-bottom:36px;display:inline-block;padding-left:.5em;border-bottom:1px solid var(--rule-soft);padding-bottom:18px}
+.rn-hero .lede{font-family:var(--serif-en);font-style:italic;font-size:21px;line-height:1.65;color:var(--ink-soft);max-width:600px;margin:0 auto 28px}
+.rn-hero .lede em{font-style:normal;color:var(--ink)}
+.rn-hero .meta{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.rn-hero .meta b{color:var(--seal);font-weight:500}
+.rn-hero .toc{margin-top:36px;padding:20px 24px;border:1px dashed var(--rule);background:var(--paper-light);text-align:left;display:grid;grid-template-columns:auto 1fr;gap:14px 22px;max-width:640px;margin-left:auto;margin-right:auto}
+.rn-hero .toc .lab{font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--seal);align-self:center}
+.rn-hero .toc .links{display:flex;gap:8px 14px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.rn-hero .toc .links a{border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.rn-hero .toc .links a:hover{color:var(--seal);border-color:var(--seal)}
+
+/* SECTION FRAME */
+.rn-section{padding:80px 28px;border-bottom:1px solid var(--rule-soft)}
+.rn-section.dark-rule{border-bottom-color:var(--rule)}
+.rn-wrap{max-width:1100px;margin:0 auto}
+.rn-wrap.narrow{max-width:760px}
+.rn-head{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:end;padding-bottom:18px;margin-bottom:36px;border-bottom:1px solid var(--ink)}
+.rn-head .num{font-family:var(--serif-cn);font-size:32px;font-weight:500;color:var(--seal);line-height:1;letter-spacing:.05em}
+.rn-head h2{font-family:var(--serif-en);font-style:italic;font-size:clamp(24px,2.4vw,32px);font-weight:400;line-height:1;color:var(--ink)}
+.rn-head h2 b{font-style:normal;font-weight:500}
+.rn-head .cn{font-family:var(--serif-cn);font-size:13px;letter-spacing:.45em;color:var(--ink-faint);align-self:center}
+.rn-prose p{font-family:var(--serif-en);font-size:18px;line-height:1.78;color:var(--ink);margin-bottom:22px;max-width:680px}
+.rn-prose p em{font-style:italic;color:var(--seal)}
+.rn-prose p i{font-style:italic}
+
+
+/* ============================================
+   THE NOTE COMPONENT — used by every demo state.
+   This is the reference visual; engineers should
+   copy this DOM shape into the WP comment template.
+   ============================================ */
+.rn-frame{padding:24px 0}
+
+/* a single note */
+.rn-note{padding:22px 0;border-top:1px solid var(--rule-soft);position:relative;max-width:680px}
+.rn-note:last-child{border-bottom:1px solid var(--rule-soft)}
+.rn-note .head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px}
+.rn-note .head .author{font-family:var(--serif-en);font-style:italic;font-size:16px;color:var(--ink);font-weight:500}
+.rn-note .head .tier{font-family:var(--serif-cn);font-size:12px;color:var(--ink-soft);letter-spacing:0;border:1px solid var(--rule);padding:1px 7px 2px;line-height:1.2;background:var(--paper-light)}
+.rn-note .head .tier.patron{color:var(--seal);border-color:var(--seal)}
+.rn-note .head .tier.hidden{color:var(--ink-faint);border-color:var(--rule-soft);font-family:var(--mono);font-size:10px;letter-spacing:.1em}
+.rn-note .head .when{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
+.rn-note .head .reply-to{font-family:var(--serif-en);font-style:italic;font-size:13px;color:var(--ink-faint);margin-left:auto}
+.rn-note .body{font-family:var(--serif-en);font-size:17px;line-height:1.72;color:var(--ink);max-width:640px}
+.rn-note .body em{font-style:italic;color:var(--ink)}
+.rn-note .body p+p{margin-top:14px}
+.rn-note .body blockquote{font-style:italic;color:var(--ink-soft);border-left:2px solid var(--rule);padding:2px 0 2px 18px;margin:14px 0;font-size:16px;line-height:1.7}
+.rn-note .ref{margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.rn-note .ref a{color:var(--ink);border-bottom:1px dashed var(--rule);padding-bottom:1px;transition:all .2s}
+.rn-note .ref a:hover{color:var(--seal);border-color:var(--seal)}
+.rn-note .actions{margin-top:10px;font-family:var(--serif-en);font-style:italic;font-size:14px;color:var(--ink-soft)}
+.rn-note .actions a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.rn-note .actions a:hover{color:var(--seal);border-color:var(--seal)}
+
+/* Editor's Choice mark — a small chop seal, NOT a trophy */
+.rn-mark-ec{display:inline-flex;align-items:center;justify-content:center;flex-direction:column;width:36px;height:36px;background:var(--seal);color:var(--paper-light);font-family:var(--serif-cn);font-weight:600;font-size:11px;letter-spacing:.05em;line-height:1.1;text-align:center;transform:rotate(-2deg);box-shadow:inset 0 0 0 1.5px rgba(244,237,224,.32),1px 2px 0 rgba(122,31,26,.18);margin-left:auto}
+.rn-mark-ec.is-inactive{background:transparent;color:var(--ink-faint);box-shadow:inset 0 0 0 1px var(--rule);transform:rotate(-1deg)}
+
+/* Editor's Choice band — sits above the body */
+.rn-note.is-editors-choice{border-left:2px solid var(--seal);padding-left:22px}
+.rn-note.is-editors-choice .ec-band{font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--seal);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.rn-note.is-editors-choice .ec-band b{color:var(--ink);font-weight:500;font-family:var(--serif-cn);font-size:12px;letter-spacing:.25em}
+
+/* Hidden by editor — position kept, content withdrawn */
+.rn-note.is-hidden{opacity:.7}
+.rn-note.is-hidden .body{font-family:var(--mono);font-size:13px;color:var(--ink-faint);font-style:normal;letter-spacing:.04em;line-height:1.7}
+
+/* Single-level reply — depth 1 only, never deeper */
+.rn-note.rn-reply{margin-left:48px;padding-left:22px;border-left:1px dashed var(--rule);border-top:none;margin-top:6px;padding-top:18px;padding-bottom:18px}
+.rn-note.rn-reply::before{content:"↳";position:absolute;left:-22px;top:24px;font-family:var(--serif-en);font-style:italic;color:var(--ink-faint);font-size:18px}
+
+
+/* Note composer — for logged-in members only */
+.rn-composer{border:1px solid var(--rule);background:var(--paper-light);padding:22px 24px;margin-top:18px;max-width:680px}
+.rn-composer textarea{width:100%;min-height:96px;background:var(--paper);border:1px solid var(--rule-soft);font-family:var(--serif-en);font-style:italic;font-size:16px;line-height:1.65;padding:12px 14px;resize:vertical;color:var(--ink);outline:none;transition:border-color .2s}
+.rn-composer textarea:focus{border-color:var(--ink)}
+.rn-composer textarea::placeholder{color:var(--ink-faint);font-style:italic}
+.rn-composer .row{display:flex;justify-content:space-between;align-items:center;margin-top:14px;flex-wrap:wrap;gap:14px}
+.rn-composer .quiet{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint)}
+.rn-composer .quiet b{color:var(--ink);font-weight:500;font-family:var(--serif-en);font-style:italic;font-size:14px;letter-spacing:0;text-transform:none;margin-right:4px}
+.rn-composer button{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--paper-light);background:var(--ink);border:1px solid var(--ink);padding:12px 22px;cursor:pointer;transition:all .25s}
+.rn-composer button:hover{background:var(--seal);border-color:var(--seal)}
+
+/* Guest sign-in box — the inert state */
+.rn-signin{border:1px dashed var(--rule);background:var(--paper-light);padding:28px 28px;margin-top:18px;text-align:center;max-width:680px}
+.rn-signin .lab{font-family:var(--mono);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:14px}
+.rn-signin .signin-btn{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);border:1px solid var(--ink);padding:13px 26px;transition:all .25s}
+.rn-signin .signin-btn:hover{background:var(--ink);color:var(--paper-light)}
+.rn-signin .help{font-family:var(--serif-en);font-style:italic;font-size:14px;color:var(--ink-soft);margin-top:14px;line-height:1.6}
+.rn-signin .help em{font-style:normal;color:var(--ink)}
+
+/* Empty list copy */
+.rn-empty{font-family:var(--serif-en);font-style:italic;font-size:17px;color:var(--ink-soft);padding:8px 0;line-height:1.6;max-width:680px}
+.rn-empty em{font-style:normal;color:var(--ink)}
+.rn-empty.rn-empty-ec{border-top:1px dashed var(--rule);margin-top:18px;padding-top:18px;font-size:15px}
+.rn-empty.rn-empty-ec em{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:6px;font-style:normal}
+
+/* Sort pills — Recent / Editor's Choice ONLY (no Top / Hot / Best) */
+.rn-sort{display:flex;gap:0;align-items:center;border-bottom:1px solid var(--rule-soft);padding-bottom:14px;margin-bottom:6px;flex-wrap:wrap;max-width:680px}
+.rn-sort .lab{font-family:var(--mono);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-faint);margin-right:18px}
+.rn-sort a{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);padding:7px 14px;border:1px solid var(--rule);margin-right:8px;transition:all .2s}
+.rn-sort a:hover{color:var(--ink);border-color:var(--ink)}
+.rn-sort a.active{color:var(--seal);border-color:var(--seal)}
+.rn-sort .count{margin-left:auto;font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
+
+
+/* ============================================
+   §贰 ANATOMY DIAGRAM — architectural-style leader
+   lines from a central demo note out to numbered
+   labels. PURE CSS, no SVG, no images.
+   ============================================ */
+.rn-anatomy-stage{display:grid;grid-template-columns:1fr minmax(0,460px) 1fr;column-gap:24px;align-items:start;max-width:1100px;margin:0 auto;padding:24px 0}
+.rn-anatomy-stage .col-left,.rn-anatomy-stage .col-right{display:flex;flex-direction:column;gap:34px;padding-top:22px}
+.rn-anatomy-stage .col-left{align-items:flex-end}
+.rn-anatomy-stage .col-center{position:relative}
+.rn-anatomy-stage .col-center .rn-note{background:var(--paper-light);padding:24px 28px;border:1px dashed var(--rule);border-top:1px dashed var(--rule);max-width:none;margin:0 auto}
+.rn-anatomy-stage .col-center .rn-note:last-child{border-bottom:1px dashed var(--rule)}
+
+/* anatomy caption */
+.rn-cap{position:relative;font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);line-height:1.55;max-width:240px}
+.rn-cap.is-left{text-align:right;padding-right:28px}
+.rn-cap.is-right{text-align:left;padding-left:28px}
+.rn-cap .cap-row{display:flex;align-items:center;gap:8px}
+.rn-cap.is-left .cap-row{justify-content:flex-end}
+.rn-cap .num{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper-light);width:20px;height:20px;font-family:var(--mono);font-size:10px;letter-spacing:0;flex-shrink:0;line-height:1}
+.rn-cap .desc{display:block;font-family:var(--serif-en);font-style:italic;font-size:13px;letter-spacing:0;text-transform:none;color:var(--ink-faint);line-height:1.55;margin-top:6px}
+.rn-cap .desc em{font-style:normal;color:var(--ink)}
+.rn-cap::before{content:"";position:absolute;top:9px;width:24px;border-top:1px dashed var(--seal)}
+.rn-cap.is-left::before{right:0}
+.rn-cap.is-right::before{left:0}
+
+/* anchor numbers inline inside the demo note (the "what gets pointed at") */
+.rn-anchor{display:inline-flex;align-items:center;justify-content:center;background:var(--seal);color:var(--paper-light);font-family:var(--mono);font-size:9px;font-style:normal;font-weight:400;letter-spacing:0;width:16px;height:16px;line-height:1;vertical-align:middle;margin:0 4px;flex-shrink:0;border-radius:1px}
+
+/* anatomy legend (mobile fallback list) */
+.rn-anatomy-legend{display:none;margin-top:32px;padding:24px 0;border-top:1px dashed var(--rule)}
+.rn-anatomy-legend ol{list-style:none;display:flex;flex-direction:column;gap:14px;counter-reset:anat}
+.rn-anatomy-legend li{display:grid;grid-template-columns:24px 1fr;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);line-height:1.55}
+.rn-anatomy-legend li::before{counter-increment:anat;content:counter(anat);background:var(--ink);color:var(--paper-light);width:20px;height:20px;font-family:var(--mono);font-size:10px;letter-spacing:0;text-align:center;line-height:20px}
+.rn-anatomy-legend .desc{display:block;font-family:var(--serif-en);font-style:italic;font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink-faint);margin-top:4px}
+
+
+/* ============================================
+   §叄 STATES — vertical stack of 8 demo states,
+   grouped 4 groups, each preceded by a mono caps
+   label naming what the state demonstrates.
+   ============================================ */
+.rn-group-label{margin-top:8px;padding:18px 0 14px;border-top:1px solid var(--ink);font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);max-width:680px}
+.rn-group-label b{color:var(--ink);font-weight:500}
+.rn-group-label .desc{display:block;margin-top:8px;font-family:var(--serif-en);font-style:italic;font-size:14px;letter-spacing:0;text-transform:none;color:var(--ink-soft);line-height:1.55;max-width:600px}
+
+.rn-states{display:flex;flex-direction:column;gap:48px;margin-top:18px}
+.rn-state{padding:28px 0 12px;border-top:1px dashed var(--rule)}
+.rn-state .label-row{display:flex;gap:14px;align-items:baseline;margin-bottom:10px;font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-faint);flex-wrap:wrap}
+.rn-state .label-row .id{color:var(--seal);font-weight:500}
+.rn-state .label-row .title{color:var(--ink);font-weight:500;letter-spacing:.18em}
+.rn-state .what-shows{font-family:var(--serif-en);font-style:italic;font-size:15px;line-height:1.65;color:var(--ink-soft);margin-bottom:22px;max-width:640px}
+.rn-state .what-shows em{font-style:normal;color:var(--ink)}
+
+/* §伍 RED LINES — prose, not a checklist */
+.rn-redline{padding:32px 36px;border:1px solid var(--rule);background:var(--paper-light);max-width:760px}
+.rn-redline .lab{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--seal);margin-bottom:14px}
+.rn-redline p{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.75;color:var(--ink-soft)}
+.rn-redline p em{font-style:normal;color:var(--ink)}
+
+/* §陸 BACKEND CONTRACT */
+.rn-backend{display:grid;grid-template-columns:auto 1fr;gap:14px 28px;font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--ink-soft);padding-top:8px}
+.rn-backend dt{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--seal);padding-top:2px;white-space:nowrap}
+.rn-backend dd{font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0;text-transform:none;line-height:1.7;padding-bottom:14px;border-bottom:1px dashed var(--rule-soft)}
+.rn-backend dd em{font-family:var(--serif-en);font-style:italic;color:var(--ink-soft);font-size:13px;display:block;margin-top:4px;letter-spacing:0;text-transform:none}
+.rn-backend dd b{color:var(--seal);font-weight:400}
+.rn-backend dd code{font-family:var(--mono);background:var(--paper-light);border:1px solid var(--rule-soft);padding:1px 6px;color:var(--ink);font-size:11px}
+.rn-backend dt:last-of-type+dd{border-bottom:none}
+
+/* FOOTER — verbatim from the rest of the site */
+footer{background:var(--paper);color:var(--ink);padding:90px 40px 28px;margin-top:0}
+.foot-mark{text-align:center;padding-bottom:48px;border-bottom:1px solid var(--ink);margin-bottom:56px}
+.foot-mark .ampers{font-family:var(--serif-en);font-size:clamp(80px,12vw,200px);font-weight:400;line-height:.85;letter-spacing:-.01em}
+.foot-mark .ampers em{font-style:italic;color:var(--seal)}
+.foot-mark .cn{display:block;font-family:var(--serif-cn);font-size:18px;letter-spacing:.5em;color:var(--ink-soft);margin-top:18px}
+.foot-mark .sub{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px}
+.foot-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+footer h5{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:22px;font-weight:500}
+footer h5 .cn{font-family:var(--serif-cn);color:var(--ink-faint);margin-left:10px;letter-spacing:.3em}
+footer p.mission{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:380px;margin-bottom:22px}
+.also-by{font-family:var(--serif-en);font-size:13px;color:var(--ink-faint);line-height:1.7}
+.also-by a{font-style:italic;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.also-by a:hover{color:var(--seal);border-color:var(--seal)}
+footer ul{list-style:none}
+footer li{margin-bottom:11px}
+footer a{font-family:var(--serif-en);font-size:15px;color:var(--ink-soft);transition:color .2s}
+footer a:hover{color:var(--seal)}
+.colophon-final{padding-top:24px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+
+/* RESPONSIVE */
+@media(max-width:980px){
+.nav-strip{padding:14px 22px 0}
+.site-nav{grid-template-columns:1fr;gap:14px;text-align:center}
+.site-nav .left,.site-nav .right{justify-content:center}
+.rn-hero{padding:56px 22px 56px}
+.rn-section{padding:56px 22px}
+.rn-anatomy-stage{grid-template-columns:1fr;gap:0}
+.rn-anatomy-stage .col-left,.rn-anatomy-stage .col-right{display:none}
+.rn-anatomy-stage .col-center .rn-note{max-width:100%}
+.rn-anatomy-legend{display:block}
+.foot-cols{grid-template-columns:1fr 1fr;gap:40px}
+footer{padding:60px 20px 20px}
+.foot-mark .ampers{font-size:56px}
+.rn-note.rn-reply{margin-left:24px;padding-left:14px}
+.rn-backend{grid-template-columns:1fr}
+.rn-backend dt{padding-top:14px;border-top:1px dashed var(--rule-soft)}
+.rn-backend dd{padding-bottom:8px;border-bottom:none}
+.rn-redline{padding:24px 22px}
+.rn-pricing{padding:24px 20px}
+}
+@media(max-width:560px){
+.rn-head{grid-template-columns:auto 1fr;gap:14px}
+.rn-head .cn{display:none}
+.foot-cols{grid-template-columns:1fr;gap:36px}
+.colophon-final{flex-direction:column;gap:6px;text-align:center}
+.rn-note .head{gap:8px}
+}
+</style>
+</head>
+
+<!-- data-tier defaults to "guest" so state #1 (the cleanest first-time
+     view) is the page's natural opening. The other states are stacked
+     below for engineering reference; data-tier here is for the spec
+     page itself, not for the embedded component. -->
+<body data-tier="guest">
+
+<div class="backbar">
+  <a href="./ink-east-v1.html">← Back to Ink &amp; East</a>
+  <span>INK &amp; EAST · READER NOTES · 讀 者 筆 記 · COMPONENT SPEC v1</span>
+  <span class="right">Visual contract · for engineering</span>
+</div>
+
+<!-- SITE NAV — same seven destinations as reading-room / vip-library /
+     custom-reading. No .active here: this page is a component spec, not
+     a curated top-level destination. A reader who landed here from the
+     footer "Speak" column still gets the full horizontal nav. -->
+<div class="nav-strip">
+  <nav class="site-nav">
+    <div class="left">
+      <a href="./ink-east-v1.html">Home</a>
+      <a href="./ink-east-issue-001-v1.html">Issues</a>
+      <a href="./ink-east-reading-room-v1.html">Reading Room</a>
+      <a href="./ink-east-vip-library-v1.html">VIP Library</a>
+      <a href="./ink-east-letters-form-v1.html">Ask the Ancient</a>
+      <a href="./ink-east-v1.html#studio">Studio</a>
+      <a href="./ink-east-membership-v1.html">Membership</a>
+    </div>
+    <div class="center">墨 與 東</div>
+    <div class="right">
+      <a href="/wp-login.php">Sign in</a>
+    </div>
+  </nav>
+</div>
+
+
+
+<!-- ============================================
+     §壹 HERO / INTRO
+     ROLE: Tells the reader (and the engineer) that this page
+           is a spec, not a community board.
+     NOTE: The page-level Reader Notes stubs that already live
+           inside article-001 / article-002-vip pre-date this
+           spec. They will be synced with this contract in a
+           future pass — not in this commit (#5a scope is the
+           spec doc itself).
+     ============================================ -->
+<section class="rn-hero">
+  <div class="inner">
+    <div class="vlib-rule"></div>
+    <div class="kicker">Component Specification · 組件規範</div>
+    <h1><em>Reader</em> <b>Notes</b><br><em>— a visual contract</em></h1>
+    <div class="cn-mark">讀 者 筆 記</div>
+    <p class="lede">This page is a <em>visual contract</em> for the Reader Notes component. It is not a community board. The component itself is embedded inside article pages and (eventually) the Community page (roadmap <em>#5b</em>).</p>
+    <p class="lede">Below: an architectural anatomy of one note, then eight rendered states an engineer can copy into the WordPress comment template — no plugin, no chrome, no fold-out thread.</p>
+    <div class="meta">
+      <span>Spec version <b>v1</b></span>
+      <span>For engineering</span>
+      <span>Backed by <b>wp_comments</b></span>
+      <span>Max depth <b>1</b></span>
+    </div>
+    <div class="toc">
+      <span class="lab">On this page —</span>
+      <div class="links">
+        <a href="#anatomy">壹 Anatomy</a>
+        <a href="#states">叄 States</a>
+        <a href="#sort">肆 Sort UI</a>
+        <a href="#redline">伍 Red lines</a>
+        <a href="#backend">陸 WP contract</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================================
+     §贰 ANATOMY — leader-line annotated demo note.
+     ROLE: Architectural drawing for engineers. Each of the
+           eight DOM hooks the comment template must produce
+           is numbered inline in the demo note; each number
+           has a matching caption on left or right with a
+           dashed CSS leader line.
+     IMPLEMENTATION: pure CSS — no SVG, no images. The dashed
+           connector is the ::before pseudo of each .rn-cap.
+           On viewports below 980px the side columns hide and
+           a numbered legend renders below the note instead.
+     ============================================ -->
+<section class="rn-section dark-rule" id="anatomy">
+  <div class="rn-wrap">
+    <div class="rn-head">
+      <div class="num">壹</div>
+      <h2><b>Anatomy</b> <i>— one note, eight hooks</i></h2>
+      <div class="cn">解 剖</div>
+    </div>
+    <p class="rn-prose"><em>Read the demo from the inside out.</em> Each numbered chip inside the note is a DOM hook the WordPress comment template must produce. Captions on the left and right name the hook and explain what it carries. The dashed lines are not decorative.</p>
+
+    <div class="rn-anatomy-stage">
+
+      <!-- LEFT COLUMN: caps 1, 3, 5, 7 -->
+      <div class="col-left">
+        <div class="rn-cap is-left">
+          <div class="cap-row">
+            <span class="lab">Author display name</span>
+            <span class="num">1</span>
+          </div>
+          <span class="desc"><em>display_name</em> from wp_users; pen names live in user_meta('ie_pen_name') and override when present.</span>
+        </div>
+        <div class="rn-cap is-left">
+          <div class="cap-row">
+            <span class="lab">Relative timestamp</span>
+            <span class="num">3</span>
+          </div>
+          <span class="desc">Format: <em>"two days ago · 兩 日 前"</em> for ≤14 days, then absolute <em>"on May 12"</em>. Never SNS-style "5d".</span>
+        </div>
+        <div class="rn-cap is-left">
+          <div class="cap-row">
+            <span class="lab">Note body typography</span>
+            <span class="num">5</span>
+          </div>
+          <span class="desc">Serif body, line-height 1.72, <em>em</em> for emphasis, <em>blockquote</em> for inline quotes. Paragraphs allowed. No HTML chrome.</span>
+        </div>
+        <div class="rn-cap is-left">
+          <div class="cap-row">
+            <span class="lab">Reply entry</span>
+            <span class="num">7</span>
+          </div>
+          <span class="desc">Plain italic text link, <em>not</em> a button. Hidden when the note itself is a reply (max_depth = 1).</span>
+        </div>
+      </div>
+
+      <!-- CENTER: the demo note with inline anchor numbers -->
+      <div class="col-center">
+        <article class="rn-note">
+          <div class="head">
+            <span class="anchor-wrap"><span class="rn-anchor">1</span><span class="author">Lin Wei</span></span>
+            <span class="anchor-wrap"><span class="rn-anchor">2</span><span class="tier reader">讀</span></span>
+            <span class="anchor-wrap"><span class="rn-anchor">3</span><span class="when">two days ago · 兩 日 前</span></span>
+            <span class="rn-mark-ec is-inactive" title="Editor's Choice mark — inactive on this note">編<br>選<span class="rn-anchor" style="margin-left:6px">6</span></span>
+          </div>
+          <p class="body"><span class="rn-anchor">5</span>The phrase <em>"the hardest practice is doing nothing"</em> kept me from opening my laptop for a whole hour this morning. I am writing this slowly. <em>Thank you.</em></p>
+          <div class="ref"><span class="rn-anchor">4</span>↳ on the line at <a href="./ink-east-article-001-v1.html#para-12">paragraph twelve</a></div>
+          <div class="actions"><span class="rn-anchor">7</span><a href="#reply-target"><!-- TODO · #5a/5b 待做 — wire up to live composer when component lands in articles -->↳ Reply</a></div>
+          <span class="rn-anchor" style="position:absolute;bottom:-9px;left:0;background:var(--ink)">8</span>
+        </article>
+      </div>
+
+      <!-- RIGHT COLUMN: caps 2, 4, 6, 8 -->
+      <div class="col-right">
+        <div class="rn-cap is-right">
+          <div class="cap-row">
+            <span class="num">2</span>
+            <span class="lab">Tier mark</span>
+          </div>
+          <span class="desc">Single Chinese character. <em>讀</em> for Reader, <em>贊</em> for Patron. Hairline border, paper-light fill, seal red on Patron only.</span>
+        </div>
+        <div class="rn-cap is-right">
+          <div class="cap-row">
+            <span class="num">4</span>
+            <span class="lab">Inline citation link</span>
+          </div>
+          <span class="desc">Anchors back to the source article paragraph the reader is responding to. Mono caps small, dashed underline. Carries the <em>↳</em> mark.</span>
+        </div>
+        <div class="rn-cap is-right">
+          <div class="cap-row">
+            <span class="num">6</span>
+            <span class="lab">Editor's Choice mark</span>
+          </div>
+          <span class="desc">A small <em>朱砂方印</em> with characters <em>編 選</em>. <em>Inactive</em> here (hairline, no fill) — see state #5 below for the active treatment.</span>
+        </div>
+        <div class="rn-cap is-right">
+          <div class="cap-row">
+            <span class="num">8</span>
+            <span class="lab">Hairline divider</span>
+          </div>
+          <span class="desc">A single <em>1px</em> rule between consecutive notes — <em>not</em> a card, not a box. Just border-top on each <em>.rn-note</em>.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile fallback legend -->
+    <div class="rn-anatomy-legend">
+      <ol>
+        <li>Author display name <span class="desc">display_name; pen name overrides if set.</span></li>
+        <li>Tier mark <span class="desc">讀 for Reader, 贊 for Patron — character only, no chip.</span></li>
+        <li>Relative timestamp <span class="desc">"two days ago · 兩 日 前", never "5d".</span></li>
+        <li>Inline citation link <span class="desc">Back to source article paragraph anchor.</span></li>
+        <li>Note body typography <span class="desc">Serif, em / blockquote allowed.</span></li>
+        <li>Editor's Choice mark <span class="desc">朱砂方印 編 選, inactive shown above.</span></li>
+        <li>Reply entry <span class="desc">Italic text link; hidden on replies themselves.</span></li>
+        <li>Hairline divider <span class="desc">Single 1px border-top, never a box.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================================
+     §叄 STATES — eight rendered demo states.
+     ROLE: For each state an engineer can read off:
+           (a) what the state demonstrates,
+           (b) what permission tier triggers it,
+           (c) which DOM hooks change vs. the anatomy default.
+     STATE GROUPS:
+       A · Empty / first-time   #1, #2
+       B · Populated            #3, #4
+       C · Special marks        #5, #6
+       D · Interactions         #7, #8
+     PERMISSION RECAP (already enforced in the anatomy too):
+       guest    → read-only; composer replaced by sign-in box
+       Reader   → write + reply (single level)
+       Patron   → write + reply (single level) — same as Reader
+       Editor   → admin actions live in /wp-admin, NOT rendered here
+     ============================================ -->
+<section class="rn-section dark-rule" id="states">
+  <div class="rn-wrap narrow">
+    <div class="rn-head">
+      <div class="num">叄</div>
+      <h2><b>States</b> <i>— eight specimens</i></h2>
+      <div class="cn">狀 態</div>
+    </div>
+    <p class="rn-prose">Each block below is a complete render of the component in one state. The mono-cap <em>label row</em> above each block tells the engineer which tier triggers the state and which fields differ from the default. <em>Read top to bottom; the first state is what an unsigned guest meets.</em></p>
+
+    <div class="rn-states">
+
+      <!-- ============== GROUP A ============== -->
+      <div class="rn-group-label">
+        Group A · <b>Empty / first-time states</b>
+        <span class="desc">No notes have been left on the article yet. Two variants: guest (inert, with a sign-in invitation) and a logged-in member (composer ready, placeholder copy guides the first note).</span>
+      </div>
+
+      <!-- STATE #1 — Empty · guest -->
+      <div class="rn-state" data-state="1">
+        <div class="label-row">
+          <span class="id">State #1</span>
+          <span class="title">Empty · guest</span>
+          <span>tier = <b style="color:var(--ink)">guest</b></span>
+          <span>default render</span>
+        </div>
+        <p class="what-shows">This state shows: a reader who has not signed in, on an article with no notes yet. The composer is replaced by a quiet sign-in box. <em>No "you must register" copy</em> — it is an invitation, not a gate.</p>
+        <div class="rn-frame">
+          <div class="rn-empty">No notes yet on this essay. <em>Reader Notes</em> are open to <em>Reader</em> and <em>Patron</em> members.</div>
+          <div class="rn-signin">
+            <div class="lab">— You're reading as guest —</div>
+            <a href="/wp-login.php" class="signin-btn">Sign in to leave a note</a>
+            <p class="help">Or <a href="./ink-east-membership-v1.html" style="color:var(--seal);border-bottom:1px solid var(--seal);padding-bottom:1px"><em>become a member</em></a> — both <em>Reader</em> and <em>Patron</em> tiers carry the writing right.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATE #2 — Empty · logged-in member -->
+      <div class="rn-state" data-state="2">
+        <div class="label-row">
+          <span class="id">State #2</span>
+          <span class="title">Empty · logged-in member</span>
+          <span>tier = <b style="color:var(--ink)">Reader / Patron</b></span>
+        </div>
+        <p class="what-shows">This state shows: a signed-in <em>Reader</em> or <em>Patron</em>, on an article with no notes yet. The sign-in box is replaced by an active composer. The placeholder copy is editorial, not breezy — it nudges the reader toward a real response, not a like.</p>
+        <div class="rn-frame">
+          <div class="rn-empty">No notes yet on this essay. <em>Be the first to leave one.</em></div>
+          <div class="rn-composer">
+            <textarea placeholder="Quote a line that stayed with you. Disagree, kindly. Add what the essay missed. Notes are read by every other reader of this piece — write something you would want to find."></textarea>
+            <div class="row">
+              <span class="quiet">Posting as <b>Lin Wei</b> · 讀 Reader</span>
+              <button type="button">Leave a note</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ============== GROUP B ============== -->
+      <div class="rn-group-label">
+        Group B · <b>Populated states</b>
+        <span class="desc">Notes exist on the article. Two variants: a list of mixed-tier notes (the everyday case), and one very long reflection note (the typography stress test).</span>
+      </div>
+
+      <!-- STATE #3 — Populated · 4 mixed notes -->
+      <div class="rn-state" data-state="3">
+        <div class="label-row">
+          <span class="id">State #3</span>
+          <span class="title">Populated · mixed notes</span>
+          <span>tier viewing = <b style="color:var(--ink)">any</b></span>
+          <span>4 notes · 2 Reader · 2 Patron</span>
+        </div>
+        <p class="what-shows">This state shows: an article with several notes on it, viewed by a logged-in <em>Reader</em>. Tiers are visually marked but not ranked — a Reader note and a Patron note have the same weight and the same affordances.</p>
+        <div class="rn-frame">
+          <div class="rn-sort">
+            <span class="lab">Sort —</span>
+            <a class="active" href="#recent"><!-- TODO · #5a 待做 — wire to ?orderby=date when component embeds in articles -->Recent · 新</a>
+            <a href="#editors-choice"><!-- TODO · #5a 待做 — wire to ?meta_key=editors_choice -->Editor's Choice · 編 選</a>
+            <span class="count">4 notes</span>
+          </div>
+          <div class="rn-list">
+
+            <article class="rn-note">
+              <div class="head">
+                <span class="author">Lin Wei</span>
+                <span class="tier reader">讀</span>
+                <span class="when">two days ago · 兩 日 前</span>
+              </div>
+              <p class="body">The phrase <em>"the hardest practice is doing nothing"</em> kept me from opening my laptop for a whole hour this morning. I am writing this slowly. <em>Thank you.</em></p>
+              <div class="ref">↳ on the line at <a href="./ink-east-article-001-v1.html#para-12">paragraph twelve</a></div>
+              <div class="actions"><a href="#reply"><!-- TODO · #5a 待做 — composer toggle -->↳ Reply</a></div>
+            </article>
+
+            <article class="rn-note">
+              <div class="head">
+                <span class="author">M. Cheung</span>
+                <span class="tier patron">贊</span>
+                <span class="when">five days ago · 五 日 前</span>
+              </div>
+              <p class="body">A small disagreement, kindly — I think the essay slightly overstates the moral weight of stillness. There is a difference between <em>not doing</em> and <em>not yet ready</em>. Both are quiet, but only one is honest.</p>
+              <div class="ref">↳ on <a href="./ink-east-article-001-v1.html">"Why doing nothing is sometimes the hardest practice"</a></div>
+              <div class="actions"><a href="#reply"><!-- TODO · #5a 待做 — composer toggle -->↳ Reply</a></div>
+            </article>
+
+            <article class="rn-note">
+              <div class="head">
+                <span class="author">S. Wang</span>
+                <span class="tier reader">讀</span>
+                <span class="when">on May 12</span>
+              </div>
+              <p class="body">I read this twice. The second time I noticed the line about <em>the kettle that never boils because no one waits</em>. That is exactly my mother's house — and now I think it might be exactly mine, too.</p>
+              <div class="ref">↳ on <a href="./ink-east-article-001-v1.html#para-08">paragraph eight</a></div>
+              <div class="actions"><a href="#reply"><!-- TODO · #5a 待做 — composer toggle -->↳ Reply</a></div>
+            </article>
+
+            <article class="rn-note">
+              <div class="head">
+                <span class="author">T. Lee</span>
+                <span class="tier patron">贊</span>
+                <span class="when">a week ago · 一 週 前</span>
+              </div>
+              <p class="body">This reminds me of Zhuangzi's woodcarver — he fasted seven days before lifting the chisel. <em>Doing nothing</em> was the work, not the pause before it. The essay touches the same idea but does not name it; I wonder if naming it would make it smaller.</p>
+              <div class="ref">↳ on <a href="./ink-east-article-001-v1.html">the essay</a></div>
+              <div class="actions"><a href="#reply"><!-- TODO · #5a 待做 — composer toggle -->↳ Reply</a></div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- STATE #4 — Long note · typography stress -->
+      <div class="rn-state" data-state="4">
+        <div class="label-row">
+          <span class="id">State #4</span>
+          <span class="title">Long note · typography stress</span>
+          <span>tier viewing = <b style="color:var(--ink)">any</b></span>
+          <span>~ 280 words · paragraphs · em / quote</span>
+        </div>
+        <p class="what-shows">This state shows: a single long reflection note. The component must render multi-paragraph prose, <em>em</em> emphasis, and an inline <em>blockquote</em> without breaking — no truncation, no "Read more" fold, no sudden font-size shift.</p>
+        <div class="rn-frame">
+          <article class="rn-note">
+            <div class="head">
+              <span class="author">K. Ito</span>
+              <span class="tier patron">贊</span>
+              <span class="when">on May 14</span>
+            </div>
+            <div class="body">
+              <p>What Bao writes about the <em>chair pulled out before the guest arrives</em> arrived for me at the wrong time, then again at the right time. The first reading I noticed only the gesture — the small, slightly anxious courtesy of preparing. I was tired and did not look further. A week later, on a quieter evening, I came back to the paragraph and saw what was actually under it: not a courtesy, but a <em>refusal of waiting</em>.</p>
+              <p>To pull the chair out is to confess that you do not yet trust the guest to find their seat. It is to perform welcome instead of practising it. The essay does not say this in those words, and I would not want it to — half of what I love about Ink &amp; East is that it leaves the reader some honest work. But I think this is the line I keep coming back to:</p>
+              <blockquote>The hour before the hour is not preparation; it is a small, secret rehearsal of the thing one is afraid will not arrive.</blockquote>
+              <p>There is a Tao Yuanming poem I have been reading alongside it, in which the poet returns home not to rest but to <em>refuse the office</em>. Different vocabulary, same posture. <em>Quiet is sometimes a very loud decision.</em> Anyway — thank you for the issue. I will be slower this week because of it.</p>
+            </div>
+            <div class="ref">↳ on <a href="./ink-east-article-002-vip-v1.html">"The Quiet Hour Before the Hour"</a></div>
+            <div class="actions"><a href="#reply"><!-- TODO · #5a 待做 — composer toggle -->↳ Reply</a></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ============== GROUP C ============== -->
+      <div class="rn-group-label">
+        Group C · <b>Special marks</b>
+        <span class="desc">Edits the editors make to a note's surface. Both are reader-visible (so the editorial hand is honest), but neither exposes admin controls in the public render.</span>
+      </div>
+
+      <!-- STATE #5 — Editor's Choice marked -->
+      <div class="rn-state" data-state="5">
+        <div class="label-row">
+          <span class="id">State #5</span>
+          <span class="title">Editor's Choice marked</span>
+          <span>note meta = <b style="color:var(--ink)">editors_choice = 1</b></span>
+        </div>
+        <p class="what-shows">This state shows: a single note that the editors have marked as <em>Editor's Choice</em>. The mark is a small <em>朱砂方印</em> with characters <em>編 選</em>, plus a hairline left-border on the note. <em>No trophy, no star, no "Top reply" badge</em> — the mark is editorial, not gamified.</p>
+        <div class="rn-frame">
+          <article class="rn-note is-editors-choice">
+            <div class="ec-band">
+              <span class="rn-mark-ec">編<br>選</span>
+              <b>編 選</b>
+              <span>Editor's Choice — selected by the editors for thoughtful reading.</span>
+            </div>
+            <div class="head">
+              <span class="author">K. Ito</span>
+              <span class="tier reader">讀</span>
+              <span class="when">two weeks ago · 兩 週 前</span>
+            </div>
+            <p class="body">What Bao writes about the <em>chair pulled out before the guest arrives</em> arrived for me at the wrong time, then again at the right time. I think this is what an essay is for — to wait for you on the second reading.</p>
+            <div class="ref">↳ on <a href="./ink-east-article-002-vip-v1.html">"The Quiet Hour Before the Hour"</a></div>
+            <div class="actions"><a href="#reply"><!-- TODO · #5a 待做 — composer toggle -->↳ Reply</a></div>
+          </article>
+        </div>
+      </div>
+
+
+      <!-- STATE #6 — Hidden by editor -->
+      <div class="rn-state" data-state="6">
+        <div class="label-row">
+          <span class="id">State #6</span>
+          <span class="title">Hidden by editor</span>
+          <span>note meta = <b style="color:var(--ink)">hidden_by_editor = 1</b></span>
+        </div>
+        <p class="what-shows">This state shows: a note that has been withdrawn by the editors. The slot stays in the list — we do not pretend the note never existed — but the body is replaced by a quiet placeholder. <em>Author and timestamp are anonymised</em>, mono treatment, no border-left, no link out.</p>
+        <div class="rn-frame">
+          <article class="rn-note is-hidden">
+            <div class="head">
+              <span class="author">withheld</span>
+              <span class="tier hidden">— —</span>
+              <span class="when">on May 09</span>
+            </div>
+            <p class="body">[A note here was withdrawn by the editors.]</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- ============== GROUP D ============== -->
+      <div class="rn-group-label">
+        Group D · <b>Interactions</b>
+        <span class="desc">How replies and the sort filter behave under the actual constraints. Both are visual proofs — a reply that visibly cannot itself be replied to, and a filter result that includes its own empty-state copy.</span>
+      </div>
+
+      <!-- STATE #7 — Single-level reply -->
+      <div class="rn-state" data-state="7">
+        <div class="label-row">
+          <span class="id">State #7</span>
+          <span class="title">Single-level reply</span>
+          <span>max_depth = <b style="color:var(--ink)">1</b></span>
+          <span>visual proof of no-nesting</span>
+        </div>
+        <p class="what-shows">This state shows: a note (A) and a single reply to it (B). <em>The reply has no "↳ Reply" link of its own</em> — the affordance is missing, on purpose. There is no second indent level anywhere in this component, and the server enforces it independently of the CSS.</p>
+        <div class="rn-frame">
+
+          <article class="rn-note">
+            <div class="head">
+              <span class="author">S. Wang</span>
+              <span class="tier reader">讀</span>
+              <span class="when">three days ago · 三 日 前</span>
+            </div>
+            <p class="body">I am still thinking about Tao Yuanming returning to his fields. He did not so much <em>retire</em> as <em>refuse</em>. The two words feel different to me now — and most translations I have read flatten the second one into the first.</p>
+            <div class="ref">↳ on <a href="./ink-east-issue-001-v1.html">Issue 001 · Editor's Letter</a></div>
+            <div class="actions"><a href="#reply"><!-- TODO · #5a 待做 — composer toggle -->↳ Reply</a></div>
+          </article>
+
+          <article class="rn-note rn-reply">
+            <div class="head">
+              <span class="author">T. Lee</span>
+              <span class="tier patron">贊</span>
+              <span class="when">two days ago · 兩 日 前</span>
+              <span class="reply-to">replying to S. Wang</span>
+            </div>
+            <p class="body">Yes — and the line <em>"歸 去 來 兮"</em> reads closer to <em>"come on, let's go home"</em> than to <em>"I retire to the country"</em>. Plain words, plain decision. The dignity is in the plainness.</p>
+            <!-- INTENTIONAL: no .actions on a reply. The "↳ Reply" link is
+                 omitted because max_depth = 1 — server-enforced. This is
+                 the visual proof that the component does not allow nesting
+                 past one level. -->
+          </article>
+
+        </div>
+      </div>
+
+
+      <!-- STATE #8 — Sort filter active · Editor's Choice -->
+      <div class="rn-state" data-state="8">
+        <div class="label-row">
+          <span class="id">State #8</span>
+          <span class="title">Sort filter · Editor's Choice active</span>
+          <span>orderby = <b style="color:var(--ink)">editors_choice</b></span>
+        </div>
+        <p class="what-shows">This state shows: the same article as state #3, but with the <em>Editor's Choice · 編 選</em> sort pill active. The list filters down to notes carrying <em>editors_choice = 1</em>. <em>The empty-state copy below the result is part of this state's spec</em> — it is what renders when the article has no chosen notes yet.</p>
+        <div class="rn-frame">
+          <div class="rn-sort">
+            <span class="lab">Sort —</span>
+            <a href="#recent"><!-- TODO · #5a 待做 — wire to ?orderby=date -->Recent · 新</a>
+            <a class="active" href="#editors-choice"><!-- TODO · #5a 待做 — wire to ?meta_key=editors_choice -->Editor's Choice · 編 選</a>
+            <span class="count">1 chosen</span>
+          </div>
+          <div class="rn-list">
+
+            <article class="rn-note is-editors-choice">
+              <div class="ec-band">
+                <span class="rn-mark-ec">編<br>選</span>
+                <b>編 選</b>
+                <span>Editor's Choice — selected by the editors for thoughtful reading.</span>
+              </div>
+              <div class="head">
+                <span class="author">K. Ito</span>
+                <span class="tier reader">讀</span>
+                <span class="when">two weeks ago · 兩 週 前</span>
+              </div>
+              <p class="body">What Bao writes about the <em>chair pulled out before the guest arrives</em> arrived for me at the wrong time, then again at the right time. I think this is what an essay is for — to wait for you on the second reading.</p>
+              <div class="ref">↳ on <a href="./ink-east-article-002-vip-v1.html">"The Quiet Hour Before the Hour"</a></div>
+              <div class="actions"><a href="#reply"><!-- TODO · #5a 待做 — composer toggle -->↳ Reply</a></div>
+            </article>
+
+          </div>
+
+          <!-- the empty variant of this same state, shown together
+               so an engineer can read both copies in one place -->
+          <div class="rn-empty rn-empty-ec">
+            <em>Empty variant — when the article has no chosen notes yet:</em>
+            No editor-chosen notes yet on this article.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.rn-states -->
+  </div>
+</section>
+
+
+
+<!-- ============================================
+     §肆 SORT UI SPECIMEN
+     ROLE: Isolated visual spec of the sort pill row,
+           independent of any list of notes underneath.
+     RULE: The sort UI carries exactly TWO pills — Recent
+           and Editor's Choice. No counts, no Top, no Hot,
+           no Best, no Controversial, no Most Liked.
+     STATES: default (Recent active) + alternate (EC active).
+     ============================================ -->
+<section class="rn-section dark-rule" id="sort">
+  <div class="rn-wrap narrow">
+    <div class="rn-head">
+      <div class="num">肆</div>
+      <h2><b>Sort UI</b> <i>— specimen</i></h2>
+      <div class="cn">排 序</div>
+    </div>
+    <p class="rn-prose">The sort component is two pills, mono caps, hairline border. <em>Active</em> takes the seal-red border. There is no count number on the pills themselves — counts (if any) live to the right of the row, never inside the pill. <em>This row is the entire sort UI.</em> If a future iteration adds a third filter, that conversation comes back to this spec.</p>
+
+    <div style="display:flex;flex-direction:column;gap:28px;margin-top:18px">
+      <div>
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px">Default — Recent active</div>
+        <div class="rn-sort">
+          <span class="lab">Sort —</span>
+          <a class="active" href="#recent"><!-- TODO · #5a 待做 -->Recent · 新</a>
+          <a href="#ec"><!-- TODO · #5a 待做 -->Editor's Choice · 編 選</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px">Alternate — Editor's Choice active</div>
+        <div class="rn-sort">
+          <span class="lab">Sort —</span>
+          <a href="#recent"><!-- TODO · #5a 待做 -->Recent · 新</a>
+          <a class="active" href="#ec"><!-- TODO · #5a 待做 -->Editor's Choice · 編 選</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     §伍 VISUAL RED LINES — prose, not a checklist.
+     ROLE: A single editorial paragraph for the engineer
+           naming what this component is NOT, so visual
+           drift in future iterations has a written anchor.
+     ============================================ -->
+<section class="rn-section dark-rule" id="redline">
+  <div class="rn-wrap narrow">
+    <div class="rn-head">
+      <div class="num">伍</div>
+      <h2><b>Red lines</b> <i>— what this is not</i></h2>
+      <div class="cn">紅 線</div>
+    </div>
+    <div class="rn-redline">
+      <div class="lab">— Read this paragraph before adding any new affordance —</div>
+      <p>This is not Reddit. It is not a <em>tieba 貼吧</em> board, not Disqus, not wpDiscuz, not the comment well at the bottom of a news site. There are no upvotes here, no downvotes, no like counts, no heart taps, no reaction emoji. We do not display follower numbers, we do not allow a second nested reply, we do not collapse threads under a "Show 14 more" fold. A note is read in full or it is not posted. If you want to disagree with a note, you reply to it once and that reply stands or it does not — there is no thread under your reply, and no "controversial" sort to surface the loudest disagreement. Tiers are marked with a single Chinese character, not a coloured chip; timestamps are written in words, not the abbreviated <em>"5d"</em> SNS shorthand. The submit button reads <em>Leave a note</em>, never <em>Post</em> or <em>Comment</em>. The component is meant to feel like a margin written in pencil — an annotation kept alongside the essay — <em>not a comments section</em>.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================================
+     §陸 BACKEND CONTRACT — WordPress field map.
+     ROLE: One canonical place for the engineer to read
+           which DB columns, meta keys, and REST endpoints
+           feed the component above.
+     HARD RULE (BRIEF §六 + handoff §3):
+       Use WordPress native wp_comments + a custom comment
+       template. DO NOT install wpDiscuz — it ships its own
+       chrome and would override the typography contract
+       this entire document is designed to enforce.
+     ============================================ -->
+<section class="rn-section" id="backend">
+  <div class="rn-wrap narrow">
+    <div class="rn-head">
+      <div class="num">陸</div>
+      <h2><b>WordPress contract</b> <i>— field map &amp; endpoints</i></h2>
+      <div class="cn">後 端 契 約</div>
+    </div>
+    <p class="rn-prose">The component is rendered server-side by a custom comment template that walks the article's <em>wp_comments</em> rows. v1 is pure PHP — no AJAX, no client-side rehydration. <em>No plugin replaces the renderer.</em> wpDiscuz, in particular, is not installed: it overrides the typography and ships its own chrome, both of which break the contract above.</p>
+
+    <dl class="rn-backend">
+
+      <dt>Comment table</dt>
+      <dd>
+        <code>wp_comments</code> · native WP table, no replacement
+        <em>One row per note. No custom post type — comments are first-class WP entities and the moderation UI in /wp-admin already exists.</em>
+      </dd>
+
+      <dt>Comment template</dt>
+      <dd>
+        <code>themes/ink-east/comments.php</code> + <code>walker-reader-notes.php</code>
+        <em>Custom Walker_Comment subclass that emits the exact DOM in this spec — the <b>.rn-note</b> shape, the tier mark, the citation ref. <b>Do not install wpDiscuz</b> (BRIEF §六, handoff §3).</em>
+      </dd>
+
+      <dt>Editor's Choice</dt>
+      <dd>
+        <code>comment_meta</code> key = <code>editors_choice</code> · type = bool · default = 0
+        <em>Set from the comment row in /wp-admin → Comments via a "Mark as Editor's Choice" row action. Renders state #5 above. No public toggle.</em>
+      </dd>
+
+      <dt>Hidden by editor</dt>
+      <dd>
+        <code>comment_meta</code> key = <code>hidden_by_editor</code> · type = bool · default = 0
+        <em>When 1, the walker substitutes the body for the placeholder copy in state #6 and anonymises author + skips the actions row. The row stays in the list — see state #6 spec.</em>
+      </dd>
+
+      <dt>Author tier</dt>
+      <dd>
+        <code>user_meta</code> key = <code>ie_tier</code> · enum = guest · reader · patron
+        <em>Read at render time from the note's <b>user_id</b>. Drives the tier mark (讀 / 贊) and the <b>.tier.patron</b> seal-red treatment. Editors are not rendered as a tier in the public component.</em>
+      </dd>
+
+      <dt>Reply parent</dt>
+      <dd>
+        <code>comment_parent</code> · native WP column · max_depth enforced server-side
+        <em>The walker rejects any insert where the parent itself has a non-null <b>comment_parent</b> — i.e. <b>max_depth = 1</b>. The CSS already removes the reply affordance on rendered replies (state #7), but the server enforces independently of the markup.</em>
+      </dd>
+
+      <dt>Sort · Recent</dt>
+      <dd>
+        <code>ORDER BY comment_date DESC</code>
+        <em>Default. Drives the Recent · 新 pill. No paging in v1 — show all approved notes for the post.</em>
+      </dd>
+
+      <dt>Sort · Editor's Choice</dt>
+      <dd>
+        <code>WHERE meta(editors_choice) = 1 ORDER BY comment_date DESC</code>
+        <em>Drives the Editor's Choice · 編 選 pill. When the result set is empty, render the empty-state copy from state #8: <b>"No editor-chosen notes yet on this article."</b></em>
+      </dd>
+
+      <dt>REST (read-only, future)</dt>
+      <dd>
+        <code>GET /wp-json/wp/v2/comments?post={id}&amp;per_page=10&amp;order=desc</code>
+        <em>Hint for future Community page (#5b roadmap) and the Reading Room "Your Reader Notes" block. v1 does not call this — server-rendered comments are enough. Custom endpoint <b>/wp-json/ie/v1/reader-notes</b> can wrap with editors_choice meta when needed.</em>
+      </dd>
+
+      <dt>Permission gate</dt>
+      <dd>
+        <code>current_user_can('publish_comments')</code> + <code>ie_tier ∈ {reader, patron}</code>
+        <em>Both must pass for the composer to render. Guests get the sign-in box (state #1). Editors do not write notes through this surface — they speak in essays.</em>
+      </dd>
+
+      <dt>Submit button copy</dt>
+      <dd>
+        <code>"Leave a note"</code> · or, for replies: <code>"Send the note"</code>
+        <em>Hard-coded in the template. <b>Never</b> "Post", "Comment", or "Reply" — that vocabulary is from a different product.</em>
+      </dd>
+
+    </dl>
+  </div>
+</section>
+
+
+
+<!-- ============================================
+     FOOTER — verbatim from the rest of the site.
+     The "Speak" column links Reader Notes to THIS file
+     (it is the spec doc, reachable but not nav-active).
+     ============================================ -->
+<footer>
+  <div class="foot-mark">
+    <div class="ampers">Ink <em>&amp;</em> East</div>
+    <span class="cn">墨 與 東</span>
+    <span class="sub">An independent digital journal · Published when ready · Est. 2026</span>
+  </div>
+
+  <div class="foot-cols">
+    <div>
+      <h5>The Journal <span class="cn">關 於</span></h5>
+      <p class="mission">Ink &amp; East publishes a single issue when a single issue is ready. Each one answers, in plain English, a modern question — through Chinese classical thought, original stories, and reader letters.</p>
+      <p class="also-by">Also kept by the editors —<br>a small shop of objects, <a href="./spatial-flow-v1.html">Spatial Flow →</a></p>
+    </div>
+    <div>
+      <h5>Read <span class="cn">讀</span></h5>
+      <ul>
+        <li><a href="./ink-east-issue-001-v1.html">This Issue · 001</a></li>
+        <li><a href="./ink-east-v1.html">Home</a></li>
+        <li><a href="./ink-east-vip-library-v1.html">VIP Library</a></li>
+        <li><a href="./ink-east-reading-room-v1.html">Reading Room</a></li>
+        <li><a href="./ink-east-custom-reading-v1.html">Custom Reading</a></li>
+        <li><a href="./ink-east-membership-v1.html">Become a member</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Speak <span class="cn">問</span></h5>
+      <ul>
+        <li><a href="./ink-east-letters-form-v1.html">Ask the Ancient Text</a></li>
+        <li><a href="#"><!-- TODO · #5b 待做 -->Suggest an Issue Theme</a></li>
+        <li><a href="#"><!-- TODO · #5b 待做 -->Vote · Patrons only</a></li>
+        <li><a href="./ink-east-reader-notes-component-v1.html">Reader Notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Studio <span class="cn">寫</span></h5>
+      <ul>
+        <li><a href="./ink-east-custom-reading-v1.html">Custom Reading</a></li>
+        <li><a href="#"><!-- TODO · #7 待做 -->Custom Ebook Studio</a></li>
+        <li><a href="#"><!-- TODO · #7 待做 -->Process &amp; Pricing</a></li>
+        <li><a href="#"><!-- TODO · #7 待做 -->Past Manuscripts</a></li>
+        <li><a href="#"><!-- TODO · #7 待做 -->Submit a brief</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="colophon-final">
+    <span>© 2026 Ink &amp; East · Published quietly</span>
+    <span>Set in EB Garamond, Inter &amp; Noto Serif SC</span>
+    <span>ISSN — 2026.001</span>
+  </div>
+</footer>
+
+</body>
+</html>
