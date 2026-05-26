@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community — Ink &amp; East</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ============================================
+     INK & EAST · COMMUNITY (聚 流)
+     ============================================
+     URL on production:        /community
+     Render:                    server-side PHP template, no AJAX in v1
+     Default rendered state:    populated (so engineers see the
+                                full visual contract); each section
+                                also ships an "EMPTY VARIANT" HTML
+                                comment block for the day-1 reality
+                                where the journal has just migrated
+                                its 120+ legacy articles and almost
+                                nothing has been said yet.
+
+     Page intent: a STATION-LEVEL AGGREGATOR. The journal's quiet
+     front porch — where the slow conversations across articles,
+     issues, and reader letters meet. NOT a forum, NOT a feed,
+     NOT a Reddit/贴吧/SNS board.
+
+     ★ NO COMPOSER ON THIS PAGE.
+       This page hosts no submission UI of any kind. Reader Notes
+       are written upstream inside article pages (component spec at
+       ./ink-east-reader-notes-component-v1.html). Letters are
+       written upstream on the Letters form
+       (./ink-east-letters-form-v1.html). Suggesting a topic, asking
+       a question, replying to a note — every writing surface lives
+       elsewhere, on purpose.
+
+     What MUST stay out of this view:
+       - upvote / downvote / heart / like-count
+       - reply count / view count / "X replies · Y views"
+       - "trending now" / "controversial" / "hot" / "best of week"
+       - latest-poster avatars on Issue Discussion cards
+       - any composer / textarea / "submit" button
+       - any tier comparison / paywall / upgrade CTA
+       - reader-of-the-month, badges, streaks, leaderboards
+       - SNS density of any kind
+
+     §贰 stream sort pills are limited to TWO: Recent / Editor's
+     Choice — verbatim from the #5a Reader Notes component spec
+     (BRIEF §五 5.2 phase 1 lock).
+
+     Anchors: 朱砂方印「編 選」(Editor's Choice mark) carried over
+     from the #5a component, 中文 numerals 壹貳叄肆伍陸 on the
+     section heads, hairline rules between, footer = site-wide.
+
+     Backend (BRIEF §六 + §五 5.2):
+       - WordPress native wp_comments + custom REST endpoint for
+         Editor's Choice meta filter
+       - max_depth = 1, server-enforced
+       - server-side cache: WP transient, 5-10 min refresh (the
+         page is read-heavy, write-light)
+     ============================================ -->
+
+
+<style>
+:root{--paper:#f4ede0;--paper-light:#faf5e9;--paper-dark:#e8dfce;--ink:#1a1611;--ink-soft:#4a4036;--ink-faint:#8a7f70;--seal:#a02d23;--seal-deep:#7a1f1a;--rule:rgba(26,22,17,.28);--rule-soft:rgba(26,22,17,.12);--serif-en:"EB Garamond","Noto Serif SC",Georgia,serif;--serif-cn:"Noto Serif SC","EB Garamond",serif;--sans:"Inter",-apple-system,"PingFang SC",sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;scroll-behavior:smooth}
+body{font-family:var(--serif-en);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55;font-feature-settings:"liga" 1,"kern" 1,"onum" 1}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--seal);color:var(--paper-light)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.5;mix-blend-mode:multiply;background-image:radial-gradient(circle at 25% 30%,rgba(26,22,17,.025) 0%,transparent 40%),radial-gradient(circle at 75% 60%,rgba(26,22,17,.02) 0%,transparent 35%),radial-gradient(circle at 50% 80%,rgba(26,22,17,.015) 0%,transparent 30%)}
+
+/* BACKBAR — same family as the rest of the site */
+.backbar{background:var(--ink);color:var(--paper-light);padding:8px 28px;font-family:var(--mono);font-size:10px;display:flex;justify-content:space-between;letter-spacing:.1em;text-transform:uppercase;flex-wrap:wrap;gap:14px;align-items:center}
+.backbar a{color:var(--seal);border-bottom:1px dashed var(--seal);padding-bottom:1px}
+.backbar .right{color:var(--ink-faint)}
+
+/* SITE NAV — verbatim from the rest of the site, with Community .active.
+   nav.left now carries 8 items (Community is the new 8th, after Membership). */
+.nav-strip{padding:20px 56px 0}
+.site-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.site-nav .left{display:flex;gap:28px;flex-wrap:wrap}
+.site-nav .center{font-family:var(--serif-cn);font-size:13px;letter-spacing:.5em;color:var(--ink);font-weight:500}
+.site-nav .right{display:flex;gap:28px;justify-content:flex-end}
+.site-nav a{transition:color .2s}
+.site-nav a:hover{color:var(--seal)}
+.site-nav a.active{color:var(--seal);border-bottom:1px solid var(--seal);padding-bottom:2px}
+
+/* HERO — quieter than reading-room's welcome, because nobody arrives here
+   "at home"; people come here to listen. */
+.cm-hero{padding:96px 28px 72px;border-bottom:1px solid var(--ink);text-align:center;position:relative}
+.cm-hero .inner{max-width:760px;margin:0 auto}
+.cm-hero .vlib-rule{width:64px;height:1px;background:var(--ink);margin:0 auto 28px;position:relative}
+.cm-hero .vlib-rule::after{content:"";position:absolute;left:50%;top:-3px;width:7px;height:7px;background:var(--seal);transform:translateX(-50%);border-radius:1px}
+.cm-hero .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:24px}
+.cm-hero h1{font-family:var(--serif-en);font-style:italic;font-size:clamp(38px,5vw,64px);font-weight:400;line-height:1.05;letter-spacing:-.012em;margin-bottom:20px;color:var(--ink)}
+.cm-hero h1 b{font-style:normal;font-weight:500}
+.cm-hero .cn-mark{font-family:var(--serif-cn);font-size:clamp(18px,2vw,24px);letter-spacing:.5em;color:var(--ink-soft);margin-bottom:32px;display:inline-block;padding-left:.5em;border-bottom:1px solid var(--rule-soft);padding-bottom:18px}
+.cm-hero .lede{font-family:var(--serif-en);font-style:italic;font-size:21px;line-height:1.65;color:var(--ink-soft);max-width:620px;margin:0 auto 22px}
+.cm-hero .lede em{font-style:normal;color:var(--ink)}
+.cm-hero .meta{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);display:flex;gap:22px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.cm-hero .meta b{color:var(--seal);font-weight:500}
+.cm-hero .toc{margin-top:32px;padding:18px 22px;border:1px dashed var(--rule);background:var(--paper-light);text-align:left;display:grid;grid-template-columns:auto 1fr;gap:12px 22px;max-width:640px;margin-left:auto;margin-right:auto}
+.cm-hero .toc .lab{font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--seal);align-self:center}
+.cm-hero .toc .links{display:flex;gap:8px 14px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
+.cm-hero .toc .links a{border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.cm-hero .toc .links a:hover{color:var(--seal);border-color:var(--seal)}
+
+/* SECTION FRAME */
+.cm-section{padding:80px 28px;border-bottom:1px solid var(--rule-soft)}
+.cm-section.dark-rule{border-bottom-color:var(--rule)}
+.cm-wrap{max-width:1100px;margin:0 auto}
+.cm-wrap.narrow{max-width:760px}
+.cm-head{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:end;padding-bottom:18px;margin-bottom:24px;border-bottom:1px solid var(--ink)}
+.cm-head .num{font-family:var(--serif-cn);font-size:32px;font-weight:500;color:var(--seal);line-height:1;letter-spacing:.05em}
+.cm-head h2{font-family:var(--serif-en);font-style:italic;font-size:clamp(24px,2.4vw,32px);font-weight:400;line-height:1;color:var(--ink)}
+.cm-head h2 b{font-style:normal;font-weight:500}
+.cm-head .cn{font-family:var(--serif-cn);font-size:13px;letter-spacing:.45em;color:var(--ink-faint);align-self:center}
+.cm-dek{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:680px;margin-bottom:32px}
+.cm-dek em{font-style:normal;color:var(--ink)}
+
+
+/* ============================================
+   §贰 + §叄 NOTE STREAM — DOM SHAPE COPIED VERBATIM
+   from the #5a Reader Notes component spec. Every class
+   here is also defined there. Engineers should treat the
+   .rn-note shape as the ONE shared contract; both surfaces
+   (article pages + this aggregator) render identical markup.
+   ============================================ */
+
+/* Sort pills — Recent / Editor's Choice ONLY (§5.2 phase 1 lock).
+   No Top / Hot / Best / Trending. Verbatim visual from #5a .rn-sort. */
+.rn-sort{display:flex;gap:0;align-items:center;border-bottom:1px solid var(--rule-soft);padding-bottom:14px;margin-bottom:6px;flex-wrap:wrap;max-width:680px}
+.rn-sort .lab{font-family:var(--mono);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-faint);margin-right:18px}
+.rn-sort a{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);padding:7px 14px;border:1px solid var(--rule);margin-right:8px;transition:all .2s}
+.rn-sort a:hover{color:var(--ink);border-color:var(--ink)}
+.rn-sort a.active{color:var(--seal);border-color:var(--seal)}
+.rn-sort .count{margin-left:auto;font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
+
+/* a single note — copied from #5a .rn-note */
+.rn-frame{padding:8px 0 24px}
+.rn-note{padding:22px 0;border-top:1px solid var(--rule-soft);position:relative;max-width:680px}
+.rn-note:last-child{border-bottom:1px solid var(--rule-soft)}
+.rn-note .head{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px}
+.rn-note .head .author{font-family:var(--serif-en);font-style:italic;font-size:16px;color:var(--ink);font-weight:500}
+.rn-note .head .tier{font-family:var(--serif-cn);font-size:12px;color:var(--ink-soft);letter-spacing:0;border:1px solid var(--rule);padding:1px 7px 2px;line-height:1.2;background:var(--paper-light)}
+.rn-note .head .tier.patron{color:var(--seal);border-color:var(--seal)}
+.rn-note .head .when{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
+.rn-note .body{font-family:var(--serif-en);font-size:17px;line-height:1.72;color:var(--ink);max-width:640px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;text-overflow:ellipsis}
+.rn-note .body em{font-style:italic;color:var(--ink)}
+.rn-note .ref{margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.rn-note .ref a{color:var(--ink);border-bottom:1px dashed var(--rule);padding-bottom:1px;transition:all .2s}
+.rn-note .ref a:hover{color:var(--seal);border-color:var(--seal)}
+.rn-note .ref .arr{color:var(--seal);font-family:var(--serif-en);font-style:italic;font-size:13px;letter-spacing:0;text-transform:none;margin-right:4px}
+
+/* Editor's Choice variant — verbatim from #5a .rn-note.is-editors-choice */
+.rn-note.is-editors-choice{border-left:2px solid var(--seal);padding-left:22px}
+.rn-note.is-editors-choice .ec-band{font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--seal);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.rn-note.is-editors-choice .ec-band b{color:var(--ink);font-weight:500;font-family:var(--serif-cn);font-size:12px;letter-spacing:.25em}
+.rn-mark-ec{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:var(--seal);color:var(--paper-light);font-family:var(--serif-cn);font-weight:600;font-size:11px;letter-spacing:.05em;line-height:1.1;text-align:center;transform:rotate(-2deg);box-shadow:inset 0 0 0 1.5px rgba(244,237,224,.32),1px 2px 0 rgba(122,31,26,.18);margin-left:auto;flex-shrink:0}
+
+/* Stream foot — "Read all notes" link */
+.cm-stream-foot{margin-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);max-width:680px}
+.cm-stream-foot a{color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;transition:all .2s}
+.cm-stream-foot a:hover{color:var(--seal);border-color:var(--seal)}
+
+
+/* ============================================
+   §肆 ISSUE DISCUSSION — horizontal cards.
+   DELIBERATELY UNLIKE phpBB / vBulletin / Discourse:
+       - no latest-poster avatar
+       - no "X replies · Y views · last by user42 · 5d"
+       - no thread sort, no sticky/locked/hot icons
+       - the only number shown is a quiet "across N notes",
+         and even that is a noun, not a tally widget
+   The card is closer to a journal contents-card than a
+   forum board.
+   ============================================ */
+.cm-issues{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--rule-soft)}
+.cm-issue{padding:32px 36px 32px 0;border-right:1px solid var(--rule-soft);border-bottom:1px solid var(--rule-soft);display:flex;flex-direction:column;gap:10px;min-height:200px;transition:background .2s}
+.cm-issue:hover{background:var(--paper-light)}
+.cm-issue:nth-child(2n){border-right:none;padding-right:0;padding-left:36px}
+.cm-issue:nth-child(2n+1){padding-left:0}
+.cm-issue.is-quiet{opacity:.55}
+.cm-issue.is-quiet:hover{background:transparent}
+.cm-issue .stamp{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--seal)}
+.cm-issue.is-quiet .stamp{color:var(--ink-faint)}
+.cm-issue h3{font-family:var(--serif-en);font-size:22px;font-weight:500;line-height:1.3;color:var(--ink);max-width:380px}
+.cm-issue h3 em{font-style:italic;font-weight:400}
+.cm-issue .cn{font-family:var(--serif-cn);font-size:13px;letter-spacing:.32em;color:var(--ink-soft)}
+.cm-issue p.dek{font-family:var(--serif-en);font-style:italic;font-size:15px;line-height:1.6;color:var(--ink-soft);max-width:380px}
+.cm-issue .scale{margin-top:auto;padding-top:16px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);border-top:1px dashed var(--rule-soft);display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.cm-issue .scale .n{color:var(--ink);font-weight:500}
+.cm-issue .scale a{color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.cm-issue .scale a:hover{color:var(--seal);border-color:var(--seal)}
+
+
+/* ============================================
+   §伍 OPEN LETTERS — already-published reader letters with
+   the editors' short reply. NOT a form. NOT the full letter.
+   Visual closer to a journal contents row than a forum post:
+   anonymized title + brief editor reply + link back to the
+   original Issue 001 · Letters anchor.
+   ============================================ */
+.cm-letters{border-top:1px solid var(--rule-soft);max-width:780px}
+.cm-letter{padding:26px 0;border-bottom:1px dashed var(--rule-soft);display:grid;grid-template-columns:auto 1fr;gap:18px 24px;align-items:start}
+.cm-letter:last-child{border-bottom:1px solid var(--rule-soft)}
+.cm-letter .stamp{font-family:var(--serif-cn);font-size:14px;font-weight:500;letter-spacing:.25em;color:var(--seal);writing-mode:vertical-rl;text-orientation:mixed;padding-top:6px;line-height:1.2;align-self:start}
+.cm-letter .body h3{font-family:var(--serif-en);font-style:italic;font-size:19px;font-weight:500;line-height:1.4;color:var(--ink);margin-bottom:6px}
+.cm-letter .body h3 em{font-style:normal}
+.cm-letter .body .from{font-family:var(--mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px}
+.cm-letter .body .reply{font-family:var(--serif-en);font-size:16px;line-height:1.7;color:var(--ink-soft);margin-bottom:12px;border-left:2px solid var(--rule);padding-left:18px}
+.cm-letter .body .reply em{font-style:italic;color:var(--ink)}
+.cm-letter .body .reply::before{content:"Editor —";display:block;font-family:var(--mono);font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--seal);margin-bottom:6px}
+.cm-letter .body .ref{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.cm-letter .body .ref a{color:var(--ink);border-bottom:1px dashed var(--rule);padding-bottom:1px;transition:all .2s}
+.cm-letter .body .ref a:hover{color:var(--seal);border-color:var(--seal)}
+.cm-letters-foot{margin-top:24px;font-family:var(--serif-en);font-style:italic;font-size:14px;color:var(--ink-faint);max-width:780px;line-height:1.65}
+.cm-letters-foot em{font-style:normal;color:var(--ink)}
+
+
+/* ============================================
+   §陸 BACKEND CONTRACT — verbatim density from #5a §陸
+   ============================================ */
+.cm-backend{display:grid;grid-template-columns:auto 1fr;gap:14px 28px;font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--ink-soft);padding-top:8px;max-width:880px}
+.cm-backend dt{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--seal);padding-top:2px;white-space:nowrap}
+.cm-backend dd{font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0;text-transform:none;line-height:1.7;padding-bottom:14px;border-bottom:1px dashed var(--rule-soft)}
+.cm-backend dd em{font-family:var(--serif-en);font-style:italic;color:var(--ink-soft);font-size:13px;display:block;margin-top:4px;letter-spacing:0;text-transform:none}
+.cm-backend dd b{color:var(--seal);font-weight:400}
+.cm-backend dd code{font-family:var(--mono);background:var(--paper-light);border:1px solid var(--rule-soft);padding:1px 6px;color:var(--ink);font-size:11px}
+.cm-backend dt:last-of-type+dd{border-bottom:none}
+
+/* The "no composer" reminder — small italic note at the very bottom
+   of §陸 to make engineers and copywriters notice this rule once more. */
+.cm-no-composer{margin-top:36px;padding:24px 28px;border:1px solid var(--rule);background:var(--paper-light);max-width:780px}
+.cm-no-composer .lab{font-family:var(--mono);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--seal);margin-bottom:12px}
+.cm-no-composer p{font-family:var(--serif-en);font-style:italic;font-size:16px;line-height:1.7;color:var(--ink-soft)}
+.cm-no-composer p em{font-style:normal;color:var(--ink)}
+
+
+/* FOOTER — verbatim from the rest of the site */
+footer{background:var(--paper);color:var(--ink);padding:90px 40px 28px;margin-top:0}
+.foot-mark{text-align:center;padding-bottom:48px;border-bottom:1px solid var(--ink);margin-bottom:56px}
+.foot-mark .ampers{font-family:var(--serif-en);font-size:clamp(80px,12vw,200px);font-weight:400;line-height:.85;letter-spacing:-.01em}
+.foot-mark .ampers em{font-style:italic;color:var(--seal)}
+.foot-mark .cn{display:block;font-family:var(--serif-cn);font-size:18px;letter-spacing:.5em;color:var(--ink-soft);margin-top:18px}
+.foot-mark .sub{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px}
+.foot-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:56px;padding-bottom:40px;border-bottom:1px solid var(--rule)}
+footer h5{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--seal);margin-bottom:22px;font-weight:500}
+footer h5 .cn{font-family:var(--serif-cn);color:var(--ink-faint);margin-left:10px;letter-spacing:.3em}
+footer p.mission{font-family:var(--serif-en);font-style:italic;font-size:17px;line-height:1.7;color:var(--ink-soft);max-width:380px;margin-bottom:22px}
+.also-by{font-family:var(--serif-en);font-size:13px;color:var(--ink-faint);line-height:1.7}
+.also-by a{font-style:italic;color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px;transition:all .2s}
+.also-by a:hover{color:var(--seal);border-color:var(--seal)}
+footer ul{list-style:none}
+footer li{margin-bottom:11px}
+footer a{font-family:var(--serif-en);font-size:15px;color:var(--ink-soft);transition:color .2s}
+footer a:hover{color:var(--seal)}
+.colophon-final{padding-top:24px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+
+/* RESPONSIVE */
+@media(max-width:980px){
+.nav-strip{padding:14px 22px 0}
+.site-nav{grid-template-columns:1fr;gap:14px;text-align:center}
+.site-nav .left,.site-nav .right{justify-content:center}
+.cm-hero{padding:56px 22px 56px}
+.cm-section{padding:56px 22px}
+.cm-issues{grid-template-columns:1fr}
+.cm-issue,.cm-issue:nth-child(2n),.cm-issue:nth-child(2n+1){border-right:none;padding-left:0;padding-right:0}
+.cm-letter{grid-template-columns:1fr;gap:8px}
+.cm-letter .stamp{writing-mode:horizontal-tb}
+.foot-cols{grid-template-columns:1fr 1fr;gap:40px}
+footer{padding:60px 20px 20px}
+.foot-mark .ampers{font-size:56px}
+.cm-backend{grid-template-columns:1fr}
+.cm-backend dt{padding-top:14px;border-top:1px dashed var(--rule-soft)}
+.cm-backend dd{padding-bottom:8px;border-bottom:none}
+.cm-no-composer{padding:20px 22px}
+}
+@media(max-width:560px){
+.cm-head{grid-template-columns:auto 1fr;gap:14px}
+.cm-head .cn{display:none}
+.foot-cols{grid-template-columns:1fr;gap:36px}
+.colophon-final{flex-direction:column;gap:6px;text-align:center}
+.rn-note .head{gap:8px}
+.rn-note.is-editors-choice .ec-band{flex-wrap:wrap}
+.rn-mark-ec{margin-left:0}
+}
+</style>
+</head>
+
+<!-- data-tier defaults to "guest" so the preview shows what an unsigned
+     reader sees: full read-only access to the aggregator. WP server
+     replaces with the real value ("guest" | "reader" | "patron") on
+     render — but the page itself does not change shape between tiers,
+     because there is no composer / no gated content here. -->
+<body data-tier="guest">
+
+<div class="backbar">
+  <a href="./ink-east-v1.html">← Back to Ink &amp; East</a>
+  <span>INK &amp; EAST · COMMUNITY · 聚 流</span>
+  <span class="right">A quiet front porch · Read-only aggregator</span>
+</div>
+
+<!-- SITE NAV — same destinations as the rest of the site, with Community
+     .active. nav.left now carries 8 items: Community is the new 8th,
+     placed after Membership. Engineers integrating this page must add
+     the same 8th item to every other nav.left across the site. -->
+<div class="nav-strip">
+  <nav class="site-nav">
+    <div class="left">
+      <a href="./ink-east-v1.html">Home</a>
+      <a href="./ink-east-issue-001-v1.html">Issues</a>
+      <a href="./ink-east-reading-room-v1.html">Reading Room</a>
+      <a href="./ink-east-vip-library-v1.html">VIP Library</a>
+      <a href="./ink-east-letters-form-v1.html">Ask the Ancient</a>
+      <a href="./ink-east-custom-ebook-v1.html">Studio</a>
+      <a href="./ink-east-membership-v1.html">Membership</a>
+      <a class="active" href="./ink-east-community-v1.html">Community</a>
+    </div>
+    <div class="center">墨 與 東</div>
+    <div class="right">
+      <a href="/wp-login.php">Sign in</a>
+    </div>
+  </nav>
+</div>
+
+
+<!-- ============================================
+     BLOCK: cm-hero §壹
+     SOURCE:
+       - copy is editorial, lives in a CMS settings panel
+         (option name: ie_community_intro), not hand-edited
+         in the template
+       - counters in .meta are derived, server-side cached:
+           total_notes  = SELECT COUNT(*) FROM wp_comments WHERE comment_approved='1'
+           total_letters = SELECT COUNT(*) FROM wp_posts WHERE post_type='letter' AND post_status='publish'
+     RULES:
+       - Tells the reader (and the engineer) that this page
+         is an aggregator, not a community board.
+       - No CTA, no "join the conversation", no "post your
+         first note". The writing entries are upstream.
+     ============================================ -->
+<section class="cm-hero" data-section="cm-hero">
+  <div class="inner">
+    <div class="vlib-rule"></div>
+    <div class="kicker">Across the journal · 聚 流</div>
+    <h1><em>The journal's quiet</em> <b>front porch</b><em>.</em></h1>
+    <div class="cn-mark">聚 流 · 慢 議</div>
+    <p class="lede">This is not a forum, not a feed. It is the place where the slow conversations across <em>articles, issues, and reader letters</em> meet.</p>
+    <p class="lede">Notes left in the margins of articles, kindly disagreements with editors, letters answered slowly — they all flow here, in the order they arrived.</p>
+    <div class="meta">
+      <span>Across <b>1 issue</b></span>
+      <span>From <b>~12 readers</b></span>
+      <span>Published <b>quietly</b></span>
+      <span>No karma, no streaks</span>
+    </div>
+    <div class="toc">
+      <span class="lab">On this page —</span>
+      <div class="links">
+        <a href="#stream">貳 Latest Notes</a>
+        <a href="#choice">叄 Editor's Choice</a>
+        <a href="#issues">肆 Issue Discussion</a>
+        <a href="#letters">伍 Open Letters</a>
+        <a href="#backend">陸 WP Contract</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cm-stream §贰 LATEST READER NOTES
+     SOURCE:
+       - GET /wp-json/wp/v2/comments?per_page=10&order=desc
+       - filter: comment_approved='1' AND meta hidden_by_editor != '1'
+       - join: parent post (article / issue / letter) for the
+         "↳ on …" reference line
+       - meta: editors_choice (used by §叄, but the *same* note
+         can appear in both §贰 and §叄 streams)
+       - cache: WP transient, key = ie_community_stream_recent,
+         TTL 5-10 min, busted on new comment_approved
+     RULES:
+       - DOM shape is COPIED VERBATIM from #5a Reader Notes
+         component (.rn-note). Engineers must NOT diverge the
+         markup; the comment template is the single source.
+       - body clamp = 3 lines via -webkit-line-clamp; the full
+         note lives back at the article. We do NOT show the
+         full body here.
+       - sort pills = Recent / Editor's Choice ONLY. No Top,
+         no Hot, no Best. (BRIEF §五 5.2 phase 1 lock.)
+       - tier mark uses 「讀」 for Reader, 「贊」 for Patron;
+         both are the seal-glyph not a colored chip.
+       - no upvote / no reply count / no "5d ago".
+     EMPTY VARIANT (server replaces .rn-frame contents when
+     no notes exist across the journal yet — day-1 reality):
+       <div class="cm-empty">
+         <p>No reader notes yet across the journal. The first
+         ones will appear here as readers respond to articles.</p>
+       </div>
+     ============================================ -->
+<section class="cm-section dark-rule" id="stream" data-section="cm-stream">
+  <div class="cm-wrap">
+
+    <div class="cm-head">
+      <div class="num">貳</div>
+      <h2><b>Latest</b> <i>Reader Notes</i></h2>
+      <div class="cn">近 札</div>
+    </div>
+
+    <p class="cm-dek">Notes left on articles across the journal, in the order they arrived. Click any note's reference line to read it back at the article — <em>the full thread lives where the reading lives</em>, not here.</p>
+
+    <div class="rn-sort" role="tablist" aria-label="Sort reader notes">
+      <span class="lab">Sort</span>
+      <a href="#stream" class="active" role="tab" aria-selected="true">Recent · 新</a>
+      <a href="#choice" role="tab">Editor's Choice · 編 選</a>
+      <span class="count">~ <b>12</b> notes this month</span>
+    </div>
+
+    <div class="rn-frame" role="list">
+
+      <!-- note 1 — Reader, on article-001 -->
+      <article class="rn-note" role="listitem">
+        <div class="head">
+          <span class="author">Lin Hsiao-yu</span>
+          <span class="tier">讀</span>
+          <span class="when">2 days ago · 兩 日 前</span>
+        </div>
+        <div class="body">I read this on a Sunday morning when I had told myself I would finally <em>get something done</em>. By the third paragraph I had stopped trying to. The sentence about Laozi's pivot from doing-as-virtue to noticing-as-virtue rearranged a small piece of my week.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-article-001-v1.html">Why doing nothing is sometimes the hardest practice</a></div>
+      </article>
+
+      <!-- note 2 — Patron, on article-002-vip -->
+      <article class="rn-note" role="listitem">
+        <div class="head">
+          <span class="author">Mei Wenzhou</span>
+          <span class="tier patron">贊</span>
+          <span class="when">3 days ago · 三 日 前</span>
+        </div>
+        <div class="body">The phrase "the hour before the hour" stayed with me through a long week. I now wake fifteen minutes earlier and do nothing with them on purpose. The editors describe it without prescribing it — that restraint is, I think, what made it land.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-article-002-vip-v1.html">The Quiet Hour Before the Hour</a></div>
+      </article>
+
+      <!-- note 3 — Reader, on Issue 001 editor's letter — kindly disagrees -->
+      <article class="rn-note" role="listitem">
+        <div class="head">
+          <span class="author">Anon · pen name held</span>
+          <span class="tier">讀</span>
+          <span class="when">4 days ago · 四 日 前</span>
+        </div>
+        <div class="body">Kindly disagreeing with the editor's letter — I think the framing of <em>wu wei</em> as "active rest" is gentler than Zhuangzi himself was. The butterfly chapter is closer to a refusal of the question than a reframing of work. But I take the point that English needs the gentler reading first.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-issue-001-v1.html">Issue 001 · Editor's letter</a></div>
+      </article>
+
+      <!-- note 4 — Patron, on article-001, invokes Tao Yuanming -->
+      <article class="rn-note" role="listitem">
+        <div class="head">
+          <span class="author">Wei An-ling</span>
+          <span class="tier patron">贊</span>
+          <span class="when">5 days ago · 五 日 前</span>
+        </div>
+        <div class="body">Tao Yuanming kept coming to mind while I read this. The whole "Returning Home" rhapsody is essentially a man giving himself permission to stop being useful in the official sense. The article never says his name — but it is in every paragraph.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-article-001-v1.html">Why doing nothing is sometimes the hardest practice</a></div>
+      </article>
+
+      <!-- note 5 — Reader, on Issue 001 -->
+      <article class="rn-note" role="listitem">
+        <div class="head">
+          <span class="author">Sasha O.</span>
+          <span class="tier">讀</span>
+          <span class="when">7 days ago · 七 日 前</span>
+        </div>
+        <div class="body">I came in cold — no Chinese background — and the issue was kind to me. The decision to put the Zhuangzi pieces beside a modern essay rather than a translator's footnote made all the difference. The footnotes did the work without making me feel small.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-issue-001-v1.html">Issue 001 · Wu Wei</a></div>
+      </article>
+
+      <!-- note 6 — Reader, on article-002-vip — quotes back a phrase -->
+      <article class="rn-note" role="listitem">
+        <div class="head">
+          <span class="author">J. Park</span>
+          <span class="tier">讀</span>
+          <span class="when">9 days ago · 九 日 前</span>
+        </div>
+        <div class="body"><em>"Stillness is not the absence of work; it is work that has stopped asking to be seen."</em> I copied this line into the front of my notebook. I am not a member yet, but I read the public preview every time it goes up.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-article-002-vip-v1.html">The Quiet Hour Before the Hour</a></div>
+      </article>
+
+      <!-- note 7 — Patron, on Issue 001 letters — says letter resonated -->
+      <article class="rn-note" role="listitem">
+        <div class="head">
+          <span class="author">Chen Ruoxi</span>
+          <span class="tier patron">贊</span>
+          <span class="when">11 days ago · 十 一 日 前</span>
+        </div>
+        <div class="body">The letter on 「閒」 read like something I have been trying to say for a year. The editors' reply was, charitably, more careful than the question deserved. I sent the page to my mother in Suzhou — she wrote back with a single character: 是.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-issue-001-v1.html">Issue 001 · Letters · A reading on 「閒」</a></div>
+      </article>
+
+      <!-- note 8 — Reader, on article-001 — daily-life observation -->
+      <article class="rn-note" role="listitem">
+        <div class="head">
+          <span class="author">M. Aoki</span>
+          <span class="tier">讀</span>
+          <span class="when">14 days ago · 兩 周 前</span>
+        </div>
+        <div class="body">I tried the small experiment the article suggests almost as a footnote — to spend twenty minutes doing nothing visibly productive once a day. Three weeks in: the part that was hardest was admitting how often I broke it without noticing.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-article-001-v1.html">Why doing nothing is sometimes the hardest practice</a></div>
+      </article>
+
+      <!-- note 9 — Reader, on article-002-vip — counter-view, kindly -->
+      <article class="rn-note" role="listitem">
+        <div class="head">
+          <span class="author">Dr. Eitan B.</span>
+          <span class="tier">讀</span>
+          <span class="when">on May 12</span>
+        </div>
+        <div class="body">A small counter, in the spirit of the journal: the "hour before the hour" framing risks romanticising what is, for a lot of people, the only quiet hour of an unkind shift. I appreciate the article does not turn it into a productivity hack — but it could say so out loud.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-article-002-vip-v1.html">The Quiet Hour Before the Hour</a></div>
+      </article>
+
+      <!-- note 10 — Patron, on Issue 001 — small thank-you -->
+      <article class="rn-note" role="listitem">
+        <div class="head">
+          <span class="author">Yiwen S.</span>
+          <span class="tier patron">贊</span>
+          <span class="when">on May 09</span>
+        </div>
+        <div class="body">Issue 001 arrived on a week I didn't have time for it. I read it anyway, slowly, on a train. That was the right way to read it. Thank you for not putting "Read time: 12 min" at the top.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-issue-001-v1.html">Issue 001 · Wu Wei</a></div>
+      </article>
+
+    </div>
+
+    <div class="cm-stream-foot">
+      <span>Showing <b>10</b> of <b>~12</b> notes · sorted by <b>Recent</b></span>
+      <!-- TODO · #5b+ — wire to a /community/notes archive page once
+           the journal accumulates enough notes (≥ 50) to deserve one.
+           For now the link returns to the top of this page. -->
+      <a href="#stream">Read all notes →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cm-choice §叄 EDITOR'S CHOICE
+     SOURCE:
+       - GET /wp-json/ie/v1/reader-notes?meta_key=editors_choice&value=1&per_page=4
+       - cache: WP transient, key = ie_community_choice, TTL 30 min
+         (editors mark these by hand — refresh rate is human-paced)
+       - the ec-band b "編 選" is rendered as a 朱砂方印 chop seal,
+         identical visual to the #5a anatomy diagram's mark
+     RULES:
+       - This is a CURATED FILTER of §贰, not a separate stream.
+         A note that already appears in §贰 can be re-rendered
+         here with .is-editors-choice — the source of truth is
+         the editors_choice meta on the comment.
+       - Default 3-4 entries. NEVER paginated. If editors mark
+         a 5th, the oldest drops off.
+     EMPTY VARIANT:
+       <div class="cm-empty">
+         <p>No editor-chosen notes yet. The editors will mark a
+         small handful as the journal grows.</p>
+       </div>
+     ============================================ -->
+<section class="cm-section" id="choice" data-section="cm-choice">
+  <div class="cm-wrap">
+
+    <div class="cm-head">
+      <div class="num">叄</div>
+      <h2><b>Editor's</b> <i>Choice</i></h2>
+      <div class="cn">編 選</div>
+    </div>
+
+    <p class="cm-dek">A small handful of notes the editors are quietly proud of — for clarity, for kindness, for changing the mind of an editor who thought they had finished thinking about a piece. <em>Marked by hand, refreshed slowly.</em></p>
+
+    <div class="rn-frame" role="list">
+
+      <!-- choice 1 — on article-001, Reader -->
+      <article class="rn-note is-editors-choice" role="listitem">
+        <div class="ec-band"><b>編 選</b> · chosen for clarity <span class="rn-mark-ec">編<br>選</span></div>
+        <div class="head">
+          <span class="author">Lin Hsiao-yu</span>
+          <span class="tier">讀</span>
+          <span class="when">2 days ago · 兩 日 前</span>
+        </div>
+        <div class="body">I read this on a Sunday morning when I had told myself I would finally <em>get something done</em>. By the third paragraph I had stopped trying to. The sentence about Laozi's pivot from doing-as-virtue to noticing-as-virtue rearranged a small piece of my week.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-article-001-v1.html">Why doing nothing is sometimes the hardest practice</a></div>
+      </article>
+
+      <!-- choice 2 — on Issue 001 letters, Patron -->
+      <article class="rn-note is-editors-choice" role="listitem">
+        <div class="ec-band"><b>編 選</b> · for the kindness of the disagreement <span class="rn-mark-ec">編<br>選</span></div>
+        <div class="head">
+          <span class="author">Chen Ruoxi</span>
+          <span class="tier patron">贊</span>
+          <span class="when">11 days ago · 十 一 日 前</span>
+        </div>
+        <div class="body">The letter on 「閒」 read like something I have been trying to say for a year. The editors' reply was, charitably, more careful than the question deserved. I sent the page to my mother in Suzhou — she wrote back with a single character: 是.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-issue-001-v1.html">Issue 001 · Letters · A reading on 「閒」</a></div>
+      </article>
+
+      <!-- choice 3 — on article-002-vip, Reader, the kind counter -->
+      <article class="rn-note is-editors-choice" role="listitem">
+        <div class="ec-band"><b>編 選</b> · for the kind counter <span class="rn-mark-ec">編<br>選</span></div>
+        <div class="head">
+          <span class="author">Dr. Eitan B.</span>
+          <span class="tier">讀</span>
+          <span class="when">on May 12</span>
+        </div>
+        <div class="body">A small counter, in the spirit of the journal: the "hour before the hour" framing risks romanticising what is, for a lot of people, the only quiet hour of an unkind shift. I appreciate the article does not turn it into a productivity hack — but it could say so out loud.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-article-002-vip-v1.html">The Quiet Hour Before the Hour</a></div>
+      </article>
+
+      <!-- choice 4 — on article-001, Patron, Tao Yuanming -->
+      <article class="rn-note is-editors-choice" role="listitem">
+        <div class="ec-band"><b>編 選</b> · for naming what the article didn't <span class="rn-mark-ec">編<br>選</span></div>
+        <div class="head">
+          <span class="author">Wei An-ling</span>
+          <span class="tier patron">贊</span>
+          <span class="when">5 days ago · 五 日 前</span>
+        </div>
+        <div class="body">Tao Yuanming kept coming to mind while I read this. The whole "Returning Home" rhapsody is essentially a man giving himself permission to stop being useful in the official sense. The article never says his name — but it is in every paragraph.</div>
+        <div class="ref"><span class="arr">↳</span> on <a href="./ink-east-article-001-v1.html">Why doing nothing is sometimes the hardest practice</a></div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cm-issues §肆 ISSUE DISCUSSION
+     SOURCE:
+       - GET /wp-json/wp/v2/posts?categories=issue&per_page=10
+       - + foreach issue: SELECT COUNT(*) FROM wp_comments c
+           JOIN wp_posts p ON c.comment_post_ID=p.ID
+           WHERE p.post_type IN ('issue','article')
+             AND p.meta_key='ie_issue_id' AND p.meta_value=$issue_id
+             AND c.comment_approved='1'
+       - cache: WP transient per issue, TTL 10 min
+     RULES:
+       - One card per issue. Issue 001 is the only one with a
+         real count today; Issue 002+ are placeholders (.is-quiet)
+         and link to a discussion anchor that does not yet exist.
+       - The card's footer shows ONE quiet number — a noun
+         ("notes across the issue · ~12"), not a tally widget.
+         No latest-poster avatar. No "5d ago · last by user42".
+         No reply count. No view count.
+       - Visual closer to a journal contents-card than a phpBB
+         board strip. (BRIEF §五 5.2 hard rule.)
+     EMPTY VARIANT (no published issues yet):
+       <div class="cm-empty">
+         <p>Issue Discussion opens with each new issue. Issue 001
+         is currently quiet.</p>
+       </div>
+     ============================================ -->
+<section class="cm-section dark-rule" id="issues" data-section="cm-issues">
+  <div class="cm-wrap">
+
+    <div class="cm-head">
+      <div class="num">肆</div>
+      <h2><b>Issue</b> <i>Discussion</i></h2>
+      <div class="cn">本 期 之 議</div>
+    </div>
+
+    <p class="cm-dek">Each issue gathers a small thread of cross-article notes — readers writing back across the issue rather than at a single piece. <em>One card per issue.</em> No reply counts, no last-poster, no "trending" — only a noun.</p>
+
+    <div class="cm-issues">
+
+      <!-- issue 1 — Issue 001 (real, has notes today) -->
+      <article class="cm-issue" data-issue="001">
+        <div class="stamp">Issue 001 · Spring 2026</div>
+        <h3><em>Wu Wei</em> — and the unease of doing nothing.</h3>
+        <div class="cn">無 為</div>
+        <p class="dek">Laozi, Zhuangzi, and the long tradition of treating rest not as failure but as a kind of intelligence — read against a modern week.</p>
+        <div class="scale">
+          <span><span class="n">~12</span> notes across the issue</span>
+          <!-- TODO · #5b+ — wire to /community/issue-001/discussion once
+               the per-issue discussion archive page is built. -->
+          <a href="#issue-001-discussion">Open the discussion →</a>
+        </div>
+      </article>
+
+      <!-- issue 2 — placeholder Issue 002 -->
+      <article class="cm-issue is-quiet" data-issue="002">
+        <div class="stamp">Issue 002 · Forthcoming</div>
+        <h3><em>On 「閒」</em> — the word my grandmother used.</h3>
+        <div class="cn">閒</div>
+        <p class="dek">A reader letter from Issue 001 became the seed of a whole issue. Discussion opens when Issue 002 ships.</p>
+        <div class="scale">
+          <span>Discussion opens with the issue</span>
+          <!-- TODO · #5b+ — link activates when Issue 002 ships. -->
+          <a href="#issue-002-discussion">Open the discussion →</a>
+        </div>
+      </article>
+
+      <!-- issue 3 — placeholder Issue 003 -->
+      <article class="cm-issue is-quiet" data-issue="003">
+        <div class="stamp">Issue 003 · Forthcoming</div>
+        <h3><em>The art</em> of not finishing.</h3>
+        <div class="cn">未 竟</div>
+        <p class="dek">Unfinished work in the Chinese tradition — Du Fu's late drafts, Wang Wei's sketches, the writings the editors kept losing. The discussion thread is held until the issue arrives.</p>
+        <div class="scale">
+          <span>Discussion opens with the issue</span>
+          <!-- TODO · #5b+ — link activates when Issue 003 ships. -->
+          <a href="#issue-003-discussion">Open the discussion →</a>
+        </div>
+      </article>
+
+      <!-- issue 4 — placeholder Issue 004 / back issues bucket -->
+      <article class="cm-issue is-quiet" data-issue="archive">
+        <div class="stamp">Back issues · Archive</div>
+        <h3>Older threads, <em>kept slowly</em>.</h3>
+        <div class="cn">舊 議</div>
+        <p class="dek">When the journal accumulates enough back issues to deserve a discussion archive, this card opens to a list. For now, every published thread lives at its issue page.</p>
+        <div class="scale">
+          <span>Archive opens after Issue 003</span>
+          <!-- TODO · #5b+ — wire to /community/archive when ready. -->
+          <a href="#issue-archive">Open the archive →</a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cm-letters §伍 OPEN LETTERS
+     SOURCE:
+       - GET /wp-json/wp/v2/letter?status=published&per_page=3
+         (assumes the `letter` CPT was registered in #6 — see
+         BRIEF §五 5.2 deliverables list, custom post types)
+       - each entry's editor reply is the post excerpt (50-80
+         words), NOT the full reply — that lives back at the
+         issue's Letters anchor on Issue 001 / Issue 002 / etc.
+       - cache: WP transient, key = ie_community_letters,
+         TTL 30 min (letters publish on editorial cadence)
+     RULES:
+       - This section is READ-ONLY. There is NO submission form
+         here — that lives at ./ink-east-letters-form-v1.html.
+         BRIEF §15.1: "编辑可以选择部分问题进行匿名化、改写、整理后发表".
+         The titles below are anonymized; the bodies are
+         editorial summaries, not the original letters.
+       - Each row links back to the original letter anchor
+         inside its issue. No full-letter reproduction here.
+     EMPTY VARIANT:
+       <div class="cm-empty">
+         <p>No letters published yet — letters take a few weeks
+         of editorial pause before they reach the page.</p>
+       </div>
+     ============================================ -->
+<section class="cm-section" id="letters" data-section="cm-letters">
+  <div class="cm-wrap">
+
+    <div class="cm-head">
+      <div class="num">伍</div>
+      <h2><b>Open</b> <i>Letters</i></h2>
+      <div class="cn">已 復 之 信</div>
+    </div>
+
+    <p class="cm-dek">Reader letters that have already been answered, anonymized and gathered for those who didn't catch them in their issue. <em>The summaries below are the editors' reply, briefly</em>; click through for the full exchange.</p>
+
+    <div class="cm-letters">
+
+      <!-- letter 1 — anonymized "閒" -->
+      <article class="cm-letter">
+        <div class="stamp">壹</div>
+        <div class="body">
+          <h3>A reading on <em>「閒」</em> — the word a grandmother used.</h3>
+          <div class="from">From a reader in Suzhou · published in Issue 001 · Letters</div>
+          <p class="reply">「閒」 is one of those words English does not have a single equivalent for. It is not "leisure" — leisure has been bought from a clock. It is closer to <em>availability without errand</em>. Your grandmother used it to describe a state your week makes very hard to reach. We hold it as a future issue.</p>
+          <div class="ref"><a href="./ink-east-issue-001-v1.html#letters">Read full reply in Issue 001 · Letters →</a></div>
+        </div>
+      </article>
+
+      <!-- letter 2 — anonymized Tao Yuanming -->
+      <article class="cm-letter">
+        <div class="stamp">貳</div>
+        <div class="body">
+          <h3>On Tao Yuanming, <em>and quitting kindly</em>.</h3>
+          <div class="from">From a reader in Edinburgh · published in Issue 001 · Letters</div>
+          <p class="reply">Tao Yuanming did not romanticize quitting; he bureaucratized it. The "Returning Home" rhapsody is a series of small administrative refusals — declining a banquet, walking past a clerk, naming a vegetable garden a desk. Read it as a slow letter of resignation, not a flight to the hills.</p>
+          <div class="ref"><a href="./ink-east-issue-001-v1.html#letters">Read full reply in Issue 001 · Letters →</a></div>
+        </div>
+      </article>
+
+      <!-- letter 3 — anonymized Zhuangzi butterfly -->
+      <article class="cm-letter">
+        <div class="stamp">叄</div>
+        <div class="body">
+          <h3>On Zhuangzi's butterfly, <em>kindly disagreeing</em> with the translator.</h3>
+          <div class="from">From a reader in Berkeley · published in Issue 001 · Letters</div>
+          <p class="reply">The butterfly chapter is not a thought experiment about identity, despite a century of footnotes saying so. It is closer to a refusal of the question — the kind of refusal that is itself the answer. We pushed the translator's footnote down a level so the chapter could speak first.</p>
+          <div class="ref"><a href="./ink-east-issue-001-v1.html#letters">Read full reply in Issue 001 · Letters →</a></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="cm-letters-foot">
+      <em>To write a new letter, the door is at <a href="./ink-east-letters-form-v1.html">Ask the Ancient Text →</a></em>. This page only gathers what has already been answered — letters take a few weeks of editorial pause before they reach the page.
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================
+     BLOCK: cm-backend §陸 WP CONTRACT
+     SOURCE:    n/a — engineering map only
+     RULES:     verbatim density from the #5a backend block.
+                Every section above lists its own dt/dd row.
+     ============================================ -->
+<section class="cm-section dark-rule" id="backend" data-section="cm-backend">
+  <div class="cm-wrap">
+
+    <div class="cm-head">
+      <div class="num">陸</div>
+      <h2><b>WordPress</b> <i>contract</i></h2>
+      <div class="cn">後 端 規 範</div>
+    </div>
+
+    <p class="cm-dek">A station-level aggregator. Server-side rendered PHP template; no client-side AJAX in v1. Every block below is read-heavy, write-light — write surfaces all live upstream (article pages, Letters form). <em>Cache aggressively, refresh on editorial actions only.</em></p>
+
+    <dl class="cm-backend">
+
+      <dt>URL</dt>
+      <dd>
+        <code>/community</code>
+        <em>Production path. The page is reachable from every site-nav (8th item) and every footer "Speak" column.</em>
+      </dd>
+
+      <dt>Render</dt>
+      <dd>
+        Server-side PHP template, <b>no AJAX in v1</b>.
+        <em>Every section is rendered at request time from the cache layer. Pagination (when needed) is link-based.</em>
+      </dd>
+
+      <dt>§贰 Recent</dt>
+      <dd>
+        <code>GET /wp-json/wp/v2/comments?per_page=10&amp;order=desc</code><br>
+        filter: <code>comment_approved='1'</code> &amp; <code>meta hidden_by_editor != '1'</code><br>
+        cache: <b>WP transient</b> · key <code>ie_community_stream_recent</code> · TTL 5–10 min · busted on new approved comment
+        <em>DOM shape verbatim from the #5a Reader Notes component spec — do not diverge the markup.</em>
+      </dd>
+
+      <dt>§叄 Editor's Choice</dt>
+      <dd>
+        <code>GET /wp-json/ie/v1/reader-notes?meta_key=editors_choice&amp;value=1&amp;per_page=4</code><br>
+        cache: <b>WP transient</b> · key <code>ie_community_choice</code> · TTL 30 min · busted when editors toggle the meta
+        <em>Curated filter of §贰. Same comment row, re-rendered with .is-editors-choice.</em>
+      </dd>
+
+      <dt>§肆 Issue Discussion</dt>
+      <dd>
+        <code>GET /wp-json/wp/v2/posts?categories=issue&amp;per_page=10</code><br>
+        + per-issue: <code>SELECT COUNT(*) FROM wp_comments JOIN wp_posts ON post_ID=ID WHERE meta_key='ie_issue_id' AND meta_value=$id</code><br>
+        cache: <b>WP transient per issue</b> · key <code>ie_community_issue_$id</code> · TTL 10 min
+        <em>Show only the count as a noun — no avatars, no last-poster, no reply density.</em>
+      </dd>
+
+      <dt>§伍 Open Letters</dt>
+      <dd>
+        <code>GET /wp-json/wp/v2/letter?status=published&amp;per_page=3</code><br>
+        excerpt = post excerpt (50–80 words), NOT post_content<br>
+        cache: <b>WP transient</b> · key <code>ie_community_letters</code> · TTL 30 min
+        <em>Custom post type <code>letter</code> registered in #6. Anonymization happens at edit time on the WP admin side, not at render time.</em>
+      </dd>
+
+      <dt>Day-1 reality</dt>
+      <dd>
+        Most sections will render <b>empty</b> at launch — the legacy 120+ articles are migrating, the new comment system is fresh, letters take a few weeks of editorial pause.<br>
+        Each block above ships with an <b>EMPTY VARIANT</b> HTML comment that the server template substitutes when the result set is empty. The frame stays; the contents change.
+        <em>This is intentional. Empty here looks like a pause, not a broken page.</em>
+      </dd>
+
+      <dt>Permission</dt>
+      <dd>
+        <b>Read</b> = open to all (guest / Reader / Patron). The page is purely a read-only aggregator.
+        <em>No tier-gated content. The visible shape does not change between guest and member.</em>
+      </dd>
+
+      <dt>Write surfaces</dt>
+      <dd>
+        <b>Not on this page.</b> A new Reader Note is written upstream inside the article it belongs to (<code>#reader-notes</code> anchor on each article page). A new letter is written on the Letters form (<code>./ink-east-letters-form-v1.html</code>).
+        <em>This page hosts no composer, no textarea, no submission button.</em>
+      </dd>
+
+    </dl>
+
+    <!-- The "no composer" reminder, rendered visibly because this rule is
+         the easiest one for a future engineer to misread. -->
+    <aside class="cm-no-composer">
+      <div class="lab">A note on writing surfaces · 寫 入 之 口</div>
+      <p>This page does not host any composer; <em>all writing happens upstream on article pages or the Letters form.</em> If a future engineer is tempted to add a "post a note" textarea below the §贰 stream, the answer is: keep the door at the article. The aggregator is for listening.</p>
+    </aside>
+
+  </div>
+</section>
+
+
+<!-- ============================================
+     FOOTER — verbatim from the rest of the site.
+     The "Speak" column gains Community as its 5th item,
+     after Reader Notes — same integration applied across
+     11 sister files in this commit.
+     ============================================ -->
+<footer>
+  <div class="foot-mark">
+    <div class="ampers">Ink <em>&amp;</em> East</div>
+    <span class="cn">墨 與 東</span>
+    <span class="sub">An independent digital journal · Published when ready · Est. 2026</span>
+  </div>
+
+  <div class="foot-cols">
+    <div>
+      <h5>The Journal <span class="cn">關 於</span></h5>
+      <p class="mission">Ink &amp; East publishes a single issue when a single issue is ready. Each one answers, in plain English, a modern question — through Chinese classical thought, original stories, and reader letters.</p>
+      <p class="also-by">Also kept by the editors —<br>a small shop of objects, <a href="./spatial-flow-v1.html">Spatial Flow →</a></p>
+    </div>
+    <div>
+      <h5>Read <span class="cn">讀</span></h5>
+      <ul>
+        <li><a href="./ink-east-issue-001-v1.html">This Issue · 001</a></li>
+        <li><a href="./ink-east-v1.html">Home</a></li>
+        <li><a href="./ink-east-vip-library-v1.html">VIP Library</a></li>
+        <li><a href="./ink-east-reading-room-v1.html">Reading Room</a></li>
+        <li><a href="#">Field Notes</a></li>
+        <li><a href="./ink-east-membership-v1.html">Become a member</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Speak <span class="cn">問</span></h5>
+      <ul>
+        <li><a href="./ink-east-letters-form-v1.html">Ask the Ancient Text</a></li>
+        <li><a href="#">Suggest an Issue Theme</a></li>
+        <li><a href="#">Vote · Patrons only</a></li>
+        <li><a href="./ink-east-reader-notes-component-v1.html">Reader Notes</a></li>
+        <li><a href="./ink-east-community-v1.html">Community</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Studio <span class="cn">寫</span></h5>
+      <ul>
+        <li><a href="./ink-east-custom-ebook-v1.html">Custom Ebook Studio</a></li>
+        <li><a href="./ink-east-custom-ebook-v1.html#process">Process &amp; Pricing</a></li>
+        <!-- TODO · sample manuscripts not in v1, link comes later -->
+        <li><a href="#">Past Manuscripts</a></li>
+        <li><a href="./ink-east-custom-ebook-v1.html#submit-brief">Submit a brief</a></li>
+        <li><a href="#">Editorial standards</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="colophon-final">
+    <span>© 2026 Ink &amp; East · Published quietly</span>
+    <span>Set in EB Garamond, Inter &amp; Noto Serif SC</span>
+    <span>ISSN — 2026.001</span>
+  </div>
+</footer>
+
+</body>
+</html>
