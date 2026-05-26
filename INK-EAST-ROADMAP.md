@@ -14,7 +14,7 @@
 | 3 | 定制解读服务页（**核心商业**） | preview/ink-east-custom-reading-v1.html | 无（可与 #1/#2 并行） | ✓(5921918) |
 | 4 | Membership 套餐对比页 | preview/ink-east-membership-v1.html | #1 #2 | ✓(3905909；含意外加分 6b12aa9 顺清 IA 二分历史债) |
 | 5a | Reader Notes 组件 stub demo | preview/ink-east-reader-notes-component-v1.html | 无 | ✓(6f0bb58) |
-| 5b | /community 聚合页（可选，后期） | preview/ink-east-community-v1.html | 5a | 后期 |
+| 5b | /community 聚合页 | preview/ink-east-community-v1.html | 5a | ✓(85c95ac) |
 | 6 | Letters 投稿表单 + Thank You | preview/ink-east-letters-form-v1.html | 无 | ✓(635c8b0) |
 | 7 | Custom Ebook Studio 服务详情 | preview/ink-east-custom-ebook-v1.html | #3 | ✓(ef3fb80) |
 
@@ -23,8 +23,8 @@
 **波次划分（推荐节奏）**：
 - **Wave 1 ✓ 完工** (#1 ✓ → #1.5 ✓ → #2 ✓ → #3 ✓ → #4 ✓)：核心闭环 + 启动核心商业完成。paywall 路径已活,Custom Reading 可接活,Membership 是第七 destination。
 - **Wave 2 ✓ 完工** (#5a ✓ → #6 ✓)：互动闭环完成。Letters 投稿 + Reader Notes 组件规范 + 9 文件 footer 整改全部到位。
-- **Wave 3 ✓ 完工** (#7 ✓)：Custom Ebook Studio 上线,与 #3 Custom Reading 互相导流。**ROADMAP 主线 7/8 任务 ✓ 全完**。
-- **Backlog**：#5b /community 聚合页(120+ 旧文章迁移后再起,见下方 Pre-launch 决定)、VIP Paywall 3 状态变体（已合并进 #1 单 guest 状态）。
+- **Wave 3 ✓ 完工** (#7 ✓ → #5b ✓)：Custom Ebook Studio 与 Custom Reading 互相导流;Community 聚合页(站点级 Reader Notes / Editor's Choice / Issue Discussion / Open Letters 汇流,day-1 empty variant 已写入 server-side swap 模式)。**ROADMAP 主线 8/8 任务 ✓ 全完**。
+- **Backlog**：仅 VIP Paywall 3 状态变体（已合并进 #1 单 guest 状态）。无其他剩项。
 
 ---
 
@@ -173,11 +173,16 @@
 
 ---
 
-## 任务 5b · /community 聚合页（可选 / 后期）
+## 任务 5b · /community 聚合页 ✓ 完成
 
 **目标**：聚合全站 Reader Notes + Issue Discussion + Editor's Choice。BRIEF §五 5.2 已规划。
 
-**v1 可不做**——用户量起来再说。先把 5a 做了即可。
+**实施**(commit 85c95ac):
+- 6 sections(壹 hero / 貳 latest reader notes stream / 叄 editor's choice highlights / 肆 issue discussion threads / 伍 open letters / 陸 WP backend contract)
+- 复用 #5a `.rn-note` 视觉契约(stream 跨文章统一)
+- day-1 EMPTY VARIANT 模式(每个内容 section 配 server-side swap 注释,旧站 120+ 文章迁移后内容自然填充)
+- 21 处集成扫荡(8 site-nav 升级到 8 项 Community / 11 footer 加 Community / Reader Notes Component "eventually" 激活 / Reading Room §伍 letters 2 处死链激活)
+- 视觉硬约束:不像 Reddit/贴吧/phpBB/Discourse,严格无 composer/form,排序仅 Recent / Editor's Choice
 
 ---
 
