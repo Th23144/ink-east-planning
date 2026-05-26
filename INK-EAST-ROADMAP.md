@@ -12,7 +12,7 @@
 | 1.5 | **VIP Library 索引页**（NEW · IA 二分） | preview/ink-east-vip-library-v1.html | #1 | ✓（c090123） |
 | 2 | Reading Room VIP 会员中心 | preview/ink-east-reading-room-v1.html | #1.5 | ✓(d2ca549) |
 | 3 | 定制解读服务页（**核心商业**） | preview/ink-east-custom-reading-v1.html | 无（可与 #1/#2 并行） | ✓(5921918) |
-| 4 | Membership 套餐对比页 | preview/ink-east-membership-v1.html | #1 #2 | ⏳ |
+| 4 | Membership 套餐对比页 | preview/ink-east-membership-v1.html | #1 #2 | ✓(3905909；含意外加分 6b12aa9 顺清 IA 二分历史债) |
 | 5a | Reader Notes 组件 stub demo | preview/ink-east-reader-notes-component-v1.html | 无 | ⏳ |
 | 5b | /community 聚合页（可选，后期） | preview/ink-east-community-v1.html | 5a | 后期 |
 | 6 | Letters 投稿表单 + Thank You | preview/ink-east-letters-form-v1.html | 无 | ⏳ |
@@ -21,7 +21,7 @@
 完工后逐项把状态从 ⏳ 改为 ✓。链接死链未填的不算完工。
 
 **波次划分（推荐节奏）**：
-- **Wave 1** (#1 ✓ → #1.5 ✓ → #2 ✓ → #3 ✓ → #4)：核心闭环 + 启动核心商业。完成后 paywall 路径活、Custom Reading 可接活。
+- **Wave 1 ✓ 完工** (#1 ✓ → #1.5 ✓ → #2 ✓ → #3 ✓ → #4 ✓)：核心闭环 + 启动核心商业完成。paywall 路径已活,Custom Reading 可接活,Membership 是第七 destination。
 - **Wave 2** (#5a #6)：互动闭环。
 - **Wave 3** (#7)：商业补完，与 #3 互相导流。
 - **Backlog**：#5b /community、VIP Paywall 3 状态变体（已合并进 #1 单 guest 状态）。
