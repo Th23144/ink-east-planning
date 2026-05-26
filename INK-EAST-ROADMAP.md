@@ -15,7 +15,7 @@
 | 4 | Membership 套餐对比页 | preview/ink-east-membership-v1.html | #1 #2 | ✓(3905909；含意外加分 6b12aa9 顺清 IA 二分历史债) |
 | 5a | Reader Notes 组件 stub demo | preview/ink-east-reader-notes-component-v1.html | 无 | ⏳ |
 | 5b | /community 聚合页（可选，后期） | preview/ink-east-community-v1.html | 5a | 后期 |
-| 6 | Letters 投稿表单 + Thank You | preview/ink-east-letters-form-v1.html | 无 | ⏳ |
+| 6 | Letters 投稿表单 + Thank You | preview/ink-east-letters-form-v1.html | 无 | ✓(635c8b0) |
 | 7 | Custom Ebook Studio 服务详情 | preview/ink-east-custom-ebook-v1.html | #3 | ⏳ |
 
 完工后逐项把状态从 ⏳ 改为 ✓。链接死链未填的不算完工。
@@ -198,7 +198,7 @@
 
 **验收**：
 - 表单**克制 / 安静 / 文学感**（BRIEF §28.5）
-- 4 条授权勾选齐全（BRIEF §15.2）
+- **5 条**授权勾选齐全（BRIEF §15.2 — 已修正：BRIEF 实际为 5 条，原 ROADMAP 写"4 条"系笔误）
 - 服务边界免责声明（不是心理咨询/医疗建议... BRIEF §15.4）
 - Thank You 不是普通"提交成功"页，要有刊物气质
 
