@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Custom Ebook Studio · Ink &amp; East</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!--
   PAGE: ink-east-custom-ebook-v1
   STATE: guest (default render)
@@ -49,13 +52,16 @@
   --paper:#f4ede0;
   --paper-soft:#faf5e9;
   --paper-dim:#e8dfce;
+  --paper-light:var(--paper-soft);
   --ink:#1a1611;
   --ink-soft:#5a5346;
+  --ink-faint:#8a7f70;
   --rule:#c8bda6;
   --seal:#a02d23;          /* 朱砂 — strict use only, see BRIEF §二十五 */
   --seal-soft:#c4554a;
 
   --serif:'EB Garamond','Garamond',serif;
+  --serif-en:var(--serif);
   --serif-cn:'Noto Serif SC','Songti SC',serif;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
   --mono:'JetBrains Mono','SF Mono',monospace;
@@ -507,7 +513,6 @@ footer{
   background:var(--paper);
   color:var(--ink);
   padding:90px 40px 28px;
-  margin-top:80px;
 }
 .foot-mark{
   text-align:center;
@@ -528,7 +533,7 @@ footer{
   font-family:var(--serif-cn);
   font-size:18px;
   letter-spacing:.5em;
-  color:var(--ink-soft);
+  color:var(--ink-faint);
   margin-top:18px;
 }
 .foot-mark .sub{
@@ -537,7 +542,7 @@ footer{
   font-size:10px;
   letter-spacing:.3em;
   text-transform:uppercase;
-  color:var(--ink-soft);
+  color:var(--ink-faint);
   margin-top:16px;
 }
 .foot-cols{
@@ -608,6 +613,9 @@ footer a:hover{color:var(--seal)}
 }
 
 /* ===== RESPONSIVE ===== */
+@media (max-width:1100px){
+  .foot-cols{grid-template-columns:1fr 1fr;gap:40px}
+}
 @media (max-width:760px){
   .backbar{padding:10px 22px}
   .nav-strip{padding:14px 22px 0}
@@ -627,7 +635,8 @@ footer a:hover{color:var(--seal)}
   .pricing .pricing-line{font-size:21px}
   .brief-form{padding:32px 22px}
   .faq-a{padding-left:0}
-  footer{padding:36px 22px 24px}
+  footer{padding:60px 20px 20px}
+  .foot-mark .ampers{font-size:56px}
   .foot-cols{grid-template-columns:1fr;gap:36px}
   .colophon-final{flex-direction:column;gap:6px;text-align:center}
 }
