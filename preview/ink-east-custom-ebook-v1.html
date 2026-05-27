@@ -165,10 +165,11 @@ a{color:inherit;text-decoration:none}
 .disambig .other a:hover{color:var(--ink)}
 
 /* ===== Page container ===== */
-.page{max-width:980px;margin:0 auto;padding:80px 56px 120px}
+.page{max-width:980px;margin:0 auto;padding:80px 56px 80px}
 
 /* ===== Section base ===== */
 section{margin:0 0 96px}
+.page > section:last-of-type{margin-bottom:0}
 .section-head{margin-bottom:36px}
 .section-num{
   font-family:var(--serif-cn);
@@ -533,7 +534,7 @@ footer{
   font-family:var(--serif-cn);
   font-size:18px;
   letter-spacing:.5em;
-  color:var(--ink-faint);
+  color:var(--ink-soft);
   margin-top:18px;
 }
 .foot-mark .sub{
@@ -563,7 +564,7 @@ footer h5{
 }
 footer h5 .cn{
   font-family:var(--serif-cn);
-  color:var(--ink-soft);
+  color:var(--ink-faint);
   margin-left:10px;
   letter-spacing:.3em;
 }
@@ -579,7 +580,7 @@ footer p.mission{
 .also-by{
   font-family:var(--serif-en);
   font-size:13px;
-  color:var(--ink-soft);
+  color:var(--ink-faint);
   line-height:1.7;
 }
 .also-by a{
@@ -605,7 +606,7 @@ footer a:hover{color:var(--seal)}
   font-size:10px;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:var(--ink-soft);
+  color:var(--ink-faint);
   display:flex;
   justify-content:space-between;
   gap:24px;
@@ -616,7 +617,7 @@ footer a:hover{color:var(--seal)}
 @media (max-width:1100px){
   .foot-cols{grid-template-columns:1fr 1fr;gap:40px}
 }
-@media (max-width:760px){
+@media (max-width:720px){
   .backbar{padding:10px 22px}
   .nav-strip{padding:14px 22px 0}
   .site-nav{grid-template-columns:1fr;gap:14px;text-align:center}
