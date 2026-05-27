@@ -314,7 +314,7 @@ footer{padding:60px 20px 20px}
              Default tier on the hero CTA is Reader — chosen because the
              two prose paragraphs below let the reader walk up to Patron
              on their own. -->
-        <a href="#" data-stripe-plan="reader" class="mb-cta solid">Become a member</a>
+        <a href="#" data-stripe-plan="reader" data-pending-link="stripe-checkout-reader" aria-disabled="true" class="mb-cta solid">Become a member</a>
         <span class="quiet">or <a href="#mb-tiers" style="color:var(--ink);border-bottom:1px solid var(--rule);padding-bottom:1px">read what membership means</a></span>
       </div>
     </div>
@@ -395,7 +395,7 @@ footer{padding:60px 20px 20px}
             Supported at the Reader level.
             <!-- TODO · #4 Stripe Checkout endpoint, configured at ship time.
                  Production href: /checkout/stripe?plan=reader -->
-            <a href="#" data-stripe-plan="reader">Join as a Reader</a>
+            <a href="#" data-stripe-plan="reader" data-pending-link="stripe-checkout-reader" aria-disabled="true">Join as a Reader</a>
           </div>
         </div>
 
@@ -417,7 +417,7 @@ footer{padding:60px 20px 20px}
             Supported at the Patron level.
             <!-- TODO · #4 Stripe Checkout endpoint, configured at ship time.
                  Production href: /checkout/stripe?plan=patron -->
-            <a href="#" data-stripe-plan="patron">Join as a Patron</a>
+            <a href="#" data-stripe-plan="patron" data-pending-link="stripe-checkout-patron" aria-disabled="true">Join as a Patron</a>
           </div>
         </div>
 
@@ -474,19 +474,19 @@ footer{padding:60px 20px 20px}
         Cancel any time, with one click.
         <!-- TODO · #4 Stripe billing portal cancel slug, live at ship time.
              Production href: /account/cancel (Stripe customer portal). -->
-        <a href="#" data-cancel-slug>Cancel here.</a>
+        <a href="#" data-cancel-slug data-pending-link="membership-cancel" aria-disabled="true">Cancel here.</a>
         <span class="sep">·</span>
         Already a member? <a href="/wp-login.php">Sign in.</a>
         <span class="sep">·</span>
         Trouble signing in?
         <!-- TODO · #4 Restore endpoint, live at ship time.
              Production href: /account/restore-access -->
-        <a href="#">Restore an old account.</a>
+        <a href="#" data-pending-link="membership-restore" aria-disabled="true">Restore an old account.</a>
       </p>
       <p style="margin-top:14px;font-style:italic;font-size:13px;color:var(--ink-faint)">
         <!-- TODO · legal pages still to write (BRIEF §十八). Production hrefs:
              /legal/refund (§18.3) and /legal/membership (§18.4). -->
-        Refund policy at <a href="#">refund</a>, membership terms at <a href="#">membership terms</a>. The Stripe Checkout decides the number you pay; we do not negotiate it on this page.
+        Refund policy at <a href="#" data-pending-link="refund-policy" aria-disabled="true">refund</a>, membership terms at <a href="#" data-pending-link="membership-terms" aria-disabled="true">membership terms</a>. The Stripe Checkout decides the number you pay; we do not negotiate it on this page.
       </p>
     </div>
   </section>
