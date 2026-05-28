@@ -1,6 +1,6 @@
 # Spatial Flow / Ink & East · 全项目接手总控文档 v0.3
 
-> 版本：v0.3  
+> 版本：v0.3.1  
 > 状态：5 个 Kiro / 分支窗口已按顺序继承后重写  
 > 作用：作为 ChatGPT / Codex / Kiro / 后续开发窗口的项目总控基线  
 > 注意：本文件不是营销文案，不是页面设计稿，而是项目执行控制文档。
@@ -756,25 +756,30 @@ Letters 是：
 
 ## 14. 距离成品的真实估算
 
-### Ink & East 静态视觉稿
+> 重要纠偏：这里必须分层估算。  
+> `INK-EAST-ROADMAP.md` 的 8/8 完成，只代表 **静态 preview 页面 / 产品规格主线** 完成，不代表真实 WordPress 站点接近上线。  
+> 不能把“静态稿完成度”和“真实可上线工程完成度”混在一起。
 
-约 85%-90%。
+### Ink & East 静态视觉 / 产品蓝图
 
-原因：
-
-- Roadmap 8/8 已完成；
-- 主要页面都有；
-- post-roadmap P0 已修；
-- 剩 PR #4 footer 视觉问题和链接/字段文档。
-
-### Ink & East 真实 WordPress 成品
-
-约 20%-30%。
+约 70%-85%。
 
 原因：
 
-- 视觉和产品规格已成型；
-- 但会员、权限、表单、Stripe、CPT、Reader Notes、Letters、Custom Reading、Custom Ebook、后台字段都未真实开发。
+- Roadmap 8/8 已完成，主要 preview 页面已经覆盖 Home / Issue / Article / VIP Library / Reading Room / Membership / Custom Reading / Custom Ebook / Letters / Reader Notes / Community；
+- post-roadmap P0 问题已修一部分；
+- 但 PR #4 footer 视觉未通过，链接仍有占位，表单仍是静态，文案和服务边界仍需要上线前审查；
+- 所以它只能算“视觉与产品蓝图比较完整”，不能算“上线站点接近完成”。
+
+### Ink & East 真实 WordPress 可上线工程
+
+约 15%-25%。
+
+原因：
+
+- 当前还没有真实 WordPress 模板、后台字段、会员权限、Stripe、表单、Reader Notes、Letters、Custom Reading / Custom Ebook 工作流、VIP server-side paywall、现有 100+ 文章迁移 / 映射；
+- `INK-EAST-LINK-FIELD-MAP.md`、`INK-EAST-WP-FIELD-SCHEMA.md`、`INK-EAST-WP-IMPLEMENTATION-PLAN.md` 只是工程化前置文档，不是工程完成；
+- 下一步必须先做真实 WordPress 现状只读审计，不能直接开始开发。
 
 ### Spatial Flow 静态视觉稿
 
@@ -783,35 +788,60 @@ Letters 是：
 原因：
 
 - Home / Shop / Product / Cart 完成；
-- Checkout / Thank You / DIY / Account / Wishlist / Service / Policy 等未完成。
+- Checkout / Thank You / DIY / Account / Wishlist / Track Order / Services / About / FAQ / Contact / Legal / Search / 404 等页面仍未完成；
+- 距离“完整替换旧站视觉”仍有明显距离。
 
-### Spatial Flow 真实 WP 换皮
+### Spatial Flow 真实 WordPress 换皮工程
 
 约 0%-10%。
 
 原因：
 
-- 当前仍是静态视觉稿；
-- 真实主题迁移还未开始。
+- 当前主要仍是静态视觉稿；
+- 尚未把第二版视觉迁移到真实 WordPress / WooCommerce 子主题；
+- 真实迁移时还必须确保 WooCommerce、CartFlows、支付、订单、URL、表单、后台逻辑不被破坏。
 
-### 整体最终成品
+### 整体最终上线成品
 
-约 30%。
+约 20%-30%。
+
+原因：
+
+- 两个站的视觉和产品方向已经清晰；
+- 但真实 WordPress 工程、会员 / 支付 / 表单 / 权限 / 内容迁移 / SEO / 法务 / 邮件 / 移动端回归 / 上线前清理审计仍未完成；
+- 当前不能进入“快上线”判断，也不能跳过真实 WordPress 当前状态审计。
 
 ---
 
 ## 15. 下一条推荐任务
 
-若用户确认继续推进，下一步建议：
+截至 v0.3.1：
 
-> Fix 2E：创建 `INK-EAST-LINK-FIELD-MAP.md`
+- `PROJECT-CONTROL-MASTER.md` 已写入 GitHub；
+- `INK-EAST-LINK-FIELD-MAP.md` 已创建；
+- `INK-EAST-WP-FIELD-SCHEMA.md` 已创建；
+- `INK-EAST-WP-IMPLEMENTATION-PLAN.md` 已创建；
+- PR #4 仍保持 open，暂不合并。
 
-但在执行 Fix 2E 前，必须先确认：
+下一条推荐任务不是继续新建抽象文档，也不是直接开始 WordPress 工程。
 
-- 是否把本文件 `PROJECT-CONTROL-MASTER.md` 写入 GitHub；
-- 是否关闭 / 保留 PR #4；
-- 是否继续保持 PR #4 open 作为遗留参考；
-- 是否先做文档，不改 preview 页面。
+真正下一步应是：
+
+> Ink & East · Phase 0 · Current WordPress Read-only Audit  
+> 产物：`INK-EAST-WP-CURRENT-STATE-AUDIT.md`
+
+前提：必须拿到真实 / 本地 WordPress 项目环境、主题文件、插件状态、页面/文章/菜单结构，或让 Codex 在真实 WP 项目中执行只读扫描。
+
+Phase 0 只允许只读：
+
+- 不改文件；
+- 不改数据库；
+- 不装插件；
+- 不启用/停用插件；
+- 不改主题；
+- 不改菜单；
+- 不改页面；
+- 不删除任何东西。
 
 ---
 
@@ -820,8 +850,10 @@ Letters 是：
 以后每次新任务开始前，都应先复述：
 
 > 当前基线：  
-> `PROJECT-CONTROL-MASTER.md` 为准。  
+> `PROJECT-CONTROL-MASTER.md`、`INK-EAST-LINK-FIELD-MAP.md`、`INK-EAST-WP-FIELD-SCHEMA.md`、`INK-EAST-WP-IMPLEMENTATION-PLAN.md` 为准。  
 > PR #4 暂不合并，Custom Ebook footer 视觉未通过。  
 > Spatial Flow 是换皮工程，不动后端。  
 > Ink & East 是视觉 + 新功能工程化。  
 > 所有运营内容最终必须后台可编辑。  
+> Roadmap 8/8 只代表静态 preview / 产品规格主线完成，不代表真实 WordPress 站点接近上线。  
+> 真实 WordPress 工程前必须先做当前站点只读审计。  
