@@ -276,3 +276,24 @@ Phase 1D · Product System / Feature Boundary
 - 哪些 MVP
 - 哪些长期功能
 - 哪些不能和电商混在一起
+
+## Phase 1 Detailed Plan
+
+Detailed Phase 1D–1L planning has been moved to:
+
+`INK-EAST-PHASE-1-SOURCE-PLAN.md`
+
+This detailed plan covers:
+
+* Product System / Feature Boundary
+* Source-Code Data Architecture
+* Admin / Editorial CMS Architecture
+* Auth / Membership / Permission Model
+* Reader Notes / Letters / Community System
+* Custom Reading / Custom Ebook Service System
+* Legacy 123 Articles Export & Cleaning Strategy
+* Tech Stack Options
+* Launch Levels
+
+Do not duplicate the entire 1D–1L plan inside this file.
+This file remains the high-level source-native architecture baseline.

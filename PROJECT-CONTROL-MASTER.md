@@ -357,6 +357,18 @@ The current source of truth for Project 3 is:
 
 `INK-EAST-SOURCE-ARCHITECTURE.md`
 
+Detailed Phase 1D–1L planning is now stored in:
+
+`INK-EAST-PHASE-1-SOURCE-PLAN.md`
+
+For Project 3:
+
+* `INK-EAST-SOURCE-ARCHITECTURE.md` is the high-level source-native architecture baseline.
+* `INK-EAST-PHASE-1-SOURCE-PLAN.md` is the detailed Phase 1 product / data / admin / permission / service / migration / stack / launch planning file.
+
+再次提醒：
+Project 3 does not follow the earlier WordPress-oriented architecture.
+
 Project 3 should continue with:
 
 - Phase 1D · Product System / Feature Boundary
