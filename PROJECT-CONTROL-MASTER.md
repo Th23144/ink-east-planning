@@ -45,6 +45,20 @@
 - 一个可运营的英文独立数字期刊 / 会员阅读室 / 读者互动 / 定制解读 / 私人书稿服务子站；
 - 两者共用同一世界观，但视觉、品牌、功能定位保持清晰区分。
 
+
+## Project Line Split / 三项目拆分
+
+当前总项目拆成三条线：
+
+1. Project 1 — 初始版网站上线部署
+   目标是尽快把现有 WordPress / WooCommerce 旧站上线，完成服务器、域名、HTTPS、支付、邮件、订单测试和上线前清理审计。
+
+2. Project 2 — Spatial Flow V2 第二版视觉替换
+   目标是在不破坏 WooCommerce / CartFlows / 支付 / 订单 / URL / 产品数据的前提下，把第二版视觉尽快迁移到现有站。项目 2 可以包含博客子站轻量视觉同步，但不开发 Ink & East 长期功能。
+
+3. Project 3 — Ink & East Source-Native Main Site
+   目标是把 Ink & East 设计成未来源码站 / 独立内容产品 / 主站级数字期刊系统。项目 3 不考虑 WordPress，不使用 WordPress 作为过渡方案，不讨论 CPT / ACF / WP comments / FluentForm / WP Menus / WP roles / WordPress theme。旧博客 123 篇文章只是内容资产，不是架构基础。
+
 ---
 
 ## 2. 项目起源：不要再误解 Ink & East
@@ -333,6 +347,27 @@ Spatial Flow 下一个最合理任务：
 ---
 
 ## 8. Ink & East 当前状态
+
+
+Important correction for Project 3:
+
+`INK-EAST-WP-FIELD-SCHEMA.md` and `INK-EAST-WP-IMPLEMENTATION-PLAN.md` were created during an earlier WordPress-oriented planning pass. They remain in the repository for historical reference, but they are no longer the source of truth for Project 3.
+
+The current source of truth for Project 3 is:
+
+`INK-EAST-SOURCE-ARCHITECTURE.md`
+
+Project 3 should continue with:
+
+- Phase 1D · Product System / Feature Boundary
+- Phase 1E · Source-Code Data Architecture
+- Phase 1F · Admin / Editorial CMS Architecture
+- Phase 1G · Auth / Membership / Permission Model
+- Phase 1H · Reader Notes / Letters / Community System
+- Phase 1I · Custom Reading / Custom Ebook Service System
+- Phase 1J · Legacy 123 Articles Export & Cleaning Strategy
+- Phase 1K · Tech Stack Options
+- Phase 1L · Launch Levels
 
 ### 8.1 本质
 
