@@ -92,3 +92,17 @@ PAYLOAD_SECRET=replace-with-a-local-development-secret
 ```
 
 Do not commit real secrets.
+
+## Runtime Verification Status
+
+- `pnpm install` did not complete successfully because the current environment's Corepack / npm registry proxy returned HTTP 403 while fetching pnpm.
+- `docker compose up -d postgres` did not complete successfully because Docker is not available in the current environment.
+- `pnpm dev` did not complete successfully, so the frontend homepage `/` and Payload Admin `/admin` have not yet been verified by real browser access.
+- Current Task 3 work completes only the code-level Payload wiring layer.
+- Before merging, run the following in a local environment or another environment with npm registry access and Docker available:
+  1. `pnpm install`
+  2. `docker compose up -d postgres`
+  3. `pnpm --filter web dev`
+  4. Open <http://localhost:3000>
+  5. Open <http://localhost:3000/admin>
+- Task 3 runtime verification should only be considered complete after both `/` and `/admin` are accessible.
