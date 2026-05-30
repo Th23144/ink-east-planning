@@ -28,6 +28,8 @@ Relationships:
 
 `issues` stores magazine-style issue records. It includes issue number, slug, title, subtitle, theme, editor note, cover image, cover symbol, featured article, ordered article list, status, visibility, publish date, and SEO fields.
 
+Issue number must be stored as text so editorial issue numbers like "001", "002", and "003" keep their leading zeros.
+
 Relationships:
 
 - `cover_image` → `media`

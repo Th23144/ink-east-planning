@@ -21,7 +21,7 @@ export const Issues: CollectionConfig = {
     useAsTitle: "title"
   },
   fields: [
-    { name: "number", type: "number", required: true, unique: true },
+    { name: "number", type: "text", required: true, unique: true },
     { name: "slug", type: "text", required: true, unique: true },
     { name: "title", type: "text", required: true },
     { name: "subtitle", type: "text" },
