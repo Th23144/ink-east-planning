@@ -10,6 +10,12 @@ Level 1 Task 1 initializes a minimal source project under `apps/web`:
 - Next.js + TypeScript app in `apps/web`.
 - Minimal placeholder page for the Level 1 Architecture Prototype.
 
+Level 1 Task 2 adds local PostgreSQL environment preparation:
+
+- `docker-compose.yml` defines a local PostgreSQL service for development.
+- `.env.example` contains safe local placeholder variables.
+- `docs/LEVEL-1-TASK-2-DATABASE-ENVIRONMENT.md` documents the setup.
+
 ## Directory boundaries
 
 - `preview/` is the legacy Kiro/static HTML/RawGitHack visual preview area. Do not modify, delete, move, or copy these files into the source app.
@@ -17,9 +23,28 @@ Level 1 Task 1 initializes a minimal source project under `apps/web`:
 
 ## Development
 
+Install dependencies:
+
 ```bash
 pnpm install
+```
+
+Start the placeholder web app:
+
+```bash
 pnpm dev
 ```
 
-This scaffold is not the production site and does not include CMS, database, content, membership, payment, shop, storage, email, or community functionality.
+Validate the local PostgreSQL compose file:
+
+```bash
+docker compose config
+```
+
+Start local PostgreSQL:
+
+```bash
+docker compose up -d postgres
+```
+
+This scaffold is not the production site and does not include CMS, content models, membership, payment, shop, storage, email, community functionality, or production database configuration.
