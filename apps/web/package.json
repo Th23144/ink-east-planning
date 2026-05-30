@@ -6,10 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "payload": "payload",
+    "generate:types": "payload generate:types",
+    "generate:importmap": "payload generate:importmap"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "3.84.1",
+    "@payloadcms/next": "3.84.1",
     "next": "latest",
+    "payload": "3.84.1",
     "react": "latest",
     "react-dom": "latest"
   },
@@ -18,5 +24,13 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "typescript": "latest"
+  },
+  "type": "module",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
