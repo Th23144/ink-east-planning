@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: ink-east-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ink_east_dev
+      POSTGRES_USER: ink_east
+      POSTGRES_PASSWORD: ink_east_dev_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - ink-east-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ink_east -d ink_east_dev"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  ink-east-postgres-data:
