@@ -106,3 +106,18 @@ Do not commit real secrets.
   4. Open <http://localhost:3000>
   5. Open <http://localhost:3000/admin>
 - Task 3 runtime verification should only be considered complete after both `/` and `/admin` are accessible.
+
+## Local Runtime Verification Passed
+
+- The user verified PR #12 in a local Windows development environment.
+- `pnpm install` completed successfully.
+- Docker Desktop was running, and the PostgreSQL container `ink-east-postgres` was running normally.
+- Because another local project was already using port 3000, this verification used port 3010:
+  - `pnpm dev -- -p 3010`
+- The homepage was accessible at:
+  - <http://localhost:3010>
+- Payload Admin was accessible at:
+  - <http://localhost:3010/admin>
+- `/admin` displayed the Payload interface for creating the first administrator user.
+- Therefore, Task 3 runtime verification has passed.
+- This task still did not create business collections and did not enter Task 4.
