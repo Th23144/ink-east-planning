@@ -361,10 +361,22 @@ Detailed Phase 1D–1L planning is now stored in:
 
 `INK-EAST-PHASE-1-SOURCE-PLAN.md`
 
+Detailed Phase 2 technical decision planning is now stored in:
+
+`INK-EAST-PHASE-2-TECHNICAL-DECISION.md`
+
 For Project 3:
 
 * `INK-EAST-SOURCE-ARCHITECTURE.md` is the high-level source-native architecture baseline.
 * `INK-EAST-PHASE-1-SOURCE-PLAN.md` is the detailed Phase 1 product / data / admin / permission / service / migration / stack / launch planning file.
+* `INK-EAST-PHASE-2-TECHNICAL-DECISION.md` is the technical decision and Level 1 Architecture Prototype blueprint.
+
+Current Project 3 main route:
+
+* Next.js + Payload CMS + PostgreSQL
+* Level 1 is architecture prototype only
+* No WordPress
+* No code development before explicit approval
 
 再次提醒：
 Project 3 does not follow the earlier WordPress-oriented architecture.

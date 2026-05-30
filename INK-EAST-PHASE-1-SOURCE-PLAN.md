@@ -797,6 +797,22 @@ Phase 1 establishes:
 
 Next after Phase 1:
 
+Phase 2 technical decision planning has been moved to:
+
+`INK-EAST-PHASE-2-TECHNICAL-DECISION.md`
+
+This Phase 2 document covers:
+
+* Technical Stack Final Decision
+* Level 1 Architecture Prototype Scope Lock
+* Repo / Monorepo / Project Structure Plan
+* Data Model Implementation Blueprint
+* Payload CMS / Admin Collections Blueprint
+* Auth / Permission / Access Control Prototype Plan
+* Level 1 Development Task Breakdown
+
+Do not duplicate the entire Phase 2 plan in this file.
+
 * Decide whether to start Phase 2A · Technical Stack Final Decision
 * Do not write code before confirming stack and Level 1 scope
 * Codex should only be used for execution after architecture is confirmed
