@@ -52,3 +52,13 @@ PAYLOAD_SECRET=replace-with-a-local-development-secret
 ```
 
 See the repository root `.env.example`, `docs/LEVEL-1-TASK-2-DATABASE-ENVIRONMENT.md`, and `docs/LEVEL-1-TASK-3-PAYLOAD-CMS.md` for the local PostgreSQL and Payload setup notes.
+
+## Level 1 Task 4 Payload model
+
+This app now registers the Level 1 Payload CMS backend model:
+
+- Editorial: Articles, Issues, Collections, Topics, Authors, and Media.
+- Migration: Legacy Article Records and Redirect Rules.
+- System: System Settings as a Payload Global.
+
+The Task 4 implementation is data-model only. It keeps the existing Users auth collection and does not add seed data, frontend routes, access rules, redirect middleware, or business workflows.
