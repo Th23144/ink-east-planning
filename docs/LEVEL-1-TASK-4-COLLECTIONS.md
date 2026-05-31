@@ -136,3 +136,21 @@ Task 4 does not modify, delete, move, or copy anything from `preview/`. The `pre
 ## Runtime Fix Note
 
 The frontend placeholder and Payload Admin now use separate Next.js root layouts through route groups. The site placeholder lives under `(site)` with its own `<html>` and `<body>` layout, while Payload remains under `(payload)` with the generated Payload `RootLayout`. This prevents Payload Admin from being wrapped by the site layout and avoids nested `<html>` / `<body>` hydration errors.
+
+## Local Runtime Verification Passed
+
+- 用户已在本地 Windows 开发环境验证 PR #13。
+- 已拉取 PR #13 最新提交并清理旧的 `.next` 缓存。
+- `pnpm install` 已成功。
+- Docker Desktop 正常运行，PostgreSQL 容器 `ink-east-postgres` 正常运行。
+- 因为本机已有其他项目占用 3000 端口，本次使用 3010 端口验证：
+  - `pnpm dev -- -p 3010`
+- 首页已可访问：
+  - `http://localhost:3010`
+- Payload Admin 已可访问：
+  - `http://localhost:3010/admin`
+- Payload Admin 能进入后台，并能显示 Level 1 collections / global。
+- 之前出现的 nested `<html>` / `<body>` hydration error 已通过 separate `(site)` and `(payload)` root layouts 修复。
+- 剩余的 `lang="en"` / `lang="zh-CN"` hydration warning 经确认是浏览器翻译功能修改页面语言属性导致；关闭浏览器翻译后 warning 消失，不属于项目代码问题。
+- 因此 Task 4 runtime verification 已通过。
+- 本次仍未创建 seed、frontend routes、access rules，也未进入 Task 5。
