@@ -124,6 +124,20 @@ pnpm --filter web seed
 
 The check script does not automatically seed and does not write to the database.
 
+## Local Runtime Verification Passed
+
+- The user verified PR #16 in a local Windows development environment.
+- Task 6 seed data was present and refreshed with `pnpm --filter web seed`.
+- `pnpm --filter web check:public-reads` completed successfully.
+- The check output confirmed: `Public read checks passed.`
+- The check output confirmed that the public query layer read 5 public articles, 7 active topics, and Issue 001.
+- The private draft article check passed because `draft-a-private-editorial-note` was not returned by the public article query.
+- The homepage opened successfully on the local dev server.
+- Payload Admin opened successfully on the local dev server.
+- Seeded Payload Admin data remained visible after Task 7 verification.
+- No red application error was reported.
+- This verification did not add frontend routes, route handlers, API endpoints, UI components, SEO metadata output, redirect middleware, membership, payment, Reader Notes, Community, service systems, or Task 8 work.
+
 ## Explicit non-goals
 
 Task 7 did not create frontend routes, route handlers, or UI. In particular, it did not add:
