@@ -111,6 +111,21 @@ The second run should update existing records by `slug`, `legacy_id`, or `from_u
 
 The seed script intentionally loads local environment values before dynamically importing `payload.config.ts`, so `DATABASE_URI` and `PAYLOAD_SECRET` are available when the Payload config is evaluated.
 
+The seed entrypoint uses a Windows-compatible `pathToFileURL(process.argv[1])` comparison so running `pnpm --filter web seed` from Windows PowerShell actually invokes the seed workflow instead of silently loading the module and exiting.
+
+## Local Runtime Verification Passed
+
+- The user verified PR #15 in a local Windows development environment.
+- The user pulled the latest PR #15 commit containing the Windows-compatible seed entrypoint fix.
+- `pnpm install` completed successfully.
+- Docker Desktop was running, and the PostgreSQL container `ink-east-postgres` was running normally.
+- The first `pnpm --filter web seed` run executed successfully and printed `Starting Level 1 Task 6 initial content seed...` plus update/create logs for Authors, Topics, Editorial Collections, Issue 001, Articles, Legacy Article Records, Redirect Rules, relationship backfills, and System Settings.
+- The second `pnpm --filter web seed` run completed successfully and updated existing records instead of endlessly creating duplicates.
+- Payload Admin was started locally on port 3010 because another local project uses port 3000.
+- The user confirmed that Payload Admin can display the seeded data, including Authors, Topics, Articles, Issues, Legacy Article Records, Redirect Rules, and related Level 1 content.
+- No red application error was reported after verification.
+- This verification did not add frontend routes, legacy full imports, WordPress connections, redirect middleware, membership, payment, Reader Notes, Community, service systems, or Task 7 work.
+
 ## Local Admin Verification
 
 After seeding, start the app:
