@@ -1,5 +1,7 @@
 import type { CollectionConfig } from "payload";
 
+import { canAccessAdmin, canDeleteContent, canEditContent } from "../payload/access";
+
 export const RedirectRules: CollectionConfig = {
   slug: "redirect-rules",
   labels: {
@@ -9,6 +11,12 @@ export const RedirectRules: CollectionConfig = {
   admin: {
     group: "Migration",
     useAsTitle: "from_url"
+  },
+  access: {
+    create: canEditContent,
+    read: canAccessAdmin,
+    update: canEditContent,
+    delete: canDeleteContent
   },
   fields: [
     { name: "from_url", type: "text", required: true },

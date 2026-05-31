@@ -1,25 +1,26 @@
 import type { CollectionConfig } from "payload";
 
+import { slugField, statusField } from "../fields";
+import { canAccessAdmin, canDeleteContent, canEditContent } from "../payload/access";
+
 export const Authors: CollectionConfig = {
   slug: "authors",
   admin: {
     group: "Editorial",
     useAsTitle: "name"
   },
+  access: {
+    create: canEditContent,
+    read: (args) => (canAccessAdmin(args) ? true : { status: { equals: "active" } }),
+    update: canEditContent,
+    delete: canDeleteContent
+  },
   fields: [
     { name: "name", type: "text", required: true },
-    { name: "slug", type: "text", required: true, unique: true },
+    slugField(),
     { name: "bio", type: "textarea" },
     { name: "avatar", type: "relationship", relationTo: "media" },
     { name: "role_label", type: "text" },
-    {
-      name: "status",
-      type: "select",
-      defaultValue: "active",
-      options: [
-        { label: "Active", value: "active" },
-        { label: "Hidden", value: "hidden" }
-      ]
-    }
+    statusField({ type: "active" })
   ]
 };

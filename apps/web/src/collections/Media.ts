@@ -1,9 +1,17 @@
 import type { CollectionConfig } from "payload";
 
+import { canDeleteContent, canEditContent } from "../payload/access";
+
 export const Media: CollectionConfig = {
   slug: "media",
   admin: {
     group: "Editorial"
+  },
+  access: {
+    create: canEditContent,
+    read: () => true,
+    update: canEditContent,
+    delete: canDeleteContent
   },
   upload: true,
   fields: [
