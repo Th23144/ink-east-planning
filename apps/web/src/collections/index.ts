@@ -1,1 +1,9 @@
+export { Articles } from "./Articles";
+export { Authors } from "./Authors";
+export { EditorialCollections } from "./EditorialCollections";
+export { Issues } from "./Issues";
+export { LegacyArticleRecords } from "./LegacyArticleRecords";
+export { Media } from "./Media";
+export { RedirectRules } from "./RedirectRules";
+export { Topics } from "./Topics";
 export { Users } from "./Users";

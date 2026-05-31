@@ -3,7 +3,18 @@ import path from "path";
 import { buildConfig } from "payload";
 import { fileURLToPath } from "url";
 
-import { Users } from "./collections";
+import {
+  Articles,
+  Authors,
+  EditorialCollections,
+  Issues,
+  LegacyArticleRecords,
+  Media,
+  RedirectRules,
+  Topics,
+  Users
+} from "./collections";
+import { SystemSettings } from "./globals";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -15,7 +26,18 @@ export default buildConfig({
       baseDir: path.resolve(dirname)
     }
   },
-  collections: [Users],
+  collections: [
+    Users,
+    Articles,
+    Issues,
+    EditorialCollections,
+    Topics,
+    Authors,
+    Media,
+    LegacyArticleRecords,
+    RedirectRules
+  ],
+  globals: [SystemSettings],
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || ""

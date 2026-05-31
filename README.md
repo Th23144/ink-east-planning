@@ -58,3 +58,11 @@ docker compose up -d postgres
 ```
 
 This scaffold is not the production site and does not include business content models, membership, payment, shop, storage, email, community functionality, or production database configuration.
+
+## Level 1 Task 4: Core Payload Collections
+
+Level 1 Task 4 adds the backend Payload CMS data model for Ink & East inside `apps/web`. It registers editorial collections for articles, issues, curated collections, topics, authors, media, migration records, redirect planning records, and the `system-settings` Payload Global.
+
+Task 4 is limited to backend modeling. It does not add seed data, frontend routes, access rules, migration jobs, middleware redirects, membership, payment, reader notes, community, or service systems. The `preview/` directory remains untouched.
+
+See `docs/LEVEL-1-TASK-4-COLLECTIONS.md` for the Task 4 collection and Global inventory.
