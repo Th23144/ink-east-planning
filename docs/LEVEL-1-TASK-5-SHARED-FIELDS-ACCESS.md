@@ -98,6 +98,16 @@ Draft, review, scheduled, archived, private, and editor-only editorial records a
 - Users: first-user/admin create; admin read/update/delete; no public user list exposure.
 - System Settings Global: public read; admin-only update.
 
+## Local Runtime Verification Passed
+
+- The user verified PR #14 in a local Windows development environment.
+- The homepage was accessible on the local verification port.
+- Payload Admin was accessible.
+- The existing local administrator was not locked out after the new `role` / `status` fields and access helpers were introduced.
+- Payload Admin continued to display the Level 1 collections and global.
+- This confirms the Level 1 role-missing fallback protected the first local user created before Task 5.
+- This verification did not add seed data, frontend routes, membership, payment, Reader Notes, Community, service workflows, or Task 6 work.
+
 ## Explicit Non-Goals
 
 Task 5 does not include:
