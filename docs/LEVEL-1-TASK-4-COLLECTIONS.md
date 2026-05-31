@@ -132,3 +132,7 @@ Task 4 does not include:
 ## Preview Directory Confirmation
 
 Task 4 does not modify, delete, move, or copy anything from `preview/`. The `preview/` directory remains a static visual preview area only.
+
+## Runtime Fix Note
+
+The frontend placeholder and Payload Admin now use separate Next.js root layouts through route groups. The site placeholder lives under `(site)` with its own `<html>` and `<body>` layout, while Payload remains under `(payload)` with the generated Payload `RootLayout`. This prevents Payload Admin from being wrapped by the site layout and avoids nested `<html>` / `<body>` hydration errors.
