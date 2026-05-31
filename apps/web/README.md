@@ -88,3 +88,17 @@ cp .env.example .env
 The seed uses Payload Local API upserts keyed by slugs, `legacy_id`, and `from_url`, then backfills sample article relationships for Issue 001 and editorial collections. The content is only a small Level 1 prototype dataset; it does not import old articles, connect to WordPress, create frontend routes, or add membership, payment, Reader Notes, Community, or service systems.
 
 See `../../docs/LEVEL-1-TASK-6-SEED-INITIAL-CONTENT.md` for the complete seed inventory and boundaries.
+
+## Level 1 Task 7 Public Query Layer
+
+Task 7 adds a server-only public query layer for future frontend pages:
+
+```bash
+pnpm --filter web check:public-reads
+```
+
+The query layer lives in `src/lib/public` and exports read-only functions for Articles, Issues, Editorial Collections, Topics, Authors, and System Settings. Each query uses explicit public filters and `overrideAccess: false`, then maps records to lightweight DTOs instead of exposing raw Payload documents.
+
+This task does not add frontend routes, App Router pages, `route.ts` HTTP endpoints, UI components, SEO metadata output, redirect middleware, membership, payment, Reader Notes, Community, service systems, WordPress connections, or Task 8 work. The `preview/` directory remains untouched.
+
+See `../../docs/LEVEL-1-TASK-7-PUBLIC-QUERY-LAYER.md` for details.

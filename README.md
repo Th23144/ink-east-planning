@@ -90,3 +90,17 @@ pnpm --filter web seed
 The Task 6 seed is designed to update existing sample records by stable identifiers instead of endlessly creating duplicates. It does not modify `preview/`, import the old 123 articles, connect to WordPress, create frontend routes, or add membership, payment, Reader Notes, Community, or service systems.
 
 See `docs/LEVEL-1-TASK-6-SEED-INITIAL-CONTENT.md` for the full Task 6 scope and verification notes.
+
+## Level 1 Task 7: Public Query Layer
+
+Level 1 Task 7 adds a server-side, read-only public query layer under `apps/web/src/lib/public` plus a cached Payload Local API helper under `apps/web/src/lib/payload/getPayloadClient.ts`. The public query functions map Payload records to safe DTOs and explicitly filter for published/public articles, issues, editorial collections, active topics, active authors, and public System Settings.
+
+Run the Task 7 read-only check after Task 6 seed data exists:
+
+```bash
+pnpm --filter web check:public-reads
+```
+
+Task 7 does not create frontend routes, `route.ts` HTTP API endpoints, UI components, search/archive pages, membership/payment/community/service systems, WordPress integrations, or Task 8 work. The `preview/` directory remains untouched.
+
+See `docs/LEVEL-1-TASK-7-PUBLIC-QUERY-LAYER.md` for the full Task 7 query inventory, DTO list, security rules, and verification steps.
