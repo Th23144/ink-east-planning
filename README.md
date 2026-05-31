@@ -74,3 +74,19 @@ Level 1 Task 5 adds shared Payload field modules and minimum access rules for th
 Task 5 does not add seed data, frontend routes, membership, payment, reader features, community features, service systems, redirect middleware, or Task 6 work. The `preview/` directory remains untouched.
 
 See `docs/LEVEL-1-TASK-5-SHARED-FIELDS-ACCESS.md` for the Task 5 shared field and access-rule inventory.
+
+## Level 1 Task 6: Seed Initial Content
+
+Level 1 Task 6 adds a controlled Payload seed workflow for prototype-only content under `apps/web/src/payload/seed`. The seed creates a small relationship-testing dataset for Authors, Topics, Editorial Collections, Issue 001, Articles, Legacy Article Records, Redirect Rules, and System Settings.
+
+Run it after installing dependencies and starting local PostgreSQL:
+
+```bash
+pnpm install
+docker compose up -d postgres
+pnpm --filter web seed
+```
+
+The Task 6 seed is designed to update existing sample records by stable identifiers instead of endlessly creating duplicates. It does not modify `preview/`, import the old 123 articles, connect to WordPress, create frontend routes, or add membership, payment, Reader Notes, Community, or service systems.
+
+See `docs/LEVEL-1-TASK-6-SEED-INITIAL-CONTENT.md` for the full Task 6 scope and verification notes.
