@@ -9,7 +9,8 @@
     "typecheck": "tsc --noEmit",
     "payload": "payload",
     "generate:types": "payload generate:types",
-    "generate:importmap": "payload generate:importmap"
+    "generate:importmap": "payload generate:importmap",
+    "seed": "tsx src/payload/seed/seedInitialContent.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.84.1",
@@ -23,7 +24,8 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "tsx": "latest"
   },
   "type": "module",
   "pnpm": {
