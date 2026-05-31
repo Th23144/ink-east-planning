@@ -74,7 +74,9 @@ const runPublicReadChecks = async () => {
 
   const issue = await getPublicIssueBySlug("issue-001-wu-wei");
   assertCheck(Boolean(issue), "Expected Issue 001 to be readable. Run pnpm --filter web seed first.");
-  assertCheck(issue?.title === "Wu Wei", "Expected issue-001-wu-wei to be Issue 001 / Wu Wei.");
+  assertCheck(issue?.title === "Issue 001", "Expected issue-001-wu-wei title to be Issue 001.");
+  assertCheck(issue?.subtitle?.includes("Wu Wei") === true, "Expected Issue 001 subtitle to include Wu Wei.");
+  assertCheck(issue?.theme === "Wu Wei", "Expected Issue 001 theme to be Wu Wei.");
 
   const settings = await getPublicSystemSettings();
   assertCheck(

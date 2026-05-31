@@ -113,6 +113,7 @@ The check verifies that:
 - `draft-a-private-editorial-note` returns `null`.
 - The 7 active Task 6 topics are readable.
 - `issue-001-wu-wei` is readable.
+- `check:public-reads` validates Issue 001 using the Task 6 seed title `Issue 001` and Wu Wei subtitle/theme.
 - `system-settings` returns the `Ink & East` site name.
 
 If the seed data is missing, run:
