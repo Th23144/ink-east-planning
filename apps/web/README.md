@@ -62,3 +62,9 @@ This app now registers the Level 1 Payload CMS backend model:
 - System: System Settings as a Payload Global.
 
 The Task 4 implementation is data-model only. It keeps the existing Users auth collection and does not add seed data, frontend routes, access rules, redirect middleware, or business workflows.
+
+## Level 1 Task 5 Shared Fields and Access
+
+This app now includes shared Payload field factories under `src/fields` and minimum Level 1 access helpers under `src/payload/access`. The Payload collections use admin/editor content permissions, public read filtering for published/public or active records, private migration records, and public-read/admin-update System Settings.
+
+The `users` collection includes Level 1 staff-only `admin` and `editor` roles plus `active` and `suspended` statuses. Reader, Patron, Member, seed data, frontend routes, membership, payment, reader notes, community, and service systems remain out of scope.

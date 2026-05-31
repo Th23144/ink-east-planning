@@ -1,10 +1,16 @@
 import type { GlobalConfig } from "payload";
 
+import { canDeleteContent } from "../payload/access";
+
 export const SystemSettings: GlobalConfig = {
   slug: "system-settings",
   label: "System Settings",
   admin: {
     group: "System"
+  },
+  access: {
+    read: () => true,
+    update: canDeleteContent
   },
   fields: [
     {

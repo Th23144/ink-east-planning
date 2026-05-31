@@ -66,3 +66,11 @@ Level 1 Task 4 adds the backend Payload CMS data model for Ink & East inside `ap
 Task 4 is limited to backend modeling. It does not add seed data, frontend routes, access rules, migration jobs, middleware redirects, membership, payment, reader notes, community, or service systems. The `preview/` directory remains untouched.
 
 See `docs/LEVEL-1-TASK-4-COLLECTIONS.md` for the Task 4 collection and Global inventory.
+
+## Level 1 Task 5: Shared Fields and Access Rules
+
+Level 1 Task 5 adds shared Payload field modules and minimum access rules for the existing Level 1 collections/global. It introduces admin/editor staff roles, public read filters for published/public or active content, and keeps migration records private.
+
+Task 5 does not add seed data, frontend routes, membership, payment, reader features, community features, service systems, redirect middleware, or Task 6 work. The `preview/` directory remains untouched.
+
+See `docs/LEVEL-1-TASK-5-SHARED-FIELDS-ACCESS.md` for the Task 5 shared field and access-rule inventory.

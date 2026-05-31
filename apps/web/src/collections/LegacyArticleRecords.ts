@@ -1,5 +1,7 @@
 import type { CollectionConfig } from "payload";
 
+import { canAccessAdmin, canDeleteContent, canEditContent } from "../payload/access";
+
 export const LegacyArticleRecords: CollectionConfig = {
   slug: "legacy-article-records",
   labels: {
@@ -9,6 +11,12 @@ export const LegacyArticleRecords: CollectionConfig = {
   admin: {
     group: "Migration",
     useAsTitle: "legacy_title"
+  },
+  access: {
+    create: canEditContent,
+    read: canAccessAdmin,
+    update: canEditContent,
+    delete: canDeleteContent
   },
   fields: [
     { name: "legacy_id", type: "text" },
