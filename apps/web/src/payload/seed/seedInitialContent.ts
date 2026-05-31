@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { getPayload } from "payload";
-import { fileURLToPath } from "url";
+import { fileURLToPath, pathToFileURL } from "url";
 
 import {
   articles,
@@ -342,7 +342,9 @@ export const seedInitialContent = async () => {
   console.log("Level 1 Task 6 initial content seed complete.");
 };
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+const isDirectRun = Boolean(process.argv[1]) && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isDirectRun) {
   seedInitialContent()
     .then(() => process.exit(0))
     .catch((error: unknown) => {
