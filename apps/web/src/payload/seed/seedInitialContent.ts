@@ -3,7 +3,6 @@ import path from "path";
 import { getPayload } from "payload";
 import { fileURLToPath } from "url";
 
-import config from "../../payload.config";
 import {
   articles,
   authors,
@@ -314,6 +313,7 @@ export const seedInitialContent = async () => {
   requireEnv("DATABASE_URI");
   requireEnv("PAYLOAD_SECRET");
 
+  const { default: config } = await import("../../payload.config");
   const payload = await getPayload({ config });
   const maps: SeedMaps = {
     authors: new Map(),

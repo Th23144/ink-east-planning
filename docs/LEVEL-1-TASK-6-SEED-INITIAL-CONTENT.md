@@ -109,6 +109,8 @@ pnpm --filter web seed
 
 The second run should update existing records by `slug`, `legacy_id`, or `from_url` rather than creating endless duplicates.
 
+The seed script intentionally loads local environment values before dynamically importing `payload.config.ts`, so `DATABASE_URI` and `PAYLOAD_SECRET` are available when the Payload config is evaluated.
+
 ## Local Admin Verification
 
 After seeding, start the app:
