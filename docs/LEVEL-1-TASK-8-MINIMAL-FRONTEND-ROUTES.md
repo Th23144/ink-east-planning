@@ -62,6 +62,18 @@ Check these URLs: `/`, `/issues`, `/issues/issue-001-wu-wei`, `/topics`, `/topic
 
 Expected results: public pages render the Task 6 public seed data; the private draft article does not show private content; `/admin` remains accessible; Payload Admin seed data remains visible; and no red application error is shown.
 
+## Local Runtime Verification Passed
+
+- The user verified PR #17 in a local Windows development environment.
+- Task 6 seed data was present and Task 7 `check:public-reads` had already passed.
+- The local dev server was run on port 3010 because another local project can use port 3000.
+- The following public pages opened successfully: `/`, `/issues`, `/issues/issue-001-wu-wei`, `/topics`, `/topics/old-texts`, `/collections`, `/collections/reading-the-old-texts`, and `/articles/the-art-of-doing-less`.
+- `/articles/draft-a-private-editorial-note` returned the expected not-found behavior and did not display private draft content.
+- `/admin` opened successfully.
+- Payload Admin seed data remained visible.
+- No red application error was reported.
+- This verification did not add route handlers, API endpoints, final visual design, preview migration, search, redirect middleware, membership, payment, Reader Notes, Community, service systems, or Task 9 work.
+
 ## Boundary confirmation
 
 `preview/` was not modified, deleted, moved, or copied into `apps/web`.
