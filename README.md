@@ -104,3 +104,18 @@ pnpm --filter web check:public-reads
 Task 7 does not create frontend routes, `route.ts` HTTP API endpoints, UI components, search/archive pages, membership/payment/community/service systems, WordPress integrations, or Task 8 work. The `preview/` directory remains untouched.
 
 See `docs/LEVEL-1-TASK-7-PUBLIC-QUERY-LAYER.md` for the full Task 7 query inventory, DTO list, security rules, and verification steps.
+
+## Level 1 Task 8: Minimal Frontend Reading Routes
+
+Level 1 Task 8 adds minimal App Router pages under `apps/web/src/app/(site)` for the home page, article details, issues, topics, and editorial collections. These pages use the Task 7 public query layer only.
+
+Local verification after seed data exists:
+
+```bash
+pnpm --filter web check:public-reads
+pnpm --filter web dev
+```
+
+Task 8 does not copy `preview/`, does not implement final visual design, does not create `route.ts` HTTP API endpoints, does not directly use Payload Local API from pages, and does not add membership, payment, Reader Notes, Community, service systems, search, redirect middleware, or Task 9 work.
+
+See `docs/LEVEL-1-TASK-8-MINIMAL-FRONTEND-ROUTES.md` for the route inventory and verification checklist.
