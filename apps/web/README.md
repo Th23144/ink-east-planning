@@ -102,3 +102,22 @@ The query layer lives in `src/lib/public` and exports read-only functions for Ar
 This task does not add frontend routes, App Router pages, `route.ts` HTTP endpoints, UI components, SEO metadata output, redirect middleware, membership, payment, Reader Notes, Community, service systems, WordPress connections, or Task 8 work. The `preview/` directory remains untouched.
 
 See `../../docs/LEVEL-1-TASK-7-PUBLIC-QUERY-LAYER.md` for details.
+
+## Level 1 Task 8 Minimal Frontend Reading Routes
+
+Task 8 adds minimal server-rendered reading routes under `src/app/(site)`:
+
+- `/`
+- `/articles/[slug]`
+- `/issues`
+- `/issues/[slug]`
+- `/topics`
+- `/topics/[slug]`
+- `/collections`
+- `/collections/[slug]`
+
+These pages import only the Task 7 public query functions from `src/lib/public`. They do not call Payload directly and do not use `overrideAccess: true`.
+
+The routes are intentionally minimal and validation-focused. They do not copy `preview/`, do not implement final visual design, do not create `route.ts` HTTP endpoints, and do not add search, membership, payment, Reader Notes, Community, service systems, or Task 9 work.
+
+See `../../docs/LEVEL-1-TASK-8-MINIMAL-FRONTEND-ROUTES.md` for details.
