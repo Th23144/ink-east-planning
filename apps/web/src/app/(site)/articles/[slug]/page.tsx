@@ -27,6 +27,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
       </nav>
 
       <article className="article-page">
+        <p className="breadcrumbs">
+          <Link href="/">Home</Link> / Article
+        </p>
         <p className="eyebrow">Article</p>
         <h1>{article.title}</h1>
         {article.subtitle ? <p className="lede">{article.subtitle}</p> : null}
