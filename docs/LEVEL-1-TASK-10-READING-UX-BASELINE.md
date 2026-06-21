@@ -60,6 +60,16 @@ Expected results:
 - Payload Admin seed data remains visible.
 - No red application error is shown.
 
+## Local Runtime Verification Passed
+
+- The user verified PR #18 in a local Windows development environment.
+- Public pages opened successfully, including home, issues, Issue 001, topics, Old Texts, collections, Reading the Old Texts, and the public article page.
+- `/articles/draft-a-private-editorial-note` displayed the not-found / no-public-information experience and did not expose private draft content.
+- `/admin` remained accessible.
+- Payload Admin seed data remained visible.
+- No red application error was reported.
+- This verification did not add route handlers, API endpoints, final visual design, preview migration, search, redirect middleware, membership, payment, Reader Notes, Community, service systems, or Task 11 work.
+
 ## Boundary confirmation
 
 `preview/` was not modified, deleted, moved, or copied into `apps/web`.
