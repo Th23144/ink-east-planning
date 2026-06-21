@@ -7,7 +7,9 @@ export const Issues: CollectionConfig = {
   slug: "issues",
   admin: {
     group: "Editorial",
-    useAsTitle: "title"
+    useAsTitle: "title",
+    defaultColumns: ["number", "title", "status", "visibility", "published_at", "updatedAt"],
+    listSearchableFields: ["number", "title", "subtitle", "theme"]
   },
   access: {
     create: canEditContent,

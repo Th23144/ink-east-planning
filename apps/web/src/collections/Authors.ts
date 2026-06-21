@@ -7,7 +7,9 @@ export const Authors: CollectionConfig = {
   slug: "authors",
   admin: {
     group: "Editorial",
-    useAsTitle: "name"
+    useAsTitle: "name",
+    defaultColumns: ["name", "status", "role_label", "updatedAt"],
+    listSearchableFields: ["name", "bio", "role_label"]
   },
   access: {
     create: canEditContent,

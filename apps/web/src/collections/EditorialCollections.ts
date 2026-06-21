@@ -11,7 +11,9 @@ export const EditorialCollections: CollectionConfig = {
   },
   admin: {
     group: "Editorial",
-    useAsTitle: "title"
+    useAsTitle: "title",
+    defaultColumns: ["title", "status", "visibility", "sort_order", "updatedAt"],
+    listSearchableFields: ["title", "subtitle", "description"]
   },
   access: {
     create: canEditContent,
