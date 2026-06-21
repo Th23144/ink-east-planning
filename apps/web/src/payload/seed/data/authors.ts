@@ -2,14 +2,14 @@ export const authors = [
   {
     name: "Ink & East Editorial Desk",
     slug: "ink-east-editorial-desk",
-    bio: "A small editorial voice for the Level 1 prototype, used to test author relationships without creating production content.",
+    bio: "The house editorial voice for the Level 1 Ink & East prototype, used for essays, issue notes, and seed data that should feel native to the journal.",
     role_label: "Editorial Desk",
     status: "active"
   },
   {
     name: "Guest Reader",
     slug: "guest-reader",
-    bio: "A sample guest contributor for relationship testing in the controlled seed dataset.",
+    bio: "A controlled guest-contributor profile for testing author relationships without introducing production contributor data.",
     role_label: "Guest Reader",
     status: "active"
   }
