@@ -60,6 +60,17 @@ Then verify:
 - `/admin` opens and seed data is visible.
 - No red application error is shown.
 
+## Local Runtime Verification Passed
+
+- The user verified PR #20 in a local Windows development environment.
+- The seed command was run and the refined demo content was written into local PostgreSQL.
+- The public read check passed.
+- Home, Issue 001, Old Texts, Reading the Old Texts, and The Art of Doing Less opened successfully.
+- `/articles/draft-a-private-editorial-note` did not expose private draft content.
+- `/admin` opened successfully and seed data was visible.
+- No red application error was reported.
+- This verification did not add routes, route handlers, API endpoints, schemas, public query changes, access helper changes, final visual design, preview migration, search, archive, redirect middleware, membership, payment, Reader Notes, Community, service systems, or Task 13 work.
+
 ## Expected result
 
 The prototype should still behave exactly like the Level 1 source-native reading prototype, but the demo content should feel less like placeholder test data and more like stable Ink & East editorial seed content.
