@@ -27,11 +27,11 @@ export const articles: SeedArticle[] = [
   {
     title: "The Art of Doing Less",
     slug: "the-art-of-doing-less",
-    subtitle: "A prototype note on Wu Wei and practical restraint",
-    deck: "Sample editorial content for Issue 001 relationship testing.",
-    excerpt: "A short seed essay about doing less with more attention.",
+    subtitle: "A note on Wu Wei and practical restraint",
+    deck: "Issue 001 opens with a small question: what changes when effort stops trying to announce itself?",
+    excerpt: "A quiet seed essay about restraint, attention, and the usefulness of leaving room around an action.",
     body:
-      "This prototype article sketches a quiet reading of Wu Wei for the Level 1 seed. It is intentionally brief and exists only to verify Payload relationships.",
+      "Doing less is not the same as caring less. In the older language around Wu Wei, the point is not absence or escape. It is the ability to notice when an action has become heavier than the situation requires.\n\nA room can teach this before a sentence can. Move one object too many and the room begins to explain itself too loudly. Remove one object with care and the remaining things become easier to see. The same is true for speech, work, and desire.\n\nThis Level 1 seed essay is intentionally short. It gives the prototype a stable public article that can carry the first issue, a topic pathway, and a collection relationship.",
     body_format: "plain_text",
     authorSlug: "ink-east-editorial-desk",
     issueSlug: "issue-001-wu-wei",
@@ -44,17 +44,17 @@ export const articles: SeedArticle[] = [
     reading_time_minutes: 4,
     seo: {
       seo_title: "The Art of Doing Less | Ink & East",
-      seo_description: "Prototype article for Issue 001 and topic relationship testing."
+      seo_description: "An Ink & East seed essay on Wu Wei, practical restraint, and quiet attention."
     }
   },
   {
     title: "A Room That Lets You Return",
     slug: "a-room-that-lets-you-return",
     subtitle: "Space, ritual, and the feeling of coming back",
-    deck: "A short sample piece for testing topic and collection references.",
-    excerpt: "A prototype article about rooms that make attention easier.",
+    deck: "A small room can become a daily argument for return, if it does not demand too much from the person entering it.",
+    excerpt: "A reflective seed essay about rooms, rituals, and the way space can make attention easier.",
     body:
-      "This seed article uses a room as a small test case for ritual, return, and editorial grouping. It is not production copy.",
+      "Some rooms ask to be performed in. Others allow a person to return quietly. The second kind is harder to describe because it is built less from decoration than from permission.\n\nA chair near light, a surface without too much noise, and a path that does not catch the body at every turn can change the emotional weather of a day. Ritual does not have to be theatrical. Sometimes it is only the repeated proof that a place can receive you.\n\nThis article keeps the connection between space and ritual visible for the prototype while staying neutral enough for future visual design work.",
     body_format: "plain_text",
     authorSlug: "guest-reader",
     issueSlug: "issue-001-wu-wei",
@@ -67,17 +67,17 @@ export const articles: SeedArticle[] = [
     reading_time_minutes: 3,
     seo: {
       seo_title: "A Room That Lets You Return | Ink & East",
-      seo_description: "Prototype article for space and ritual relationship testing."
+      seo_description: "An Ink & East seed essay on rooms, ritual, and the feeling of return."
     }
   },
   {
     title: "Notes on Quiet Attention",
     slug: "notes-on-quiet-attention",
     subtitle: "Attention as a small daily practice",
-    deck: "A sample essay for Mind & Emotion and Quiet Stories topics.",
-    excerpt: "A brief seed note about attention and emotional pacing.",
+    deck: "Attention is not only a mental skill; it is also a relationship with pace, mood, and what we allow to remain unfinished.",
+    excerpt: "A short seed note about attention, emotional pacing, and the discipline of not rushing to conclude.",
     body:
-      "Quiet attention here is only a prototype theme. The text is short by design so the seed verifies fields without becoming a formal article.",
+      "Quiet attention begins before interpretation. It is the pause in which a thing is allowed to appear without immediately being used.\n\nThis kind of attention does not reject feeling. It gives feeling a slower room. A mood can be noticed without being turned into a final answer. A thought can arrive without closing the conversation. The practice is modest, but modest practices are often the ones that survive ordinary days.\n\nFor Level 1, this essay gives the Mind & Emotion topic a stable public record and a simple text surface for frontend reading checks.",
     body_format: "plain_text",
     authorSlug: "ink-east-editorial-desk",
     issueSlug: "issue-001-wu-wei",
@@ -90,17 +90,17 @@ export const articles: SeedArticle[] = [
     reading_time_minutes: 3,
     seo: {
       seo_title: "Notes on Quiet Attention | Ink & East",
-      seo_description: "Prototype article for attention and public access testing."
+      seo_description: "An Ink & East seed note on attention, mood, and emotional pacing."
     }
   },
   {
     title: "Objects That Hold a Room Together",
     slug: "objects-that-hold-a-room-together",
-    subtitle: "A sample note on placement and meaning",
-    deck: "A short relationship test for Objects & Meaning.",
-    excerpt: "A prototype article about objects, rooms, and editorial context.",
+    subtitle: "Placement, care, and the meanings small things carry",
+    deck: "The objects that matter in a room are not always the most expensive ones. Often they are the ones that help the room remember what it is for.",
+    excerpt: "A seed essay about objects, care, placement, and the quiet meanings a room can hold.",
     body:
-      "This seed text uses a few imagined objects to test the Objects & Meaning topic and collection relationships in Payload.",
+      "An object can be useful, decorative, sentimental, or all three at once. What changes a room is not only the object itself but the attention around it: where it rests, what it interrupts, and what kind of daily gesture it invites.\n\nA bowl by the door, a stone on a desk, a folded cloth on a shelf: each can become a small anchor. Objects have meaning, but meaning needs space to breathe.\n\nThis seed article keeps the Objects & Meaning pathway available for relationship testing and later reading-design work.",
     body_format: "plain_text",
     authorSlug: "guest-reader",
     issueSlug: "issue-001-wu-wei",
@@ -113,17 +113,17 @@ export const articles: SeedArticle[] = [
     reading_time_minutes: 3,
     seo: {
       seo_title: "Objects That Hold a Room Together | Ink & East",
-      seo_description: "Prototype article for object and room topic testing."
+      seo_description: "An Ink & East seed essay on objects, care, placement, and meaning."
     }
   },
   {
     title: "Why Old Texts Still Ask Modern Questions",
     slug: "why-old-texts-still-ask-modern-questions",
-    subtitle: "A legacy-import placeholder for source-type validation",
-    deck: "A controlled legacy_import sample that does not copy an old article.",
-    excerpt: "A short seed record connecting legacy migration planning to a new article.",
+    subtitle: "A source-native placeholder for legacy relationship validation",
+    deck: "Older writing does not become useful by being treated as decoration. It becomes useful when it is allowed to ask better questions of the present.",
+    excerpt: "A controlled seed record connecting legacy planning to a new source-native article without copying old material.",
     body:
-      "This is a newly written placeholder for testing legacy_import relationships. It does not import or reproduce any legacy article body.",
+      "An old text is not a shortcut to authority. It is a conversation partner placed beside the present. If the reading is honest, the old sentence does not simply confirm what we already wanted to say. It slows the question down.\n\nThis article is marked as a legacy import source type for testing only. The body is newly written seed copy and does not reproduce any legacy article. Its purpose is to verify that future migration records, redirects, and new article relationships can coexist safely.\n\nFor now, it anchors the Old Texts topic and the Reading the Old Texts collection inside the Level 1 prototype.",
     body_format: "plain_text",
     authorSlug: "ink-east-editorial-desk",
     issueSlug: "issue-001-wu-wei",
@@ -137,17 +137,17 @@ export const articles: SeedArticle[] = [
     reading_time_minutes: 4,
     seo: {
       seo_title: "Why Old Texts Still Ask Modern Questions | Ink & East",
-      seo_description: "Prototype legacy import article for migration relationship testing."
+      seo_description: "An Ink & East seed article for old texts, modern questions, and legacy relationship validation."
     }
   },
   {
     title: "Draft: A Private Editorial Note",
     slug: "draft-a-private-editorial-note",
     subtitle: "Private prototype content for access-rule checks",
-    deck: "A draft/private sample that should not behave like public published content.",
+    deck: "A draft/private sample that should never behave like public published content.",
     excerpt: "A private draft used to verify admin/editor visibility and public access rules.",
     body:
-      "This private draft is seed-only content for access-rule validation. It is intentionally not a public article.",
+      "This private draft is seed-only content for access-rule validation. It is intentionally not a public article and should remain unavailable through public reads.",
     body_format: "plain_text",
     authorSlug: "ink-east-editorial-desk",
     issueSlug: "issue-001-wu-wei",

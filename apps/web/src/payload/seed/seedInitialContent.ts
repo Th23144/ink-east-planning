@@ -261,8 +261,8 @@ const updateIssueRelationships = async (payload: PayloadClient, maps: SeedMaps) 
       featured_article: idFor(maps.articles, "the-art-of-doing-less", "article"),
       ordered_articles: issueArticleSlugs.map((slug, index) => ({
         article: idFor(maps.articles, slug, "article"),
-        label: `Article ${index + 1}`,
-        note: "Task 6 seed relationship backfill.",
+        label: `Reading ${index + 1}`,
+        note: "Seeded relationship for Issue 001 reading order.",
         sort_order: (index + 1) * 10
       }))
     } as never,
@@ -285,7 +285,7 @@ const updateCollectionRelationships = async (payload: PayloadClient, maps: SeedM
       data: {
         articles: collectionArticleSlugs.map((slug, index) => ({
           article: idFor(maps.articles, slug, "article"),
-          note: "Task 6 seed relationship backfill.",
+          note: "Seeded relationship for collection reading order.",
           sort_order: (index + 1) * 10
         }))
       } as never,
