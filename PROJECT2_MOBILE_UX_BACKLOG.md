@@ -1,14 +1,14 @@
-# Project 2 · Mobile UX Backlog
+# Project 2 · Mobile / Commerce UX Backlog
 
 Last updated: 2026-06-21
 
 ## Purpose
 
-This file records Project 2 mobile-specific issues that are intentionally preserved during the desktop-first / visual replacement phase. These items should not be forgotten, but they should also not block the current visual migration unless they break layout or core commerce functionality.
+This file records Project 2 mobile-specific and commerce UX issues that are intentionally preserved during the desktop-first / visual replacement phase. These items should not be forgotten, but they should also not block the current visual migration unless they break layout or core commerce functionality.
 
 ## Current rule
 
-During the current phase, mobile issues are handled only when they cause:
+During the current phase, mobile / commerce UX issues are handled immediately only when they cause:
 
 ```text
 1. broken layout
@@ -18,7 +18,7 @@ During the current phase, mobile issues are handled only when they cause:
 5. PHP / JS fatal error
 ```
 
-Mobile experience refinements are deferred to dedicated mobile passes.
+Experience refinements are deferred to dedicated follow-up passes.
 
 ---
 
@@ -134,9 +134,60 @@ Future direction:
 
 ---
 
+## Step 4E-UX1 · Add-to-cart Success Feedback
+
+Status:
+
+```text
+Backlog / preserved issue
+```
+
+Area:
+
+```text
+Single product page
+Shop archive product cards if AJAX add-to-cart is used
+Cart path / Bag count feedback
+Desktop and mobile
+```
+
+Issue:
+
+```text
+After clicking Add to Cart, the product is added successfully, but there is no clear visual confirmation. During testing, the user could not immediately tell that the item had been added to the cart.
+```
+
+Current assessment:
+
+```text
+This is not a blocking bug because add-to-cart itself works.
+It is a commerce feedback / conversion clarity issue.
+It affects both desktop and mobile perception.
+It should not interrupt the current Single Product visual migration sequence.
+```
+
+Future direction:
+
+```text
+1. Add a small success confirmation after add-to-cart.
+2. Prefer a non-intrusive toast, inline notice, or mini-cart feedback state.
+3. Ensure the Bag count updates visibly.
+4. Avoid breaking WooCommerce native notices, AJAX add-to-cart, variation add-to-cart, cart fragments, or checkout flow.
+5. Decide whether Shop archive add-to-cart and Single Product add-to-cart should share the same feedback pattern.
+```
+
+Recommended timing:
+
+```text
+Handle after Single Product visual structure is stable and before final cart/checkout smoke test.
+Suggested future step: Step 4E-UX1 or Step 4D-G-FIX1, depending on whether the issue is handled as a global commerce UX pass or as a single-product follow-up.
+```
+
+---
+
 ## Current blocking status
 
 ```text
-None of these mobile UX items block the current Project 2 desktop-first visual replacement phase.
-They must be revisited before final mobile QA / launch polish.
+None of these mobile / commerce UX items block the current Project 2 desktop-first visual replacement phase.
+They must be revisited before final mobile QA / launch polish and before the final commerce-path smoke test.
 ```
