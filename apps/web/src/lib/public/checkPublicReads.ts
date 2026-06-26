@@ -57,7 +57,8 @@ const runPublicReadChecks = async () => {
     getPublicArticles,
     getPublicIssueBySlug,
     getPublicSystemSettings,
-    getPublicTopics
+    getPublicTopics,
+    searchPublicArticles
   } = await import(".");
 
   const articles = await getPublicArticles();
@@ -68,6 +69,18 @@ const runPublicReadChecks = async () => {
 
   const privateDraft = await getPublicArticleBySlug("draft-a-private-editorial-note");
   assertCheck(privateDraft === null, "Private draft article should not be returned by public reads.");
+
+  const privateDraftSearch = await searchPublicArticles({ query: "private draft", limit: 10 });
+  assertCheck(
+    privateDraftSearch.every((article) => article.slug !== "draft-a-private-editorial-note"),
+    "Private draft article should not be returned by public search."
+  );
+
+  const publicSearch = await searchPublicArticles({ query: "Wu Wei", limit: 10 });
+  assertCheck(publicSearch.length > 0, "Expected public search to return at least one Wu Wei result.");
+
+  const emptySearch = await searchPublicArticles({ query: "   ", limit: 10 });
+  assertCheck(emptySearch.length === 0, "Empty search query should return no public results.");
 
   const topics = await getPublicTopics();
   assertCheck(topics.length === 7, "Expected 7 active topics. Run pnpm --filter web seed first.");
@@ -86,6 +99,7 @@ const runPublicReadChecks = async () => {
 
   console.log("Public read checks passed.");
   console.log(`Read ${articles.length} public articles, ${topics.length} active topics, and ${issue?.title}.`);
+  console.log(`Search returned ${publicSearch.length} public Wu Wei result(s) and no private draft leaks.`);
 };
 
 runPublicReadChecks().catch((error: unknown) => {
