@@ -8,6 +8,7 @@ type PublicArticleOptions = {
   limit?: number;
   topicSlug?: string;
   issueSlug?: string;
+  searchQuery?: string;
 };
 
 const publicArticleConditions: Where[] = [
@@ -24,6 +25,18 @@ const publicIssueSlugWhere = (slug: string): Where => ({
     { slug: { equals: slug } },
     { status: { equals: "published" } },
     { visibility: { equals: "public" } }
+  ]
+});
+
+const normalizeSearchQuery = (query: string | undefined) => query?.trim().replace(/\s+/g, " ");
+
+const buildSearchWhere = (query: string): Where => ({
+  or: [
+    { title: { like: query } },
+    { subtitle: { like: query } },
+    { deck: { like: query } },
+    { excerpt: { like: query } },
+    { body: { like: query } }
   ]
 });
 
@@ -46,6 +59,7 @@ export const getPublicArticles = async (
 ): Promise<PublicArticleListItem[]> => {
   const payload = await getPayloadClient();
   const and: Where[] = [...publicArticleConditions];
+  const searchQuery = normalizeSearchQuery(options.searchQuery);
 
   if (options.topicSlug) {
     const topicId = await getRelatedId("topics", options.topicSlug);
@@ -65,6 +79,10 @@ export const getPublicArticles = async (
     }
 
     and.push({ issue: { equals: issueId } });
+  }
+
+  if (searchQuery) {
+    and.push(buildSearchWhere(searchQuery));
   }
 
   const result = await payload.find({
