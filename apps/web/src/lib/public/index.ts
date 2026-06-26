@@ -1,4 +1,4 @@
-export { getPublicArticleBySlug, getPublicArticles } from "./articles";
+export { getPublicArticleBySlug, getPublicArticles, searchPublicArticles } from "./articles";
 export { getPublicAuthorBySlug, getPublicAuthors } from "./authors";
 export {
   getPublicEditorialCollectionBySlug,
