@@ -10,6 +10,11 @@ type PublicArticleOptions = {
   issueSlug?: string;
 };
 
+type PublicArticleSearchOptions = {
+  query?: string;
+  limit?: number;
+};
+
 const publicArticleConditions: Where[] = [
   { status: { equals: "published" } },
   { visibility: { equals: "public" } }
@@ -26,6 +31,8 @@ const publicIssueSlugWhere = (slug: string): Where => ({
     { visibility: { equals: "public" } }
   ]
 });
+
+const normalizeSearchQuery = (query?: string): string => query?.trim().replace(/\s+/g, " ") ?? "";
 
 const getRelatedId = async (collection: "topics" | "issues", slug: string) => {
   const payload = await getPayloadClient();
@@ -70,6 +77,41 @@ export const getPublicArticles = async (
   const result = await payload.find({
     collection: "articles",
     where: { and },
+    limit: options.limit ?? 20,
+    depth: 2,
+    sort: "-published_at",
+    overrideAccess: false
+  });
+
+  return result.docs.map(mapArticleListItem).filter((article): article is PublicArticleListItem => Boolean(article));
+};
+
+export const searchPublicArticles = async (
+  options: PublicArticleSearchOptions = {}
+): Promise<PublicArticleListItem[]> => {
+  const query = normalizeSearchQuery(options.query);
+
+  if (!query) {
+    return [];
+  }
+
+  const payload = await getPayloadClient();
+  const result = await payload.find({
+    collection: "articles",
+    where: {
+      and: [
+        ...publicArticleConditions,
+        {
+          or: [
+            { title: { contains: query } },
+            { subtitle: { contains: query } },
+            { deck: { contains: query } },
+            { excerpt: { contains: query } },
+            { body: { contains: query } }
+          ]
+        }
+      ]
+    },
     limit: options.limit ?? 20,
     depth: 2,
     sort: "-published_at",
