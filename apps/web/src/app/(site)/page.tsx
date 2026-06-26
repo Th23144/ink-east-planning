@@ -21,18 +21,24 @@ export default async function Home() {
     <main className="site-shell">
       <nav className="site-nav" aria-label="Primary navigation">
         <Link href="/">Home</Link>
+        <Link href="/articles">Articles</Link>
+        <Link href="/search">Search</Link>
         <Link href="/issues">Issues</Link>
         <Link href="/topics">Topics</Link>
         <Link href="/collections">Collections</Link>
       </nav>
 
       <section className="hero-block">
-        <p className="eyebrow">Ink & East / Level 1 Reading Routes</p>
+        <p className="eyebrow">Ink & East / Level 2 Browse Baseline</p>
         <h1>{settings.brand.site_name ?? "Ink & East"}</h1>
         <p className="lede">
           {settings.brand.site_subtitle ?? "Old texts, quiet stories, and modern questions"}
         </p>
         {settings.brand.brand_statement ? <p className="note">{settings.brand.brand_statement}</p> : null}
+        <div className="hero-actions">
+          <Link className="text-link" href="/articles">Browse all articles</Link>
+          <Link className="text-link" href="/search">Search the journal</Link>
+        </div>
       </section>
 
       <section className="content-grid" aria-label="Public reading sections">
@@ -56,6 +62,7 @@ export default async function Home() {
               </article>
             ))}
           </div>
+          <Link className="text-link" href="/articles">View article archive</Link>
         </div>
 
         <div className="panel">
