@@ -1,6 +1,7 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { ArticleList } from "@/components/ArticleList";
+import { SiteNav } from "@/components/SiteNav";
 import { getPublicArticles, getPublicTopicBySlug } from "@/lib/public";
 
 type TopicPageProps = {
@@ -20,12 +21,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
 
   return (
     <main className="site-shell narrow-shell">
-      <nav className="site-nav" aria-label="Primary navigation">
-        <Link href="/">Home</Link>
-        <Link href="/issues">Issues</Link>
-        <Link href="/topics">Topics</Link>
-        <Link href="/collections">Collections</Link>
-      </nav>
+      <SiteNav />
 
       <section className="section-heading page-heading">
         <p className="eyebrow">Topic</p>
@@ -35,14 +31,11 @@ export default async function TopicPage({ params }: TopicPageProps) {
 
       <section className="panel">
         <p className="eyebrow">Public articles</p>
-        <div className="stack-list compact">
-          {articles.map((article) => (
-            <Link className="simple-link-card" href={`/articles/${article.slug}`} key={article.id}>
-              <span>{article.author?.name ?? "Ink & East"}</span>
-              <strong>{article.title}</strong>
-            </Link>
-          ))}
-        </div>
+        <ArticleList
+          articles={articles}
+          emptyTitle="No public articles are available for this topic."
+          emptyMessage="This topic may be waiting for future published articles."
+        />
       </section>
     </main>
   );
