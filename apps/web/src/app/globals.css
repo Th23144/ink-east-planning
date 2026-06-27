@@ -36,6 +36,11 @@ a:hover {
   color: var(--accent);
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .prototype-shell,
 .site-shell {
   max-width: 1120px;
@@ -257,7 +262,8 @@ h3 {
 .excerpt-block,
 .article-body,
 .empty-note,
-.article-format-note {
+.article-format-note,
+.article-media figcaption {
   color: var(--muted);
   font-family:
     ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -280,6 +286,40 @@ h3 {
   flex-wrap: wrap;
   gap: 8px 14px;
   margin: 24px 0;
+}
+
+.article-media {
+  margin: 36px 0 0;
+}
+
+.article-media img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.article-media figcaption {
+  margin-top: 10px;
+  font-size: 0.86rem;
+}
+
+.list-card-media {
+  margin: 0 0 16px;
+}
+
+.list-card-media img {
+  max-height: 260px;
+  object-fit: cover;
+}
+
+.article-inline-media {
+  margin-top: 48px;
+}
+
+.inline-article-media {
+  margin-top: 0;
 }
 
 .article-body {
