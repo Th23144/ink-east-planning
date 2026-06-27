@@ -1,5 +1,6 @@
 import type {
   PublicArticleDetail,
+  PublicArticleInlineImage,
   PublicArticleListItem,
   PublicAuthor,
   PublicEditorialCollectionArticle,
@@ -10,6 +11,7 @@ import type {
   PublicIssueDetail,
   PublicIssueListItem,
   PublicIssueSummary,
+  PublicMediaAsset,
   PublicSeo,
   PublicSystemSettings,
   PublicTopic
@@ -43,6 +45,46 @@ const isPublicPublication = (doc: UnknownRecord): boolean =>
   doc.status === "published" && doc.visibility === "public";
 
 const isActive = (doc: UnknownRecord): boolean => doc.status === "active";
+
+export const mapMediaAsset = (media: unknown): PublicMediaAsset | undefined => {
+  if (!isRecord(media)) {
+    return undefined;
+  }
+
+  const alt = asString(media.alt);
+  if (!alt) {
+    return undefined;
+  }
+
+  return {
+    id: requiredString(media.id),
+    alt,
+    url: asString(media.url),
+    filename: asString(media.filename),
+    mimeType: asString(media.mimeType),
+    width: asNumber(media.width),
+    height: asNumber(media.height),
+    caption: asString(media.caption),
+    credit: asString(media.credit)
+  };
+};
+
+const mapArticleInlineImage = (entry: unknown): PublicArticleInlineImage | undefined => {
+  if (!isRecord(entry)) {
+    return undefined;
+  }
+
+  const image = mapMediaAsset(entry.image);
+  if (!image) {
+    return undefined;
+  }
+
+  return {
+    image,
+    caption: asString(entry.caption_override) ?? image.caption,
+    display_label: asString(entry.display_label)
+  };
+};
 
 export const mapAuthor = (author: unknown): PublicAuthor | undefined => {
   if (!isRecord(author) || !isActive(author)) {
@@ -125,6 +167,7 @@ export const mapArticleListItem = (article: unknown): PublicArticleListItem | un
   const collections = Array.isArray(article.collections)
     ? article.collections.map(mapEditorialCollectionSummary).filter(isDefined)
     : [];
+  const heroImage = mapMediaAsset(article.hero_image);
 
   return {
     id: requiredString(article.id),
@@ -139,6 +182,8 @@ export const mapArticleListItem = (article: unknown): PublicArticleListItem | un
     topics,
     issue: mapIssueSummary(article.issue),
     collections,
+    hero_image: heroImage,
+    hero_image_caption: asString(article.hero_image_caption_override) ?? heroImage?.caption,
     seo: mapSeo(article.seo)
   };
 };
@@ -150,10 +195,15 @@ export const mapArticleDetail = (article: unknown): PublicArticleDetail | undefi
     return undefined;
   }
 
+  const inlineImages = Array.isArray(article.inline_images)
+    ? article.inline_images.map(mapArticleInlineImage).filter(isDefined)
+    : [];
+
   return {
     ...item,
     body: asString(article.body),
-    body_format: asString(article.body_format)
+    body_format: asString(article.body_format),
+    inline_images: inlineImages
   };
 };
 
