@@ -256,7 +256,8 @@ h3 {
 .list-card p,
 .excerpt-block,
 .article-body,
-.empty-note {
+.empty-note,
+.article-format-note {
   color: var(--muted);
   font-family:
     ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -285,7 +286,75 @@ h3 {
   max-width: 72ch;
   margin-top: 36px;
   font-size: 1.08rem;
-  white-space: pre-wrap;
+}
+
+.article-rich-body {
+  white-space: normal;
+}
+
+.article-rich-body > * + * {
+  margin-top: 1.25rem;
+}
+
+.article-rich-body p {
+  margin-bottom: 0;
+}
+
+.article-heading {
+  max-width: 22ch;
+  margin-bottom: 0;
+  color: var(--foreground);
+}
+
+.article-rich-body h2.article-heading {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+}
+
+.article-rich-body h3.article-heading {
+  font-size: clamp(1.55rem, 4vw, 2.35rem);
+}
+
+.article-rich-body h4.article-heading {
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+.article-quote {
+  padding: 18px 20px;
+  margin-left: 0;
+  border-left: 3px solid var(--accent);
+  background: rgba(255, 252, 244, 0.52);
+  color: var(--foreground);
+  font-style: italic;
+}
+
+.article-list {
+  padding-left: 1.35rem;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.7;
+}
+
+.article-list li + li {
+  margin-top: 0.4rem;
+}
+
+.article-rule {
+  height: 1px;
+  margin: 2rem 0;
+  border: 0;
+  background: var(--line);
+}
+
+.article-format-note {
+  padding: 12px 14px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  background: rgba(255, 252, 244, 0.48);
+  font-size: 0.9rem;
 }
 
 .breadcrumbs {

@@ -93,6 +93,16 @@ const runPublicReadChecks = async () => {
     "Private draft article should not be returned by public search."
   );
 
+  const markdownArticle = await getPublicArticleBySlug("the-art-of-doing-less");
+  assertCheck(markdownArticle?.body_format === "markdown", "Expected seed article to use markdown body format.");
+  assertCheck(
+    markdownArticle?.body?.includes("## The pressure to act") === true,
+    "Expected markdown seed article body to include a heading marker."
+  );
+
+  const plainTextArticle = await getPublicArticleBySlug("notes-on-quiet-attention");
+  assertCheck(plainTextArticle?.body_format === "plain_text", "Expected plain text seed article to remain supported.");
+
   console.log("Public read checks passed.");
   console.log(`Read ${articles.length} public articles, ${topics.length} active topics, and ${issue?.title}.`);
 };
