@@ -85,3 +85,17 @@ Expected result:
 - Payload Admin still opens.
 - `check:public-reads` passes.
 - No red application error is shown.
+
+## Local Runtime Verification Passed
+
+- The user verified PR #23 in a local Windows development environment.
+- `The Art of Doing Less` rendered markdown headings, quote, list, and divider correctly.
+- `A Room That Lets You Return` rendered markdown heading and ordered list correctly.
+- `Notes on Quiet Attention` rendered plain text body content correctly.
+- `/articles/draft-a-private-editorial-note` did not expose private draft content.
+- `/articles` continued to work.
+- `/search?q=Wu%20Wei` continued to work.
+- `/admin` opened successfully.
+- `check:public-reads` passed after seed.
+- No red application error was reported.
+- This verification did not add schema changes, access helper changes, database adapter changes, auth changes, HTTP API endpoints, raw HTML rendering, sanitizer integration, external markdown packages, accounts, membership, payment, comments, notes, community, service systems, final visual design, or preview migration.
