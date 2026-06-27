@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { ArticleBody } from "@/components/ArticleBody";
 import { SiteNav } from "@/components/SiteNav";
 import { getPublicArticleBySlug } from "@/lib/public";
 
@@ -48,7 +49,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           ))}
         </div>
 
-        {article.body ? <div className="article-body">{article.body}</div> : null}
+        <ArticleBody body={article.body} format={article.body_format} />
       </article>
     </main>
   );
