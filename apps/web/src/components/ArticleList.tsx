@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ArticleImage } from "@/components/ArticleMedia";
 import type { PublicArticleListItem } from "@/lib/public";
 
 type ArticleListProps = {
@@ -27,6 +28,11 @@ export function ArticleList({
     <div className="stack-list">
       {articles.map((article) => (
         <article className="list-card" key={article.id}>
+          <ArticleImage
+            className="article-media list-card-media"
+            image={article.hero_image}
+            caption={article.hero_image_caption}
+          />
           <p className="meta-line">{article.published_at ?? "Unscheduled"}</p>
           <h2>
             <Link href={`/articles/${article.slug}`}>{article.title}</Link>
