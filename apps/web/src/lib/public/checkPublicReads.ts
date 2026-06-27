@@ -99,9 +99,17 @@ const runPublicReadChecks = async () => {
     markdownArticle?.body?.includes("## The pressure to act") === true,
     "Expected markdown seed article body to include a heading marker."
   );
+  assertCheck(
+    Array.isArray(markdownArticle?.inline_images),
+    "Expected public article detail DTO to expose an inline_images array."
+  );
 
   const plainTextArticle = await getPublicArticleBySlug("notes-on-quiet-attention");
   assertCheck(plainTextArticle?.body_format === "plain_text", "Expected plain text seed article to remain supported.");
+  assertCheck(
+    articles.every((article) => !article.hero_image || Boolean(article.hero_image.alt)),
+    "Expected mapped public hero images to include alt text when present."
+  );
 
   console.log("Public read checks passed.");
   console.log(`Read ${articles.length} public articles, ${topics.length} active topics, and ${issue?.title}.`);

@@ -5,7 +5,10 @@ import { canDeleteContent, canEditContent } from "../payload/access";
 export const Media: CollectionConfig = {
   slug: "media",
   admin: {
-    group: "Editorial"
+    group: "Editorial",
+    useAsTitle: "alt",
+    defaultColumns: ["alt", "caption", "credit", "updatedAt"],
+    listSearchableFields: ["alt", "caption", "credit"]
   },
   access: {
     create: canEditContent,
@@ -13,7 +16,9 @@ export const Media: CollectionConfig = {
     update: canEditContent,
     delete: canDeleteContent
   },
-  upload: true,
+  upload: {
+    mimeTypes: ["image/jpeg", "image/png", "image/webp", "image/gif"]
+  },
   fields: [
     { name: "alt", type: "text", required: true },
     { name: "caption", type: "textarea" },

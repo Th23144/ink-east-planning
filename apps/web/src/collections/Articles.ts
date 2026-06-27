@@ -23,7 +23,51 @@ export const Articles: CollectionConfig = {
     { name: "subtitle", type: "text" },
     { name: "deck", type: "textarea" },
     { name: "excerpt", type: "textarea" },
+    {
+      name: "hero_image",
+      type: "relationship",
+      relationTo: "media",
+      admin: {
+        description: "Optional lead image for article detail and archive cards."
+      }
+    },
+    {
+      name: "hero_image_caption_override",
+      type: "textarea",
+      admin: {
+        description: "Optional article-specific caption. Falls back to the media caption when empty."
+      }
+    },
     ...bodyField(),
+    {
+      name: "inline_images",
+      type: "array",
+      admin: {
+        description: "Optional images displayed after the article body in the current Level 2 baseline."
+      },
+      fields: [
+        {
+          name: "image",
+          type: "relationship",
+          relationTo: "media",
+          required: true
+        },
+        {
+          name: "caption_override",
+          type: "textarea",
+          admin: {
+            description: "Optional article-specific caption for this inline image."
+          }
+        },
+        {
+          name: "display_label",
+          type: "text",
+          admin: {
+            description: "Optional label such as Fig. 1 or Studio note."
+          }
+        }
+      ]
+    },
     { name: "author", type: "relationship", relationTo: "authors" },
     { name: "issue", type: "relationship", relationTo: "issues" },
     {
