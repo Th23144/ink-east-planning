@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { SiteNav } from "@/components/SiteNav";
 import { getPublicTopics } from "@/lib/public";
 
 export default async function TopicsPage() {
@@ -7,17 +8,12 @@ export default async function TopicsPage() {
 
   return (
     <main className="site-shell narrow-shell">
-      <nav className="site-nav" aria-label="Primary navigation">
-        <Link href="/">Home</Link>
-        <Link href="/issues">Issues</Link>
-        <Link href="/topics">Topics</Link>
-        <Link href="/collections">Collections</Link>
-      </nav>
+      <SiteNav />
 
       <section className="section-heading page-heading">
         <p className="eyebrow">Topics</p>
         <h1>Reading paths</h1>
-        <p className="lede">Active public topics from the Level 1 seed.</p>
+        <p className="lede">Active public topics from the Ink & East source-native seed.</p>
       </section>
 
       <div className="stack-list compact">
@@ -25,6 +21,7 @@ export default async function TopicsPage() {
           <Link className="simple-link-card" href={`/topics/${topic.slug}`} key={topic.id}>
             <span>{topic.symbol ?? "Topic"}</span>
             <strong>{topic.name}</strong>
+            {topic.description ? <span>{topic.description}</span> : null}
           </Link>
         ))}
       </div>

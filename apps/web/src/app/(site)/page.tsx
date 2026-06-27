@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { SiteNav } from "@/components/SiteNav";
 import {
   getPublicArticles,
   getPublicEditorialCollections,
@@ -19,20 +20,19 @@ export default async function Home() {
 
   return (
     <main className="site-shell">
-      <nav className="site-nav" aria-label="Primary navigation">
-        <Link href="/">Home</Link>
-        <Link href="/issues">Issues</Link>
-        <Link href="/topics">Topics</Link>
-        <Link href="/collections">Collections</Link>
-      </nav>
+      <SiteNav />
 
       <section className="hero-block">
-        <p className="eyebrow">Ink & East / Level 1 Reading Routes</p>
+        <p className="eyebrow">Ink & East / Level 2 Public Browse</p>
         <h1>{settings.brand.site_name ?? "Ink & East"}</h1>
         <p className="lede">
           {settings.brand.site_subtitle ?? "Old texts, quiet stories, and modern questions"}
         </p>
         {settings.brand.brand_statement ? <p className="note">{settings.brand.brand_statement}</p> : null}
+        <div className="hero-actions">
+          <Link className="text-link" href="/articles">Browse articles</Link>
+          <Link className="text-link" href="/search">Search the journal</Link>
+        </div>
       </section>
 
       <section className="content-grid" aria-label="Public reading sections">
@@ -56,6 +56,7 @@ export default async function Home() {
               </article>
             ))}
           </div>
+          <Link className="text-link" href="/articles">View all articles</Link>
         </div>
 
         <div className="panel">

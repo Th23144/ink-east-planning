@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { SiteNav } from "@/components/SiteNav";
 import { getPublicArticleBySlug } from "@/lib/public";
 
 type ArticlePageProps = {
@@ -19,16 +20,11 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <main className="site-shell narrow-shell">
-      <nav className="site-nav" aria-label="Primary navigation">
-        <Link href="/">Home</Link>
-        <Link href="/issues">Issues</Link>
-        <Link href="/topics">Topics</Link>
-        <Link href="/collections">Collections</Link>
-      </nav>
+      <SiteNav />
 
       <article className="article-page">
         <p className="breadcrumbs">
-          <Link href="/">Home</Link> / Article
+          <Link href="/">Home</Link> / <Link href="/articles">Articles</Link> / Article
         </p>
         <p className="eyebrow">Article</p>
         <h1>{article.title}</h1>
@@ -44,6 +40,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
         <div className="link-row">
           {article.issue ? <Link href={`/issues/${article.issue.slug}`}>{article.issue.title}</Link> : null}
+          {article.collections.map((collection) => (
+            <Link href={`/collections/${collection.slug}`} key={collection.id}>{collection.title}</Link>
+          ))}
           {article.topics.map((topic) => (
             <Link href={`/topics/${topic.slug}`} key={topic.id}>{topic.name}</Link>
           ))}

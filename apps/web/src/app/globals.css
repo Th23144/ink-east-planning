@@ -78,30 +78,56 @@ a:hover {
   margin-bottom: 48px;
 }
 
-.content-grid {
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.content-grid,
+.browse-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
   align-items: start;
+}
+
+.content-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.browse-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 48px;
 }
 
 .span-two {
   grid-column: span 2;
 }
 
+.archive-section {
+  margin-top: 48px;
+}
+
 .panel,
 .list-card,
 .simple-link-card,
 .excerpt-block,
-.empty-state {
+.empty-state,
+.search-form {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 18px;
 }
 
 .panel,
-.empty-state {
+.empty-state,
+.search-form {
   padding: 24px;
+}
+
+.compact-empty {
+  margin-bottom: 24px;
 }
 
 .stack-list {
@@ -125,7 +151,8 @@ a:hover {
 
 .simple-link-card span,
 .meta-line,
-.breadcrumbs {
+.breadcrumbs,
+.search-label {
   display: block;
   color: var(--muted);
   font-family:
@@ -147,6 +174,10 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.small-link-row {
+  margin-top: 14px;
 }
 
 .tag-list a,
@@ -265,6 +296,45 @@ h3 {
   color: var(--accent);
 }
 
+.search-form {
+  margin-bottom: 40px;
+}
+
+.search-label {
+  margin-bottom: 10px;
+}
+
+.search-row {
+  display: flex;
+  gap: 12px;
+}
+
+.search-input,
+.search-button {
+  min-height: 46px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 16px;
+  background: var(--surface-strong);
+  color: var(--foreground);
+}
+
+.search-button {
+  padding: 0 20px;
+  background: var(--foreground);
+  color: var(--background);
+  cursor: pointer;
+}
+
 @media (max-width: 760px) {
   .prototype-shell,
   .site-shell {
@@ -272,15 +342,21 @@ h3 {
   }
 
   .content-grid,
+  .browse-grid,
   .span-two {
     display: block;
   }
 
-  .content-grid > * + * {
+  .content-grid > * + *,
+  .browse-grid > * + * {
     margin-top: 20px;
   }
 
   .site-nav {
     margin-bottom: 32px;
+  }
+
+  .search-row {
+    display: grid;
   }
 }

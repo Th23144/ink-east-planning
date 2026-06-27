@@ -84,6 +84,15 @@ const runPublicReadChecks = async () => {
     "Expected system settings site name to be Ink & East. Run pnpm --filter web seed first."
   );
 
+  const publicSearchResults = await getPublicArticles({ searchQuery: "Wu Wei", limit: 20 });
+  assertCheck(publicSearchResults.length > 0, "Expected public search for Wu Wei to return at least one article.");
+
+  const privateSearchResults = await getPublicArticles({ searchQuery: "Private Editorial Note", limit: 20 });
+  assertCheck(
+    privateSearchResults.every((article) => article.slug !== "draft-a-private-editorial-note"),
+    "Private draft article should not be returned by public search."
+  );
+
   console.log("Public read checks passed.");
   console.log(`Read ${articles.length} public articles, ${topics.length} active topics, and ${issue?.title}.`);
 };
