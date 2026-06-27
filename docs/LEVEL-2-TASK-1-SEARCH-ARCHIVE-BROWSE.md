@@ -95,3 +95,16 @@ Expected result:
 - A query matching private-only content does not expose private content.
 - Existing issue, topic, collection, article, and admin routes still work.
 - No red application error is shown.
+
+## Local Runtime Verification Passed
+
+- The user verified PR #22 in a local Windows development environment.
+- The public article archive at `/articles` opened successfully.
+- The public search route at `/search` opened successfully.
+- `/search?q=Wu%20Wei` returned public article results.
+- `/search?q=Private%20Editorial%20Note` did not expose the private draft article.
+- `/articles/draft-a-private-editorial-note` did not expose private draft content.
+- Existing issue, topic, collection, article, and admin routes continued to work.
+- `check:public-reads` passed after seed.
+- No red application error was reported.
+- This verification did not add schema changes, access helper changes, database adapter changes, auth changes, HTTP API endpoints, external search services, accounts, membership, payment, comments, notes, community, service systems, final visual design, or preview migration.
