@@ -5,7 +5,7 @@ type SeedArticle = {
   deck: string;
   excerpt: string;
   body: string;
-  body_format: "plain_text";
+  body_format: "plain_text" | "markdown" | "html";
   authorSlug: string;
   issueSlug: string;
   collectionSlugs: string[];
@@ -31,8 +31,8 @@ export const articles: SeedArticle[] = [
     deck: "Issue 001 opens with a small question: what changes when effort stops trying to announce itself?",
     excerpt: "A quiet seed essay about restraint, attention, and the usefulness of leaving room around an action.",
     body:
-      "Doing less is not the same as caring less. In the older language around Wu Wei, the point is not absence or escape. It is the ability to notice when an action has become heavier than the situation requires.\n\nA room can teach this before a sentence can. Move one object too many and the room begins to explain itself too loudly. Remove one object with care and the remaining things become easier to see. The same is true for speech, work, and desire.\n\nThis Level 1 seed essay is intentionally short. It gives the prototype a stable public article that can carry the first issue, a topic pathway, and a collection relationship.",
-    body_format: "plain_text",
+      "## The pressure to act\n\nDoing less is not the same as caring less. In the older language around Wu Wei, the point is not absence or escape. It is the ability to notice when an action has become heavier than the situation requires.\n\n> A quiet action does not need to prove that it is action.\n\n## A room as teacher\n\nA room can teach this before a sentence can. Move one object too many and the room begins to explain itself too loudly. Remove one object with care and the remaining things become easier to see. The same is true for speech, work, and desire.\n\n- Notice what is already carrying the room.\n- Remove the gesture that only repeats itself.\n- Leave enough space for attention to return.\n\n---\n\nThis Level 2 seed essay is still controlled content. It now gives the article renderer headings, quotation, a list, and a divider without introducing raw HTML.",
+    body_format: "markdown",
     authorSlug: "ink-east-editorial-desk",
     issueSlug: "issue-001-wu-wei",
     collectionSlugs: ["reading-the-old-texts", "quiet-modern-questions"],
@@ -54,8 +54,8 @@ export const articles: SeedArticle[] = [
     deck: "A small room can become a daily argument for return, if it does not demand too much from the person entering it.",
     excerpt: "A reflective seed essay about rooms, rituals, and the way space can make attention easier.",
     body:
-      "Some rooms ask to be performed in. Others allow a person to return quietly. The second kind is harder to describe because it is built less from decoration than from permission.\n\nA chair near light, a surface without too much noise, and a path that does not catch the body at every turn can change the emotional weather of a day. Ritual does not have to be theatrical. Sometimes it is only the repeated proof that a place can receive you.\n\nThis article keeps the connection between space and ritual visible for the prototype while staying neutral enough for future visual design work.",
-    body_format: "plain_text",
+      "## The room that receives you\n\nSome rooms ask to be performed in. Others allow a person to return quietly. The second kind is harder to describe because it is built less from decoration than from permission.\n\nA chair near light, a surface without too much noise, and a path that does not catch the body at every turn can change the emotional weather of a day. Ritual does not have to be theatrical. Sometimes it is only the repeated proof that a place can receive you.\n\n1. Let the entrance stay simple.\n2. Keep one surface clear.\n3. Give the eye somewhere gentle to rest.\n\nThis article keeps the connection between space and ritual visible for the prototype while staying neutral enough for future visual design work.",
+    body_format: "markdown",
     authorSlug: "guest-reader",
     issueSlug: "issue-001-wu-wei",
     collectionSlugs: ["quiet-modern-questions"],
@@ -77,7 +77,7 @@ export const articles: SeedArticle[] = [
     deck: "Attention is not only a mental skill; it is also a relationship with pace, mood, and what we allow to remain unfinished.",
     excerpt: "A short seed note about attention, emotional pacing, and the discipline of not rushing to conclude.",
     body:
-      "Quiet attention begins before interpretation. It is the pause in which a thing is allowed to appear without immediately being used.\n\nThis kind of attention does not reject feeling. It gives feeling a slower room. A mood can be noticed without being turned into a final answer. A thought can arrive without closing the conversation. The practice is modest, but modest practices are often the ones that survive ordinary days.\n\nFor Level 1, this essay gives the Mind & Emotion topic a stable public record and a simple text surface for frontend reading checks.",
+      "Quiet attention begins before interpretation. It is the pause in which a thing is allowed to appear without immediately being used.\n\nThis kind of attention does not reject feeling. It gives feeling a slower room. A mood can be noticed without being turned into a final answer. A thought can arrive without closing the conversation. The practice is modest, but modest practices are often the ones that survive ordinary days.\n\nFor Level 2, this essay keeps a plain text body in the seed data so the renderer continues to support both plain text and markdown articles.",
     body_format: "plain_text",
     authorSlug: "ink-east-editorial-desk",
     issueSlug: "issue-001-wu-wei",
