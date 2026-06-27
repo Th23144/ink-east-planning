@@ -4,6 +4,24 @@ export type PublicSeo = {
   noindex?: boolean;
 };
 
+export type PublicMediaAsset = {
+  id: string;
+  alt: string;
+  url?: string;
+  filename?: string;
+  mimeType?: string;
+  width?: number;
+  height?: number;
+  caption?: string;
+  credit?: string;
+};
+
+export type PublicArticleInlineImage = {
+  image: PublicMediaAsset;
+  caption?: string;
+  display_label?: string;
+};
+
 export type PublicAuthor = {
   id: string;
   name: string;
@@ -55,12 +73,15 @@ export type PublicArticleListItem = {
   topics: PublicTopic[];
   issue?: PublicIssueSummary;
   collections: PublicEditorialCollectionSummary[];
+  hero_image?: PublicMediaAsset;
+  hero_image_caption?: string;
   seo?: PublicSeo;
 };
 
 export type PublicArticleDetail = PublicArticleListItem & {
   body?: string;
   body_format?: string;
+  inline_images: PublicArticleInlineImage[];
 };
 
 export type PublicIssueListItem = PublicIssueSummary & {
