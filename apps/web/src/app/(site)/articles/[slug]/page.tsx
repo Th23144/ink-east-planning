@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { ArticleBody } from "@/components/ArticleBody";
+import { ArticleImage, InlineImageGallery } from "@/components/ArticleMedia";
 import { SiteNav } from "@/components/SiteNav";
 import { getPublicArticleBySlug } from "@/lib/public";
 
@@ -49,7 +50,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           ))}
         </div>
 
+        <ArticleImage image={article.hero_image} caption={article.hero_image_caption} />
         <ArticleBody body={article.body} format={article.body_format} />
+        <InlineImageGallery images={article.inline_images} />
       </article>
     </main>
   );
