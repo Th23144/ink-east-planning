@@ -28,6 +28,12 @@ Behavior summary:
 - Escape closes the popover.
 - Reduced-motion media query is included in the uploaded source.
 
+Viewport coverage:
+
+- This preview is not desktop-only.
+- It includes responsive/mobile behavior for the product layout, Add to Cart row, full-width mobile Add to Cart button, and mobile cart popover positioning.
+- The source includes breakpoints for tablet/mobile layouts and a reduced-motion fallback.
+
 Important implementation boundary:
 
 This is a static preview reference only. It should not be wired into WooCommerce or `apps/web` directly from this repository without a separate implementation task.
