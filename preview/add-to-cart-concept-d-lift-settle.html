@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Spatial Flow — Add to Cart · D · Lift &amp; Settle</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Inter:wght@300;400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+  /* ============================================================
+     SPATIAL FLOW · V2 DESIGN TOKENS (mirrored from V2 cart page)
+     ============================================================ */
+  :root {
+    --paper:        #f6f1eb;
+    --paper-deep:   #ede7df;
+    --paper-line:   #d9d1c4;
+    --ink:          #1f1916;
+    --ink-soft:     #4a423d;
+    --ink-mute:     #8a807a;
+    --terracotta:   #a8745c;
+    --bluestone:    #4a5d5a;
+    --serif:  "Cormorant Garamond", "Noto Serif SC", "Songti SC", serif;
+    --sans:   "Inter", "PingFang SC", system-ui, sans-serif;
+    --mono:   "JetBrains Mono", ui-monospace, monospace;
+    --gutter: 56px;
+    --max:    1280px;
+    --ease-soft:  cubic-bezier(0.22, 0.61, 0.36, 1);
+    --ease-inout: cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  .check-line { width: 14px; height: 14px; display: inline-block; position: relative; flex: none; }
+  .check-line::after {
+    content: ""; position: absolute; left: 1px; top: 6px;
+    width: 5px; height: 9px; border: solid currentColor;
+    border-width: 0 1.5px 1.5px 0; transform: rotate(45deg);
+  }
+
+  /* ===================== HEADER ===================== */
+  .site-header { border-bottom: 1px solid var(--paper-line); background: var(--paper); position: relative; z-index: 30; }
+  .site-header .inner {
+    max-width: var(--max); margin: 0 auto; padding: 22px var(--gutter);
+    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 32px;
+  }
+  .site-brand { font-family: var(--serif); font-size: 24px; font-style: italic; font-weight: 400; }
+  .site-brand small {
+    display: block; font-family: var(--sans); font-size: 9px; letter-spacing: 0.32em;
+    text-transform: uppercase; color: var(--ink-mute); font-style: normal; margin-top: 2px; font-weight: 500;
+  }
+  .site-nav { display: flex; gap: 36px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; justify-content: center; }
+  .site-nav a:hover, .site-nav a.active { color: var(--terracotta); }
+  .site-utils { display: flex; justify-content: flex-end; gap: 24px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+  .site-utils span { cursor: pointer; transition: color .2s; }
+  .site-utils span:hover { color: var(--terracotta); }
+  .site-utils .bag { display: inline-flex; align-items: center; gap: 6px; position: relative; }
+  .site-utils .bag .bag-count { color: var(--terracotta); font-family: var(--mono); font-size: 11px; transition: transform .4s var(--ease-soft); }
+  .site-utils .bag.bump .bag-count { transform: scale(1.4); }
+
+  /* ===================== PRODUCT ===================== */
+  .stage { position: relative; }
+  .product {
+    max-width: var(--max); margin: 0 auto;
+    padding: 56px var(--gutter) 96px;
+    display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px;
+  }
+  .gallery-main { position: relative; aspect-ratio: 4/5; background: var(--paper-deep); overflow: hidden; }
+  .gallery-main .art { position: absolute; inset: 0; background: linear-gradient(160deg, #d2c7b8, #8a807a 70%, #4a423d); transition: background .5s var(--ease-soft); }
+  .gallery-main .art::before {
+    content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 56%; aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.5), transparent 25%),
+      conic-gradient(from 0deg, #6b6258 0deg, #8a7e6f 30deg, #b3a085 70deg, #786c5e 110deg, #524940 150deg, #6b6258 200deg, #8e8273 240deg, #4a423d 280deg, #6b6258 360deg);
+    box-shadow: inset -10px -10px 30px rgba(0,0,0,0.3), inset 10px 10px 30px rgba(255,255,255,0.12);
+  }
+  .gallery-main .art::after {
+    content: ""; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    width: 28%; aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, var(--paper-deep), var(--paper));
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.15);
+  }
+  .gallery-main .badge {
+    position: absolute; top: 18px; left: 18px; z-index: 4;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+    background: var(--paper); color: var(--ink); padding: 8px 12px;
+  }
+  .gallery-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+  .gallery-thumbs .thumb { aspect-ratio: 1; background: var(--paper-deep); cursor: pointer; outline: 1px solid transparent; outline-offset: -1px; transition: outline-color .2s; }
+  .gallery-thumbs .thumb:hover { outline-color: var(--ink-mute); }
+  .gallery-thumbs .thumb.t1 { background: linear-gradient(160deg, #d2c7b8, #8a807a 70%, #4a423d); }
+  .gallery-thumbs .thumb.t2 { background: linear-gradient(180deg, #b3a085, #2f2a26); }
+  .gallery-thumbs .thumb.t3 { background: linear-gradient(160deg, #ede7df, #c8bca6 80%); }
+  .gallery-thumbs .thumb.t4 { background: linear-gradient(170deg, #2a2520, #1f1916); }
+  .gallery-thumbs .thumb.active { outline: 1px solid var(--ink); outline-offset: 2px; }
+
+  .entry-summary { padding-top: 8px; display: flex; flex-direction: column; }
+  .meta-top { font-family: var(--mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 28px; display: flex; align-items: center; gap: 12px; }
+  .meta-top .sku { color: var(--terracotta); }
+  .meta-top .dot { color: var(--paper-line); }
+  .product-title { font-family: var(--serif); font-weight: 300; font-size: clamp(44px, 4.5vw, 68px); line-height: 1; letter-spacing: -0.015em; margin-bottom: 12px; }
+  .product-title em { font-style: italic; color: var(--bluestone); font-weight: 300; }
+  .product-subtitle { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--ink-mute); margin-bottom: 32px; font-weight: 300; }
+  .price { font-family: var(--serif); font-size: 36px; font-weight: 300; color: var(--ink); padding-bottom: 24px; border-bottom: 1px solid var(--paper-line); margin-bottom: 28px; }
+  .price .currency { font-size: 18px; color: var(--ink-mute); margin-right: 6px; vertical-align: 4px; }
+  .price .ship-note { display: block; font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); margin-top: 8px; }
+  .placement-note { background: var(--paper-deep); border-left: 2px solid var(--bluestone); padding: 22px 26px; margin-bottom: 28px; }
+  .placement-note .label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--bluestone); margin-bottom: 10px; }
+  .placement-note p { font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.55; color: var(--ink-soft); font-weight: 300; }
+  .short-description { font-size: 15px; line-height: 1.78; color: var(--ink-soft); margin-bottom: 32px; max-width: 48ch; }
+  .variations { margin-bottom: 28px; }
+  .var-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 12px; }
+  .var-options { display: flex; gap: 10px; flex-wrap: wrap; }
+  .var-options button { border: 1px solid var(--paper-line); padding: 12px 18px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); transition: all .2s; background: var(--paper); }
+  .var-options button:hover { border-color: var(--ink); }
+  .var-options button.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  .cart-row { display: flex; gap: 12px; align-items: stretch; margin-bottom: 14px; position: relative; }
+  .quantity { display: flex; align-items: center; border: 1px solid var(--ink); background: var(--paper); }
+  .quantity button { width: 48px; height: 56px; font-size: 18px; color: var(--ink); transition: background .2s; }
+  .quantity button:hover { background: var(--paper-deep); }
+  .quantity .qval { width: 48px; height: 56px; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 14px; }
+  .add-to-cart { flex: 1; background: var(--ink); color: var(--paper); padding: 0 32px; height: 56px; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; transition: background .45s var(--ease-soft); display: inline-flex; align-items: center; justify-content: center; gap: 14px; position: relative; overflow: hidden; }
+  .add-to-cart:hover { background: var(--terracotta); }
+  .add-to-cart .label-default, .add-to-cart .label-added { display: inline-flex; align-items: center; gap: 12px; transition: opacity .4s var(--ease-soft), transform .4s var(--ease-soft); }
+  .add-to-cart .label-added { position: absolute; inset: 0; justify-content: center; opacity: 0; transform: translateY(120%); }
+  .add-to-cart.added { background: var(--bluestone); }
+  .add-to-cart.added .label-default { opacity: 0; transform: translateY(-120%); }
+  .add-to-cart.added .label-added { opacity: 1; transform: translateY(0); }
+
+  /* shared editorial buttons */
+  .btn { height: 52px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; transition: background .35s var(--ease-soft), color .35s var(--ease-soft), border-color .35s var(--ease-soft); padding: 0 26px; }
+  .btn-primary { background: var(--ink); color: var(--paper); }
+  .btn-primary:hover { background: var(--terracotta); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+  .btn-ghost:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .btn-text { background: transparent; color: var(--ink-soft); font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; }
+  .btn-text:hover { color: var(--terracotta); }
+  .li-thumb { background: var(--paper-deep); }
+  .li-thumb.v1 { background: linear-gradient(160deg, #d2c7b8, #8a807a 70%, #4a423d); }
+  .li-thumb.v2 { background: linear-gradient(180deg, #b3a085, #2f2a26); }
+  .li-thumb.v3 { background: linear-gradient(160deg, #ede7df, #c8bca6 80%); }
+
+  /* ============================================================
+     CONCEPT D · LIFT & SETTLE (FLIP flight + seal)
+     ============================================================ */
+  .flyer { position: fixed; z-index: 95; pointer-events: none; box-shadow: 0 20px 40px rgba(31,25,22,0.25); transition: transform 1s var(--ease-inout), opacity 1s var(--ease-soft), width 1s var(--ease-inout), height 1s var(--ease-inout); }
+  .seal {
+    position: fixed; z-index: 96; width: 56px; height: 56px; border-radius: 50%;
+    background: var(--ink); color: var(--paper); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; pointer-events: none;
+    opacity: 0; transform: scale(0.4);
+    transition: opacity .5s var(--ease-soft), transform .6s var(--ease-soft);
+    font-family: var(--mono); line-height: 1.1;
+  }
+  .seal.show { opacity: 1; transform: scale(1); }
+  .seal .s-no { font-size: 13px; }
+  .seal .s-cap { font-size: 7px; letter-spacing: 0.12em; color: rgba(246,241,235,0.7); }
+  /* compact popover under the header cart for D */
+  .cart-pop {
+    position: fixed; top: 64px; right: var(--gutter); width: 250px; z-index: 60;
+    background: var(--paper); border: 1px solid var(--ink);
+    padding: 18px 20px; opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity .4s var(--ease-soft), visibility .4s var(--ease-soft), transform .4s var(--ease-soft);
+  }
+  .cart-pop.show { opacity: 1; visibility: visible; transform: translateY(0); }
+  .cart-pop .cp-eyebrow { font-family: var(--mono); font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--bluestone); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .cart-pop .cp-line { font-family: var(--serif); font-size: 18px; margin-bottom: 4px; }
+  .cart-pop .cp-sub { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 16px; }
+  .cart-pop .cp-sub b { color: var(--ink); }
+  .cart-pop .cp-actions { display: flex; flex-direction: column; gap: 8px; }
+  .cart-pop .btn { height: 42px; font-size: 10px; letter-spacing: 0.16em; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 1080px) { .product { gap: 48px; } }
+  @media (max-width: 900px) {
+    :root { --gutter: 28px; }
+    .product { grid-template-columns: 1fr; gap: 40px; padding: 36px var(--gutter) 72px; }
+    .site-nav { display: none; }
+    .site-header .inner { grid-template-columns: 1fr auto; }
+  }
+  @media (max-width: 640px) {
+    :root { --gutter: 20px; }
+    .product-title { font-size: clamp(40px, 12vw, 52px); }
+    .cart-row { flex-wrap: wrap; }
+    .add-to-cart { width: 100%; flex: none; }
+    .cart-pop { right: 12px; left: 12px; width: auto; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+</style>
+</head>
+<body class="concept-d">
+
+
+
+<header class="site-header">
+<div class="inner">
+<div class="site-brand">Spatial Flow<small>Objects · Editions</small></div>
+<nav class="site-nav">
+<a href="#">Shop</a><a class="active" href="#">Objects</a><a href="#">Editions</a><a href="#">Studio</a>
+</nav>
+<div class="site-utils">
+<span>Search</span><span>Account</span>
+<span class="bag" id="headerBag" role="button" tabindex="0">Cart <span class="bag-count" id="bagCount">(0)</span></span>
+</div>
+</div>
+</header>
+
+<div class="stage">
+<main class="product">
+<section class="product-gallery">
+<div class="gallery-main">
+<div class="art" id="galleryArt"></div>
+<div class="badge">Edition · 07 / 40</div>
+</div>
+<div class="gallery-thumbs">
+<div class="thumb t1 active"></div><div class="thumb t2"></div><div class="thumb t3"></div><div class="thumb t4"></div>
+</div>
+</section>
+<section class="entry-summary">
+<div class="meta-top"><span class="sku">SKU · SF-Q07</span><span class="dot">—</span><span>In stock</span></div>
+<h1 class="product-title">Grey Quartz <em>No.07</em></h1>
+<div class="product-subtitle">A study in stillness and weight</div>
+<div class="price"><span class="currency">¥</span>1,280<span class="ship-note">Complimentary shipping · Ships in 5–7 days</span></div>
+<div class="placement-note">
+<div class="label">Placement</div>
+<p>Best read alone, on a low plinth or wide sill where light can move across its surface through the day.</p>
+</div>
+<p class="short-description">Hand-finished cast quartz composite with a matte, mineral surface. Each piece carries slight variation in tone — no two editions are identical.</p>
+<div class="variations">
+<div class="var-label">Finish</div>
+<div class="var-options" id="finishGroup">
+<button class="active" data-finish="Greystone">Greystone</button>
+<button data-finish="Umber">Umber</button>
+<button data-finish="Chalk">Chalk</button>
+</div>
+</div>
+<div class="cart-row">
+<div class="quantity">
+<button aria-label="Decrease quantity" id="qMinus">−</button>
+<div class="qval" id="qVal">1</div>
+<button aria-label="Increase quantity" id="qPlus">+</button>
+</div>
+<button class="add-to-cart" id="addToCart">
+<span class="label-default">Add to cart <span class="arrow">→</span></span>
+<span class="label-added"><span class="check-line"></span> Added</span>
+</button>
+</div>
+
+
+</section>
+</main>
+</div>
+
+
+
+
+
+<div class="cart-pop" id="cartPop">
+<div class="cp-eyebrow"><span class="check-line"></span> Added to cart</div>
+<div class="cp-line" id="popLine">Grey Quartz No.07</div>
+<div class="cp-sub">Subtotal <b>¥<span class="sub-figure">0</span></b></div>
+<div class="cp-actions">
+<button class="btn btn-primary act-checkout">Checkout</button>
+<button class="btn btn-ghost act-viewcart">View cart</button>
+</div>
+</div>
+
+
+
+
+
+<script>
+(function () {
+  "use strict";
+
+  var PRODUCT = { id: "SF-Q07", title: "Grey Quartz No.07", price: 1280 };
+  var FINISH_IMG = { Greystone: "v1", Umber: "v2", Chalk: "v3" };
+  var FINISH_BG = {
+    Greystone: "linear-gradient(160deg, #d2c7b8, #8a807a 70%, #4a423d)",
+    Umber: "linear-gradient(180deg, #b3a085, #2f2a26)",
+    Chalk: "linear-gradient(160deg, #ede7df, #c8bca6 80%)"
+  };
+
+  var cart = {};
+  var currentQty = 1;
+  var currentFinish = "Greystone";
+  var addedTimer = null;
+  var popTimer = null;
+
+  var $ = function (s) { return document.querySelector(s); };
+  var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
+
+  var qVal = $("#qVal");
+  var addBtn = $("#addToCart");
+  var galleryArt = $("#galleryArt");
+  var bagCount = $("#bagCount");
+  var headerBag = $("#headerBag");
+  var cartPop = $("#cartPop");
+  var popLine = $("#popLine");
+
+  function fmt(n) {
+    return n.toLocaleString("en-US");
+  }
+
+  function units() {
+    var total = 0;
+    for (var key in cart) total += cart[key].qty;
+    return total;
+  }
+
+  function subtotal() {
+    var total = 0;
+    for (var key in cart) total += cart[key].qty * cart[key].price;
+    return total;
+  }
+
+  function syncSubFigures() {
+    $$(".sub-figure").forEach(function (el) {
+      el.textContent = fmt(subtotal());
+    });
+  }
+
+  function bumpBag() {
+    bagCount.textContent = "(" + units() + ")";
+    headerBag.classList.remove("bump");
+    void headerBag.offsetWidth;
+    headerBag.classList.add("bump");
+  }
+
+  function addCurrent() {
+    var key = PRODUCT.id + "::" + currentFinish;
+    if (cart[key]) {
+      cart[key].qty += currentQty;
+    } else {
+      cart[key] = {
+        key: key,
+        title: PRODUCT.title,
+        finish: currentFinish,
+        price: PRODUCT.price,
+        qty: currentQty,
+        img: FINISH_IMG[currentFinish] || "v1"
+      };
+    }
+    return cart[key];
+  }
+
+  function setQty(n) {
+    currentQty = Math.max(1, n);
+    qVal.textContent = currentQty;
+  }
+
+  function flashAdded() {
+    addBtn.classList.add("added");
+    clearTimeout(addedTimer);
+    addedTimer = setTimeout(function () {
+      addBtn.classList.remove("added");
+    }, 1600);
+  }
+
+  function flyToCart(item) {
+    var from = galleryArt.getBoundingClientRect();
+    var to = headerBag.getBoundingClientRect();
+    var flyer = document.createElement("div");
+
+    flyer.className = "flyer li-thumb " + item.img;
+
+    var startW = 120;
+    var startH = 150;
+
+    flyer.style.width = startW + "px";
+    flyer.style.height = startH + "px";
+    flyer.style.left = "0px";
+    flyer.style.top = "0px";
+    flyer.style.transform = "translate(" + (from.left + from.width / 2 - startW / 2) + "px," + (from.top + from.height / 2 - startH / 2) + "px)";
+
+    document.body.appendChild(flyer);
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        flyer.style.width = "22px";
+        flyer.style.height = "28px";
+        flyer.style.opacity = "0.2";
+        flyer.style.transform = "translate(" + (to.left + to.width / 2 - 11) + "px," + (to.top + to.height / 2 - 14) + "px)";
+      });
+    });
+
+    setTimeout(function () {
+      if (flyer.parentNode) flyer.parentNode.removeChild(flyer);
+      showSeal(to);
+    }, 1000);
+  }
+
+  function showSeal(to) {
+    var seal = document.createElement("div");
+    seal.className = "seal";
+    seal.innerHTML = '<span class="s-no">' + ("0" + units()).slice(-2) + '</span><span class="s-cap">IN CART</span>';
+    seal.style.left = (to.left + to.width / 2 - 28) + "px";
+    seal.style.top = (to.top + to.height + 6) + "px";
+
+    document.body.appendChild(seal);
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        seal.classList.add("show");
+      });
+    });
+
+    setTimeout(function () { seal.classList.remove("show"); }, 1300);
+    setTimeout(function () {
+      if (seal.parentNode) seal.parentNode.removeChild(seal);
+    }, 1800);
+
+    popLine.textContent = PRODUCT.title;
+    cartPop.classList.add("show");
+
+    clearTimeout(popTimer);
+    popTimer = setTimeout(function () {
+      cartPop.classList.remove("show");
+    }, 4200);
+  }
+
+  $("#qMinus").addEventListener("click", function () { setQty(currentQty - 1); });
+  $("#qPlus").addEventListener("click", function () { setQty(currentQty + 1); });
+
+  $("#finishGroup").addEventListener("click", function (e) {
+    var btn = e.target.closest("button");
+    if (!btn) return;
+
+    $$("#finishGroup button").forEach(function (b) { b.classList.remove("active"); });
+    btn.classList.add("active");
+
+    currentFinish = btn.getAttribute("data-finish");
+    galleryArt.style.background = FINISH_BG[currentFinish] || FINISH_BG.Greystone;
+  });
+
+  addBtn.addEventListener("click", function () {
+    var item = addCurrent();
+    syncSubFigures();
+    bumpBag();
+    flyToCart(item);
+    flashAdded();
+  });
+
+  headerBag.addEventListener("click", function () {
+    if (units() === 0) return;
+    cartPop.classList.add("show");
+    clearTimeout(popTimer);
+    popTimer = setTimeout(function () { cartPop.classList.remove("show"); }, 4200);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") cartPop.classList.remove("show");
+  });
+
+  $$(".act-viewcart").forEach(function (button) {
+    button.addEventListener("click", function () { flashButton(button, "Opening cart…"); });
+  });
+
+  $$(".act-checkout").forEach(function (button) {
+    button.addEventListener("click", function () { flashButton(button, "To checkout…"); });
+  });
+
+  function flashButton(button, text) {
+    var original = button.textContent;
+    button.textContent = text;
+    setTimeout(function () { button.textContent = original; }, 1100);
+  }
+
+  syncSubFigures();
+  bumpBag();
+})();
+</script></body>
+</html>
