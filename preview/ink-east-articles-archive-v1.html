@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles · Ink & East</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4ede0;
+    --paper-light: #faf5e9;
+    --paper-dark: #e8dfce;
+    --ink: #1a1611;
+    --ink-soft: #4a4036;
+    --ink-faint: #8a7f70;
+    --seal: #a02d23;
+    --seal-deep: #7a1f1a;
+    --rule: rgba(26,22,17,0.28);
+    --rule-soft: rgba(26,22,17,0.12);
+    --serif-en: "EB Garamond", "Noto Serif SC", Georgia, serif;
+    --serif-cn: "Noto Serif SC", "EB Garamond", serif;
+    --sans: "Inter", -apple-system, "PingFang SC", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+    --max: 1280px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    font-family: var(--serif-en);
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+    font-feature-settings: "liga" 1, "kern" 1, "onum" 1;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  ::selection { background: var(--seal); color: var(--paper-light); }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: .48;
+    mix-blend-mode: multiply;
+    background-image:
+      radial-gradient(circle at 25% 30%, rgba(26,22,17,.025) 0%, transparent 40%),
+      radial-gradient(circle at 75% 60%, rgba(26,22,17,.02) 0%, transparent 35%),
+      radial-gradient(circle at 50% 80%, rgba(26,22,17,.015) 0%, transparent 30%);
+  }
+
+  .page {
+    min-height: 100vh;
+  }
+
+  .top-rule {
+    background: var(--ink);
+    color: var(--paper-light);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 8px 28px;
+  }
+  .top-rule a {
+    color: var(--seal);
+    border-bottom: 1px dashed var(--seal);
+    padding-bottom: 1px;
+  }
+
+  .site-nav {
+    padding: 28px 40px 24px;
+    border-bottom: 1px solid var(--ink);
+    position: relative;
+    z-index: 2;
+  }
+  .nav-inner {
+    max-width: var(--max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+  }
+  .nav-left,
+  .nav-right {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .nav-right { justify-content: flex-end; }
+  .site-nav a,
+  .site-nav span[data-placeholder="true"] {
+    transition: color .2s, border-color .2s;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+  }
+  .site-nav a:hover { color: var(--seal); border-color: var(--seal); }
+  .site-nav .active {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .brand {
+    text-align: center;
+    min-width: 190px;
+  }
+  .brand .en {
+    font-family: var(--serif-en);
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: .015em;
+  }
+  .brand .en em { color: var(--seal); font-style: italic; }
+  .brand .cn {
+    display: block;
+    margin-top: 8px;
+    font-family: var(--serif-cn);
+    font-size: 12px;
+    letter-spacing: .52em;
+    color: var(--ink-soft);
+  }
+
+  .archive-hero {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 86px 40px 78px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+    gap: 72px;
+    border-bottom: 2px solid var(--ink);
+    position: relative;
+  }
+  .archive-hero::before {
+    content: "";
+    position: absolute;
+    top: 78px;
+    bottom: 78px;
+    left: 59%;
+    width: 1px;
+    background: var(--rule-soft);
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--seal);
+    margin-bottom: 22px;
+  }
+  .hero-title {
+    font-family: var(--serif-en);
+    font-size: clamp(64px, 8vw, 124px);
+    font-weight: 400;
+    line-height: .88;
+    letter-spacing: -.018em;
+    max-width: 760px;
+  }
+  .hero-title em { font-style: italic; color: var(--ink-soft); }
+  .hero-cn {
+    margin-top: 24px;
+    font-family: var(--serif-cn);
+    font-size: clamp(18px, 2.4vw, 30px);
+    letter-spacing: .36em;
+    color: var(--ink-soft);
+  }
+  .hero-dek {
+    margin-top: 36px;
+    max-width: 620px;
+    font-size: 21px;
+    line-height: 1.72;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .hero-meta {
+    margin-top: 34px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .hero-meta b { color: var(--seal); font-weight: 500; }
+
+  .hero-card {
+    align-self: end;
+    border: 1px solid var(--ink);
+    padding: 28px;
+    background: var(--paper-light);
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .hero-card::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid var(--rule-soft);
+    pointer-events: none;
+  }
+  .hero-card .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--seal);
+    position: relative;
+    z-index: 1;
+  }
+  .archive-glyph {
+    font-family: var(--serif-cn);
+    font-size: clamp(120px, 15vw, 220px);
+    line-height: .86;
+    color: var(--ink);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-card .note {
+    font-family: var(--serif-en);
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  .seal {
+    position: absolute;
+    top: 26px;
+    right: 26px;
+    width: 56px;
+    height: 56px;
+    background: var(--seal);
+    color: var(--paper-light);
+    font-family: var(--serif-cn);
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-3deg);
+    z-index: 2;
+    box-shadow: inset 0 0 0 1.5px rgba(244,237,224,.35);
+  }
+
+  section {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 88px 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+    gap: 32px;
+    align-items: end;
+    padding-bottom: 22px;
+    margin-bottom: 46px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .section-num {
+    font-family: var(--serif-cn);
+    font-size: 46px;
+    line-height: 1;
+    color: var(--seal);
+  }
+  .section-head h2 {
+    font-size: clamp(34px, 4vw, 58px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -.01em;
+  }
+  .section-head h2 em { font-style: italic; color: var(--ink-soft); }
+  .section-head .cn {
+    display: block;
+    margin-top: 10px;
+    font-family: var(--serif-cn);
+    font-size: .32em;
+    letter-spacing: .42em;
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+  .section-kicker {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .issue-anchor {
+    display: grid;
+    grid-template-columns: minmax(260px, .78fr) minmax(0, 1.22fr);
+    gap: 56px;
+    align-items: stretch;
+  }
+  .issue-spine {
+    background: var(--ink);
+    color: var(--paper-light);
+    padding: 34px 32px;
+    min-height: 460px;
+    border: 1px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .issue-spine::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(244,237,224,.18);
+  }
+  .issue-spine .top,
+  .issue-spine .bottom { position: relative; z-index: 1; }
+  .issue-spine .small {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .25em;
+    text-transform: uppercase;
+    color: rgba(244,237,224,.58);
+  }
+  .issue-spine .big {
+    font-family: var(--serif-cn);
+    font-size: clamp(100px, 13vw, 190px);
+    line-height: .82;
+    margin: 26px 0;
+    color: var(--paper-light);
+  }
+  .issue-spine h3 {
+    font-size: 34px;
+    line-height: 1;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .issue-spine .meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(244,237,224,.58);
+  }
+
+  .issue-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 34px;
+  }
+  .issue-copy .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--seal);
+    margin-bottom: 18px;
+  }
+  .issue-copy h3 {
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1.03;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    margin-bottom: 16px;
+  }
+  .issue-copy h3 em { font-style: italic; color: var(--ink-soft); }
+  .issue-copy p {
+    max-width: 650px;
+    font-size: 19px;
+    line-height: 1.72;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .issue-picks {
+    border-top: 1px solid var(--ink);
+  }
+  .pick {
+    display: grid;
+    grid-template-columns: 52px 1fr auto;
+    gap: 22px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: baseline;
+  }
+  .pick .n {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: .1em;
+  }
+  .pick .n b { color: var(--seal); font-weight: 500; }
+  .pick a,
+  .pick .future {
+    font-size: 20px;
+    line-height: 1.24;
+    font-weight: 500;
+  }
+  .pick em { font-weight: 400; font-style: italic; }
+  .pick .cn {
+    display: block;
+    margin-top: 5px;
+    font-family: var(--serif-cn);
+    font-size: 13px;
+    letter-spacing: .18em;
+    color: var(--ink-soft);
+    font-weight: 400;
+  }
+  .pick .kind {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .text-cta {
+    display: inline-block;
+    margin-top: 26px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+    transition: color .2s, border-color .2s;
+  }
+  .text-cta:hover { color: var(--seal); border-color: var(--seal); }
+
+  .filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: -12px 0 36px;
+  }
+  .filter-chip {
+    border: 1px solid var(--rule);
+    background: transparent;
+    padding: 10px 14px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .filter-chip.active {
+    border-color: var(--ink);
+    color: var(--ink);
+    background: var(--paper-light);
+  }
+  .filter-chip .count { color: var(--seal); margin-left: 5px; }
+
+  .article-shelf {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    border-top: 1px solid var(--ink);
+  }
+  .shelf-row {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr) 220px 108px;
+    gap: 28px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    align-items: start;
+  }
+  .shelf-row.lead {
+    grid-template-columns: 120px minmax(0, 1.1fr) minmax(260px, .62fr);
+    padding: 42px 0;
+    border-bottom-color: var(--ink);
+  }
+  .row-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    padding-top: 4px;
+  }
+  .row-num b { display: block; color: var(--seal); font-size: 18px; font-weight: 400; letter-spacing: 0; margin-top: 5px; }
+  .article-main h3 {
+    font-size: clamp(25px, 3vw, 42px);
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: -.006em;
+    margin-bottom: 8px;
+  }
+  .article-main h3 em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .article-main .cn {
+    font-family: var(--serif-cn);
+    font-size: 14px;
+    letter-spacing: .22em;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .article-main p {
+    max-width: 690px;
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .article-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    line-height: 1.9;
+  }
+  .article-meta b { color: var(--seal); font-weight: 500; }
+  .article-tags {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .article-tags span {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    border: 1px solid var(--rule-soft);
+    padding: 5px 7px;
+  }
+  .read-link {
+    justify-self: end;
+    align-self: end;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 3px;
+    white-space: nowrap;
+    transition: color .2s, border-color .2s;
+  }
+  .read-link:hover { color: var(--seal); border-color: var(--seal); }
+  .lead-note {
+    border: 1px solid var(--rule);
+    padding: 24px;
+    background: var(--paper-light);
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+  }
+  .lead-note .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--seal);
+  }
+  .lead-note p {
+    font-size: 17px;
+    color: var(--ink-soft);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .path-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--ink);
+  }
+  .path-card {
+    padding: 34px 30px;
+    min-height: 260px;
+    background: var(--paper-light);
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .path-card:last-child { border-right: none; }
+  .path-card .num {
+    font-family: var(--serif-cn);
+    font-size: 42px;
+    color: var(--seal);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+  .path-card h3 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .path-card h3 em { font-style: italic; color: var(--ink-soft); }
+  .path-card .cn {
+    font-family: var(--serif-cn);
+    font-size: 13px;
+    letter-spacing: .28em;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .path-card p {
+    font-size: 16px;
+    line-height: 1.62;
+    color: var(--ink-soft);
+    max-width: 320px;
+  }
+  .path-card .placeholder {
+    margin-top: 28px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .empty-state {
+    border: 1px dashed var(--rule);
+    padding: 46px 36px;
+    background: rgba(250,245,233,.54);
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .empty-state .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--seal);
+    margin-bottom: 16px;
+  }
+  .empty-state h3 {
+    font-size: 32px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .empty-state p {
+    color: var(--ink-soft);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .archive-note {
+    max-width: 760px;
+    margin: 44px auto 0;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    line-height: 1.8;
+  }
+
+  footer {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 86px 40px 28px;
+  }
+  .foot-mark {
+    text-align: center;
+    padding-bottom: 44px;
+    border-bottom: 1px solid var(--ink);
+    margin-bottom: 48px;
+  }
+  .foot-mark .ampers {
+    font-family: var(--serif-en);
+    font-size: clamp(66px, 11vw, 168px);
+    font-weight: 400;
+    line-height: .86;
+  }
+  .foot-mark .ampers em { color: var(--seal); font-style: italic; }
+  .foot-mark .cn {
+    display: block;
+    margin-top: 18px;
+    font-family: var(--serif-cn);
+    font-size: 16px;
+    letter-spacing: .52em;
+    color: var(--ink-soft);
+  }
+  .foot-cols {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr;
+    gap: 56px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  footer h5 {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--seal);
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  footer h5 .cn {
+    font-family: var(--serif-cn);
+    color: var(--ink-faint);
+    margin-left: 8px;
+    letter-spacing: .28em;
+  }
+  footer p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 430px;
+    font-style: italic;
+  }
+  footer ul { list-style: none; }
+  footer li { margin-bottom: 10px; }
+  footer a,
+  footer span[data-placeholder="true"] {
+    font-size: 15px;
+    color: var(--ink-soft);
+    transition: color .2s;
+  }
+  footer a:hover { color: var(--seal); }
+  .final-line {
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      scroll-behavior: auto !important;
+      transition-duration: .001ms !important;
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+
+  @media (max-width: 1080px) {
+    .nav-inner { grid-template-columns: 1fr; }
+    .nav-left, .nav-right { justify-content: center; }
+    .brand { order: -1; }
+    .archive-hero { grid-template-columns: 1fr; gap: 44px; }
+    .archive-hero::before { display: none; }
+    .hero-card { min-height: 300px; }
+    .issue-anchor { grid-template-columns: 1fr; }
+    .issue-spine { min-height: 340px; }
+    .shelf-row { grid-template-columns: 72px minmax(0, 1fr) 190px; }
+    .shelf-row .read-link { grid-column: 2 / 4; justify-self: start; margin-top: -10px; }
+    .shelf-row.lead { grid-template-columns: 92px minmax(0, 1fr); }
+    .lead-note { grid-column: 1 / -1; }
+    .path-grid { grid-template-columns: 1fr; }
+    .path-card { border-right: none; border-bottom: 1px solid var(--rule); min-height: 220px; }
+    .path-card:last-child { border-bottom: none; }
+  }
+
+  @media (max-width: 720px) {
+    .top-rule { padding: 7px 16px; font-size: 9px; flex-direction: column; gap: 4px; text-align: center; }
+    .site-nav { padding: 20px; }
+    .nav-left, .nav-right { gap: 14px 18px; font-size: 9px; letter-spacing: .14em; }
+    .nav-right { display: none; }
+    .brand .en { font-size: 24px; }
+    .brand .cn { font-size: 11px; letter-spacing: .42em; }
+
+    .archive-hero { padding: 58px 20px 54px; }
+    .hero-title { font-size: clamp(48px, 18vw, 70px); }
+    .hero-cn { letter-spacing: .28em; }
+    .hero-dek { font-size: 18px; margin-top: 28px; }
+    .hero-meta { gap: 8px 12px; }
+    .hero-card { padding: 24px; min-height: 260px; }
+    .archive-glyph { font-size: 120px; }
+    .seal { width: 48px; height: 48px; top: 20px; right: 20px; }
+
+    section { padding: 62px 20px; }
+    .section-head { grid-template-columns: 48px 1fr; gap: 16px; margin-bottom: 34px; }
+    .section-num { font-size: 36px; }
+    .section-kicker { grid-column: 1 / -1; text-align: left; }
+
+    .issue-spine { padding: 28px 24px; min-height: 300px; }
+    .issue-spine .big { font-size: 104px; }
+    .issue-copy h3 { font-size: 36px; }
+    .issue-copy p { font-size: 17px; }
+    .pick { grid-template-columns: 42px 1fr; gap: 12px 16px; }
+    .pick .kind { grid-column: 2; text-align: left; white-space: normal; }
+
+    .filters { margin-top: -6px; }
+    .filter-chip { font-size: 9px; padding: 9px 10px; }
+    .shelf-row, .shelf-row.lead { grid-template-columns: 1fr; gap: 16px; padding: 28px 0; }
+    .row-num { display: flex; gap: 8px; align-items: baseline; }
+    .row-num b { display: inline; margin: 0; font-size: 15px; }
+    .article-main h3 { font-size: 30px; }
+    .article-main p { font-size: 16px; }
+    .article-meta { line-height: 1.7; }
+    .shelf-row .read-link { grid-column: auto; margin: 0; }
+    .lead-note { padding: 20px; }
+
+    .path-card { padding: 28px 22px; min-height: 210px; }
+    .path-card h3 { font-size: 28px; }
+    .empty-state { padding: 36px 22px; }
+    .archive-note { font-size: 9px; }
+
+    footer { padding: 62px 20px 22px; }
+    .foot-mark .ampers { font-size: 56px; }
+    .foot-mark .cn { letter-spacing: .42em; }
+    .foot-cols { grid-template-columns: 1fr; gap: 34px; }
+    .final-line { flex-direction: column; text-align: center; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="top-rule">
+    <a href="./ink-east-v1.html">← Back to journal cover</a>
+    <span>INK & EAST · PUBLIC ARCHIVE · STATIC DRAFT</span>
+  </div>
+
+  <nav class="site-nav" aria-label="Primary">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="./ink-east-v1.html">Home</a>
+        <a href="./ink-east-issue-001-v1.html">Issues</a>
+        <a class="active" href="./ink-east-articles-archive-v1.html">Articles</a>
+        <span data-placeholder="true" aria-disabled="true">Topics</span>
+      </div>
+      <a class="brand" href="./ink-east-v1.html" aria-label="Ink & East home">
+        <span class="en">Ink <em>&amp;</em> East</span>
+        <span class="cn">墨 與 東</span>
+      </a>
+      <div class="nav-right">
+        <span data-placeholder="true" aria-disabled="true">Collections</span>
+        <span data-placeholder="true" aria-disabled="true">Search</span>
+        <span data-placeholder="true" aria-disabled="true">About</span>
+      </div>
+    </div>
+  </nav>
+
+  <header class="archive-hero">
+    <div>
+      <div class="eyebrow">Ink & East · Public Archive</div>
+      <h1 class="hero-title">The <em>Archive</em></h1>
+      <div class="hero-cn">文 庫</div>
+      <p class="hero-dek">A public shelf of essays, letters, classical readings, field notes, and issue pieces — arranged for readers who prefer a quiet path through old texts and modern confusion.</p>
+      <div class="hero-meta">
+        <span><b>24</b> public pieces</span>
+        <span>·</span>
+        <span><b>4</b> issues</span>
+        <span>·</span>
+        <span><b>7</b> themes</span>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Archive note">
+      <div class="seal">文庫</div>
+      <div class="label">Shelf note</div>
+      <div class="archive-glyph">卷</div>
+      <p class="note">The archive is not a feed. It is a cabinet: each piece kept with its issue, its question, and the path by which a reader might find it again.</p>
+    </aside>
+  </header>
+
+  <section aria-labelledby="current-issue-title">
+    <div class="section-head">
+      <div class="section-num">壹</div>
+      <h2 id="current-issue-title">Current <em>Issue</em><span class="cn">今 期</span></h2>
+      <div class="section-kicker">Issue 001<br>Spring 2026</div>
+    </div>
+
+    <div class="issue-anchor">
+      <div class="issue-spine">
+        <div class="top">
+          <div class="small">Issue No. 001 · Vol I</div>
+          <div class="big">無</div>
+        </div>
+        <div class="bottom">
+          <h3>Wu Wei is not laziness.</h3>
+          <div class="meta">8 pieces · about 40 min total</div>
+        </div>
+      </div>
+
+      <div class="issue-content">
+        <div class="issue-copy">
+          <div class="label">Currently reading from the first issue</div>
+          <h3>An issue on the unease of <em>doing nothing</em>.</h3>
+          <p>Read through Laozi, Zhuangzi, and the long tradition of Chinese thinkers who treated rest not as failure, but as a kind of intelligence.</p>
+          <a class="text-cta" href="./ink-east-issue-001-v1.html">View issue →</a>
+        </div>
+
+        <div class="issue-picks" aria-label="Selected articles from Issue 001">
+          <div class="pick">
+            <span class="n">No. <b>01</b></span>
+            <span class="future" data-placeholder="true">Wu Wei is not <em>laziness</em>.<span class="cn">無為，非懶</span></span>
+            <span class="kind">Editor's Note</span>
+          </div>
+          <div class="pick">
+            <span class="n">No. <b>03</b></span>
+            <a href="./ink-east-article-001-v1.html">Why doing nothing is sometimes the <em>hardest</em> practice.<span class="cn">為什麼休息最難</span></a>
+            <span class="kind">Modern Essay</span>
+          </div>
+          <div class="pick">
+            <span class="n">No. <b>04</b></span>
+            <span class="future" data-placeholder="true">Three passages from Laozi for <em>people who feel stuck</em>.<span class="cn">老子 · 三章選</span></span>
+            <span class="kind">Classical Reading</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="shelf-title">
+    <div class="section-head">
+      <div class="section-num">貳</div>
+      <h2 id="shelf-title">Reading <em>Shelf</em><span class="cn">目 錄</span></h2>
+      <div class="section-kicker">Public only<br>Published pieces</div>
+    </div>
+
+    <div class="filters" aria-label="Static visual grouping controls">
+      <span class="filter-chip active">All <span class="count">24</span></span>
+      <span class="filter-chip">Essays <span class="count">8</span></span>
+      <span class="filter-chip">Classical Readings <span class="count">5</span></span>
+      <span class="filter-chip">Reader Letters <span class="count">4</span></span>
+      <span class="filter-chip">Field Notes <span class="count">3</span></span>
+      <span class="filter-chip">Issue 001 <span class="count">8</span></span>
+    </div>
+
+    <div class="article-shelf">
+      <article class="shelf-row lead">
+        <div class="row-num">Featured <b>03</b></div>
+        <div class="article-main">
+          <h3><a href="./ink-east-article-001-v1.html">Why doing nothing is sometimes the <em>hardest</em> practice.</a></h3>
+          <div class="cn">為什麼休息最難</div>
+          <p>Most modern advice treats rest as a technique. The old Chinese tradition treats it as a grammar — and that, it turns out, is a much harder thing to learn.</p>
+          <div class="article-tags">
+            <span>Wu Wei</span>
+            <span>Rest</span>
+            <span>Modern Essay</span>
+          </div>
+        </div>
+        <aside class="lead-note">
+          <div class="label">Issue 001 · Modern Essay</div>
+          <p>24 min · several cups of tea<br>Published 2026.04.20</p>
+          <a class="read-link" href="./ink-east-article-001-v1.html">Read essay →</a>
+        </aside>
+      </article>
+
+      <article class="shelf-row">
+        <div class="row-num">No. <b>01</b></div>
+        <div class="article-main">
+          <h3><span data-placeholder="true">Wu Wei is not <em>laziness</em>.</span></h3>
+          <div class="cn">無為，非懶</div>
+          <p>An editor's opening note on the old misunderstanding of non-action, and why rest is not the same thing as refusal.</p>
+        </div>
+        <div class="article-meta"><b>Issue 001</b><br>Editor's Note<br>8 min · Spring 2026</div>
+        <span class="read-link" data-placeholder="true" aria-disabled="true">Preview only</span>
+      </article>
+
+      <article class="shelf-row">
+        <div class="row-num">No. <b>02</b></div>
+        <div class="article-main">
+          <h3><span data-placeholder="true">The man who could not stop <em>rearranging</em> his room.</span></h3>
+          <div class="cn">不停整理房間的人</div>
+          <p>A story about a room, a restless mind, and the mistake of believing that order always begins outside the body.</p>
+        </div>
+        <div class="article-meta"><b>Issue 001</b><br>Original Story<br>12 min · Spatial unease</div>
+        <span class="read-link" data-placeholder="true" aria-disabled="true">Preview only</span>
+      </article>
+
+      <article class="shelf-row">
+        <div class="row-num">No. <b>04</b></div>
+        <div class="article-main">
+          <h3><span data-placeholder="true">Three passages from Laozi for <em>people who feel stuck</em>.</span></h3>
+          <div class="cn">老子 · 三章選</div>
+          <p>Three short passages, translated plainly, for readers who suspect that force is no longer helping.</p>
+        </div>
+        <div class="article-meta"><b>Issue 001</b><br>Classical Reading<br>10 min · Laozi</div>
+        <span class="read-link" data-placeholder="true" aria-disabled="true">Preview only</span>
+      </article>
+
+      <article class="shelf-row">
+        <div class="row-num">No. <b>05</b></div>
+        <div class="article-main">
+          <h3><span data-placeholder="true">I rest, but I still feel <em>guilty</em>. Why?</span></h3>
+          <div class="cn">為何休息會愧疚</div>
+          <p>A reader's letter becomes a small doorway into the moral pressure that follows many modern people into silence.</p>
+        </div>
+        <div class="article-meta"><b>Issue 001</b><br>Reader Letter<br>7 min · Rest</div>
+        <span class="read-link" data-placeholder="true" aria-disabled="true">Preview only</span>
+      </article>
+
+      <article class="shelf-row">
+        <div class="row-num">No. <b>06</b></div>
+        <div class="article-main">
+          <h3><span data-placeholder="true">On the discipline of <em>letting alone</em>.</span></h3>
+          <div class="cn">不擾之道</div>
+          <p>A long read on attention, restraint, and the difficult practice of refusing to interfere too early.</p>
+        </div>
+        <div class="article-meta"><b>Issue 001</b><br>Long Read<br>18 min · Attention</div>
+        <span class="read-link" data-placeholder="true" aria-disabled="true">Preview only</span>
+      </article>
+
+      <article class="shelf-row">
+        <div class="row-num">No. <b>07</b></div>
+        <div class="article-main">
+          <h3><span data-placeholder="true">A field note from <em>Wudang</em>: walking with monks who do not hurry.</span></h3>
+          <div class="cn">武當紀行</div>
+          <p>A quiet report from a mountain path, where slowness becomes less a mood than a discipline of perception.</p>
+        </div>
+        <div class="article-meta"><b>Issue 001</b><br>Field Note<br>9 min · Wudang</div>
+        <span class="read-link" data-placeholder="true" aria-disabled="true">Preview only</span>
+      </article>
+
+      <article class="shelf-row">
+        <div class="row-num">No. <b>08</b></div>
+        <div class="article-main">
+          <h3><span data-placeholder="true">Archive: <em>three rest poems</em> from Tao Yuanming.</span></h3>
+          <div class="cn">陶淵明 · 三首</div>
+          <p>Three brief poems kept near the edge of the issue, where idleness, poverty, and clarity meet without apology.</p>
+        </div>
+        <div class="article-meta"><b>Issue 001</b><br>Archive Note<br>6 min · Poetry</div>
+        <span class="read-link" data-placeholder="true" aria-disabled="true">Preview only</span>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="paths-title">
+    <div class="section-head">
+      <div class="section-num">參</div>
+      <h2 id="paths-title">Browse by <em>Path</em><span class="cn">門 徑</span></h2>
+      <div class="section-kicker">Static references<br>for future pages</div>
+    </div>
+
+    <div class="path-grid">
+      <div class="path-card">
+        <div>
+          <div class="num">題</div>
+          <h3>Topics <em>as doors</em></h3>
+          <div class="cn">主 題</div>
+          <p>Thematic entrances into the journal: rest, attention, old texts, rooms, discipline, uncertainty.</p>
+        </div>
+        <div class="placeholder" data-placeholder="true">Future static reference</div>
+      </div>
+      <div class="path-card">
+        <div>
+          <div class="num">集</div>
+          <h3>Collections <em>as shelves</em></h3>
+          <div class="cn">輯 錄</div>
+          <p>Editor-curated reading sets with a deliberate order, meant for returning rather than scrolling.</p>
+        </div>
+        <div class="placeholder" data-placeholder="true">Future static reference</div>
+      </div>
+      <div class="path-card">
+        <div>
+          <div class="num">卷</div>
+          <h3>Issues <em>as numbers</em></h3>
+          <div class="cn">期 號</div>
+          <p>Complete journal releases, each gathered around one modern question and one older way of seeing.</p>
+        </div>
+        <a class="text-cta" href="./ink-east-issue-001-v1.html">View Issue 001 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="empty-title">
+    <div class="section-head">
+      <div class="section-num">空</div>
+      <h2 id="empty-title">Empty <em>State</em><span class="cn">無 結 果</span></h2>
+      <div class="section-kicker">Reference only<br>not an error</div>
+    </div>
+
+    <div class="empty-state">
+      <div class="label">No matching public pieces</div>
+      <h3>No public articles match this view yet.</h3>
+      <p>The shelf is not empty; only this path is. Try another topic, issue, or return to the full archive.</p>
+    </div>
+
+    <div class="archive-note">
+      More from the archive will appear as the shelf grows. This static preview does not claim implemented pagination, account access, membership content, or private draft visibility.
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-mark">
+      <div class="ampers">Ink <em>&amp;</em> East</div>
+      <span class="cn">墨 與 東</span>
+    </div>
+
+    <div class="foot-cols">
+      <div>
+        <h5>The Journal <span class="cn">關 於</span></h5>
+        <p>Ancient texts for modern confusion. A quiet digital journal, published when an issue is ready.</p>
+      </div>
+      <div>
+        <h5>Read <span class="cn">讀</span></h5>
+        <ul>
+          <li><a href="./ink-east-v1.html">Home</a></li>
+          <li><a href="./ink-east-issue-001-v1.html">Issues</a></li>
+          <li><a href="./ink-east-articles-archive-v1.html">Articles</a></li>
+          <li><span data-placeholder="true" aria-disabled="true">Topics</span></li>
+          <li><span data-placeholder="true" aria-disabled="true">Collections</span></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Reference <span class="cn">章 程</span></h5>
+        <ul>
+          <li><span data-placeholder="true" aria-disabled="true">Search</span></li>
+          <li><span data-placeholder="true" aria-disabled="true">About</span></li>
+          <li><span data-placeholder="true" aria-disabled="true">Editorial Standards</span></li>
+          <li><span data-placeholder="true" aria-disabled="true">Contact</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="final-line">
+      <span>© 2026 Ink & East · Public archive draft</span>
+      <span>Static preview only · no account or membership behavior</span>
+      <span>Set in EB Garamond, Inter & Noto Serif SC</span>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
