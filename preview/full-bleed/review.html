@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ink & East · Full-Bleed Review Helper</title>
+<style>
+  :root {
+    --paper: #f4ede0;
+    --paper-light: #faf5e9;
+    --ink: #1a1611;
+    --ink-soft: #4a4036;
+    --ink-faint: #8a7f70;
+    --seal: #a02d23;
+    --rule: rgba(26,22,17,.24);
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    --serif: Georgia, "Times New Roman", serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--paper); color: var(--ink); }
+  body { font-family: var(--serif); }
+  .review-shell { min-height: 100vh; display: grid; grid-template-rows: auto 1fr; }
+  .review-bar {
+    background: var(--ink);
+    color: var(--paper-light);
+    padding: 10px 18px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+  .review-bar strong { color: var(--paper-light); font-weight: 600; }
+  .review-bar span { color: rgba(244,237,224,.66); }
+  .review-links { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .review-links a {
+    color: rgba(244,237,224,.82);
+    text-decoration: none;
+    border: 1px solid rgba(244,237,224,.2);
+    padding: 6px 8px;
+  }
+  .review-links a.active { color: var(--paper-light); border-color: var(--seal); background: rgba(160,45,35,.3); }
+  .notice {
+    padding: 10px 18px;
+    background: var(--paper-light);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  iframe { width: 100%; height: calc(100vh - 86px); border: 0; display: block; background: var(--paper); }
+</style>
+</head>
+<body>
+<div class="review-shell">
+  <div>
+    <div class="review-bar">
+      <div><strong>Ink & East</strong> · Full-Bleed Review Helper <span id="current-name"></span></div>
+      <nav class="review-links" aria-label="Review pages">
+        <a data-file="ink-east-membership-v1.html" href="?file=ink-east-membership-v1.html">Membership</a>
+        <a data-file="ink-east-custom-ebook-v1.html" href="?file=ink-east-custom-ebook-v1.html">Custom Ebook</a>
+        <a data-file="ink-east-article-002-vip-v1.html" href="?file=ink-east-article-002-vip-v1.html">VIP Article 002</a>
+        <a data-file="ink-east-v1.html" href="?file=ink-east-v1.html">Home control</a>
+      </nav>
+    </div>
+    <div class="notice">
+      Non-destructive preview. This helper injects width / spacing overrides into the selected static page for review only. It does not change font sizes, colors, content, or apps/web.
+    </div>
+  </div>
+  <iframe id="preview-frame" title="Full-bleed preview"></iframe>
+</div>
+
+<script>
+const allowlist = new Set([
+  'ink-east-membership-v1.html',
+  'ink-east-custom-ebook-v1.html',
+  'ink-east-article-002-vip-v1.html',
+  'ink-east-v1.html'
+]);
+
+const params = new URLSearchParams(window.location.search);
+const requested = params.get('file') || 'ink-east-membership-v1.html';
+const file = allowlist.has(requested) ? requested : 'ink-east-membership-v1.html';
+const frame = document.getElementById('preview-frame');
+document.getElementById('current-name').textContent = '· ' + file;
+
+document.querySelectorAll('.review-links a').forEach((link) => {
+  if (link.dataset.file === file) link.classList.add('active');
+});
+
+const fullBleedOverride = `
+<style id="ie-full-bleed-review-override">
+  /* ============================================================
+     FULL-BLEED REVIEW OVERRIDE
+     Scope: visual preview only.
+     Rule: do not change font-size, font-family, colors, or content.
+     ============================================================ */
+
+  :root { --ie-review-gutter: clamp(28px, 5vw, 72px); }
+  html, body { width: 100% !important; max-width: none !important; overflow-x: hidden !important; }
+
+  /* Page-level blocks should spread across the viewport. */
+  body > header,
+  body > section,
+  body > footer,
+  .cover,
+  .issue-hero,
+  .article-header,
+  .article-layout,
+  .article-body,
+  .support-band,
+  .post-foot,
+  .notes-stub,
+  .mb-hero,
+  .mb-why,
+  .mb-tiers,
+  .mb-cr-aside,
+  .mb-final,
+  .ce-hero,
+  .ce-process,
+  .ce-package,
+  .ce-brief,
+  .ce-faq,
+  .ce-final,
+  .vip-hero,
+  .vip-gate,
+  .vip-body,
+  .vlib-hero,
+  .reading-room,
+  .studio,
+  .archive,
+  .dispatch,
+  footer {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Common centered layout shells: widen them, but do not touch type size. */
+  .inner,
+  .wrap,
+  .container,
+  .shell,
+  .page-shell,
+  .page-inner,
+  .content-wrap,
+  .nav-strip,
+  .mb-hero .inner,
+  .mb-why .inner,
+  .mb-tiers .wrap,
+  .mb-cr-aside .inner,
+  .mb-final .inner,
+  .ce-hero .inner,
+  .ce-process .wrap,
+  .ce-package .wrap,
+  .ce-brief .wrap,
+  .ce-faq .wrap,
+  .ce-final .inner,
+  .vip-hero .inner,
+  .vip-gate .inner,
+  .vlib-hero .inner {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Give page-level regions more horizontal spread. */
+  .backbar,
+  .nav-strip,
+  .mb-hero,
+  .mb-why,
+  .mb-tiers,
+  .mb-cr-aside,
+  .mb-final,
+  .ce-hero,
+  .ce-process,
+  .ce-package,
+  .ce-brief,
+  .ce-faq,
+  .ce-final,
+  .vip-hero,
+  .vip-gate,
+  .vlib-hero,
+  .reading-room,
+  .studio,
+  .archive,
+  .dispatch,
+  footer {
+    padding-left: var(--ie-review-gutter) !important;
+    padding-right: var(--ie-review-gutter) !important;
+  }
+
+  /* Preserve readable text lines where the old max-width was doing the right job. */
+  .article-body .body-inner,
+  .body-inner,
+  .article-content,
+  .reading-column,
+  .mb-hero p.lede,
+  .mb-why p,
+  .mb-cr-aside p,
+  .ce-hero p,
+  .ce-final p,
+  .vip-hero p,
+  .vip-gate p,
+  footer p.mission {
+    max-width: min(900px, calc(100vw - var(--ie-review-gutter) * 2)) !important;
+  }
+
+  /* Let grid systems breathe more on wide screens. */
+  .mb-two,
+  .ce-grid,
+  .ce-process-grid,
+  .ce-package-grid,
+  .vip-grid,
+  .entries-grid,
+  .archive-grid,
+  .foot-cols {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  @media (max-width: 720px) {
+    :root { --ie-review-gutter: 20px; }
+  }
+</style>`;
+
+async function loadPreview() {
+  const sourcePath = '../' + file;
+  const response = await fetch(sourcePath, { cache: 'no-store' });
+  if (!response.ok) throw new Error('Unable to fetch ' + sourcePath + ': ' + response.status);
+  let html = await response.text();
+
+  if (html.includes('</head>')) {
+    html = html.replace('</head>', fullBleedOverride + '</head>');
+  } else {
+    html = fullBleedOverride + html;
+  }
+
+  frame.srcdoc = html;
+}
+
+loadPreview().catch((error) => {
+  const escaped = String(error).replace(/[&<>]/g, (ch) => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[ch]));
+  frame.srcdoc = '<!doctype html><html><body style="font-family:monospace;padding:24px;background:#f4ede0;color:#1a1611"><h1>Preview failed</h1><pre>' + escaped + '</pre></body></html>';
+});
+</script>
+</body>
+</html>
