@@ -2,7 +2,7 @@
 
 Source upload captured from the user-provided file:
 
-`add-to-cart-concept-d-lift-settle.html`
+`preview/add-to-cart-concept-d-lift-settle.html`
 
 Purpose:
 
@@ -32,18 +32,20 @@ Important implementation boundary:
 
 This is a static preview reference only. It should not be wired into WooCommerce or `apps/web` directly from this repository without a separate implementation task.
 
+Repository status:
+
+```text
+Actual uploaded HTML path:
+preview/add-to-cart-concept-d-lift-settle.html
+
+Reference note path:
+preview/spatial-flow-add-to-cart-concept-d-lift-settle.README.md
+```
+
 Next intended action:
 
-After this preview reference is stored, continue with:
+After this preview reference is accepted, continue with:
 
 ```text
 Project 3 · Core Static Completion Pass 1
 ```
-
-The original uploaded HTML source should be added as:
-
-```text
-preview/spatial-flow-add-to-cart-concept-d-lift-settle.html
-```
-
-If the connector blocks writing raw HTML/JS, manually upload the provided HTML file to the same path or retry through a patch workflow that permits static preview HTML.
