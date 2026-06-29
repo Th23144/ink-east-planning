@@ -1,7 +1,7 @@
 # Project 3 · Static Preview Interlinking Plan
 
 > Repository: `Th23144/ink-east-planning`  
-> Scope: `preview/*.html` static-preview navigation, review-flow links, and ecommerce interaction reference wiring  
+> Scope: `preview/*.html` static-preview navigation, review-flow links, ecommerce interaction reference wiring, and static header/footer source normalization  
 > Status: planning only  
 > Does not modify `apps/web`  
 > Does not implement production WooCommerce / Next.js behavior
@@ -27,7 +27,8 @@ This is why the project has already seen issues such as:
 - a footer structure mismatch in `preview/ink-east-custom-ebook-v1.html`;
 - generated archive-page footer details that did not match the existing Ink & East static footer source;
 - static Add to Cart feedback working only inside its own concept page, not when navigating through another product page;
-- Spatial Flow's `The Journal` header link pointing to an old `spatial-flow-journal-v1.html` page instead of the Ink & East journal surface.
+- Spatial Flow's `The Journal` header link pointing to an old `spatial-flow-journal-v1.html` page instead of the Ink & East journal surface;
+- individual pages having headers, navs, and occasional footers that are visually similar but not actually the same source structure.
 
 The goal of this pass is **not** to merge all static pages into one real app yet.
 
@@ -35,6 +36,12 @@ The goal is narrower:
 
 ```text
 Make the static previews reviewable like a connected website, so the user can click through them without manually editing URLs.
+```
+
+A later-but-still-static cleanup goal is also required:
+
+```text
+Make static preview headers and footers source-consistent before real shared components are built, so future source/component migration does not have multiple competing header/footer versions.
 ```
 
 ---
@@ -210,29 +217,28 @@ Status now:
 
 ```text
 PR #34 Articles Archive static reference has been accepted and merged.
+PR #36 Custom Ebook Studio middle-section redesign has been accepted and merged.
 ```
 
 Still pending from external frontend AI:
 
 ```text
-1. Custom Ebook redesign
-2. Membership right-side empty-space refinement
+1. Membership right-side empty-space refinement
 ```
 
-These should be processed as separate PRs, not mixed with the interlinking pass.
+This should be processed as a separate PR, not mixed with the interlinking pass.
 
 Recommended order:
 
 ```text
-1. Process Custom Ebook file.
-2. Process Membership file.
-3. Then run the interlinking/link-audit pass once the new files are in main.
+1. Process Membership file.
+2. Then run the interlinking/link-audit pass once the new file is in main.
 ```
 
 Reason:
 
 ```text
-If links are cleaned before Custom Ebook and Membership are replaced, the same links may need to be fixed twice.
+If links are cleaned before Membership is replaced, the same links may need to be fixed twice.
 ```
 
 ---
@@ -364,19 +370,81 @@ Option A if the user only wants quick click-through review.
 
 ---
 
+### Pass 8 — Header/Footer source normalization
+
+Reason:
+
+```text
+Some individual preview pages have headers, navs, or occasional footers that look close to the rest of the site, but are not actually the same source structure.
+```
+
+This is not only a visual issue. It is a future migration issue.
+
+If multiple independent header/footer variants remain in `preview/*.html`, then when the project later builds shared source components, it becomes unclear which static page should be treated as the canonical source.
+
+Goal:
+
+```text
+Before real shared components are built, normalize preview-page header and footer source structures so there is one clear canonical header/footer direction per site area.
+```
+
+Important:
+
+```text
+This pass should not merely make pages look similar.
+It should make the independent static page source structures match where they are meant to represent the same shared component.
+```
+
+Canonical candidates to identify during audit:
+
+```text
+Ink & East public journal header
+Ink & East service/studio header
+Ink & East public journal footer
+Spatial Flow ecommerce header
+Spatial Flow ecommerce footer
+```
+
+Actions:
+
+```text
+1. Audit every preview page's header/nav/footer source blocks.
+2. Classify each page by site area: Ink & East public, Ink & East service/studio, Spatial Flow ecommerce, legacy/archival.
+3. Pick canonical header/footer source for each area.
+4. Replace divergent copies with the canonical block, only adjusting active states and valid relative links.
+5. Mark legacy-only pages clearly so they are not used as source-component references.
+```
+
+Do not do in this pass:
+
+```text
+Do not redesign headers or footers.
+Do not merge pages into a real app.
+Do not build React/Next.js components yet.
+Do not change page body layout unless required to fix header/footer breakage.
+```
+
+Expected PR:
+
+```text
+preview(ink-east): normalize static header footer sources
+```
+
+This is intentionally placed after interlinking and Add to Cart static decisions because those steps reveal which preview pages are still active and which pages are only legacy references.
+
+---
+
 ## 6. Timing recommendation
 
 ### Now
 
 ```text
-Merge PR #34 if visual review is accepted.
-Receive the two external AI files whenever ready.
+Receive the remaining Membership external AI file whenever ready.
 ```
 
 ### Next
 
 ```text
-Process Custom Ebook redesign as its own PR.
 Process Membership refinement as its own PR.
 ```
 
@@ -392,6 +460,12 @@ Run Pass 3 Spatial Flow static navigation fix, including The Journal link.
 
 ```text
 Handle Add to Cart feedback integration as either a link-only static review path or a product-detail static preview integration.
+```
+
+### Later in the static-preview cleanup sequence
+
+```text
+Run Pass 8 header/footer source normalization so independent static pages have consistent source blocks before shared components are built.
 ```
 
 ---
@@ -417,5 +491,5 @@ Do not mix multiple page replacements with navigation cleanup unless explicitly 
 ## 8. Final summary
 
 ```text
-Project 3 static previews are still independent files, not a shared app. The next practical goal is to make them reviewable as a connected static site: correct internal links, correct Journal destination, no legacy Spatial Flow Journal routing, no raw placeholder anchors, and a clear decision on how the Add to Cart feedback concept should appear in the product-preview journey. Full source/component integration comes later.
+Project 3 static previews are still independent files, not a shared app. The next practical goal is to make them reviewable as a connected static site: correct internal links, correct Journal destination, no legacy Spatial Flow Journal routing, no raw placeholder anchors, and a clear decision on how the Add to Cart feedback concept should appear in the product-preview journey. After that, a dedicated header/footer source-normalization pass is needed so future shared-component work has one clear canonical source instead of multiple visually similar but structurally different page shells.
 ```
