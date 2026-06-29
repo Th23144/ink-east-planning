@@ -64,7 +64,7 @@
     <div class="review-bar">
       <div><strong>Ink & East</strong> · Targeted Layout Review <span id="current-name"></span></div>
       <nav class="review-links" aria-label="Review pages">
-        <a data-file="ink-east-membership-v1.html" href="?file=ink-east-membership-v1.html">Membership</a>
+        <a data-file="ink-east-membership-v1.html" href="?file=ink-east-membership-v1.html">Membership wide</a>
         <a data-file="ink-east-custom-ebook-v1.html" href="?file=ink-east-custom-ebook-v1.html">Custom Ebook original</a>
         <a data-file="ink-east-article-002-vip-v1.html" href="?file=ink-east-article-002-vip-v1.html">VIP Article 002</a>
         <a data-file="ink-east-v1.html" href="?file=ink-east-v1.html">Home original</a>
@@ -104,23 +104,15 @@ const base = `
 
 const overrides = {
   'ink-east-membership-v1.html': {
-    note: 'Membership: invitation hero remains widened but is slightly contained to reduce the empty right side; the two-tier section remains widened. Other sections remain original.',
+    note: 'Membership: restored to the earlier widened preview. The invitation hero and two-tier section are widened; right-side empty-space refinement is deferred to another frontend AI. Other sections remain original.',
     css: `
 <style id="ie-targeted-membership-review">
   .mb-hero { padding-left: var(--ie-review-gutter) !important; padding-right: var(--ie-review-gutter) !important; }
-  .mb-hero .inner {
-    width: min(1280px, 100%) !important;
-    max-width: 1280px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+  .mb-hero .inner { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
   .mb-tiers { padding-left: var(--ie-review-gutter) !important; padding-right: var(--ie-review-gutter) !important; }
   .mb-tiers .wrap { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
   .mb-two { width: 100% !important; max-width: none !important; }
-  @media (max-width:760px){
-    .mb-hero,.mb-tiers{padding-left:22px!important;padding-right:22px!important;}
-    .mb-hero .inner{width:100%!important;max-width:none!important;}
-  }
+  @media (max-width:760px){ .mb-hero,.mb-tiers{padding-left:22px!important;padding-right:22px!important;} }
 </style>`
   },
 
@@ -130,7 +122,7 @@ const overrides = {
   },
 
   'ink-east-article-002-vip-v1.html': {
-    note: 'VIP Article 002: only the top article hero/header is widened. Article body remains unchanged, and the left sidebar sticky behavior is preserved.',
+    note: 'VIP Article 002: accepted direction. Only the top article hero/header is widened. Article body remains unchanged, and the left sidebar sticky behavior is preserved.',
     css: `
 <style id="ie-targeted-vip-article-review">
   html, body { overflow-x: visible !important; }
