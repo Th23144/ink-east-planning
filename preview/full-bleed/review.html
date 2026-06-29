@@ -10,7 +10,6 @@
     --paper-light: #faf5e9;
     --ink: #1a1611;
     --ink-soft: #4a4036;
-    --ink-faint: #8a7f70;
     --seal: #a02d23;
     --rule: rgba(26,22,17,.24);
     --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
@@ -66,13 +65,13 @@
       <div><strong>Ink & East</strong> · Targeted Layout Review <span id="current-name"></span></div>
       <nav class="review-links" aria-label="Review pages">
         <a data-file="ink-east-membership-v1.html" href="?file=ink-east-membership-v1.html">Membership</a>
-        <a data-file="ink-east-custom-ebook-v1.html" href="?file=ink-east-custom-ebook-v1.html">Custom Ebook</a>
+        <a data-file="ink-east-custom-ebook-v1.html" href="?file=ink-east-custom-ebook-v1.html">Custom Ebook original</a>
         <a data-file="ink-east-article-002-vip-v1.html" href="?file=ink-east-article-002-vip-v1.html">VIP Article 002</a>
-        <a data-file="ink-east-v1.html" href="?file=ink-east-v1.html">Home footer swap</a>
+        <a data-file="ink-east-v1.html" href="?file=ink-east-v1.html">Home original</a>
       </nav>
     </div>
     <div class="notice" id="notice">
-      Non-destructive preview. This helper injects targeted CSS into the selected static page for review only. It does not modify original files, apps/web, fonts, or content.
+      Non-destructive preview. This helper injects targeted CSS into selected pages for review only. It does not modify original files, apps/web, fonts, or content.
     </div>
   </div>
   <iframe id="preview-frame" title="Targeted layout preview"></iframe>
@@ -99,126 +98,55 @@ document.querySelectorAll('.review-links a').forEach((link) => {
 
 const base = `
 <style id="ie-targeted-review-base">
-  html, body { overflow-x: hidden !important; }
   :root { --ie-review-gutter: clamp(28px, 5vw, 72px); }
   @media (max-width:720px){ :root { --ie-review-gutter: 20px; } }
 </style>`;
 
 const overrides = {
   'ink-east-membership-v1.html': {
-    note: 'Membership: only the invitation hero and two-tier section are widened. Other sections remain in the original layout.',
+    note: 'Membership: invitation hero remains widened but is slightly contained to reduce the empty right side; the two-tier section remains widened. Other sections remain original.',
     css: `
 <style id="ie-targeted-membership-review">
   .mb-hero { padding-left: var(--ie-review-gutter) !important; padding-right: var(--ie-review-gutter) !important; }
-  .mb-hero .inner { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
+  .mb-hero .inner {
+    width: min(1280px, 100%) !important;
+    max-width: 1280px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
   .mb-tiers { padding-left: var(--ie-review-gutter) !important; padding-right: var(--ie-review-gutter) !important; }
   .mb-tiers .wrap { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
   .mb-two { width: 100% !important; max-width: none !important; }
-  @media (max-width:760px){ .mb-hero,.mb-tiers{padding-left:22px!important;padding-right:22px!important;} }
+  @media (max-width:760px){
+    .mb-hero,.mb-tiers{padding-left:22px!important;padding-right:22px!important;}
+    .mb-hero .inner{width:100%!important;max-width:none!important;}
+  }
 </style>`
   },
 
   'ink-east-custom-ebook-v1.html': {
-    note: 'Custom Ebook: hero and premise sections are widened for comparison; premise is slightly offset to test staggered visual rhythm. Footer styling is temporarily repaired in this preview because the original file has a footer CSS/class mismatch.',
-    css: `
-<style id="ie-targeted-custom-ebook-review">
-  :root { --ce-wide-gutter: clamp(48px, 7vw, 132px); --ce-offset: clamp(24px, 4vw, 84px); }
-
-  .page { max-width: 980px !important; margin-left: auto !important; margin-right: auto !important; }
-
-  .page > .hero {
-    width: calc(100vw - var(--ce-wide-gutter) * 2) !important;
-    max-width: none !important;
-    margin-left: calc(50% - 50vw + var(--ce-wide-gutter)) !important;
-    margin-right: 0 !important;
-    padding: 72px clamp(80px, 12vw, 220px) 78px !important;
-    border-top: 1px solid var(--rule) !important;
-    border-bottom: 1px solid var(--rule) !important;
-  }
-
-  .page > .premise {
-    width: calc(100vw - var(--ce-wide-gutter) * 2 - var(--ce-offset)) !important;
-    max-width: none !important;
-    margin-left: calc(50% - 50vw + var(--ce-wide-gutter) + var(--ce-offset)) !important;
-    margin-right: 0 !important;
-    padding: 76px clamp(72px, 10vw, 190px) 82px !important;
-    border: 1px solid var(--rule) !important;
-    background: rgba(250,245,233,.34) !important;
-  }
-
-  .page > .premise .prose { max-width: 68ch !important; }
-
-  /* Temporary footer repair for this preview: original CSS defines .site-foot,
-     but the HTML uses a bare <footer> with .foot-mark/.foot-cols classes. */
-  footer {
-    background: var(--paper-soft) !important;
-    color: var(--ink) !important;
-    border-top: 1px solid var(--rule) !important;
-    padding: 90px 56px 28px !important;
-    margin-top: 80px !important;
-  }
-  footer .foot-mark { text-align: center !important; padding-bottom: 48px !important; border-bottom: 1px solid var(--ink) !important; margin-bottom: 56px !important; }
-  footer .foot-mark .ampers { font-family: var(--serif) !important; font-size: clamp(80px,12vw,200px) !important; font-weight: 400 !important; line-height: .85 !important; letter-spacing: -.01em !important; }
-  footer .foot-mark .ampers em { color: var(--seal) !important; font-style: italic !important; }
-  footer .foot-mark .cn { display:block!important; font-family:var(--serif-cn)!important; font-size:18px!important; letter-spacing:.5em!important; color:var(--ink-soft)!important; margin-top:18px!important; }
-  footer .foot-mark .sub { display:block!important; font-family:var(--mono)!important; font-size:10px!important; letter-spacing:.3em!important; text-transform:uppercase!important; color:var(--ink-soft)!important; margin-top:16px!important; }
-  footer .foot-cols { display:grid!important; grid-template-columns:1.4fr 1fr 1fr 1fr!important; gap:56px!important; padding-bottom:40px!important; border-bottom:1px solid var(--rule)!important; max-width:none!important; margin:0!important; }
-  footer h5 { font-family:var(--mono)!important; font-size:10px!important; letter-spacing:.3em!important; text-transform:uppercase!important; color:var(--seal)!important; margin-bottom:22px!important; font-weight:500!important; }
-  footer h5 .cn { font-family:var(--serif-cn)!important; color:var(--ink-soft)!important; margin-left:10px!important; letter-spacing:.3em!important; }
-  footer p.mission { font-family:var(--serif)!important; font-style:italic!important; font-size:17px!important; line-height:1.7!important; color:var(--ink-soft)!important; max-width:380px!important; margin-bottom:22px!important; }
-  footer .also-by { font-family:var(--serif)!important; font-size:13px!important; color:var(--ink-soft)!important; line-height:1.7!important; }
-  footer ul { list-style:none!important; }
-  footer li { margin-bottom:11px!important; }
-  footer a { font-family:var(--serif)!important; font-size:15px!important; color:var(--ink-soft)!important; }
-  footer .colophon-final { padding-top:24px!important; font-family:var(--mono)!important; font-size:10px!important; letter-spacing:.18em!important; text-transform:uppercase!important; color:var(--ink-soft)!important; display:flex!important; justify-content:space-between!important; gap:24px!important; flex-wrap:wrap!important; }
-
-  @media (max-width:760px){
-    .page > .hero,.page > .premise{width:auto!important;margin-left:0!important;margin-right:0!important;padding:36px 0 48px!important;border-left:0!important;border-right:0!important;}
-    footer{padding:56px 22px 24px!important;}
-    footer .foot-cols{grid-template-columns:1fr!important;gap:32px!important;}
-  }
-</style>`
+    note: 'Custom Ebook: no layout override is applied now. This page should be redesigned by another frontend pass. The original footer bug is intentionally visible here.',
+    css: ''
   },
 
   'ink-east-article-002-vip-v1.html': {
-    note: 'VIP Article 002: only the top article hero/header is widened. Article body and reading column remain unchanged.',
+    note: 'VIP Article 002: only the top article hero/header is widened. Article body remains unchanged, and the left sidebar sticky behavior is preserved.',
     css: `
 <style id="ie-targeted-vip-article-review">
+  html, body { overflow-x: visible !important; }
   .article-header { padding-left: var(--ie-review-gutter) !important; padding-right: var(--ie-review-gutter) !important; }
   .article-header .inner { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
   .article-dek { max-width: 760px !important; }
+  .article-layout { overflow: visible !important; }
+  .article-sidebar { position: relative !important; overflow: visible !important; }
+  .sidebar-inner { position: sticky !important; top: 32px !important; }
   @media (max-width:760px){ .article-header{padding-left:22px!important;padding-right:22px!important;} }
 </style>`
   },
 
   'ink-east-v1.html': {
-    note: 'Home: control preview only. Newsletter/dispatch background and footer background are swapped for visual comparison.',
-    css: `
-<style id="ie-targeted-home-footer-swap-review">
-  .dispatch { background: var(--paper) !important; color: var(--ink) !important; border-bottom: 1px solid var(--ink) !important; }
-  .dispatch::before { color: rgba(26,22,17,.035) !important; }
-  .dispatch .label { color: var(--seal) !important; }
-  .dispatch h3 { color: var(--ink) !important; }
-  .dispatch .cn { color: var(--ink-soft) !important; }
-  .dispatch p { color: var(--ink-soft) !important; }
-  .dispatch form { border-color: var(--rule) !important; }
-  .dispatch input { color: var(--ink) !important; }
-  .dispatch input::placeholder { color: var(--ink-faint) !important; }
-  .dispatch .fine { color: var(--ink-faint) !important; }
-
-  footer { background: var(--ink) !important; color: var(--paper-light) !important; }
-  footer .foot-mark { border-bottom-color: rgba(244,237,224,.32) !important; }
-  footer .foot-mark .cn,
-  footer .foot-mark .sub,
-  footer h5 .cn,
-  footer p.mission,
-  footer .also-by,
-  footer a,
-  footer .colophon-final { color: rgba(244,237,224,.66) !important; }
-  footer h5 { color: var(--seal) !important; }
-  footer .foot-cols { border-bottom-color: rgba(244,237,224,.22) !important; }
-  footer .also-by a { color: var(--paper-light) !important; border-bottom-color: rgba(244,237,224,.32) !important; }
-</style>`
+    note: 'Home: no background swap or width override is applied. This is the original Home preview inside the helper frame.',
+    css: ''
   }
 };
 
