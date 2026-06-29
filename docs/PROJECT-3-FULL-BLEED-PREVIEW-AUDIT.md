@@ -1,7 +1,7 @@
-# Project 3 · Full-Bleed Static Preview Audit
+# Project 3 · Targeted Full-Bleed Static Preview Audit
 
 > Repository: `Th23144/ink-east-planning`  
-> Scope: Ink & East static preview width / full-bleed review  
+> Scope: Ink & East static preview width / selected section layout review  
 > Status: audit + preview harness only  
 > Branch preview helper: `preview/full-bleed/review.html`
 
@@ -9,19 +9,16 @@
 
 ## 0. Purpose
 
-This audit records the static preview pages that may suffer from a narrow, boxed, or small-page feeling because large layout wrappers use `max-width` with centered margins.
+This audit records a targeted layout review for static preview pages that can feel too narrow or boxed on wide screens.
 
-The user specifically identified this recurring issue:
-
-```text
-The whole page can feel trapped inside a narrow centered width instead of spreading across the viewport like the stronger existing static references.
-```
-
-The review rule for this pass:
+The current rule is narrower than the first full-bleed experiment:
 
 ```text
+Do not blindly widen every page.
+Only widen the specific sections the user selected.
 Do not change font sizes.
-Only test full-bleed / wider layout behavior, spacing, and container width.
+Do not change content.
+Do not modify apps/web.
 ```
 
 ---
@@ -40,217 +37,145 @@ Acceptable `max-width` examples:
 
 Problematic `max-width` examples:
 
-- full hero content trapped in a narrow centered `.inner`;
-- whole sections wrapped in a narrow `.wrap`;
-- repeated page-level layout shells using `max-width` and `margin: 0 auto`;
-- large landing pages that should feel like full-width editorial spreads but instead read like cards inside a page.
-
-Therefore, this audit does not say all `max-width` should be deleted. It says large page-level containers should be tested as full-bleed, while reading comfort can remain controlled inside specific text blocks.
+- large hero / invitation surfaces trapped in a narrow centered `.inner`;
+- full-width service statement panels forced into a narrow `.page` shell;
+- article headers that should feel like editorial front matter but are constrained to the reading column;
+- page-level footer backgrounds that feel visually disconnected from the rest of the journal.
 
 ---
 
-## 2. Initial search results
+## 2. First batch and current targeted decisions
 
-Search patterns used:
-
-```text
-"max-width" "margin: 0 auto" "preview/"
-"max-width:" "preview/ink-east"
-"margin:0 auto" "preview/ink-east"
-"margin: 0 auto" "preview/ink-east"
-```
-
-Pages surfaced by search:
-
-| Page | Search status | Initial classification |
+| Page | User decision | Current preview helper behavior |
 |---|---|---|
-| `preview/ink-east-membership-v1.html` | Found | High priority full-bleed review |
-| `preview/ink-east-custom-ebook-v1.html` | Found | High priority full-bleed review |
-| `preview/ink-east-article-002-vip-v1.html` | Found | Medium/high priority review; protect reading column |
-| `preview/ink-east-v1.html` | Found | Mixed; mostly full-spread already, but has some constrained blocks |
-
-Pages not surfaced by this first search may still require visual review later, but the four above are the first batch.
+| `preview/ink-east-membership-v1.html` | Expand only the hero invitation area and the two-way membership section. Keep other sections unchanged. | Only `.mb-hero .inner` and `.mb-tiers .wrap` are widened. |
+| `preview/ink-east-custom-ebook-v1.html` | Expand the hero panel and premise panel. Give the second expanded panel a slight offset feeling. Also note that the page overall feels strange and should likely be redesigned by a stronger frontend pass. | Hero and premise are widened only in the helper. Premise is slightly offset. Footer styles are temporarily repaired because the original footer structure is visually broken. |
+| `preview/ink-east-article-002-vip-v1.html` | Expand only the article hero/header. Keep the rest unchanged. | Only `.article-header .inner` is widened; reading/body columns stay unchanged. |
+| `preview/ink-east-v1.html` | Do not blindly widen Home. Instead preview swapping the newsletter/dispatch background and the footer background. If good, later consider syncing journal footers. | Home helper only swaps `.dispatch` and `footer` background/color treatment. |
 
 ---
 
-## 3. First-batch pages for preview
+## 3. Preview links
 
-This branch adds a preview helper that can load the original static page and inject width-only/full-bleed override CSS for visual comparison.
+### Membership
 
-The first batch is:
+Original:
 
 ```text
-preview/ink-east-membership-v1.html
-preview/ink-east-custom-ebook-v1.html
-preview/ink-east-article-002-vip-v1.html
-preview/ink-east-v1.html
+https://raw.githack.com/Th23144/ink-east-planning/main/preview/ink-east-membership-v1.html
 ```
 
-The helper is:
+Targeted review:
 
 ```text
-preview/full-bleed/review.html
+https://raw.githack.com/Th23144/ink-east-planning/project-3-full-bleed-preview-audit/preview/full-bleed/review.html?file=ink-east-membership-v1.html
 ```
 
-It does not modify the original files. It is a review harness.
+### Custom Ebook
 
----
-
-## 4. What the preview helper changes
-
-The helper attempts to change only layout containment and spacing.
-
-Allowed changes:
-
-- page-level container width;
-- section/hero/footer horizontal spread;
-- page-level gutter behavior;
-- wrapper `max-width` behavior;
-- centered large wrappers that make pages feel small;
-- full-bleed preview framing.
-
-Forbidden changes:
-
-- font-size changes;
-- font-family changes;
-- color changes;
-- content changes;
-- nav text changes;
-- module additions;
-- source app implementation;
-- `apps/web` changes.
-
----
-
-## 5. Review notes by page
-
-### 5.1 `preview/ink-east-membership-v1.html`
-
-Observed risk:
-
-- `.mb-hero .inner` uses `max-width: 880px; margin: 0 auto`;
-- `.mb-why .inner` uses `max-width: 780px; margin: 0 auto`;
-- `.mb-tiers .wrap` uses `max-width: 1100px; margin: 0 auto`;
-- `.mb-cr-aside .inner` uses `max-width: 780px; margin: 0 auto`.
-
-Classification:
+Original:
 
 ```text
-High priority.
-Likely to feel boxed on wide screens.
+https://raw.githack.com/Th23144/ink-east-planning/main/preview/ink-east-custom-ebook-v1.html
 ```
 
-Preview goal:
+Targeted review:
 
 ```text
-Keep typography size unchanged, but let major membership sections breathe across the viewport.
+https://raw.githack.com/Th23144/ink-east-planning/project-3-full-bleed-preview-audit/preview/full-bleed/review.html?file=ink-east-custom-ebook-v1.html
+```
+
+### VIP Article 002
+
+Original:
+
+```text
+https://raw.githack.com/Th23144/ink-east-planning/main/preview/ink-east-article-002-vip-v1.html
+```
+
+Targeted review:
+
+```text
+https://raw.githack.com/Th23144/ink-east-planning/project-3-full-bleed-preview-audit/preview/full-bleed/review.html?file=ink-east-article-002-vip-v1.html
+```
+
+### Home footer swap
+
+Original:
+
+```text
+https://raw.githack.com/Th23144/ink-east-planning/main/preview/ink-east-v1.html
+```
+
+Targeted review:
+
+```text
+https://raw.githack.com/Th23144/ink-east-planning/project-3-full-bleed-preview-audit/preview/full-bleed/review.html?file=ink-east-v1.html
 ```
 
 ---
 
-### 5.2 `preview/ink-east-custom-ebook-v1.html`
+## 4. Custom Ebook bug note
 
-Observed risk:
+The Custom Ebook page has a real footer styling bug in the original file.
 
-- surfaced by `max-width` + `margin:0 auto` search;
-- historically already had footer consistency review issues;
-- likely uses centered shells for service/studio content.
-
-Classification:
+Observed:
 
 ```text
-High priority.
-Needs wide-layout review before any future reuse.
+The CSS defines `.site-foot`, `.foot-cols`, `.foot-meta`, etc.
+The HTML at the bottom uses a bare `<footer>` with `.foot-mark`, `.foot-cols`, and `.colophon-final`.
 ```
 
-Preview goal:
+Result:
 
 ```text
-Test whether service/studio panels can feel more editorial and less boxed without changing font sizes.
+The footer layout appears structurally broken in the original preview.
 ```
+
+The helper temporarily injects footer styles so the user can continue layout review, but the original file still needs a proper bug-fix PR if this page remains in use.
 
 ---
 
-### 5.3 `preview/ink-east-article-002-vip-v1.html`
+## 5. Simple external AI prompt for Custom Ebook redesign
 
-Observed risk:
-
-- surfaced by `max-width` + centered layout search;
-- VIP article page may contain both legitimate reading-width constraints and page-level boxed areas.
-
-Classification:
+Use this if another frontend-focused AI should freely improve the Custom Ebook page without over-constraining it:
 
 ```text
-Medium/high priority.
-Protect article reading columns; only widen page-level framing and non-reading wrappers.
-```
+Please redesign this Ink & East Custom Ebook Studio static page to feel more beautiful, editorial, spacious, and premium.
 
-Preview goal:
+Keep the existing Ink & East brand direction: quiet literary journal, warm paper, black ink, vermilion accent, Chinese classical texture, English-first writing with small Chinese labels.
 
-```text
-Keep article body readable, but widen surrounding page sections / paywall surfaces if they feel small.
-```
+The page currently feels visually awkward and too narrow. Please improve the overall page rhythm, make the hero section and the main premise section feel more expansive, and give those major sections a stronger editorial layout. The second expanded section should not simply repeat the first; give it some subtle offset or staggered visual rhythm.
 
----
+Also fix the footer layout so it matches the rest of Ink & East's journal footer style and is not structurally broken.
 
-### 5.4 `preview/ink-east-v1.html`
+You may freely improve layout, spacing, hierarchy, and section composition. Do not turn it into a SaaS landing page, ecommerce sales page, marketing funnel, or generic agency website. Keep it literary, quiet, expensive, and editorial.
 
-Observed risk:
-
-- surfaced by search, but the homepage already has many full-width sections;
-- some `max-width` uses are probably legitimate line-length/form constraints.
-
-Classification:
-
-```text
-Mixed.
-Use as a control page, not an automatic rewrite target.
-```
-
-Preview goal:
-
-```text
-Compare carefully. Do not remove useful editorial line-length constraints just because they contain max-width.
+Return a single complete self-contained HTML file with CSS inside <style>.
 ```
 
 ---
 
 ## 6. Next decision after preview
 
-After reviewing the full-bleed helper pages, choose one of these paths:
+After reviewing the targeted helper pages, choose one of these paths:
 
-### Path A — accept full-bleed direction
+### Path A — apply selected layout cleanup to original static files
 
-Create a real static cleanup PR that directly updates the original affected HTML files.
+Create a real static cleanup PR for only the accepted page/section changes.
 
-Rules:
+### Path B — only fix Custom Ebook footer bug
 
-```text
-No font-size changes.
-No content changes.
-No source app changes.
-Only layout containment / section width / spacing cleanup.
-```
+Do not adopt layout changes yet; only repair the original Custom Ebook footer CSS/HTML mismatch.
 
-### Path B — accept only some pages
+### Path C — use Custom Ebook prompt externally
 
-Apply full-bleed cleanup only to selected pages, likely:
-
-```text
-preview/ink-east-membership-v1.html
-preview/ink-east-custom-ebook-v1.html
-```
-
-Leave article reading pages mostly unchanged.
-
-### Path C — reject helper approach
-
-Use the helper only as a visual diagnostic and wait for a stronger frontend pass to rewrite the layout properly.
+Let a stronger frontend AI redesign Custom Ebook first, then review and archive its generated HTML.
 
 ---
 
 ## 7. Final summary
 
 ```text
-The first width audit found four Ink & East static pages with possible page-level max-width / centered-wrapper issues: Membership, Custom Ebook, VIP Article 002, and Home. Membership and Custom Ebook are highest priority. VIP Article needs careful protection of reading columns. Home is mostly a control page. This branch adds a non-destructive preview helper so the user can compare full-bleed layout behavior before any original HTML files are modified.
+The review has moved from a broad full-bleed experiment to targeted layout tests: Membership hero + tiers only; Custom Ebook hero + premise + temporary footer repair; VIP Article 002 hero only; Home footer/newsletter background swap only. The helper remains non-destructive and does not modify original static files or apps/web.
 ```
