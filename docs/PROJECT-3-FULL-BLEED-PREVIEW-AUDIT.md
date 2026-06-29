@@ -11,7 +11,7 @@
 
 This audit records a targeted layout review for static preview pages that can feel too narrow or boxed on wide screens.
 
-The current rule is narrower than the first full-bleed experiment:
+The current rule is intentionally narrow:
 
 ```text
 Do not blindly widen every page.
@@ -23,39 +23,18 @@ Do not modify apps/web.
 
 ---
 
-## 1. Important distinction
+## 1. Current targeted decisions
 
-Not every `max-width` is wrong.
-
-Acceptable `max-width` examples:
-
-- article reading columns;
-- paragraph line-length controls;
-- form fields;
-- small notes;
-- editorial captions.
-
-Problematic `max-width` examples:
-
-- large hero / invitation surfaces trapped in a narrow centered `.inner`;
-- full-width service statement panels forced into a narrow `.page` shell;
-- article headers that should feel like editorial front matter but are constrained to the reading column;
-- page-level footer backgrounds that feel visually disconnected from the rest of the journal.
-
----
-
-## 2. First batch and current targeted decisions
-
-| Page | User decision | Current preview helper behavior |
+| Page | User decision | Current helper behavior |
 |---|---|---|
-| `preview/ink-east-membership-v1.html` | Expand only the hero invitation area and the two-way membership section. Keep other sections unchanged. | Only `.mb-hero .inner` and `.mb-tiers .wrap` are widened. |
-| `preview/ink-east-custom-ebook-v1.html` | Expand the hero panel and premise panel. Give the second expanded panel a slight offset feeling. Also note that the page overall feels strange and should likely be redesigned by a stronger frontend pass. | Hero and premise are widened only in the helper. Premise is slightly offset. Footer styles are temporarily repaired because the original footer structure is visually broken. |
-| `preview/ink-east-article-002-vip-v1.html` | Expand only the article hero/header. Keep the rest unchanged. | Only `.article-header .inner` is widened; reading/body columns stay unchanged. |
-| `preview/ink-east-v1.html` | Do not blindly widen Home. Instead preview swapping the newsletter/dispatch background and the footer background. If good, later consider syncing journal footers. | Home helper only swaps `.dispatch` and `footer` background/color treatment. |
+| `preview/ink-east-membership-v1.html` | The hero and two-way membership section are acceptable, but the hero's right side felt too empty. | Hero remains widened but is slightly contained to reduce empty right-side space. Two-way membership section remains widened. Other sections remain original. |
+| `preview/ink-east-custom-ebook-v1.html` | The targeted version was rejected. The page should be given to another frontend AI for a freer redesign. | No layout override is applied. Original page is shown only. Footer bug remains documented. |
+| `preview/ink-east-article-002-vip-v1.html` | Top article hero/header widening is acceptable, but left sidebar sticky behavior broke. | Top hero remains widened. Sticky sidebar is explicitly preserved in the helper. Article body remains unchanged. |
+| `preview/ink-east-v1.html` | Footer/newsletter background swap was rejected. Keep original. | No background swap or width override is applied. Original Home is shown only. |
 
 ---
 
-## 3. Preview links
+## 2. Preview links
 
 ### Membership
 
@@ -79,7 +58,7 @@ Original:
 https://raw.githack.com/Th23144/ink-east-planning/main/preview/ink-east-custom-ebook-v1.html
 ```
 
-Targeted review:
+Helper view, now original only:
 
 ```text
 https://raw.githack.com/Th23144/ink-east-planning/project-3-full-bleed-preview-audit/preview/full-bleed/review.html?file=ink-east-custom-ebook-v1.html
@@ -99,7 +78,7 @@ Targeted review:
 https://raw.githack.com/Th23144/ink-east-planning/project-3-full-bleed-preview-audit/preview/full-bleed/review.html?file=ink-east-article-002-vip-v1.html
 ```
 
-### Home footer swap
+### Home
 
 Original:
 
@@ -107,7 +86,7 @@ Original:
 https://raw.githack.com/Th23144/ink-east-planning/main/preview/ink-east-v1.html
 ```
 
-Targeted review:
+Helper view, now original only:
 
 ```text
 https://raw.githack.com/Th23144/ink-east-planning/project-3-full-bleed-preview-audit/preview/full-bleed/review.html?file=ink-east-v1.html
@@ -115,7 +94,7 @@ https://raw.githack.com/Th23144/ink-east-planning/project-3-full-bleed-preview-a
 
 ---
 
-## 4. Custom Ebook bug note
+## 3. Custom Ebook bug note
 
 The Custom Ebook page has a real footer styling bug in the original file.
 
@@ -132,11 +111,11 @@ Result:
 The footer layout appears structurally broken in the original preview.
 ```
 
-The helper temporarily injects footer styles so the user can continue layout review, but the original file still needs a proper bug-fix PR if this page remains in use.
+The user rejected the quick layout treatment and will try another frontend AI. If this static page remains in use, the footer bug should still be fixed later, either as part of a full Custom Ebook redesign or as a small bug-fix PR.
 
 ---
 
-## 5. Simple external AI prompt for Custom Ebook redesign
+## 4. Simple external AI prompt for Custom Ebook redesign
 
 Use this if another frontend-focused AI should freely improve the Custom Ebook page without over-constraining it:
 
@@ -156,13 +135,18 @@ Return a single complete self-contained HTML file with CSS inside <style>.
 
 ---
 
-## 6. Next decision after preview
+## 5. Next decision after preview
 
-After reviewing the targeted helper pages, choose one of these paths:
+After reviewing the refined helper pages, choose one of these paths:
 
 ### Path A — apply selected layout cleanup to original static files
 
-Create a real static cleanup PR for only the accepted page/section changes.
+Likely candidates:
+
+```text
+preview/ink-east-membership-v1.html
+preview/ink-east-article-002-vip-v1.html
+```
 
 ### Path B — only fix Custom Ebook footer bug
 
@@ -174,8 +158,8 @@ Let a stronger frontend AI redesign Custom Ebook first, then review and archive 
 
 ---
 
-## 7. Final summary
+## 6. Final summary
 
 ```text
-The review has moved from a broad full-bleed experiment to targeted layout tests: Membership hero + tiers only; Custom Ebook hero + premise + temporary footer repair; VIP Article 002 hero only; Home footer/newsletter background swap only. The helper remains non-destructive and does not modify original static files or apps/web.
+The review is now targeted and conservative: Membership hero is widened but slightly contained to reduce empty right-side space; Membership tiers remain widened; VIP Article 002 hero remains widened while sticky sidebar is preserved; Custom Ebook layout override is removed and deferred to another AI; Home footer/background swap is removed and original Home is preserved.
 ```
