@@ -8,7 +8,27 @@
 
 ---
 
-## 0. Why this plan exists
+## 0. Current checkpoint
+
+Current merged static-preview baseline:
+
+```text
+PR #34 merged: Articles Archive static reference
+PR #36 merged: Custom Ebook Studio middle-section redesign
+PR #37 merged: Membership hero-card update
+PR #33 closed without merge: helper/review PR only
+```
+
+Current active planning/audit docs:
+
+```text
+PR #35: static preview interlinking plan + wide-screen composition notes
+PR #38: static preview link audit
+```
+
+---
+
+## 1. Why this plan exists
 
 The current `preview/*.html` pages are mostly independent static files.
 
@@ -28,9 +48,10 @@ This is why the project has already seen issues such as:
 - generated archive-page footer details that did not match the existing Ink & East static footer source;
 - static Add to Cart feedback working only inside its own concept page, not when navigating through another product page;
 - Spatial Flow's `The Journal` header link pointing to an old `spatial-flow-journal-v1.html` page instead of the Ink & East journal surface;
-- individual pages having headers, navs, and occasional footers that are visually similar but not actually the same source structure.
+- individual pages having headers, navs, and occasional footers that are visually similar but not actually the same source structure;
+- some pages being constrained by narrow width containers while other pages are wide but compositionally empty.
 
-The goal of this pass is **not** to merge all static pages into one real app yet.
+The goal of the next phase is **not** to merge all static pages into one real app yet.
 
 The goal is narrower:
 
@@ -46,7 +67,7 @@ Make static preview headers and footers source-consistent before real shared com
 
 ---
 
-## 1. Important distinction: static preview vs production integration
+## 2. Important distinction: static preview vs production integration
 
 ### Static preview pages
 
@@ -61,6 +82,7 @@ preview/ink-east-v1.html
 preview/ink-east-issue-001-v1.html
 preview/ink-east-article-001-v1.html
 preview/ink-east-articles-archive-v1.html
+preview/ink-east-membership-v1.html
 preview/add-to-cart-concept-d-lift-settle.html
 ```
 
@@ -93,7 +115,7 @@ Implement it in real product/source code later.
 
 ---
 
-## 2. Link policy for preview files
+## 3. Link policy for preview files
 
 Use relative preview links whenever possible.
 
@@ -126,7 +148,7 @@ For a future page that does not exist yet, do not create a misleading active lin
 
 ---
 
-## 3. Required correction: Spatial Flow `The Journal` link
+## 4. Required correction: Spatial Flow `The Journal` link
 
 Problem:
 
@@ -155,7 +177,7 @@ Do not keep using it as the active journal destination.
 
 ---
 
-## 4. Add to Cart feedback reference wiring
+## 5. Add to Cart feedback reference wiring
 
 Existing accepted concept:
 
@@ -171,23 +193,15 @@ The static concept works inside its own file only.
 If the user starts from another Spatial Flow preview page and opens a product page, the Add to Cart feedback does not appear unless that actual product preview file has the concept wired into it.
 ```
 
-There are two different levels of action:
+There are three different levels of action:
 
 ### Level 1 — Preview review wiring
 
-Goal:
-
 ```text
-From Spatial Flow preview pages, clicking the relevant product/detail link should be able to land on the Add to Cart feedback concept page for review.
+From Spatial Flow preview pages, clicking the relevant product/detail link can land on the Add to Cart feedback concept page for review.
 ```
 
-This only connects the static preview journey.
-
-It does not implement production cart behavior.
-
 ### Level 2 — Static product page integration
-
-Goal:
 
 ```text
 Take the accepted feedback behavior and apply it into the actual Spatial Flow product-detail preview page, if such a canonical product preview exists in this repository.
@@ -195,11 +209,7 @@ Take the accepted feedback behavior and apply it into the actual Spatial Flow pr
 
 Before doing this, first identify the current canonical product detail preview file.
 
-Possible candidates need audit, not guessing.
-
 ### Level 3 — Production implementation
-
-Goal:
 
 ```text
 Rebuild the accepted behavior as a real component / WooCommerce template behavior / future source commerce component.
@@ -209,41 +219,15 @@ This is later and should not be mixed into the static interlink pass.
 
 ---
 
-## 5. Work order
-
-### Pass 0 — Finish current static reference intake
-
-Status now:
-
-```text
-PR #34 Articles Archive static reference has been accepted and merged.
-PR #36 Custom Ebook Studio middle-section redesign has been accepted and merged.
-```
-
-Still pending from external frontend AI:
-
-```text
-1. Membership right-side empty-space refinement
-```
-
-This should be processed as a separate PR, not mixed with the interlinking pass.
-
-Recommended order:
-
-```text
-1. Process Membership file.
-2. Then run the interlinking/link-audit pass once the new file is in main.
-```
-
-Reason:
-
-```text
-If links are cleaned before Membership is replaced, the same links may need to be fixed twice.
-```
-
----
+## 6. Work order
 
 ### Pass 1 — Preview link audit
+
+Status:
+
+```text
+Started in PR #38.
+```
 
 Scan `preview/*.html` for:
 
@@ -281,6 +265,8 @@ Home          -> ./ink-east-v1.html
 Issues        -> ./ink-east-issue-001-v1.html or future issue index placeholder
 Articles      -> ./ink-east-articles-archive-v1.html
 Article 001   -> ./ink-east-article-001-v1.html
+Membership    -> ./ink-east-membership-v1.html
+Custom Ebook  -> ./ink-east-custom-ebook-v1.html
 Topics        -> placeholder until topic page exists
 Collections   -> placeholder until collection page exists
 Search        -> placeholder until search page exists
@@ -290,9 +276,9 @@ About         -> placeholder until about page exists
 Rules:
 
 ```text
-Do not expose VIP / Reading Room / Membership / Ask / Community as primary public nav unless the specific page is intentionally being reviewed.
 Do not create raw # links.
 Do not redesign the pages during link cleanup.
+Do not expose future pages as real links unless the files exist.
 ```
 
 Expected PR:
@@ -370,7 +356,7 @@ Option A if the user only wants quick click-through review.
 
 ---
 
-### Pass 8 — Header/Footer source normalization
+### Pass 5 — Header/Footer source normalization
 
 Reason:
 
@@ -430,66 +416,61 @@ Expected PR:
 preview(ink-east): normalize static header footer sources
 ```
 
-This is intentionally placed after interlinking and Add to Cart static decisions because those steps reveal which preview pages are still active and which pages are only legacy references.
+---
+
+### Pass 6 — Wide-screen layout / composition pass
+
+This pass covers two related but different problems:
+
+```text
+1. constrained-width problem: the page or section is too boxed/narrow and does not fill the screen well;
+2. composition problem: the page or section is wide enough but lacks a balancing object.
+```
+
+Examples already observed:
+
+```text
+Membership: fixed via hero-card pattern in PR #37.
+Articles Archive: has a similar upper-area empty-space issue, but should wait for this later pass.
+Other pages: some remain constrained by max-width and do not fill wide screens properly.
+```
+
+Expected PR:
+
+```text
+preview(ink-east): refine wide-screen layout and composition
+```
 
 ---
 
-## 6. Timing recommendation
+## 7. Timing recommendation
 
 ### Now
 
 ```text
-Receive the remaining Membership external AI file whenever ready.
+Merge PR #35 if this overall plan is accepted.
+Merge PR #38 if the link-audit report is accepted.
 ```
 
-### Next
+### Next executable cleanup
 
 ```text
-Process Membership refinement as its own PR.
+Start with Spatial Flow navigation correction because The Journal has a concrete wrong destination.
 ```
 
 ### Then
 
 ```text
-Run Pass 1 link audit.
-Run Pass 2 Ink & East public interlinking.
-Run Pass 3 Spatial Flow static navigation fix, including The Journal link.
+Run Ink & East public interlinking.
+Handle Add to Cart feedback integration.
+Normalize header/footer source blocks.
+Run wide-screen layout/composition cleanup later.
 ```
-
-### After that
-
-```text
-Handle Add to Cart feedback integration as either a link-only static review path or a product-detail static preview integration.
-```
-
-### Later in the static-preview cleanup sequence
-
-```text
-Run Pass 8 header/footer source normalization so independent static pages have consistent source blocks before shared components are built.
-```
-
----
-
-## 7. External AI file intake rule
-
-When the user sends external AI files, process them as follows:
-
-```text
-1. Review the file first.
-2. Check footer/header/link behavior.
-3. Check mobile responsiveness.
-4. Check no raw href="#" leakage.
-5. Check no wrong modules are introduced.
-6. Commit to a separate branch.
-7. Open a separate PR.
-```
-
-Do not mix multiple page replacements with navigation cleanup unless explicitly requested.
 
 ---
 
 ## 8. Final summary
 
 ```text
-Project 3 static previews are still independent files, not a shared app. The next practical goal is to make them reviewable as a connected static site: correct internal links, correct Journal destination, no legacy Spatial Flow Journal routing, no raw placeholder anchors, and a clear decision on how the Add to Cart feedback concept should appear in the product-preview journey. After that, a dedicated header/footer source-normalization pass is needed so future shared-component work has one clear canonical source instead of multiple visually similar but structurally different page shells.
+Project 3 static previews are still independent files, not a shared app. The next practical goal is to make them reviewable as a connected static site: correct internal links, correct Journal destination, no legacy Spatial Flow Journal routing, no raw placeholder anchors, and a clear decision on how the Add to Cart feedback concept should appear in the product-preview journey. After that, dedicated header/footer source-normalization and wide-screen layout/composition passes are needed before future shared-component work.
 ```
