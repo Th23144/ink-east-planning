@@ -64,7 +64,7 @@
     <div class="review-bar">
       <div><strong>Ink & East</strong> · Targeted Layout Review <span id="current-name"></span></div>
       <nav class="review-links" aria-label="Review pages">
-        <a data-file="ink-east-membership-v1.html" href="?file=ink-east-membership-v1.html">Membership wide</a>
+        <a data-file="ink-east-membership-v1.html" href="?file=ink-east-membership-v1.html">Membership hero card</a>
         <a data-file="ink-east-custom-ebook-v1.html" href="?file=ink-east-custom-ebook-v1.html">Custom Ebook original</a>
         <a data-file="ink-east-article-002-vip-v1.html" href="?file=ink-east-article-002-vip-v1.html">VIP Article 002</a>
         <a data-file="ink-east-v1.html" href="?file=ink-east-v1.html">Home original</a>
@@ -104,21 +104,144 @@ const base = `
 
 const overrides = {
   'ink-east-membership-v1.html': {
-    note: 'Membership: restored to the earlier widened preview. The invitation hero and two-tier section are widened; right-side empty-space refinement is deferred to another frontend AI. Other sections remain original.',
+    note: 'Membership: uses only the uploaded reference\'s right-side journal-cover idea. The invitation hero and two-tier section stay widened; the new cover card balances the hero right side. Other sections remain original.',
     css: `
 <style id="ie-targeted-membership-review">
-  .mb-hero { padding-left: var(--ie-review-gutter) !important; padding-right: var(--ie-review-gutter) !important; }
-  .mb-hero .inner { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
+  .mb-hero { padding-left: var(--ie-review-gutter) !important; padding-right: var(--ie-review-gutter) !important; overflow: hidden !important; }
+  .mb-hero .inner {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) clamp(300px, 26vw, 430px) !important;
+    gap: clamp(44px, 5vw, 96px) !important;
+    align-items: center !important;
+  }
+  .mb-hero-copy { min-width: 0 !important; }
+  .mb-hero-aside {
+    position: relative !important;
+    align-self: stretch !important;
+    display: flex !important;
+    min-height: 380px !important;
+  }
+  .mb-hero-aside .frame {
+    position: relative !important;
+    flex: 1 !important;
+    border: 1px solid var(--rule) !important;
+    background: linear-gradient(158deg, var(--paper-light), var(--paper-dark)) !important;
+    overflow: hidden !important;
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    grid-template-rows: auto 1fr auto !important;
+    gap: 22px !important;
+    padding: 30px 30px 26px !important;
+  }
+  .mb-hero-aside .frame::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 14px !important;
+    top: 14px !important;
+    width: 8px !important;
+    height: 8px !important;
+    background: var(--seal) !important;
+    border-radius: 1px !important;
+    z-index: 2 !important;
+  }
+  .mb-hero-aside .glyph {
+    position: absolute !important;
+    right: -26px !important;
+    bottom: -66px !important;
+    font-family: var(--serif-cn) !important;
+    font-size: 330px !important;
+    line-height: .78 !important;
+    font-weight: 600 !important;
+    color: rgba(26,22,17,.055) !important;
+    pointer-events: none !important;
+    user-select: none !important;
+    z-index: 0 !important;
+  }
+  .mb-hero-aside .seal-stamp {
+    position: relative !important;
+    z-index: 2 !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+    justify-self: start !important;
+    width: 76px !important;
+    height: 76px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: var(--seal) !important;
+    color: var(--paper-light) !important;
+    font-family: var(--serif-cn) !important;
+    font-size: 40px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    transform: rotate(-3deg) !important;
+    box-shadow: inset 0 0 0 3px rgba(244,237,224,.3), 2px 3px 0 rgba(122,31,26,.2) !important;
+  }
+  .mb-hero-aside .vline {
+    position: relative !important;
+    z-index: 2 !important;
+    grid-column: 2 !important;
+    grid-row: 1 / span 3 !important;
+    writing-mode: vertical-rl !important;
+    justify-self: end !important;
+    align-self: center !important;
+    font-family: var(--serif-cn) !important;
+    font-size: 17px !important;
+    letter-spacing: .42em !important;
+    color: var(--ink-soft) !important;
+  }
+  .mb-hero-aside .colo {
+    position: relative !important;
+    z-index: 2 !important;
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    align-self: end !important;
+    list-style: none !important;
+    font-family: var(--mono) !important;
+    font-size: 10px !important;
+    letter-spacing: .2em !important;
+    text-transform: uppercase !important;
+    color: var(--ink-faint) !important;
+    line-height: 1.95 !important;
+    border-top: 1px solid var(--rule-soft) !important;
+    padding-top: 14px !important;
+  }
   .mb-tiers { padding-left: var(--ie-review-gutter) !important; padding-right: var(--ie-review-gutter) !important; }
   .mb-tiers .wrap { width: 100% !important; max-width: none !important; margin-left: 0 !important; margin-right: 0 !important; }
   .mb-two { width: 100% !important; max-width: none !important; }
+  @media (max-width:1000px){
+    .mb-hero .inner{grid-template-columns:1fr!important;}
+    .mb-hero-aside{display:none!important;}
+  }
   @media (max-width:760px){ .mb-hero,.mb-tiers{padding-left:22px!important;padding-right:22px!important;} }
-</style>`
+</style>`,
+    script: `
+<script id="ie-membership-cover-card-inject">
+(() => {
+  const inner = document.querySelector('.mb-hero .inner');
+  if (!inner || inner.querySelector('.mb-hero-aside')) return;
+  const copy = document.createElement('div');
+  copy.className = 'mb-hero-copy';
+  while (inner.firstChild) copy.appendChild(inner.firstChild);
+  inner.appendChild(copy);
+  const aside = document.createElement('div');
+  aside.className = 'mb-hero-aside';
+  aside.setAttribute('aria-hidden', 'true');
+  aside.innerHTML = '<div class="frame"><span class="glyph">加</span><div class="seal-stamp">入</div><div class="vline">墨 與 東</div><ul class="colo"><li>No advertisers</li><li>No sponsors</li><li>Published when ready</li><li>Est. 2026</li></ul></div>';
+  inner.appendChild(aside);
+})();
+<\/script>`
   },
 
   'ink-east-custom-ebook-v1.html': {
     note: 'Custom Ebook: no layout override is applied now. This page should be redesigned by another frontend pass. The original footer bug is intentionally visible here.',
-    css: ''
+    css: '',
+    script: ''
   },
 
   'ink-east-article-002-vip-v1.html': {
@@ -133,12 +256,14 @@ const overrides = {
   .article-sidebar { position: relative !important; overflow: visible !important; }
   .sidebar-inner { position: sticky !important; top: 32px !important; }
   @media (max-width:760px){ .article-header{padding-left:22px!important;padding-right:22px!important;} }
-</style>`
+</style>`,
+    script: ''
   },
 
   'ink-east-v1.html': {
     note: 'Home: no background swap or width override is applied. This is the original Home preview inside the helper frame.',
-    css: ''
+    css: '',
+    script: ''
   }
 };
 
@@ -149,12 +274,19 @@ async function loadPreview() {
   let html = await response.text();
   const item = overrides[file];
   notice.textContent = item.note + ' Original file is not modified.';
-  const injection = base + item.css;
+  const headInjection = base + item.css;
+  const bodyInjection = item.script || '';
 
   if (html.includes('</head>')) {
-    html = html.replace('</head>', injection + '</head>');
+    html = html.replace('</head>', headInjection + '</head>');
   } else {
-    html = injection + html;
+    html = headInjection + html;
+  }
+
+  if (bodyInjection && html.includes('</body>')) {
+    html = html.replace('</body>', bodyInjection + '</body>');
+  } else if (bodyInjection) {
+    html += bodyInjection;
   }
 
   frame.srcdoc = html;
