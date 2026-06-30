@@ -19,6 +19,15 @@ Instead, keep the wider editorial surface and add a quiet, brand-consistent visu
 
 The Membership reference used a small journal-cover / seal-card style block on the right side of the hero. The user did not accept the whole external Membership redesign, but did accept the design idea of using that kind of right-side editorial object to balance empty space.
 
+This note must not be understood as only an "empty space" task.
+
+It covers two related but different wide-screen problems:
+
+```text
+1. The page or section is constrained by a narrow max-width and does not fill the screen well.
+2. The page or section is already wide enough, but the composition has awkward empty zones that need a quiet editorial anchor.
+```
+
 ---
 
 ## 1. Important boundary
@@ -77,6 +86,21 @@ Do not fix now.
 Record it for a later wide-screen composition pass.
 ```
 
+### Other constrained-width preview pages
+
+Problem:
+
+```text
+Some preview pages or sections are still visually boxed by narrow max-width containers and do not properly use the available screen width.
+```
+
+Current decision:
+
+```text
+Do not fix these one by one during the current Membership / interlinking sequence.
+Record them for a later dedicated wide-screen layout audit.
+```
+
 ---
 
 ## 3. General method to test later
@@ -110,20 +134,21 @@ Do not use this as a substitute for real layout judgment.
 Expected later PR:
 
 ```text
-preview(ink-east): refine wide-screen composition anchors
+preview(ink-east): refine wide-screen layout and composition
 ```
 
 Work order:
 
 ```text
 1. Audit pages that are visually constrained or have awkward empty zones on wide screens.
-2. Separate two problems:
-   - page is too boxed/narrow;
-   - page is wide enough but composition lacks a balancing object.
-3. For each affected page, propose one small editorial anchor or leave it unchanged.
-4. Do not batch-redesign full pages.
-5. Keep body text reading widths controlled.
-6. Keep font sizes stable unless the page already requires a separate typography review.
+2. Separate at least two problem types:
+   - constrained-width problem: the page or section is too boxed/narrow and does not fill the screen well;
+   - composition problem: the page or section is wide enough but lacks a balancing object.
+3. For constrained-width problems, widen the relevant section carefully without blindly stretching reading text.
+4. For composition problems, propose one small editorial anchor or leave it unchanged.
+5. Do not batch-redesign full pages.
+6. Keep body text reading widths controlled.
+7. Keep font sizes stable unless the page already requires a separate typography review.
 ```
 
 ---
@@ -131,5 +156,5 @@ Work order:
 ## 5. Final summary
 
 ```text
-The Membership hero-card idea is a useful pattern for later wide-screen composition problems. It should be recorded as a method, not applied blindly now. Articles Archive may need a similar treatment later, but it should wait for a dedicated wide-screen composition pass and should not interrupt the current navigation/interlinking plan.
+The Membership hero-card idea is a useful pattern for later wide-screen composition problems, but the later pass is broader than empty-space cleanup. It must also cover pages or sections that are artificially constrained by narrow max-width containers and do not fill wide screens properly. Articles Archive may need a similar composition treatment later, but all of this should wait for a dedicated wide-screen layout/composition pass and should not interrupt the current navigation/interlinking plan.
 ```
