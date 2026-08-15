@@ -40,6 +40,7 @@
         -moz-osx-font-smoothing: grayscale;
         -webkit-text-size-adjust: 100%;
         text-size-adjust: 100%;
+        transform: translateY(var(--footer-snap-y, 0px));
       }
 
       footer,
@@ -310,10 +311,45 @@
   `;
 
   class InkEastFooter extends HTMLElement {
+    constructor() {
+      super();
+      this._snapFrame = 0;
+      this._scheduleSnap = this._scheduleSnap.bind(this);
+    }
+
     connectedCallback() {
-      if (this.shadowRoot) return;
-      const root = this.attachShadow({ mode: 'open' });
-      root.appendChild(template.content.cloneNode(true));
+      if (!this.shadowRoot) {
+        const root = this.attachShadow({ mode: 'open' });
+        root.appendChild(template.content.cloneNode(true));
+      }
+
+      this._scheduleSnap();
+      window.addEventListener('load', this._scheduleSnap, { once: true });
+      window.addEventListener('resize', this._scheduleSnap);
+
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(this._scheduleSnap);
+      }
+    }
+
+    disconnectedCallback() {
+      window.removeEventListener('resize', this._scheduleSnap);
+      if (this._snapFrame) cancelAnimationFrame(this._snapFrame);
+    }
+
+    _scheduleSnap() {
+      if (this._snapFrame) cancelAnimationFrame(this._snapFrame);
+      this._snapFrame = requestAnimationFrame(() => {
+        this._snapFrame = 0;
+        this.style.setProperty('--footer-snap-y', '0px');
+
+        const rect = this.getBoundingClientRect();
+        const absoluteBottom = rect.bottom + window.scrollY;
+        const documentBottom = document.documentElement.scrollHeight;
+        const delta = documentBottom - absoluteBottom;
+
+        this.style.setProperty('--footer-snap-y', `${delta.toFixed(3)}px`);
+      });
     }
   }
 
