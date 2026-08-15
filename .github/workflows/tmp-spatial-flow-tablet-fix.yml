@@ -26,8 +26,9 @@ jobs:
           if '@media (max-width: 960px)' in text:
               raise SystemExit('tablet breakpoint already exists; refusing duplicate patch')
           marker = '      @media (max-width: 720px) {'
-          if text.count(marker) != 1:
-              raise SystemExit('expected 720px shell breakpoint exactly once')
+          idx = text.find(marker)
+          if idx < 0:
+              raise SystemExit('header 720px shell breakpoint not found')
           block = '\n'.join([
               '      @media (max-width: 960px) {',
               '        .masthead .center { display: none; }',
@@ -37,7 +38,7 @@ jobs:
               '      }',
               '',
           ])
-          p.write_text(text.replace(marker, block + marker, 1), encoding='utf-8')
+          p.write_text(text[:idx] + block + text[idx:], encoding='utf-8')
           PY
           rm .github/workflows/tmp-spatial-flow-tablet-fix.yml
           git config user.name "github-actions[bot]"
