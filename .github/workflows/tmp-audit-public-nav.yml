@@ -1,0 +1,55 @@
+name: Temporary audit Ink East public nav
+
+on:
+  push:
+    branches:
+      - agent/ink-east-public-nav-normalization
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ink-east-public-nav-normalization
+      - name: Audit public shell variants
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          targets = [
+              'preview/ink-east-v1.html',
+              'preview/ink-east-issue-001-v1.html',
+              'preview/ink-east-article-001-v1.html',
+              'preview/ink-east-article-002-vip-v1.html',
+              'preview/ink-east-articles-archive-v1.html',
+          ]
+          patterns = [
+              ('backbar', r'<div class="backbar">.*?</div>'),
+              ('cover-top', r'<div class="cover-top">.*?</div>\s*</div>'),
+              ('issue-bar', r'<div class="issue-bar">.*?</div>'),
+              ('topnav', r'<(?:div|nav) class="topnav">.*?</(?:div|nav)>'),
+          ]
+
+          for path in targets:
+              text = Path(path).read_text(encoding='utf-8')
+              print('\n===', path, '===')
+              print('BODY:', re.search(r'<body[^>]*>', text).group(0))
+              for label, pattern in patterns:
+                  matches = re.findall(pattern, text, re.S)
+                  print(label.upper(), 'COUNT', len(matches))
+                  for i, match in enumerate(matches):
+                      print(label.upper(), i, re.sub(r'\s+', ' ', match).strip())
+              for selector in ['.backbar', '.cover-top', '.issue-bar', '.topnav']:
+                  rules = []
+                  for m in re.finditer(r'([^{}]+)\{([^{}]*)\}', text, re.S):
+                      sel = m.group(1).strip()
+                      if selector in sel:
+                          rules.append(re.sub(r'\s+', ' ', m.group(0)).strip())
+                  print('CSS', selector, '::', ' || '.join(rules[:20]))
+          PY
