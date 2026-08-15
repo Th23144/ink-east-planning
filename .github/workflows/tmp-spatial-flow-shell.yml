@@ -1,0 +1,279 @@
+name: Temporary migrate and verify Spatial Flow shell
+
+on:
+  push:
+    branches:
+      - agent/spatial-flow-ecommerce-shell-normalization
+
+permissions:
+  contents: write
+
+jobs:
+  migrate-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/spatial-flow-ecommerce-shell-normalization
+          fetch-depth: 0
+
+      - name: Migrate four active ecommerce previews
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          files = {
+              'preview/spatial-flow-v1.html': ('masthead-strip', 'site-header', False),
+              'preview/spatial-flow-shop-v1.html': ('masthead-strip-v1', 'site-header-v1', False),
+              'preview/spatial-flow-product-v1.html': ('masthead-strip-v1', 'site-header-v1', True),
+              'preview/spatial-flow-cart-v1.html': ('masthead-strip', 'site-header', False),
+          }
+
+          def opening_with_class(text, tag, class_name):
+              pat = re.compile(rf'<{tag}\\b[^>]*>', re.I)
+              for m in pat.finditer(text):
+                  cm = re.search(r'class\\s*=\\s*["\\\']([^"\\\']*)["\\\']', m.group(0), re.I)
+                  if cm and class_name in cm.group(1).split():
+                      return m
+              raise RuntimeError(f'cannot find <{tag}> with class {class_name}')
+
+          def replace_block(text, tag, class_name, replacement):
+              start = opening_with_class(text, tag, class_name)
+              token = re.compile(rf'</?{tag}\\b[^>]*>', re.I)
+              depth = 0
+              for m in token.finditer(text, start.start()):
+                  raw = m.group(0)
+                  if raw.startswith('</'):
+                      depth -= 1
+                      if depth == 0:
+                          return text[:start.start()] + replacement + text[m.end():]
+                  elif not raw.rstrip().endswith('/>'):
+                      depth += 1
+              raise RuntimeError(f'unbalanced <{tag}> for class {class_name}')
+
+          def replace_first_tag(text, tag, replacement):
+              start = re.search(rf'<{tag}\\b[^>]*>', text, re.I)
+              if not start:
+                  raise RuntimeError(f'cannot find <{tag}>')
+              token = re.compile(rf'</?{tag}\\b[^>]*>', re.I)
+              depth = 0
+              for m in token.finditer(text, start.start()):
+                  raw = m.group(0)
+                  if raw.startswith('</'):
+                      depth -= 1
+                      if depth == 0:
+                          return text[:start.start()] + replacement + text[m.end():]
+                  elif not raw.rstrip().endswith('/>'):
+                      depth += 1
+              raise RuntimeError(f'unbalanced <{tag}>')
+
+          for path_str, (masthead_class, header_class, product_hooks) in files.items():
+              path = Path(path_str)
+              text = path.read_text(encoding='utf-8')
+
+              script = '<script src="./shared/spatial-flow-shell.js"></script>'
+              if script not in text:
+                  if text.count('</head>') != 1:
+                      raise RuntimeError(f'{path_str}: unexpected head structure')
+                  text = text.replace('</head>', script + '\n</head>', 1)
+
+              header_mount = '<spatial-flow-header active="index" bag-count="3"{}></spatial-flow-header>'.format(' product-hooks' if product_hooks else '')
+              text = replace_block(text, 'div', masthead_class, header_mount)
+              text = replace_block(text, 'header', header_class, '')
+              text = replace_first_tag(text, 'footer', '<spatial-flow-footer></spatial-flow-footer>')
+
+              if path_str.endswith('spatial-flow-v1.html'):
+                  try:
+                      text = replace_block(text, 'div', 'backbar', '')
+                  except RuntimeError:
+                      pass
+
+              if product_hooks:
+                  old = '  var headerBag = document.getElementById("headerBag");\n  var bagCount = document.getElementById("bagCount");'
+                  new = '  var headerShell = document.querySelector("spatial-flow-header");\n  var headerBag = headerShell ? headerShell.bagLink : null;\n  var bagCount = headerShell ? headerShell.bagCountElement : null;'
+                  if text.count(old) != 1:
+                      raise RuntimeError('product: expected legacy header bag lookup exactly once')
+                  text = text.replace(old, new, 1)
+                  old_click = '    if (cartPop.contains(event.target) || headerBag.contains(event.target) || addBtn.contains(event.target)) return;'
+                  new_click = '    if (cartPop.contains(event.target) || (headerShell && headerShell.contains(event.target)) || headerBag.contains(event.target) || addBtn.contains(event.target)) return;'
+                  if text.count(old_click) != 1:
+                      raise RuntimeError('product: expected document click guard exactly once')
+                  text = text.replace(old_click, new_click, 1)
+
+              path.write_text(text, encoding='utf-8')
+
+          shell = Path('preview/shared/spatial-flow-shell.js')
+          shell_text = shell.read_text(encoding='utf-8')
+          narrow = '''      @media (max-width: 430px) {
+                .masthead .right { display: none; }
+                .site-header { padding-left: 20px; padding-right: 20px; }
+                .wordmark { font-size: 24px; }
+                .utilities { gap: 10px; font-size: 11px; }
+                .utilities > a:not(.bag):first-child { display: none; }
+              }
+          '''
+          # Do not silently drop Search or shipping metadata on narrow phones; keep the canonical 720px behavior and let wrapping handle it.
+          shell_text = shell_text.replace(narrow, '')
+          shell.write_text(shell_text, encoding='utf-8')
+
+          for path_str, (_, _, product_hooks) in files.items():
+              text = Path(path_str).read_text(encoding='utf-8')
+              assert text.count('<spatial-flow-header ') == 1, path_str
+              assert text.count('<spatial-flow-footer>') == 1, path_str
+              assert text.count('./shared/spatial-flow-shell.js') == 1, path_str
+              assert 'spatial-flow-journal-v1.html' not in text, path_str
+              if product_hooks:
+                  assert 'product-hooks' in text
+                  assert 'headerShell ? headerShell.bagLink' in text
+              if path_str.endswith('spatial-flow-v1.html'):
+                  assert '← back to directions' not in text
+
+          shell_text = shell.read_text(encoding='utf-8')
+          assert './ink-east-v1.html' in shell_text
+          assert 'The Journal' in shell_text
+          assert './spatial-flow-cart-v1.html' in shell_text
+          print('PASS: 4/4 Spatial Flow pages migrated to one shared live header/footer source.')
+          PY
+          git diff --check
+
+      - name: Install Chromium harness
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Verify shell geometry and Product Add to Cart
+        shell: bash
+        run: |
+          python3 -m http.server 4173 --directory preview >/tmp/spatial-flow-shell-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          node <<'NODE'
+          const { chromium } = require('playwright');
+          const files = [
+            'spatial-flow-v1.html',
+            'spatial-flow-shop-v1.html',
+            'spatial-flow-product-v1.html',
+            'spatial-flow-cart-v1.html',
+          ];
+          const viewports = [
+            {name:'desktop',width:1365,height:991},
+            {name:'tablet',width:820,height:1024},
+            {name:'mobile',width:390,height:844},
+          ];
+          const close=(a,b,t=.15)=>Math.abs(a-b)<=t;
+          const rel=(r,host)=>({top:r.top-host.top,left:r.left-host.left,width:r.width,height:r.height});
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            let failed=false;
+            for(const vp of viewports){
+              const ctx=await browser.newContext({viewport:{width:vp.width,height:vp.height},deviceScaleFactor:1});
+              const samples=[];
+              for(const file of files){
+                const page=await ctx.newPage();
+                const errors=[];
+                page.on('pageerror', e=>errors.push(String(e)));
+                await page.goto(`http://127.0.0.1:4173/${file}`,{waitUntil:'networkidle'});
+                await page.evaluate(async()=>{if(document.fonts) await document.fonts.ready;});
+                await page.waitForFunction(()=>{
+                  const h=document.querySelector('spatial-flow-header');
+                  const f=document.querySelector('spatial-flow-footer');
+                  return h?.shadowRoot?.querySelector('.site-header') && f?.shadowRoot?.querySelector('footer');
+                });
+                const m=await page.evaluate(()=>{
+                  const hr=document.querySelector('spatial-flow-header');
+                  const fr=document.querySelector('spatial-flow-footer');
+                  const hroot=hr.shadowRoot, froot=fr.shadowRoot;
+                  const rr=x=>{const r=x.getBoundingClientRect();return {top:r.top,left:r.left,width:r.width,height:r.height,bottom:r.bottom,right:r.right};};
+                  const hhost=rr(hr), fhost=rr(fr);
+                  const nav=[...hroot.querySelectorAll('.primary a')].map(a=>[a.textContent.trim(),a.getAttribute('href'),a.classList.contains('current')]);
+                  const journal=hroot.querySelector('[data-nav="journal"]')?.getAttribute('href');
+                  const footerJournal=[...froot.querySelectorAll('nav[aria-label="The Journal"] a')].map(a=>a.getAttribute('href'));
+                  return {
+                    hhost,
+                    mast:rr(hroot.querySelector('.masthead')),
+                    site:rr(hroot.querySelector('.site-header')),
+                    word:rr(hroot.querySelector('.wordmark')),
+                    utils:rr(hroot.querySelector('.utilities')),
+                    fhost,
+                    footer:rr(froot.querySelector('footer')),
+                    brand:rr(froot.querySelector('.brand-mark')),
+                    cols:rr(froot.querySelector('.cols')),
+                    colophon:rr(froot.querySelector('.colophon')),
+                    nav,journal,footerJournal,
+                    bag:hroot.querySelector('.bag-count')?.textContent.trim(),
+                    overflow:document.documentElement.scrollWidth-window.innerWidth,
+                  };
+                });
+                if(errors.length){console.error(vp.name,file,'page errors',errors);failed=true;}
+                samples.push([file,m]);
+                await page.close();
+              }
+              const base=samples[0][1];
+              for(const [file,m] of samples){
+                if(m.overflow>1){console.error(vp.name,file,'overflow',m.overflow);failed=true;}
+                for(const key of ['hhost','mast','site','fhost','footer','brand','cols','colophon']){
+                  for(const dim of ['width','height']) if(!close(base[key][dim],m[key][dim])){
+                    console.error(vp.name,file,key,dim,base[key][dim],m[key][dim]);failed=true;
+                  }
+                }
+                const br=rel(base.word,base.hhost), mr=rel(m.word,m.hhost);
+                if(!close(br.top,mr.top)||!close(br.left,mr.left)){console.error(vp.name,file,'wordmark position drift',br,mr);failed=true;}
+                const bu=rel(base.utils,base.hhost), mu=rel(m.utils,m.hhost);
+                if(!close(bu.top,mu.top)||!close(bu.left,mu.left)){console.error(vp.name,file,'utilities position drift',bu,mu);failed=true;}
+                if(m.journal!=='./ink-east-v1.html'){console.error(vp.name,file,'Journal route',m.journal);failed=true;}
+                if(m.footerJournal.some(h=>h!=='./ink-east-v1.html')){console.error(vp.name,file,'footer Journal route drift',m.footerJournal);failed=true;}
+                const labels=m.nav.map(x=>x[0]).join('|');
+                if(labels!=='The Index|The Journal|Consult|Our Pages'){console.error(vp.name,file,'nav labels',labels);failed=true;}
+                if(m.bag!=='(3)'){console.error(vp.name,file,'bag count',m.bag);failed=true;}
+              }
+              console.log(`[${vp.name}] 4/4 shared shell geometry PASS · header ${base.hhost.width}×${base.hhost.height} · footer ${base.footer.width}×${base.footer.height}`);
+              await ctx.close();
+            }
+
+            const ctx=await browser.newContext({viewport:{width:1365,height:991},deviceScaleFactor:1});
+            const page=await ctx.newPage();
+            const errors=[];
+            page.on('pageerror',e=>errors.push(String(e)));
+            await page.goto('http://127.0.0.1:4173/spatial-flow-product-v1.html',{waitUntil:'networkidle'});
+            await page.waitForFunction(()=>document.querySelector('spatial-flow-header')?.bagLink && document.getElementById('addToCart'));
+            const initial=await page.evaluate(()=>document.querySelector('spatial-flow-header').bagCountElement.textContent.trim());
+            if(initial!=='(3)'){console.error('product initial bag',initial);failed=true;}
+            await page.click('#addToCart');
+            await page.waitForTimeout(150);
+            const after=await page.evaluate(()=>({
+              count:document.querySelector('spatial-flow-header').bagCountElement.textContent.trim(),
+              hidden:document.getElementById('cartPop').getAttribute('aria-hidden'),
+              added:document.getElementById('addToCart').classList.contains('added')
+            }));
+            if(after.count!=='(4)'||after.hidden!=='false'||!after.added){console.error('product Add to Cart regression',after);failed=true;}
+            await page.waitForTimeout(4300);
+            await page.evaluate(()=>document.querySelector('spatial-flow-header').bagLink.click());
+            await page.waitForTimeout(80);
+            const reopened=await page.getAttribute('#cartPop','aria-hidden');
+            if(reopened!=='false'){console.error('product header Bag popover regression',reopened);failed=true;}
+            if(errors.length){console.error('product page errors',errors);failed=true;}
+            await ctx.close();
+            await browser.close();
+            if(failed) process.exit(1);
+            console.log('PASS: Product Add to Cart, Bag count, fly target, and Bag popover hooks survive shared Shadow DOM shell.');
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+
+      - name: Commit verified migration and remove temporary workflow
+        shell: bash
+        run: |
+          rm .github/workflows/tmp-spatial-flow-shell.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/spatial-flow-v1.html \
+                  preview/spatial-flow-shop-v1.html \
+                  preview/spatial-flow-product-v1.html \
+                  preview/spatial-flow-cart-v1.html \
+                  preview/shared/spatial-flow-shell.js \
+                  .github/workflows/tmp-spatial-flow-shell.yml
+          git diff --cached --check
+          git commit -m "preview(spatial-flow): share ecommerce header footer sources"
+          git push origin HEAD:agent/spatial-flow-ecommerce-shell-normalization
