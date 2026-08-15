@@ -35,38 +35,26 @@ jobs:
           const { chromium } = require('playwright');
 
           const targets = [
-            'ink-east-v1.html',
-            'ink-east-issue-001-v1.html',
-            'ink-east-article-001-v1.html',
-            'ink-east-article-002-vip-v1.html',
-            'ink-east-articles-archive-v1.html',
-            'ink-east-vip-library-v1.html',
-            'ink-east-reading-room-v1.html',
-            'ink-east-membership-v1.html',
-            'ink-east-custom-reading-v1.html',
-            'ink-east-custom-ebook-v1.html',
-            'ink-east-letters-form-v1.html',
-            'ink-east-reader-notes-component-v1.html',
+            'ink-east-v1.html','ink-east-issue-001-v1.html','ink-east-article-001-v1.html',
+            'ink-east-article-002-vip-v1.html','ink-east-articles-archive-v1.html','ink-east-vip-library-v1.html',
+            'ink-east-reading-room-v1.html','ink-east-membership-v1.html','ink-east-custom-reading-v1.html',
+            'ink-east-custom-ebook-v1.html','ink-east-letters-form-v1.html','ink-east-reader-notes-component-v1.html',
             'ink-east-community-v1.html',
           ];
-
           const viewports = [
             { name: 'desktop', width: 1365, height: 991 },
             { name: 'mobile', width: 390, height: 844 },
           ];
-
+          const tolerance = 0.1;
           const round = value => Math.round(value * 1000) / 1000;
 
           function compare(a, b, path = '', diffs = []) {
             if (typeof a === 'number' && typeof b === 'number') {
-              if (Math.abs(a - b) > 0.1) diffs.push(`${path}: ${a} != ${b}`);
+              if (Math.abs(a - b) > tolerance) diffs.push(`${path}: ${a} != ${b}`);
               return diffs;
             }
             if (Array.isArray(a) && Array.isArray(b)) {
-              if (a.length !== b.length) {
-                diffs.push(`${path}.length: ${a.length} != ${b.length}`);
-                return diffs;
-              }
+              if (a.length !== b.length) return diffs.concat(`${path}.length: ${a.length} != ${b.length}`);
               a.forEach((value, index) => compare(value, b[index], `${path}[${index}]`, diffs));
               return diffs;
             }
@@ -83,63 +71,72 @@ jobs:
             let failed = false;
 
             for (const viewport of viewports) {
-              const context = await browser.newContext({
-                viewport: { width: viewport.width, height: viewport.height },
-                deviceScaleFactor: 1,
-              });
-
+              const context = await browser.newContext({ viewport, deviceScaleFactor: 1 });
               const measurements = [];
 
               for (const target of targets) {
                 const page = await context.newPage();
                 await page.goto(`http://127.0.0.1:4173/${target}`, { waitUntil: 'networkidle' });
                 await page.evaluate(async () => {
-                  if (document.fonts && document.fonts.ready) await document.fonts.ready;
+                  if (document.fonts) {
+                    await Promise.all([
+                      document.fonts.load('15px "EB Garamond"', 'Ink East'),
+                      document.fonts.load('18px "Noto Serif SC"', '墨與東'),
+                      document.fonts.load('10px "JetBrains Mono"', 'Read'),
+                      document.fonts.ready,
+                    ]);
+                  }
                 });
                 await page.waitForFunction(() => {
                   const host = document.querySelector('ink-east-footer');
-                  return Boolean(host && host.shadowRoot && host.shadowRoot.querySelector('footer'));
+                  return Boolean(host?.shadowRoot?.querySelector('footer'));
                 });
-                await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
-                await page.waitForTimeout(100);
+
+                await page.evaluate(() => {
+                  document.documentElement.style.scrollBehavior = 'auto';
+                  document.body.style.scrollBehavior = 'auto';
+                  window.scrollTo({ top: document.documentElement.scrollHeight, left: 0, behavior: 'instant' });
+                });
+                await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
 
                 const metrics = await page.evaluate(() => {
                   const host = document.querySelector('ink-east-footer');
                   const root = host.shadowRoot;
                   const hostRect = host.getBoundingClientRect();
-                  const rel = element => {
+                  const geometry = element => {
                     const rect = element.getBoundingClientRect();
                     return {
                       top: Math.round((rect.top - hostRect.top) * 1000) / 1000,
                       left: Math.round((rect.left - hostRect.left) * 1000) / 1000,
                       width: Math.round(rect.width * 1000) / 1000,
                       height: Math.round(rect.height * 1000) / 1000,
-                      viewportTop: Math.round(rect.top * 1000) / 1000,
-                      viewportBottom: Math.round(rect.bottom * 1000) / 1000,
                     };
                   };
-                  const many = selector => [...root.querySelectorAll(selector)].map(rel);
+                  const many = selector => [...root.querySelectorAll(selector)].map(geometry);
+                  const footerRect = root.querySelector('footer').getBoundingClientRect();
                   return {
                     fonts: {
-                      eb: document.fonts.check('15px "EB Garamond"'),
-                      noto: document.fonts.check('15px "Noto Serif SC"'),
-                      mono: document.fonts.check('10px "JetBrains Mono"'),
+                      eb: document.fonts.check('15px "EB Garamond"', 'Ink East'),
+                      noto: document.fonts.check('18px "Noto Serif SC"', '墨與東'),
+                      mono: document.fonts.check('10px "JetBrains Mono"', 'Read'),
                     },
-                    host: {
-                      width: Math.round(hostRect.width * 1000) / 1000,
-                      height: Math.round(hostRect.height * 1000) / 1000,
-                      viewportTop: Math.round(hostRect.top * 1000) / 1000,
-                      viewportBottom: Math.round(hostRect.bottom * 1000) / 1000,
+                    geometry: {
+                      host: { width: Math.round(hostRect.width * 1000) / 1000, height: Math.round(hostRect.height * 1000) / 1000 },
+                      footer: geometry(root.querySelector('footer')),
+                      mark: geometry(root.querySelector('.foot-mark')),
+                      ampers: geometry(root.querySelector('.ampers')),
+                      footCols: geometry(root.querySelector('.foot-cols')),
+                      headings: many('h5'),
+                      rows: many('li'),
+                      links: many('li a'),
+                      colophon: geometry(root.querySelector('.colophon-final')),
                     },
-                    footer: rel(root.querySelector('footer')),
-                    mark: rel(root.querySelector('.foot-mark')),
-                    ampers: rel(root.querySelector('.ampers')),
-                    footCols: rel(root.querySelector('.foot-cols')),
-                    headings: many('h5'),
-                    rows: many('li'),
-                    links: many('li a'),
-                    colophon: rel(root.querySelector('.colophon-final')),
-                    viewport: { width: innerWidth, height: innerHeight },
+                    bottom: {
+                      footerBottomGap: Math.round((innerHeight - footerRect.bottom) * 1000) / 1000,
+                      hostBottomGap: Math.round((innerHeight - hostRect.bottom) * 1000) / 1000,
+                      scrollY: Math.round(scrollY * 1000) / 1000,
+                      scrollMax: Math.round((document.documentElement.scrollHeight - innerHeight) * 1000) / 1000,
+                    },
                   };
                 });
 
@@ -149,24 +146,23 @@ jobs:
 
               const baseline = measurements[0];
               console.log(`\n[${viewport.name}] baseline ${baseline.target}`);
-              console.log(JSON.stringify({
-                host: baseline.metrics.host,
-                footCols: baseline.metrics.footCols,
-                firstHeading: baseline.metrics.headings[0],
-                firstLink: baseline.metrics.links[0],
-                colophon: baseline.metrics.colophon,
-                fonts: baseline.metrics.fonts,
-              }, null, 2));
+              console.log(JSON.stringify(baseline.metrics, null, 2));
 
               for (const sample of measurements.slice(1)) {
-                const diffs = compare(baseline.metrics, sample.metrics);
-                if (diffs.length) {
+                const geometryDiffs = compare(baseline.metrics.geometry, sample.metrics.geometry);
+                const fontDiffs = compare(baseline.metrics.fonts, sample.metrics.fonts);
+                const bottomDiffs = compare(
+                  { footerBottomGap: baseline.metrics.bottom.footerBottomGap, hostBottomGap: baseline.metrics.bottom.hostBottomGap },
+                  { footerBottomGap: sample.metrics.bottom.footerBottomGap, hostBottomGap: sample.metrics.bottom.hostBottomGap }
+                );
+
+                if (geometryDiffs.length || fontDiffs.length || bottomDiffs.length) {
                   failed = true;
-                  console.error(`\n[${viewport.name}] ${sample.target} differs from ${baseline.target}:`);
-                  for (const diff of diffs.slice(0, 40)) console.error(`  ${diff}`);
-                  if (diffs.length > 40) console.error(`  ... ${diffs.length - 40} more`);
+                  console.error(`\n[${viewport.name}] FAIL ${sample.target}`);
+                  for (const diff of [...geometryDiffs, ...fontDiffs, ...bottomDiffs].slice(0, 60)) console.error(`  ${diff}`);
+                  console.error(`  scrollY=${sample.metrics.bottom.scrollY} scrollMax=${sample.metrics.bottom.scrollMax}`);
                 } else {
-                  console.log(`[${viewport.name}] PASS ${sample.target}`);
+                  console.log(`[${viewport.name}] PASS ${sample.target} bottomGap=${sample.metrics.bottom.footerBottomGap}`);
                 }
               }
 
@@ -175,11 +171,8 @@ jobs:
 
             await browser.close();
             if (failed) process.exit(1);
-            console.log('\nPASS: all 13 active Ink & East pages have identical shared-footer geometry at both fixed viewports.');
-          })().catch(error => {
-            console.error(error);
-            process.exit(1);
-          });
+            console.log('\nPASS: all 13 pages have identical shared-footer internal geometry, font availability, and bottom-of-viewport alignment at both viewports.');
+          })().catch(error => { console.error(error); process.exit(1); });
           NODE
 
       - name: Remove temporary verifier after success
