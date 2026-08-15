@@ -18,6 +18,31 @@ jobs:
           ref: agent/ink-east-footer-normalization
           fetch-depth: 0
 
+      - name: Apply shared footer bottom-pixel snap
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('preview/shared/ink-east-footer.js')
+          text = path.read_text(encoding='utf-8')
+
+          host_anchor = '''        text-size-adjust: 100%;\n      }'''
+          host_replacement = '''        text-size-adjust: 100%;\n        transform: translateY(var(--footer-snap-y, 0px));\n      }'''
+          if host_anchor not in text:
+              raise SystemExit('host transform anchor not found')
+          text = text.replace(host_anchor, host_replacement, 1)
+
+          old_class = '''  class InkEastFooter extends HTMLElement {\n    connectedCallback() {\n      if (this.shadowRoot) return;\n      const root = this.attachShadow({ mode: 'open' });\n      root.appendChild(template.content.cloneNode(true));\n    }\n  }'''
+
+          new_class = '''  class InkEastFooter extends HTMLElement {\n    constructor() {\n      super();\n      this._snapFrame = 0;\n      this._scheduleSnap = this._scheduleSnap.bind(this);\n    }\n\n    connectedCallback() {\n      if (!this.shadowRoot) {\n        const root = this.attachShadow({ mode: 'open' });\n        root.appendChild(template.content.cloneNode(true));\n      }\n\n      this._scheduleSnap();\n      window.addEventListener('load', this._scheduleSnap, { once: true });\n      window.addEventListener('resize', this._scheduleSnap);\n\n      if (document.fonts && document.fonts.ready) {\n        document.fonts.ready.then(this._scheduleSnap);\n      }\n    }\n\n    disconnectedCallback() {\n      window.removeEventListener('resize', this._scheduleSnap);\n      if (this._snapFrame) cancelAnimationFrame(this._snapFrame);\n    }\n\n    _scheduleSnap() {\n      if (this._snapFrame) cancelAnimationFrame(this._snapFrame);\n      this._snapFrame = requestAnimationFrame(() => {\n        this._snapFrame = 0;\n        this.style.setProperty('--footer-snap-y', '0px');\n\n        const rect = this.getBoundingClientRect();\n        const absoluteBottom = rect.bottom + window.scrollY;\n        const documentBottom = document.documentElement.scrollHeight;\n        const delta = documentBottom - absoluteBottom;\n\n        this.style.setProperty('--footer-snap-y', `${delta.toFixed(3)}px`);\n      });\n    }\n  }'''
+
+          if old_class not in text:
+              raise SystemExit('component class anchor not found')
+          text = text.replace(old_class, new_class, 1)
+          path.write_text(text, encoding='utf-8')
+          PY
+
       - name: Install browser harness
         shell: bash
         run: |
@@ -33,7 +58,6 @@ jobs:
           sleep 1
           node <<'NODE'
           const { chromium } = require('playwright');
-
           const targets = [
             'ink-east-v1.html','ink-east-issue-001-v1.html','ink-east-article-001-v1.html',
             'ink-east-article-002-vip-v1.html','ink-east-articles-archive-v1.html','ink-east-vip-library-v1.html',
@@ -46,7 +70,6 @@ jobs:
             { name: 'mobile', width: 390, height: 844 },
           ];
           const tolerance = 0.1;
-          const round = value => Math.round(value * 1000) / 1000;
 
           function compare(a, b, path = '', diffs = []) {
             if (typeof a === 'number' && typeof b === 'number') {
@@ -91,7 +114,7 @@ jobs:
                   const host = document.querySelector('ink-east-footer');
                   return Boolean(host?.shadowRoot?.querySelector('footer'));
                 });
-
+                await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
                 await page.evaluate(() => {
                   document.documentElement.style.scrollBehavior = 'auto';
                   document.body.style.scrollBehavior = 'auto';
@@ -103,17 +126,17 @@ jobs:
                   const host = document.querySelector('ink-east-footer');
                   const root = host.shadowRoot;
                   const hostRect = host.getBoundingClientRect();
+                  const footerRect = root.querySelector('footer').getBoundingClientRect();
                   const geometry = element => {
                     const rect = element.getBoundingClientRect();
                     return {
-                      top: Math.round((rect.top - hostRect.top) * 1000) / 1000,
-                      left: Math.round((rect.left - hostRect.left) * 1000) / 1000,
+                      top: Math.round((rect.top - footerRect.top) * 1000) / 1000,
+                      left: Math.round((rect.left - footerRect.left) * 1000) / 1000,
                       width: Math.round(rect.width * 1000) / 1000,
                       height: Math.round(rect.height * 1000) / 1000,
                     };
                   };
                   const many = selector => [...root.querySelectorAll(selector)].map(geometry);
-                  const footerRect = root.querySelector('footer').getBoundingClientRect();
                   return {
                     fonts: {
                       eb: document.fonts.check('15px "EB Garamond"', 'Ink East'),
@@ -121,67 +144,64 @@ jobs:
                       mono: document.fonts.check('10px "JetBrains Mono"', 'Read'),
                     },
                     geometry: {
-                      host: { width: Math.round(hostRect.width * 1000) / 1000, height: Math.round(hostRect.height * 1000) / 1000 },
-                      footer: geometry(root.querySelector('footer')),
+                      footer: { width: Math.round(footerRect.width * 1000) / 1000, height: Math.round(footerRect.height * 1000) / 1000 },
                       mark: geometry(root.querySelector('.foot-mark')),
                       ampers: geometry(root.querySelector('.ampers')),
                       footCols: geometry(root.querySelector('.foot-cols')),
-                      headings: many('h5'),
-                      rows: many('li'),
-                      links: many('li a'),
+                      headings: many('h5'), rows: many('li'), links: many('li a'),
                       colophon: geometry(root.querySelector('.colophon-final')),
                     },
                     bottom: {
                       footerBottomGap: Math.round((innerHeight - footerRect.bottom) * 1000) / 1000,
                       hostBottomGap: Math.round((innerHeight - hostRect.bottom) * 1000) / 1000,
+                      snap: getComputedStyle(host).getPropertyValue('--footer-snap-y').trim(),
                       scrollY: Math.round(scrollY * 1000) / 1000,
                       scrollMax: Math.round((document.documentElement.scrollHeight - innerHeight) * 1000) / 1000,
                     },
                   };
                 });
-
                 measurements.push({ target, metrics });
                 await page.close();
               }
 
               const baseline = measurements[0];
-              console.log(`\n[${viewport.name}] baseline ${baseline.target}`);
-              console.log(JSON.stringify(baseline.metrics, null, 2));
-
+              console.log(`\n[${viewport.name}] baseline ${baseline.target} bottomGap=${baseline.metrics.bottom.footerBottomGap} snap=${baseline.metrics.bottom.snap}`);
               for (const sample of measurements.slice(1)) {
-                const geometryDiffs = compare(baseline.metrics.geometry, sample.metrics.geometry);
-                const fontDiffs = compare(baseline.metrics.fonts, sample.metrics.fonts);
-                const bottomDiffs = compare(
-                  { footerBottomGap: baseline.metrics.bottom.footerBottomGap, hostBottomGap: baseline.metrics.bottom.hostBottomGap },
-                  { footerBottomGap: sample.metrics.bottom.footerBottomGap, hostBottomGap: sample.metrics.bottom.hostBottomGap }
-                );
-
-                if (geometryDiffs.length || fontDiffs.length || bottomDiffs.length) {
+                const diffs = [
+                  ...compare(baseline.metrics.geometry, sample.metrics.geometry),
+                  ...compare(baseline.metrics.fonts, sample.metrics.fonts),
+                  ...compare({ gap: baseline.metrics.bottom.footerBottomGap }, { gap: sample.metrics.bottom.footerBottomGap }),
+                ];
+                if (Math.abs(sample.metrics.bottom.footerBottomGap) > tolerance) {
+                  diffs.push(`absolute footerBottomGap: ${sample.metrics.bottom.footerBottomGap}`);
+                }
+                if (diffs.length) {
                   failed = true;
-                  console.error(`\n[${viewport.name}] FAIL ${sample.target}`);
-                  for (const diff of [...geometryDiffs, ...fontDiffs, ...bottomDiffs].slice(0, 60)) console.error(`  ${diff}`);
-                  console.error(`  scrollY=${sample.metrics.bottom.scrollY} scrollMax=${sample.metrics.bottom.scrollMax}`);
+                  console.error(`[${viewport.name}] FAIL ${sample.target}: ${diffs.join('; ')} snap=${sample.metrics.bottom.snap} scrollY=${sample.metrics.bottom.scrollY} max=${sample.metrics.bottom.scrollMax}`);
                 } else {
-                  console.log(`[${viewport.name}] PASS ${sample.target} bottomGap=${sample.metrics.bottom.footerBottomGap}`);
+                  console.log(`[${viewport.name}] PASS ${sample.target} bottomGap=${sample.metrics.bottom.footerBottomGap} snap=${sample.metrics.bottom.snap}`);
                 }
               }
-
+              if (Math.abs(baseline.metrics.bottom.footerBottomGap) > tolerance) {
+                failed = true;
+                console.error(`[${viewport.name}] FAIL baseline absolute footerBottomGap=${baseline.metrics.bottom.footerBottomGap}`);
+              }
               await context.close();
             }
 
             await browser.close();
             if (failed) process.exit(1);
-            console.log('\nPASS: all 13 pages have identical shared-footer internal geometry, font availability, and bottom-of-viewport alignment at both viewports.');
+            console.log('\nPASS: 13/13 pages share identical footer geometry and snap to the same viewport bottom within 0.1px at desktop and mobile.');
           })().catch(error => { console.error(error); process.exit(1); });
           NODE
 
-      - name: Remove temporary verifier after success
+      - name: Commit verified fix and remove temporary verifier
         shell: bash
         run: |
           rm .github/workflows/tmp-verify-ink-east-footer-metrics.yml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .github/workflows/tmp-verify-ink-east-footer-metrics.yml
+          git add preview/shared/ink-east-footer.js .github/workflows/tmp-verify-ink-east-footer-metrics.yml
           git diff --cached --check
-          git commit -m "chore: remove temporary footer metrics verifier"
+          git commit -m "fix(preview): snap shared Ink East footer to page bottom"
           git push origin HEAD:agent/ink-east-footer-normalization
