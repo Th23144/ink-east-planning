@@ -5,7 +5,7 @@
   class InkEastContextBar extends HTMLElement {
     connectedCallback() {
       if (this.shadowRoot) return;
-      const mode = this.getAttribute('mode') === 'article' ? 'article' : 'compact';
+      const mode = this.getAttribute('mode') === 'reading' ? 'reading' : 'compact';
       const backHref = esc(this.getAttribute('back-href') || './ink-east-v1.html');
       const backLabel = esc(this.getAttribute('back-label') || '← Back to Ink & East');
       const center = esc(this.getAttribute('center') || 'INK & EAST');
@@ -57,7 +57,7 @@
           .compact .back { justify-self: start; max-width: 100%; }
           .compact .center { justify-self: end; text-align: right; }
 
-          .article {
+          .reading {
             height: 36px;
             padding: 0 28px;
             display: grid;
@@ -68,21 +68,21 @@
             line-height: 16px;
             letter-spacing: .18em;
           }
-          .article .back { justify-self: start; max-width: 100%; }
-          .article .center { justify-self: center; color: var(--paper-light); letter-spacing: .3em; text-align: center; }
-          .article .right { justify-self: end; color: var(--ink-faint); text-align: right; }
+          .reading .back { justify-self: start; max-width: 100%; }
+          .reading .center { justify-self: center; color: var(--paper-light); letter-spacing: .3em; text-align: center; }
+          .reading .right { justify-self: end; color: var(--ink-faint); text-align: right; }
 
           @media (max-width: 720px) {
             .compact { height: 30px; padding: 0 16px; font-size: 9px; gap: 10px; }
-            .article { height: 32px; padding: 0 16px; font-size: 9px; gap: 10px; grid-template-columns: minmax(0,1fr) auto; }
-            .article .right { display: none; }
-            .article .center { justify-self: end; max-width: 100%; }
+            .reading { height: 32px; padding: 0 16px; font-size: 9px; gap: 10px; grid-template-columns: minmax(0,1fr) auto; }
+            .reading .right { display: none; }
+            .reading .center { justify-self: end; max-width: 100%; }
           }
         </style>
         <div class="bar ${mode}">
           <a class="back" href="${backHref}">${backLabel}</a>
           <span class="center">${center}</span>
-          ${mode === 'article' ? `<span class="right">${right}</span>` : ''}
+          ${mode === 'reading' ? `<span class="right">${right}</span>` : ''}
         </div>
       `;
     }
