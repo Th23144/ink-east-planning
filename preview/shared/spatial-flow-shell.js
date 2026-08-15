@@ -165,6 +165,12 @@
         .masthead { padding: 10px 40px; }
         .site-header { padding: 24px 40px 20px; }
       }
+      @media (max-width: 960px) {
+        .masthead .center { display: none; }
+        .site-header { grid-template-columns: 1fr auto; align-items: center; }
+        .primary { display: none; }
+        .wordmark { justify-self: start; }
+      }
       @media (max-width: 720px) {
         .masthead { padding: 10px 24px; flex-wrap: wrap; gap: 8px; font-size: 10px; }
         .masthead .center { display: none; }
