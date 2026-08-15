@@ -47,7 +47,6 @@ jobs:
                   raise SystemExit(f'{file}: expected exactly one article context mount')
               p.write_text(t.replace('<ink-east-context-bar mode="article"', '<ink-east-context-bar mode="reading"', 1), encoding='utf-8')
 
-          # Semantic assertions: only the three reading surfaces use reading mode.
           reading_files = [
               'preview/ink-east-issue-001-v1.html',
               'preview/ink-east-article-001-v1.html',
@@ -108,7 +107,12 @@ jobs:
                   const center=root.querySelector('.center');
                   const right=root.querySelector('.right');
                   const rr=x=>{const r=x.getBoundingClientRect();return {top:r.top,left:r.left,width:r.width,height:r.height,bottom:r.bottom,right:r.right}};
-                  return {host:rr(host),bar:rr(bar),back:rr(back),center:rr(center),right:rr(right),overflow:document.documentElement.scrollWidth-window.innerWidth};
+                  const cs=x=>getComputedStyle(x);
+                  return {
+                    host:rr(host),bar:rr(bar),back:rr(back),center:rr(center),right:rr(right),
+                    rightDisplay:cs(right).display,
+                    overflow:document.documentElement.scrollWidth-window.innerWidth
+                  };
                 });
                 samples.push([file,m]);
                 await page.close();
@@ -119,16 +123,22 @@ jobs:
                 for(const key of ['host','bar']){
                   for(const dim of ['width','height']) if(!close(base[key][dim],m[key][dim])){console.error(vp.name,file,key,dim,base[key][dim],m[key][dim]);failed=true;}
                 }
-                if(!close(m.back.top,m.center.top) || !close(m.center.top,m.right.top)){
-                  console.error(vp.name,file,'reading text baseline box top mismatch',m.back.top,m.center.top,m.right.top);failed=true;
+                for(const key of ['back','center']){
+                  for(const dim of ['top','height']) if(!close(base[key][dim],m[key][dim])){console.error(vp.name,file,key,dim,base[key][dim],m[key][dim]);failed=true;}
+                }
+                if(vp.width>720){
+                  if(m.rightDisplay==='none'){console.error(vp.name,file,'right unexpectedly hidden');failed=true;}
+                  for(const dim of ['top','height']) if(!close(base.right[dim],m.right[dim])){console.error(vp.name,file,'right',dim,base.right[dim],m.right[dim]);failed=true;}
+                } else if(m.rightDisplay!=='none'){
+                  console.error(vp.name,file,'right should collapse on mobile');failed=true;
                 }
               }
-              console.log(`[${vp.name}] reading context ${base.bar.width}×${base.bar.height}; 3/3 same skeleton PASS`);
+              console.log(`[${vp.name}] reading context ${base.bar.width}×${base.bar.height}; 3/3 cross-page geometry PASS`);
               await ctx.close();
             }
             await browser.close();
             if(failed) process.exit(1);
-            console.log('PASS: Issue, Article, and VIP Article share one three-column reading-context skeleton at desktop/tablet/mobile; Home/Archive remain outside this family.');
+            console.log('PASS: Issue, Article, and VIP Article share one three-column reading-context skeleton across pages; Home/Archive remain compact.');
           })().catch(e=>{console.error(e);process.exit(1)});
           NODE
 
