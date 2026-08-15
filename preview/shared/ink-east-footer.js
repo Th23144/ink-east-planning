@@ -4,6 +4,7 @@
   template.innerHTML = `
     <style>
       :host {
+        all: initial;
         --paper: #f4ede0;
         --paper-light: #faf5e9;
         --ink: #1a1611;
@@ -15,19 +16,58 @@
         --serif-cn: "Noto Serif SC", "EB Garamond", serif;
         --mono: "JetBrains Mono", ui-monospace, monospace;
         display: block;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
         background: var(--paper);
         color: var(--ink);
+        font-family: var(--serif-en);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.55;
+        letter-spacing: normal;
+        text-transform: none;
+        font-feature-settings: "liga" 1, "kern" 1;
+        font-kerning: normal;
+        font-variant: normal;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
       }
 
-      * { box-sizing: border-box; }
-      a { color: inherit; text-decoration: none; }
+      footer,
+      footer * { box-sizing: border-box; }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
 
       footer {
+        width: 100%;
+        min-width: 0;
         background: var(--paper);
         color: var(--ink);
         padding: 90px 40px 28px;
         margin: 0;
         text-align: left;
+        font-family: var(--serif-en);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.55;
+        letter-spacing: normal;
+        font-feature-settings: "liga" 1, "kern" 1;
+        font-kerning: normal;
+        font-variant: normal;
+        font-synthesis: none;
       }
 
       .foot-mark {
@@ -40,9 +80,12 @@
       .foot-mark .ampers {
         font-family: var(--serif-en);
         font-size: clamp(80px, 12vw, 200px);
+        font-style: normal;
         font-weight: 400;
         line-height: 0.85;
         letter-spacing: -0.01em;
+        font-feature-settings: "liga" 1, "kern" 1;
+        font-kerning: normal;
       }
       .foot-mark .ampers em { font-style: italic; color: var(--seal); }
 
@@ -50,6 +93,9 @@
         display: block;
         font-family: var(--serif-cn);
         font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
         letter-spacing: 0.5em;
         color: var(--ink-soft);
         margin-top: 18px;
@@ -59,15 +105,21 @@
         display: block;
         font-family: var(--mono);
         font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
         letter-spacing: 0.3em;
         text-transform: uppercase;
         color: var(--ink-faint);
         margin-top: 16px;
+        font-feature-settings: normal;
+        font-variant: normal;
       }
 
       .foot-cols {
         display: grid;
         grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        align-items: start;
         gap: 56px;
         padding-bottom: 40px;
         border-bottom: 1px solid var(--rule);
@@ -76,14 +128,23 @@
       h5 {
         font-family: var(--mono);
         font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px;
         letter-spacing: 0.3em;
         text-transform: uppercase;
         color: var(--seal);
         margin: 0 0 22px;
-        font-weight: 500;
+        padding: 0;
+        font-feature-settings: normal;
+        font-variant: normal;
       }
       h5 .cn {
         font-family: var(--serif-cn);
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
         color: var(--ink-faint);
         margin-left: 10px;
         letter-spacing: 0.3em;
@@ -93,18 +154,31 @@
         font-family: var(--serif-en);
         font-style: italic;
         font-size: 17px;
-        line-height: 1.7;
+        font-weight: 400;
+        line-height: 28.9px;
+        letter-spacing: normal;
         color: var(--ink-soft);
         max-width: 380px;
         margin: 0 0 22px;
+        padding: 0;
+        font-feature-settings: "liga" 1, "kern" 1;
+        font-kerning: normal;
+        font-variant: normal;
       }
 
       .also-by {
         font-family: var(--serif-en);
+        font-style: normal;
         font-size: 13px;
+        font-weight: 400;
+        line-height: 22.1px;
+        letter-spacing: normal;
         color: var(--ink-faint);
-        line-height: 1.7;
         margin: 0;
+        padding: 0;
+        font-feature-settings: "liga" 1, "kern" 1;
+        font-kerning: normal;
+        font-variant: normal;
       }
       .also-by a {
         font-style: italic;
@@ -115,13 +189,34 @@
       }
       .also-by a:hover { color: var(--seal); border-color: var(--seal); }
 
-      ul { list-style: none; margin: 0; padding: 0; }
-      li { margin-bottom: 11px; }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        height: 24px;
+        margin: 0 0 11px;
+        padding: 0;
+        line-height: 24px;
+      }
+
       li a {
+        display: inline-flex;
+        align-items: center;
+        height: 24px;
         font-family: var(--serif-en);
         font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: normal;
         color: var(--ink-soft);
         transition: color 0.2s;
+        font-feature-settings: "liga" 1, "kern" 1;
+        font-kerning: normal;
+        font-variant: normal;
       }
       li a:hover { color: var(--seal); }
 
@@ -129,13 +224,19 @@
         padding-top: 24px;
         font-family: var(--mono);
         font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
         letter-spacing: 0.18em;
         text-transform: uppercase;
         color: var(--ink-faint);
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
         gap: 24px;
         flex-wrap: wrap;
+        font-feature-settings: normal;
+        font-variant: normal;
       }
 
       @media (max-width: 1100px) {
@@ -146,7 +247,7 @@
         footer { padding: 60px 20px 20px; }
         .foot-mark .ampers { font-size: 56px; }
         .foot-cols { grid-template-columns: 1fr; gap: 36px; }
-        .colophon-final { flex-direction: column; gap: 6px; text-align: center; }
+        .colophon-final { flex-direction: column; gap: 6px; text-align: center; align-items: stretch; }
       }
     </style>
 
