@@ -12,8 +12,6 @@
 *{box-sizing:border-box;margin:0;padding:0}html{font-size:16px}body{font-family:var(--serif-en);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.55}a{color:inherit;text-decoration:none}::selection{background:var(--seal);color:var(--paper-light)}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:1000;opacity:.4;mix-blend-mode:multiply;background-image:radial-gradient(circle at 25% 30%,rgba(26,22,17,.02) 0%,transparent 40%),radial-gradient(circle at 75% 60%,rgba(26,22,17,.015) 0%,transparent 35%)}
 
-.backbar{background:var(--ink);color:var(--paper-light);padding:8px 28px;font-family:var(--mono);font-size:10px;display:flex;justify-content:space-between;letter-spacing:.1em;text-transform:uppercase}.backbar a{color:var(--seal);border-bottom:1px dashed var(--seal);padding-bottom:1px}
-
 /* ISSUE HERO */
 .issue-hero{padding:80px 56px 100px;border-bottom:2px solid var(--ink);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative}
 .issue-hero::before{content:"";position:absolute;top:60px;bottom:60px;left:50%;width:1px;background:var(--rule-soft);transform:translateX(-50%)}
@@ -113,10 +111,8 @@ footer{padding:60px 20px 20px}
 </head>
 <body>
 
-<div class="backbar">
-  <a href="./ink-east-v1.html">← Back to Issue 001 cover</a>
-  <span>INK & EAST · ISSUE 001 · TABLE OF CONTENTS</span>
-</div>
+<ink-east-context-bar mode="compact" back-href="./ink-east-v1.html" back-label="← Back to Issue 001 cover" center="INK &amp; EAST · ISSUE 001 · TABLE OF CONTENTS"></ink-east-context-bar>
+<script src="./shared/ink-east-context-bar.js"></script>
 
 <!-- ISSUE HERO -->
 <section class="issue-hero">
