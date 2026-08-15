@@ -1,0 +1,49 @@
+name: Temporary audit Ink East service nav
+
+on:
+  push:
+    branches:
+      - agent/ink-east-service-nav-normalization
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ink-east-service-nav-normalization
+      - name: Audit current shell variants
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          targets = [
+              'preview/ink-east-membership-v1.html',
+              'preview/ink-east-vip-library-v1.html',
+              'preview/ink-east-reading-room-v1.html',
+              'preview/ink-east-letters-form-v1.html',
+              'preview/ink-east-custom-ebook-v1.html',
+              'preview/ink-east-community-v1.html',
+              'preview/ink-east-custom-reading-v1.html',
+              'preview/ink-east-reader-notes-component-v1.html',
+          ]
+
+          for path in targets:
+              text = Path(path).read_text(encoding='utf-8')
+              back = re.search(r'<div class="backbar">.*?</div>', text, re.S)
+              nav = re.search(r'<div class="nav-strip">\s*<nav class="site-nav">.*?</nav>\s*</div>', text, re.S)
+              print('\n===', path, '===')
+              print('BODY:', re.search(r'<body[^>]*>', text).group(0))
+              print('BACKBAR:', re.sub(r'\s+', ' ', back.group(0)).strip() if back else 'MISSING')
+              print('NAV:', re.sub(r'\s+', ' ', nav.group(0)).strip() if nav else 'MISSING')
+              if nav:
+                  active = re.findall(r'<a[^>]*class="active"[^>]*href="([^"]+)"[^>]*>(.*?)</a>', nav.group(0), re.S)
+                  right = re.search(r'<div class="right">(.*?)</div>', nav.group(0), re.S)
+                  print('ACTIVE:', active)
+                  print('RIGHT:', re.sub(r'\s+', ' ', right.group(1)).strip() if right else 'MISSING')
+          PY
