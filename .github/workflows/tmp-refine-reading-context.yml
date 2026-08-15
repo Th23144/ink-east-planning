@@ -1,0 +1,148 @@
+name: Temporary refine Ink East reading context
+
+on:
+  push:
+    branches:
+      - agent/ink-east-public-nav-normalization
+
+permissions:
+  contents: write
+
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/ink-east-public-nav-normalization
+          fetch-depth: 0
+
+      - name: Unify reading-context skeleton
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          context_path = Path('preview/shared/ink-east-context-bar.js')
+          text = context_path.read_text(encoding='utf-8')
+          text = text.replace("const mode = this.getAttribute('mode') === 'article' ? 'article' : 'compact';", "const mode = this.getAttribute('mode') === 'reading' ? 'reading' : 'compact';")
+          text = text.replace('.article', '.reading')
+          text = text.replace("mode === 'article'", "mode === 'reading'")
+          if '.article' in text or "mode === 'article'" in text:
+              raise SystemExit('legacy article context mode remains in shared component')
+          context_path.write_text(text, encoding='utf-8')
+
+          issue = Path('preview/ink-east-issue-001-v1.html')
+          issue_text = issue.read_text(encoding='utf-8')
+          old = '<ink-east-context-bar mode="compact" back-href="./ink-east-v1.html" back-label="← Back to Issue 001 cover" center="INK &amp; EAST · ISSUE 001 · TABLE OF CONTENTS"></ink-east-context-bar>'
+          new = '<ink-east-context-bar mode="reading" back-href="./ink-east-v1.html" back-label="← Back to Issue 001 cover" center="INK &amp; EAST · ISSUE 001" right="TABLE OF CONTENTS"></ink-east-context-bar>'
+          if issue_text.count(old) != 1:
+              raise SystemExit('Issue context mount did not match expected current source')
+          issue.write_text(issue_text.replace(old, new, 1), encoding='utf-8')
+
+          for file in ['preview/ink-east-article-001-v1.html', 'preview/ink-east-article-002-vip-v1.html']:
+              p = Path(file)
+              t = p.read_text(encoding='utf-8')
+              if t.count('<ink-east-context-bar mode="article"') != 1:
+                  raise SystemExit(f'{file}: expected exactly one article context mount')
+              p.write_text(t.replace('<ink-east-context-bar mode="article"', '<ink-east-context-bar mode="reading"', 1), encoding='utf-8')
+
+          # Semantic assertions: only the three reading surfaces use reading mode.
+          reading_files = [
+              'preview/ink-east-issue-001-v1.html',
+              'preview/ink-east-article-001-v1.html',
+              'preview/ink-east-article-002-vip-v1.html',
+          ]
+          for file in reading_files:
+              t = Path(file).read_text(encoding='utf-8')
+              if t.count('<ink-east-context-bar mode="reading"') != 1:
+                  raise SystemExit(f'{file}: reading context missing')
+          for file in ['preview/ink-east-v1.html', 'preview/ink-east-articles-archive-v1.html']:
+              t = Path(file).read_text(encoding='utf-8')
+              if t.count('<ink-east-context-bar mode="compact"') != 1:
+                  raise SystemExit(f'{file}: compact context was disturbed')
+          print('PASS: Issue + Article + VIP Article share reading mode; Home + Archive remain compact.')
+          PY
+
+      - name: Install browser harness
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Verify three-column reading geometry
+        shell: bash
+        run: |
+          python3 -m http.server 4173 --directory preview >/tmp/reading-context-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID || true' EXIT
+          sleep 1
+          node <<'NODE'
+          const { chromium } = require('playwright');
+          const files = [
+            'ink-east-issue-001-v1.html',
+            'ink-east-article-001-v1.html',
+            'ink-east-article-002-vip-v1.html',
+          ];
+          const viewports = [
+            {name:'desktop',width:1365,height:991},
+            {name:'tablet',width:820,height:1024},
+            {name:'mobile',width:390,height:844},
+          ];
+          const close=(a,b)=>Math.abs(a-b)<=0.1;
+          (async()=>{
+            const browser=await chromium.launch({headless:true});
+            let failed=false;
+            for(const vp of viewports){
+              const ctx=await browser.newContext({viewport:{width:vp.width,height:vp.height},deviceScaleFactor:1});
+              const samples=[];
+              for(const file of files){
+                const page=await ctx.newPage();
+                await page.goto(`http://127.0.0.1:4173/${file}`,{waitUntil:'networkidle'});
+                await page.evaluate(async()=>{if(document.fonts) await document.fonts.ready;});
+                await page.waitForFunction(()=>document.querySelector('ink-east-context-bar')?.shadowRoot?.querySelector('.reading'));
+                const m=await page.evaluate(()=>{
+                  const host=document.querySelector('ink-east-context-bar');
+                  const root=host.shadowRoot;
+                  const bar=root.querySelector('.reading');
+                  const back=root.querySelector('.back');
+                  const center=root.querySelector('.center');
+                  const right=root.querySelector('.right');
+                  const rr=x=>{const r=x.getBoundingClientRect();return {top:r.top,left:r.left,width:r.width,height:r.height,bottom:r.bottom,right:r.right}};
+                  return {host:rr(host),bar:rr(bar),back:rr(back),center:rr(center),right:rr(right),overflow:document.documentElement.scrollWidth-window.innerWidth};
+                });
+                samples.push([file,m]);
+                await page.close();
+              }
+              const base=samples[0][1];
+              for(const [file,m] of samples){
+                if(m.overflow>1){console.error(vp.name,file,'overflow',m.overflow);failed=true;}
+                for(const key of ['host','bar']){
+                  for(const dim of ['width','height']) if(!close(base[key][dim],m[key][dim])){console.error(vp.name,file,key,dim,base[key][dim],m[key][dim]);failed=true;}
+                }
+                if(!close(m.back.top,m.center.top) || !close(m.center.top,m.right.top)){
+                  console.error(vp.name,file,'reading text baseline box top mismatch',m.back.top,m.center.top,m.right.top);failed=true;
+                }
+              }
+              console.log(`[${vp.name}] reading context ${base.bar.width}×${base.bar.height}; 3/3 same skeleton PASS`);
+              await ctx.close();
+            }
+            await browser.close();
+            if(failed) process.exit(1);
+            console.log('PASS: Issue, Article, and VIP Article share one three-column reading-context skeleton at desktop/tablet/mobile; Home/Archive remain outside this family.');
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+
+      - name: Commit verified refinement and remove workflow
+        shell: bash
+        run: |
+          rm .github/workflows/tmp-refine-reading-context.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add preview/shared/ink-east-context-bar.js \
+                  preview/ink-east-issue-001-v1.html \
+                  preview/ink-east-article-001-v1.html \
+                  preview/ink-east-article-002-vip-v1.html \
+                  .github/workflows/tmp-refine-reading-context.yml
+          git diff --cached --check
+          git commit -m "fix(ink-east): align reading context skeleton"
+          git push origin HEAD:agent/ink-east-public-nav-normalization
