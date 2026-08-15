@@ -180,13 +180,6 @@
         .wordmark .sub { display: none; }
         .utilities { gap: 14px; font-size: 12px; }
       }
-      @media (max-width: 430px) {
-        .masthead .right { display: none; }
-        .site-header { padding-left: 20px; padding-right: 20px; }
-        .wordmark { font-size: 24px; }
-        .utilities { gap: 10px; font-size: 11px; }
-        .utilities > a:not(.bag):first-child { display: none; }
-      }
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
       }
