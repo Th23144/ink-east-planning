@@ -1,9 +1,10 @@
 import type { PublicMediaAsset } from "../public";
 
+export type CommerceId = string | number;
 export type CommerceCurrency = "USD";
 
 export type ProductCategory = {
-  id: string;
+  id: CommerceId;
   name: string;
   slug: string;
   description?: string;
@@ -36,7 +37,7 @@ export type ProductAttribute = {
 };
 
 export type CommerceProduct = {
-  id: string;
+  id: CommerceId;
   title: string;
   slug: string;
   subtitle?: string;
@@ -127,7 +128,7 @@ export type PurchaseResolution =
 
 export type CartLine = {
   line_key: string;
-  product_id: string;
+  product_id: CommerceId | null;
   product_slug: string;
   product_title: string;
   variant_key?: string;
@@ -143,7 +144,7 @@ export type CartLine = {
 };
 
 export type CartSnapshot = {
-  id: string | null;
+  id: CommerceId | null;
   currency: CommerceCurrency;
   lines: CartLine[];
   item_count: number;
