@@ -79,7 +79,17 @@ const getCartDocBySession = async (sessionKey: string, depth = 2) => {
     overrideAccess: true
   });
 
-  return result.docs[0];
+  const doc = result.docs[0];
+  if (!doc || !isRecord(doc)) {
+    return undefined;
+  }
+
+  const expiresAt = asString(doc.expires_at);
+  if (expiresAt && Date.parse(expiresAt) <= Date.now()) {
+    return undefined;
+  }
+
+  return doc;
 };
 
 const productFromCartEntry = async (entry: UnknownRecord): Promise<CommerceProduct | null> => {
@@ -163,7 +173,8 @@ const mutationFailure = (code: string, message: string): CartMutationFailure => 
 
 export const getCartSessionFromCookies = async (): Promise<string | undefined> => {
   const store = await cookies();
-  return store.get(CART_COOKIE)?.value;
+  const value = store.get(CART_COOKIE)?.value;
+  return value && /^[A-Za-z0-9_-]{43}$/.test(value) ? value : undefined;
 };
 
 export const getCurrentCart = async (): Promise<CartSnapshot> => {
@@ -241,11 +252,12 @@ export const addCartItem = async (input: AddCartInput): Promise<CartMutation> =>
   }
 
   const settings = await getCommerceSettings();
-  const sessionKey = input.sessionKey || newSessionKey();
-  let cartDoc = input.sessionKey ? await getCartDocBySession(input.sessionKey, 0) : undefined;
+  let sessionKey = input.sessionKey;
+  let cartDoc = sessionKey ? await getCartDocBySession(sessionKey, 0) : undefined;
   let createdSession = false;
 
   if (!cartDoc) {
+    sessionKey = newSessionKey();
     cartDoc = await createCart(sessionKey);
     createdSession = true;
   }
