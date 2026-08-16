@@ -52,7 +52,7 @@ const main = async () => {
     sessionKey,
     productSlug: "linen-throw",
     variantKey: "natural",
-    quantity: 1
+    quantity: 7
   });
   assert(!overStock.ok && overStock.code === "OUT_OF_STOCK", "cumulative add must not exceed live variant stock");
 
