@@ -59,8 +59,12 @@ const main = async () => {
     },
     body: JSON.stringify({ productSlug: "linen-throw", variantKey: "clay", quantity: 1 })
   });
-  assert(addResponse.status === 200, "same-origin Add to Bag must succeed");
-  const added = await addResponse.json() as {
+  const addBody = await addResponse.text();
+  assert(
+    addResponse.status === 200,
+    `same-origin Add to Bag must succeed; received HTTP ${addResponse.status}: ${addBody.slice(0, 500)}`
+  );
+  const added = JSON.parse(addBody) as {
     ok?: boolean;
     cart?: {
       item_count?: number;
