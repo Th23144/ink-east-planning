@@ -12,6 +12,23 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: verify
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      DATABASE_URI: postgresql://postgres:postgres@127.0.0.1:5432/verify
+      PAYLOAD_SECRET: commerce-batch-a-verifier-secret
     defaults:
       run:
         working-directory: apps/web
@@ -27,15 +44,13 @@ jobs:
         run: pnpm install --no-frozen-lockfile
       - name: Generate Payload types
         run: pnpm generate:types
-        env:
-          DATABASE_URI: postgresql://postgres:postgres@127.0.0.1:5432/verify
-          PAYLOAD_SECRET: commerce-batch-a-verifier-secret
       - name: Typecheck
         run: pnpm typecheck
       - name: Commerce contracts
         run: pnpm check:commerce-contract
+      - name: Seed editorial and commerce data
+        run: pnpm seed
+      - name: Commerce database runtime
+        run: pnpm check:commerce-runtime
       - name: Build
         run: pnpm build
-        env:
-          DATABASE_URI: postgresql://postgres:postgres@127.0.0.1:5432/verify
-          PAYLOAD_SECRET: commerce-batch-a-verifier-secret
