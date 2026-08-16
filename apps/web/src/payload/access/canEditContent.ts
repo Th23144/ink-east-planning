@@ -1,3 +1,5 @@
-import { canAccessAdmin, type AccessArgs } from "./canAccessAdmin";
+import type { Access } from "payload";
 
-export const canEditContent = (args: AccessArgs): boolean => canAccessAdmin(args);
+import { canAccessAdmin } from "./canAccessAdmin";
+
+export const canEditContent: Access = (args) => canAccessAdmin(args);
