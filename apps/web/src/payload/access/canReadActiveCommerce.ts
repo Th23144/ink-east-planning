@@ -1,14 +1,15 @@
-import type { Access } from "payload";
+import type { Access, Where } from "payload";
 
 import { canAccessAdmin } from "./canAccessAdmin";
-import type { Level1User } from "./isAdmin";
 
-export const canReadActiveCommerce: Access = ({ req }) => {
-  if (canAccessAdmin({ req: { user: req.user as Level1User | null | undefined } })) {
+const publicCommerceFilter: Where = {
+  and: [{ status: { equals: "active" } }, { visibility: { equals: "public" } }]
+};
+
+export const canReadActiveCommerce: Access = (args) => {
+  if (canAccessAdmin(args)) {
     return true;
   }
 
-  return {
-    and: [{ status: { equals: "active" } }, { visibility: { equals: "public" } }]
-  };
+  return publicCommerceFilter;
 };
