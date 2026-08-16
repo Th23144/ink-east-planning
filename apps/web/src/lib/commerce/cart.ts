@@ -135,7 +135,7 @@ const mapCartLine = async (entry: unknown, maxQuantityPerLine: number): Promise<
 
   return {
     line_key: lineKey,
-    product_id: product?.id ?? "",
+    product_id: product?.id ?? null,
     product_slug: productSlug,
     product_title: productTitle,
     variant_key: variantKey,
@@ -163,7 +163,7 @@ const snapshotFromDoc = async (doc: unknown): Promise<CartSnapshot> => {
   const totals = calculateCartTotals(lines);
 
   return {
-    id: asString(doc.id) ?? String(doc.id ?? ""),
+    id: recordId(doc),
     currency: "USD",
     lines,
     item_count: totals.item_count,
@@ -254,7 +254,7 @@ const createCart = async (sessionKey: string): Promise<UnknownRecord> => {
   return created;
 };
 
-const relationId = (product: CommerceProduct): string => product.id;
+const relationId = (product: CommerceProduct): CommerceProduct["id"] => product.id;
 
 export const addCartItem = async (input: AddCartInput): Promise<CartMutation> => {
   const product = await getProductBySlug(input.productSlug);
