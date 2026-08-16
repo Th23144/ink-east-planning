@@ -103,6 +103,9 @@ const main = async () => {
 main()
   .then(() => process.exit(0))
   .catch((error: unknown) => {
+    const message = error instanceof Error ? `${error.message}${error.cause ? ` | cause: ${String(error.cause)}` : ""}` : String(error);
+    const safe = message.replace(/%/g, "%25").replace(/\r/g, "%0D").replace(/\n/g, "%0A");
+    console.error(`::error title=Commerce Batch A runtime::${safe}`);
     console.error(error);
     process.exit(1);
   });
