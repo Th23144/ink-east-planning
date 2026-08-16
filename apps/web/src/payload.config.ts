@@ -18,7 +18,6 @@ import {
   Users
 } from "./collections";
 import { CommerceSettings, SystemSettings } from "./globals";
-import { canAccessAdmin } from "./payload/access";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -26,7 +25,6 @@ const dirname = path.dirname(filename);
 export default buildConfig({
   admin: {
     user: Users.slug,
-    canAccessAdmin,
     importMap: {
       baseDir: path.resolve(dirname)
     }
