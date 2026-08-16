@@ -1,5 +1,8 @@
-import { type AccessArgs } from "./canAccessAdmin";
-import { isAdmin } from "./isAdmin";
+import type { Access } from "payload";
 
-export const canDeleteContent = ({ req }: AccessArgs): boolean =>
-  Boolean(req.user && (req.user.status == null || req.user.status === "active") && isAdmin(req.user));
+import { isAdmin, type Level1User } from "./isAdmin";
+
+export const canDeleteContent: Access = ({ req }) => {
+  const user = req.user as Level1User | null | undefined;
+  return Boolean(user && (user.status == null || user.status === "active") && isAdmin(user));
+};
