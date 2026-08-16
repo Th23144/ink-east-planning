@@ -39,6 +39,12 @@ This means:
 
 Before treating the Spatial Flow source-native ecommerce surface as complete, create and maintain a **Project 2 → Project 3 parity / migration matrix** covering all relevant pages, states and workflows.
 
+The current authoritative matrix now exists at:
+
+`docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+
+It records the Project 2 page/reference inventory, accepted Cart / Checkout / Packaging / Crypto / result-state product truth, Project 3's current source-native gaps, explicit non-port rules, and the compressed implementation batches. Its current locked next implementation tranche is **Batch A — Commerce domain + real core source routes**.
+
 Classify each Project 2 item as:
 
 - already exists in Project 3;
@@ -52,14 +58,15 @@ The purpose is to prevent Project 3 from appearing complete merely because its c
 
 ## Precedence over older documents
 
-Older files may still contain stale wording such as "Project 3 = Ink & East only", an Ink & East-centric scope, or an older next-step sequence. Those statements are superseded where they conflict with this file or `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`.
+Older files may still contain stale wording such as "Project 3 = Ink & East only", an Ink & East-centric scope, an older Project 2 completion score, or an older next-step sequence. Those statements are superseded where they conflict with this file, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, or the current ecommerce parity matrix.
 
 When opening a new project window, read in this order:
 
 1. `PROJECT-3-START-HERE.md`
 2. `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`
-3. `docs/PROJECT-3-CURRENT-HANDOFF.md`
-4. current merged PR history / latest progress records
-5. older planning documents only as historical/product references
+3. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+4. `docs/PROJECT-3-CURRENT-HANDOFF.md`
+5. current merged PR history / latest progress records
+6. older planning documents only as historical/product references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether the missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
