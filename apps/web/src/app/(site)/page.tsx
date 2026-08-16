@@ -32,6 +32,11 @@ export default async function Home() {
         <div className="hero-actions">
           <Link className="text-link" href="/articles">Browse articles</Link>
           <Link className="text-link" href="/search">Search the journal</Link>
+          {settings.shop_bridge.shop_bridge_url ? (
+            <Link className="text-link" href={settings.shop_bridge.shop_bridge_url}>
+              {settings.shop_bridge.shop_bridge_label ?? "Shop Spatial Flow"}
+            </Link>
+          ) : null}
         </div>
       </section>
 
