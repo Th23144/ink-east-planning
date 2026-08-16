@@ -559,37 +559,15 @@ footer .colophon {
   footer .cols { grid-template-columns: 1fr; }
 }
 </style>
+<script src="./shared/spatial-flow-shell.js"></script>
 </head>
 <body class="woocommerce-cart">
 
 <!-- Masthead strip -->
-<div class="masthead-strip">
-  <div class="vol">Spring <b>2026</b> · Objects for the Quiet Room</div>
-  <div class="center">Spatial Flow</div>
-  <div class="right"><span></span> Lisbon · Tokyo · Copenhagen</div>
-</div>
+<spatial-flow-header active="index" bag-count="3"></spatial-flow-header>
 
 <!-- Header -->
-<header class="site-header">
-  <nav class="primary">
-    <ul>
-      <li><a href="spatial-flow-v1.html">Home</a></li>
-      <li><a href="spatial-flow-shop-v1.html" class="current">Shop</a></li>
-      <li><a href="ink-east-v1.html">Journal</a></li>
-      <li><a href="#">Studios</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-  </nav>
-  <a href="spatial-flow-v1.html" class="wordmark">
-    SPATIAL <em>FLOW</em>
-    <span class="sub">Objects · Spaces · Slow Living</span>
-  </a>
-  <div class="utilities">
-    <a href="#">Search</a>
-    <a href="#">Account</a>
-    <a href="#" class="bag">Bag<sup>3</sup></a>
-  </div>
-</header>
+
 
 <!-- Breadcrumb -->
 <nav class="woocommerce-breadcrumb">
@@ -743,63 +721,7 @@ footer .colophon {
 </section>
 
 <!-- Footer (V1 aligned) -->
-<footer>
-  <div class="brand-mark">
-    SPATIAL <em>FLOW</em>
-    <span class="sub">A Journal of Rooms, Rituals &amp; Quiet Objects · Est. 2026</span>
-  </div>
-
-  <div class="cols">
-    <div>
-      <h5>— The Publisher</h5>
-      <p class="mission">An independent journal and shop about the rooms we live in, the objects that hold them together, and the quiet rituals that make them ours.</p>
-    </div>
-    <div>
-      <h5>— The Index</h5>
-      <ul>
-        <li><a href="#">Bracelets</a></li>
-        <li><a href="#">Necklaces</a></li>
-        <li><a href="#">Decorative pieces</a></li>
-        <li><a href="#">Consult &amp; Customize</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>— The Journal</h5>
-      <ul>
-        <li><a href="#">Space &amp; Energy</a></li>
-        <li><a href="#">Mind &amp; Emotion</a></li>
-        <li><a href="#">Philosophy &amp; Insights</a></li>
-        <li><a href="#">Lifestyle Guide</a></li>
-        <li><a href="#">Crystals &amp; Botanicals</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>— Care</h5>
-      <ul>
-        <li><a href="#">Shipping</a></li>
-        <li><a href="#">Returns &amp; Refunds</a></li>
-        <li><a href="#">Track Order</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <h5>— Our Pages</h5>
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Consult</a></li>
-        <li><a href="#">The Dispatch</a></li>
-        <li><a href="#">Terms</a></li>
-        <li><a href="#">Privacy</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="colophon">
-    <span>© 2026 Spatial Flow · Published slowly, from a small wooden table.</span>
-    <span>Set in Cormorant Garamond &amp; Inter · ISSN — 2026.03</span>
-  </div>
-</footer>
+<spatial-flow-footer></spatial-flow-footer>
 
 </body>
 </html>
