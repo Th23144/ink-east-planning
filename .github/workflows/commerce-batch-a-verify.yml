@@ -54,3 +54,13 @@ jobs:
         run: pnpm check:commerce-runtime
       - name: Build
         run: pnpm build
+      - name: Production HTTP commerce runtime
+        run: |
+          pnpm start > /tmp/commerce-web.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill ${SERVER_PID} >/dev/null 2>&1 || true' EXIT
+          pnpm check:commerce-http || {
+            echo "--- production server log ---"
+            cat /tmp/commerce-web.log
+            exit 1
+          }
