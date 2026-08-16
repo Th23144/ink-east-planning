@@ -1,4 +1,4 @@
-import type { ArtworkTone } from "@/lib/commerce";
+import type { ArtworkTone } from "@/lib/commerce/types";
 import type { PublicMediaAsset } from "@/lib/public";
 
 type ProductArtworkProps = {
