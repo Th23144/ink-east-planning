@@ -56,7 +56,7 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
 
       <section className="sf-shop-toolbar" aria-label="Catalog controls">
         <div className="sf-shop-filters">
-          <Link className={!category ? "is-active" : ""} href={queryHref(undefined, sort)}>All · {catalog.totalProducts}</Link>
+          <Link className={!category ? "is-active" : ""} href={queryHref(undefined, sort)}>All</Link>
           {categories.map((item) => (
             <Link
               className={category === item.slug ? "is-active" : ""}
