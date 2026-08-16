@@ -263,12 +263,14 @@ export const addCartItem = async (input: AddCartInput): Promise<CartMutation> =>
   }
 
   const settings = await getCommerceSettings();
-  let sessionKey = input.sessionKey;
-  let cartDoc = sessionKey ? await getCartDocBySession(sessionKey, 0) : undefined;
+  let sessionKey: string = input.sessionKey ?? newSessionKey();
+  let cartDoc = input.sessionKey ? await getCartDocBySession(input.sessionKey, 0) : undefined;
   let createdSession = false;
 
   if (!cartDoc) {
-    sessionKey = newSessionKey();
+    if (input.sessionKey) {
+      sessionKey = newSessionKey();
+    }
     cartDoc = await createCart(sessionKey);
     createdSession = true;
   }
