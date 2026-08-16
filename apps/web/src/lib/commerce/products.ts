@@ -222,7 +222,7 @@ const getCategoryIdBySlug = async (slug: string) => {
     overrideAccess: false
   });
 
-  return result.docs[0]?.id;
+  return mapProductCategory(result.docs[0])?.id;
 };
 
 export const getCatalog = async (options: CatalogOptions = {}): Promise<CatalogResult> => {
