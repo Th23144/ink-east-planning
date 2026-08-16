@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - feature/commerce-batch-a
+  pull_request:
+    branches:
+      - main
 
 jobs:
   verify:
