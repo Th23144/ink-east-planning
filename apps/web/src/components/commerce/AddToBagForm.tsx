@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { formatMoney, type PurchaseOption } from "@/lib/commerce";
+import { formatMoney } from "@/lib/commerce/pricing";
+import type { PurchaseOption } from "@/lib/commerce/types";
 
 type AddToBagFormProps = {
   productSlug: string;
