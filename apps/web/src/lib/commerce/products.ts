@@ -6,6 +6,7 @@ import type {
   ArtworkTone,
   CatalogResult,
   CatalogSort,
+  CommerceId,
   CommerceProduct,
   CommerceSettings,
   ProductAttribute,
@@ -29,6 +30,8 @@ const isRecord = (value: unknown): value is UnknownRecord =>
 const asString = (value: unknown): string | undefined => (typeof value === "string" ? value : undefined);
 const asNumber = (value: unknown): number | undefined => (typeof value === "number" ? value : undefined);
 const asBoolean = (value: unknown): boolean | undefined => (typeof value === "boolean" ? value : undefined);
+const asId = (value: unknown): CommerceId | undefined =>
+  typeof value === "string" || typeof value === "number" ? value : undefined;
 const requiredString = (value: unknown, fallback = ""): string => asString(value) ?? String(value ?? fallback);
 const isDefined = <T>(value: T | undefined): value is T => value !== undefined;
 
@@ -56,8 +59,13 @@ const mapProductCategory = (category: unknown): ProductCategory | undefined => {
     return undefined;
   }
 
+  const id = asId(category.id);
+  if (id == null) {
+    return undefined;
+  }
+
   return {
-    id: requiredString(category.id),
+    id,
     name: requiredString(category.name),
     slug: requiredString(category.slug),
     description: asString(category.description),
@@ -133,9 +141,10 @@ export const mapCommerceProduct = (product: unknown): CommerceProduct | undefine
     return undefined;
   }
 
+  const id = asId(product.id);
   const productType = product.product_type === "variant" ? "variant" : "simple";
   const basePrice = asNumber(product.base_price_minor);
-  if (basePrice == null) {
+  if (id == null || basePrice == null) {
     return undefined;
   }
 
@@ -162,7 +171,7 @@ export const mapCommerceProduct = (product: unknown): CommerceProduct | undefine
     : [];
 
   return {
-    id: requiredString(product.id),
+    id,
     title: requiredString(product.title),
     slug: requiredString(product.slug),
     subtitle: asString(product.subtitle),
