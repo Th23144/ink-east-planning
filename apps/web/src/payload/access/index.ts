@@ -2,6 +2,7 @@ export { canAccessAdmin } from "./canAccessAdmin";
 export type { AccessArgs } from "./canAccessAdmin";
 export { canDeleteContent } from "./canDeleteContent";
 export { canEditContent } from "./canEditContent";
+export { canReadActiveCommerce } from "./canReadActiveCommerce";
 export { canReadPublished } from "./canReadPublished";
 export type { AccessResult } from "./canReadPublished";
 export { isAdmin } from "./isAdmin";
