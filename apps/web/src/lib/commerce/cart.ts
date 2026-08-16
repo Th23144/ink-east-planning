@@ -52,6 +52,12 @@ const isRecord = (value: unknown): value is UnknownRecord =>
 
 const asString = (value: unknown): string | undefined => (typeof value === "string" ? value : undefined);
 const asNumber = (value: unknown): number | undefined => (typeof value === "number" ? value : undefined);
+const recordId = (doc: UnknownRecord): string | number => {
+  if (typeof doc.id === "string" || typeof doc.id === "number") {
+    return doc.id;
+  }
+  throw new Error("Cart document is missing a valid id.");
+};
 
 const emptyCart = (): CartSnapshot => ({
   id: null,
@@ -64,7 +70,7 @@ const emptyCart = (): CartSnapshot => ({
 const newSessionKey = () => randomBytes(32).toString("base64url");
 const newLineKey = () => randomBytes(18).toString("base64url");
 
-const getCartDocBySession = async (sessionKey: string, depth = 2) => {
+const getCartDocBySession = async (sessionKey: string, depth = 2): Promise<UnknownRecord | undefined> => {
   const payload = await getPayloadClient();
   const result = await payload.find({
     collection: "carts" as never,
@@ -79,8 +85,8 @@ const getCartDocBySession = async (sessionKey: string, depth = 2) => {
     overrideAccess: true
   });
 
-  const doc = result.docs[0];
-  if (!doc || !isRecord(doc)) {
+  const doc: unknown = result.docs[0];
+  if (!isRecord(doc)) {
     return undefined;
   }
 
@@ -222,12 +228,11 @@ const persistCartItems = async (cartId: string | number, items: UnknownRecord[])
   });
 };
 
-const createCart = async (sessionKey: string) => {
+const createCart = async (sessionKey: string): Promise<UnknownRecord> => {
   const payload = await getPayloadClient();
   const settings = await getCommerceSettings();
   const expiresAt = new Date(Date.now() + settings.cart.session_ttl_days * 24 * 60 * 60 * 1000).toISOString();
-
-  return payload.create({
+  const created: unknown = await payload.create({
     collection: "carts" as never,
     data: {
       session_key: sessionKey,
@@ -241,6 +246,12 @@ const createCart = async (sessionKey: string) => {
     depth: 2,
     overrideAccess: true
   });
+
+  if (!isRecord(created)) {
+    throw new Error("Payload did not return a Cart document after creation.");
+  }
+
+  return created;
 };
 
 const relationId = (product: CommerceProduct): string => product.id;
@@ -296,7 +307,7 @@ export const addCartItem = async (input: AddCartInput): Promise<CartMutation> =>
     items.push(nextItem);
   }
 
-  const updated = await persistCartItems(cartDoc.id, items);
+  const updated = await persistCartItems(recordId(cartDoc), items);
   return {
     ok: true,
     result: {
@@ -342,7 +353,7 @@ export const updateCartLine = async (input: UpdateCartLineInput): Promise<CartMu
     unit_price_minor: resolution.unit_price_minor
   };
 
-  const updated = await persistCartItems(cartDoc.id, items);
+  const updated = await persistCartItems(recordId(cartDoc), items);
   return {
     ok: true,
     result: {
@@ -365,7 +376,7 @@ export const removeCartLine = async (input: RemoveCartLineInput): Promise<CartMu
     return mutationFailure("line_not_found", "This bag item could not be found.");
   }
 
-  const updated = await persistCartItems(cartDoc.id, nextItems);
+  const updated = await persistCartItems(recordId(cartDoc), nextItems);
   return {
     ok: true,
     result: {
