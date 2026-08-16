@@ -6,15 +6,18 @@ import { fileURLToPath } from "url";
 import {
   Articles,
   Authors,
+  Carts,
   EditorialCollections,
   Issues,
   LegacyArticleRecords,
   Media,
+  ProductCategories,
+  Products,
   RedirectRules,
   Topics,
   Users
 } from "./collections";
-import { SystemSettings } from "./globals";
+import { CommerceSettings, SystemSettings } from "./globals";
 import { canAccessAdmin } from "./payload/access";
 
 const filename = fileURLToPath(import.meta.url);
@@ -36,10 +39,13 @@ export default buildConfig({
     Topics,
     Authors,
     Media,
+    ProductCategories,
+    Products,
+    Carts,
     LegacyArticleRecords,
     RedirectRules
   ],
-  globals: [SystemSettings],
+  globals: [SystemSettings, CommerceSettings],
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || ""
