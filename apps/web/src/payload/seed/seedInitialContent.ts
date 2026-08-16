@@ -20,6 +20,7 @@ const repoRoot = path.resolve(dirname, "../../../../..");
 
 type PayloadClient = Awaited<ReturnType<typeof getPayload>>;
 type Id = string | number;
+type SeedDoc = { id: Id };
 
 type SeedMaps = {
   authors: Map<string, Id>;
@@ -74,12 +75,25 @@ const requireEnv = (key: string) => {
   }
 };
 
+const asSeedDoc = (value: unknown, label: string): SeedDoc => {
+  if (
+    typeof value === "object" &&
+    value !== null &&
+    "id" in value &&
+    (typeof value.id === "string" || typeof value.id === "number")
+  ) {
+    return { id: value.id };
+  }
+
+  throw new Error(`Payload did not return a valid document id for ${label}.`);
+};
+
 const findExisting = async (
   payload: PayloadClient,
   collection: string,
   field: string,
   value: string
-) => {
+): Promise<SeedDoc | undefined> => {
   const result = await payload.find({
     collection: collection as never,
     where: {
@@ -92,7 +106,8 @@ const findExisting = async (
     overrideAccess: true
   });
 
-  return result.docs[0];
+  const doc: unknown = result.docs[0];
+  return doc == null ? undefined : asSeedDoc(doc, `${collection}:${value}`);
 };
 
 const upsertByField = async <T extends Record<string, unknown>>(
@@ -101,11 +116,11 @@ const upsertByField = async <T extends Record<string, unknown>>(
   field: string,
   value: string,
   data: T
-) => {
+): Promise<SeedDoc> => {
   const existing = await findExisting(payload, collection, field, value);
 
   if (existing) {
-    const updated = await payload.update({
+    await payload.update({
       collection: collection as never,
       id: existing.id,
       data: data as never,
@@ -114,10 +129,10 @@ const upsertByField = async <T extends Record<string, unknown>>(
     });
 
     console.log(`Updated ${collection}: ${value}`);
-    return updated;
+    return existing;
   }
 
-  const created = await payload.create({
+  const created: unknown = await payload.create({
     collection: collection as never,
     data: data as never,
     depth: 0,
@@ -125,7 +140,7 @@ const upsertByField = async <T extends Record<string, unknown>>(
   });
 
   console.log(`Created ${collection}: ${value}`);
-  return created;
+  return asSeedDoc(created, `${collection}:${value}`);
 };
 
 const idFor = (map: Map<string, Id>, key: string, label: string) => {
