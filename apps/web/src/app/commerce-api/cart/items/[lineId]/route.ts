@@ -1,20 +1,10 @@
 import { NextResponse } from "next/server";
 
 import { getCartSessionFromCookies, removeCartLine, updateCartLine } from "@/lib/commerce";
+import { isSameOriginMutation } from "@/lib/commerce/requestSecurity";
 
 type LineRouteProps = {
   params: Promise<{ lineId: string }>;
-};
-
-const sameOrigin = (request: Request) => {
-  const origin = request.headers.get("origin");
-  if (!origin) return true;
-
-  try {
-    return new URL(origin).origin === new URL(request.url).origin;
-  } catch {
-    return false;
-  }
 };
 
 const failure = (code: string, message: string, status = 400) =>
@@ -26,7 +16,7 @@ const sessionOrFailure = async () => {
 };
 
 export async function PATCH(request: Request, { params }: LineRouteProps) {
-  if (!sameOrigin(request)) {
+  if (!isSameOriginMutation(request)) {
     return failure("origin_mismatch", "The bag request could not be authorized.", 403);
   }
 
@@ -59,7 +49,7 @@ export async function PATCH(request: Request, { params }: LineRouteProps) {
 }
 
 export async function DELETE(request: Request, { params }: LineRouteProps) {
-  if (!sameOrigin(request)) {
+  if (!isSameOriginMutation(request)) {
     return failure("origin_mismatch", "The bag request could not be authorized.", 403);
   }
 

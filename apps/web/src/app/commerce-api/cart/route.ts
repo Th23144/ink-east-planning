@@ -1,23 +1,13 @@
 import { NextResponse } from "next/server";
 
 import { addCartItem, cartCookie, getCartSessionFromCookies, getCommerceSettings } from "@/lib/commerce";
-
-const sameOrigin = (request: Request) => {
-  const origin = request.headers.get("origin");
-  if (!origin) return true;
-
-  try {
-    return new URL(origin).origin === new URL(request.url).origin;
-  } catch {
-    return false;
-  }
-};
+import { isSameOriginMutation } from "@/lib/commerce/requestSecurity";
 
 const badRequest = (code: string, message: string, status = 400) =>
   NextResponse.json({ ok: false, code, message }, { status });
 
 export async function POST(request: Request) {
-  if (!sameOrigin(request)) {
+  if (!isSameOriginMutation(request)) {
     return badRequest("origin_mismatch", "The bag request could not be authorized.", 403);
   }
 
