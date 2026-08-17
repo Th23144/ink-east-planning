@@ -50,6 +50,8 @@ jobs:
         run: pnpm check:commerce-contract
       - name: Seed editorial and commerce data
         run: pnpm seed
+      - name: Editorial public-read regression
+        run: pnpm check:public-reads
       - name: Commerce database runtime
         run: pnpm check:commerce-runtime
       - name: Build
