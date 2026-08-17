@@ -35,26 +35,31 @@ export function AddToBagForm({ productSlug, productType, options, maxQuantityPer
     setState("saving");
     setMessage("");
 
-    const response = await fetch("/commerce-api/cart", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        productSlug,
-        variantKey: productType === "variant" ? selected.key : undefined,
-        quantity
-      })
-    });
-    const payload = (await response.json().catch(() => ({}))) as ApiMessage;
+    try {
+      const response = await fetch("/commerce-api/cart", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          productSlug,
+          variantKey: productType === "variant" ? selected.key : undefined,
+          quantity
+        })
+      });
+      const payload = (await response.json().catch(() => ({}))) as ApiMessage;
 
-    if (!response.ok) {
+      if (!response.ok) {
+        setState("error");
+        setMessage(payload.message ?? "This piece could not be added to the Bag.");
+        return;
+      }
+
+      setState("success");
+      setMessage("Added to Bag.");
+      router.refresh();
+    } catch {
       setState("error");
-      setMessage(payload.message ?? "This piece could not be added to the Bag.");
-      return;
+      setMessage("The Bag could not be reached. Check your connection and try again.");
     }
-
-    setState("success");
-    setMessage("Added to Bag.");
-    router.refresh();
   };
 
   if (!firstAvailable) {

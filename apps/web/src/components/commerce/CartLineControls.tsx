@@ -21,21 +21,25 @@ export function CartLineControls({ lineKey, quantity, maxQuantity, available }: 
     setBusy(true);
     setMessage("");
 
-    const response = await fetch(`/commerce-api/cart/items/${encodeURIComponent(lineKey)}`, {
-      method,
-      headers: method === "PATCH" ? { "content-type": "application/json" } : undefined,
-      body: method === "PATCH" ? JSON.stringify({ quantity: nextQuantity }) : undefined
-    });
-    const payload = (await response.json().catch(() => ({}))) as ApiMessage;
+    try {
+      const response = await fetch(`/commerce-api/cart/items/${encodeURIComponent(lineKey)}`, {
+        method,
+        headers: method === "PATCH" ? { "content-type": "application/json" } : undefined,
+        body: method === "PATCH" ? JSON.stringify({ quantity: nextQuantity }) : undefined
+      });
+      const payload = (await response.json().catch(() => ({}))) as ApiMessage;
 
-    if (!response.ok) {
+      if (!response.ok) {
+        setMessage(payload.message ?? "The Bag could not be updated.");
+        return;
+      }
+
+      router.refresh();
+    } catch {
+      setMessage("The Bag could not be reached. Check your connection and try again.");
+    } finally {
       setBusy(false);
-      setMessage(payload.message ?? "The Bag could not be updated.");
-      return;
     }
-
-    router.refresh();
-    setBusy(false);
   };
 
   return (
