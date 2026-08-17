@@ -11,7 +11,7 @@ export const systemSettings = {
       "Old texts, quiet stories, and modern questions from the Ink & East source-native journal prototype."
   },
   shop_bridge: {
-    shop_bridge_url: "https://shop.inkandeast.com",
-    shop_bridge_label: "Visit the shop"
+    shop_bridge_url: "/shop",
+    shop_bridge_label: "Shop Spatial Flow"
   }
 } as const;

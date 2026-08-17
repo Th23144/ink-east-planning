@@ -115,9 +115,11 @@ const runPublicReadChecks = async () => {
   console.log(`Read ${articles.length} public articles, ${topics.length} active topics, and ${issue?.title}.`);
 };
 
-runPublicReadChecks().catch((error: unknown) => {
-  console.error("Public read checks failed.");
-  console.error("Run pnpm --filter web seed first if the Level 1 seed data is missing.");
-  console.error(error);
-  process.exit(1);
-});
+runPublicReadChecks()
+  .then(() => process.exit(0))
+  .catch((error: unknown) => {
+    console.error("Public read checks failed.");
+    console.error("Run pnpm --filter web seed first if the Level 1 seed data is missing.");
+    console.error(error);
+    process.exit(1);
+  });

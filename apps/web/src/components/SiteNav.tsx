@@ -6,7 +6,8 @@ const navItems = [
   { href: "/search", label: "Search" },
   { href: "/issues", label: "Issues" },
   { href: "/topics", label: "Topics" },
-  { href: "/collections", label: "Collections" }
+  { href: "/collections", label: "Collections" },
+  { href: "/shop", label: "Spatial Flow Shop" }
 ] as const;
 
 export function SiteNav() {

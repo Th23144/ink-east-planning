@@ -10,8 +10,13 @@
     "payload": "payload",
     "generate:types": "payload generate:types",
     "generate:importmap": "payload generate:importmap",
-    "seed": "tsx src/payload/seed/seedInitialContent.ts",
-    "check:public-reads": "tsx src/lib/public/checkPublicReads.ts"
+    "seed": "pnpm run seed:editorial && pnpm run seed:commerce",
+    "seed:editorial": "tsx src/payload/seed/seedInitialContent.ts",
+    "seed:commerce": "tsx src/payload/seed/seedCommerce.ts",
+    "check:public-reads": "tsx src/lib/public/checkPublicReads.ts",
+    "check:commerce-contract": "tsx src/lib/commerce/checkCommerceContracts.ts",
+    "check:commerce-runtime": "tsx src/lib/commerce/checkCommerceRuntime.ts",
+    "check:commerce-http": "tsx src/lib/commerce/checkCommerceHttp.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.84.1",

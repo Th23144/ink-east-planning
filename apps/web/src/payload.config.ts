@@ -6,16 +6,18 @@ import { fileURLToPath } from "url";
 import {
   Articles,
   Authors,
+  Carts,
   EditorialCollections,
   Issues,
   LegacyArticleRecords,
   Media,
+  ProductCategories,
+  Products,
   RedirectRules,
   Topics,
   Users
 } from "./collections";
-import { SystemSettings } from "./globals";
-import { canAccessAdmin } from "./payload/access";
+import { CommerceSettings, SystemSettings } from "./globals";
 
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
@@ -23,7 +25,6 @@ const dirname = path.dirname(filename);
 export default buildConfig({
   admin: {
     user: Users.slug,
-    canAccessAdmin,
     importMap: {
       baseDir: path.resolve(dirname)
     }
@@ -36,10 +37,13 @@ export default buildConfig({
     Topics,
     Authors,
     Media,
+    ProductCategories,
+    Products,
+    Carts,
     LegacyArticleRecords,
     RedirectRules
   ],
-  globals: [SystemSettings],
+  globals: [SystemSettings, CommerceSettings],
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || ""
