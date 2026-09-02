@@ -23,6 +23,23 @@ The correct rule is:
 
 ---
 
+# Correction C2 — The high-recognition content board/surface remains; only the old name is rejected
+
+The user did **not** decide to remove the product board/surface previously discussed under the working name `权威内容 / Authoritative Content`.
+
+The correct rule is:
+
+- the **board / destination / higher-quality content surface itself remains part of the planned product architecture**;
+- what is rejected is only the name `权威内容 / Authoritative Content`, because that wording can mislead users into treating community-recognized interpretive works as absolute or epistemically authoritative;
+- Round 2 questions about nomination, voting eligibility, work-level qualification, downgrade and revocation exist precisely to define **how works enter, remain in, or leave this retained board/surface**;
+- the final public-facing name for this board is still TBD;
+- until naming is resolved, this document uses `Recognition Board / 高认可内容板块` or `Recognition Layer` only as neutral workshop labels;
+- this retained board must remain separate from the **Canonical Classical Text** lane, whose authority derives from source, edition and provenance rather than community recognition.
+
+Therefore, any wording—whether in conversation, older workshop text or summaries—that says `there will be no such board`, `the board is removed`, or `the concept itself is cancelled` is incorrect and superseded by this correction.
+
+---
+
 # Round 1 — Content & Publishing decisions carried forward
 
 ## R1-1 Progressive community publishing
@@ -41,13 +58,13 @@ Exact account-weight signals, thresholds and anti-farming rules are deferred to 
 
 A work can be promoted/selected based on the work itself and community response without erasing its original author or provenance.
 
-Possible destinations include featured/selected/reference layers, Issue curation and contributor invitation.
+Possible destinations include featured states, the retained higher-recognition content board, Issue curation and contributor invitation.
 
 Promotion is work-specific; it does not automatically upgrade the author's entire account.
 
 ## R1-3 Contributor eligibility is not academic-only
 
-Independent/m民间 researchers, long-term practitioners, authors and other qualified non-academic contributors may be eligible for future contributor verification.
+Independent/民间 researchers, long-term practitioners, authors and other qualified non-academic contributors may be eligible for future contributor verification.
 
 Formal title, degree, fame or institution alone does not make either the person or every work they publish authoritative.
 
@@ -69,21 +86,21 @@ Religious culture/history/texts/art/philosophy may be discussed as cultural subj
 
 ## Round 2 status
 
-**Conceptually locked. Naming and exact thresholds remain deferred.**
+**Conceptually locked. The board/surface is retained; its final name and exact thresholds remain deferred.**
 
-The earlier working label `authoritative content / 权威内容` is rejected for this layer because it misleadingly conflates popularity/community recognition with canonical or epistemic authority.
+The old working label `authoritative content / 权威内容` is rejected **as the name of this retained board**, because it misleadingly conflates popularity/community recognition with canonical or epistemic authority.
 
-A new final product name will be chosen later. Until then this document uses **Recognition Layer / 高认可层** as a neutral working term.
+A new final product name will be chosen later. Until then this document uses **Recognition Board / 高认可内容板块** or **Recognition Layer** as neutral workshop terms.
 
 ---
 
-## Decision R2-1 — Community nominates; popularity does not automatically create recognition
+## Decision R2-1 — Community nominates works for the retained Recognition Board; popularity does not automatically admit them
 
 The platform should not use a rule such as:
 
 ```text
 likes >= N
-→ automatically becomes authoritative / high-recognition content
+→ automatically enters the Recognition Board
 ```
 
 Community response is important evidence, but raw like count is insufficient because it can reflect popularity, fandom, coordinated behavior or manipulation rather than durable quality.
@@ -93,18 +110,18 @@ The accepted model is closer to:
 ```text
 eligible work
 → meaningful community support / nomination signals
-→ becomes a recognition candidate
+→ becomes a candidate for the retained Recognition Board
 → additional quality / provenance / minimum-standard review as required
-→ may enter the Recognition Layer
+→ may enter the Recognition Board
 ```
 
 Exact nomination thresholds, weighting and review criteria are intentionally unresolved.
 
 ---
 
-## Decision R2-2 — New/low-trust accounts cannot immediately participate in recognition voting/nomination
+## Decision R2-2 — New/low-trust accounts cannot immediately participate in Recognition Board voting/nomination
 
-A newly registered account must not immediately receive equal power to influence whether a work enters the Recognition Layer.
+A newly registered account must not immediately receive equal power to influence whether a work becomes a candidate for or enters the retained Recognition Board.
 
 Reason:
 
@@ -117,15 +134,19 @@ The exact eligibility rule is deferred to the Account Weight / Trust round.
 Important distinction to preserve later:
 
 - ordinary lightweight engagement such as `like` may have a broader eligibility policy;
-- formal nomination/recognition voting is a higher-trust governance action.
+- formal nomination/recognition voting for the Recognition Board is a higher-trust governance action.
 
 The exact relationship between these two systems is not yet decided.
 
 ---
 
-## Decision R2-3 — Reject the product term “Authoritative Content / 权威内容” for community-recognized works
+## Decision R2-3 — Reject only the product name “Authoritative Content / 权威内容”; retain the board/function
 
-The user explicitly does not want this recognition layer to be called `权威内容` because the term overclaims epistemic authority and is likely to mislead users.
+The user explicitly does not want the retained high-quality content board to be called `权威内容` because the term overclaims epistemic authority and is likely to mislead users.
+
+**This is a naming rejection, not a product-structure rejection.**
+
+The board remains necessary because it provides a destination where high-quality works, after community nomination and later-defined checks, can be gathered and surfaced above ordinary Community distribution without implying that the author's identity itself confers authority.
 
 The final name remains TBD.
 
@@ -143,9 +164,9 @@ The term **canonical authority** should remain conceptually separate and may app
 
 ---
 
-## Decision R2-4 — Recognition is work-centric and source-neutral
+## Decision R2-4 — Recognition Board eligibility is work-centric and source-neutral
 
-Eligibility for the Recognition Layer depends on the quality/standing of the individual work, not the author's identity class.
+Eligibility for the retained Recognition Board depends on the quality/standing of the individual work, not the author's identity class.
 
 Therefore, subject to later content-specific eligibility rules, works originating from all of the following may potentially qualify:
 
@@ -155,17 +176,17 @@ Therefore, subject to later content-specific eligibility rules, works originatin
 - VIP community users;
 - ordinary community users.
 
-A famous or verified author does not receive automatic recognition for every publication.
+A famous or verified author does not receive automatic admission for every publication.
 
-A high-quality work from an ordinary user is not structurally barred from recognition merely because the author lacks a credential badge.
+A high-quality work from an ordinary user is not structurally barred from the Recognition Board merely because the author lacks a credential badge.
 
-Authorship and provenance remain visible after recognition.
+Authorship and provenance remain visible after admission.
 
 ---
 
-## Decision R2-5 — Recognition is revocable / downgradeable, with human review for consequential decisions
+## Decision R2-5 — Recognition Board status is revocable / downgradeable, with human review for consequential decisions
 
-Recognition is not an irrevocable lifetime badge.
+Admission to the Recognition Board is not an irrevocable lifetime badge.
 
 A recognized work may later be reviewed for downgrade/removal when credible issues arise, including potentially:
 
@@ -184,7 +205,7 @@ The accepted direction is:
 ```text
 credible challenge / trigger
 → review case
-→ human/manual review for consequential recognition changes
+→ human/manual review for consequential Recognition Board changes
 → uphold / downgrade / revoke / require correction
 ```
 
@@ -199,8 +220,8 @@ Historical recognition/review events should be preserved rather than silently re
 The platform now conceptually separates at least four signals:
 
 1. **Popularity / engagement** — users liked, saved, opened, discussed, etc.
-2. **Nomination / recognition support** — eligible trusted users believe a work deserves consideration for a higher long-term standing.
-3. **Recognition status** — the individual work has passed the future-defined recognition process and entered the high-recognition/reference layer.
+2. **Nomination / recognition support** — eligible trusted users believe a work deserves consideration for the retained higher-quality content board.
+3. **Recognition Board status** — the individual work has passed the future-defined recognition process and is displayed within that retained board/surface.
 4. **Canonical/source authority** — source/edition/provenance authority associated with classical texts and verifiable source facts; this is a different epistemic system.
 
 These signals must not collapse into one score or one badge.
@@ -224,9 +245,9 @@ Need to define:
 - whether topic/domain-specific voters matter;
 - how low-traffic but high-quality works avoid permanent disadvantage.
 
-## D3 — Recognition review body
+## D3 — Recognition Board entry review
 
-Need to decide whether entry into the Recognition Layer requires only community nomination plus objective integrity checks, or some additional editorial/domain review.
+Need to decide whether entry into the retained Recognition Board requires only community nomination plus objective integrity checks, or some additional editorial/domain review.
 
 ## D4 — Recognition challenge / downgrade / appeal
 
@@ -234,7 +255,7 @@ Need to define who can challenge, what evidence is sufficient, human reviewer ro
 
 ## D5 — Final naming
 
-`Recognition Layer / 高认可层` is only a neutral workshop label. A final product name must be selected later and must not imply absolute truth or authority.
+`Recognition Board / 高认可内容板块` and `Recognition Layer` are only neutral workshop labels. A final product name must be selected later and must not imply absolute truth or authority.
 
 ---
 
@@ -244,4 +265,4 @@ Proceed to:
 
 **Round 3 — Contributor / Identity Recognition System**
 
-This round must define what a `verified contributor / 认证作者 / 合作机构 / 官方账户` identity actually means, while preserving the already-locked rule that identity verification does not automatically confer work-level recognition.
+This round must define what a `verified contributor / 认证作者 / 合作机构 / 官方账户` identity actually means, while preserving the already-locked rule that identity verification does not automatically confer work-level admission to the retained Recognition Board.
