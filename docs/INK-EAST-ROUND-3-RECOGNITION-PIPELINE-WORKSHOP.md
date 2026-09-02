@@ -155,6 +155,147 @@ Potentially show:
 
 Need to avoid turning the process into a gamified leaderboard or an easily manipulated vote campaign.
 
+---
+
+# Round 3 checkpoint A — user decisions and clarified direction
+
+## R3-A1 — Candidate entry uses more than one path
+
+Accepted direction: **multi-entry candidacy**.
+
+The main path remains community-driven nomination/support by eligible trusted users, but the system must also preserve a route for strong low-traffic work that cannot realistically accumulate enough initial exposure on its own.
+
+A future secondary path may include mechanisms such as:
+
+- editorial/domain nomination;
+- a creator/author application to request consideration for the nomination/candidate process;
+- other limited-access rescue/discovery routes.
+
+The user explicitly referenced the general logic of programs where low-visibility contributors can apply for a benefit/opportunity rather than being excluded purely by existing reach. This is a conceptual analogy only, not a product copy.
+
+**Not yet decided:**
+
+- who can use the application route;
+- whether application goes directly to Candidate state or merely grants additional nomination exposure;
+- evidence required;
+- application frequency/cooldown;
+- anti-spam controls;
+- minimum work eligibility criteria before any route can create Candidate state.
+
+These must be discussed before locking R3-Q1.
+
+## R3-A2 — Candidate review surface should be publicly visible in principle
+
+The user rejects a hidden evaluator-only review pool as the default model because consequential content selection should not appear opaque or unfair.
+
+Accepted direction:
+
+- Candidate works remain linked to their original publication object and original provenance;
+- there should also be a **publicly visible Candidate Review surface** where anyone can browse/read Candidate works;
+- public visibility does **not** imply universal evaluation power;
+- only accounts that meet later-defined trust/eligibility criteria may cast consequential review/evaluation input;
+- users without review eligibility may still read the Candidate material and may retain ordinary engagement rights according to the normal content rules.
+
+This creates an important distinction:
+
+```text
+Public observability
+≠
+Formal review eligibility
+```
+
+The final surface name, information architecture and presentation are still TBD.
+
+The system should expose enough process information to support fairness and auditability without turning candidacy into a gamified popularity contest.
+
+## R3-A3 — Structured evaluation is accepted; exact rubric remains open
+
+The user agrees that Candidate evaluation should be more structured than another like/dislike vote.
+
+External examples such as platform juries/review panels may be studied for mechanism patterns, but Ink & East must not mechanically copy any particular consumer-platform dispute or review system.
+
+The future evaluation mechanism should likely distinguish multiple dimensions rather than collapse everything into one reaction.
+
+Candidate dimensions to examine later include:
+
+- long-term reference value;
+- argument/reasoning quality;
+- source/citation reliability where applicable;
+- originality/insight;
+- relevance to the declared Topic/knowledge node;
+- clarity/completeness;
+- integrity / plagiarism / manipulation concerns.
+
+Not every content class must use every dimension. A literary cultural essay and a citation-heavy classical-text study should not be judged by identical rubrics.
+
+Exact questions, scales, anonymity, reviewer explanation requirements and weighting remain unresolved.
+
+## R3-A4 — Candidate duration should be evidence-based, not a single rigid deadline
+
+Accepted direction:
+
+- avoid a universal fixed deadline such as 30 days;
+- use a minimum observation period and/or minimum sufficient evaluation evidence;
+- allow low-traffic works more time to accumulate meaningful evaluation;
+- future rules may vary by content type/topic/traffic conditions.
+
+The exact thresholds remain TBD.
+
+## R3-A5 — Low-traffic works require protected discovery/exploration
+
+Accepted direction:
+
+Candidate evaluation must not simply reproduce existing follower-count or traffic inequality.
+
+Future mechanisms may combine:
+
+- topic-balanced Candidate exposure;
+- recommendation-system exploration allocation;
+- evaluator sampling/assignment;
+- minimum unique-evaluator requirements;
+- longer evidence windows;
+- editorial/domain rescue nomination;
+- an application/request-for-consideration route as described in R3-A1.
+
+This is a fairness requirement, not an optional optimization.
+
+## R3-A6 — Final promotion decision remains deliberately UNLOCKED
+
+The user agrees that a hybrid system is directionally plausible but explicitly rejects prematurely locking a simplistic rule such as:
+
+```text
+community threshold
++ automated integrity check
++ one manual reviewer
+= final promotion
+```
+
+This is too consequential for an early shorthand decision.
+
+R3-Q6 is therefore promoted into a dedicated sub-round:
+
+### Round 3B — Final Selection Governance
+
+Must determine, at minimum:
+
+- what evidence is necessary vs merely informative;
+- whether final decision authority belongs to a reviewer panel, editor, domain reviewers, mixed committee, or another structure;
+- whether reviewer identities are public, pseudonymous, blinded or partially disclosed;
+- conflict-of-interest rules;
+- minimum reviewer count;
+- whether the candidate author can respond to concerns;
+- how disputed/ambiguous cases are handled;
+- whether different content classes use different final-review procedures;
+- whether community evaluation can ever be sufficient without manual review;
+- how anti-manipulation signals affect but do not silently determine the outcome;
+- what gets published as the reason for approval/non-approval;
+- appeal/re-review rules;
+- how to distinguish `not enough evidence yet` from `reviewed and not selected`.
+
+No final-governance model is approved yet.
+
+---
+
 ## Dependency created by Round 3
 
 The Account Weight / Trust round must later define who can participate in consequential nomination/evaluation and how anti-sockpuppet/farming protections work.
@@ -165,8 +306,9 @@ The Contributor Identity round is moved after this round because contributor dis
 
 Immediate sequence:
 
-1. Round 3 — Recognition Candidate → High-Quality Board pipeline
-2. Round 4 — Contributor / Identity Recognition System
-3. Round 5 — Account Weight / Trust / Publishing & Governance capability
+1. Round 3A — Candidate entry, public review surface, evaluation evidence, fairness/discovery
+2. Round 3B — Final Selection Governance
+3. Round 4 — Contributor / Identity Recognition System
+4. Round 5 — Account Weight / Trust / Publishing & Governance capability
 
 Further workshop subjects continue afterward under the existing Product Architecture V1 plan.
