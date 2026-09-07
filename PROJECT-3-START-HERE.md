@@ -6,8 +6,10 @@
 
 Project 3 is the long-term source-native platform for **both**:
 
-- **Ink & East** — future editorial / journal / cultural-platform main site.
+- **Ink & East** — current working editorial / cultural-platform identity; not assumed to be the final umbrella brand.
 - **Spatial Flow** — ecommerce / shop area under that main-site system.
+
+The Product Architecture workshop has expanded the long-term platform model beyond a permanently East-only content boundary. Eastern/Chinese culture remains an important initial wedge/vertical and existing engineering identifiers remain for continuity, but the future umbrella may support broader culture, knowledge, place, travel, real-world experience and social/discovery domains. Do not rename repos/routes during the workshop merely because umbrella naming remains unresolved.
 
 Project 2 is a separate WordPress / WooCommerce visual-reskin track. It does not own Project 3's long-term source-native ecommerce implementation.
 
@@ -35,39 +37,55 @@ This means:
 - the user intends to perform a systematic visual redesign before final public launch;
 - shared shells/components, stable route/data contracts and business/UI separation must be preserved so the launch redesign is a presentation-layer replacement rather than a functional rewrite.
 
-## Current product-priority shift — Ink & East investor track
+## Current product-priority shift — investor / product-architecture track
 
 Commerce Batch A is accepted and provides a safe pause point for Spatial Flow.
 
-The user is preparing a business plan / seed-stage fundraising story and wants Project 3 to show real Ink & East platform substance rather than only deeper ecommerce functionality.
+The user is preparing a business plan / seed-stage fundraising story and wants Project 3 to show real platform substance rather than only deeper ecommerce functionality.
 
 Therefore the current priority is:
 
 ```text
 PAUSE before Commerce Batch B
 ↓
-Refine Ink & East Product Architecture / Business System V1
+Refine Product Architecture / Business System V1
 ↓
 Define the investor-demonstrable functional platform core
 ↓
-Only then authorize the next Ink & East implementation batch
+Only then authorize the next implementation batch
 ```
 
-**Do not start new Ink & East code merely because this priority changed.** The user explicitly wants to refine the product/business system first.
+**Do not start new platform code merely because this priority changed.** The user explicitly wants to refine the product/business system first.
 
-The current content/knowledge direction is now authoritatively supplemented by:
+## Current Product Architecture Workshop — authoritative branch state
+
+Draft PR #53 (`docs/ink-east-product-architecture-v1`) is the active documentation-only Product Architecture workshop. **Do not merge it until the workshop is explicitly sealed/approved. Do not implement product code from workshop decisions unless separately authorized.**
+
+Read these workshop records together:
+
+- `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md` — broad workshop frame;
+- `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md` — earlier confirmed decisions/corrections;
+- PR #53 conversation — authoritative incremental decision record where later comments supersede stale earlier wording;
+- `docs/INK-EAST-ROUND-3-RECOGNITION-PIPELINE-WORKSHOP.md` — historical Round 3 workshop path;
+- `docs/INK-EAST-ROUND-3-RECOGNITION-GOVERNANCE-CONSOLIDATION.md` — **current Round 3 consolidated state machine and audit**.
+
+Round 3 is currently **CONSOLIDATED / NOT YET SEALED**. The consolidated document records the locked Recognition/Governance architecture and the remaining lifecycle questions that must be resolved before Round 3 is sealed.
+
+## Current content / knowledge direction
+
+The current content/knowledge direction is authoritatively supplemented by:
 
 `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`
 
 Key correction from that document:
 
 ```text
-Ink & East content != one generic Article/blog system.
+Platform content != one generic Article/blog system.
 ```
 
-The long-term content domain contains different authority/interaction lanes, including authoritative classical texts, editorial/teaching publishing, verified/authoritative contributor publishing, and user/community publishing. Canonical classical-text reading must preserve source integrity; ordinary social discussion belongs in linked companion community/discussion objects rather than contaminating the authoritative text surface.
+The long-term content domain contains different authority/interaction lanes, including canonical classical texts, editorial/teaching publishing, contributor publishing, and user/community publishing. Canonical classical-text reading must preserve source integrity; ordinary social discussion belongs in linked companion community/discussion objects rather than contaminating the canonical text surface.
 
-`识典古籍 / Shidianguji` is a functional reference for the authoritative classical-text reading/research lane only; it is not the total Ink & East platform template.
+`识典古籍 / Shidianguji` is a functional reference for the canonical classical-text reading/research lane only; it is not the total platform template.
 
 ## Ecommerce completeness rule
 
@@ -109,7 +127,7 @@ The next commerce tranche remains defined as:
 Batch B — Full Cart parity + Checkout/order core
 ```
 
-But **Batch B is currently deferred, not cancelled**, while the Ink & East investor/product architecture track is prioritized.
+But **Batch B is currently deferred, not cancelled**, while the investor/product-architecture track is prioritized.
 
 Do not restart Shop/Product/Cart as another static visual exercise when commerce resumes. Build Batch B on the accepted Batch A source domain and transaction boundary.
 
@@ -128,18 +146,21 @@ The purpose is to prevent Project 3 from appearing complete merely because its c
 
 ## Precedence over older documents
 
-Older files may still contain stale wording such as "Project 3 = Ink & East only", an Ink & East-centric scope, a generic article/blog interpretation, WordPress implementation hints, an older Project 2 completion score, or an older next-step sequence. Those statements are superseded where they conflict with this file, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, the current ecommerce parity matrix, or a later accepted milestone record.
+Older files may still contain stale wording such as "Project 3 = Ink & East only", a permanently East-only scope, a generic article/blog interpretation, WordPress implementation hints, an older Project 2 completion score, or an older next-step sequence. Those statements are superseded where they conflict with this file, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, the current Product Architecture workshop/decision records, the current ecommerce parity matrix, or a later accepted milestone record.
 
 When opening a new project window, read in this order:
 
 1. `PROJECT-3-START-HERE.md`
 2. `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`
 3. `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`
-4. `INK-EAST-BRIEF.md` for already-decided product history, while ignoring superseded WordPress implementation assumptions
-5. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-6. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-7. `docs/PROJECT-3-CURRENT-HANDOFF.md`
-8. current merged PR history / latest progress records
-9. older planning documents only as historical/product references
+4. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+5. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+6. `docs/INK-EAST-ROUND-3-RECOGNITION-GOVERNANCE-CONSOLIDATION.md`
+7. PR #53 latest conversation / decision history while the workshop PR remains open
+8. `INK-EAST-BRIEF.md` for already-decided product history, while ignoring superseded scope/WordPress assumptions
+9. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+10. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+11. `docs/PROJECT-3-CURRENT-HANDOFF.md`
+12. older planning documents only as historical/product references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether the missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
