@@ -1,6 +1,6 @@
 # Project 3 Product Architecture V1 — Round 6 Identity / Role / Permission Final Consolidation
 
-> Status: **ROUND 6 FINAL CONSOLIDATION — READY FOR SEAL CHECK**  
+> Status: **ROUND 6 FINAL CONSOLIDATION — SEALED**  
 > Implementation authorization: **NO**  
 > PR: #53 (`docs/ink-east-product-architecture-v1`)
 
@@ -9,6 +9,8 @@ This is the clean current-truth consolidation for Round 6 after Round 6A–6J, t
 It supersedes `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION.md` as the current Round 6 consolidation. The earlier consolidation remains historical provenance.
 
 Historical PR comments and amendment files remain useful to explain how the architecture evolved, but they do not override this file where wording conflicts.
+
+Round 6 has passed the final contradiction/rigidity check. Read this together with `docs/INK-EAST-ROUND-6-SEAL-RECORD.md`.
 
 ---
 
@@ -583,10 +585,10 @@ This final consolidation incorporates and supersedes conflicting earlier interpr
 
 Round 6A–6J, A1–A47 and F1–F10 are represented here as one current-truth architecture.
 
-At this point:
+Round 6 status is now:
 
-- Round 6 is **FINAL-CONSOLIDATED**;
+- **SEALED — PRODUCT ARCHITECTURE ONLY**;
 - implementation remains **NOT AUTHORIZED**;
 - thresholds/formulas/vendors/UI are not authorized by this document;
-- the only remaining Round 6 step is a short contradiction/seal check against this final consolidation;
-- if that check finds no blocking contradiction, create the Round 6 Seal Record and proceed to Round 7 — Knowledge Graph & Provenance.
+- future evidence-based amendments remain possible only through explicit amendment records rather than silent history rewriting;
+- next workshop subject: **Round 7 — Knowledge Graph & Provenance / 知识图谱与来源溯源**.
