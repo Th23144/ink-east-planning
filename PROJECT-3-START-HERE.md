@@ -63,35 +63,68 @@ Draft PR #53 (`docs/ink-east-product-architecture-v1`) is the active documentati
 
 ### Highest current workshop precedence
 
-The accepted Rounds 1–6 adversarial-audit amendments are now recorded in:
+The accepted Rounds 1–6 adversarial-audit amendments are now recorded across three explicit amendment layers, in chronological precedence order:
 
-`docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-RECORD.md`
+1. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-RECORD.md` — Pass 1 / A1–A24;
+2. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-2.md` — Pass 2 / A25–A36;
+3. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-3.md` — Pass 3 / A37–A47 plus the project-wide flexibility/process correction.
 
-This is an explicit cross-round amendment layer. Where it conflicts with stale wording in earlier Product Architecture records, **the amendment record wins for the amended point**. Historical records remain useful as decision history and must not be silently rewritten to hide the fact that an earlier direction was later corrected.
+These files are explicit cross-round amendment layers. Where they conflict with stale wording in earlier Product Architecture records, **the later applicable amendment wins for the amended point**. Historical records remain useful as decision history and must not be silently rewritten to hide the fact that an earlier direction was later corrected or hardened.
 
 Read these workshop records together:
 
-- `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-RECORD.md` — **current explicit cross-round amendment layer**;
+- `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-RECORD.md` — **accepted Pass 1 cross-round amendment layer**;
+- `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-2.md` — **accepted Pass 2 hardening layer**;
+- `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-3.md` — **accepted Pass 3 amendment layer + flexibility mandate**;
 - `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md` — broad workshop frame;
 - `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md` — earlier confirmed decisions/corrections;
 - `docs/INK-EAST-ROUND-3-RECOGNITION-PIPELINE-WORKSHOP.md` — historical Round 3 workshop path;
 - `docs/INK-EAST-ROUND-3-RECOGNITION-GOVERNANCE-CONSOLIDATION.md` — Round 3 consolidated state machine;
-- `docs/INK-EAST-ROUND-3-SEAL-RECORD.md` — **Round 3 sealed status and final lifecycle closure**;
+- `docs/INK-EAST-ROUND-3-SEAL-RECORD.md` — **Round 3 sealed status and final lifecycle closure, subject to later explicit amendments**;
 - `docs/INK-EAST-ROUND-4-CONTRIBUTOR-IDENTITY-CONSOLIDATION.md` — Round 4 consolidated contributor/identity architecture, subject to later cross-round amendments;
 - `docs/INK-EAST-ROUND-4-SEAL-RECORD.md` — **Round 4 sealed status, subject to later explicit amendments**;
 - PR #53 conversation — authoritative incremental decision history where later accepted comments supersede stale earlier wording.
 
+### Mandatory flexibility rule for all future architecture work
+
+The user's standing requirement `灵活 / flexible` is now a formal architecture rule, not a soft preference:
+
+> **The architecture must be precise about boundaries without being rigid about circumstances. / 架构要把边界写清楚，但不能把情境写死。**
+
+Future Product Architecture proposals must explicitly distinguish:
+
+- `HARD INVARIANT / 硬边界` — must remain true across contexts;
+- `ADAPTIVE RULE / 弹性规则` — context-aware decision logic;
+- `DEFERRED CALIBRATION / 延后校准` — thresholds/timing/formulas require data or later policy work;
+- `EXAMPLE / 示例` — explanatory only, never silently promoted into a universal rule.
+
+Do not turn one example, one threshold, one sequence, one cooldown, one document requirement, or one risk treatment into a universal rule merely because it is easier to specify. Use hard rules only when a real invariant is intended. Where circumstances matter, define the decision dimensions, allowed outcomes, safeguards, and escalation path while leaving calibration adaptive.
+
+Before sealing any major Round, explicitly test whether apparently precise wording has accidentally frozen something the user intended to remain flexible.
+
+### Audit classification rule
+
+Every future adversarial-audit finding must be labeled as one of:
+
+- `CORRECTION / 真正修正` — a prior accepted rule was materially wrong or too broad and is being changed;
+- `HARDENING / 架构加固` — the intended direction remains correct but loopholes/edge conditions are being closed;
+- `CLARIFICATION / 澄清` — the intended direction remains unchanged but ambiguous wording is being made explicit;
+- `NEW SAFEGUARD / 新增保护` — a previously uncovered risk needs an additional protective mechanism.
+
+This prevents ordinary hardening from being misrepresented as a change in product direction.
+
 ### Current round status
 
-- **Round 3 — SEALED / product architecture only / no implementation authorization.**
-- **Round 4 — SEALED / product architecture only / no implementation authorization.**
+- **Round 3 — SEALED / product architecture only / no implementation authorization, subject to later explicit cross-round amendments.**
+- **Round 4 — SEALED / product architecture only / no implementation authorization, subject to later explicit cross-round amendments.**
 - **Round 5 — SEALED / product architecture only / no implementation authorization.** The final seal is recorded in PR #53; a durable file consolidation may still be added later.
-- **Round 6 — A through J accepted, NOT SEALED.** Round 6J introduced explicit cross-boundary amendments, and the project is now performing a Rounds 1–6 adversarial audit before Round 6 can be consolidated/sealed.
-- **Do not enter Round 7 until the adversarial audit is complete and the remaining amendments are resolved.**
+- **Round 6 — A through J accepted, NOT SEALED.**
+- **Rounds 1–6 adversarial audit Passes 1–3 are accepted.** The next step is a final cross-audit testing the amendment layers against one another before Round 6 consolidation/seal.
+- **Do not enter Round 7 until the final cross-audit and Round 6 consolidation/seal sequence are complete.**
 
 Important audit rule:
 
-> Previous user acceptance such as `全部采用 / adopt all` records product direction, but it is **not itself evidence that the architecture was deeply validated**. Later cross-round audits may explicitly amend earlier accepted/sealed wording when contradictions, unsafe assumptions, over-broad rules, privacy risks, governance capture, or implementation-dangerous ambiguity are discovered. Such changes must be recorded as amendments rather than silently rewriting history.
+> Previous user acceptance such as `全部采用 / adopt all` records product direction, but it is **not itself evidence that the architecture was deeply validated**. Later cross-round audits may explicitly amend earlier accepted/sealed wording when contradictions, unsafe assumptions, over-broad rules, privacy risks, governance capture, excessive rigidity, or implementation-dangerous ambiguity are discovered. Such changes must be recorded as amendments rather than silently rewriting history.
 
 ## Current content / knowledge direction
 
@@ -106,6 +139,8 @@ Platform content != one generic Article/blog system.
 ```
 
 The long-term content domain contains different authority/interaction lanes, including canonical classical texts, editorial/teaching publishing, contributor publishing, and user/community publishing. Canonical classical-text reading must preserve source integrity; ordinary social discussion belongs in linked companion community/discussion objects rather than contaminating the canonical text surface.
+
+Later Pass 3 amendment **A42–A43** further clarifies that canonical/source-backed authority means provenance/edition/source integrity and does **not** certify every factual or interpretive claim inside a historical text as true; canonical/source authority and Work Recognition are separate systems.
 
 `识典古籍 / Shidianguji` is a functional reference for the canonical classical-text reading/research lane only; it is not the total platform template.
 
@@ -168,7 +203,7 @@ The purpose is to prevent Project 3 from appearing complete merely because its c
 
 ## Precedence over older documents
 
-Older files may still contain stale wording such as "Project 3 = Ink & East only", a permanently East-only scope, a generic article/blog interpretation, WordPress implementation hints, an older Project 2 completion score, an older next-step sequence, an implicit user-level ladder, `Verified Contributor` as a canonical architecture term, Institution as the universal organization entity, Contributor-only guaranteed organic launch support, or a blanket new-account restriction model. Those statements are superseded where they conflict with this file, `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-RECORD.md`, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, later accepted Product Architecture decisions, the current ecommerce parity matrix, or a later accepted milestone record.
+Older files may still contain stale wording such as "Project 3 = Ink & East only", a permanently East-only scope, a generic article/blog interpretation, WordPress implementation hints, an older Project 2 completion score, an older next-step sequence, an implicit user-level ladder, `Verified Contributor` as a canonical architecture term, Institution as the universal organization entity, Contributor-only guaranteed organic launch support, a blanket new-account restriction model, overly broad `Authoritative Classical Text` semantics, or rigid examples that were never intended as universal rules. Those statements are superseded where they conflict with this file, the three Rounds 1–6 amendment records, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, later accepted Product Architecture decisions, the current ecommerce parity matrix, or a later accepted milestone record.
 
 When opening a new project window, read in this order:
 
@@ -176,17 +211,19 @@ When opening a new project window, read in this order:
 2. `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`
 3. `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`
 4. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-RECORD.md`
-5. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-6. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-7. `docs/INK-EAST-ROUND-3-RECOGNITION-GOVERNANCE-CONSOLIDATION.md`
-8. `docs/INK-EAST-ROUND-3-SEAL-RECORD.md`
-9. `docs/INK-EAST-ROUND-4-CONTRIBUTOR-IDENTITY-CONSOLIDATION.md`
-10. `docs/INK-EAST-ROUND-4-SEAL-RECORD.md`
-11. PR #53 latest conversation / decision history while the workshop PR remains open
-12. `INK-EAST-BRIEF.md` for already-decided product history, while ignoring superseded scope/WordPress assumptions
-13. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-14. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-15. `docs/PROJECT-3-CURRENT-HANDOFF.md`
-16. older planning documents only as historical/product references
+5. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-2.md`
+6. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-3.md`
+7. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+8. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+9. `docs/INK-EAST-ROUND-3-RECOGNITION-GOVERNANCE-CONSOLIDATION.md`
+10. `docs/INK-EAST-ROUND-3-SEAL-RECORD.md`
+11. `docs/INK-EAST-ROUND-4-CONTRIBUTOR-IDENTITY-CONSOLIDATION.md`
+12. `docs/INK-EAST-ROUND-4-SEAL-RECORD.md`
+13. PR #53 latest conversation / decision history while the workshop PR remains open
+14. `INK-EAST-BRIEF.md` for already-decided product history, while ignoring superseded scope/WordPress assumptions
+15. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+16. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+17. `docs/PROJECT-3-CURRENT-HANDOFF.md`
+18. older planning documents only as historical/product references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether the missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
