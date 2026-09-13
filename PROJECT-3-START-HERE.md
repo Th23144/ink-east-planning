@@ -63,16 +63,20 @@ Draft PR #53 (`docs/ink-east-product-architecture-v1`) is the active documentati
 
 ### Highest current workshop precedence
 
-The accepted Rounds 1–6 retrospective audit is recorded through:
+The accepted Rounds 1–6 architecture/audit chain is currently recorded through:
 
 1. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-RECORD.md` — Pass 1 / A1–A24;
 2. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-2.md` — Pass 2 / A25–A36;
 3. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-3.md` — Pass 3 / A37–A47 plus the project-wide flexibility/process correction;
 4. `docs/INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md` — accepted final cross-audit F1–F10;
-5. `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` — clean current-truth Round 6 consolidation;
-6. `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` — Round 6 final seal.
+5. `docs/INK-EAST-ROUND-6-CURRENT-TRUTH-R1-R40-V6.md` — current clean Round 6 truth, frozen blob `bf32db1e213194ab95701e66cf1dc55138a01035`;
+6. `docs/ROUND-6-V6-SOURCE-PARITY-PASS.md` — PASS against that exact V6 blob;
+7. `docs/ROUND-6-V6-FROZEN-COMPREHENSIVE-AUDIT.md` — PASS / zero unresolved material blockers against that exact V6 blob;
+8. `docs/INK-EAST-ROUND-6-REPLACEMENT-SEAL-RECORD.md` — current replacement / revalidated Round 6 seal.
 
-Historical Round records and earlier consolidations remain decision provenance. Where they conflict with a later explicit amendment/final consolidation, **the later applicable current-truth record wins**. Do not silently rewrite history merely to make old decisions look as if they were always correct.
+`docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are now **historical provenance only** where superseded by the reopened/revalidated Round 6 chain above. They must not be used as the current Round 6 construction truth.
+
+Historical Round records and earlier consolidations remain decision provenance. Where they conflict with a later explicit amendment/revalidation/current-truth record, **the later applicable current-truth record wins**. Do not silently rewrite history merely to make old decisions look as if they were always correct.
 
 ### Mandatory flexibility rule for all future architecture work
 
@@ -98,18 +102,19 @@ Every future adversarial-audit finding must be labeled as one of:
 - `CORRECTION / 真正修正` — a prior accepted rule was materially wrong or too broad and is being changed;
 - `HARDENING / 架构加固` — the intended direction remains correct but loopholes/edge conditions are being closed;
 - `CLARIFICATION / 澄清` — the intended direction remains unchanged but ambiguous wording is being made explicit;
-- `NEW SAFEGUARD / 新增保护` — a previously uncovered risk needs an additional protective mechanism.
+- `NEW SAFEGUARD / 新增保护` — a previously uncovered risk needs an additional protective mechanism;
+- `DOCUMENTATION REPAIR / 文档修复` — already-accepted current truth was omitted/weakened in a later summary or consolidation and is being restored without creating a new product decision.
 
-This prevents ordinary hardening from being misrepresented as a change in product direction.
+This prevents ordinary hardening or documentation repair from being misrepresented as a change in product direction.
 
 ### Current round status
 
 - **Round 3 — SEALED / product architecture only / no implementation authorization, subject to later explicit cross-round amendments.**
 - **Round 4 — SEALED / product architecture only / no implementation authorization, subject to later explicit cross-round amendments.**
 - **Round 5 — SEALED / product architecture only / no implementation authorization.** The final seal is recorded in PR #53; a durable standalone consolidation file may still be added later if useful.
-- **Round 6 — SEALED / product architecture only / no implementation authorization.** Read `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` as the clean current Round 6 truth.
-- **Rounds 1–6 retrospective adversarial audit — COMPLETE for this checkpoint.** Later architecture may still explicitly amend these rounds if a genuine contradiction or better architecture is discovered; `SEALED` means durable canonical record, not immunity from evidence-based correction.
-- **Current next workshop subject: Round 7 — Knowledge Graph & Provenance / 知识图谱与来源溯源.**
+- **Round 6 — REVALIDATED / REPLACEMENT-SEALED / product architecture only / no implementation authorization.** The current truth is `docs/INK-EAST-ROUND-6-CURRENT-TRUTH-R1-R40-V6.md`, supported by `docs/ROUND-6-V6-SOURCE-PARITY-PASS.md`, `docs/ROUND-6-V6-FROZEN-COMPREHENSIVE-AUDIT.md`, and sealed by `docs/INK-EAST-ROUND-6-REPLACEMENT-SEAL-RECORD.md`. The old Final/Seal pair is historical only.
+- **Rounds 1–6 retrospective adversarial audit + Round 6 post-seal revalidation — COMPLETE for this checkpoint.** Later architecture may still explicitly amend these rounds if a genuine contradiction or better architecture is discovered; `SEALED` means durable canonical record with zero known unresolved material blockers at this checkpoint, not immunity from evidence-based correction.
+- **Current next workshop subject: Round 7 — Knowledge Graph & Provenance / 知识图谱与来源溯源.** Round 7 may begin only from the V6/replacement-seal baseline; no product-code implementation is authorized by this transition.
 
 Important audit rule:
 
@@ -133,7 +138,7 @@ Pass 3 amendments A42–A43 clarify that canonical/source-backed authority means
 
 `识典古籍 / Shidianguji` is a functional reference for the canonical classical-text reading/research lane only; it is not the total platform template.
 
-Round 7 must build on this separation while also preserving Round 6 distinctions among Entity, Claim, Relationship, authorship, publisher, operator, representation and historical attribution.
+Round 7 must build on this separation while preserving the revalidated Round 6 distinctions among Knowledge Entity, Authority-bearing Subject, Claim, Relationship, authorship, publisher, operator, representation and historical attribution. Round 7 must not collapse knowledge/source authority into Work Recognition, operational permission, identity verification or popularity.
 
 ## Ecommerce completeness rule
 
@@ -194,7 +199,7 @@ The purpose is to prevent Project 3 from appearing complete merely because its c
 
 ## Precedence over older documents
 
-Older files may still contain stale wording such as "Project 3 = Ink & East only", a permanently East-only scope, a generic article/blog interpretation, WordPress implementation hints, an older Project 2 completion score, an older next-step sequence, an implicit user-level ladder, `Verified Contributor` as a canonical architecture term, Institution as the universal organization entity, Contributor-only guaranteed organic launch support, a blanket new-account restriction model, overly broad `Authoritative Classical Text` semantics, one-Acting-Entity-only assumptions, fixed appeal-count assumptions, or rigid examples that were never intended as universal rules. Those statements are superseded where they conflict with this file, the accepted audit/amendment records, final Round 6 consolidation/seal, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, later accepted Product Architecture decisions, the current ecommerce parity matrix, or a later accepted milestone record.
+Older files may still contain stale wording such as "Project 3 = Ink & East only", a permanently East-only scope, a generic article/blog interpretation, WordPress implementation hints, an older Project 2 completion score, an older next-step sequence, an implicit user-level ladder, `Verified Contributor` as a canonical architecture term, Institution as the universal organization entity, Contributor-only guaranteed organic launch support, a blanket new-account restriction model, overly broad `Authoritative Classical Text` semantics, one-Acting-Entity-only assumptions, fixed appeal-count assumptions, rigid examples that were never intended as universal rules, or the superseded pre-revalidation Round 6 Final/Seal. Those statements are superseded where they conflict with this file, the accepted audit/amendment records, the Round 6 V6 current truth and replacement seal, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, later accepted Product Architecture decisions, the current ecommerce parity matrix, or a later accepted milestone record.
 
 When opening a new project window, read in this order:
 
@@ -205,19 +210,23 @@ When opening a new project window, read in this order:
 5. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-2.md`
 6. `docs/INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-3.md`
 7. `docs/INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md`
-8. `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md`
-9. `docs/INK-EAST-ROUND-6-SEAL-RECORD.md`
-10. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-11. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-12. `docs/INK-EAST-ROUND-3-RECOGNITION-GOVERNANCE-CONSOLIDATION.md`
-13. `docs/INK-EAST-ROUND-3-SEAL-RECORD.md`
-14. `docs/INK-EAST-ROUND-4-CONTRIBUTOR-IDENTITY-CONSOLIDATION.md`
-15. `docs/INK-EAST-ROUND-4-SEAL-RECORD.md`
-16. PR #53 latest conversation / decision history while the workshop PR remains open
-17. `INK-EAST-BRIEF.md` for already-decided product history, while ignoring superseded scope/WordPress assumptions
-18. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-19. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-20. `docs/PROJECT-3-CURRENT-HANDOFF.md`
-21. older planning documents only as historical/product references
+8. `docs/INK-EAST-ROUND-6-CURRENT-TRUTH-R1-R40-V6.md`
+9. `docs/ROUND-6-R38-R40-ACCEPTED.md`
+10. `docs/ROUND-6-V6-SOURCE-PARITY-PASS.md`
+11. `docs/ROUND-6-V6-FROZEN-COMPREHENSIVE-AUDIT.md`
+12. `docs/INK-EAST-ROUND-6-REPLACEMENT-SEAL-RECORD.md`
+13. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+14. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+15. `docs/INK-EAST-ROUND-3-RECOGNITION-GOVERNANCE-CONSOLIDATION.md`
+16. `docs/INK-EAST-ROUND-3-SEAL-RECORD.md`
+17. `docs/INK-EAST-ROUND-4-CONTRIBUTOR-IDENTITY-CONSOLIDATION.md`
+18. `docs/INK-EAST-ROUND-4-SEAL-RECORD.md`
+19. PR #53 latest conversation / decision history while the workshop PR remains open
+20. `INK-EAST-BRIEF.md` for already-decided product history, while ignoring superseded scope/WordPress assumptions
+21. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+22. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+23. `docs/PROJECT-3-CURRENT-HANDOFF.md`
+24. `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` only as historical provenance when needed
+25. older planning documents only as historical/product references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether the missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
