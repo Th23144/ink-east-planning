@@ -1,0 +1,1 @@
+R6-R11 accepted. Personal platform acting context may be anchored to an authenticated account and stable platform identity without requiring a real-world person record. Represented organization actions still require the applicable authority relationship, permission, scope, and security checks. Round 6 remains reopened; no implementation and no Round 7 yet.
