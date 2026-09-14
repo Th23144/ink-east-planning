@@ -65,7 +65,12 @@ Current accepted/revalidated architecture precedence is:
 17. `docs/INK-EAST-ROUND-8-CURRENT-TRUTH-V1.md` — Round 8 Community & Discussion current truth, blob `0e7274c5bbd52abf0895090d86c8cecb72f96a6e`;
 18. `docs/ROUND-8-V1-SOURCE-PARITY-PASS.md` — PASS / 122 of 122 Round 8 rules carried forward;
 19. `docs/ROUND-8-V1-ADVERSARIAL-AUDIT.md` — PASS / zero unresolved material blockers;
-20. `docs/INK-EAST-ROUND-8-SEAL-RECORD.md` — current Round 8 seal.
+20. `docs/INK-EAST-ROUND-8-SEAL-RECORD.md` — current Round 8 seal;
+21. `docs/INK-EAST-ROUND-9-CURRENT-TRUTH-V1.md` — Round 9 Reader Behavior & Interest Graph current truth, blob `deaf01ce9368f55b014ca56e5ff6bb9416f3a1e5`;
+22. `docs/ROUND-9-V1-SOURCE-PARITY-PASS.md` — PASS / 162 of 162 Round 9 rules carried forward;
+23. `docs/ROUND-9-V1-ADVERSARIAL-AUDIT.md` — PASS / zero unresolved material blockers;
+24. `docs/INK-EAST-ROUND-9-SEAL-RECORD.md` — current Round 9 seal;
+25. `docs/ROUND-9-PREEXISTING-INTEREST-DIRECTION-PROVENANCE-NOTE.md` — documentation repair showing that the non-label / multi-interest / cross-topic-exploration direction predates Round 9 and is continued, not reinvented.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
@@ -111,7 +116,8 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 7 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-7-CURRENT-TRUTH-V1.md`, validated by source parity and adversarial audit, sealed by `docs/INK-EAST-ROUND-7-SEAL-RECORD.md`.
 - **Project-wide Rule Evolvability & Change Architecture — SEALED / foundational architecture.**
 - **Round 8 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-8-CURRENT-TRUTH-V1.md`, source parity 122/122 PASS, adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-8-SEAL-RECORD.md`.
-- **Current next workshop subject: Round 9 — Reader Behavior & Interest Graph / 读者行为与兴趣图谱.**
+- **Round 9 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-9-CURRENT-TRUTH-V1.md`, source parity 162/162 PASS, adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-9-SEAL-RECORD.md`.
+- **Current next workshop subject: Round 10 — Discovery & Recommendation / 发现与推荐.**
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
 
@@ -169,7 +175,28 @@ Round 8 now supplies the durable Community & Discussion（社区与讨论） bas
 - Hybrid / Shallow Threading（混合式 / 浅层线程）, First-class Question Mode（一级问答模式） and V1 Reference / Share first（引用 / 分享优先） remain provisional current product directions, not immutable hard invariants;
 - user-created independent communities/groups, private messaging and full Repost Graph（转发关系图） remain deferred.
 
-Round 9 Reader Behavior & Interest Graph（读者行为与兴趣图谱） must build on these distinctions rather than retroactively redefining what community actions mean.
+### Round 9 sealed reader-behavior / interest model
+
+Round 9 now supplies the durable Reader Behavior & Interest Graph（读者行为与兴趣图谱） baseline. It preserves, among other things:
+
+- Interest Graph（兴趣图谱） != permanent User Profile Label（永久用户画像标签）; this continues an earlier PR #53 direction rather than inventing a new principle;
+- behavior signals preserve distinct semantics instead of collapsing into one engagement score;
+- Explicit Preference（明确偏好） != Inferred Interest（推断兴趣）;
+- Session / Recent / Durable（会话 / 近期 / 长期） interest layers are distinguishable;
+- one user may hold multiple concurrent Interest Clusters（兴趣簇） rather than one rigid specialization identity;
+- Interest != expertise / identity / belief / Account Trust / governance standing / Work Recognition / source authority;
+- interest propagation across Knowledge Graph relations is bounded, uncertain and reversible;
+- user correction, negative feedback and Recommendation Reset（推荐重置） have real downstream effect;
+- Relevance（相关性） and Exploration / Serendipity（探索 / 偶然发现） are separate product objectives;
+- one dominant interest cannot monopolize Home / For You by default, while explicit deep-dive/search intent may temporarily justify concentration;
+- Diversity（多样性） is page/session-level and multi-dimensional, not one universal score;
+- private notes/messages and moderation evidence are not recommendation fuel by default;
+- raw events, explicit preferences and derived personalization states/features remain separate data classes;
+- privacy/deletion/reset/model migration propagates to dependent derived state as required;
+- exact model family, data infrastructure, weights, decay curves and exploration ratios remain deferred and evolvable;
+- early V1 may use simple rules/curation while preserving future Candidate Retrieval → Pre-ranking → Ranking → Re-ranking / Blending（候选召回 → 预排序 → 排序 → 重排序 / 混排） boundaries.
+
+Round 10 Discovery & Recommendation（发现与推荐） must consume these signals without rewriting their meanings or collapsing them into a universal user score.
 
 ## Ecommerce completeness rule
 
@@ -203,9 +230,9 @@ Classify each Project 2 item as already exists in Project 3; must be source-nati
 
 ## Precedence over older documents
 
-Older files may contain stale wording such as Project 3 = Ink & East only, permanent East-only scope, generic article/blog interpretation, WordPress implementation hints, older completion scores or next-step sequences, user-level ladders, `Verified Contributor` as canonical architecture, Institution as the universal organization entity, Contributor-only guaranteed organic launch support, blanket new-account restrictions, overly broad `Authoritative Classical Text` semantics, one-Acting-Entity-only assumptions, fixed appeal counts, rigid examples, the superseded pre-revalidation Round 6 Final/Seal, pre-seal Round 7 workshop proposals, or pre-consolidation Round 8 proposals.
+Older files may contain stale wording such as Project 3 = Ink & East only, permanent East-only scope, generic article/blog interpretation, WordPress implementation hints, older completion scores or next-step sequences, user-level ladders, `Verified Contributor` as canonical architecture, Institution as the universal organization entity, Contributor-only guaranteed organic launch support, blanket new-account restrictions, overly broad `Authoritative Classical Text` semantics, one-Acting-Entity-only assumptions, fixed appeal counts, rigid examples, the superseded pre-revalidation Round 6 Final/Seal, pre-seal Round 7 workshop proposals, pre-consolidation Round 8 proposals, or pre-consolidation Round 9 recommendation/interest hypotheses.
 
-Those statements are superseded where they conflict with this file, accepted amendment/audit records, Round 6 V6 current truth + replacement seal, Round 7 V1 current truth + validation + seal, the project-wide Rule Evolvability & Change Architecture, Round 8 V1 current truth + validation + seal, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, later accepted Product Architecture decisions, the ecommerce parity matrix, or later accepted milestone records.
+Those statements are superseded where they conflict with this file, accepted amendment/audit records, Round 6 V6 current truth + replacement seal, Round 7 V1 current truth + validation + seal, the project-wide Rule Evolvability & Change Architecture, Round 8 V1 current truth + validation + seal, Round 9 V1 current truth + validation + seal, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, later accepted Product Architecture decisions, the ecommerce parity matrix, or later accepted milestone records.
 
 ## Read order for a new project window
 
@@ -233,14 +260,20 @@ Those statements are superseded where they conflict with this file, accepted ame
 22. `docs/ROUND-8-V1-SOURCE-PARITY-PASS.md`
 23. `docs/ROUND-8-V1-ADVERSARIAL-AUDIT.md`
 24. `docs/INK-EAST-ROUND-8-SEAL-RECORD.md`
-25. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-26. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-27. historical Round 3/4 and Workshop A–G records when provenance is needed
-28. PR #53 latest conversation/decision history while the workshop remains open
-29. `INK-EAST-BRIEF.md` for product history while ignoring superseded assumptions
-30. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-31. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-32. `docs/PROJECT-3-CURRENT-HANDOFF.md`
-33. superseded Round 6 Final/Seal and older planning documents only as historical references
+25. `docs/INK-EAST-ROUND-9-CURRENT-TRUTH-V1.md`
+26. `docs/ROUND-9-V1-SOURCE-PARITY-PASS.md`
+27. `docs/ROUND-9-V1-ADVERSARIAL-AUDIT.md`
+28. `docs/INK-EAST-ROUND-9-SEAL-RECORD.md`
+29. `docs/ROUND-9-PREEXISTING-INTEREST-DIRECTION-PROVENANCE-NOTE.md`
+30. `docs/ROUND-9-PREWORKSHOP-MATURE-PLATFORM-RECOMMENDATION-BENCHMARK-V1.md` when recommendation-reference provenance is needed
+31. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+32. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+33. historical Round 3/4, Round 7/8 and Round 9 Workshop A–F records when provenance is needed
+34. PR #53 latest conversation/decision history while the workshop remains open
+35. `INK-EAST-BRIEF.md` for product history while ignoring superseded assumptions
+36. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+37. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+38. `docs/PROJECT-3-CURRENT-HANDOFF.md`
+39. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
