@@ -70,7 +70,14 @@ Current accepted/revalidated architecture precedence is:
 22. `docs/ROUND-9-V1-SOURCE-PARITY-PASS.md` — PASS / 162 of 162 Round 9 rules carried forward;
 23. `docs/ROUND-9-V1-ADVERSARIAL-AUDIT.md` — PASS / zero unresolved material blockers;
 24. `docs/INK-EAST-ROUND-9-SEAL-RECORD.md` — current Round 9 seal;
-25. `docs/ROUND-9-PREEXISTING-INTEREST-DIRECTION-PROVENANCE-NOTE.md` — documentation repair showing that the non-label / multi-interest / cross-topic-exploration direction predates Round 9 and is continued, not reinvented.
+25. `docs/ROUND-9-PREEXISTING-INTEREST-DIRECTION-PROVENANCE-NOTE.md` — documentation repair showing that the non-label / multi-interest / cross-topic-exploration direction predates Round 9 and is continued, not reinvented;
+26. `docs/INK-EAST-ROUND-10-CURRENT-TRUTH-V1.md` — Round 10 Discovery & Recommendation（发现与推荐） current truth, 318 controlling rules;
+27. `docs/ROUND-10-CROSS-WORKSHOP-CONSISTENCY-COMPLETENESS-AUDIT.md` — PASS AFTER HARDENING;
+28. `docs/ROUND-10-CROSS-WORKSHOP-HARDENING-ADDENDUM.md` — R10-X1…R10-X6;
+29. `docs/ROUND-10-V1-SOURCE-PARITY-PASS.md` — PASS / 318 of 318 Round 10 controlling rule slots carried forward;
+30. `docs/ROUND-10-V1-ADVERSARIAL-AUDIT.md` — PASS / 158 explicit failure modes / zero unresolved material blockers;
+31. `docs/INK-EAST-ROUND-10-SEAL-RECORD.md` — current Round 10 seal;
+32. `docs/ROUND-10-CHECKPOINT-READ-ME.md` — human-review checkpoint for PR #53.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
@@ -83,11 +90,14 @@ Historical Round records and earlier consolidations remain decision provenance. 
 Future Product Architecture proposals must explicitly distinguish:
 
 - `HARD INVARIANT / 硬边界` — must remain true across contexts;
+- `HARD PRODUCT DIRECTION / REQUIREMENT / 产品级硬方向 / 要求` — current product-level architecture direction that should remain true unless explicitly amended;
 - `ADAPTIVE RULE / 弹性规则` — context-aware decision logic;
 - `DEFERRED CALIBRATION / 延后校准` — thresholds/timing/formulas require data or later policy work;
+- `SCOPE GUARD / 范围护栏` — explicit limit on what the current Round is and is not deciding;
+- `PROVISIONAL PRODUCT DIRECTION / 暂定产品方向` — user-confirmed current direction that remains intentionally revisable;
 - `EXAMPLE / 示例` — explanatory only, never silently promoted into a universal rule.
 
-Do not turn an example, threshold, sequence, cooldown, document requirement, reviewer count, appeal count or risk treatment into a universal rule merely because it is easier to specify. Before sealing any major Round, test whether apparently precise wording has accidentally frozen something intended to remain flexible.
+Do not turn an example, threshold, sequence, cooldown, document requirement, reviewer count, appeal count, exploration ratio, ranking weight or risk treatment into a universal rule merely because it is easier to specify. Before sealing any major Round, test whether apparently precise wording has accidentally frozen something intended to remain flexible.
 
 ### Project-wide rule evolvability requirement
 
@@ -117,13 +127,16 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Project-wide Rule Evolvability & Change Architecture — SEALED / foundational architecture.**
 - **Round 8 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-8-CURRENT-TRUTH-V1.md`, source parity 122/122 PASS, adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-8-SEAL-RECORD.md`.
 - **Round 9 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-9-CURRENT-TRUTH-V1.md`, source parity 162/162 PASS, adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-9-SEAL-RECORD.md`.
-- **Current next workshop subject: Round 10 — Discovery & Recommendation / 发现与推荐.**
+- **Round 10 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-10-CURRENT-TRUTH-V1.md`, source parity 318/318 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-10-SEAL-RECORD.md`.
+- **Current next workshop subject: Round 11 — Issues / Editorial Curation System（议题 / 编辑策展系统）**, following the workshop order unless a later explicit PR #53 decision supersedes it.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
 
 Previous user acceptance such as `全部采用 / adopt all` records product direction but is not itself evidence of deep validation. Later audits may explicitly amend earlier accepted/sealed wording when genuine contradictions, unsafe assumptions, privacy risks, governance capture, rigidity or implementation-dangerous ambiguity are discovered. Such changes must be recorded explicitly rather than silently rewriting history.
 
 For ordinary hardening, consistency checks, consolidation and audits that do not change product direction, continue autonomously. Stop for user confirmation when there is a genuine product choice, material policy change or multiple reasonable directions with meaningfully different outcomes.
+
+After the complete Product Architecture sequence 1–16 is finished, PR #53 must receive a new **Full Comprehensive Adversarial Audit（全量综合对抗性审计）** across the complete architecture. That final audit is not replaced by individual Round or Workshop audits.
 
 ## Current content / knowledge direction
 
@@ -196,7 +209,26 @@ Round 9 now supplies the durable Reader Behavior & Interest Graph（读者行为
 - exact model family, data infrastructure, weights, decay curves and exploration ratios remain deferred and evolvable;
 - early V1 may use simple rules/curation while preserving future Candidate Retrieval → Pre-ranking → Ranking → Re-ranking / Blending（候选召回 → 预排序 → 排序 → 重排序 / 混排） boundaries.
 
-Round 10 Discovery & Recommendation（发现与推荐） must consume these signals without rewriting their meanings or collapsing them into a universal user score.
+### Round 10 sealed discovery / recommendation model
+
+Round 10 now supplies the durable Discovery & Recommendation（发现与推荐） baseline. It preserves, among other things:
+
+- recommendation is a multi-surface, task-specific system rather than one universal feed score;
+- Eligibility（资格） precedes ranking and cannot be bypassed by high relevance;
+- Candidate Retrieval（候选召回）, optional Pre-ranking（可选预排序）, Ranking（排序）, Re-ranking / Blending（重排序 / 混排） and Surface Composition（页面组合） remain conceptually distinct;
+- Interest Graph（兴趣图谱） is one relevance input, not the recommendation system itself;
+- Home / For You（首页 / 为你推荐） uses the provisional Hybrid Homepage（混合式首页） direction;
+- Following（关注） uses the provisional Ranked default + visible Latest / All Updates（默认相关排序 + 明确最新 / 全部更新） direction;
+- Explore（探索）, Search（搜索）, Related / Next（相关推荐 / 下一项） and Topic / Place（主题 / 地点） preserve their own explicit task semantics;
+- Exploration / Diversity / Freshness / Trending / Long-tail（探索 / 多样性 / 新鲜度 / 趋势 / 长尾） remain distinct product/distribution concepts;
+- recommendation rank, popularity, trend and exposure do not create authority, factual truth or Work Recognition（作品认可）;
+- Recommendation Explanation（推荐解释） must be materially truthful and aligned with actual exposure provenance;
+- User Control（用户控制） is scoped, persistent where declared, testable, and survives model rollback;
+- Recommendation Reset（推荐重置）, Personalization Opt-out（退出个性化）, Anonymous Session（匿名会话） and degraded/fallback modes have explicit lifecycle semantics;
+- Anonymous → Account（匿名 → 账户） uses the provisional Scoped / transparent handoff（有限范围、透明衔接） direction rather than default full-history fusion;
+- material model/policy changes remain versionable, observable, shadow-testable, staged-rollout capable and rollback-aware where proportionate;
+- paid / sponsored / commerce recommendation is not authorized;
+- full Notifications / Delivery（通知 / 投递） ranking/eligibility/fatigue architecture is explicitly deferred.
 
 ## Ecommerce completeness rule
 
@@ -230,9 +262,9 @@ Classify each Project 2 item as already exists in Project 3; must be source-nati
 
 ## Precedence over older documents
 
-Older files may contain stale wording such as Project 3 = Ink & East only, permanent East-only scope, generic article/blog interpretation, WordPress implementation hints, older completion scores or next-step sequences, user-level ladders, `Verified Contributor` as canonical architecture, Institution as the universal organization entity, Contributor-only guaranteed organic launch support, blanket new-account restrictions, overly broad `Authoritative Classical Text` semantics, one-Acting-Entity-only assumptions, fixed appeal counts, rigid examples, the superseded pre-revalidation Round 6 Final/Seal, pre-seal Round 7 workshop proposals, pre-consolidation Round 8 proposals, or pre-consolidation Round 9 recommendation/interest hypotheses.
+Older files may contain stale wording such as Project 3 = Ink & East only, permanent East-only scope, generic article/blog interpretation, WordPress implementation hints, older completion scores or next-step sequences, user-level ladders, `Verified Contributor` as canonical architecture, Institution as the universal organization entity, Contributor-only guaranteed organic launch support, blanket new-account restrictions, overly broad `Authoritative Classical Text` semantics, one-Acting-Entity-only assumptions, fixed appeal counts, rigid examples, the superseded pre-revalidation Round 6 Final/Seal, pre-seal Round 7 workshop proposals, pre-consolidation Round 8 proposals, pre-consolidation Round 9 recommendation/interest hypotheses, or pre-consolidation Round 10 discovery/recommendation proposals.
 
-Those statements are superseded where they conflict with this file, accepted amendment/audit records, Round 6 V6 current truth + replacement seal, Round 7 V1 current truth + validation + seal, the project-wide Rule Evolvability & Change Architecture, Round 8 V1 current truth + validation + seal, Round 9 V1 current truth + validation + seal, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, later accepted Product Architecture decisions, the ecommerce parity matrix, or later accepted milestone records.
+Those statements are superseded where they conflict with this file, accepted amendment/audit records, Round 6 V6 current truth + replacement seal, Round 7 V1 current truth + validation + seal, the project-wide Rule Evolvability & Change Architecture, Round 8 V1 current truth + validation + seal, Round 9 V1 current truth + validation + seal, Round 10 V1 current truth + validation + seal, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, later accepted Product Architecture decisions, the ecommerce parity matrix, or later accepted milestone records.
 
 ## Read order for a new project window
 
@@ -266,14 +298,21 @@ Those statements are superseded where they conflict with this file, accepted ame
 28. `docs/INK-EAST-ROUND-9-SEAL-RECORD.md`
 29. `docs/ROUND-9-PREEXISTING-INTEREST-DIRECTION-PROVENANCE-NOTE.md`
 30. `docs/ROUND-9-PREWORKSHOP-MATURE-PLATFORM-RECOMMENDATION-BENCHMARK-V1.md` when recommendation-reference provenance is needed
-31. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-32. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-33. historical Round 3/4, Round 7/8 and Round 9 Workshop A–F records when provenance is needed
-34. PR #53 latest conversation/decision history while the workshop remains open
-35. `INK-EAST-BRIEF.md` for product history while ignoring superseded assumptions
-36. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-37. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-38. `docs/PROJECT-3-CURRENT-HANDOFF.md`
-39. superseded Round 6 Final/Seal and older planning documents only as historical references
+31. `docs/INK-EAST-ROUND-10-CURRENT-TRUTH-V1.md`
+32. `docs/ROUND-10-CROSS-WORKSHOP-CONSISTENCY-COMPLETENESS-AUDIT.md`
+33. `docs/ROUND-10-CROSS-WORKSHOP-HARDENING-ADDENDUM.md`
+34. `docs/ROUND-10-V1-SOURCE-PARITY-PASS.md`
+35. `docs/ROUND-10-V1-ADVERSARIAL-AUDIT.md`
+36. `docs/INK-EAST-ROUND-10-SEAL-RECORD.md`
+37. `docs/ROUND-10-CHECKPOINT-READ-ME.md` for a compressed human-review path
+38. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+39. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+40. historical Round 3/4 and Round 7–10 Workshop records when provenance is needed
+41. PR #53 latest conversation/decision history while the workshop remains open
+42. `INK-EAST-BRIEF.md` for product history while ignoring superseded assumptions
+43. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+44. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+45. `docs/PROJECT-3-CURRENT-HANDOFF.md`
+46. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
