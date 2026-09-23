@@ -28,6 +28,8 @@ Rounds 1–5（第一至第五轮）形成较早，文件格式没有后来统�
 3. [`PROJECT-3-RULE-EVOLVABILITY-CROSS-PROJECT-CONSISTENCY-PASS.md`](PROJECT-3-RULE-EVOLVABILITY-CROSS-PROJECT-CONSISTENCY-PASS.md)
 4. [`PROJECT-3-RULE-EVOLVABILITY-ADVERSARIAL-AUDIT.md`](PROJECT-3-RULE-EVOLVABILITY-ADVERSARIAL-AUDIT.md)
 5. [`PROJECT-3-RULE-EVOLVABILITY-SEAL-RECORD.md`](PROJECT-3-RULE-EVOLVABILITY-SEAL-RECORD.md)
+6. [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md) — regression test against previously superseded product directions（针对已淘汰方向的回归审计）; read this before continuing Round 12.
+7. [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md) — current public-content / Membership scope correction（当前公开内容 / 会员范围纠正）.
 
 ---
 
@@ -197,13 +199,29 @@ Detailed Workshop provenance（详细工作坊溯源）:
 
 ---
 
-# 13. Next architecture subject / 下一架构主题
+# 13. Round 12 — Membership / Reading Room（第十二轮——会员 / 阅读室） — REOPENED / PAUSED
 
-Next planned subject after Round 11 seal:
+Round 12 Workshop A（第十二轮工作坊 A） was drafted and locally audited, but a later regression review found that it had partially drifted back toward the old paywall / VIP-content model.
 
-**Round 12 — Membership / Reading Room（第十二轮——会员 / 阅读室）**, subject to the repository's controlling workshop sequence and any later explicit amendment.
+Current controlling correction:
 
-Round 11 deliberately deferred exact Membership / Archive entitlement and full Notifications / Delivery（通知 / 投递） behavior so those later subjects can be designed without rewriting Issue ontology/history.
+- [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md)
+- [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md)
+
+Historical / partially superseded Round 12 Workshop A chain:
+
+- [`INK-EAST-ROUND-12-MEMBERSHIP-READING-ROOM-WORKSHOP-A.md`](INK-EAST-ROUND-12-MEMBERSHIP-READING-ROOM-WORKSHOP-A.md)
+- [`ROUND-12-WORKSHOP-A-ADVERSARIAL-AUDIT.md`](ROUND-12-WORKSHOP-A-ADVERSARIAL-AUDIT.md)
+- [`ROUND-12-WORKSHOP-A-HARDENING-ADDENDUM.md`](ROUND-12-WORKSHOP-A-HARDENING-ADDENDUM.md)
+- [`ROUND-12-WORKSHOP-A-MEMBERSHIP-PACKAGING-DECISION-DEFERRED.md`](ROUND-12-WORKSHOP-A-MEMBERSHIP-PACKAGING-DECISION-DEFERRED.md)
+
+Current product baseline:
+
+- normal published platform content remains publicly readable;
+- Membership（会员） is not a paywall/content-unlock product;
+- old VIP Library / VIP Long Read / 30% paywall assumptions are historical provenance, not current Membership truth;
+- public Membership packaging remains deferred;
+- the next Round 12 workshop is intentionally paused until regression-documentation hardening is complete.
 
 ---
 
