@@ -84,6 +84,7 @@ Current accepted/revalidated architecture precedence is:
 36. `docs/INK-EAST-ROUND-11-SEAL-RECORD.md` — current Round 11 seal;
 37. `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md` — current Round 12 public-content / Membership scope correction; supersedes paywall/member-only editorial-content assumptions;
 38. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — cross-round regression audit against superseded product directions; mandatory regression gate for remaining workshops.
+39. `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` — explicit registry of superseded/rejected directions and their current replacements; mandatory guard against legacy-plan revival.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
@@ -272,6 +273,8 @@ Classify each Project 2 item as already exists in Project 3; must be source-nati
 
 Older files may contain stale wording such as Project 3 = Ink & East only, permanent East-only scope, generic article/blog interpretation, WordPress implementation hints, older completion scores or next-step sequences, user-level ladders, `Verified Contributor` as canonical architecture, Institution as the universal organization entity, Contributor-only guaranteed organic launch support, blanket new-account restrictions, overly broad `Authoritative Classical Text` semantics, one-Acting-Entity-only assumptions, fixed appeal counts, rigid examples, the superseded pre-revalidation Round 6 Final/Seal, pre-seal Round 7 workshop proposals, pre-consolidation Round 8 proposals, pre-consolidation Round 9 recommendation/interest hypotheses, or pre-consolidation Round 10 discovery/recommendation proposals.
 
+**Legacy-document quarantine rule / 旧文档隔离规则:** `INK-EAST-BRIEF.md`, `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md`, `PROJECT-CONTROL-MASTER.md`, early Workshop/Decision Log and historical Round 3/4 consolidations now carry explicit warning banners. They remain Decision Provenance（决策溯源） only where superseded. Always consult `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` before reusing detailed old product behavior.
+
 **Membership legacy trap / 会员旧方案污染警告:** `INK-EAST-BRIEF.md`, `INK-EAST-ROADMAP.md`, `PROJECT-CONTROL-MASTER.md` and old static-preview records contain superseded 30% paywall, VIP Library, VIP Long Read, fixed Reader/Patron packaging/pricing, `99% free + rare VIP content` and membership-gated participation assumptions. These remain historical provenance only. Current Round 12 direction is: normal published platform content is publicly readable; Membership is not a paywall/content-unlock product. Do not revive an old paid-content model without an explicit new user decision.
 
 Those statements are superseded where they conflict with this file, accepted amendment/audit records, Round 6 V6 current truth + replacement seal, Round 7 V1 current truth + validation + seal, the project-wide Rule Evolvability & Change Architecture, Round 8 V1 current truth + validation + seal, Round 9 V1 current truth + validation + seal, Round 10 V1 current truth + validation + seal, `docs/PROJECT-3-FUNCTION-FIRST-VISUAL-BASELINE.md`, `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`, later accepted Product Architecture decisions, the ecommerce parity matrix, or later accepted milestone records.
@@ -321,15 +324,16 @@ Those statements are superseded where they conflict with this file, accepted ame
 41. `docs/INK-EAST-ROUND-11-SEAL-RECORD.md`
 42. `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`
 43. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md`
-44. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-45. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-46. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
-47. PR #53 latest conversation/decision history while the workshop remains open
-48. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
-49. `INK-EAST-ROADMAP.md` and `PROJECT-CONTROL-MASTER.md` for historical product provenance only where later current truth does not supersede them
-50. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-51. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-52. `docs/PROJECT-3-CURRENT-HANDOFF.md`
-53. superseded Round 6 Final/Seal and older planning documents only as historical references
+44. `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`
+45. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+46. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+47. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
+48. PR #53 latest conversation/decision history while the workshop remains open
+49. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
+50. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
+51. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+52. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+53. `docs/PROJECT-3-CURRENT-HANDOFF.md`
+54. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
