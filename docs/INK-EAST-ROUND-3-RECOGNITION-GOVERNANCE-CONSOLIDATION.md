@@ -1,3 +1,7 @@
+> ⚠️ **SEALED HISTORICAL ROUND RECORD WITH LATER CROSS-ROUND SUPERSESSION（已封存历史轮次记录 / 存在后续跨轮取代）**  
+> Round 3 Recognition（作品认可） semantics remain controlling where not superseded, but actor labels such as VIP / Verified Contributor / Institution reflect an earlier vocabulary layer.  
+> Later Rounds 1–6 amendments and Round 6 Current Truth（当前有效真相） control conflicting identity/organization/distribution semantics. See `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`.
+
 # Ink & East Product Architecture V1 — Round 3 Recognition & Governance Consolidation
 
 > Status: **CONSOLIDATED / NOT YET SEALED**
