@@ -334,17 +334,19 @@ Those statements are superseded where they conflict with this file, accepted ame
 40. `docs/ROUND-11-V1-ADVERSARIAL-AUDIT.md`
 41. `docs/INK-EAST-ROUND-11-SEAL-RECORD.md`
 42. `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`
-43. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md`
+43. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md` — preferred deep regression report
 44. `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`
-45. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-46. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-47. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
-48. PR #53 latest conversation/decision history while the workshop remains open
-49. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
-50. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
-51. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-52. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-53. `docs/PROJECT-3-CURRENT-HANDOFF.md`
-54. superseded Round 6 Final/Seal and older planning documents only as historical references
+45. `docs/INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md`
+46. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
+47. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+48. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+49. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
+50. PR #53 latest conversation/decision history while the workshop remains open
+51. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
+52. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
+53. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+54. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+55. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
+56. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
