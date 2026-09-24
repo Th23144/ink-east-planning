@@ -1,3 +1,7 @@
+> ⚠️ **HISTORICAL PREVIEW ROADMAP / SUPERSEDED FOR CURRENT PRODUCT ARCHITECTURE（历史预览路线图 / 不再作为当前产品架构）**  
+> This roadmap preserves the old VIP article / VIP Library（会员内容库） / Paywall（付费墙） IA and static-preview task sequence. Those details are historical provenance, not current Membership truth.  
+> Read `PROJECT-3-START-HERE.md` + `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` before reusing any rule from this file.
+
 # Ink & East · 模块任务计划 (Roadmap)
 
 > 配合 `INK-EAST-BRIEF.md` + `.kiro/steering/ink-east-handoff.md` 使用。

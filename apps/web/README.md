@@ -1,3 +1,6 @@
+> ⚠️ **PRODUCT-ARCHITECTURE PRECEDENCE NOTE（产品架构优先级说明）**  
+> This README describes the existing source scaffold, not current business/product truth. Before extending fields/access/membership behavior, read `../../PROJECT-3-START-HERE.md` and `../../docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`. Legacy `reader` / `patron` / `is_vip` scaffold fields must not be treated as current paywall authorization.
+
 # Ink & East Web App
 
 This directory contains the Level 1 source scaffold for the future Ink & East source-native journal system.

@@ -1,3 +1,7 @@
+> ⚠️ **PRE-PR#53 PRODUCT/SOURCE PLAN / MEMBERSHIP MODEL SUPERSEDED（PR #53 之前的产品 / 源码计划 / 会员模型已取代）**  
+> This file contains old Member Reading Layer, VIP Library, Reader/Patron permissions, article-access gating and Patron Vote assumptions. Preserve it as implementation-history provenance only.  
+> Do not implement these product rules without checking `PROJECT-3-START-HERE.md` + `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` + current Round 6–12 architecture.
+
 # Ink & East · Phase 1 Source-Native Plan
 
 - 本文件是 Project 3 / Ink & East 长期主站级项目的 Phase 1 详细规划。

@@ -1,3 +1,7 @@
+> ⚠️ **HISTORICAL PROTOTYPE ACCESS MODEL / NOT CURRENT MEMBERSHIP PRODUCT TRUTH（历史原型访问模型 / 不是当前会员产品真相）**  
+> The Level 1 prototype reserved `reader` / `patron` visibility values before PR #53 finalized Product Architecture. Those reserved values do **not** authorize Membership content paywalls. Current Round 12 direction keeps normal published platform content publicly readable.  
+> Do not migrate or reinterpret these fields without a separately authorized implementation/migration decision.
+
 # Ink & East Level 1 · Task 5 · Shared Fields and Access Rules
 
 ## Scope
