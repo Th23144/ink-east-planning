@@ -107,6 +107,20 @@ This is a dangerous **intermediate truth**:
 - but still keeps 99% free + rare VIP content, independent VIP Library and some membership-gated participation assumptions.
 It must not be treated as the current top-level control document.
 
+## RED-TECH — legacy source/prototype implementation assumptions / 红色技术债：旧源码 / 原型假设
+
+These do **not** authorize code changes now, but they are known implementation-migration debt:
+
+- `INK-EAST-SOURCE-ARCHITECTURE.md` — pre-PR#53 `reader/patron` visibility + VIP route/content assumptions;
+- `INK-EAST-PHASE-1-SOURCE-PLAN.md` — Member Reading Layer, VIP Library, Reader/Patron permission model;
+- `INK-EAST-PHASE-2-TECHNICAL-DECISION.md` — reserved VIP / Reader / Patron access model;
+- `docs/LEVEL-1-TASK-5-SHARED-FIELDS-ACCESS.md` — historical prototype `public / reader / patron / private / editor_only` visibility values;
+- `docs/LEVEL-1-TASK-7-PUBLIC-QUERY-LAYER.md` — public query excludes reader/patron records because of the old prototype model;
+- `apps/web/src/fields/visibilityField.ts` — actual prototype code still contains `reader` and `patron` visibility options;
+- `apps/web/src/collections/Articles.ts` — actual prototype code still contains an `is_vip` field.
+
+**Important:** this registry records the mismatch only. Product-code migration/removal is **not authorized** by PR #53. When implementation resumes, these fields must be reviewed against the final Membership/public-content architecture rather than silently preserved.
+
 ## AMBER — valid provenance but stale terminology / 黄色：有效溯源，但术语存在过时风险
 
 ### `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
