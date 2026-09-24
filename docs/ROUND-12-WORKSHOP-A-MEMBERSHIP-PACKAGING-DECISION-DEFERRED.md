@@ -1,3 +1,6 @@
+> ⚠️ **CURRENT ONLY FOR THE DEFERRED-DECISION FACT（仅“决定暂缓”这一事实仍当前有效）**  
+> This file remains valid only as evidence that no Membership package/tier choice was made. It does not preserve the superseded Workshop A benefit/access framing. Packaging must be reconsidered only after the corrected Membership value/benefit system is defined.
+
 # Round 12 Workshop A — Membership Packaging Decision Deferred（第十二轮工作坊 A——会员包装决定暂缓）
 
 > **Status:** USER DECISION DEFERRED / DO NOT INFER（用户决定暂缓 / 不得推断）  
