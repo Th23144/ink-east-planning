@@ -239,6 +239,15 @@ Round 10 now supplies the durable Discovery & Recommendation（发现与推荐�
 - paid / sponsored / commerce recommendation is not authorized;
 - full Notifications / Delivery（通知 / 投递） ranking/eligibility/fatigue architecture is explicitly deferred.
 
+## Legacy source-schema migration warning / 旧源码字段迁移警告
+
+The existing Level 1 source scaffold predates PR #53 Product Architecture and still contains legacy access placeholders, including:
+
+- `apps/web/src/fields/visibilityField.ts` values `reader` / `patron`;
+- `apps/web/src/collections/Articles.ts` field `is_vip`.
+
+These fields are **implementation debt / historical placeholders**, not current Membership product truth. They must not be used to infer article/Issue/Archive paywalls or fixed Reader/Patron tiers. Do not delete/migrate them until implementation is separately authorized; when implementation resumes, reconcile them against final Round 12 Membership/public-content architecture.
+
 ## Ecommerce completeness rule
 
 Before treating the Spatial Flow source-native ecommerce surface as complete, maintain the Project 2 → Project 3 parity/migration matrix:
