@@ -1,3 +1,6 @@
+> ⚠️ **HISTORICAL ROUND SEAL WITH LATER CROSS-ROUND AMENDMENTS（历史轮次封存 / 存在后续跨轮修正）**  
+> Round 3 remains sealed in its surviving Recognition（作品认可） semantics, but later A1–A47 / F1–F10 corrections and later Current Truth（当前有效真相） supersede conflicting terminology, board assumptions, privacy/governance details and distribution interpretations. Read `PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` before using this record alone.
+
 # Ink & East Product Architecture V1 — Round 3 Seal Record
 
 > Status: **ROUND 3 SEALED — PRODUCT ARCHITECTURE ONLY**
