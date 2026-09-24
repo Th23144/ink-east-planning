@@ -1,3 +1,7 @@
+> ⚠️ **HISTORICAL LIVING DECISION LOG / NOT A COMPLETE CURRENT-TRUTH CONSOLIDATION（历史持续决策日志 / 不是完整当前真相）**  
+> Confirmed decisions remain valuable provenance, but later cross-round amendments and Current Truth（当前有效真相） may supersede terminology or scope in this file.  
+> Read `PROJECT-3-START-HERE.md` + `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` first.
+
 # Ink & East Product Architecture / Business System V1 — Decision Log
 
 > Status: living decision record for the Product Architecture workshop.
