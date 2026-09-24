@@ -234,7 +234,16 @@ Current product baseline:
 - exact Membership benefit catalogue, Reading Room（阅读室）, participation/service benefits and packaging remain unresolved;
 - public Membership packaging remains deferred.
 
-**Current next workshop:** Round 12 Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）.
+**Current active workshop:** Round 12 Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）.
+
+Workshop B current chain:
+
+- [`ROUND-12-WORKSHOP-B-SUPERSESSION-REGRESSION-GATE.md`](ROUND-12-WORKSHOP-B-SUPERSESSION-REGRESSION-GATE.md) — PASS
+- [`INK-EAST-ROUND-12-MEMBERSHIP-READING-ROOM-WORKSHOP-B.md`](INK-EAST-ROUND-12-MEMBERSHIP-READING-ROOM-WORKSHOP-B.md) — 80-item candidate benefit catalogue / DISCUSSION DRAFT
+- [`ROUND-12-WORKSHOP-B-ADVERSARIAL-AUDIT.md`](ROUND-12-WORKSHOP-B-ADVERSARIAL-AUDIT.md) — PASS AFTER HARDENING / validates framing, not unchosen benefits
+- [`ROUND-12-WORKSHOP-B-HARDENING-ADDENDUM.md`](ROUND-12-WORKSHOP-B-HARDENING-ADDENDUM.md) — 10 controlling discussion safeguards
+
+Open product choices: B-C1…B-C6.
 
 ---
 
