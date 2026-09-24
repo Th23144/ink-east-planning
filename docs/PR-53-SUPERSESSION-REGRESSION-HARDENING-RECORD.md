@@ -23,7 +23,7 @@ Result:
 
 ## 2. Legacy-document quarantine / 旧文档隔离
 
-Verified warning banners are present on **23 high-risk legacy/current-looking files**.
+Verified warning banners are present on the high-risk legacy/current-looking files identified by this regression-hardening pass, including later-added Round 12 and superseded Round 6/older seal records.
 
 They include:
 
