@@ -6,6 +6,8 @@
 > **Controlling inventory:** **273 rule slots**  
 > **Supersession:** this document consolidates Workshop A–E, their Hardening Addenda（加固补充）, user decision records and cross-workshop hardening. Where a provisional Workshop question conflicts with a later user decision record, the later decision controls.
 
+> **Post-seal scope note（封存后范围说明）:** Round 12 later established that normal published platform content remains publicly readable and Membership（会员） is not a paywall/content-unlock product. References in this Round 11 record to `membership/access constraints`, `premium`, gating or per-reader access filtering preserve generic rights/privacy/legal/private-resource/access-layer separation only; they **do not authorize article / Issue / Archive Membership paywalls**. See `ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`.
+
 ---
 
 ## 0. Decision at a glance / 结论一览
