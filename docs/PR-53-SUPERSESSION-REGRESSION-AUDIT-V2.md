@@ -171,17 +171,14 @@ These are **not current product truth**. No code change is authorized in PR #53;
 
 # 7. Remaining risk / 剩余风险
 
-The largest remaining documentation risk is **Rounds 1–5 lack one clean, modern Current Truth consolidation equivalent to Rounds 6–11**.
+The earlier Round 1–5 handoff gap has now been materially closed by:
 
-The supersession registry and warning banners now make old files substantially safer, but a future window still has to read multiple accepted amendment layers to reconstruct some Round 1–5 details.
+- `INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md`;
+- `ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md` — PASS AFTER HARDENING.
 
-Therefore:
+This is intentionally a safe current-reading/material-parity layer rather than a verbatim archive replay. Historical Decision Provenance（决策溯源） remains in the original Round records and PR comments.
 
-- product work remains paused;
-- do not continue Round 12 yet;
-- next documentation-only hardening candidate is a **Rounds 1–5 Current Truth Consolidation（第一至第五轮当前有效真相整合）**, built strictly from already accepted decisions/amendments with source-parity verification, not from memory or new invention.
-
-That consolidation is documentation repair, not a new product direction.
+No unresolved material Round 1–5 handoff blocker remains at this checkpoint. The project-wide final Full Comprehensive Adversarial Audit（全量综合对抗性审计） after sequence 1–16 still remains mandatory.
 
 ---
 
