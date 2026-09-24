@@ -142,39 +142,42 @@ No plan count is selected by this correction.
 
 # 2. Effect on existing R12-A1…A50 / 对现有 50 条规则的影响
 
-## Remain directionally valid / 方向继续有效
+## Workshop A is non-controlling as a Membership design / 工作坊 A 不再作为当前会员设计的控制规则
 
-The following remain useful because they protect architecture separation rather than create a paywall:
+The later user correction was broader than “remove three paywall rules.”
 
-- A1–A4;
-- A6–A8;
-- A14, A16;
-- A18–A24;
-- A26–A44, subject to COR8 for A44 sequencing;
-- A46–A50.
+The user explicitly noted that the fine-grained Membership design had been entered **before** the platform had defined what Reading Experience（阅读体验）, Participation（参与） and Services（服务） actually mean as member value. Therefore the current architecture must not silently preserve most of A1–A50 merely because some individual separation/safety rules look technically reasonable.
 
-They will be re-consolidated later with wording aligned to the public-content baseline.
+**Current rule:**
 
-## Require scope rewrite / 需要改写作用范围
+- R12-A1…A50 are **HISTORICAL / NON-CONTROLLING PROVENANCE（历史 / 非控制性溯源）** for current Membership product design;
+- the Workshop A Adversarial Audit（工作坊 A 对抗性审计） and Hardening Addendum（加固补充） are likewise historical analysis of that superseded framing;
+- generic patterns from them—such as separating payment events from product state, versioning commercial agreements, preserving audit history, refund/revocation consistency, or cache invalidation—may be reconsidered later;
+- none of those patterns automatically becomes a current Membership requirement until the benefit/value model has been defined and the rule is re-derived in that corrected context;
+- this prevents a technically sound subscription architecture from prematurely deciding **what Membership actually is**.
 
-- **A5**: Entitlements remain typed/scoped, but examples must not assume premium-content or Archive access.
-- **A9**: access/capability evaluation applies to member functions, tools, experiences, allowances and services—not ordinary published-content reading.
-- **A10**: payment event still does not directly grant product capability; wording must stop centering content access.
-- **A11**: rights/privacy/legal restrictions remain absolute, but this is not a Membership paywall rule.
-- **A17**: benefits must be explicit, but “content access” is removed as the default Membership benefit.
-- **A45**: cache/invalidation applies where Membership controls a capability, service booking, allowance, private member space or other legitimate entitlement; it is not authority for editorial-content paywalls.
+## Directly superseded assumptions / 直接淘汰的假设
 
-## Superseded as Membership assumptions / 作为会员假设被取代
+At minimum, the following Workshop A directions are explicitly superseded as Membership assumptions:
 
 - **A12** — Issue-level vs object-level Membership access;
 - **A13** — Membership-based Archive access;
-- **A15** — paywall preview/teaser leakage.
+- **A15** — paywall preview/teaser leakage;
+- **A25** insofar as it presupposes a paid-content / VIP-content ontology;
+- any example elsewhere in A1–A50 that treats normal published editorial/knowledge content as a paid Entitlement（付费权益）.
 
-Those concepts may still matter in separate rights/privacy/private-resource contexts, but they are not part of the current Membership product model.
+## Still unresolved / 仍未决定
 
-## Strengthened / 加强
+- exact Membership benefit catalogue（会员权益清单）;
+- exact Reading Room（阅读室） product definition;
+- which participation opportunities are ordinary/free vs member-enhanced;
+- whether any member-only social/experience space should exist;
+- service courtesy / priority / allowance design;
+- capability acceleration boundaries beyond already established anti-abuse constraints;
+- one tier / two tiers / multiple plans;
+- names, prices, monthly/annual cadence, trials, gifts and packaging.
 
-- **A25** becomes stronger: the current direction does not merely “avoid assuming” a VIP-only content lane; normal published platform content is public and Membership should not create a separate paid-content ontology.
+The only controlling Round 12 rules at this checkpoint are the public-content baseline, the non-paywall Membership boundary, the separation from purchased authority/governance, and the process rule that value/benefits must be defined before packaging/pricing.
 
 ---
 
