@@ -150,9 +150,9 @@ Warning banners have been added to high-risk sources including:
 
 `docs/INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md` was aligned so historical `VIP Long Read` language no longer implies current paywalled/member-only content, and stale contributor vocabulary no longer overrides Contributor Qualification semantics.
 
-## Round 11 post-seal scope hardened
+## Round 11 sealed blob preserved; later scope correction controls externally
 
-`docs/INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md` now carries an explicit post-seal note: its generic access/gating language cannot be used as authorization for article / Issue / Archive Membership paywalls after the Round 12 public-content correction.
+Round 11 Current Truth remains byte-for-byte in its sealed/current-truth form. Its generic access/gating wording must be interpreted together with the later `ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`, which has later scope precedence for Membership semantics. No post-seal edit is used to rewrite Round 11 history.
 
 ## High-precedence A16 repaired
 
