@@ -1,3 +1,7 @@
+> ⚠️ **HISTORICAL / NON-CONTROLLING AFTER ROUND 12 SCOPE CORRECTION（历史 / 第十二轮范围纠正后不再具控制效力）**  
+> This Workshop A entered fine-grained Membership architecture before Membership value, Reading Room（阅读室）, Participation（参与） and Services（服务） had been defined. Its A1–A50 rules are Decision Provenance（决策溯源） only unless later re-derived under the corrected public-content baseline.  
+> Controlling record: `ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`.
+
 # Round 12 — Membership / Reading Room（会员 / 阅读室） — Workshop A（工作坊 A）
 
 > **Status:** PROPOSED / REVIEW IN PROGRESS（提案中 / 审查进行中）  
