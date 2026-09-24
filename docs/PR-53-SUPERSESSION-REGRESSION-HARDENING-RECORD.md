@@ -110,12 +110,13 @@ Before every remaining Product Architecture workshop:
 
 ---
 
-## 8. Current stop state / 当前停止状态
+## 8. Current gate state / 当前闸门状态
 
 - Round 6–11 sealed current architecture: regression PASS.
-- Round 12: REOPENED / PAUSED.
+- Round 12 Workshop A: REOPENED / NON-CONTROLLING historical provenance.
 - Round 12 packaging: DEFERRED.
 - Membership paywall/content-unlock direction: SUPERSEDED / NOT AUTHORIZED.
-- Next product-design workshop: PAUSED.
+- Pre-resume full checkpoint audit: PASS AFTER FINAL HARDENING.
+- Mainline: RESUMED at Round 12 Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）.
 - Implementation: NOT AUTHORIZED.
 - Merge: NOT AUTHORIZED.
