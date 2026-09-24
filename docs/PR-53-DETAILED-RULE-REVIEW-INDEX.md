@@ -37,6 +37,7 @@ Rounds 1–5（第一至第五轮）形成较早，文件格式没有后来统�
 10. [`INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md`](INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md) — safe current-reading consolidation for Rounds 1–5（第一至第五轮安全当前整合）; use before historical Round 1–5 files.
 11. [`PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md`](PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md) — verified legacy-document quarantine and repair record（已验证旧文档隔离与修复记录）.
 12. [`ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md`](ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md) — PASS AFTER HARDENING / Round 1–5 material parity（第一至第五轮重大规则来源完整性通过）.
+13. [`PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md`](PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md) — PASS AFTER FINAL HARDENING / zero unresolved material blockers（主线恢复前全盘检查通过）.
 
 ---
 
@@ -206,29 +207,34 @@ Detailed Workshop provenance（详细工作坊溯源）:
 
 ---
 
-# 13. Round 12 — Membership / Reading Room（第十二轮——会员 / 阅读室） — REOPENED / PAUSED
+# 13. Round 12 — Membership / Reading Room（第十二轮——会员 / 阅读室） — REOPENED / MAINLINE RESUMED
 
-Round 12 Workshop A（第十二轮工作坊 A） was drafted and locally audited, but a later regression review found that it had partially drifted back toward the old paywall / VIP-content model.
+Round 12 Workshop A（第十二轮工作坊 A） was found to have drifted into the superseded paywall / VIP-content model. It is now **historical / non-controlling** for current Membership product design.
 
-Current controlling correction:
+Current controlling chain:
 
 - [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md)
-- [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md)
+- [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md)
+- [`PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md`](PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md)
+- [`PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md`](PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md) — PASS AFTER FINAL HARDENING
 
-Historical / partially superseded Round 12 Workshop A chain:
+Historical / non-controlling Workshop A chain:
 
 - [`INK-EAST-ROUND-12-MEMBERSHIP-READING-ROOM-WORKSHOP-A.md`](INK-EAST-ROUND-12-MEMBERSHIP-READING-ROOM-WORKSHOP-A.md)
 - [`ROUND-12-WORKSHOP-A-ADVERSARIAL-AUDIT.md`](ROUND-12-WORKSHOP-A-ADVERSARIAL-AUDIT.md)
 - [`ROUND-12-WORKSHOP-A-HARDENING-ADDENDUM.md`](ROUND-12-WORKSHOP-A-HARDENING-ADDENDUM.md)
-- [`ROUND-12-WORKSHOP-A-MEMBERSHIP-PACKAGING-DECISION-DEFERRED.md`](ROUND-12-WORKSHOP-A-MEMBERSHIP-PACKAGING-DECISION-DEFERRED.md)
+- [`ROUND-12-WORKSHOP-A-MEMBERSHIP-PACKAGING-DECISION-DEFERRED.md`](ROUND-12-WORKSHOP-A-MEMBERSHIP-PACKAGING-DECISION-DEFERRED.md) — current only for the fact that packaging remains undecided
 
 Current product baseline:
 
 - normal published platform content remains publicly readable;
 - Membership（会员） is not a paywall/content-unlock product;
 - old VIP Library / VIP Long Read / 30% paywall assumptions are historical provenance, not current Membership truth;
-- public Membership packaging remains deferred;
-- the next Round 12 workshop is intentionally paused until regression-documentation hardening is complete.
+- R12-A1…A50 do not automatically carry forward;
+- exact Membership benefit catalogue, Reading Room（阅读室）, participation/service benefits and packaging remain unresolved;
+- public Membership packaging remains deferred.
+
+**Current next workshop:** Round 12 Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）.
 
 ---
 
