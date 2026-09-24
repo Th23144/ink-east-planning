@@ -1,3 +1,7 @@
+> ⚠️ **HISTORICAL WORKSHOP SOURCE / NOT STANDALONE CURRENT TRUTH（历史工作坊来源 / 不能单独作为当前真相）**  
+> This file intentionally preserves early hypotheses and vocabulary. Later Decision Log（决策日志）, cross-round amendments, Current Truth（当前有效真相） and seals override conflicting wording.  
+> Read `PROJECT-3-START-HERE.md` + `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` first.
+
 # Ink & East Product Architecture / Business System V1 — Workshop
 
 > Status: IN PROGRESS. This is a product/business architecture workshop, not an implementation authorization.
