@@ -286,7 +286,9 @@ Access, disclosure, retention, and use must be purpose-limited and auditable.
 
 ## A16 — Base entity model uses `Organization`, not `Institution`
 
-Canonical top-level entity model:
+> ⚠️ **Later supersession note（后续取代说明）:** Final cross-audit **F4** later corrected one part of this A16 diagram: `Platform-owned Entity` is **not** a peer top-level entity type. Current authority-bearing subject kinds are Person / Organization; Platform-owned / Official / Editorial are relationship/capacity/control semantics. The `Organization`-over-`Institution` correction remains valid.
+
+Historical A16 candidate model:
 
 ```text
 Entity
