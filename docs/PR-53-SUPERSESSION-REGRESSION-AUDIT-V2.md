@@ -104,7 +104,7 @@ This does **not** mean every historical file is clean. It means the later contro
 | F7 | Historical Recognition automatically rewritten by current removal/account enforcement（当前撤稿/封号直接改写历史作品认可） | PASS | Round 6 separates historical Recognition from current availability; Round 11 preserves version/lifecycle history. |
 | F8 | Served-context provenance interpreted as permanent exhaustive tracking（曝光溯源 = 永久保存所有行为） | PASS | Round 9/10 data minimization/retention/purpose limitation remain explicit. |
 | F9 | Editorial non-selection becomes negative Recognition evidence（没被编辑选中 = 作品差 / 降低认可） | PASS | Round 11 explicitly says non-selection is not a quality verdict; editorial selection remains distinct. |
-| F10 | Future implementer must reconstruct current truth by replaying old history（实现者必须自己拼旧文档） | **PARTIAL PASS / HARDENED** | Rounds 6–11 have Current Truth files; Rounds 1–5 still have historical-density risk, now mitigated by warning banners + supersession registry. A dedicated Rounds 1–5 clean current-truth consolidation remains a possible documentation-hardening task. |
+| F10 | Future implementer must reconstruct current truth by replaying old history（实现者必须自己拼旧文档） | **PASS AFTER HARDENING** | Rounds 1–5 now have a safe current-reading consolidation + dedicated material Source Parity（来源完整性） PASS; Rounds 6–11 retain their Current Truth chains. Historical records remain provenance only. |
 
 ---
 
@@ -190,6 +190,7 @@ No unresolved material Round 1–5 handoff blocker remains at this checkpoint. T
 - Historical Round 1–5/legacy files: **high contamination risk, now quarantined and indexed**.
 - Round 12 Workshop A: **real regression found, reopened and partially superseded**.
 - Legacy source schema: **migration debt recorded; no code changes authorized**.
-- Next Product Architecture workshop: **PAUSED**.
+- Pre-resume checkpoint: **CLEARED by `PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md`**.
+- Next Product Architecture subject: **Round 12 Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）**.
 - Merge: **NOT AUTHORIZED**.
 - Implementation: **NOT AUTHORIZED**.
