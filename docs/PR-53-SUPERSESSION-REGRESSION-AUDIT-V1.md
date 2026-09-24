@@ -197,6 +197,20 @@ This gate is additional to ordinary Adversarial Audit（对抗性审计） and S
 
 ---
 
+# 6.5 Legacy implementation-schema finding / 旧实现字段发现
+
+The regression test also found that the source-native Level 1 prototype still physically contains legacy Membership access placeholders:
+
+- `apps/web/src/fields/visibilityField.ts` includes `reader` and `patron` visibility options;
+- `apps/web/src/collections/Articles.ts` includes `is_vip`;
+- Level 1 Task 5/7 documents describe reader/patron content being excluded from public reads.
+
+This is **not treated as a new product decision** and no product code was changed. It is recorded as implementation migration debt so a future implementation window does not infer that the old VIP/paywall model remains authorized.
+
+Current instruction: do not remove/migrate these fields until implementation is separately authorized; when implementation resumes, reconcile them against the final Round 12 public-content/Membership model.
+
+---
+
 # 7. Current status / 当前状态
 
 - Rounds 6–11 Current Truth（当前有效真相）: **PASS**, with Round 11 Membership/access wording constrained by the new Round 12 public-content baseline.
