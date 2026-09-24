@@ -60,9 +60,9 @@ Created:
 ## 4. Current-truth repairs / 当前真相修复
 
 - `INK-EAST-CONTENT-KNOWLEDGE-SYSTEM-V1.md`: historical `VIP Long Read` language no longer implies member-only/paywalled content; contributor vocabulary aligned to current qualification semantics.
-- Round 11 Current Truth: post-seal scope note added so generic access/gating wording cannot be cited as prior Membership-paywall authorization.
+- Round 11 Current Truth remains unmodified as a sealed record; the later Round 12 scope correction externally controls Membership/paywall interpretation.
 - Rounds 1–6 amendment A16: explicit F4 supersession note added for the old `Platform-owned Entity` peer-type diagram.
-- Round 6 V6 Current Truth: post-seal lifecycle note added so the file's old internal `CANDIDATE / NOT SEALED` snapshot status cannot override the later replacement seal.
+- Round 6 V6 Current Truth was restored to its exact frozen blob `bf32db1e213194ab95701e66cf1dc55138a01035`; its later replacement seal and START-HERE control current lifecycle status rather than rewriting the frozen file.
 
 ---
 
