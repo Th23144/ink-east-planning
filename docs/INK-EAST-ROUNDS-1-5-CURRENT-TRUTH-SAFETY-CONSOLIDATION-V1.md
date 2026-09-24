@@ -48,6 +48,8 @@ Do not use older Round 1–5 terminology to override this safety consolidation.
 
 8. Issue（议题） is an editorial curation/publication layer over the broader content system, not the whole platform.
 
+9. Religious culture/history/texts/art/philosophy may be discussed as cultural subjects, but proselytizing, sectarian mobilization, faith-conflict and comparable sensitive behavior belong to dedicated Governance（治理） policy rather than being treated as ordinary cultural discussion by default.
+
 ## Superseded Round 1 interpretations / 已淘汰解释
 
 - permanent East-only specialist-network boundary;
@@ -248,7 +250,21 @@ It does **not** automatically grant:
 - Governance Authority;
 - permanent high ranking.
 
-## 3.6 Distribution correction / 分发纠正
+## 3.6 Contributor lifecycle & integrity / 贡献者生命周期与完整性
+
+1. Contributor Qualification（贡献者资格） is not a generic annual subscription. Different underlying Claims（主张） have different lifecycles: historical credentials may be durable, while current affiliation/representation may need refresh.
+
+2. Expertise Scope（专业范围） may expand, narrow or be re-evaluated independently. A stale affiliation does not automatically erase demonstrated expertise, and one weak work does not automatically revoke unrelated qualification scopes.
+
+3. Serious trust-layer fraud—such as impersonation, fabricated credentials, deliberate false institutional representation, systematic plagiarism/fabrication or deliberate abuse of qualification status—may justify temporary suspension, scoped revocation, long-term/permanent re-verification disqualification or account-level action where warranted.
+
+4. Ordinary quality disagreement, one weak work, good-faith error or legitimate scholarly disagreement is not automatically a Contributor-integrity violation.
+
+5. Consequential sanctions require reasoned case records, evidence preservation, notice at an appropriate level and appeal/reconsideration; anti-abuse internals need not be exposed.
+
+6. Public presentation should explain Expertise Scope（专业范围） and what was actually verified/qualified. Feed/content cards should avoid prestige overload; richer identity/qualification context belongs on profile/detail surfaces.
+
+## 3.7 Distribution correction / 分发纠正
 
 The old Contributor-only baseline launch-support concept is superseded.
 
@@ -390,7 +406,21 @@ Canonical principle:
 
 9. Material false-linkage errors require review/reconsideration and Evidence Reversal where appropriate.
 
-## 4.9 Account integrity / 账户完整性
+## 4.9 Final mature-platform cross-check additions / 最终成熟平台对照补充
+
+1. **Decision Provenance（决策溯源）:** material capability restrictions preserve reconstructable internal rationale, including affected capability, reason category, relevant evidence, confidence/uncertainty, applicable policy/model version and human override/audit context where material.
+
+2. **Re-evaluation Semantics（重新评估语义）:** temporary restrictions require explicit re-evaluation paths driven by new evidence, risk reduction, low-sensitivity challenge completion, appeal outcome, attack/event resolution or adaptive system review. Restrictions must not become accidentally permanent merely because no operator revisited them.
+
+3. **Contextual Participation Evidence（情境参与证据）:** platform-wide history does not imply equal familiarity/reliability in every Topic / Place / Community（主题 / 地点 / 社区）. Local participation may be bounded supporting evidence for context-specific capabilities, never a public local level/caste.
+
+4. **Environment Risk State（环境风险态势）:** a Topic / Place / Community / event surface under coordinated attack, spam surge or brigading may justify temporary local defensive friction without globally labeling every participant as risky.
+
+5. **Material Capability Status Surface（重大能力状态面板）:** internal scores remain hidden, but users should have a place to understand consequential capability loss/protection states, broad reason category and available review/recovery path where appropriate. Minor ranking fluctuations remain outside this surface.
+
+6. **Scoped Exception（有界例外机制）:** authorized operators may create narrow, reasoned, auditable, revocable, time/context-bounded exceptions to correct false positives or special operational cases. Exceptions must not become permanent prestige allowlists and cannot manufacture Reviewer Trust, Work Recognition, Contributor Qualification, Governance Authority or organic ranking privilege.
+
+## 4.10 Account integrity / 账户完整性
 
 1. Account Compromise（账号被盗） and Owner Abuse（用户本人滥用） are distinct.
 
