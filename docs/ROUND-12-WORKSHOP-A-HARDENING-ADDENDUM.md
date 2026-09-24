@@ -1,3 +1,7 @@
+> ⚠️ **HISTORICAL HARDENING / NON-CONTROLLING FOR CURRENT MEMBERSHIP DESIGN（历史加固 / 不控制当前会员设计）**  
+> These safeguards were derived from the superseded Workshop A framing. Generic safety patterns may be reconsidered later, but none automatically carries into the corrected Membership product before benefits/value are redefined.  
+> See `ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`.
+
 # Round 12 Workshop A — Hardening Addendum（第十二轮工作坊 A 架构加固补充）
 
 > **Status:** HARDENING ADDENDUM / PRODUCT ARCHITECTURE ONLY（架构加固补充 / 仅产品架构）  
