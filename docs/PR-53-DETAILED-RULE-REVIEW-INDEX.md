@@ -34,6 +34,7 @@ Rounds 1–5（第一至第五轮）形成较早，文件格式没有后来统�
 7. [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md) — preferred deep pass across A1–A47 / F1–F10 + sealed Round 6–11（首选深度回归报告）.
 8. [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md) — current public-content / Membership scope correction（当前公开内容 / 会员范围纠正）.
 9. [`PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`](PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md) — mandatory registry of old/rejected directions and current replacements（已淘汰方向与当前替代方案登记表）.
+10. [`INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md`](INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md) — safe current-reading consolidation for Rounds 1–5（第一至第五轮安全当前整合）; use before historical Round 1–5 files.
 
 ---
 
