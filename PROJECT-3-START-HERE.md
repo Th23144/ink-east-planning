@@ -89,6 +89,7 @@ Current accepted/revalidated architecture precedence is:
 41. `docs/INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md` — safe modern reading layer for Rounds 1–5 after supersession corrections; not a substitute for detailed provenance.
 42. `docs/PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md` — verified hardening record: legacy/current-looking files quarantined, current-truth repairs applied, legacy source-schema debt recorded.
 43. `docs/ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md` — PASS AFTER HARDENING; material accepted Round 1–5 directions are present in the safe current-reading layer.
+44. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — PASS AFTER FINAL HARDENING / zero unresolved material blockers; clears the regression-hardening stop and authorizes resumption of documentation-only Product Architecture mainline.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
@@ -140,8 +141,9 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 9 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-9-CURRENT-TRUTH-V1.md`, source parity 162/162 PASS, adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-9-SEAL-RECORD.md`.
 - **Round 10 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-10-CURRENT-TRUTH-V1.md`, source parity 318/318 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-10-SEAL-RECORD.md`.
 - **Round 11 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md`, source parity 273/273 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-11-SEAL-RECORD.md`.
-- **Round 12 — REOPENED / PAUSED.** Workshop A is partially superseded by `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md` after regression to the old paywall/VIP-content model was detected. Public Membership packaging remains deferred.
-- **Current gate:** do not enter the next Round 12 workshop until the supersession-regression documentation hardening is complete. Use `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md`.
+- **Round 12 — REOPENED / MAINLINE RESUMED.** Workshop A is historical/non-controlling after `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`. Public Membership packaging remains deferred.
+- **Regression-hardening gate — CLEARED.** `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` = PASS AFTER FINAL HARDENING / zero unresolved material blockers.
+- **Current next workshop subject:** Round 12 Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）. Begin from the public-content baseline; do not inherit old Workshop A A1–A50 automatically.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
 
@@ -339,16 +341,18 @@ Those statements are superseded where they conflict with this file, accepted ame
 43. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md` — preferred deep regression report
 44. `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`
 45. `docs/INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md`
-46. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
-47. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-48. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-49. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
-50. PR #53 latest conversation/decision history while the workshop remains open
-51. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
-52. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
-53. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-54. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-55. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
-56. superseded Round 6 Final/Seal and older planning documents only as historical references
+46. `docs/ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md`
+47. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md`
+48. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
+49. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+50. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+51. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
+52. PR #53 latest conversation/decision history while the workshop remains open
+53. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
+54. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
+55. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+56. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+57. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
+58. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
