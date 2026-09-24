@@ -1,3 +1,6 @@
+> ⚠️ **SUPERSEDED PREMATURE SEAL / HISTORICAL ONLY（已被取代的过早封存 / 仅历史）**  
+> This seal was later reopened and replaced. Current Round 6 seal authority comes from `INK-EAST-ROUND-6-REPLACEMENT-SEAL-RECORD.md`; do not use the old SEALED status below as current truth.
+
 # Project 3 Product Architecture V1 — Round 6 Seal Record
 
 > Status: **ROUND 6 SEALED — PRODUCT ARCHITECTURE ONLY**  
