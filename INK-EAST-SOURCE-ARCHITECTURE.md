@@ -1,3 +1,7 @@
+> ⚠️ **PRE-PR#53 SOURCE ARCHITECTURE / PRODUCT DETAILS PARTIALLY SUPERSEDED（PR #53 之前的源码架构 / 产品细节已部分取代）**  
+> The source-native/anti-WordPress direction remains useful, but old Membership/VIP routes, `reader/patron` visibility, VIP content and access assumptions in this file are **not current product truth**.  
+> Before implementation, use `PROJECT-3-START-HERE.md`, `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` and latest Product Architecture Current Truth（当前有效真相）. Current Round 12 baseline: normal published platform content remains publicly readable; Membership（会员） is not a paywall/content-unlock product.
+
 # Ink & East · Source-Native Architecture Baseline
 
 - 本文件是 Project 3 / Ink & East 长期主站级项目的源码站架构基线。
