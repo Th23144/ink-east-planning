@@ -1,3 +1,7 @@
+> ⚠️ **HISTORICAL AUDIT OF A SUPERSEDED FRAMING（针对已被取代框架的历史审计）**  
+> The earlier `PASS AFTER HARDENING` result only meant the old Workshop A was internally hardened; it did **not** validate the later-rejected Membership/paywall framing. After the user's scope correction, this audit is provenance only and must not be cited as proof that Workshop A is current product truth.  
+> See `ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`.
+
 # Round 12 Workshop A — Adversarial Audit（第十二轮工作坊 A 对抗性审计）
 
 > **Status:** PASS AFTER HARDENING / ZERO UNRESOLVED MATERIAL BLOCKERS（加固后通过 / 0 个未解决重大阻塞）  
