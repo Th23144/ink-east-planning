@@ -83,15 +83,16 @@ Future implementation must not preserve/remove/migrate these fields until implem
 
 ## 6. Remaining documentation risk / 剩余文档风险
 
-Rounds 1–5 now have a safe current-reading consolidation, but it is explicitly **not yet a full source-parity seal** comparable to later Round current-truth chains.
+Rounds 1–5 now have:
 
-That means:
+- a safe current-reading consolidation;
+- a dedicated Material Source Parity Pass（重大规则来源完整性检查） with **PASS AFTER HARDENING**.
 
-- it is safe as a first-reading/handoff layer;
-- detailed provenance still lives in historical decisions + amendments;
-- before final PR #53 merge/implementation authorization, the project-wide final comprehensive audit should verify that the safety consolidation did not omit a material accepted Round 1–5 rule.
+The parity pass found and repaired material omissions before passing, including Round 3 negative/evidence-insufficient/revalidation lifecycle, Round 4 qualification/integrity/organization semantics, Round 5 final mature-platform additions and additional integrity/Sybil details.
 
-No need to reopen product design merely for this documentation condition.
+Detailed historical wording still remains in Decision Provenance（决策溯源） rather than being duplicated verbatim. No unresolved material Round 1–5 handoff blocker remains.
+
+The project-wide final Full Comprehensive Adversarial Audit（全量综合对抗性审计） after sequence 1–16 remains mandatory.
 
 ---
 
