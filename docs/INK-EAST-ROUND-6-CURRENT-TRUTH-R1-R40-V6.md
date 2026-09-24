@@ -1,5 +1,7 @@
 # Round 6 — Identity / Role / Permission — Current Truth R1–R40 V6
 
+> **Post-seal lifecycle note（封存后状态说明）:** This exact V6 candidate later passed `ROUND-6-V6-SOURCE-PARITY-PASS.md` and `ROUND-6-V6-FROZEN-COMPREHENSIVE-AUDIT.md`, then became the controlling replacement-sealed Round 6 truth through `INK-EAST-ROUND-6-REPLACEMENT-SEAL-RECORD.md`. The older `CANDIDATE / NOT SEALED` wording below records the file's pre-seal creation state and must not be read as the current PR #53 status.
+
 Status: **CANDIDATE / NOT SEALED**. No implementation authorization. Do not enter Round 7.
 
 This candidate consolidates Round 6A–6J, Round-6-relevant accepted cross-round amendments/corrections, and R6-R1–R6-R40. Later accepted rules supersede conflicting earlier wording; older records remain historical provenance.
