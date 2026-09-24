@@ -1,3 +1,6 @@
+> ⚠️ **HISTORICAL ROUND SEAL WITH KNOWN LATER SUPERSESSION（历史轮次封存 / 含已知后续取代）**  
+> Round 4 remains historical Decision Provenance（决策溯源）, but later accepted amendments supersede `Verified Contributor` terminology, Contributor-only launch support, Institution-as-base-type and Platform-owned-Entity-as-peer-type semantics. Use the Rounds 1–5 safety consolidation + Round 6 Current Truth for current meaning.
+
 # Ink & East Product Architecture V1 — Round 4 Seal Record
 
 > Status: **ROUND 4 SEALED — PRODUCT ARCHITECTURE ONLY**
