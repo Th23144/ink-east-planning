@@ -1,3 +1,6 @@
+> ⚠️ **SUPERSEDED PRE-REVALIDATION “FINAL” / HISTORICAL ONLY（已被重新验证链取代的旧“最终版” / 仅历史）**  
+> Despite the filename/status below, this is **not** current Round 6 truth. The controlling chain is `INK-EAST-ROUND-6-CURRENT-TRUTH-R1-R40-V6.md` + V6 Source Parity（来源完整性） + Frozen Comprehensive Audit（冻结综合审计） + `INK-EAST-ROUND-6-REPLACEMENT-SEAL-RECORD.md`.
+
 # Project 3 Product Architecture V1 — Round 6 Identity / Role / Permission Final Consolidation
 
 > Status: **ROUND 6 FINAL CONSOLIDATION — SEALED**  
