@@ -19,6 +19,8 @@ Current Truth（当前有效真相）
 
 Rounds 1–5（第一至第五轮）形成较早，文件格式没有后来统一，所以请按下面的历史入口读取。
 
+**Important（重要）:** 在阅读 Round 1–5 或任何旧 Brief / Roadmap / Handoff 前，先读 `PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`。旧文件中的 `locked / final / must / current` 只代表当时历史状态，不得覆盖后续 Current Truth（当前有效真相）和跨轮修正。
+
 ---
 
 # 2. Project-level foundation / 项目级基础
@@ -30,6 +32,7 @@ Rounds 1–5（第一至第五轮）形成较早，文件格式没有后来统�
 5. [`PROJECT-3-RULE-EVOLVABILITY-SEAL-RECORD.md`](PROJECT-3-RULE-EVOLVABILITY-SEAL-RECORD.md)
 6. [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md) — regression test against previously superseded product directions（针对已淘汰方向的回归审计）; read this before continuing Round 12.
 7. [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md) — current public-content / Membership scope correction（当前公开内容 / 会员范围纠正）.
+8. [`PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`](PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md) — mandatory registry of old/rejected directions and current replacements（已淘汰方向与当前替代方案登记表）.
 
 ---
 
