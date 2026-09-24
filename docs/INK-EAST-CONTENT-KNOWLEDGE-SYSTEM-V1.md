@@ -102,10 +102,10 @@ Possible authors include:
 
 - Ink & East editorial staff;
 - invited experts;
-- verified/authoritative contributors;
+- contributors with appropriate Contributor Qualification（贡献者资格） / scoped provenance where relevant;
 - other future trusted contributor classes.
 
-This lane includes much of what older Project 3 documents loosely called `Articles`, `VIP Long Reads`, modern essays, original stories and educational/editorial posts.
+This lane includes much of what older Project 3 documents loosely called `Articles`, `VIP Long Reads`, modern essays, original stories and educational/editorial posts. **`VIP Long Reads` is a historical label only; it does not imply current member-only/paywalled editorial content. Current Round 12 direction keeps normal published platform content publicly readable.**
 
 Unlike the canonical text lane, normal Reader Notes / discussion may be attached here where the product permits it.
 
@@ -256,7 +256,7 @@ An Issue can curate and connect:
 - teaching/interpretive pieces;
 - stories;
 - selected reader questions;
-- VIP long reads;
+- long-form editorial / contributor works (historically some previews called these `VIP long reads`; no paid-access implication);
 - community responses where editorially appropriate.
 
 Therefore:
@@ -300,7 +300,7 @@ Digital magazine + membership + ecommerce
 A more faithful long-term product direction is:
 
 ```text
-Authoritative Eastern-culture knowledge layer
+Source-backed cultural knowledge layer (Eastern/Chinese culture as the initial wedge)
         +
 Editorial / teaching publishing
         +
@@ -310,7 +310,7 @@ Reader identity / interest graph
         +
 Discovery and recommendation
         +
-Membership / premium services
+Membership / supporter relationship + separately defined services
         +
 Spatial Flow commerce
 ```
