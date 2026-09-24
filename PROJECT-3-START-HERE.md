@@ -86,6 +86,7 @@ Current accepted/revalidated architecture precedence is:
 38. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — cross-round regression audit against superseded product directions; mandatory regression gate for remaining workshops.
 39. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md` — deep regression pass across all accepted A1–A47 / F1–F10 correction vectors + sealed Round 6–11 current truth; current preferred regression report.
 40. `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` — explicit registry of superseded/rejected directions and their current replacements; mandatory guard against legacy-plan revival.
+41. `docs/INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md` — safe modern reading layer for Rounds 1–5 after supersession corrections; not a substitute for detailed provenance.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
