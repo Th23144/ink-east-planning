@@ -274,6 +274,14 @@ Current rule:
 
 Contributor Qualification can help context/audience matching and product tooling, but cannot create a guaranteed organic ranking multiplier.
 
+## 3.8 Organization / Partner / Editorial relationships / 组织、合作与编辑关系
+
+1. Organization authenticity and representative authority are separate Claims / Relationships（主张 / 关系） and do not automatically create Contributor Qualification or Work Recognition.
+2. Partner（合作方） status records a platform relationship, not blanket endorsement of the Organization's views, products, research or conduct.
+3. Official / Editorial（官方 / 编辑） platform speech must remain distinguishable from a staff member's personal/contributor speech.
+4. Where an Organization publishes work authored by people, human authorship/provenance should remain representable rather than being erased by the Organization publisher identity.
+5. Organization / Partner / Official works remain subject to the same applicable work-level Recognition framework and receive no hidden quality/distribution fast lane.
+
 ---
 
 # 4. Round 5 — Account Trust, Capability & Integrity（账户信任、能力与完整性）
@@ -402,9 +410,15 @@ Canonical principle:
 
 7. Coordinated reports/nominations/reviews must not mechanically count as independent.
 
-8. VIP/payment, Contributor Qualification or Organization identity is not an independence guarantee.
+8. Restriction/Ban Evasion（规避限制） may be handled across related accounts when evidence is sufficient that an existing restriction is being deliberately bypassed.
 
-9. Material false-linkage errors require review/reconsideration and Evidence Reversal where appropriate.
+9. Credible active coordinated attacks may trigger bounded Cluster Containment（关联账号簇控制）—for example neutralizing suspicious signals, pausing relevant high-risk/governance actions, adding friction/rate controls or activating Sensitive Operations Guard（敏感操作保护闸） where justified. This is not automatic mass banning.
+
+10. VIP/payment, Contributor Qualification or Organization identity is not an independence guarantee.
+
+11. Material false-linkage errors require review/reconsideration and Evidence Reversal where appropriate.
+
+12. Full linkage graphs, exact device/IP thresholds and coordination-detection internals remain non-public/non-farmable; consequential restrictions may use coarse reason categories.
 
 ## 4.9 Final mature-platform cross-check additions / 最终成熟平台对照补充
 
@@ -424,11 +438,17 @@ Canonical principle:
 
 1. Account Compromise（账号被盗） and Owner Abuse（用户本人滥用） are distinct.
 
-2. Sensitive-operation changes are auditable.
+2. Sensitive-operation changes are auditable and may include identity mutation, control mutation, trust-claim mutation, authority mutation, evidence-state mutation and high-impact exit actions.
 
-3. Recovery is capability-specific, not one universal all-or-nothing unfreeze event.
+3. Local content anomalies do not automatically freeze unrelated sensitive operations; cross-cutting protection expands only when evidence implicates takeover, evasion, identity/control mutation, evidence destruction or comparable integrity risk.
 
-4. Cooling/waiting periods are adaptive, not one universal number.
+4. High-trust relationship changes must be verifiable/auditable rather than silently overwriting prior relationship history.
+
+5. Public deletion and legally/permissibly necessary internal audit preservation are separate concerns.
+
+6. Recovery is capability-specific, not one universal all-or-nothing unfreeze event.
+
+7. Cooling/waiting periods are adaptive, not one universal number.
 
 ---
 
@@ -483,6 +503,8 @@ Canonical principle:
 24. Anti-abuse correlation is not automatically a factual/public identity or social relationship.
 
 25. Historical Recognition != current availability/distribution/legal/policy status.
+
+26. Founding Reader（创始读者） is a cold-start/community strategy only, not a permanent privileged class or governance caste.
 
 ---
 
