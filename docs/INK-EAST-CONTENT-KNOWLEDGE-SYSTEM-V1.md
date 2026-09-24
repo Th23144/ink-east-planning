@@ -329,9 +329,9 @@ The commercial layers create monetization paths without reducing the whole platf
 
 1. Ink & East content is a multi-class system, not a generic blog/article table.
 2. Shidianguji is a strong reference for the classical-text reading/research lane only, not the whole product.
-3. Canonical classical-text surfaces must preserve source integrity and must not host an ordinary social-comment feed directly under the authoritative text.
+3. Canonical classical-text surfaces must preserve source integrity and must not host an ordinary social-comment feed directly under the canonical/source-backed text.
 4. Social discussion about classical texts belongs to linked companion community/discussion objects.
-5. Editorial/teaching content, authoritative contributor content and user-generated posts are conceptually different classes.
+5. Editorial/teaching content, contributor content with appropriate scoped qualification/provenance, and user-generated posts are conceptually different classes.
 6. Authority/provenance must be first-class metadata and permission logic.
 7. Distinct content lanes should connect through a shared knowledge/interest relationship layer rather than remain isolated silos.
 8. Existing Issues remain an editorial curation product, not the definition of the entire content system.
@@ -341,7 +341,7 @@ The commercial layers create monetization paths without reducing the whole platf
 
 - final naming of each content lane;
 - exact taxonomy and number of subcategories;
-- contributor verification / authority tiers;
+- contributor qualification / scoped claims / relationship semantics;
 - canonical text acquisition/licensing/provenance policy;
 - edition/version/collation data model;
 - translation and annotation workflow;
