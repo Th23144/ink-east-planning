@@ -143,7 +143,10 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 11 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md`, source parity 273/273 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-11-SEAL-RECORD.md`.
 - **Round 12 — REOPENED / MAINLINE RESUMED.** Workshop A is historical/non-controlling after `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`. Public Membership packaging remains deferred.
 - **Regression-hardening gate — CLEARED.** `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` = PASS AFTER FINAL HARDENING / zero unresolved material blockers.
-- **Current next workshop subject:** Round 12 Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）. Begin from the public-content baseline; do not inherit old Workshop A A1–A50 automatically.
+- **Round 12 Workshop B — OPEN / DISCUSSION IN PROGRESS（已进入 / 讨论中）.** Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单） is now the active subject.
+- Workshop B Supersession Regression Gate（取代关系回归闸）: **PASS**.
+- Workshop B local Adversarial Audit（局部对抗性审计）: **PASS AFTER HARDENING**; candidate benefits remain unapproved until user discussion.
+- Do not inherit old Workshop A A1–A50 automatically; packaging/pricing remain deferred.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
 
