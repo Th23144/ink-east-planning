@@ -1,3 +1,7 @@
+> ⚠️ **SEALED HISTORICAL ROUND RECORD / CONTAINS KNOWN SUPERSEDED TERMINOLOGY（已封存历史轮次记录 / 含已知过时术语）**  
+> Do not treat `Verified Contributor`, `Institution` as universal Organization type, `Platform-owned Entity` as peer entity type, or Contributor-only launch-support wording here as current canonical architecture.  
+> Later cross-round amendments + Round 6 V6 Current Truth（当前有效真相） supersede those meanings. Read `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` first.
+
 # Ink & East Product Architecture V1 — Round 4 Contributor / Identity Consolidation
 
 > Status: **ROUND 4 CONSOLIDATED — PRODUCT ARCHITECTURE ONLY**
