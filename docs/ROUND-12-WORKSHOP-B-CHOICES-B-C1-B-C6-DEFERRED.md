@@ -37,14 +37,17 @@ Define product capabilities（先定义产品能力）
 
 # 2. Product discovery blocks / 产品发现四块
 
-The next discovery sequence is:
+The earlier proposed sequence incorrectly assumed Reading Room（阅读室） already exists as a distinct product. A later provenance audit found that this had never been revalidated after the Product Architecture reset.
 
-1. Reading Room Product Definition（阅读室产品定义）
-2. Participation Product Definition（参与产品定义）
-3. Supporter Relationship Definition（支持者关系定义）
-4. Service Relationship Definition（服务关系定义）
+The corrected discovery sequence is:
 
-These blocks must first be defined without forcing a paid/free split.
+1. Reading / Personal Utility Capability Discovery（阅读 / 个人工具能力发现） — without presupposing a Reading Room container;
+2. Participation Product Definition（参与产品定义）;
+3. Supporter Relationship Definition（支持者关系定义）;
+4. Service Relationship Definition（服务关系定义）;
+5. only then test whether any capabilities require a distinct product/surface such as a Reading Room（阅读室）.
+
+These blocks must first be defined without forcing a paid/free split or a legacy page/container name.
 
 ---
 
