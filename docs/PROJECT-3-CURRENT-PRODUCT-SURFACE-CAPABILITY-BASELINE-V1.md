@@ -157,6 +157,14 @@ Role:
 
 Status: **CONFIRMED, EXACT UX DEFERRED**.
 
+## S16 — Domain Surface / Scoped Domain View（领域页面 / 领域范围视图）
+Role:
+- domain-anchored projection over the same underlying content/community network;
+- coexists with Home / Topic / Place / Following / Explore rather than creating an isolated forum/content universe;
+- exact domain taxonomy, naming and final UX remain evolvable.
+
+Status: **CONFIRMED / EXACT TAXONOMY & UX EVOLVABLE**.
+
 ---
 
 # 2. Confirmed capabilities without a fixed product container / 已确认但不绑定具体容器的能力
@@ -221,6 +229,30 @@ derived delivery artifact based on authoritative underlying object state.
 
 Full Notifications / Delivery product remains deferred.
 
+## C12 — Create / Publish / Submit（创建 / 发布 / 投稿）
+Meaning:
+Project 3 has confirmed multi-lane creation/publishing capability across Editorial / Teaching, Contributor and Community/User contexts. Community Create Post / Start Discussion / Ask Question may share composer infrastructure without collapsing object semantics.
+
+Exact editor/composer/container remains open and content-class-specific rules continue to control.
+
+## C13 — Identity / Claim Verification flow（身份 / 主张验证流程）
+Meaning:
+verification exists as a scoped, claim-specific product capability separate from Contributor Qualification, Work Recognition, ranking and governance standing.
+
+Exact UX/vendor/evidence collection remains deferred and claim-proportional.
+
+## C14 — Report / Appeal / Correction / Restoration workflow（举报 / 申诉 / 纠错 / 恢复流程）
+Meaning:
+user-facing governance workflows exist as confirmed capabilities; Report is an input rather than proof, and moderation/correction/appeal outcomes remain distinct.
+
+Exact cross-platform governance UX and policy remain for the dedicated governance round.
+
+## C15 — Editorial submission / open call / commission intake（编辑投稿 / 公开征稿 / 约稿入口）
+Meaning:
+Round 11 confirms multiple editorial acquisition routes including submission, open call, commission, reader letter/question and collaboration.
+
+No single standalone page or one universal workflow is implied.
+
 ---
 
 # 3. Deferred product domains / 延后产品领域
@@ -276,6 +308,15 @@ Deferred by Round 8.
 
 ## D7 — Paid / Sponsored discovery（付费 / 赞助发现）
 Not authorized by Round 10; future commercial module only if explicitly designed.
+
+## D8 — Platform-wide Governance / Moderation / Corrections consolidation（平台级治理 / 审核 / 纠错整合）
+Confirmed:
+- governance/moderation/correction capabilities already exist across Recognition, Identity/Permission, Community and Issue architecture;
+- the remaining dedicated round is a platform-wide reconciliation/completeness subject, not permission to erase or redesign sealed domain semantics from scratch.
+
+Deferred:
+- unresolved cross-domain policy/UX boundaries;
+- full moderation/correction/appeal integration where later architecture has intentionally deferred detail.
 
 ---
 
