@@ -143,9 +143,9 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 11 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md`, source parity 273/273 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-11-SEAL-RECORD.md`.
 - **Round 12 — REOPENED / MAINLINE RESUMED.** Workshop A is historical/non-controlling after `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`. Public Membership packaging remains deferred.
 - **Regression-hardening gate — CLEARED.** `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` = PASS AFTER FINAL HARDENING / zero unresolved material blockers.
-- **Round 12 Workshop B — OPEN / DISCUSSION IN PROGRESS（已进入 / 讨论中）.** Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单） is now the active subject.
-- Workshop B Supersession Regression Gate（取代关系回归闸）: **PASS**.
-- Workshop B local Adversarial Audit（局部对抗性审计）: **PASS AFTER HARDENING**; candidate benefits remain unapproved until user discussion.
+- **Round 12 Workshop B — PRODUCT DISCOVERY IN PROGRESS（产品发现进行中）.** The 80-item benefit list is now a Candidate Pool（候选池）, not an approval checklist.
+- B-C1…B-C6: **DEFERRED（暂缓）** until four product blocks are concretely defined: Reading Room（阅读室）, Participation（参与）, Supporter Relationship（支持者关系）, Service Relationship（服务关系）.
+- **Discovery Step 1 — Reading Room Product Definition V0（阅读室产品定义 V0）: COMPLETE / AUDIT PASS.** Current discovery conclusion: personal reading continuity/workspace first; Membership access/free-paid boundaries remain undecided.
 - Do not inherit old Workshop A A1–A50 automatically; packaging/pricing remain deferred.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
