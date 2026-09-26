@@ -37,7 +37,10 @@ Rounds 1–5（第一至第五轮）形成较早，文件格式没有后来统�
 10. [`INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md`](INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md) — safe current-reading consolidation for Rounds 1–5（第一至第五轮安全当前整合）; use before historical Round 1–5 files.
 11. [`PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md`](PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md) — verified legacy-document quarantine and repair record（已验证旧文档隔离与修复记录）.
 12. [`ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md`](ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md) — PASS AFTER HARDENING / Round 1–5 material parity（第一至第五轮重大规则来源完整性通过）.
-13. [`PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md`](PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md) — PASS AFTER FINAL HARDENING / zero unresolved material blockers（主线恢复前全盘检查通过）.
+13. [`PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md`](PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md) — **INVALIDATED / historical** after Reading Room provenance defect.
+14. [`ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`](ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md) — Reading Room legacy-origin audit.
+15. [`ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md`](ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md) — reconstructed early product plan.
+16. [`PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md`](PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md) — concept provenance/existence matrix.
 
 ---
 
@@ -234,7 +237,7 @@ Current product baseline:
 - exact Membership benefit catalogue, Reading Room（阅读室）, participation/service benefits and packaging remain unresolved;
 - public Membership packaging remains deferred.
 
-**Current active workshop:** Round 12 Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）.
+**Current status:** Round 12 product design PAUSED（暂停） while Rounds 1–5 product-planning and inherited-concept provenance are re-audited.
 
 Workshop B current chain:
 
