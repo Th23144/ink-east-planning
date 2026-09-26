@@ -1,3 +1,7 @@
+> ⚠️ **SUPERSEDED BY V2 / HISTORICAL INITIAL MATRIX（已由 V2 取代 / 历史初版矩阵）**  
+> Preferred current matrix: `PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md`.  
+> Audit: `PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md`.
+
 # Project 3 — Product Concept Provenance Matrix V1
 # 项目三——产品概念来源矩阵 V1
 
