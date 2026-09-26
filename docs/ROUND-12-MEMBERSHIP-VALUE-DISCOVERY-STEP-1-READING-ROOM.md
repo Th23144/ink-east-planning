@@ -4,7 +4,7 @@
 # Reading Room Product Definition V0
 # 阅读室产品定义 V0
 
-> **Status:** PRODUCT DISCOVERY DRAFT / NOT MEMBERSHIP-GATED（产品发现稿 / 尚未决定会员收费边界）  
+> **Status:** PRODUCT DISCOVERY DRAFT / ACCESS & MEMBERSHIP BOUNDARY UNDECIDED（产品发现稿 / 访问与会员边界未决定）  
 > **Implementation:** NOT AUTHORIZED（未授权实现）  
 > **Preconditions:** public-content baseline; unified Community System（统一社区系统）; private Reader Notes（读者私人笔记） remain distinct from public discussion; Save / Follow（收藏 / 关注） retain their own semantics.
 
@@ -30,7 +30,7 @@ It only decides:
 
 Reading Room（阅读室） should be treated as:
 
-> **A signed-in user's personal reading workspace and continuity layer over Project 3's public content/knowledge/community system.**
+> **An account-linked personal reading workspace and continuity layer over Project 3's public content/knowledge/community system.**
 
 It is **not**:
 
@@ -54,6 +54,8 @@ Its product job is to help a person:
 ---
 
 # 2. Reading Room capability map / 阅读室能力地图
+
+The zones below are **candidate product modules（候选产品模块）**, not a requirement that every capability ship, nor a decision that any particular module is free or paid.
 
 ## Zone A — Continue / 继续阅读
 
