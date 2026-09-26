@@ -150,3 +150,23 @@ This baseline can be used as the preferred product-level handoff before future p
 It is more precise than the old blanket “pre-resume PASS” because it does not claim that every legacy concept is resolved; it makes unresolved concepts explicit.
 
 The next product-architecture task should start from the open-question gap map rather than from old workshop labels.
+
+
+---
+
+# 9. Cross-source reconciliation follow-up / 跨来源复核后续
+
+A later cross-source reconciliation against Rounds 1–5 Product Planning Reconstruction V2, Product Concept Provenance Matrix V2 and sealed Round 6–11 Current Truth found several **documentation omissions**, not new product-direction changes.
+
+Added to the baseline:
+
+- Domain Surface / Scoped Domain View（领域页面 / 领域范围视图） as a confirmed projection;
+- Create / Publish / Submit（创建 / 发布 / 投稿） as a confirmed capability;
+- Identity / Claim Verification（身份 / 主张验证） as a confirmed capability;
+- Report / Appeal / Correction / Restoration（举报 / 申诉 / 纠错 / 恢复） as confirmed governance capabilities;
+- Editorial submission / open call / commission intake（编辑投稿 / 公开征稿 / 约稿入口） as confirmed editorial-acquisition capability;
+- platform-wide Governance / Moderation / Corrections consolidation as a confirmed later subject whose dedicated round must reconcile, not overwrite, sealed domain rules.
+
+These additions preserve the original baseline rule: **confirmed need/capability does not imply a fixed page/container/route**.
+
+Follow-up result: **PASS AFTER DOCUMENTATION REPAIR（文档修复后通过）**.
