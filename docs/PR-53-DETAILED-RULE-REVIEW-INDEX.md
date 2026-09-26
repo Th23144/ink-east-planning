@@ -46,6 +46,8 @@ Rounds 1–5（第一至第五轮）形成较早，文件格式没有后来统�
 19. [`PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md`](PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md) — surviving correct findings from invalidated pre-resume audit.
 20. [`PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md`](PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md) — expanded current product/page/module provenance matrix.
 21. [`PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md`](PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md) — PASS AFTER HARDENING / product-concept provenance audit.
+22. [`PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md`](PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md) — preferred current product-level handoff / confirmed surfaces + capabilities + deferred/open items.
+23. [`PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md`](PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md) — PASS AFTER HARDENING / zero material internal contradictions.
 
 ---
 
