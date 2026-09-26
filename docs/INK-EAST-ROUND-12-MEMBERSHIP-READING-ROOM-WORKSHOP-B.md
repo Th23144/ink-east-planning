@@ -6,7 +6,7 @@
 > **Prerequisite:** `ROUND-12-WORKSHOP-B-SUPERSESSION-REGRESSION-GATE.md` — PASS  
 > **Controlling correction:** `ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`  
 > **Important:** This workshop intentionally does **not** decide plan count, plan names, prices, billing cadence or final Reading Room UX.
-> **Later user decision:** B-C1…B-C6 are DEFERRED（暂缓） until Reading Room（阅读室）, Participation（参与）, Supporter Relationship（支持者关系） and Service Relationship（服务关系） are concretely defined. The 80-item list is a Candidate Pool（候选池）, not an approval checklist. See `ROUND-12-WORKSHOP-B-CHOICES-B-C1-B-C6-DEFERRED.md`.
+> **Later provenance correction:** B-C1…B-C6 remain DEFERRED（暂缓）, but Reading Room（阅读室） is no longer assumed to be a required product. Its existence is UNRESOLVED（未决定）. The 80-item list is a broad Capability / Value Candidate Pool（能力 / 价值候选池）, not a Reading Room/Membership approval checklist. See `ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`.
 
 ---
 
