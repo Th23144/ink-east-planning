@@ -72,15 +72,15 @@ The exact benefit catalogue is NOT yet decided. These are design dimensions, not
 
 ---
 
-## R12-COR4 — Reading Room must be defined before it is sold / 阅读室必须先定义，再谈售卖
+## R12-COR4 — Validate the Reading Room concept before defining or selling it / 先验证“阅读室”是否应存在，再谈定义或售卖
 
 **HARD PROCESS CORRECTION（流程硬纠正）.**
 
-Reading Room（阅读室） must not be treated as a vague synonym for “member-only content page.”
+Reading Room（阅读室） is a legacy product label from pre-reset Ink & East planning. Its existence as a distinct current product has **not** been independently revalidated.
 
-The Membership round must first decide what Reading Room actually does, for example which personal workspace, reading-management, participation, event/community, service-status or member-relationship functions belong there.
+Therefore the Membership round must first ask whether current user/product needs require any distinct Reading Room product/surface at all. Only if that Existence Gate（存在性闸门） passes may a Definition Gate（定义闸门） decide what such a product does.
 
-Basic account functions and public reading functions must not be arbitrarily paywalled merely to create artificial Membership value.
+Basic account, reading, saving, note-taking, participation or public-reading functions must not be assigned to a “Reading Room” merely because the legacy plan used that container, and must not be arbitrarily paywalled to manufacture Membership value.
 
 ---
 
