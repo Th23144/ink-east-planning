@@ -243,10 +243,11 @@ Workshop B current chain:
 - [`ROUND-12-WORKSHOP-B-ADVERSARIAL-AUDIT.md`](ROUND-12-WORKSHOP-B-ADVERSARIAL-AUDIT.md) — PASS AFTER HARDENING / validates framing, not unchosen benefits
 - [`ROUND-12-WORKSHOP-B-HARDENING-ADDENDUM.md`](ROUND-12-WORKSHOP-B-HARDENING-ADDENDUM.md) — 10 controlling discussion safeguards
 - [`ROUND-12-WORKSHOP-B-CHOICES-B-C1-B-C6-DEFERRED.md`](ROUND-12-WORKSHOP-B-CHOICES-B-C1-B-C6-DEFERRED.md) — B-C1…B-C6 deferred until product discovery
-- [`ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM.md`](ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM.md) — Step 1 Reading Room Product Definition V0
-- [`ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM-AUDIT.md`](ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM-AUDIT.md) — Step 1 audit PASS / no material blocker
+- [`ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`](ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md) — confirms Reading Room（阅读室） was inherited from legacy planning and was never independently revalidated after the Product Architecture reset
+- [`ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM.md`](ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM.md) — **WITHDRAWN AS CURRENT DIRECTION / provenance only**
+- [`ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM-AUDIT.md`](ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM-AUDIT.md) — historical audit of the hypothetical V0, not product-existence validation
 
-B-C1…B-C6 are currently **DEFERRED**, not open for immediate selection.
+B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVED**.
 
 ---
 
