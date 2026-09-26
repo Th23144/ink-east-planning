@@ -6,6 +6,7 @@
 > **Prerequisite:** `ROUND-12-WORKSHOP-B-SUPERSESSION-REGRESSION-GATE.md` — PASS  
 > **Controlling correction:** `ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`  
 > **Important:** This workshop intentionally does **not** decide plan count, plan names, prices, billing cadence or final Reading Room UX.
+> **Later user decision:** B-C1…B-C6 are DEFERRED（暂缓） until Reading Room（阅读室）, Participation（参与）, Supporter Relationship（支持者关系） and Service Relationship（服务关系） are concretely defined. The 80-item list is a Candidate Pool（候选池）, not an approval checklist. See `ROUND-12-WORKSHOP-B-CHOICES-B-C1-B-C6-DEFERRED.md`.
 
 ---
 
