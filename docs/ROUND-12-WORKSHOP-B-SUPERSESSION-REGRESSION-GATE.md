@@ -1,3 +1,7 @@
+> ⚠️ **GATE RESULT SUPERSEDED / INCOMPLETE PROVENANCE TEST（闸门结果已被取代 / 来源检查不完整）**  
+> The gate correctly blocked known VIP/Paywall（会员 / 付费墙） semantics but failed to test whether the inherited product container name `Reading Room` itself had ever been revalidated. Its PASS cannot be used as evidence that all legacy product assumptions were removed.  
+> See `ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`.
+
 # Round 12 Workshop B — Supersession Regression Gate
 # 第十二轮工作坊 B——取代关系回归闸
 
