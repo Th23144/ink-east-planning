@@ -192,3 +192,18 @@ Next is:
 > **reconcile the reconstructed Rounds 1–5 product picture with the V2 provenance matrix, then create a Current Product Surface / Capability Baseline（当前产品面 / 能力基线） containing only confirmed or explicitly deferred concepts.**
 
 That baseline can then be used to restart later product discovery without legacy nouns steering the architecture.
+
+
+---
+
+# 12. Cross-source reconciliation follow-up / 跨来源复核后续
+
+The later Current Product Baseline reconciliation found one provenance-matrix omission:
+
+- Domain Surface / Scoped Domain View（领域页面 / 领域范围视图） was already supported by the post-reset topology and Round 8 unified projection model but was not given its own row in Matrix V2.
+
+This was added as **POST-RESET CONFIRMED / TAXONOMY & UX EVOLVABLE**.
+
+This is a DOCUMENTATION REPAIR（文档修复）, not a new product decision. The original 74 attack results remain valid; no legacy container was promoted.
+
+Follow-up result: **PASS AFTER DOCUMENTATION REPAIR**.
