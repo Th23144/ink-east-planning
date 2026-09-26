@@ -1,3 +1,7 @@
+> ⚠️ **SUPERSEDED BY V2 / HISTORICAL WORKING DRAFT（已由 V2 取代 / 历史工作稿）**  
+> Preferred current product-planning reconstruction: `ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md`.  
+> Source/provenance audit: `ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md`.
+
 # Rounds 1–5 — Product Planning Reconstruction V1
 # 第一至第五轮——产品规划重建 V1
 
