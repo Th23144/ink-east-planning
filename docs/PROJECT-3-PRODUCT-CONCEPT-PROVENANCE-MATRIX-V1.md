@@ -35,8 +35,8 @@
 | VIP Library（会员内容库） | pre-reset | explicitly reconsidered, later rejected under public-content baseline | **HISTORICAL ONLY** |
 | Reader / Patron tiers（读者 / 赞助者档位） | pre-reset | later packaging remains undecided | **HISTORICAL AS FIXED MODEL** |
 | Paywall / paid article access（付费墙 / 付费文章） | pre-reset | Round 12 public-content correction rejects as Membership baseline | **HISTORICAL ONLY** |
-| Custom Reading（定制解读） | legacy service + carried forward | repeatedly preserved as distinct service subject; exact future economics later | **CONFIRMED SUBJECT / DETAILS DEFERRED** |
-| Custom Ebook Studio（定制电子书工作室） | legacy service + carried forward | preserved as separate service subject; future role later | **CONFIRMED SUBJECT / DETAILS DEFERRED** |
+| Custom Reading（定制解读） | pre-reset legacy service | carried forward in later planning, but dedicated Services round has not yet revalidated its final Project 3 role | **LEGACY-INHERITED / REVALIDATION PENDING** |
+| Custom Ebook Studio（定制电子书工作室） | pre-reset legacy service | carried forward in later planning, but dedicated Services round has not yet revalidated its final Project 3 role | **LEGACY-INHERITED / REVALIDATION PENDING** |
 | Governance / Moderation / Corrections（治理 / 审核 / 纠错） | post-reset platform primitive | Round 3 scope correction + later dedicated rounds | **POST-RESET CONFIRMED** |
 | Knowledge Graph / Provenance（知识图谱 / 来源溯源） | post-reset architecture | Content/Knowledge + Round 7 | **POST-RESET CONFIRMED** |
 | Interest Graph（兴趣图谱） | post-reset later module | deferred earlier, later Round 9 | **POST-RESET CONFIRMED** |
