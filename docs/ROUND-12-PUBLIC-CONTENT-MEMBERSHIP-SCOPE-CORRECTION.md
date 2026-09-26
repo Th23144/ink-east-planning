@@ -225,5 +225,5 @@ Historical documents remain Decision Provenance（决策溯源）. They must not
 - Existing 50-rule draft: not eligible for sealing in its current wording.
 - Membership packaging A/B/C: **DEFERRED（暂缓）**.
 - Published-content paywall direction: **NOT AUTHORIZED（未授权）**.
-- Next subject: **Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）**.
+- Historical next-subject note: **Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）** was the next step at this correction checkpoint. This process instruction is now **SUPERSEDED** by the later Reading Room provenance audit, Current Product Baseline reconciliation and Rounds 12–16 sequence reconciliation; Round 12 product design is currently PAUSED.
 - Product implementation: **NOT AUTHORIZED（未授权实现）**.
