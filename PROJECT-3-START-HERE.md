@@ -100,6 +100,8 @@ Current accepted/revalidated architecture precedence is:
 52. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md` — PASS AFTER HARDENING / 74 provenance attacks.
 53. `docs/PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md` — preferred product-level handoff: confirmed surfaces, confirmed capabilities, deferred domains and legacy-only concepts.
 54. `docs/PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md` — PASS AFTER HARDENING / zero material internal contradictions.
+55. `docs/PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md` — Task 1 cross-source reconciliation; PASS AFTER DOCUMENTATION REPAIR.
+56. `docs/PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md` — Task 2 remaining-sequence provenance review; PASS WITH ROUND-12 LABEL CORRECTION / NO REORDERING REQUIRED.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
@@ -156,7 +158,9 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Product-planning reconstruction / concept-provenance pass — COMPLETE FOR CURRENT CHECKPOINT（当前检查点完成）.** Rounds 1–5 Product Planning Reconstruction V2 passed source/provenance audit; Product Concept Provenance Matrix V2 passed 74 adversarial provenance attacks; Current Product Surface & Capability Baseline V1 passed its own audit.
 - **Previous Pre-Resume Full Checkpoint PASS remains INVALIDATED（此前主线恢复前全盘检查仍失效）**; its surviving correct findings are mapped forward instead of restoring the old blanket clearance.
 - **Reading Room（阅读室） existence: UNRESOLVED（未决定）**; exact old Letters / Ask / Membership-page / Community-aggregate / service-page containers are likewise not inherited automatically.
-- **Round 12 product design remains PAUSED at a user-review checkpoint**, not because the provenance layer has a blocker, but because the next move requires choosing how to restart product discovery from the confirmed capability baseline rather than the old `Membership / Reading Room` label.
+- **Current Product Baseline cross-source reconciliation — COMPLETE / PASS AFTER DOCUMENTATION REPAIR（已完成 / 文档修复后通过）.** Confirmed omissions restored include Domain projection, Create/Publish/Submit, scoped Identity/Claim Verification, governance user workflows and editorial acquisition capabilities; none creates a mandatory legacy container.
+- **Rounds 12–16 sequence provenance reconciliation — COMPLETE / NO REORDERING REQUIRED（已完成 / 无需重排）.** Membership remains a valid Round 12 subject, but Reading Room is removed from controlling title/scope assumptions; Round 13 legacy services require revalidation; Round 14 is a platform-wide reconciliation subject; Rounds 15–16 are downstream demo/business-narrative deliverables.
+- **Round 12 product design remains PAUSED at a user-review checkpoint.** Routine provenance/consistency work for this checkpoint is complete; the next move is the genuine product decision of what unresolved user/product problem Membership should solve from the confirmed capability baseline.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
@@ -364,17 +368,19 @@ Those statements are superseded where they conflict with this file, accepted ame
 52. `docs/PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md` — baseline audit
 53. `docs/ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md` — Reading Room existence correction
 54. `docs/PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md` — surviving findings from the invalidated audit
-55. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
-56. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
-57. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-58. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-59. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
-60. PR #53 latest conversation/decision history while the workshop remains open
-61. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
-62. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
-63. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-64. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-65. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
-66. superseded Round 6 Final/Seal and older planning documents only as historical references
+55. `docs/PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md` — Task 1 final cross-source baseline check
+56. `docs/PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md` — Task 2 remaining-sequence provenance check
+57. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
+58. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
+59. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+60. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+61. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
+62. PR #53 latest conversation/decision history while the workshop remains open
+63. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
+64. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
+65. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+66. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+67. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
+68. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
