@@ -1,7 +1,7 @@
 # Rounds 1–5 — Product Planning Reconstruction V2
 # 第一至第五轮——真实产品规划重建 V2
 
-> **Status:** RECONSTRUCTED PRODUCT-PLANNING CURRENT LAYER / SOURCE-AUDIT PENDING（产品规划当前重建层 / 来源审计待完成）  
+> **Status:** RECONSTRUCTED PRODUCT-PLANNING CURRENT LAYER / SOURCE-AUDIT PASSED（产品规划当前重建层 / 来源审计已通过）  
 > **Scope:** what the user actually planned/discussed in the post-reset Product Architecture Rounds 1–5, separated from later rule-heavy architecture and pre-reset legacy product containers.  
 > **Implementation:** NOT AUTHORIZED（未授权实现）  
 > **Key constraint:** this document reconstructs product intent/surfaces/journeys; it does not replace later Rounds 6–11 Current Truth for detailed rules.
@@ -524,12 +524,8 @@ What it did **not** establish was a mandatory Reading Room product.
 
 # 13. Current status / 当前状态
 
-This V2 is the working reconstruction for source audit.
+This V2 is the preferred reconstructed product-planning layer after the completed source/provenance audit.
 
-It does not authorize Round 12 to resume yet.
+Source audit: `ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md` — **PASS AFTER HARDENING**.
 
-Required next check:
-
-**Rounds 1–5 Product Planning Reconstruction Source/Provenance Audit（第一至第五轮产品规划重建来源 / 溯源审计）**.
-
-Only after that audit should this V2 supersede the earlier V1 reconstruction as the safe product-planning layer.
+It supersedes V1 for current product-planning use, but it does **not** by itself authorize Round 12 to resume. Current restart control now also requires the Product Concept Provenance Matrix V2 and Current Product Surface & Capability Baseline.
