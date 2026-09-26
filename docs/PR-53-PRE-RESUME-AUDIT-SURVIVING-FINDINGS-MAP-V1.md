@@ -149,7 +149,7 @@ Future workshops require both:
 
 # 3. New controlling replacement layer / 新的控制替代层
 
-The old audit is now superseded by a layered set of records rather than one blanket PASS certificate:
+The old audit is now superseded by a layered current control set rather than one blanket PASS certificate:
 
 1. `PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md`  
    — known rejected semantics / rule-regression testing;
@@ -157,17 +157,28 @@ The old audit is now superseded by a layered set of records rather than one blan
 2. `PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`  
    — explicit old-direction registry;
 
-3. `ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md`  
-   — reconstructs what the user actually planned in early post-reset Product Architecture;
+3. `ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md`  
+   — preferred reconstruction of what the user actually planned in early post-reset Product Architecture;
 
-4. `PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md`  
-   — distinguishes revalidated products from legacy-inherited names;
+4. `ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md`  
+   — completed source/provenance audit, PASS AFTER HARDENING;
 
-5. `ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`  
-   — specific Reading Room correction;
+5. `PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md`  
+   — current concept/page/module existence-provenance guard;
 
-6. future dedicated Product Planning Source Parity / Adversarial Audit（产品规划来源完整性 / 对抗性审计）  
-   — required before declaring the early planning reconstruction complete.
+6. `PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md`  
+   — adversarial provenance audit, PASS AFTER HARDENING;
+
+7. `PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md`  
+   — preferred product-level handoff separating confirmed surfaces, confirmed capabilities, deferred domains and legacy/prototype-only concepts;
+
+8. `PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md`  
+   — baseline audit, PASS AFTER HARDENING;
+
+9. `ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`  
+   — specific Reading Room correction.
+
+The earlier V1 reconstruction/matrix remain Decision Provenance（决策溯源） only and do not outrank these V2/current records.
 
 ---
 
