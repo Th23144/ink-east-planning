@@ -96,6 +96,8 @@ Current accepted/revalidated architecture precedence is:
 48. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md` — preferred reconstructed product-planning layer for Rounds 1–5.
 49. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md` — PASS AFTER HARDENING / source-supported product-planning reconstruction.
 50. `docs/PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md` — preserves valid findings from the invalidated pre-resume audit while revoking its global clearance verdict.
+51. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md` — expanded current product/page/module provenance matrix; separates product need from container/route/name existence.
+52. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md` — PASS AFTER HARDENING / 74 provenance attacks.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
@@ -152,7 +154,7 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 12 — PAUSED AGAIN FOR PROVENANCE RECONSTRUCTION（再次暂停，进行来源重建）.** A later defect showed that the previous regression audit was not sufficient: it tested known obsolete semantics but did not verify whether every inherited product/container name had actually been revalidated after the Project 3 reset.
 - **Previous Pre-Resume Full Checkpoint PASS is INVALIDATED（此前主线恢复前全盘检查已失效）** by the Reading Room provenance defect.
 - **Reading Room（阅读室） existence: UNRESOLVED（未决定）.** It is a pre-reset legacy concept that survived into the workshop order without a post-reset existence decision.
-- New mandatory sources: `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md` + `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md`.
+- New mandatory sources: `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md` + `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md` + `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md` + its audit.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The 80-item list remains a broad Capability / Value Candidate Pool（能力 / 价值候选池） only.
 - Do not continue Round 12 product design until the Round 1–5 product-planning reconstruction and concept-provenance review are accepted/cleared.
 
