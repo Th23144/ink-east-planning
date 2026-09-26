@@ -1,3 +1,7 @@
+> ⚠️ **HISTORICAL AUDIT OF A HYPOTHETICAL PRODUCT / NOT EXISTENCE VALIDATION（假设产品的历史审计 / 不代表产品存在性已验证）**  
+> This audit only showed that the drafted Reading Room V0 was internally coherent. A later provenance audit found that the Reading Room product itself had never been revalidated after the Product Architecture reset.  
+> See `ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`.
+
 # Round 12 Membership Value Discovery — Step 1 Adversarial Audit
 # 第十二轮会员价值发现——第一步对抗性审计
 
