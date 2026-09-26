@@ -1,3 +1,7 @@
+> ⚠️ **WITHDRAWN AS CURRENT PRODUCT DIRECTION / PROVENANCE ONLY（撤回当前产品方向 / 仅保留溯源）**  
+> A later provenance audit found that Reading Room（阅读室） itself had never been independently revalidated after the Project 3 Product Architecture reset. This V0 is therefore a hypothetical concept exploration only, not current product truth.  
+> Controlling record: `ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`.
+
 # Round 12 Membership Value Discovery — Step 1
 # 第十二轮会员价值发现——第一步
 
