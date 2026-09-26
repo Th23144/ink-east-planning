@@ -89,7 +89,10 @@ Current accepted/revalidated architecture precedence is:
 41. `docs/INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md` — safe modern reading layer for Rounds 1–5 after supersession corrections; not a substitute for detailed provenance.
 42. `docs/PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md` — verified hardening record: legacy/current-looking files quarantined, current-truth repairs applied, legacy source-schema debt recorded.
 43. `docs/ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md` — PASS AFTER HARDENING; material accepted Round 1–5 directions are present in the safe current-reading layer.
-44. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — PASS AFTER FINAL HARDENING / zero unresolved material blockers; clears the regression-hardening stop and authorizes resumption of documentation-only Product Architecture mainline.
+44. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — **INVALIDATED / HISTORICAL** after the later Reading Room provenance defect.
+45. `docs/ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md` — proves Reading Room was legacy-inherited and never independently revalidated after reset.
+46. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md` — reconstructs the actual early product plan from post-reset sources.
+47. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md` — mandatory concept-existence provenance guard for legacy/inherited product names.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
@@ -143,12 +146,12 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 11 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md`, source parity 273/273 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-11-SEAL-RECORD.md`.
 - **Round 12 — REOPENED / MAINLINE RESUMED.** Workshop A is historical/non-controlling after `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`. Public Membership packaging remains deferred.
 - **Regression-hardening gate — CLEARED.** `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` = PASS AFTER FINAL HARDENING / zero unresolved material blockers.
-- **Round 12 Workshop B — PRODUCT DISCOVERY IN PROGRESS（产品发现进行中）.** The 80-item benefit list is a Capability / Value Candidate Pool（能力 / 价值候选池）, not an approval checklist.
-- B-C1…B-C6: **DEFERRED（暂缓）** until underlying product capabilities and relationships are concrete.
-- **Reading Room（阅读室） existence: UNRESOLVED（未决定）.** Provenance audit found that the term was inherited from pre-reset legacy planning and was never independently revalidated in Rounds 1–11.
-- The recent Reading Room Product Definition V0 is **WITHDRAWN AS CURRENT DIRECTION / PROVENANCE ONLY（撤回当前方向 / 仅保留溯源）**.
-- Current discovery must begin from capability needs—reading/personal utility, participation, supporter relationship, service relationship—without assuming any legacy product container/page name.
-- Do not inherit old Workshop A A1–A50 automatically; packaging/pricing remain deferred.
+- **Round 12 — PAUSED AGAIN FOR PROVENANCE RECONSTRUCTION（再次暂停，进行来源重建）.** A later defect showed that the previous regression audit was not sufficient: it tested known obsolete semantics but did not verify whether every inherited product/container name had actually been revalidated after the Project 3 reset.
+- **Previous Pre-Resume Full Checkpoint PASS is INVALIDATED（此前主线恢复前全盘检查已失效）** by the Reading Room provenance defect.
+- **Reading Room（阅读室） existence: UNRESOLVED（未决定）.** It is a pre-reset legacy concept that survived into the workshop order without a post-reset existence decision.
+- New mandatory sources: `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md` + `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md`.
+- B-C1…B-C6 remain DEFERRED（暂缓）. The 80-item list remains a broad Capability / Value Candidate Pool（能力 / 价值候选池） only.
+- Do not continue Round 12 product design until the Round 1–5 product-planning reconstruction and concept-provenance review are accepted/cleared.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
 
