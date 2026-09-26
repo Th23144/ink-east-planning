@@ -187,20 +187,20 @@ The previously proposed “Content Access, Archive, Paywall & Historical Entitle
 
 New sequence:
 
-### Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）
-Define what people are paying for when content remains public.
+### Workshop B — Membership Value Discovery / 会员价值发现
+Define current user/product capabilities and what additional value could legitimately support Membership when published content remains public.
 
-### Workshop C — Reading Room Product Definition（阅读室产品定义）
-Define the member workspace/surface and separate basic account utilities from paid member value.
+Workshop B must not assume a Reading Room（阅读室） product exists. Reading/personal-utility, participation, supporter-relationship and service-relationship needs are discovered first.
 
-### Workshop D — Participation, Community & Editorial Relationship Benefits（参与、社区与编辑关系权益）
-Define extra participation/capacity/experience without buying governance.
+### Later Round 12 product-definition blocks / 后续第十二轮产品定义块
+After capability discovery:
+- define Participation / Community / Editorial Relationship（参与 / 社区 / 编辑关系）;
+- define Supporter Relationship（支持者关系）;
+- define Service / Courtesy / Scarce Resource（服务 / 礼遇 / 稀缺资源）;
+- test whether the discovered needs require a distinct personal workspace/product surface at all; `Reading Room` is only one possible historical label, not a required outcome.
 
-### Workshop E — Services, Courtesy, Capability & Scarce Resource Benefits（服务礼遇、能力与稀缺资源权益）
-Define Custom Reading/service priority, allowances and capability acceleration boundaries.
-
-### Workshop F — Membership Lifecycle, Packaging & Economics（会员生命周期、包装与经济模型）
-Only after B–E: decide one/two/multiple plans, billing cadence, pricing logic, trials, gifts, migration and cancellation.
+### Final Round 12 packaging/economics stage / 最后才进入会员包装与经济模型
+Only after value/capabilities are concrete: decide one/two/multiple plans, names, billing cadence, pricing logic, trials, gifts, migration and cancellation.
 
 No paywall workshop is currently planned.
 
