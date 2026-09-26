@@ -36,6 +36,7 @@
 | Explore（探索） | post-reset future surface | Round 8 + Round 10 explicit surface semantics | **POST-RESET CONFIRMED** |
 | Following（关注页 / 关注视图） | post-reset | Round 8 + Round 10 explicit semantics | **POST-RESET CONFIRMED** |
 | Search（搜索） | source prototype + post-reset architecture | Content/Knowledge V1 + Round 10 explicit task semantics | **POST-RESET CONFIRMED** |
+| Domain Surface / Scoped Domain View（领域页面 / 领域范围视图） | post-reset | Round 3 topology + Round 8 unified projections | **POST-RESET CONFIRMED / TAXONOMY & UX EVOLVABLE** |
 | Topic Surface（主题页面 / 主题视图） | post-reset | Round 1 / Round 8 / Round 10 | **POST-RESET CONFIRMED** |
 | Place Surface（地点页面 / 地点视图） | post-reset | Round 3 scope + Round 8 / Round 10 | **POST-RESET CONFIRMED** |
 | Related / Next（相关推荐 / 下一项） | post-reset | Round 10 explicit surface semantics | **POST-RESET CONFIRMED** |
