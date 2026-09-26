@@ -93,6 +93,9 @@ Current accepted/revalidated architecture precedence is:
 45. `docs/ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md` — proves Reading Room was legacy-inherited and never independently revalidated after reset.
 46. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md` — reconstructs the actual early product plan from post-reset sources.
 47. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md` — mandatory concept-existence provenance guard for legacy/inherited product names.
+48. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md` — preferred reconstructed product-planning layer for Rounds 1–5.
+49. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md` — PASS AFTER HARDENING / source-supported product-planning reconstruction.
+50. `docs/PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md` — preserves valid findings from the invalidated pre-resume audit while revoking its global clearance verdict.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
