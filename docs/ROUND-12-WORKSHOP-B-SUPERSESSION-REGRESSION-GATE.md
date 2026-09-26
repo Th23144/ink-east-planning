@@ -40,6 +40,8 @@ Candidate value dimensions may include:
 
 These are design dimensions, not already-approved benefits.
 
+**Reading Room provenance note（阅读室来源说明）:** `Reading Room Workspace / Tools` is only a legacy-inspired candidate value dimension here. A later provenance audit found that a distinct Reading Room product itself was never revalidated after the Product Architecture reset; its existence is UNRESOLVED（未决定）.
+
 ## C3 — Basic public/account functions cannot be artificially paywalled / 基础公开与账户功能不能为造会员价值而强行收费
 
 Ordinary public reading and basic account/community functions must be evaluated on their own product merits.
