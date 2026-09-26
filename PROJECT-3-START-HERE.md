@@ -91,8 +91,8 @@ Current accepted/revalidated architecture precedence is:
 43. `docs/ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md` — PASS AFTER HARDENING; material accepted Round 1–5 directions are present in the safe current-reading layer.
 44. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — **INVALIDATED / HISTORICAL** after the later Reading Room provenance defect.
 45. `docs/ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md` — proves Reading Room was legacy-inherited and never independently revalidated after reset.
-46. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md` — reconstructs the actual early product plan from post-reset sources.
-47. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md` — mandatory concept-existence provenance guard for legacy/inherited product names.
+46. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md` — historical first reconstruction; superseded by V2 for current product-planning use.
+47. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md` — historical first provenance matrix; superseded by V2 for current use.
 48. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md` — preferred reconstructed product-planning layer for Rounds 1–5.
 49. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md` — PASS AFTER HARDENING / source-supported product-planning reconstruction.
 50. `docs/PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md` — preserves valid findings from the invalidated pre-resume audit while revoking its global clearance verdict.
@@ -151,8 +151,8 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 9 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-9-CURRENT-TRUTH-V1.md`, source parity 162/162 PASS, adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-9-SEAL-RECORD.md`.
 - **Round 10 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-10-CURRENT-TRUTH-V1.md`, source parity 318/318 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-10-SEAL-RECORD.md`.
 - **Round 11 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md`, source parity 273/273 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-11-SEAL-RECORD.md`.
-- **Round 12 — REOPENED / MAINLINE RESUMED.** Workshop A is historical/non-controlling after `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`. Public Membership packaging remains deferred.
-- **Regression-hardening gate — CLEARED.** `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` = PASS AFTER FINAL HARDENING / zero unresolved material blockers.
+- **Round 12 — PRODUCT DESIGN PAUSED（产品设计暂停）.** Membership（会员） remains a confirmed future subject, but the old `Membership / Reading Room` label no longer defines the restart scope. Reading Room（阅读室） product existence is UNRESOLVED（未决定）. Restart must begin from the confirmed Product Surface / Capability Baseline and current provenance guard.
+- **Previous Pre-Resume blanket clearance — INVALIDATED / HISTORICAL（已失效 / 仅历史）.** `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` must not be used as a current “zero blockers / mainline cleared” certificate. Surviving correct findings are mapped by `docs/PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md`; future work must pass both semantic-supersession and product-concept-existence provenance checks.
 - **Product-planning reconstruction / concept-provenance pass — COMPLETE FOR CURRENT CHECKPOINT（当前检查点完成）.** Rounds 1–5 Product Planning Reconstruction V2 passed source/provenance audit; Product Concept Provenance Matrix V2 passed 74 adversarial provenance attacks; Current Product Surface & Capability Baseline V1 passed its own audit.
 - **Previous Pre-Resume Full Checkpoint PASS remains INVALIDATED（此前主线恢复前全盘检查仍失效）**; its surviving correct findings are mapped forward instead of restoring the old blanket clearance.
 - **Reading Room（阅读室） existence: UNRESOLVED（未决定）**; exact old Letters / Ask / Membership-page / Community-aggregate / service-page containers are likewise not inherited automatically.
@@ -356,17 +356,25 @@ Those statements are superseded where they conflict with this file, accepted ame
 44. `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`
 45. `docs/INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md`
 46. `docs/ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md`
-47. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md`
-48. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
-49. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-50. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-51. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
-52. PR #53 latest conversation/decision history while the workshop remains open
-53. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
-54. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
-55. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-56. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-57. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
-58. superseded Round 6 Final/Seal and older planning documents only as historical references
+47. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md` — preferred early product-planning reconstruction
+48. `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md` — source/provenance PASS
+49. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md` — current concept-existence provenance guard
+50. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md` — provenance adversarial audit
+51. `docs/PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md` — preferred product-level handoff
+52. `docs/PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md` — baseline audit
+53. `docs/ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md` — Reading Room existence correction
+54. `docs/PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md` — surviving findings from the invalidated audit
+55. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
+56. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
+57. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+58. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+59. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
+60. PR #53 latest conversation/decision history while the workshop remains open
+61. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
+62. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
+63. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+64. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+65. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
+66. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
