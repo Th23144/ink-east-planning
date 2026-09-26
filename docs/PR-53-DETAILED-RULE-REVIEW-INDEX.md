@@ -48,6 +48,8 @@ Rounds 1–5（第一至第五轮）形成较早，文件格式没有后来统�
 21. [`PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md`](PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md) — PASS AFTER HARDENING / product-concept provenance audit.
 22. [`PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md`](PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md) — preferred current product-level handoff / confirmed surfaces + capabilities + deferred/open items.
 23. [`PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md`](PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md) — PASS AFTER HARDENING / zero material internal contradictions.
+24. [`PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md`](PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md) — Task 1 cross-source baseline reconciliation / PASS AFTER DOCUMENTATION REPAIR.
+25. [`PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md`](PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md) — Task 2 remaining-sequence provenance audit / no reordering required.
 
 ---
 
@@ -244,6 +246,8 @@ Current product-provenance / baseline chain:
 - [`PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md`](PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md)
 - [`PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md`](PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md)
 - [`PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md`](PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md)
+- [`PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md`](PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md)
+- [`PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md`](PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md)
 
 Current product baseline:
 
@@ -254,7 +258,7 @@ Current product baseline:
 - exact Membership benefit catalogue, Reading Room（阅读室）, participation/service benefits and packaging remain unresolved;
 - public Membership packaging remains deferred.
 
-**Current status:** Round 12 product design PAUSED（暂停） while Rounds 1–5 product-planning and inherited-concept provenance are re-audited.
+**Current status:** Round 12 product design PAUSED（暂停）. The product-planning/provenance reconstruction, Task 1 baseline cross-source reconciliation and Task 2 Rounds 12–16 sequence provenance reconciliation are complete for this checkpoint. The next move is a genuine product decision: choose the correct Round 12 Membership restart question from the confirmed Product Surface / Capability Baseline.
 
 Historical / candidate Workshop B chain (not authority to resume product design):
 
