@@ -98,6 +98,8 @@ Current accepted/revalidated architecture precedence is:
 50. `docs/PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md` — preserves valid findings from the invalidated pre-resume audit while revoking its global clearance verdict.
 51. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md` — expanded current product/page/module provenance matrix; separates product need from container/route/name existence.
 52. `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md` — PASS AFTER HARDENING / 74 provenance attacks.
+53. `docs/PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md` — preferred product-level handoff: confirmed surfaces, confirmed capabilities, deferred domains and legacy-only concepts.
+54. `docs/PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md` — PASS AFTER HARDENING / zero material internal contradictions.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
@@ -151,12 +153,11 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 11 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md`, source parity 273/273 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-11-SEAL-RECORD.md`.
 - **Round 12 — REOPENED / MAINLINE RESUMED.** Workshop A is historical/non-controlling after `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`. Public Membership packaging remains deferred.
 - **Regression-hardening gate — CLEARED.** `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` = PASS AFTER FINAL HARDENING / zero unresolved material blockers.
-- **Round 12 — PAUSED AGAIN FOR PROVENANCE RECONSTRUCTION（再次暂停，进行来源重建）.** A later defect showed that the previous regression audit was not sufficient: it tested known obsolete semantics but did not verify whether every inherited product/container name had actually been revalidated after the Project 3 reset.
-- **Previous Pre-Resume Full Checkpoint PASS is INVALIDATED（此前主线恢复前全盘检查已失效）** by the Reading Room provenance defect.
-- **Reading Room（阅读室） existence: UNRESOLVED（未决定）.** It is a pre-reset legacy concept that survived into the workshop order without a post-reset existence decision.
-- New mandatory sources: `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md` + `docs/ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md` + `docs/PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md` + its audit.
-- B-C1…B-C6 remain DEFERRED（暂缓）. The 80-item list remains a broad Capability / Value Candidate Pool（能力 / 价值候选池） only.
-- Do not continue Round 12 product design until the Round 1–5 product-planning reconstruction and concept-provenance review are accepted/cleared.
+- **Product-planning reconstruction / concept-provenance pass — COMPLETE FOR CURRENT CHECKPOINT（当前检查点完成）.** Rounds 1–5 Product Planning Reconstruction V2 passed source/provenance audit; Product Concept Provenance Matrix V2 passed 74 adversarial provenance attacks; Current Product Surface & Capability Baseline V1 passed its own audit.
+- **Previous Pre-Resume Full Checkpoint PASS remains INVALIDATED（此前主线恢复前全盘检查仍失效）**; its surviving correct findings are mapped forward instead of restoring the old blanket clearance.
+- **Reading Room（阅读室） existence: UNRESOLVED（未决定）**; exact old Letters / Ask / Membership-page / Community-aggregate / service-page containers are likewise not inherited automatically.
+- **Round 12 product design remains PAUSED at a user-review checkpoint**, not because the provenance layer has a blocker, but because the next move requires choosing how to restart product discovery from the confirmed capability baseline rather than the old `Membership / Reading Room` label.
+- B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
 
