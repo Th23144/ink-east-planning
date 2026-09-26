@@ -1,3 +1,7 @@
+> ⚠️ **INVALIDATED BY LATER PROVENANCE DEFECT / SUPERSEDED（被后续来源缺陷推翻 / 已取代）**  
+> This audit claimed zero unresolved material blockers, but a later targeted provenance check found that Reading Room（阅读室）—a legacy product container—had survived into the current workshop sequence without independent post-reset validation. Therefore the previous “pre-resume PASS” is no longer sufficient evidence that legacy-plan contamination was fully removed.  
+> Controlling correction: `ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`. Product-architecture mainline is paused again for a deeper Round 1–5 planning reconstruction and product-concept provenance audit.
+
 # PR #53 — Pre-Resume Full Checkpoint Audit V1
 # PR #53 —— 主线恢复前全盘检查 V1
 
