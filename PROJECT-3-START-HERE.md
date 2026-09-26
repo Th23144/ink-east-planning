@@ -82,7 +82,7 @@ Current accepted/revalidated architecture precedence is:
 34. `docs/ROUND-11-V1-SOURCE-PARITY-PASS.md` — PASS / 273 of 273 Round 11 controlling rule slots carried forward;
 35. `docs/ROUND-11-V1-ADVERSARIAL-AUDIT.md` — PASS / 120 explicit failure modes / zero unresolved material blockers;
 36. `docs/INK-EAST-ROUND-11-SEAL-RECORD.md` — current Round 11 seal;
-37. `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md` — current Round 12 public-content / Membership scope correction; supersedes paywall/member-only editorial-content assumptions;
+37. `docs/ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md` — controlling for the public-content / non-paywall Membership boundary; its older procedural next-step wording does **not** outrank the later Reading Room provenance audit, current Product Baseline or Rounds 12–16 sequence reconciliation;
 38. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — cross-round regression audit against superseded product directions; mandatory regression gate for remaining workshops.
 39. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md` — deep regression pass across all accepted A1–A47 / F1–F10 correction vectors + sealed Round 6–11 current truth; current preferred regression report.
 40. `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` — explicit registry of superseded/rejected directions and their current replacements; mandatory guard against legacy-plan revival.
