@@ -270,6 +270,7 @@ Historical / candidate Workshop B chain (not authority to resume product design)
 - [`ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`](ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md) — confirms Reading Room（阅读室） was inherited from legacy planning and was never independently revalidated after the Product Architecture reset
 - [`ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM.md`](ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM.md) — **WITHDRAWN AS CURRENT DIRECTION / provenance only**
 - [`ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM-AUDIT.md`](ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM-AUDIT.md) — historical audit of the hypothetical V0, not product-existence validation
+- [`ROUND-12-MEMBERSHIP-PURPOSE-ROLE-DISCOVERY-STEP-1-FREE-BASELINE-GAP-MAP.md`](ROUND-12-MEMBERSHIP-PURPOSE-ROLE-DISCOVERY-STEP-1-FREE-BASELINE-GAP-MAP.md) — **CURRENT DISCUSSION DRAFT / USER REVIEW REQUIRED**; restarts Round 12 from confirmed free/ordinary product value and unmet-need domains without presupposing Reading Room or old benefit packaging
 
 B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVED**.
 
