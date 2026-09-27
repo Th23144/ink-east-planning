@@ -102,6 +102,7 @@ Current accepted/revalidated architecture precedence is:
 54. `docs/PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md` — PASS AFTER HARDENING / zero material internal contradictions.
 55. `docs/PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md` — Task 1 cross-source reconciliation; PASS AFTER DOCUMENTATION REPAIR.
 56. `docs/PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md` — Task 2 remaining-sequence provenance review; PASS WITH ROUND-12 LABEL CORRECTION / NO REORDERING REQUIRED.
+57. `docs/ROUND-12-MEMBERSHIP-PURPOSE-ROLE-DISCOVERY-STEP-1-FREE-BASELINE-GAP-MAP.md` — current Round 12 discussion draft / user-review checkpoint; not Current Truth until user decision.
 
 The older `docs/INK-EAST-ROUND-6-IDENTITY-ROLE-PERMISSION-CONSOLIDATION-FINAL.md` and `docs/INK-EAST-ROUND-6-SEAL-RECORD.md` are historical provenance only where superseded by the Round 6 revalidation chain.
 
@@ -160,7 +161,8 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Reading Room（阅读室） existence: UNRESOLVED（未决定）**; exact old Letters / Ask / Membership-page / Community-aggregate / service-page containers are likewise not inherited automatically.
 - **Current Product Baseline cross-source reconciliation — COMPLETE / PASS AFTER DOCUMENTATION REPAIR（已完成 / 文档修复后通过）.** Confirmed omissions restored include Domain projection, Create/Publish/Submit, scoped Identity/Claim Verification, governance user workflows and editorial acquisition capabilities; none creates a mandatory legacy container.
 - **Rounds 12–16 sequence provenance reconciliation — COMPLETE / NO REORDERING REQUIRED（已完成 / 无需重排）.** Membership remains a valid Round 12 subject, but Reading Room is removed from controlling title/scope assumptions; Round 13 legacy services require revalidation; Round 14 is a platform-wide reconciliation subject; Rounds 15–16 are downstream demo/business-narrative deliverables.
-- **Round 12 product design remains PAUSED at a user-review checkpoint.** Routine provenance/consistency work for this checkpoint is complete; the next move is the genuine product decision of what unresolved user/product problem Membership should solve from the confirmed capability baseline.
+- **Round 12 product design remains PAUSED at a user-review checkpoint.** Routine provenance/consistency work for this checkpoint is complete.
+- **Current Round 12 discussion draft:** `docs/ROUND-12-MEMBERSHIP-PURPOSE-ROLE-DISCOVERY-STEP-1-FREE-BASELINE-GAP-MAP.md`. It reconstructs the free/ordinary product baseline, removes invalid paid-value sources, and narrows the plausible Membership problem space to Advanced Recurring Utility, Supporter Relationship, and Scarce Participation / Human Attention, with anti-abuse acceleration and Services/Commerce treated only as secondary interfaces. No role has been selected yet.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
