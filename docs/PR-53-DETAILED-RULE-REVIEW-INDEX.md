@@ -219,7 +219,7 @@ Detailed Workshop provenance（详细工作坊溯源）:
 
 ---
 
-# 13. Round 12 — Membership / Open Core baseline revalidated（第十二轮——会员 / 开放核心基线已重新确认） — STEP 2 PRODUCT ROLE DECISION PENDING
+# 13. Round 12 — Open Core / Economic Commitment Signal / Membership Boundary（第十二轮——开放核心 / 经济承诺信号 / 会员边界） — SEALED
 
 Round 12 Workshop A（第十二轮工作坊 A） was found to have drifted into the superseded paywall / VIP-content model. It is now **historical / non-controlling** for current Membership product design.
 
@@ -228,7 +228,12 @@ Current controlling chain:
 - [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md) — public-content/non-paywall baseline; later open-core baseline supersedes its old paid-value-first assumptions
 - [`ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md`](ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md) — **CURRENT CONTROLLING ROUND-12 RESTART BASELINE**
 - [`ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md`](ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md) — **RESEARCH / NON-CONTROLLING**
-- [`ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md`](ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md) — **CURRENT STEP 2 DISCUSSION / USER DECISION REQUIRED**; tests whether recurring Membership should exist as a distinct product beyond the economic-friction mechanism
+- [`ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md`](ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md) — **RESOLVED / HISTORICAL DECISION PROVENANCE**
+- [`ROUND-12-ECONOMIC-COMMITMENT-SIGNAL-MEMBERSHIP-DEFERRED-DECISION.md`](ROUND-12-ECONOMIC-COMMITMENT-SIGNAL-MEMBERSHIP-DEFERRED-DECISION.md) — **USER-CONFIRMED DECISION**
+- [`INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md`](INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md) — **CURRENT TRUTH / 20 rules**
+- [`ROUND-12-V1-SOURCE-PARITY-PASS.md`](ROUND-12-V1-SOURCE-PARITY-PASS.md) — **PASS 20 / 20**
+- [`ROUND-12-V1-ADVERSARIAL-AUDIT.md`](ROUND-12-V1-ADVERSARIAL-AUDIT.md) — **PASS / 50 explicit failure modes / zero unresolved material blockers**
+- [`INK-EAST-ROUND-12-SEAL-RECORD.md`](INK-EAST-ROUND-12-SEAL-RECORD.md) — **ROUND 12 SEALED**
 - [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md)
 - [`PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md`](PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md)
 - [`PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md`](PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md) — current map of still-valid findings from the invalidated pre-resume audit
@@ -261,7 +266,7 @@ Current product baseline:
 - exact Membership benefit catalogue, Reading Room（阅读室）, participation/service benefits and packaging remain unresolved;
 - public Membership packaging remains deferred.
 
-**Current status:** Round 12 Step 1 is COMPLETE / REVALIDATED. Step 2 is now OPEN as a genuine product decision. The current discussion draft separates the friction mechanism from the consumer subscription and provisionally recommends: do not force recurring Membership into the initial architecture; preserve it as a future open-core commercial layer only if genuine recurring value/cost emerges. This recommendation is not locked until user confirmation.
+**Current status:** Round 12 is SEALED. Economic Commitment Signal is confirmed as an independent contextual anti-abuse/capability concept. Membership may be one future signal source but is not the mechanism itself. Standalone recurring Membership is DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED. Reading Room remains unresolved/not required. The next architecture subject is Round 13 — Services / Monetization / Spatial Flow Relationship.
 
 Historical / candidate Workshop B chain (not authority to resume product design):
 
