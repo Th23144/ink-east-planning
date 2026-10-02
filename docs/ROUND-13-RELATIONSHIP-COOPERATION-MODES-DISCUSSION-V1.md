@@ -1,10 +1,11 @@
 # Round 13（第十三轮）— Ink & East ↔ Spatial Flow Cooperation Modes Discussion V1
 # 墨与东方 ↔ 空间流合作形态讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** SUPPORTING DETAIL / SUPERSEDED AS ACTIVE FRAME（支持性细节 / 不再作为当前主讨论框架）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置结论）:** `ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-RELATIONSHIP-INTEGRITY-RESOLUTION-V1.md`
+> **Preferred active discussion（当前首选讨论）:** `ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md`
 
 ---
 
