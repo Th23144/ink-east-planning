@@ -110,8 +110,8 @@ Round 11（第十一轮）records multiple Editorial Acquisition Routes（编辑
 **Classification（分类）:** DOCUMENTATION REPAIR + LATER TARGETED AMENDMENT（文档修复 + 后续定向修订）.  
 **Action（动作）:** preserve Submission（投稿）/ Open Call（公开征集）/ Directed Request（定向求助）/ Collaboration（合作）capability; treat Commission（约稿）as historical terminology only（仅历史术语）; no single standalone page（独立页面）is implied.
 
-### F7 — Open Cultural Contribution & Recovery（开放文化贡献与寻回）
-Round 13（第十三轮）user confirmation establishes a new core cultural-recovery capability family（核心文化寻回能力族）covering public requests, source/knowledge/material contributions, recovery cases, contribution attribution, deposit/donation distinction, digitization/restoration/research linkage and institutional referral/handoff（公开求助、资料 / 知识 / 材料贡献、寻回案件、贡献署名、寄存 / 捐赠区分、数字化 / 修复 / 研究关联、机构转介 / 移交）.
+### F7 — Open Cultural Recovery（开放文化寻回）
+Round 13（第十三轮）user confirmation establishes a new core cultural-recovery capability family（核心文化寻回能力族）covering public requests, source/knowledge/material provision, recovery cases, Recovery Attribution, deposit/donation distinction, digitization/restoration/research linkage and institutional referral/handoff（公开求助、资料 / 知识 / 材料提供、寻回案件、寻回归因、寄存 / 捐赠区分、数字化 / 修复 / 研究关联、机构转介 / 移交）.
 
 **Classification（分类）:** NEW USER-CONFIRMED PRODUCT CAPABILITY + CROSS-ROUND AMENDMENT（新增用户确认产品能力 + 跨轮修订）.  
 **Action（动作）:** add as confirmed capability family（已确认能力族）; keep final page/container/route（页面 / 容器 / 路由）deferred; preserve Recovery Participation / Attribution（寻回参与 / 归因） != Contributor Qualification（贡献者资格） and Physical Original（实体原件） != Digital Surrogate（数字替代物）.
