@@ -284,7 +284,16 @@ B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVE
 
 ---
 
-# 14. PR #53 final-review rule / PR #53 最终审阅规则
+# 14. Round 13 — Services / Monetization / Spatial Flow Relationship（第十三轮——服务 / 商业化 / Spatial Flow 关系） — SCOPE OPEN
+
+- [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — current restart scope; product decisions not yet made.
+- Custom Reading / Custom Ebook remain LEGACY-INHERITED / REVALIDATION PENDING.
+- Standalone recurring Membership remains deferred and does not control Round 13.
+- First genuine product discussion: identify what parts of Project 3 are naturally commercial and what must remain structurally independent from monetization.
+
+---
+
+# 15. PR #53 final-review rule / PR #53 最终审阅规则
 
 After the complete Product Architecture sequence **1–16** is finished, PR #53 must receive a new **Full Comprehensive Adversarial Audit（全量综合对抗性审计）** across the entire architecture before final implementation authorization.
 
