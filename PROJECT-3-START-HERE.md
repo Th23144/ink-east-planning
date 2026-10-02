@@ -402,7 +402,9 @@ Those statements are superseded where they conflict with this file, accepted ame
 80. `docs/ROUND-13-CONTRIBUTOR-VS-CULTURAL-RECOVERY-TERMINOLOGY-LOCK-V1.md` — controlling terminology lock（控制性术语锁定）: Contributor（贡献者）is reserved for Round 4 qualification identity; cultural recovery uses Open Cultural Recovery / Recovery Participant / Recovery Role / Recovery Attribution（开放文化寻回 / 寻回参与者 / 寻回角色 / 寻回归因）.
 81. `docs/ROUND-13-RELATIONSHIP-Q1-WHY-RELATIONSHIP-DISCUSSION-V1.md` — historical Q1 discussion（历史 Q1 讨论）.
 82. `docs/ROUND-13-RELATIONSHIP-Q1-RESOLUTION-V1.md` — **Q1 RESOLVED（Q1 已解决）**: relationship has real bidirectional value; Spatial Flow（空间流）may participate in Ink & East（墨与东方）as its own actor without platform privilege.
-83. `docs/ROUND-13-RELATIONSHIP-Q2-SPECIAL-RELATIONSHIP-DEPTH-DISCUSSION-V1.md` — **CURRENT ACTIVE Q2（当前主线 Q2）**: whether the two independent products should maintain a standing strategic relationship（持续战略关系）outside ordinary platform participation.
+83. `docs/ROUND-13-RELATIONSHIP-Q2-SPECIAL-RELATIONSHIP-DEPTH-DISCUSSION-V1.md` — historical Q2 discussion（历史 Q2 讨论）.
+84. `docs/ROUND-13-RELATIONSHIP-Q2-RESOLUTION-STANDING-STRATEGIC-RELATIONSHIP-V1.md` — **Q2 RESOLVED（Q2 已解决）**: Standing Strategic Relationship（持续战略关系）confirmed.
+85. `docs/ROUND-13-RELATIONSHIP-Q3-STANDING-RELATIONSHIP-SCOPE-BOUNDARIES-DISCUSSION-V1.md` — **CURRENT ACTIVE Q3（当前主线 Q3）**: define what the standing relationship includes, what stays project-specific, and what remains independent by default（定义持续关系包含什么、哪些逐项目决定、哪些默认独立）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
