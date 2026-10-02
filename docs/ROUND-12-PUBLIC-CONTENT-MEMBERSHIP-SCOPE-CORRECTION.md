@@ -143,8 +143,8 @@ The user explicitly noted that the fine-grained Membership design had been enter
 - R12-A1…A50 are **HISTORICAL / NON-CONTROLLING PROVENANCE（历史 / 非控制性溯源）** for current Membership product design;
 - the Workshop A Adversarial Audit（工作坊 A 对抗性审计） and Hardening Addendum（加固补充） are likewise historical analysis of that superseded framing;
 - generic patterns from them—such as separating payment events from product state, versioning commercial agreements, preserving audit history, refund/revocation consistency, or cache invalidation—may be reconsidered later;
-- none of those patterns automatically becomes a current Membership requirement until the benefit/value model has been defined and the rule is re-derived in that corrected context;
-- this prevents a technically sound subscription architecture from prematurely deciding **what Membership actually is**.
+- none of those patterns automatically becomes a current Membership requirement until Membership existence/role is independently justified and the rule is re-derived in that corrected context;
+- this prevents technically sound payment/subscription machinery from prematurely deciding **that a recurring Membership product must exist or what it must be**.
 
 ## Directly superseded assumptions / 直接淘汰的假设
 
