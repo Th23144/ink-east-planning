@@ -132,7 +132,7 @@ Donation（捐赠）is therefore one subtype（子类型）, not the name for th
 
 ---
 
-## 6. Commission（约稿）correction
+## 6. Historical Commission（约稿）terminology correction（历史“约稿”术语纠正）
 
 The previous Commission（约稿）label is too narrow for the user-confirmed product need.
 
@@ -146,29 +146,33 @@ It is:
 
 Therefore:
 
-- Commission（约稿）must no longer be used as the umbrella term;
+- Commission（约稿）must no longer be used as a current product-architecture term（当前产品架构术语）;
 - old Round 11（第十一轮）Commission semantics require amendment;
-- a narrow Editorial Invitation / Commissioned Article（编辑邀请 / 约稿文章）may still exist later as one optional editorial action, but it is not the core recovery system.
+- if Ink & East（墨与东方）directly contacts a known person or institution, describe the actual action as Directed Request（定向求助）, Research Collaboration（研究合作）, Source Recovery Collaboration（资料寻回合作）or Editorial Collaboration（编辑合作）;
+- historical Commission（约稿）records remain Decision Provenance（决策溯源）only.
 
 ---
 
-## 7. Relationship to Contributor（贡献者）
+## 7. Relationship to Contributor（贡献者）and Recovery Participants（寻回参与者）
 
-Contributor（贡献者）must not mean only “someone who writes an article”.
+Round 4（第四轮）already defines Contributor（贡献者）as a specific qualified identity based on scoped evidence of competence / sustained contribution capability（基于范围化能力 / 持续创作贡献证据的资格身份）.
 
-Potential contribution classes（潜在贡献类型）include:
+Therefore the cultural-recovery system must **not** call every person who helps a Contributor（贡献者）.
 
-- Author Contribution（作者创作）;
-- Source Contribution（资料贡献）;
-- Knowledge Contribution（知识贡献）;
-- Discovery Contribution（发现贡献）;
-- Translation Contribution（翻译贡献）;
-- Research Contribution（研究贡献）;
-- Preservation Contribution（保存贡献）;
-- Documentation Contribution（记录贡献）;
-- Institutional Collaboration（机构合作）.
+Instead, Recovery Participants（寻回参与者）may be attributed by their actual role, such as:
 
-Recognition / attribution（认可 / 署名）must reflect the actual contribution role rather than flatten all participants into Author（作者）.
+- Discoverer（发现者）;
+- Source Provider（资料提供者）;
+- Knowledge Provider（知识提供者）;
+- Material Holder（资料持有人）;
+- Donor（捐赠者）;
+- Depositor（寄存者）;
+- Translator（翻译者）;
+- Research Collaborator（研究协作者）;
+- Preservation / Digitization Participant（保存 / 数字化参与者）;
+- Institutional Connector（机构联络促成者）.
+
+A Recovery Participation / Attribution record（寻回参与 / 归因记录）does not automatically create Contributor Qualification（贡献者资格）.
 
 ---
 
