@@ -219,7 +219,7 @@ Detailed Workshop provenance（详细工作坊溯源）:
 
 ---
 
-# 13. Round 12 — Open Core / Economic Commitment Signal / Membership Boundary（第十二轮——开放核心 / 经济承诺信号 / 会员边界） — SEALED
+# 13. Round 12 — Open Core / Economic Commitment Signal / Membership Boundary（第十二轮——开放核心 / 经济承诺信号 / 会员边界） — FOUNDATION RESOLVED / MEMBERSHIP PRODUCT DEFINITION DEFERRED
 
 Round 12 Workshop A（第十二轮工作坊 A） was found to have drifted into the superseded paywall / VIP-content model. It is now **historical / non-controlling** for current Membership product design.
 
@@ -233,7 +233,8 @@ Current controlling chain:
 - [`INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md`](INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md) — **CURRENT TRUTH / 20 rules**
 - [`ROUND-12-V1-SOURCE-PARITY-PASS.md`](ROUND-12-V1-SOURCE-PARITY-PASS.md) — **PASS 20 / 20**
 - [`ROUND-12-V1-ADVERSARIAL-AUDIT.md`](ROUND-12-V1-ADVERSARIAL-AUDIT.md) — **PASS / 50 explicit failure modes / zero unresolved material blockers**
-- [`INK-EAST-ROUND-12-SEAL-RECORD.md`](INK-EAST-ROUND-12-SEAL-RECORD.md) — **ROUND 12 SEALED**
+- [`ROUND-12-FOUNDATION-CHECKPOINT-MEMBERSHIP-REENTRY-SCHEDULE.md`](ROUND-12-FOUNDATION-CHECKPOINT-MEMBERSHIP-REENTRY-SCHEDULE.md) — **CURRENT STATUS / RE-ENTRY SCHEDULE**
+- [`INK-EAST-ROUND-12-SEAL-RECORD.md`](INK-EAST-ROUND-12-SEAL-RECORD.md) — **SUPERSEDED AS FULL-ROUND SEAL / HISTORICAL PROVENANCE**
 - [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md)
 - [`PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md`](PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md)
 - [`PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md`](PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md) — current map of still-valid findings from the invalidated pre-resume audit
@@ -266,7 +267,7 @@ Current product baseline:
 - exact Membership benefit catalogue, Reading Room（阅读室）, participation/service benefits and packaging remain unresolved;
 - public Membership packaging remains deferred.
 
-**Current status:** Round 12 is SEALED. Economic Commitment Signal is confirmed as an independent contextual anti-abuse/capability concept. Membership may be one future signal source but is not the mechanism itself. Standalone recurring Membership is DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED. Reading Room remains unresolved/not required. The next architecture subject is Round 13 — Services / Monetization / Spatial Flow Relationship.
+**Current status:** Round 12 foundation is resolved, but standalone Membership product definition is DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED. Economic Commitment Signal is confirmed as an independent contextual anti-abuse/capability concept; Membership may be one future source but is not the mechanism itself. Re-entry Review #1 is mandatory immediately after Round 13; Re-entry Review #2 is mandatory before Round 15. Round 13 may proceed now.
 
 Historical / candidate Workshop B chain (not authority to resume product design):
 
