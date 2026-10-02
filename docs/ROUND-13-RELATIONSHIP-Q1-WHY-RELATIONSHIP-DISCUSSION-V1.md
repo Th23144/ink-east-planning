@@ -1,7 +1,7 @@
 # Round 13（第十三轮）— Ink & East ↔ Spatial Flow Relationship Q1
 # 墨与东方 ↔ 空间流关系 Q1：为什么两个独立产品需要存在关系？
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER INPUT REQUIRED（正在讨论 / 需要用户输入）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY Q1 RESOLUTION（已解决 / 由 Q1 结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Fixed premise（固定前提）:** Ink & East（墨与东方）and Spatial Flow（空间流）are independent products/projects（独立产品 / 项目）.
@@ -115,4 +115,4 @@ Please describe the relationship in your own words without trying to fit a prede
 
 The answer may include cultural, product, commercial, audience, resource or long-term strategic reasons（文化、产品、商业、用户、资源或长期战略原因）.
 
-No model is selected by this document.
+Resolution（结论）: `ROUND-13-RELATIONSHIP-Q1-RESOLUTION-V1.md`.
