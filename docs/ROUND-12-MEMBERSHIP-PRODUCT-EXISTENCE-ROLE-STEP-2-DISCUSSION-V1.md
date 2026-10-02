@@ -1,11 +1,13 @@
 # Round 12 — Membership Product Existence & Role — Step 2 Discussion V1
 # 第十二轮——会员产品存在性与角色——第二步讨论 V1
 
-> **Status:** DISCUSSION DRAFT / USER DECISION REQUIRED（讨论稿 / 需要用户决定）
+> **Status:** RESOLVED / HISTORICAL DECISION PROVENANCE（已解决 / 历史决策溯源）
 > **Scope:** whether Project 3 needs a distinct recurring Membership product beyond payment-as-economic-friction
 > **Implementation:** NOT AUTHORIZED（未授权实现）
 > **Merge:** NOT AUTHORIZED（未授权合并）
 > **Controlling baseline:** ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md
+> **Resolved by:** ROUND-12-ECONOMIC-COMMITMENT-SIGNAL-MEMBERSHIP-DEFERRED-DECISION.md
+> **Current Truth:** INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md
 
 ---
 
@@ -190,17 +192,16 @@ Reddit/Telegram/Discord-style open-core + higher capacity/convenience patterns a
 
 ---
 
-# 5. Decision requested / 需要用户决定
+# 5. Resolution / 最终解决
 
-Choose the Round 12 product direction:
+The later user-confirmed decision rejected the need to force a choice among M0/M1/M2/M3.
 
-### A — Accept M0 → M3
-Do **not** force a recurring Membership now. Keep economic-friction separate. Revisit Membership when genuine ongoing paid value naturally exists.
+The resolved architecture is:
 
-### B — Keep a recurring Membership now
-Membership must exist as an early product despite Open Core. If this is chosen, Round 12 must next identify a legitimate recurring role without inventing artificial deprivation.
+- Economic Commitment Signal（经济承诺信号） is confirmed as an independent contextual anti-abuse/capability concept;
+- Membership may become one signal source but is not the mechanism itself;
+- standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**;
+- no VIP benefit bundle is invented merely to justify subscription economics;
+- future genuine recurring value/cost may reopen Membership explicitly.
 
-### C — Another direction
-Define a different reason Membership must exist.
-
-No option is Current Truth until user confirmation.
+This discussion file is preserved only as provenance for how that separation was reached.
