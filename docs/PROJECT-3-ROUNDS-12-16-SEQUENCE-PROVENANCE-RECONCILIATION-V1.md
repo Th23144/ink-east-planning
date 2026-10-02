@@ -91,32 +91,19 @@ The round subject is legitimate.
 Evidence:
 
 - Services / Monetization（服务 / 商业化） is a post-reset planned future domain;
-- Project 3 is explicitly the long-term source-native system for Ink & East + Spatial Flow;
-- Spatial Flow source-native commerce already exists at Batch A level;
-- the exact Ink & East ↔ Spatial Flow commercial/service relationship remains intentionally deferred.
+- Ink & East（墨与东方）and Spatial Flow（空间流）are independent products/projects（独立产品 / 项目）currently co-developed in the same development/planning context（开发 / 规划上下文）;
+- Spatial Flow（空间流）source-native commerce（源码原生电商）already exists at Batch A（批次 A）level;
+- the exact future cooperation relationship（未来合作关系）between Ink & East（墨与东方）and Spatial Flow（空间流）remains intentionally unresolved.
 
 ## Legacy trap inside the round
 
-The following **must not** be treated as already-confirmed products merely because older plans contain them:
+Custom Reading（定制解读）and Custom Ebook Studio（定制电子书工作室）are now **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）** by explicit user correction. Their old pages/forms/prices remain historical provenance（历史溯源）only and are not Round 13（第十三轮）revalidation candidates.
 
-- Custom Reading（定制解读）;
-- Custom Ebook Studio（定制电子书工作室）;
-- their old standalone pages/forms;
-- old prices, entitlements or Membership coupling.
+Before the Ink & East ↔ Spatial Flow（墨与东方 ↔ 空间流）relationship discussion begins, Commission（约稿）requires a targeted provenance / necessity review（定向来源 / 必要性复核） because the user does not remember it as a standalone decision and requested a fresh discussion.
 
-Current classification for Custom Reading / Custom Ebook:
+Round 13（第十三轮）then proceeds to the dedicated future-cooperation relationship discussion between the two independent products.
 
-**LEGACY-INHERITED / REVALIDATION PENDING（旧方案继承 / 等待重新验证）.**
-
-Therefore Round 13 should start from:
-
-- legitimate service/business needs;
-- monetization roles compatible with current public-content/product architecture;
-- the real current relationship between Ink & East and Spatial Flow;
-
-and only then revalidate or reject specific legacy services.
-
-**Status:** CONFIRMED SUBJECT / LEGACY SERVICE CONCEPTS REQUIRE REVALIDATION（主题确认 / 旧服务概念需重新验证）.
+**Status（状态）:** CONFIRMED SUBJECT / FOUNDATION CORRECTED（主题确认 / 基础已纠正）. Legacy Custom Reading（定制解读）/ Custom Ebook Studio（定制电子书工作室）are rejected; Commission（约稿）revalidation comes first; Ink & East ↔ Spatial Flow（墨与东方 ↔ 空间流）future cooperation relationship remains unresolved.
 
 ---
 
