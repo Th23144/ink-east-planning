@@ -5,7 +5,7 @@
 > **Implementation:** NOT AUTHORIZED（未授权实现）  
 > **Controlling inventory:** **273 rule slots**  
 > **Supersession:** this document consolidates Workshop A–E, their Hardening Addenda（加固补充）, user decision records and cross-workshop hardening. Where a provisional Workshop question conflicts with a later user decision record, the later decision controls.
-> **Targeted revalidation note（定向重新验证说明）:** Commission（约稿）semantics are under explicit user-requested provenance / necessity review（来源 / 必要性复核）in `COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md`. Other Round 11（第十一轮）architecture remains sealed; downstream work must not treat Commission（约稿）as a newly settled commercial/service assumption until that review closes.
+> **2026-10-01 targeted acquisition amendment（定向内容获取修订）:** Commission（约稿）review is resolved. `docs/ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md` narrows Commission（约稿）to an optional Editorial Invitation / Commissioned Article（编辑邀请 / 约稿文章）case and adds Open Cultural Contribution & Recovery（开放文化贡献与寻回）as the broader acquisition / recovery capability. Other Round 11（第十一轮）architecture remains sealed.
 
 ---
 
@@ -18,7 +18,7 @@ Canonical model:
 ```text
 Platform Works / Knowledge Objects（平台作品 / 知识对象）
         ↓
-Editorial acquisition / submission / commission（编辑获取 / 投稿 / 约稿）
+Editorial acquisition / submission / cultural recovery（编辑获取 / 投稿 / 文化寻回）
         ↓
 Editorial selection + Issue Curation Relation（编辑选稿 + 议题策展关系）
         ↓
