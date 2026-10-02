@@ -289,7 +289,7 @@ B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVE
 
 - [`ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md`](ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md) — **CURRENT CONTROLLING FOUNDATION CORRECTION（当前控制基础纠正）**.
 - [`COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md`](COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md) — **RESOLVED（已解决）**; Commission（约稿）is removed from Current Product Architecture（当前产品架构） and retained only as historical provenance（历史溯源）.
-- [`ROUND-13-OPEN-CULTURAL-CONTRIBUTION-RECOVERY-FOUNDATION-V1.md`](ROUND-13-OPEN-CULTURAL-CONTRIBUTION-RECOVERY-FOUNDATION-V1.md) — **USER-CONFIRMED CURRENT DIRECTION（用户已确认当前方向）**; defines Open Cultural Contribution & Recovery（开放文化贡献与寻回）.
+- [`ROUND-13-OPEN-CULTURAL-RECOVERY-FOUNDATION-V2.md`](ROUND-13-OPEN-CULTURAL-RECOVERY-FOUNDATION-V2.md) — **USER-CONFIRMED CURRENT DIRECTION（用户已确认当前方向）**; defines Open Cultural Recovery（开放文化寻回）.
 - [`ROUND-13-CULTURAL-RECOVERY-CROSS-ROUND-RECONCILIATION-V1.md`](ROUND-13-CULTURAL-RECOVERY-CROSS-ROUND-RECONCILIATION-V1.md) — **PASS WITH TARGETED AMENDMENTS（定向修订后通过）**; reconnects the new capability with Round 4 / 7 / 11（第四 / 七 / 十一轮）.
 - [`ROUND-4-CULTURAL-CONTRIBUTION-ROLE-AMENDMENT-V1.md`](ROUND-4-CULTURAL-CONTRIBUTION-ROLE-AMENDMENT-V1.md) — Recovery Participation / Attribution（寻回参与 / 归因） != Contributor Qualification（贡献者资格）; Contributor（贡献者）retains its original Round 4（第四轮）qualified-identity meaning.
 - [`ROUND-7-CULTURAL-RECOVERY-PROVENANCE-EXTENSION-V1.md`](ROUND-7-CULTURAL-RECOVERY-PROVENANCE-EXTENSION-V1.md) — Recovery Provenance（寻回过程溯源）, custody / deposit / donation / institutional handoff（保管 / 寄存 / 捐赠 / 机构移交）extension.
