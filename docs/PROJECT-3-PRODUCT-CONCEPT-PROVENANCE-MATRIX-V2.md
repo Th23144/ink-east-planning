@@ -102,6 +102,10 @@
 | Standalone `/collections` pages（独立合集列表 / 详情页） | source prototype | implemented Level 1 validation routes; not final IA | **PROTOTYPE ROUTE / NOT PRODUCT TRUTH** |
 | Topics list/detail route（主题列表 / 详情路由） | source prototype + later surface semantics | Topic surface is current truth; exact route/visual may evolve | **CURRENT PRODUCT SURFACE; ROUTE/UX EVOLVABLE** |
 | Issues list route（议题列表） | source prototype + Round 11 product | Issue product exists; exact list IA/route remains evolvable | **CURRENT PRODUCT SUBJECT; ROUTE/UX EVOLVABLE** |
+| Open Cultural Contribution & Recovery（开放文化贡献与寻回） | post-reset user-confirmed Round 13 direction（重构后第十三轮用户确认方向） | cultural recovery foundation + cross-round reconciliation with Rounds 4/7/11（文化寻回基础 + 第四/七/十一轮跨轮复核） | **POST-RESET CONFIRMED CAPABILITY FAMILY / FINAL CONTAINER DEFERRED（重构后已确认能力族 / 最终容器暂缓）** |
+| Recovery Case（寻回案件） | Round 13 derived architecture（第十三轮派生架构） | required to keep lead/material/recovery intake separate from Article Submission（用于将线索 / 资料 / 寻回接收与文章投稿分离） | **CONFIRMED DATA/WORKFLOW CONCEPT / EXACT UX DEFERRED（已确认数据 / 工作流概念 / 具体体验暂缓）** |
+| Contribution Role / Attribution（贡献角色 / 署名） | Round 13 cross-round amendment（第十三轮跨轮修订） | separates actual source/research/preservation contributions from Contributor Qualification（将实际资料 / 研究 / 保存贡献与贡献者资格分离） | **POST-RESET CONFIRMED SEMANTIC（重构后已确认语义）** |
+| Commissioned Article / Editorial Invitation（约稿文章 / 编辑邀请） | Round 4 example + Round 11 expanded, narrowed by Round 13（第四轮示例 + 第十一轮扩展，后被第十三轮收窄） | may exist only as an optional narrow editorial route（仅作为可选狭义编辑路径） | **SEMANTICALLY NARROWED / NOT UMBRELLA PRODUCT（语义已收窄 / 非总产品概念）** |
 
 ---
 
