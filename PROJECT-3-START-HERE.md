@@ -399,7 +399,8 @@ Those statements are superseded where they conflict with this file, accepted ame
 77. `docs/ROUND-13-CULTURAL-RECOVERY-ADVERSARIAL-AUDIT-V1.md` — PASS AFTER HARDENING（加固后通过） / 50 explicit failure modes（50 个明确失效场景）.
 78. `docs/ROUND-13-PRE-RELATIONSHIP-CONCEPT-INTEGRITY-AUDIT-V1.md` — PASS AFTER DOCUMENTATION REPAIR（文档修复后通过）; verifies Contributor（贡献者）, cultural recovery（文化寻回）, historical Commission terminology（历史“约稿”术语）, rejected legacy services（已淘汰旧服务）and product independence（产品独立性） before relationship work.
 79. `docs/ROUND-13-INK-EAST-SPATIAL-FLOW-RELATIONSHIP-DISCUSSION-V1.md` — relationship discussion framework（两者关系讨论框架）.
-80. `docs/ROUND-13-RELATIONSHIP-Q1-WHY-RELATIONSHIP-DISCUSSION-V1.md` — current active Q1（当前主线 Q1）: why should the two independent products have a relationship at all?（为什么两个独立产品需要存在关系？）
+80. `docs/ROUND-13-CONTRIBUTOR-VS-CULTURAL-RECOVERY-TERMINOLOGY-LOCK-V1.md` — controlling terminology lock（控制性术语锁定）: Contributor（贡献者）is reserved for Round 4 qualification identity; cultural recovery uses Open Cultural Recovery / Recovery Participant / Recovery Role / Recovery Attribution（开放文化寻回 / 寻回参与者 / 寻回角色 / 寻回归因）.
+81. `docs/ROUND-13-RELATIONSHIP-Q1-WHY-RELATIONSHIP-DISCUSSION-V1.md` — current active Q1（当前主线 Q1）: why should the two independent products have a relationship at all?（为什么两个独立产品需要存在关系？）
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
