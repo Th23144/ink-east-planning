@@ -4,7 +4,7 @@
 
 ## Current authoritative architecture
 
-Project 3（项目三）is the current shared development / planning context（共同开发 / 规划上下文）for **Ink & East（墨与东方）** and **Spatial Flow（空间流）**, but the two are **independent products/projects（独立产品 / 项目）**, not one unified user-facing platform. They are developed in the same context because this is convenient during the current engineering/planning phase and because a future cooperation relationship may exist. That relationship is still unresolved and must be discussed explicitly; shared account/search/payment/data infrastructure must not be assumed. Ink & East（墨与东方）remains the editorial / cultural / knowledge product line（编辑 / 文化 / 知识产品线）and may itself expand beyond its initial Eastern/Chinese culture wedge（东方 / 中国文化切入口）according to later product decisions.
+Project 3（项目三）is the current shared development / planning context（共同开发 / 规划上下文）for **Ink & East（墨与东方）** and **Spatial Flow（空间流）**, but the two are **independent products/projects（独立产品 / 项目）**, not one unified user-facing platform. They are developed in the same context because this is convenient during the current engineering/planning phase. Their product-level relationship is now resolved as a Standing Strategic Relationship（持续战略关系）with Spatial Flow（空间流）as a non-exclusive Preferred Strategic Partner（优先战略合作伙伴）; public brand/legal wording and several infrastructure axes remain intentionally deferred. Shared account/search/payment/data infrastructure must not be assumed. Ink & East（墨与东方）remains the editorial / cultural / knowledge product line（编辑 / 文化 / 知识产品线）and may itself expand beyond its initial Eastern/Chinese culture wedge（东方 / 中国文化切入口）according to later product decisions.
 
 Project 2（项目二）remains a separate WordPress / WooCommerce（WordPress / WooCommerce 电商）visual-reskin track（视觉换皮工程）for Spatial Flow（空间流）. It may remain a product-truth / page / state / flow reference（产品事实 / 页面 / 状态 / 流程参考）for Spatial Flow（空间流）source-native ecommerce（源码原生电商）, but it does not define Ink & East（墨与东方）product architecture（产品架构）or the future cooperation relationship（未来合作关系）between the two independent products.
 
@@ -412,7 +412,10 @@ Those statements are superseded where they conflict with this file, accepted ame
 90. `docs/ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-COMMERCIAL-CONFLICT-DISCUSSION-V1.md` — superseded discussion provenance（已取代讨论溯源）; prior conflict framing was too broad（旧“冲突”框架过宽）.
 91. `docs/ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-RELATIONSHIP-INTEGRITY-RESOLUTION-V1.md` — **RESOLVED（已解决）**: editorial independence / role separation / attribution integrity / platform neutrality（编辑独立性 / 角色分离 / 归因完整性 / 平台中立性）confirmed without defining the relationship itself as a conflict.
 92. `docs/ROUND-13-RELATIONSHIP-COOPERATION-MODES-DISCUSSION-V1.md` — supporting detailed inventory（支持性详细清单）.
-93. `docs/ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: three-layer cooperation model（三层合作模型）.
+93. `docs/ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md` — resolved discussion provenance（已解决讨论溯源）.
+94. `docs/ROUND-13-RELATIONSHIP-COOPERATION-MODES-RESOLUTION-V1.md` — **RESOLVED（已解决）**: three-layer cooperation model（三层合作模型） confirmed.
+95. `docs/ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md` — **CURRENT CONTROLLING RELATIONSHIP BASELINE（当前控制关系基线）**.
+96. `docs/ROUND-13-REMAINING-SERVICES-MONETIZATION-CLEAN-RESTART-DISCUSSION-V1.md` — **CURRENT ACTIVE ROUND-13 SUBJECT（第十三轮当前主线）**: clean restart for remaining Ink & East（墨与东方） Services / Monetization（服务 / 商业化）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
