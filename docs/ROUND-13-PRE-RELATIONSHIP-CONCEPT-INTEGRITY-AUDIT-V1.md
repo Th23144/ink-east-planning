@@ -1,7 +1,7 @@
 # Round 13（第十三轮）— Pre-Relationship Concept Integrity Audit V1（关系讨论前概念完整性审计 V1）
 
 > **Status（状态）:** PASS AFTER DOCUMENTATION REPAIR（文档修复后通过）
-> **Scope（范围）:** Contributor（贡献者）, Open Cultural Contribution & Recovery（开放文化贡献与寻回）, historical Commission terminology（历史“约稿”术语）, rejected legacy services（已淘汰旧服务）, Ink & East ↔ Spatial Flow independence（墨与东方 ↔ 空间流独立性）
+> **Scope（范围）:** Contributor（贡献者）, Open Cultural Recovery（开放文化寻回）, historical Commission terminology（历史“约稿”术语）, rejected legacy services（已淘汰旧服务）, Ink & East ↔ Spatial Flow independence（墨与东方 ↔ 空间流独立性）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
@@ -48,7 +48,7 @@ Recovery participants（寻回参与者）may be:
 - Digitization / Restoration Participant（数字化 / 修复参与者）;
 - Institutional Connector（机构联络促成者）.
 
-These roles use Recovery Participation / Attribution（寻回参与 / 归因） and do not automatically create Contributor Qualification（贡献者资格）.
+These roles use Recovery Participant / Recovery Role / Recovery Attribution（寻回参与者 / 寻回角色 / 寻回归因） and do not automatically create Contributor Qualification（贡献者资格）.
 
 **Result（结果）: PASS.**
 
@@ -97,7 +97,7 @@ They remain only as Decision Provenance（决策溯源） and are not Round 13�
 
 ## 5. Cultural-recovery integrity（文化寻回完整性）
 
-Open Cultural Contribution & Recovery（开放文化贡献与寻回）remains a distinct confirmed Capability Family（已确认能力族）.
+Open Cultural Recovery（开放文化寻回）remains a distinct confirmed Capability Family（已确认能力族）.
 
 It does not:
 - redefine Contributor（贡献者）;
@@ -138,7 +138,7 @@ Material conceptual blockers（重大概念阻塞）: **0**
 
 Documentation defects found and repaired（发现并修复的文档缺陷）:
 1. stale current-use Commission（约稿）wording in Round 11（第十一轮）;
-2. one residual generic Contribution Attribution（贡献署名）term that could blur Recovery Attribution（寻回归因）;
+2. one residual generic recovery-attribution term that previously blurred Contributor（贡献者）and cultural-recovery semantics;
 3. one ambiguous cultural-recovery sentence that could imply ordinary helpers are Contributors（贡献者）;
 4. one ambiguous “commissioned collaboration（委托合作）” phrase in the active relationship discussion.
 
