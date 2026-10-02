@@ -285,14 +285,31 @@ B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVE
 
 ---
 
-# 14. Round 13 — Services / Monetization / Spatial Flow Relationship（第十三轮——服务 / 商业化 / Spatial Flow 关系） — SCOPE OPEN
+# 14. Round 13（第十三轮）— Services / Monetization / Spatial Flow Relationship（服务 / 商业化 / Spatial Flow 关系） — FOUNDATION CORRECTED / COMMISSION（约稿）REVIEW NEXT
 
-- [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — current restart scope.
-- [`ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`](ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md) — earlier Block 1（模块 1）discussion; retained as provenance（溯源）.
-- [`ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md`](ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md) — **CURRENT COMPLETE DISCUSSION / USER REVIEW REQUIRED（当前完整讨论 / 需要用户审阅）**; covers commercial-role inventory（商业角色盘点）, product-domain relationship（产品域关系）, service revalidation（服务重新验证）, commercial firewall（商业信号防火墙）, transaction/economics sequence（交易 / 经济模型顺序）, and Membership Re-entry Review #1（会员重启检查 #1）.
-- Custom Reading / Custom Ebook remain LEGACY-INHERITED / REVALIDATION PENDING.
-- Standalone recurring Membership remains deferred and does not control Round 13.
-- First genuine product discussion: identify what parts of Project 3 are naturally commercial and what must remain structurally independent from monetization.
+- [`ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md`](ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md) — **CURRENT CONTROLLING FOUNDATION CORRECTION（当前控制基础纠正）**.
+- [`COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md`](COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md) — **CURRENT NEXT DISCUSSION（当前下一步讨论）**; traces Commission（约稿）from Round 4E（第四轮 E 阶段）into Round 11（第十一轮）and reopens its necessity/boundary.
+- [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — superseded original scope（已取代原始范围）.
+- [`ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`](ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md) — superseded discussion provenance（已取代讨论溯源）.
+- [`ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md`](ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md) — superseded discussion provenance（已取代讨论溯源）.
+
+Current controlling facts（当前控制事实）:
+
+- Ink & East（墨与东方）and Spatial Flow（空间流）are **independent products/projects（独立产品 / 项目）**, not one Shared Platform（共享平台）.
+- They currently share a development/planning context（开发 / 规划上下文）because of workflow convenience and a possible future cooperation relationship（未来合作关系）.
+- Exact future cooperation relationship（未来合作关系）is **UNRESOLVED（未决定）** and will receive a dedicated full discussion after Commission（约稿）review.
+- Custom Reading（定制解读）is **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**.
+- Custom Ebook Studio（定制电子书工作室）is **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**.
+- Standalone recurring Membership（独立持续订阅会员）remains deferred（暂缓）and does not control Round 13（第十三轮）.
+
+Correct sequence（正确顺序）:
+
+```text
+Commission provenance / necessity review（约稿来源 / 必要性复核）
+→ Ink & East ↔ Spatial Flow relationship discussion（墨与东方 ↔ 空间流关系完整讨论）
+→ remaining Services / Monetization architecture（剩余服务 / 商业化架构）
+→ Membership Re-entry Review #1（会员重启检查 #1）
+```
 
 ---
 
