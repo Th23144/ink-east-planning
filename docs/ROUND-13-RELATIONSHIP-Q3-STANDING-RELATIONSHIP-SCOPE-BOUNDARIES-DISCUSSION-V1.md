@@ -1,7 +1,7 @@
 # Round 13（第十三轮）— Ink & East ↔ Spatial Flow Relationship Q3
 # 墨与东方 ↔ 空间流关系 Q3：持续战略关系包含什么、不包含什么？
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY Q3 RESOLUTION（已解决 / 由 Q3 结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置结论）:** `ROUND-13-RELATIONSHIP-Q2-RESOLUTION-STANDING-STRATEGIC-RELATIONSHIP-V1.md`
@@ -100,7 +100,7 @@ This would mean:
 - cooperation may be deep;
 - but any moment where one product affects the other's editorial, commercial, data, rights or user experience boundary must be explicit and attributable.
 
-This principle is not yet locked.
+This principle is locked by `ROUND-13-RELATIONSHIP-Q3-RESOLUTION-SCOPE-BOUNDARIES-V1.md`.
 
 ---
 
