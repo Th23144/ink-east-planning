@@ -5,6 +5,7 @@
 > **Implementation:** NOT AUTHORIZED（未授权实现）  
 > **Controlling inventory:** **273 rule slots**  
 > **Supersession:** this document consolidates Workshop A–E, their Hardening Addenda（加固补充）, user decision records and cross-workshop hardening. Where a provisional Workshop question conflicts with a later user decision record, the later decision controls.
+> **Targeted revalidation note（定向重新验证说明）:** Commission（约稿）semantics are under explicit user-requested provenance / necessity review（来源 / 必要性复核）in `COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md`. Other Round 11（第十一轮）architecture remains sealed; downstream work must not treat Commission（约稿）as a newly settled commercial/service assumption until that review closes.
 
 ---
 
