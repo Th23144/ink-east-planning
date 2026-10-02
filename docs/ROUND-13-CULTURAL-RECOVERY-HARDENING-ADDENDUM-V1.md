@@ -18,8 +18,8 @@ Exact storage/discovery location（精确保管 / 发现地点）may require res
 ## H5 — Cultural sensitivity can override default openness（文化敏感性可限制默认开放）
 Sacred, funerary, community-restricted or otherwise culturally sensitive knowledge/material（神圣、丧葬、社区限制或其他文化敏感知识 / 材料）must not be automatically digitized/published merely because it was submitted.
 
-## H6 — Contributor safety and consent（贡献者安全与同意）
-Public attribution（公开署名）must be consent-aware. A discoverer / holder / family / local informant（发现者 / 持有人 / 家族 / 地方知情者）may require pseudonymous, delayed or private attribution where justified.
+## H6 — Recovery participant safety and consent（寻回参与者安全与同意）
+Public attribution（公开署名）must be consent-aware. A Recovery Participant（寻回参与者）such as a discoverer / holder / family / local informant（发现者 / 持有人 / 家族 / 地方知情者）may require pseudonymous, delayed or private attribution where justified.
 
 ## H7 — Evidence preservation before transformation（处理前保留证据）
 Where material, original received files, source-state documentation and transformation history（原始接收文件、来源状态记录及处理历史）should be preserved sufficiently to distinguish original evidence from OCR, cleanup, reconstruction, translation or editorial synthesis（OCR、清理、重建、翻译或编辑综合）.
@@ -43,8 +43,8 @@ Contribution, digitization or recovery work does not automatically grant Ink & E
 ## H12 — Public benefit does not erase rights（公共利益不覆盖权利）
 The goal of making knowledge available to humanity（向公众开放知识）does not authorize bypassing ownership, privacy, copyright, cultural restrictions, institutional terms or applicable law（所有权、隐私、著作权、文化限制、机构条款或适用法律）.
 
-## H13 — Contribution credit is role-specific（贡献署名按角色）
-A contribution record should say what was actually done rather than awarding a generic prestige label（通用荣誉标签）.
+## H13 — Recovery attribution is role-specific（寻回归因按角色）
+A Recovery Attribution record（寻回归因记录）should say what was actually done rather than awarding a generic prestige label（通用荣誉标签） or platform Contributor（贡献者）identity.
 
 ## H14 — Recovery importance is not determined by popularity（寻回价值不由热度决定）
 Views, likes, sales, donations or social attention（浏览、点赞、销售、捐款或社交热度）must not determine authenticity, preservation priority or cultural significance automatically.
