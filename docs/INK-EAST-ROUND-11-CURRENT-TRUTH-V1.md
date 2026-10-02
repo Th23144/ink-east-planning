@@ -72,7 +72,7 @@ Both directions remain **PROVISIONAL PRODUCT DIRECTION（暂定产品方向）**
 | Group（组） | Rule range（规则范围） | Count（数量） | Subject（主题） |
 |---|---:|---:|---|
 | A | R11-A1…R11-A44 | 44 | Issue identity, curation relation, inclusion semantics（议题身份、策展关系、收录语义） |
-| B | R11-B1…R11-B59 | 59 | Editorial workflow, selection, submission, commission（编辑工作流、选稿、投稿、约稿） |
+| B | R11-B1…R11-B59 | 59 | Editorial workflow, selection, submission, request / collaboration（编辑工作流、选稿、投稿、求助 / 合作） |
 | C | R11-C1…R11-C56 | 56 | Publication lifecycle, versioning, archive, corrections（发布生命周期、版本、归档、勘误） |
 | D | R11-D1…R11-D52 | 52 | Composition, sections, framing, presentation semantics（编排、栏目、编辑语境、展示语义） |
 | E | R11-E1…R11-E56 | 56 | Operations, planning, accountability, measurement（运营、规划、责任、测量） |
