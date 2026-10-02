@@ -166,7 +166,7 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 12 foundation decision:** Economic Commitment Signal（经济承诺信号） is an independent contextual anti-abuse/capability concept. Membership may become one source of that signal but is not the mechanism itself. Standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**; Reading Room remains unresolved/not required; no VIP feature bundle is invented merely to justify subscription economics.
 - **Non-paying path preserved:** ordinary durable/long-form publishing must retain a legitimate non-paying path; payment may only reduce selected friction where payment genuinely mitigates the relevant zero-cost/Sybil risk.
 - **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` remains NON-CONTROLLING research only.
-- **Round 13 — CULTURAL RECOVERY RECONCILED / RELATIONSHIP DISCUSSION ACTIVE（文化寻回已完成跨轮复核 / 两者关系讨论已进入当前主线）.** Ink & East（墨与东方）and Spatial Flow（空间流）remain independent products/projects（独立产品 / 项目）. Open Cultural Contribution & Recovery（开放文化贡献与寻回）is user-confirmed and reconciled with Round 4 / 7 / 11（第四 / 七 / 十一轮）; targeted adversarial audit（定向对抗性审计）PASS AFTER HARDENING（加固后通过）with 50 explicit failure modes（50 个明确失效场景）and zero unresolved material blockers（0 个未解决重大阻塞）. Current active subject（当前主线）: the future cooperation relationship（未来合作关系）between Ink & East（墨与东方）and Spatial Flow（空间流）.
+- **Round 13 — CULTURAL RECOVERY RECONCILED / RELATIONSHIP DISCUSSION ACTIVE（文化寻回已完成跨轮复核 / 两者关系讨论已进入当前主线）.** Ink & East（墨与东方）and Spatial Flow（空间流）remain independent products/projects（独立产品 / 项目）. Open Cultural Contribution & Recovery（开放文化贡献与寻回）is user-confirmed and reconciled with Round 4 / 7 / 11（第四 / 七 / 十一轮）; targeted adversarial audit（定向对抗性审计）PASS AFTER HARDENING（加固后通过）with 50 explicit failure modes（50 个明确失效场景）and zero unresolved material blockers（0 个未解决重大阻塞）. Current active discussion（当前主线讨论）: `docs/ROUND-13-INK-EAST-SPATIAL-FLOW-RELATIONSHIP-DISCUSSION-V1.md`.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
@@ -397,6 +397,7 @@ Those statements are superseded where they conflict with this file, accepted ame
 75. `docs/ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md` — Round 11（第十一轮）acquisition amendment（内容获取修订）.
 76. `docs/ROUND-13-CULTURAL-RECOVERY-HARDENING-ADDENDUM-V1.md` — cultural recovery hardening（文化寻回加固）.
 77. `docs/ROUND-13-CULTURAL-RECOVERY-ADVERSARIAL-AUDIT-V1.md` — PASS AFTER HARDENING（加固后通过） / 50 explicit failure modes（50 个明确失效场景）.
+78. `docs/ROUND-13-INK-EAST-SPATIAL-FLOW-RELATIONSHIP-DISCUSSION-V1.md` — current active relationship discussion（当前两者关系讨论） / user decisions required（需要用户决定）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
