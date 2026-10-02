@@ -1,7 +1,7 @@
 # Round 13（第十三轮）— Ink & East ↔ Spatial Flow Relationship Q4
 # 墨与东方 ↔ 空间流关系 Q4：持续关系的默认行为、显式合作与不可转移边界
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / ONE PUBLIC-VISIBILITY ITEM DEFERRED（已解决 / 一项公开可见性问题暂缓）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置结论）:** `ROUND-13-RELATIONSHIP-Q3-RESOLUTION-SCOPE-BOUNDARIES-V1.md`
@@ -124,4 +124,4 @@ Key questions:
 4. Are there any items in Bucket C（不可转移边界） that should be absolute hard boundaries rather than merely default-independent?
 5. Should the standing relationship itself be publicly disclosed somewhere, or only when materially relevant to a specific page/project/editorial context?
 
-No answer is selected by this document.
+Resolution（结论）: `ROUND-13-RELATIONSHIP-Q4-RESOLUTION-PREFERRED-PARTNER-CROSSREF-HARD-BOUNDARIES-V1.md`. Public visibility question（公开可见性问题）: `ROUND-13-RELATIONSHIP-PUBLIC-VISIBILITY-DEFERRED-V1.md`.
