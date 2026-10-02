@@ -26,7 +26,7 @@ The following are not open for reinterpretation in this discussion:
    - Governance（治理）;
    - editorial / commercial authority（编辑 / 商业权威）.
 5. Custom Reading（定制解读）and Custom Ebook Studio（定制电子书工作室）are removed and do not define the relationship.
-6. Open Cultural Contribution & Recovery（开放文化贡献与寻回）belongs to Ink & East（墨与东方）architecture and does not itself define the Spatial Flow（空间流）relationship.
+6. Open Cultural Recovery（开放文化寻回）belongs to Ink & East（墨与东方）architecture and does not itself define the Spatial Flow（空间流）relationship.
 
 ---
 
