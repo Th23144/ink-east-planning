@@ -234,8 +234,8 @@ Among the remaining round titles:
 - **Reading Room** — FAILS existence provenance; must not control Round 12.
 - **Membership** — valid subject.
 - **Services / Monetization** — valid subject.
-- **Custom Reading / Custom Ebook** — not round-title requirements; revalidation pending inside Round 13.
-- **Spatial Flow relationship** — valid high-level relationship subject; details deferred.
+- **Custom Reading（定制解读） / Custom Ebook Studio（定制电子书工作室）** — **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**; historical provenance only（仅历史溯源）.
+- **Ink & East ↔ Spatial Flow relationship（墨与东方 ↔ 空间流关系）** — valid high-level future cooperation subject（未来合作主题）between two independent products（两个独立产品）; details unresolved（细节未决定）.
 - **Governance / Moderation / Corrections** — valid architecture domain.
 - **Investor Demo V1 Scope** — valid project deliverable.
 - **Business-plan Product Narrative** — valid project deliverable.
