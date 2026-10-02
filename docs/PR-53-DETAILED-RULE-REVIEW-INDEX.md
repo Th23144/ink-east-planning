@@ -219,13 +219,15 @@ Detailed Workshop provenance（详细工作坊溯源）:
 
 ---
 
-# 13. Round 12 — Membership subject / restart scope unresolved（第十二轮——会员主题 / 重启范围未决） — PRODUCT DESIGN PAUSED
+# 13. Round 12 — Membership / Open Core baseline revalidated（第十二轮——会员 / 开放核心基线已重新确认） — STEP 2 PRODUCT ROLE DECISION PENDING
 
 Round 12 Workshop A（第十二轮工作坊 A） was found to have drifted into the superseded paywall / VIP-content model. It is now **historical / non-controlling** for current Membership product design.
 
 Current controlling chain:
 
-- [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md)
+- [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md) — public-content/non-paywall baseline; later open-core baseline supersedes its old paid-value-first assumptions
+- [`ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md`](ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md) — **CURRENT CONTROLLING ROUND-12 RESTART BASELINE**
+- [`ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md`](ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md) — **RESEARCH / NON-CONTROLLING**
 - [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md)
 - [`PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md`](PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md)
 - [`PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md`](PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md) — current map of still-valid findings from the invalidated pre-resume audit
@@ -258,7 +260,7 @@ Current product baseline:
 - exact Membership benefit catalogue, Reading Room（阅读室）, participation/service benefits and packaging remain unresolved;
 - public Membership packaging remains deferred.
 
-**Current status:** Round 12 product design PAUSED（暂停）. The product-planning/provenance reconstruction, Task 1 baseline cross-source reconciliation and Task 2 Rounds 12–16 sequence provenance reconciliation are complete for this checkpoint. The next move is a genuine product decision: choose the correct Round 12 Membership restart question from the confirmed Product Surface / Capability Baseline.
+**Current status:** Round 12 Step 1 is COMPLETE / REVALIDATED. The earlier paid-value-first restart framing was rejected. Current rule: Open Core + contextual payment-as-economic-friction; payment may reduce selected zero-cost/Sybil friction for a specific capability but does not create global trust/weight, authority, Recognition, governance or organic recommendation advantage. The next genuine product decision is Step 2: whether Project 3 needs a distinct recurring Membership product role beyond that mechanism.
 
 Historical / candidate Workshop B chain (not authority to resume product design):
 
@@ -270,7 +272,7 @@ Historical / candidate Workshop B chain (not authority to resume product design)
 - [`ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`](ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md) — confirms Reading Room（阅读室） was inherited from legacy planning and was never independently revalidated after the Product Architecture reset
 - [`ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM.md`](ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM.md) — **WITHDRAWN AS CURRENT DIRECTION / provenance only**
 - [`ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM-AUDIT.md`](ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM-AUDIT.md) — historical audit of the hypothetical V0, not product-existence validation
-- [`ROUND-12-MEMBERSHIP-PURPOSE-ROLE-DISCOVERY-STEP-1-FREE-BASELINE-GAP-MAP.md`](ROUND-12-MEMBERSHIP-PURPOSE-ROLE-DISCOVERY-STEP-1-FREE-BASELINE-GAP-MAP.md) — **CURRENT DISCUSSION DRAFT / USER REVIEW REQUIRED**; restarts Round 12 from confirmed free/ordinary product value and unmet-need domains without presupposing Reading Room or old benefit packaging
+- [`ROUND-12-MEMBERSHIP-PURPOSE-ROLE-DISCOVERY-STEP-1-FREE-BASELINE-GAP-MAP.md`](ROUND-12-MEMBERSHIP-PURPOSE-ROLE-DISCOVERY-STEP-1-FREE-BASELINE-GAP-MAP.md) — **SUPERSEDED / NON-CONTROLLING**; rejected because it assumed Membership must first justify itself through a paid value bundle
 
 B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVED**.
 
