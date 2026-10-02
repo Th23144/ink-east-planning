@@ -2,7 +2,7 @@
 # 第十二轮当前有效真相 V1
 
 > **Round:** Open Core / Economic Commitment Signal / Membership Boundary（开放核心 / 经济承诺信号 / 会员边界）
-> **Status:** CURRENT TRUTH / PRODUCT ARCHITECTURE ONLY（当前有效真相 / 仅产品架构）
+> **Status:** CURRENT FOUNDATION TRUTH / MEMBERSHIP PRODUCT DEFINITION DEFERRED（当前基础真相 / 会员产品定义暂缓）
 > **Implementation:** NOT AUTHORIZED（未授权实现）
 > **Merge:** NOT AUTHORIZED（未授权合并）
 > **Primary user decision:** `ROUND-12-ECONOMIC-COMMITMENT-SIGNAL-MEMBERSHIP-DEFERRED-DECISION.md`
@@ -35,7 +35,7 @@ Membership = normal-content paywall
 Membership = required recurring product
 ```
 
-Standalone recurring Membership remains **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**.
+Standalone recurring Membership remains **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**. Round 12 is therefore not fully closed; only its foundation boundary is resolved.
 
 ---
 
@@ -173,9 +173,9 @@ The Step 2 discussion remains provenance for how the final separation was reache
 
 ---
 
-# 4. Handoff to Round 13 / 交接到第十三轮
+# 4. Handoff to Round 13 + re-entry / 交接第十三轮与重启检查
 
-Round 12 does not need to invent more Membership value before proceeding.
+Round 12 does not need to invent more Membership value before proceeding. The standalone Membership product definition remains deferred rather than completed.
 
 Round 13 should begin from:
 
@@ -185,6 +185,8 @@ Round 13 should begin from:
 - revalidation of legacy Custom Reading / Custom Ebook concepts;
 
 without presuming a Membership bundle.
+
+After Round 13, perform Membership Re-entry Review #1. If evidence remains insufficient, keep Membership deferred and perform a second mandatory review before Round 15.
 
 ---
 
