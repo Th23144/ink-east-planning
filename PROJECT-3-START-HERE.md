@@ -6,7 +6,7 @@
 
 Project 3（项目三）is the current shared development / planning context（共同开发 / 规划上下文）for **Ink & East（墨与东方）** and **Spatial Flow（空间流）**, but the two are **independent products/projects（独立产品 / 项目）**, not one unified user-facing platform. They are developed in the same context because this is convenient during the current engineering/planning phase and because a future cooperation relationship may exist. That relationship is still unresolved and must be discussed explicitly; shared account/search/payment/data infrastructure must not be assumed. Ink & East（墨与东方）remains the editorial / cultural / knowledge product line（编辑 / 文化 / 知识产品线）and may itself expand beyond its initial Eastern/Chinese culture wedge（东方 / 中国文化切入口）according to later product decisions.
 
-Project 2 remains a separate WordPress/WooCommerce visual-reskin track. It does not own Project 3's long-term source-native implementation, but it may remain a product-truth/page/state/flow reference for ecommerce parity.
+Project 2（项目二）remains a separate WordPress / WooCommerce（WordPress / WooCommerce 电商）visual-reskin track（视觉换皮工程）for Spatial Flow（空间流）. It may remain a product-truth / page / state / flow reference（产品事实 / 页面 / 状态 / 流程参考）for Spatial Flow（空间流）source-native ecommerce（源码原生电商）, but it does not define Ink & East（墨与东方）product architecture（产品架构）or the future cooperation relationship（未来合作关系）between the two independent products.
 
 ## Current development mode
 
@@ -292,7 +292,7 @@ It records Project 2 page/reference inventory, accepted Cart/Checkout/Packaging/
 
 Read: `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`.
 
-Batch A established Payload-owned Product Categories, Products, Carts and Commerce Settings; canonical `/shop` and `/shop/[slug]`; `/product/[slug]` compatibility redirect; source-native `/cart`; anonymous server-owned Bag session; server-authoritative variant/price/stock/quantity resolution; persisted cart mutations; cross-origin mutation protection; representative seed data; Ink & East → Spatial Flow bridge; and provisional V0 presentation.
+Batch A（批次 A）established Payload-owned（由 Payload 管理的）Product Categories（商品分类）, Products（商品）, Carts（购物车）and Commerce Settings（电商设置）; canonical（规范）`/shop` and `/shop/[slug]`; `/product/[slug]` compatibility redirect（兼容重定向）; source-native（源码原生）`/cart`; anonymous server-owned Bag session（匿名服务端购物袋会话）; server-authoritative variant/price/stock/quantity resolution（服务端权威的规格 / 价格 / 库存 / 数量解析）; persisted cart mutations（持久化购物车变更）; cross-origin mutation protection（跨源变更保护）; representative seed data（代表性种子数据）; a provisional Ink & East → Spatial Flow bridge（临时的墨与东方 → 空间流桥接）created during co-development（共同开发）; and provisional V0 presentation（暂定 V0 展示）. The bridge is not evidence of one Shared Platform（共享平台）or a final cooperation model（最终合作模型）.
 
 Batch A did not fabricate Checkout, Orders, shipping, Product Packaging, payment, Crypto, account or support completeness.
 
