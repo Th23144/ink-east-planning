@@ -1,7 +1,7 @@
 > ⚠️ **SEALED HISTORICAL ROUND RECORD / CONTAINS KNOWN SUPERSEDED TERMINOLOGY（已封存历史轮次记录 / 含已知过时术语）**  
 > Do not treat `Verified Contributor`, `Institution` as universal Organization type, `Platform-owned Entity` as peer entity type, or Contributor-only launch-support wording here as current canonical architecture.  
 > Later cross-round amendments + Round 6 V6 Current Truth（当前有效真相） supersede those meanings. Read `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` first.
-> **2026-10-01 targeted amendment（定向修订）:** `docs/ROUND-4-CULTURAL-CONTRIBUTION-ROLE-AMENDMENT-V1.md` adds Contribution Role / Attribution（贡献角色 / 署名）as distinct from Contributor Qualification（贡献者资格）and broadens collaboration beyond Commission（约稿）.
+> **2026-10-01 targeted amendment（定向修订）:** `docs/ROUND-4-CULTURAL-CONTRIBUTION-ROLE-AMENDMENT-V1.md` reserves Contributor（贡献者）for the scoped qualification system and adds separate Recovery Participation / Attribution（寻回参与 / 归因）roles for cultural-recovery work; historical Commission（约稿）terminology is not current architecture.
 
 # Ink & East Product Architecture V1 — Round 4 Contributor / Identity Consolidation
 
