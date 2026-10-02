@@ -66,7 +66,7 @@ Intake（接收）
 
 Existing architecture uses Contributor Qualification（贡献者资格）as a scoped competence / professional-contribution qualification.
 
-The new cultural-recovery system also naturally uses “contributor（贡献者）” in the ordinary sense for someone who:
+The new cultural-recovery system involves many participants who must **not** be labeled as platform Contributor（贡献者）merely because they helped. Examples include people who:
 
 - discovers a source（发现资料）;
 - provides a lead（提供线索）;
@@ -90,7 +90,7 @@ Likewise, holding Contributor Qualification（贡献者资格）does not automat
 
 ## 2.2 Recovery Attribution（寻回归因）becomes first-class
 
-The platform must be able to attribute actual contribution roles, for example:
+The platform must be able to attribute actual Recovery Participation Roles（寻回参与角色）, for example:
 
 - Discoverer（发现者）;
 - Source Provider（资料提供者）;
@@ -398,7 +398,8 @@ No exact page or route is authorized yet.
 
 Needed:
 - introduce Recovery Participation / Attribution（寻回参与 / 归因）separate from Contributor Qualification（贡献者资格）;
-- broaden opportunity examples beyond Commission（约稿）.
+- preserve Contributor（贡献者）as the original scoped qualification identity（范围化资格身份）;
+- replace historical Commission（约稿）wording with Public / Directed Request（公开 / 定向求助）and Research / Editorial Collaboration（研究 / 编辑合作）.
 
 ## Round 7（第七轮）
 **PASS WITH EXTENSION（扩展后通过）**
