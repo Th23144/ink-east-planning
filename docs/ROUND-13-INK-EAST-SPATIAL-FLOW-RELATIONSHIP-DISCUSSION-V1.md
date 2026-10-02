@@ -1,7 +1,7 @@
 # Round 13（第十三轮）— Ink & East ↔ Spatial Flow Relationship Discussion V1
 # 墨与东方 ↔ 空间流关系——完整讨论框架 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED AT CURRENT PRODUCT-ARCHITECTURE DEPTH / DEFERRED AXES REMAIN（当前产品架构深度已解决 / 仍有暂缓轴）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Fixed premise（固定前提）:** Ink & East（墨与东方）and Spatial Flow（空间流）are independent products/projects（独立产品 / 项目）.
@@ -197,3 +197,10 @@ The first question is deliberately not technical and not commercial:
 This question must be answered before discussing shared links, referrals, data or business arrangements.
 
 No answer is selected by this document.
+
+
+---
+
+# Current controlling result（当前控制结果）
+
+Use `ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md` as the current consolidated relationship baseline（当前汇总关系基线）.
