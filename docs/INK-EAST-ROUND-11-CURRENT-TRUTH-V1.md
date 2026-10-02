@@ -5,7 +5,7 @@
 > **Implementation:** NOT AUTHORIZED（未授权实现）  
 > **Controlling inventory:** **273 rule slots**  
 > **Supersession:** this document consolidates Workshop A–E, their Hardening Addenda（加固补充）, user decision records and cross-workshop hardening. Where a provisional Workshop question conflicts with a later user decision record, the later decision controls.
-> **2026-10-01 targeted acquisition amendment（定向内容获取修订）:** Commission（约稿）review is resolved. `docs/ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md` removes Commission（约稿）from Current Product Architecture（当前产品架构）, retains it only as historical provenance（历史溯源）, and adds Open Cultural Contribution & Recovery（开放文化贡献与寻回）plus Directed Request / Collaboration（定向求助 / 合作）as the current acquisition / recovery model. Other Round 11（第十一轮）architecture remains sealed.
+> **2026-10-01 targeted acquisition amendment（定向内容获取修订）:** Commission（约稿）review is resolved. `docs/ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md` removes Commission（约稿）from Current Product Architecture（当前产品架构）, retains it only as historical provenance（历史溯源）, and adds Open Cultural Recovery（开放文化寻回）plus Directed Request / Collaboration（定向求助 / 合作）as the current acquisition / recovery model. Other Round 11（第十一轮）architecture remains sealed.
 
 ---
 
@@ -178,7 +178,7 @@ Key controls:
 - Existing public platform Works may be curated without forced resubmission while preserving authorship/provenance/rights.
 - Contributor status may create stronger editorial channels, not guaranteed outcomes.
 - Open Calls（公开征稿） are optional per Issue.
-- Open Cultural Contribution & Recovery（开放文化贡献与寻回）and Directed Request / Collaboration（定向求助 / 合作）are valid acquisition/recovery routes and are not publication themselves.
+- Open Cultural Recovery（开放文化寻回）and Directed Request / Collaboration（定向求助 / 合作）are valid acquisition/recovery routes and are not publication themselves.
 - Reader questions/letters and partner/institution collaboration may use distinct editorial routes.
 - Private unpublished submissions are non-public by default.
 - Submission may target one Issue or general consideration; receiving a submission does not create publication entitlement.
