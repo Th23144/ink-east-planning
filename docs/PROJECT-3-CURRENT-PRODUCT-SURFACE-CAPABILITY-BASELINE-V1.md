@@ -256,9 +256,9 @@ Commission（约稿）is historical / superseded terminology（历史 / 已取�
 
 No single standalone page（独立页面）or universal workflow（统一工作流）is implied.
 
-## C16 — Open Cultural Contribution & Recovery（开放文化贡献与寻回）
+## C16 — Open Cultural Recovery（开放文化寻回）
 Meaning（含义）:
-Ink & East（墨与东方）has a confirmed capability family（已确认能力族）for public requests, source leads, knowledge/material contributions, deposit/donation distinction, provenance/rights/sensitivity review, recovery cases, contribution attribution, digitization/restoration/research linkage and institutional referral/handoff（公开求助、资料线索、知识 / 资料贡献、寄存 / 捐赠区分、来源 / 权利 / 敏感性复核、寻回案件、贡献署名、数字化 / 修复 / 研究关联、机构转介 / 移交）.
+Ink & East（墨与东方）has a confirmed capability family（已确认能力族）for public requests, source leads, knowledge/material provision, deposit/donation distinction, provenance/rights/sensitivity review, recovery cases, Recovery Attribution, digitization/restoration/research linkage and institutional referral/handoff（公开求助、资料线索、知识 / 资料提供、寄存 / 捐赠区分、来源 / 权利 / 敏感性复核、寻回案件、寻回归因、数字化 / 修复 / 研究关联、机构转介 / 移交）.
 
 Final public container / page / route（最终前台容器 / 页面 / 路由）remains open.
 
