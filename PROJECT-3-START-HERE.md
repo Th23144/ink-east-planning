@@ -165,7 +165,7 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Rounds 12–16 sequence provenance reconciliation — COMPLETE / NO REORDERING REQUIRED（已完成 / 无需重排）.** Membership remains a valid Round 12 subject, but Reading Room is removed from controlling title/scope assumptions; Round 13 legacy services require revalidation; Round 14 is a platform-wide reconciliation subject; Rounds 15–16 are downstream demo/business-narrative deliverables.
 - **Round 12 Step 1 — COMPLETE / REVALIDATED.** The earlier paid-value-first draft is superseded. Current rule: the platform core remains open; payment may act as an economic-cost signal that reduces selected zero-cost/Sybil friction and allows specific capability restrictions to relax earlier; payment does not create trust, authority, Recognition, governance or organic recommendation privilege.
 - **Critical separation:** Membership product != economic-friction mechanism. The latter is a contextual capability/risk input; it does not by itself explain why a recurring consumer Membership product should exist.
-- **Current Step 2 decision:** determine whether Project 3 needs a distinct recurring Membership product beyond the already-confirmed economic-friction role of payment. Do not invent Premium-only features merely to justify a subscription.
+- **Current Step 2 decision:** determine whether Project 3 needs a distinct recurring Membership product beyond the already-confirmed economic-friction role of payment. Current discussion draft: `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md`. Its provisional recommendation is M0 now → preserve M3 later: do not force recurring Membership into the initial architecture; keep the friction mechanism separate and allow a future open-core Premium product only if genuine recurring value/cost emerges. This recommendation is NOT Current Truth until user confirmation.
 - **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` is NON-CONTROLLING research. It finds X comparatively aggressive; Reddit/Telegram/Discord are structurally closer references for open-core + bounded capacity enhancement, but Project 3 still requires its own risk/cost justification.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
@@ -378,17 +378,18 @@ Those statements are superseded where they conflict with this file, accepted ame
 56. `docs/PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md` — Task 2 remaining-sequence provenance check
 57. `docs/ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md` — current controlling Round 12 restart baseline
 58. `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` — external pattern research / non-controlling
-59. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
-58. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
-59. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-60. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-61. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
-62. PR #53 latest conversation/decision history while the workshop remains open
-63. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
-64. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
-65. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-66. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-67. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
-68. superseded Round 6 Final/Seal and older planning documents only as historical references
+59. `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md` — current Step 2 discussion draft / user decision required
+60. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
+61. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
+62. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+63. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+64. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
+65. PR #53 latest conversation/decision history while the workshop remains open
+66. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
+67. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
+68. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+69. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+70. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
+71. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
