@@ -162,7 +162,7 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Previous Pre-Resume Full Checkpoint PASS remains INVALIDATED（此前主线恢复前全盘检查仍失效）**; its surviving correct findings are mapped forward instead of restoring the old blanket clearance.
 - **Reading Room（阅读室） existence: UNRESOLVED（未决定）**; exact old Letters / Ask / Membership-page / Community-aggregate / service-page containers are likewise not inherited automatically.
 - **Current Product Baseline cross-source reconciliation — COMPLETE / PASS AFTER DOCUMENTATION REPAIR（已完成 / 文档修复后通过）.** Confirmed omissions restored include Domain projection, Create/Publish/Submit, scoped Identity/Claim Verification, governance user workflows and editorial acquisition capabilities; none creates a mandatory legacy container.
-- **Rounds 12–16 sequence provenance reconciliation — COMPLETE / NO REORDERING REQUIRED（已完成 / 无需重排）.** Membership remains a valid Round 12 subject, but Reading Room is removed from controlling title/scope assumptions; Round 13 legacy services require revalidation; Round 14 is a platform-wide reconciliation subject; Rounds 15–16 are downstream demo/business-narrative deliverables.
+- **Rounds 12–16 sequence provenance reconciliation — COMPLETE / ORDER RETAINED（已完成 / 顺序保留）.** Membership（会员）remains a valid Round 12（第十二轮）subject with product definition deferred; Reading Room（阅读室）is removed from controlling title/scope assumptions; Round 13（第十三轮）has since been corrected so Custom Reading（定制解读）and Custom Ebook Studio（定制电子书工作室）are rejected rather than revalidation candidates, while Commission（约稿）is under targeted revalidation and the Ink & East ↔ Spatial Flow（墨与东方 ↔ 空间流）future cooperation relationship remains unresolved; Round 14（第十四轮）is a platform-wide governance reconciliation subject for Ink & East（墨与东方）architecture; Rounds 15–16（第十五至十六轮）remain downstream demo/business-narrative deliverables.
 - **Round 12 foundation decision:** Economic Commitment Signal（经济承诺信号） is an independent contextual anti-abuse/capability concept. Membership may become one source of that signal but is not the mechanism itself. Standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**; Reading Room remains unresolved/not required; no VIP feature bundle is invented merely to justify subscription economics.
 - **Non-paying path preserved:** ordinary durable/long-form publishing must retain a legitimate non-paying path; payment may only reduce selected friction where payment genuinely mitigates the relevant zero-cost/Sybil risk.
 - **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` remains NON-CONTROLLING research only.
@@ -389,9 +389,10 @@ Those statements are superseded where they conflict with this file, accepted ame
 67. `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md` — earlier restart scope（早期重启范围）; superseded where it assumes a shared platform or legacy-service revalidation.
 68. `docs/ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md` — superseded discussion provenance（已取代讨论溯源）.
 69. `docs/ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md` — superseded discussion provenance（已取代讨论溯源）.
-67. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
-67. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
-68. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+70. `docs/COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md` — current Commission（约稿）targeted provenance / necessity review（定向来源 / 必要性复核）.
+71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
+72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
+73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
 69. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
 70. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
 71. PR #53 latest conversation/decision history while the workshop remains open
