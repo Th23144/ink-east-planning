@@ -166,7 +166,7 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 12 foundation decision:** Economic Commitment Signal（经济承诺信号） is an independent contextual anti-abuse/capability concept. Membership may become one source of that signal but is not the mechanism itself. Standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**; Reading Room remains unresolved/not required; no VIP feature bundle is invented merely to justify subscription economics.
 - **Non-paying path preserved:** ordinary durable/long-form publishing must retain a legitimate non-paying path; payment may only reduce selected friction where payment genuinely mitigates the relevant zero-cost/Sybil risk.
 - **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` remains NON-CONTROLLING research only.
-- **Round 13 — SCOPE OPEN / PRODUCT DECISIONS NOT YET MADE.** Current restart scope: `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`. It starts from real monetization roles and the Ink & East ↔ Spatial Flow relationship, not from legacy Custom Reading / Custom Ebook pages or a presumed Membership bundle.
+- **Round 13 — BLOCK 1 OPEN / USER REVIEW REQUIRED.** Restart scope: `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`. Current discussion: `docs/ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`. Current synthesis identifies Spatial Flow physical-goods commerce as the confirmed revenue engine; Spatial Flow Services/Consult requires exact-role review; Custom Reading / Custom Ebook remain legacy-inherited/revalidation-pending. First genuine decision: whether Ink & East and Spatial Flow are distinct product/commercial domains inside one shared platform.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
@@ -385,7 +385,8 @@ Those statements are superseded where they conflict with this file, accepted ame
 63. `docs/INK-EAST-ROUND-12-SEAL-RECORD.md` — SUPERSEDED as a full-round seal / historical provenance only.
 64. `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` — external pattern research / non-controlling.
 65. `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md` — resolved historical decision provenance.
-66. `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md` — current Round 13 restart scope / product decisions not yet made.
+66. `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md` — current Round 13 restart scope.
+67. `docs/ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md` — current Round 13 Block 1 discussion / user review required.
 67. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
 67. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
 68. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
