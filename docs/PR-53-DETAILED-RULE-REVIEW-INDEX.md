@@ -285,10 +285,11 @@ B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVE
 
 ---
 
-# 14. Round 13（第十三轮）— Services / Monetization / Spatial Flow Relationship（服务 / 商业化 / Spatial Flow 关系） — FOUNDATION CORRECTED / COMMISSION（约稿）REVIEW NEXT
+# 14. Round 13（第十三轮）— Services / Monetization / Spatial Flow Relationship（服务 / 商业化 / Spatial Flow 关系） — FOUNDATION CORRECTED / CULTURAL RECOVERY CONFIRMED（基础已纠正 / 文化寻回已确认）
 
 - [`ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md`](ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md) — **CURRENT CONTROLLING FOUNDATION CORRECTION（当前控制基础纠正）**.
-- [`COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md`](COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md) — **CURRENT NEXT DISCUSSION（当前下一步讨论）**; traces Commission（约稿）from Round 4E（第四轮 E 阶段）into Round 11（第十一轮）and reopens its necessity/boundary.
+- [`COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md`](COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md) — **RESOLVED（已解决）**; Commission（约稿）is too narrow as the umbrella concept.
+- [`ROUND-13-OPEN-CULTURAL-CONTRIBUTION-RECOVERY-FOUNDATION-V1.md`](ROUND-13-OPEN-CULTURAL-CONTRIBUTION-RECOVERY-FOUNDATION-V1.md) — **USER-CONFIRMED CURRENT DIRECTION（用户已确认当前方向）**; defines Open Cultural Contribution & Recovery（开放文化贡献与寻回）, including Lead（线索）, Knowledge Contribution（知识贡献）, Digital Material Contribution（数字资料贡献）, Deposit / Temporary Custody（寄存 / 临时保管）, Donation（捐赠）, Institutional Referral（机构转介）and Research Collaboration（研究合作）.
 - [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — superseded original scope（已取代原始范围）.
 - [`ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`](ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md) — superseded discussion provenance（已取代讨论溯源）.
 - [`ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md`](ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md) — superseded discussion provenance（已取代讨论溯源）.
@@ -305,7 +306,7 @@ Current controlling facts（当前控制事实）:
 Correct sequence（正确顺序）:
 
 ```text
-Commission provenance / necessity review（约稿来源 / 必要性复核）
+Open Cultural Contribution & Recovery reconciliation（开放文化贡献与寻回跨轮复核）
 → Ink & East ↔ Spatial Flow relationship discussion（墨与东方 ↔ 空间流关系完整讨论）
 → remaining Services / Monetization architecture（剩余服务 / 商业化架构）
 → Membership Re-entry Review #1（会员重启检查 #1）
