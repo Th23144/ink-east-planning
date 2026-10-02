@@ -3,7 +3,7 @@
 
 > **Status:** CURRENT PRODUCT BASELINE / PRODUCT ARCHITECTURE ONLY（当前产品基线 / 仅产品架构）  
 > **Purpose:** provide one safe product-level handoff that says what Project 3 currently has, what is only a capability, what is deferred, and what must not be inherited from legacy planning.
-> **Scope correction（范围纠正）:** Project 3（项目三）is a shared development/planning context（共同开发 / 规划上下文）, not one unified user-facing product platform（统一面向用户产品平台）. This baseline primarily describes Ink & East（墨与东方）product architecture（产品架构）; Spatial Flow（空间流）is an independent product/project（独立产品 / 项目）with separate commerce truth and an unresolved future cooperation relationship（未决定的未来合作关系）.  
+> **Scope correction（范围纠正）:** Project 3（项目三）is a shared development/planning context（共同开发 / 规划上下文）, not one unified user-facing product platform（统一面向用户产品平台）. This baseline primarily describes Ink & East（墨与东方）product architecture（产品架构）; Spatial Flow（空间流）is an independent product/project（独立产品 / 项目）with separate commerce truth and a confirmed Standing Strategic Relationship（持续战略关系） with Ink & East（墨与东方）; public brand/legal wording and selected infrastructure axes remain deferred.  
 > **Sources:** Rounds 1–5 Product Planning Reconstruction V2 + source audit; Product Concept Provenance Matrix V2 + audit; sealed Round 6–11 current truth.  
 > **Implementation:** NOT AUTHORIZED（未授权实现）
 
@@ -501,7 +501,7 @@ The following product questions remain open and legitimate:
 9. What service / monetization products should Ink & East（墨与东方）actually have after removing the rejected Custom Reading（定制解读） / Custom Ebook Studio（定制电子书工作室） legacy concepts?
 10. What is the full Notifications / Delivery product?
 11. What public form/name should Recognized Works use?
-12. What is the future cooperation relationship（未来合作关系）between the independent products Ink & East（墨与东方）and Spatial Flow（空间流）?
+12. Ink & East ↔ Spatial Flow（墨与东方 ↔ 空间流） strategic/product relationship is resolved at the current architecture depth; deferred public brand/legal/infrastructure axes should be reopened only when needed.
 
 These are product questions, not errors to fill from legacy documents.
 
