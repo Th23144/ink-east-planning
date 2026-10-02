@@ -404,7 +404,9 @@ Those statements are superseded where they conflict with this file, accepted ame
 82. `docs/ROUND-13-RELATIONSHIP-Q1-RESOLUTION-V1.md` — **Q1 RESOLVED（Q1 已解决）**: relationship has real bidirectional value; Spatial Flow（空间流）may participate in Ink & East（墨与东方）as its own actor without platform privilege.
 83. `docs/ROUND-13-RELATIONSHIP-Q2-SPECIAL-RELATIONSHIP-DEPTH-DISCUSSION-V1.md` — historical Q2 discussion（历史 Q2 讨论）.
 84. `docs/ROUND-13-RELATIONSHIP-Q2-RESOLUTION-STANDING-STRATEGIC-RELATIONSHIP-V1.md` — **Q2 RESOLVED（Q2 已解决）**: Standing Strategic Relationship（持续战略关系）confirmed.
-85. `docs/ROUND-13-RELATIONSHIP-Q3-STANDING-RELATIONSHIP-SCOPE-BOUNDARIES-DISCUSSION-V1.md` — **CURRENT ACTIVE Q3（当前主线 Q3）**: define what the standing relationship includes, what stays project-specific, and what remains independent by default（定义持续关系包含什么、哪些逐项目决定、哪些默认独立）.
+85. `docs/ROUND-13-RELATIONSHIP-Q3-STANDING-RELATIONSHIP-SCOPE-BOUNDARIES-DISCUSSION-V1.md` — historical Q3 discussion（历史 Q3 讨论）.
+86. `docs/ROUND-13-RELATIONSHIP-Q3-RESOLUTION-SCOPE-BOUNDARIES-V1.md` — **Q3 RESOLVED（Q3 已解决）**: Persistent cooperation, explicit crossover, independent authority（合作长期存在；跨界显式；权威与责任保持独立）.
+87. `docs/ROUND-13-RELATIONSHIP-Q4-DEFAULT-EXPLICIT-NONTRANSFERABLE-BOUNDARIES-DISCUSSION-V1.md` — **CURRENT ACTIVE Q4（当前主线 Q4）**: define default standing behaviors, explicit project-level agreements, and non-transferable boundaries（默认持续行为、逐项目明确事项与不可转移边界）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
