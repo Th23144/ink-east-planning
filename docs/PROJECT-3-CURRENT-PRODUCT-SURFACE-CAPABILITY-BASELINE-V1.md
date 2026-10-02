@@ -250,9 +250,9 @@ Exact cross-platform governance UX and policy remain for the dedicated governanc
 
 ## C15 — Editorial submission / open call / collaboration intake（编辑投稿 / 公开征集 / 合作入口）
 Meaning（含义）:
-Ink & East（墨与东方）supports multiple editorial acquisition routes（多路径编辑获取方式）including Submission（投稿）, Open Call（公开征集）, Reader Letter / Question（读者来信 / 提问）, Collaboration（合作）and, where actually useful, narrow Editorial Invitation / Commissioned Article（编辑邀请 / 约稿文章）.
+Ink & East（墨与东方）supports multiple editorial acquisition routes（多路径编辑获取方式）including Submission（投稿）, Open Call / Public Request（公开征集 / 公开求助）, Directed Request（定向求助）, Reader Letter / Question（读者来信 / 提问）and Research / Editorial / Institutional Collaboration（研究 / 编辑 / 机构合作）.
 
-Commission（约稿）is no longer the umbrella concept.
+Commission（约稿）is historical / superseded terminology（历史 / 已取代术语） and is not a current product concept.
 
 No single standalone page（独立页面）or universal workflow（统一工作流）is implied.
 
@@ -262,7 +262,7 @@ Ink & East（墨与东方）has a confirmed capability family（已确认能力�
 
 Final public container / page / route（最终前台容器 / 页面 / 路由）remains open.
 
-Contribution Role（贡献角色）is separate from Contributor Qualification（贡献者资格）.
+Recovery Participation / Attribution（寻回参与 / 归因）is separate from Contributor Qualification（贡献者资格）.
 
 ---
 
