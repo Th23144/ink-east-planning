@@ -247,7 +247,7 @@ user-facing governance workflows exist as confirmed capabilities; Report is an i
 
 Exact cross-platform governance UX and policy remain for the dedicated governance round.
 
-## C15 — Editorial submission / open call / commission intake（编辑投稿 / 公开征稿 / 约稿入口）
+## C15 — Editorial submission / open call / Commission（约稿） intake（编辑投稿 / 公开征稿 / 约稿入口）
 Meaning:
 Round 11 confirms multiple editorial acquisition routes including submission, open call, commission, reader letter/question and collaboration.
 
