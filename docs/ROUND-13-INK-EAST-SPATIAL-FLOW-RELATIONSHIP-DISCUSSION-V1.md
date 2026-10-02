@@ -66,7 +66,7 @@ Possible relationships:
 - ordinary referral（普通导流）;
 - affiliate / revenue-share（联盟 / 分成）;
 - wholesale / supply relationship（批发 / 供应关系）;
-- commissioned collaboration（委托合作）;
+- contracted / project-based collaboration（合同制 / 项目制合作）;
 - co-developed product（联合开发商品）;
 - licensing（授权）;
 - sponsorship（赞助）;
