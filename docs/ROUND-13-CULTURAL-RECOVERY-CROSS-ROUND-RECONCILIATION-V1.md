@@ -80,7 +80,7 @@ These two meanings must **not** collapse.
 
 ### New hard separation（新增硬分离）
 
-> **Contribution Role（贡献角色） != Contributor Qualification（贡献者资格）.**
+> **Recovery Participation Role（寻回参与角色） != Contributor Qualification（贡献者资格）.**
 
 A person can make a valuable Source Contribution（资料贡献）or Discovery Contribution（发现贡献）without holding Contributor Qualification（贡献者资格）.
 
@@ -88,7 +88,7 @@ Likewise, holding Contributor Qualification（贡献者资格）does not automat
 
 ---
 
-## 2.2 Contribution Attribution（贡献署名）becomes first-class
+## 2.2 Recovery Attribution（寻回归因）becomes first-class
 
 The platform must be able to attribute actual contribution roles, for example:
 
@@ -112,7 +112,7 @@ Exact public vocabulary（最终公开词汇）remains evolvable.
 
 ### Important boundary（重要边界）
 
-Contribution Attribution（贡献署名）:
+Recovery Attribution（寻回归因）:
 
 - records what someone actually contributed（记录真实贡献）;
 - may support a Profile / Portfolio（个人资料 / 作品与贡献档案）;
@@ -139,13 +139,13 @@ These all fit the new system.
 
 ### Round 4 amendment required（第四轮需要的修订）
 
-Old “editorial commissioning（编辑约稿）” examples should no longer be the main interpretation of contributor opportunity.
+Old “editorial commissioning（编辑约稿）” examples are historical wording and should no longer be used as a current Contributor Opportunity（贡献者机会）concept.
 
 The broader valid direction is:
 
 > Contributor / user / institution participation may include **source discovery, knowledge contribution, research collaboration, preservation/digitization work and other scoped cultural-recovery collaboration（资料发现、知识贡献、研究合作、保存 / 数字化工作及其他范围化文化寻回合作）**.
 
-A narrow Commissioned Article（约稿文章）may still exist as one optional case.
+If editors directly seek help from a known person or institution, use the actual current action label such as Directed Request（定向求助）, Research Collaboration（研究合作）or Editorial Collaboration（编辑合作） rather than reviving Commission（约稿）.
 
 ---
 
@@ -268,12 +268,12 @@ to conceptually:
 ```text
 Discovery（发现）
 / Submission（投稿）
-/ Open Call（公开征集）
+/ Open Call / Public Request（公开征集 / 公开求助）
+/ Directed Request（定向求助）
 / Open Cultural Contribution & Recovery（开放文化贡献与寻回）
 / Reader Letter / Question（读者来信 / 提问）
-/ Collaboration（合作）
-/ optional narrow Editorial Invitation / Commissioned Article
-  （可选狭义编辑邀请 / 约稿文章）
+/ Research / Editorial / Institutional Collaboration
+  （研究 / 编辑 / 机构合作）
 ```
 
 ---
@@ -313,22 +313,17 @@ This fits the new system directly.
 
 ---
 
-## 4.4 Narrow Commission（狭义约稿）survival
+## 4.4 Historical Commission（约稿）retirement（历史“约稿”退出现行架构）
 
-Commissioned Article / Editorial Invitation（约稿文章 / 编辑邀请）may survive as a small editorial operation when:
+Commission（约稿）is no longer retained as a current product-architecture concept.
 
-> editors know the missing content and know the person they want to invite.
+When editors know the missing need and the person / institution they want to contact, the architecture should describe the real action directly:
+- Directed Request（定向求助）;
+- Research Collaboration（研究合作）;
+- Source Recovery Collaboration（资料寻回合作）;
+- Editorial Collaboration（编辑合作）.
 
-But it is only one route inside the broader acquisition / collaboration environment.
-
-It must not be the umbrella for:
-
-- source recovery（资料寻回）;
-- donations（捐赠）;
-- deposits（寄存）;
-- public source requests（公开资料求助）;
-- local knowledge contribution（地方知识贡献）;
-- institutional referral（机构转介）.
+Historical Commission（约稿）records remain only for Decision Provenance（决策溯源）.
 
 ---
 
@@ -372,7 +367,7 @@ Minimum conceptual capability set（最低概念能力集）:
 - Deposit / Donation distinction（寄存 / 捐赠区分）;
 - Provenance / Rights / Sensitivity Review（来源 / 权利 / 敏感性复核）;
 - Recovery Case（寻回案件）;
-- Contribution Attribution（贡献署名）;
+- Recovery Attribution（寻回归因）;
 - Institutional Referral / Handoff（机构转介 / 移交）;
 - Digitization / Restoration / Research linkage（数字化 / 修复 / 研究关联）;
 - Open Publication / Public Access where permitted（允许时开放发布 / 公共访问）.
@@ -383,7 +378,7 @@ No exact page or route is authorized yet.
 
 # 7. New anti-collapse invariants（新增防混淆硬边界）
 
-1. **Contribution Role（贡献角色） != Contributor Qualification（贡献者资格）**.
+1. **Recovery Participation Role（寻回参与角色） != Contributor Qualification（贡献者资格）**.
 2. **Material Holder（资料持有人） != Owner（所有者） != Rights Holder（权利人）**.
 3. **Temporary Custody（临时保管） != Donation（捐赠） != Permanent Accession（永久入藏）**.
 4. **Physical Original（实体原件） != Digital Surrogate（数字替代物）**.
@@ -402,7 +397,7 @@ No exact page or route is authorized yet.
 **PASS WITH TARGETED SEMANTIC AMENDMENT（定向语义修订后通过）**
 
 Needed:
-- introduce Contribution Role / Attribution（贡献角色 / 署名）separate from Contributor Qualification（贡献者资格）;
+- introduce Recovery Participation / Attribution（寻回参与 / 归因）separate from Contributor Qualification（贡献者资格）;
 - broaden opportunity examples beyond Commission（约稿）.
 
 ## Round 7（第七轮）
@@ -417,8 +412,8 @@ Needed:
 **PASS WITH TARGETED ACQUISITION AMENDMENT（定向内容获取修订后通过）**
 
 Needed:
-- replace Commission（约稿）as umbrella first-class route with Open Cultural Contribution & Recovery（开放文化贡献与寻回）as the broader recovery/acquisition capability;
-- retain narrow Editorial Invitation / Commissioned Article（编辑邀请 / 约稿文章）only where useful;
+- remove Commission（约稿）from current acquisition terminology;
+- use Open Cultural Contribution & Recovery（开放文化贡献与寻回）plus actual action labels such as Directed Request（定向求助） / Research Collaboration（研究合作） / Editorial Collaboration（编辑合作）;
 - keep recovered-material intake distinct from Article Submission（文章投稿）.
 
 ---
