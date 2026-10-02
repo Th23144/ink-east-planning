@@ -1,7 +1,7 @@
 # Round 13（第十三轮）— Ink & East ↔ Spatial Flow Cooperation Modes Simplified Discussion V1
 # 墨与东方 ↔ 空间流合作形态简化讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / SIMPLIFIED FOR PRODUCT DECISION（正在讨论 / 为产品决策简化）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Supersedes discussion framing（取代讨论框架）:** `ROUND-13-RELATIONSHIP-COOPERATION-MODES-DISCUSSION-V1.md` as the preferred active discussion frame（作为当前首选讨论框架）
@@ -96,3 +96,6 @@ The current strategic question is now reduced to one simple check:
 > **Does this three-layer model correctly describe the relationship: Core Strategic Collaboration（核心战略合作） + Optional Joint Projects（可选联合项目） + Contextual Discovery / Referral（情境化发现 / 引导）?**
 
 If yes, the detailed C1–C8（C1–C8） inventory can remain supporting detail rather than forcing separate decisions.
+
+
+Resolution（结论）: `ROUND-13-RELATIONSHIP-COOPERATION-MODES-RESOLUTION-V1.md`.
