@@ -71,8 +71,8 @@ Never infer “old file is more detailed, therefore old file is more authoritati
 | S41 | Custom Reading（定制解读）remains a future service candidate（未来服务候选） | **SUPERSEDED / REJECTED.** Removed from Current Product Architecture（当前产品架构）; historical provenance only（仅历史溯源） | Round 13 foundation correction V2（第十三轮基础纠正 V2） |
 | S42 | Custom Ebook Studio（定制电子书工作室）remains a future service candidate（未来服务候选） | **SUPERSEDED / REJECTED.** Removed from Current Product Architecture（当前产品架构）; historical provenance only（仅历史溯源） | Round 13 foundation correction V2（第十三轮基础纠正 V2） |
 | S43 | Rules are hard-coded and changed by overwriting history（规则硬编码，变更直接覆盖历史） | Stable core + evolvable/versioned policy + explainable history + controlled migration/rollback | Rule Evolvability architecture |
-| S44 | Commission（约稿）is the umbrella for scarce-knowledge/source acquisition（约稿是稀缺知识 / 资料获取总概念） | **SUPERSEDED.** Open Cultural Contribution & Recovery（开放文化贡献与寻回）is the broader capability; Commissioned Article / Editorial Invitation（约稿文章 / 编辑邀请）is only an optional narrow route | Round 13 cultural recovery foundation + Round 11 amendment |
-| S45 | Anyone credited as a contributor automatically holds Contributor Qualification（任何有贡献署名的人自动获得贡献者资格） | **PROHIBITED.** Contribution Role / Attribution（贡献角色 / 署名）is separate from Contributor Qualification / Expertise Scope（贡献者资格 / 专业范围） | Round 13 cross-round reconciliation + Round 4 amendment |
+| S44 | Commission（约稿）is a current product / acquisition concept（“约稿”是当前产品 / 内容获取概念） | **SUPERSEDED / REMOVED.** Open Cultural Contribution & Recovery（开放文化贡献与寻回）plus explicit Directed Request / Research / Editorial Collaboration（定向求助 / 研究 / 编辑合作）replaces the old term; Commission（约稿）remains historical provenance only（仅历史溯源） | Round 13 cultural recovery foundation + Round 11 amendment |
+| S45 | Anyone participating in recovery is automatically a platform Contributor（任何参与寻回的人自动成为平台贡献者） | **PROHIBITED.** Recovery Participation / Attribution（寻回参与 / 归因）is separate from the Round 4 Contributor Qualification / Expertise Scope（第四轮贡献者资格 / 专业范围）system | Round 13 cross-round reconciliation + Round 4 amendment |
 
 ---
 
