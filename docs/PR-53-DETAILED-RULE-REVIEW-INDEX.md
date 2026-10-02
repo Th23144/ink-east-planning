@@ -289,7 +289,13 @@ B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVE
 
 - [`ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md`](ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md) — **CURRENT CONTROLLING FOUNDATION CORRECTION（当前控制基础纠正）**.
 - [`COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md`](COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md) — **RESOLVED（已解决）**; Commission（约稿）is too narrow as the umbrella concept.
-- [`ROUND-13-OPEN-CULTURAL-CONTRIBUTION-RECOVERY-FOUNDATION-V1.md`](ROUND-13-OPEN-CULTURAL-CONTRIBUTION-RECOVERY-FOUNDATION-V1.md) — **USER-CONFIRMED CURRENT DIRECTION（用户已确认当前方向）**; defines Open Cultural Contribution & Recovery（开放文化贡献与寻回）, including Lead（线索）, Knowledge Contribution（知识贡献）, Digital Material Contribution（数字资料贡献）, Deposit / Temporary Custody（寄存 / 临时保管）, Donation（捐赠）, Institutional Referral（机构转介）and Research Collaboration（研究合作）.
+- [`ROUND-13-OPEN-CULTURAL-CONTRIBUTION-RECOVERY-FOUNDATION-V1.md`](ROUND-13-OPEN-CULTURAL-CONTRIBUTION-RECOVERY-FOUNDATION-V1.md) — **USER-CONFIRMED CURRENT DIRECTION（用户已确认当前方向）**; defines Open Cultural Contribution & Recovery（开放文化贡献与寻回）.
+- [`ROUND-13-CULTURAL-RECOVERY-CROSS-ROUND-RECONCILIATION-V1.md`](ROUND-13-CULTURAL-RECOVERY-CROSS-ROUND-RECONCILIATION-V1.md) — **PASS WITH TARGETED AMENDMENTS（定向修订后通过）**; reconnects the new capability with Round 4 / 7 / 11（第四 / 七 / 十一轮）.
+- [`ROUND-4-CULTURAL-CONTRIBUTION-ROLE-AMENDMENT-V1.md`](ROUND-4-CULTURAL-CONTRIBUTION-ROLE-AMENDMENT-V1.md) — Contribution Role / Attribution（贡献角色 / 署名） != Contributor Qualification（贡献者资格）.
+- [`ROUND-7-CULTURAL-RECOVERY-PROVENANCE-EXTENSION-V1.md`](ROUND-7-CULTURAL-RECOVERY-PROVENANCE-EXTENSION-V1.md) — Recovery Provenance（寻回过程溯源）, custody / deposit / donation / institutional handoff（保管 / 寄存 / 捐赠 / 机构移交）extension.
+- [`ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md`](ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md) — Commission（约稿）narrowed; cultural recovery added as broader acquisition / recovery route（更广的内容获取 / 寻回路径）.
+- [`ROUND-13-CULTURAL-RECOVERY-HARDENING-ADDENDUM-V1.md`](ROUND-13-CULTURAL-RECOVERY-HARDENING-ADDENDUM-V1.md) — safety / rights / custody hardening（安全 / 权利 / 保管加固）.
+- [`ROUND-13-CULTURAL-RECOVERY-ADVERSARIAL-AUDIT-V1.md`](ROUND-13-CULTURAL-RECOVERY-ADVERSARIAL-AUDIT-V1.md) — **PASS AFTER HARDENING（加固后通过） / 50 explicit failure modes（50 个明确失效场景） / 0 unresolved material blockers（0 个未解决重大阻塞）**.
 - [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — superseded original scope（已取代原始范围）.
 - [`ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`](ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md) — superseded discussion provenance（已取代讨论溯源）.
 - [`ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md`](ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md) — superseded discussion provenance（已取代讨论溯源）.
@@ -298,7 +304,7 @@ Current controlling facts（当前控制事实）:
 
 - Ink & East（墨与东方）and Spatial Flow（空间流）are **independent products/projects（独立产品 / 项目）**, not one Shared Platform（共享平台）.
 - They currently share a development/planning context（开发 / 规划上下文）because of workflow convenience and a possible future cooperation relationship（未来合作关系）.
-- Exact future cooperation relationship（未来合作关系）is **UNRESOLVED（未决定）** and will receive a dedicated full discussion after Commission（约稿）review.
+- Exact future cooperation relationship（未来合作关系）is **UNRESOLVED（未决定）** and is now the **ACTIVE ROUND-13 SUBJECT（第十三轮当前主线）** after completion of the cultural-recovery cross-round reconciliation（文化寻回跨轮复核）.
 - Custom Reading（定制解读）is **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**.
 - Custom Ebook Studio（定制电子书工作室）is **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**.
 - Standalone recurring Membership（独立持续订阅会员）remains deferred（暂缓）and does not control Round 13（第十三轮）.
