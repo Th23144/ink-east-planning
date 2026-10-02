@@ -5,6 +5,7 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Fixed premise（固定前提）:** Ink & East（墨与东方）and Spatial Flow（空间流）are independent products/projects（独立产品 / 项目）.
+> **Prior relationship input（既有关系输入）:** `ROUND-13-PRIOR-SPATIAL-FLOW-SIDE-RELATIONSHIP-WORKING-MODEL-INTAKE-V1.md` is a Spatial Flow（空间流）-side Working Model（工作模型）reference only; its older Ink & East（墨与东方）description is non-controlling, while its relationship hypotheses may be tested here.
 
 ---
 
