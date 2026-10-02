@@ -5,7 +5,7 @@
 > **Implementation:** NOT AUTHORIZED（未授权实现）  
 > **Controlling inventory:** **273 rule slots**  
 > **Supersession:** this document consolidates Workshop A–E, their Hardening Addenda（加固补充）, user decision records and cross-workshop hardening. Where a provisional Workshop question conflicts with a later user decision record, the later decision controls.
-> **2026-10-01 targeted acquisition amendment（定向内容获取修订）:** Commission（约稿）review is resolved. `docs/ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md` narrows Commission（约稿）to an optional Editorial Invitation / Commissioned Article（编辑邀请 / 约稿文章）case and adds Open Cultural Contribution & Recovery（开放文化贡献与寻回）as the broader acquisition / recovery capability. Other Round 11（第十一轮）architecture remains sealed.
+> **2026-10-01 targeted acquisition amendment（定向内容获取修订）:** Commission（约稿）review is resolved. `docs/ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md` removes Commission（约稿）from Current Product Architecture（当前产品架构）, retains it only as historical provenance（历史溯源）, and adds Open Cultural Contribution & Recovery（开放文化贡献与寻回）plus Directed Request / Collaboration（定向求助 / 合作）as the current acquisition / recovery model. Other Round 11（第十一轮）architecture remains sealed.
 
 ---
 
@@ -122,7 +122,7 @@ Controlling range: **R11-A22…A30 + relevant B/E/CW rules**.
 - Issue inclusion does not automatically create Contributor Qualification（贡献者资格）, Reviewer Trust（评审信任）, Account Trust（账户信任） or governance authority.
 - Contributor / Official / Institution / Partner（贡献者 / 官方 / 机构 / 合作方） status does not guarantee placement.
 - Selection origin remains attributable where material.
-- Submission（投稿）, Commission（约稿）, Selection（选入）, Publication（发布） and Issue Inclusion（议题收录） are different business concepts.
+- Submission（投稿）, Directed Request / Collaboration（定向求助 / 合作）, Selection（选入）, Publication（发布） and Issue Inclusion（议题收录） are different product/workflow concepts. Historical Commission（约稿）terminology is superseded.
 - Rejection / non-selection is normally a fit/timing/editorial decision, not a negative platform quality/trust punishment.
 - Repeated inclusion of the same Work across Issues/versions is curation history, not multiple independent Recognition votes or fabricated independent evidence.
 
@@ -178,14 +178,14 @@ Key controls:
 - Existing public platform Works may be curated without forced resubmission while preserving authorship/provenance/rights.
 - Contributor status may create stronger editorial channels, not guaranteed outcomes.
 - Open Calls（公开征稿） are optional per Issue.
-- Commissioning is a first-class acquisition route but not publication itself.
+- Open Cultural Contribution & Recovery（开放文化贡献与寻回）and Directed Request / Collaboration（定向求助 / 合作）are valid acquisition/recovery routes and are not publication themselves.
 - Reader questions/letters and partner/institution collaboration may use distinct editorial routes.
 - Private unpublished submissions are non-public by default.
 - Submission may target one Issue or general consideration; receiving a submission does not create publication entitlement.
 - Withdrawal is distinct from deletion.
 - Submission revisions require version-aware decision attribution.
-- Commission brief and final Work are separate; payment/commercial terms do not create editorial standing or Recognition.
-- Commission does not transfer authorship by default and does not automatically make a Work an official platform viewpoint.
+- Request / collaboration context and final Work（作品）are separate; payment/commercial terms do not create editorial standing（编辑地位）or Recognition（作品认可）.
+- Request / collaboration does not transfer authorship（作者身份）by default and does not automatically make a Work（作品）an official platform viewpoint（平台官方立场）.
 - Co-authorship, translation, editing, illustration and other materially distinct roles remain attributable.
 - Consequential editorial decisions bind to the revision actually evaluated.
 - Withdrawal/cancellation invalidates obsolete pending-publication states.
@@ -398,7 +398,7 @@ Round 11 must preserve:
 
 ### Workflow（工作流）
 
-- submission/commission/selection/production;
+- submission / request / collaboration / selection / production（投稿 / 求助 / 合作 / 选入 / 制作）;
 - publication readiness;
 - schedule/publish/hold/withdraw/archive;
 - amendment/correction;
@@ -411,7 +411,7 @@ Optional candidate suggestions, prioritization, anomaly detection, measurement, 
 
 ### Data（数据）
 
-Issue, Issue Version, Curation Relation / Placement, Submission, Commission, Editorial Plan, included-object version context, editorial framing, rights/access state, decision provenance, derived renderings and version-aware measurement remain distinguishable concepts where material.
+Issue, Issue Version, Curation Relation / Placement, Submission, Recovery Case / Request / Collaboration（寻回案件 / 求助 / 合作）, Editorial Plan, included-object version context, editorial framing, rights/access state, decision provenance, derived renderings and version-aware measurement remain distinguishable concepts where material.
 
 ---
 
