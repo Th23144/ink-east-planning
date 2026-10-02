@@ -166,7 +166,7 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 12 foundation decision:** Economic Commitment Signal（经济承诺信号） is an independent contextual anti-abuse/capability concept. Membership may become one source of that signal but is not the mechanism itself. Standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**; Reading Room remains unresolved/not required; no VIP feature bundle is invented merely to justify subscription economics.
 - **Non-paying path preserved:** ordinary durable/long-form publishing must retain a legitimate non-paying path; payment may only reduce selected friction where payment genuinely mitigates the relevant zero-cost/Sybil risk.
 - **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` remains NON-CONTROLLING research only.
-- **Round 13 — BLOCK 1 OPEN / USER REVIEW REQUIRED.** Restart scope: `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`. Current discussion: `docs/ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`. Current synthesis identifies Spatial Flow physical-goods commerce as the confirmed revenue engine; Spatial Flow Services/Consult requires exact-role review; Custom Reading / Custom Ebook remain legacy-inherited/revalidation-pending. First genuine decision: whether Ink & East and Spatial Flow are distinct product/commercial domains inside one shared platform.
+- **Round 13 — COMPLETE DISCUSSION OPEN / USER REVIEW REQUIRED（完整讨论已开启 / 需要用户审阅）.** Restart scope（重启范围）: `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`. Complete discussion framework（完整讨论框架）: `docs/ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md`. Current synthesis（当前归纳）identifies Spatial Flow（商品 / 空间产品域）physical-goods commerce（实物商品电商）as the confirmed revenue engine（已确认收入引擎）; Spatial Flow Services / Consult（服务 / 咨询）requires exact-role review（需要重新定义具体角色）; Custom Reading（定制解读） / Custom Ebook Studio（定制电子书工作室）remain legacy-inherited / revalidation-pending（旧方案继承 / 等待重新验证）. First genuine decision（第一个真正产品决定）: whether Project 3（项目三）uses Shared Platform + Distinct Product Domains（共享平台 + 独立产品域）for Ink & East（内容 / 知识产品域）and Spatial Flow（商品 / 空间产品域）.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
@@ -386,7 +386,8 @@ Those statements are superseded where they conflict with this file, accepted ame
 64. `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` — external pattern research / non-controlling.
 65. `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md` — resolved historical decision provenance.
 66. `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md` — current Round 13 restart scope.
-67. `docs/ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md` — current Round 13 Block 1 discussion / user review required.
+67. `docs/ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md` — earlier Round 13 Block 1（模块 1）discussion / superseded by the complete framework for current review.
+68. `docs/ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md` — current complete bilingual Round 13（第十三轮）discussion framework / user review required.
 67. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
 67. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
 68. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
