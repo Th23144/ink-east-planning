@@ -156,17 +156,17 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 9 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-9-CURRENT-TRUTH-V1.md`, source parity 162/162 PASS, adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-9-SEAL-RECORD.md`.
 - **Round 10 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-10-CURRENT-TRUTH-V1.md`, source parity 318/318 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-10-SEAL-RECORD.md`.
 - **Round 11 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md`, source parity 273/273 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-11-SEAL-RECORD.md`.
-- **Round 12 — RESTARTED FROM OPEN CORE BASELINE / STEP 2 PRODUCT ROLE DECISION PENDING（已从开放核心基线重启 / 第二步产品角色待决定）.** Membership（会员） remains a confirmed future subject, but the old `Membership / Reading Room` label no longer defines the scope. Reading Room（阅读室） product existence remains UNRESOLVED（未决定）. The controlling restart baseline is `docs/ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md`.
+- **Round 12 — SEALED / PRODUCT ARCHITECTURE ONLY（已封存 / 仅产品架构）.** Current truth: `docs/INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md`; source parity PASS 20/20; full adversarial audit PASS with 50 explicit failure modes; sealed by `docs/INK-EAST-ROUND-12-SEAL-RECORD.md`.
 - **Previous Pre-Resume blanket clearance — INVALIDATED / HISTORICAL（已失效 / 仅历史）.** `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` must not be used as a current “zero blockers / mainline cleared” certificate. Surviving correct findings are mapped by `docs/PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md`; future work must pass both semantic-supersession and product-concept-existence provenance checks.
 - **Product-planning reconstruction / concept-provenance pass — COMPLETE FOR CURRENT CHECKPOINT（当前检查点完成）.** Rounds 1–5 Product Planning Reconstruction V2 passed source/provenance audit; Product Concept Provenance Matrix V2 passed 74 adversarial provenance attacks; Current Product Surface & Capability Baseline V1 passed its own audit.
 - **Previous Pre-Resume Full Checkpoint PASS remains INVALIDATED（此前主线恢复前全盘检查仍失效）**; its surviving correct findings are mapped forward instead of restoring the old blanket clearance.
 - **Reading Room（阅读室） existence: UNRESOLVED（未决定）**; exact old Letters / Ask / Membership-page / Community-aggregate / service-page containers are likewise not inherited automatically.
 - **Current Product Baseline cross-source reconciliation — COMPLETE / PASS AFTER DOCUMENTATION REPAIR（已完成 / 文档修复后通过）.** Confirmed omissions restored include Domain projection, Create/Publish/Submit, scoped Identity/Claim Verification, governance user workflows and editorial acquisition capabilities; none creates a mandatory legacy container.
 - **Rounds 12–16 sequence provenance reconciliation — COMPLETE / NO REORDERING REQUIRED（已完成 / 无需重排）.** Membership remains a valid Round 12 subject, but Reading Room is removed from controlling title/scope assumptions; Round 13 legacy services require revalidation; Round 14 is a platform-wide reconciliation subject; Rounds 15–16 are downstream demo/business-narrative deliverables.
-- **Round 12 Step 1 — COMPLETE / REVALIDATED.** The earlier paid-value-first draft is superseded. Current rule: the platform core remains open; payment may act as an economic-cost signal that reduces selected zero-cost/Sybil friction and allows specific capability restrictions to relax earlier; payment does not create trust, authority, Recognition, governance or organic recommendation privilege.
-- **Critical separation:** Membership product != economic-friction mechanism. The latter is a contextual capability/risk input; it does not by itself explain why a recurring consumer Membership product should exist.
-- **Current Step 2 decision:** determine whether Project 3 needs a distinct recurring Membership product beyond the already-confirmed economic-friction role of payment. Current discussion draft: `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md`. Its provisional recommendation is M0 now → preserve M3 later: do not force recurring Membership into the initial architecture; keep the friction mechanism separate and allow a future open-core Premium product only if genuine recurring value/cost emerges. This recommendation is NOT Current Truth until user confirmation.
-- **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` is NON-CONTROLLING research. It finds X comparatively aggressive; Reddit/Telegram/Discord are structurally closer references for open-core + bounded capacity enhancement, but Project 3 still requires its own risk/cost justification.
+- **Round 12 sealed decision:** Economic Commitment Signal（经济承诺信号） is an independent contextual anti-abuse/capability concept. Membership may become one source of that signal but is not the mechanism itself. Standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**; Reading Room remains unresolved/not required; no VIP feature bundle is invented merely to justify subscription economics.
+- **Non-paying path preserved:** ordinary durable/long-form publishing must retain a legitimate non-paying path; payment may only reduce selected friction where payment genuinely mitigates the relevant zero-cost/Sybil risk.
+- **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` remains NON-CONTROLLING research only.
+- **Next architecture subject:** Round 13 — Services / Monetization / Spatial Flow Relationship.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
@@ -376,20 +376,25 @@ Those statements are superseded where they conflict with this file, accepted ame
 54. `docs/PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md` — surviving findings from the invalidated audit
 55. `docs/PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md` — Task 1 final cross-source baseline check
 56. `docs/PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md` — Task 2 remaining-sequence provenance check
-57. `docs/ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md` — current controlling Round 12 restart baseline
-58. `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` — external pattern research / non-controlling
-59. `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md` — current Step 2 discussion draft / user decision required
-60. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
-61. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
-62. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-63. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-64. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
-65. PR #53 latest conversation/decision history while the workshop remains open
-66. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
-67. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
-68. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-69. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-70. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
-71. superseded Round 6 Final/Seal and older planning documents only as historical references
+57. `docs/ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md` — Round 12 restart baseline.
+58. `docs/ROUND-12-ECONOMIC-COMMITMENT-SIGNAL-MEMBERSHIP-DEFERRED-DECISION.md` — user-confirmed Round 12 decision.
+59. `docs/INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md` — Round 12 current truth.
+60. `docs/ROUND-12-V1-SOURCE-PARITY-PASS.md` — PASS 20 / 20.
+61. `docs/ROUND-12-V1-ADVERSARIAL-AUDIT.md` — PASS / 50 explicit failure modes / zero unresolved material blockers.
+62. `docs/INK-EAST-ROUND-12-SEAL-RECORD.md` — current Round 12 seal.
+63. `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` — external pattern research / non-controlling.
+64. `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md` — resolved historical decision provenance.
+65. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
+66. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
+67. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+68. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+69. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
+70. PR #53 latest conversation/decision history while the workshop remains open
+71. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
+72. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
+73. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+74. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+75. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
+76. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
