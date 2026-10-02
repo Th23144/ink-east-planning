@@ -42,7 +42,7 @@ No one field such as “source owner（资料所有者）” may collapse these 
 
 ## E3 — Physical handoff does not erase recovery history（实体移交不抹除寻回历史）
 
-When a physical original（实体原件）moves to a Qualified Institution（合格机构）, permissible Recovery Provenance（寻回溯源）, Contribution Attribution（贡献署名）and transformation history（处理 / 转化历史）remain reconstructable.
+When a physical original（实体原件）moves to a Qualified Institution（合格机构）, permissible Recovery Provenance（寻回溯源）, Recovery Attribution（寻回归因）and transformation history（处理 / 转化历史）remain reconstructable.
 
 ## E4 — Donation / Deposit do not imply publication permission（捐赠 / 寄存不等于公开授权）
 
