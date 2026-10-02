@@ -67,6 +67,9 @@ Never infer “old file is more detailed, therefore old file is more authoritati
 | S37 | Membership can buy Contributor/Reviewer/Governance standing（会员可以买贡献者 / 评审 / 治理地位） | Prohibited; payment cannot manufacture trust-layer authority | Round 4/5/6 |
 | S38 | Source whitelist A/B/C/D is permanent ontology/copyright truth（来源白名单 A/B/C/D 是永久本体 / 版权真理） | Operational, configurable rights/search-clearance policy only | Round 7 Current Truth |
 | S39 | Public-domain historical work means modern scan is commercially reusable（古籍公版 = 现代扫描图可商用） | Underlying-work status, modern digital-image rights and provider terms are separate | Round 7 |
+| S40 | Ink & East（墨与东方）+ Spatial Flow（空间流）= one Shared Platform（共享平台） / shared product system（共享产品系统） | **SUPERSEDED.** They are independent products/projects（独立产品 / 项目）currently co-developed in one development/planning context（开发 / 规划上下文）; exact future cooperation relationship（未来合作关系）is unresolved | Round 13 foundation correction V2（第十三轮基础纠正 V2） |
+| S41 | Custom Reading（定制解读）remains a future service candidate（未来服务候选） | **SUPERSEDED / REJECTED.** Removed from Current Product Architecture（当前产品架构）; historical provenance only（仅历史溯源） | Round 13 foundation correction V2（第十三轮基础纠正 V2） |
+| S42 | Custom Ebook Studio（定制电子书工作室）remains a future service candidate（未来服务候选） | **SUPERSEDED / REJECTED.** Removed from Current Product Architecture（当前产品架构）; historical provenance only（仅历史溯源） | Round 13 foundation correction V2（第十三轮基础纠正 V2） |
 | S40 | Rules are hard-coded and changed by overwriting history（规则硬编码，变更直接覆盖历史） | Stable core + evolvable/versioned policy + explainable history + controlled migration/rollback | Rule Evolvability architecture |
 
 ---
