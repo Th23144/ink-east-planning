@@ -4,7 +4,7 @@
 
 ## Current authoritative architecture
 
-Project 3 is the long-term source-native platform for both **Ink & East** and **Spatial Flow**. Ink & East is the current working editorial/cultural-platform identity, not assumed to be the final umbrella brand. Eastern/Chinese culture remains the initial wedge/vertical, while the future umbrella may support broader culture, knowledge, place, travel, real-world experience, society, community and discovery. Do not rename repos/routes during the workshop merely because umbrella naming remains unresolved.
+Project 3（项目三）is the current shared development / planning context（共同开发 / 规划上下文）for **Ink & East（墨与东方）** and **Spatial Flow（空间流）**, but the two are **independent products/projects（独立产品 / 项目）**, not one unified user-facing platform. They are developed in the same context because this is convenient during the current engineering/planning phase and because a future cooperation relationship may exist. That relationship is still unresolved and must be discussed explicitly; shared account/search/payment/data infrastructure must not be assumed. Ink & East（墨与东方）remains the editorial / cultural / knowledge product line（编辑 / 文化 / 知识产品线）and may itself expand beyond its initial Eastern/Chinese culture wedge（东方 / 中国文化切入口）according to later product decisions.
 
 Project 2 remains a separate WordPress/WooCommerce visual-reskin track. It does not own Project 3's long-term source-native implementation, but it may remain a product-truth/page/state/flow reference for ecommerce parity.
 
@@ -166,7 +166,7 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 12 foundation decision:** Economic Commitment Signal（经济承诺信号） is an independent contextual anti-abuse/capability concept. Membership may become one source of that signal but is not the mechanism itself. Standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**; Reading Room remains unresolved/not required; no VIP feature bundle is invented merely to justify subscription economics.
 - **Non-paying path preserved:** ordinary durable/long-form publishing must retain a legitimate non-paying path; payment may only reduce selected friction where payment genuinely mitigates the relevant zero-cost/Sybil risk.
 - **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` remains NON-CONTROLLING research only.
-- **Round 13 — COMPLETE DISCUSSION OPEN / USER REVIEW REQUIRED（完整讨论已开启 / 需要用户审阅）.** Restart scope（重启范围）: `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`. Complete discussion framework（完整讨论框架）: `docs/ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md`. Current synthesis（当前归纳）identifies Spatial Flow（商品 / 空间产品域）physical-goods commerce（实物商品电商）as the confirmed revenue engine（已确认收入引擎）; Spatial Flow Services / Consult（服务 / 咨询）requires exact-role review（需要重新定义具体角色）; Custom Reading（定制解读） / Custom Ebook Studio（定制电子书工作室）remain legacy-inherited / revalidation-pending（旧方案继承 / 等待重新验证）. First genuine decision（第一个真正产品决定）: whether Project 3（项目三）uses Shared Platform + Distinct Product Domains（共享平台 + 独立产品域）for Ink & East（内容 / 知识产品域）and Spatial Flow（商品 / 空间产品域）.
+- **Round 13 — FOUNDATION CORRECTED / COMMISSION（约稿）REVIEW NEXT（基础已纠正 / 下一步复核约稿）.** Controlling correction（当前控制纠正）: `docs/ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md`. Ink & East（墨与东方）and Spatial Flow（空间流）are independent products/projects（独立产品 / 项目）that currently share a development/planning context（开发 / 规划上下文）and may have a future cooperation relationship（未来合作关系）; they are not one Shared Platform（共享平台）. Custom Reading（定制解读）and Custom Ebook Studio（定制电子书工作室）are REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）. Before the relationship discussion begins, Commission（约稿）requires a targeted provenance / necessity review（定向来源 / 必要性复核）.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
@@ -385,9 +385,10 @@ Those statements are superseded where they conflict with this file, accepted ame
 63. `docs/INK-EAST-ROUND-12-SEAL-RECORD.md` — SUPERSEDED as a full-round seal / historical provenance only.
 64. `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` — external pattern research / non-controlling.
 65. `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md` — resolved historical decision provenance.
-66. `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md` — current Round 13 restart scope.
-67. `docs/ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md` — earlier Round 13 Block 1（模块 1）discussion / superseded by the complete framework for current review.
-68. `docs/ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md` — current complete bilingual Round 13（第十三轮）discussion framework / user review required.
+66. `docs/ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md` — current controlling Round 13（第十三轮）foundation correction（基础纠正）.
+67. `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md` — earlier restart scope（早期重启范围）; superseded where it assumes a shared platform or legacy-service revalidation.
+68. `docs/ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md` — superseded discussion provenance（已取代讨论溯源）.
+69. `docs/ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md` — superseded discussion provenance（已取代讨论溯源）.
 67. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
 67. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
 68. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
