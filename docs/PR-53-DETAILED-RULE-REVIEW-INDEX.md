@@ -315,7 +315,7 @@ Current controlling facts（当前控制事实）:
 Correct sequence（正确顺序）:
 
 ```text
-Open Cultural Contribution & Recovery reconciliation（开放文化贡献与寻回跨轮复核）
+Open Cultural Recovery reconciliation（开放文化寻回跨轮复核）
 → Ink & East ↔ Spatial Flow relationship discussion（墨与东方 ↔ 空间流关系完整讨论）
 → remaining Services / Monetization architecture（剩余服务 / 商业化架构）
 → Membership Re-entry Review #1（会员重启检查 #1）
