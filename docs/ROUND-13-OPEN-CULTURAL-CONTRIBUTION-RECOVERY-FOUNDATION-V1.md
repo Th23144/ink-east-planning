@@ -157,7 +157,7 @@ Therefore:
 
 Round 4（第四轮）already defines Contributor（贡献者）as a specific qualified identity based on scoped evidence of competence / sustained contribution capability（基于范围化能力 / 持续创作贡献证据的资格身份）.
 
-Therefore the cultural-recovery system must **not** call every person who helps a Contributor（贡献者）.
+Therefore the cultural-recovery system must **not** call every person who helps Ink & East（墨与东方）or participates in a Recovery Case（寻回案件）a platform Contributor（贡献者）.
 
 Instead, Recovery Participants（寻回参与者）may be attributed by their actual role, such as:
 
