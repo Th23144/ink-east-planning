@@ -1,7 +1,7 @@
 # Round 12 V1 — Full Adversarial Audit
 # 第十二轮 V1——整轮对抗性审计
 
-> **Status:** PASS / ZERO UNRESOLVED MATERIAL BLOCKERS（通过 / 0 个未解决重大阻塞）
+> **Status:** PASS / ZERO UNRESOLVED MATERIAL BLOCKERS — FOUNDATION SCOPE ONLY（通过 / 0 个未解决重大阻塞——仅基础边界范围）
 > **Target:** `docs/INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md`
 > **Parity prerequisite:** `ROUND-12-V1-SOURCE-PARITY-PASS.md` — PASS 20 / 20
 > **Implementation:** NOT AUTHORIZED（未授权实现）
@@ -132,4 +132,4 @@ The goal is to detect whether “payment as economic friction” can accidentall
 - Source parity prerequisite: **PASS 20 / 20**
 - Product-code implementation authorization: **NO**
 
-Round 12 V1 is ready for Product Architecture Seal（产品架构封存）.
+The resolved Round 12 foundation is validated. This does **not** authorize a full-round seal because standalone Membership product definition remains deferred.
