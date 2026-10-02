@@ -135,7 +135,9 @@ Still deferred:
 
 ## 4. Round 12 consequence / 第十二轮后果
 
-This decision closes the current Membership product-definition problem for Round 12.
+This decision resolves the current **foundation boundary** for Round 12, but it does not fully close the standalone Membership product definition.
+
+Standalone Membership remains deferred and must be re-reviewed immediately after Round 13, with a second mandatory review before Round 15.
 
 Round 13 may now proceed to:
 
