@@ -411,7 +411,8 @@ Those statements are superseded where they conflict with this file, accepted ame
 89. `docs/ROUND-13-RELATIONSHIP-PUBLIC-VISIBILITY-DEFERRED-V1.md` — general public visibility of the standing relationship（持续战略关系的一般公开可见性） **DEFERRED（暂缓）**.
 90. `docs/ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-COMMERCIAL-CONFLICT-DISCUSSION-V1.md` — superseded discussion provenance（已取代讨论溯源）; prior conflict framing was too broad（旧“冲突”框架过宽）.
 91. `docs/ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-RELATIONSHIP-INTEGRITY-RESOLUTION-V1.md` — **RESOLVED（已解决）**: editorial independence / role separation / attribution integrity / platform neutrality（编辑独立性 / 角色分离 / 归因完整性 / 平台中立性）confirmed without defining the relationship itself as a conflict.
-92. `docs/ROUND-13-RELATIONSHIP-COOPERATION-MODES-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: which cooperation families genuinely belong to the long-term relationship（哪些合作类型真正属于长期关系）.
+92. `docs/ROUND-13-RELATIONSHIP-COOPERATION-MODES-DISCUSSION-V1.md` — supporting detailed inventory（支持性详细清单）.
+93. `docs/ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: three-layer cooperation model（三层合作模型）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
