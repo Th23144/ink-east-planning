@@ -406,7 +406,10 @@ Those statements are superseded where they conflict with this file, accepted ame
 84. `docs/ROUND-13-RELATIONSHIP-Q2-RESOLUTION-STANDING-STRATEGIC-RELATIONSHIP-V1.md` — **Q2 RESOLVED（Q2 已解决）**: Standing Strategic Relationship（持续战略关系）confirmed.
 85. `docs/ROUND-13-RELATIONSHIP-Q3-STANDING-RELATIONSHIP-SCOPE-BOUNDARIES-DISCUSSION-V1.md` — historical Q3 discussion（历史 Q3 讨论）.
 86. `docs/ROUND-13-RELATIONSHIP-Q3-RESOLUTION-SCOPE-BOUNDARIES-V1.md` — **Q3 RESOLVED（Q3 已解决）**: Persistent cooperation, explicit crossover, independent authority（合作长期存在；跨界显式；权威与责任保持独立）.
-87. `docs/ROUND-13-RELATIONSHIP-Q4-DEFAULT-EXPLICIT-NONTRANSFERABLE-BOUNDARIES-DISCUSSION-V1.md` — **CURRENT ACTIVE Q4（当前主线 Q4）**: define default standing behaviors, explicit project-level agreements, and non-transferable boundaries（默认持续行为、逐项目明确事项与不可转移边界）.
+87. `docs/ROUND-13-RELATIONSHIP-Q4-DEFAULT-EXPLICIT-NONTRANSFERABLE-BOUNDARIES-DISCUSSION-V1.md` — historical Q4 discussion（历史 Q4 讨论）.
+88. `docs/ROUND-13-RELATIONSHIP-Q4-RESOLUTION-PREFERRED-PARTNER-CROSSREF-HARD-BOUNDARIES-V1.md` — **Q4 RESOLVED（Q4 已解决）**: Preferred Strategic Partner（优先战略合作伙伴）, normal cross-product references（正常跨产品引用）, personal-data independence（个人数据独立）, hard editorial/source/recognition/governance boundaries（编辑 / 来源 / 认可 / 治理硬边界）.
+89. `docs/ROUND-13-RELATIONSHIP-PUBLIC-VISIBILITY-DEFERRED-V1.md` — general public visibility of the standing relationship（持续战略关系的一般公开可见性） **DEFERRED（暂缓）**.
+90. `docs/ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-COMMERCIAL-CONFLICT-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: editorial independence and commercial conflict boundaries（编辑独立性与商业利益冲突边界）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
