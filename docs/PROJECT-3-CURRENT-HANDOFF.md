@@ -1,3 +1,7 @@
+> ⚠️ **LEGACY HANDOFF NAME / NOT CURRENT PRODUCT-ARCHITECTURE TRUTH（文件名虽叫 Current Handoff，但已不是当前产品架构真相）**  
+> This handoff predates PR #53 Product Architecture and still contains old VIP Library, Reader/Patron, member-reading and server-side VIP gating assumptions.  
+> Current entry point is `PROJECT-3-START-HERE.md`; superseded directions are tracked in `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`. Use this file only for historical implementation/project provenance.
+
 # Project 3 · Ink & East Current Handoff Audit
 
 > Repository: `Th23144/ink-east-planning`  

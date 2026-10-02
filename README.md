@@ -1,5 +1,16 @@
 # Ink & East Planning
 
+## Current architecture entry point
+
+Before using any old Brief / Roadmap / Handoff / Phase plan as product truth, read:
+
+1. `PROJECT-3-START-HERE.md`
+2. `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`
+3. the latest applicable Current Truth / Amendment / Seal records in PR #53
+
+Historical files intentionally remain in the repository for Decision Provenance（决策溯源）. Some contain superseded VIP / Paywall（会员 / 付费墙）, identity, contributor, organization, recommendation or scope assumptions and must not be used alone for implementation.
+
+
 This repository is the planning, preview, and future source home for Ink & East / Spatial Flow.
 
 ## Current source scaffold

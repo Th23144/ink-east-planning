@@ -1,3 +1,6 @@
+> ⚠️ **HISTORICAL LEVEL-1 COLLECTION MODEL / VIP MARKER IS LEGACY IMPLEMENTATION DEBT（历史一级原型集合模型 / VIP 标记属于旧实现技术债）**  
+> The `is_vip` / VIP-marker concept predates current Product Architecture. Do not infer a current paywall/member-only content requirement from this prototype document.
+
 # Ink & East Level 1 · Task 4 · Core Payload Collections
 
 ## Scope

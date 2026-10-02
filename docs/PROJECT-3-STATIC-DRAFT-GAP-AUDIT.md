@@ -1,3 +1,6 @@
+> ⚠️ **PRE-PR#53 STATIC RECONCILIATION AUDIT / PRODUCT ASSUMPTIONS PARTIALLY SUPERSEDED（PR #53 前静态稿审计 / 产品假设部分已取代）**  
+> Old VIP article / VIP Library / Reader-Patron / paywall references in this audit are historical preview inventory, not current Membership product truth. Read current Product Architecture first.
+
 # Project 3 · Static Draft Gap Audit
 
 > Repository: `Th23144/ink-east-planning`  

@@ -1,3 +1,6 @@
+> ⚠️ **LEGACY WORDPRESS LINK/FIELD MAP / HISTORICAL ONLY（旧 WordPress 链接 / 字段映射 / 仅历史参考）**  
+> Older wording naming `PROJECT-CONTROL-MASTER.md` as the current baseline is superseded. Current entry point is `PROJECT-3-START-HERE.md`; Project 3 is source-native.
+
 # Ink & East · Link & Backend Field Map
 
 > 版本：v0.1  

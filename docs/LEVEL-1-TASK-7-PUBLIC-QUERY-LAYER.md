@@ -1,3 +1,6 @@
+> ⚠️ **HISTORICAL LEVEL-1 QUERY MODEL / READER-PATRON EXCLUSIONS ARE LEGACY PLACEHOLDERS（历史一级原型查询模型 / Reader-Patron 排除逻辑是旧占位）**  
+> The current public-content architecture does not authorize member-only editorial content. Existing query/schema assumptions require later migration review when implementation is authorized.
+
 # Level 1 Task 7: Public Read API / Query Layer
 
 Task 7 adds a server-side, reusable, read-only public query layer for future Ink & East frontend pages. It is an internal query layer built on the Payload Local API; it is not a frontend page task, not a route task, and not Task 8.

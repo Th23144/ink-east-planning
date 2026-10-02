@@ -1,3 +1,7 @@
+> ⚠️ **LEGACY HANDOFF / DO NOT USE AS CURRENT MEMBERSHIP OR PRODUCT TRUTH（旧交接文档 / 不得作为当前会员或产品真相）**  
+> This file contains an intermediate 99%-free + rare-VIP-content model, VIP Library（会员内容库） and old member-only article/paywall behavior. These directions are superseded by later Product Architecture decisions.  
+> Current entry point: `PROJECT-3-START-HERE.md`. Supersession registry: `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`.
+
 ---
 inclusion: always
 ---

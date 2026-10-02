@@ -1,0 +1,347 @@
+# PR #53 — Detailed Rule Review Index（详细规则人工审阅索引）
+
+> **Purpose（用途）:** 给人工审阅 PR（拉取请求）#53 的人一个从总览直接进入完整规则正文、审计和封存记录的入口。  
+> **Important（重要）:** PR description（拉取请求说明）只维护状态和导航，不复制几百条规则正文；完整规则保存在本 PR 分支的版本化 Markdown（文档）文件和早期 PR Conversation（对话）决策记录中。
+
+---
+
+## 1. Recommended review strategy / 推荐审阅方式
+
+对于已经 SEALED（封存）的后期轮次，优先按：
+
+```text
+Current Truth（当前有效真相）
+→ Source Parity Pass（来源完整性检查）
+→ Full Adversarial Audit（整轮对抗性审计）
+→ Seal Record（封存记录）
+→ 需要追溯具体决策时再看 Workshop / Addendum（工作坊 / 加固补充）
+```
+
+Rounds 1–5（第一至第五轮）形成较早，文件格式没有后来统一，所以请按下面的历史入口读取。
+
+**Important（重要）:** 在阅读 Round 1–5 或任何旧 Brief / Roadmap / Handoff 前，先读 `PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`。旧文件中的 `locked / final / must / current` 只代表当时历史状态，不得覆盖后续 Current Truth（当前有效真相）和跨轮修正。
+
+---
+
+# 2. Project-level foundation / 项目级基础
+
+1. [`PROJECT-3-START-HERE.md`](../PROJECT-3-START-HERE.md)
+2. [`PROJECT-3-PLATFORM-RULE-EVOLVABILITY-CHANGE-ARCHITECTURE-V1.md`](PROJECT-3-PLATFORM-RULE-EVOLVABILITY-CHANGE-ARCHITECTURE-V1.md)
+3. [`PROJECT-3-RULE-EVOLVABILITY-CROSS-PROJECT-CONSISTENCY-PASS.md`](PROJECT-3-RULE-EVOLVABILITY-CROSS-PROJECT-CONSISTENCY-PASS.md)
+4. [`PROJECT-3-RULE-EVOLVABILITY-ADVERSARIAL-AUDIT.md`](PROJECT-3-RULE-EVOLVABILITY-ADVERSARIAL-AUDIT.md)
+5. [`PROJECT-3-RULE-EVOLVABILITY-SEAL-RECORD.md`](PROJECT-3-RULE-EVOLVABILITY-SEAL-RECORD.md)
+6. [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md) — regression test against previously superseded product directions（针对已淘汰方向的回归审计）; read this before continuing Round 12.
+7. [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md) — preferred deep pass across A1–A47 / F1–F10 + sealed Round 6–11（首选深度回归报告）.
+8. [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md) — controls the public-content / non-paywall Membership boundary; its older procedural next-step wording is superseded by the later Reading Room provenance / current baseline / sequence-reconciliation chain.
+9. [`PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`](PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md) — mandatory registry of old/rejected directions and current replacements（已淘汰方向与当前替代方案登记表）.
+10. [`INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md`](INK-EAST-ROUNDS-1-5-CURRENT-TRUTH-SAFETY-CONSOLIDATION-V1.md) — safe current-reading consolidation for Rounds 1–5（第一至第五轮安全当前整合）; use before historical Round 1–5 files.
+11. [`PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md`](PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md) — verified legacy-document quarantine and repair record（已验证旧文档隔离与修复记录）.
+12. [`ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md`](ROUNDS-1-5-SAFETY-CONSOLIDATION-SOURCE-PARITY-PASS.md) — PASS AFTER HARDENING / Round 1–5 material parity（第一至第五轮重大规则来源完整性通过）.
+13. [`PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md`](PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md) — **INVALIDATED / historical** after Reading Room provenance defect.
+14. [`ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`](ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md) — Reading Room legacy-origin audit.
+15. [`ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md`](ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V1.md) — reconstructed early product plan.
+16. [`PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md`](PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V1.md) — concept provenance/existence matrix.
+17. [`ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md`](ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md) — preferred reconstructed early product plan.
+18. [`ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md`](ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md) — PASS AFTER HARDENING / source provenance audit.
+19. [`PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md`](PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md) — surviving correct findings from invalidated pre-resume audit.
+20. [`PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md`](PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md) — expanded current product/page/module provenance matrix.
+21. [`PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md`](PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md) — PASS AFTER HARDENING / product-concept provenance audit.
+22. [`PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md`](PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md) — preferred current product-level handoff / confirmed surfaces + capabilities + deferred/open items.
+23. [`PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md`](PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md) — PASS AFTER HARDENING / zero material internal contradictions.
+24. [`PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md`](PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md) — Task 1 cross-source baseline reconciliation / PASS AFTER DOCUMENTATION REPAIR.
+25. [`PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md`](PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md) — Task 2 remaining-sequence provenance audit / no reordering required.
+
+---
+
+# 3. Rounds 1–2 — Content / Publishing + Work Recognition（第一至第二轮——内容出版 + 作品认可）
+
+Rounds 1–2 主要保存在最早的 Living Decision Record（持续决策记录）里，而不是独立 `ROUND-1-*` / `ROUND-2-*` 文件：
+
+- [`INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`](INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md) — 已确认 Round 1 / Round 2 决策与修正；
+- [`INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`](INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md) — 原始工作坊上下文与延后问题；
+- [`INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md`](INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md) — 后续跨轮修正 / 加固，冲突处以它为准。
+
+---
+
+# 4. Round 3 — Recognition Pipeline & Governance（第三轮——作品认可流程与治理）
+
+- [`INK-EAST-ROUND-3-RECOGNITION-PIPELINE-WORKSHOP.md`](INK-EAST-ROUND-3-RECOGNITION-PIPELINE-WORKSHOP.md)
+- [`INK-EAST-ROUND-3-RECOGNITION-GOVERNANCE-CONSOLIDATION.md`](INK-EAST-ROUND-3-RECOGNITION-GOVERNANCE-CONSOLIDATION.md)
+- [`INK-EAST-ROUND-3-SEAL-RECORD.md`](INK-EAST-ROUND-3-SEAL-RECORD.md)
+- [`INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md`](INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md) — later corrections（后续修正）
+
+---
+
+# 5. Round 4 — Contributor Identity（第四轮——贡献者身份）
+
+- [`INK-EAST-ROUND-4-CONTRIBUTOR-IDENTITY-CONSOLIDATION.md`](INK-EAST-ROUND-4-CONTRIBUTOR-IDENTITY-CONSOLIDATION.md)
+- [`INK-EAST-ROUND-4-SEAL-RECORD.md`](INK-EAST-ROUND-4-SEAL-RECORD.md)
+- [`INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md`](INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md) — later corrections（后续修正）
+
+---
+
+# 6. Round 5 — Account Trust / Capability / Integrity（第五轮——账户信任、能力与完整性）
+
+**Historical-format note（历史格式说明）:** Round 5 大量核心规则当时直接锁在 PR #53 Conversation（拉取请求对话）评论，而不是一个统一的 `ROUND-5-CURRENT-TRUTH.md` 文件。这是它以前难找的主要原因。
+
+Round 5A–H 的主要主题包括：
+
+- Account Trust / Account Weight architecture（账户信任 / 账户权重架构）;
+- multidimensional evidence（多维证据），拒绝一个全局 Trust Score（信任分）;
+- adaptive growth / decay / recovery（自适应增长 / 衰减 / 恢复）;
+- hidden internal mechanics + bounded user-facing transparency（内部机制隐藏 + 有边界的用户透明度）;
+- capability/risk separation and anti-tiering（能力 / 风险分离与反等级化）;
+- Sensitive Operations Guard（敏感操作保护闸）;
+- Multi-account / Sybil / Coordinated Abuse（多账户 / 女巫攻击 / 协同滥用）;
+- Account Integrity（账户完整性）.
+
+后续统一修正 / 审计入口：
+
+- [`INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-RECORD.md`](INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-RECORD.md)
+- [`INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-2.md`](INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-2.md)
+- [`INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-3.md`](INK-EAST-ROUNDS-1-6-CROSS-ROUND-AMENDMENT-PASS-3.md)
+- [`INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md`](INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md)
+
+不要因为缺少一个统一 `ROUND-5-CURRENT-TRUTH.md` 就误以为第五轮规则不存在。
+
+---
+
+# 7. Round 6 — Identity / Role / Permission（第六轮——身份 / 角色 / 权限）
+
+使用 **replacement-sealed chain（替换封存控制链）**，不要把旧 V1–V5 当当前真相：
+
+- [`INK-EAST-ROUND-6-CURRENT-TRUTH-R1-R40-V6.md`](INK-EAST-ROUND-6-CURRENT-TRUTH-R1-R40-V6.md)
+- [`ROUND-6-V6-SOURCE-PARITY-PASS.md`](ROUND-6-V6-SOURCE-PARITY-PASS.md)
+- [`ROUND-6-V6-FROZEN-COMPREHENSIVE-AUDIT.md`](ROUND-6-V6-FROZEN-COMPREHENSIVE-AUDIT.md)
+- [`INK-EAST-ROUND-6-REPLACEMENT-SEAL-RECORD.md`](INK-EAST-ROUND-6-REPLACEMENT-SEAL-RECORD.md)
+- [`INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md`](INK-EAST-ROUNDS-1-6-FINAL-CROSS-AUDIT.md)
+
+---
+
+# 8. Round 7 — Knowledge Graph & Provenance（第七轮——知识图谱与来源溯源）
+
+- [`INK-EAST-ROUND-7-CURRENT-TRUTH-V1.md`](INK-EAST-ROUND-7-CURRENT-TRUTH-V1.md)
+- [`ROUND-7-V1-SOURCE-PARITY-PASS.md`](ROUND-7-V1-SOURCE-PARITY-PASS.md)
+- [`ROUND-7-V1-ADVERSARIAL-AUDIT.md`](ROUND-7-V1-ADVERSARIAL-AUDIT.md)
+- [`INK-EAST-ROUND-7-SEAL-RECORD.md`](INK-EAST-ROUND-7-SEAL-RECORD.md)
+- Decision provenance（决策溯源）: `INK-EAST-ROUND-7-KNOWLEDGE-GRAPH-PROVENANCE-WORKSHOP-A.md` … `D.md`
+
+---
+
+# 9. Round 8 — Community & Discussion（第八轮——社区与讨论）
+
+- [`INK-EAST-ROUND-8-CURRENT-TRUTH-V1.md`](INK-EAST-ROUND-8-CURRENT-TRUTH-V1.md)
+- [`ROUND-8-V1-SOURCE-PARITY-PASS.md`](ROUND-8-V1-SOURCE-PARITY-PASS.md)
+- [`ROUND-8-CROSS-WORKSHOP-CONSISTENCY-COMPLETENESS-AUDIT.md`](ROUND-8-CROSS-WORKSHOP-CONSISTENCY-COMPLETENESS-AUDIT.md)
+- [`ROUND-8-V1-ADVERSARIAL-AUDIT.md`](ROUND-8-V1-ADVERSARIAL-AUDIT.md)
+- [`INK-EAST-ROUND-8-SEAL-RECORD.md`](INK-EAST-ROUND-8-SEAL-RECORD.md)
+- Decision provenance（决策溯源）: `INK-EAST-ROUND-8-COMMUNITY-DISCUSSION-WORKSHOP-A.md` … `G.md`
+
+---
+
+# 10. Round 9 — Reader Behavior & Interest Graph（第九轮——读者行为与兴趣图谱）
+
+- [`INK-EAST-ROUND-9-CURRENT-TRUTH-V1.md`](INK-EAST-ROUND-9-CURRENT-TRUTH-V1.md)
+- [`ROUND-9-V1-SOURCE-PARITY-PASS.md`](ROUND-9-V1-SOURCE-PARITY-PASS.md)
+- [`ROUND-9-CROSS-WORKSHOP-CONSISTENCY-COMPLETENESS-AUDIT.md`](ROUND-9-CROSS-WORKSHOP-CONSISTENCY-COMPLETENESS-AUDIT.md)
+- [`ROUND-9-V1-ADVERSARIAL-AUDIT.md`](ROUND-9-V1-ADVERSARIAL-AUDIT.md)
+- [`INK-EAST-ROUND-9-SEAL-RECORD.md`](INK-EAST-ROUND-9-SEAL-RECORD.md)
+- [`ROUND-9-PREEXISTING-INTEREST-DIRECTION-PROVENANCE-NOTE.md`](ROUND-9-PREEXISTING-INTEREST-DIRECTION-PROVENANCE-NOTE.md)
+- Decision provenance（决策溯源）: `INK-EAST-ROUND-9-READER-BEHAVIOR-INTEREST-GRAPH-WORKSHOP-A.md` … `F.md`
+
+---
+
+# 11. Round 10 — Discovery & Recommendation（第十轮——发现与推荐）
+
+**Recommended manual entry（推荐人工入口）:** [`ROUND-10-CHECKPOINT-READ-ME.md`](ROUND-10-CHECKPOINT-READ-ME.md)
+
+Controlling chain（控制链）:
+
+- [`INK-EAST-ROUND-10-CURRENT-TRUTH-V1.md`](INK-EAST-ROUND-10-CURRENT-TRUTH-V1.md) — 318 controlling rule slots（318 条控制规则）
+- [`ROUND-10-V1-SOURCE-PARITY-PASS.md`](ROUND-10-V1-SOURCE-PARITY-PASS.md)
+- [`ROUND-10-CROSS-WORKSHOP-CONSISTENCY-COMPLETENESS-AUDIT.md`](ROUND-10-CROSS-WORKSHOP-CONSISTENCY-COMPLETENESS-AUDIT.md)
+- [`ROUND-10-V1-ADVERSARIAL-AUDIT.md`](ROUND-10-V1-ADVERSARIAL-AUDIT.md)
+- [`INK-EAST-ROUND-10-SEAL-RECORD.md`](INK-EAST-ROUND-10-SEAL-RECORD.md)
+
+Decision provenance（决策溯源）:
+- `INK-EAST-ROUND-10-DISCOVERY-RECOMMENDATION-WORKSHOP-A.md` … `G.md`
+- `ROUND-10-WORKSHOP-*-ADVERSARIAL-AUDIT.md`
+- `ROUND-10-WORKSHOP-*-HARDENING-ADDENDUM.md`
+
+---
+
+# 12. Round 11 — Issues / Editorial Curation（第十一轮——议题 / 编辑策展）
+
+**Status: SEALED — PRODUCT ARCHITECTURE ONLY（已封存——仅产品架构）.**
+
+**Recommended manual entry（推荐人工入口）:** [`ROUND-11-CHECKPOINT-READ-ME.md`](ROUND-11-CHECKPOINT-READ-ME.md)
+
+Controlling chain（控制链）:
+
+- [`INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md`](INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md) — **273 controlling rule slots（273 条控制规则）**
+- [`ROUND-11-V1-SOURCE-PARITY-PASS.md`](ROUND-11-V1-SOURCE-PARITY-PASS.md) — PASS 273 / 273
+- [`ROUND-11-CROSS-WORKSHOP-CONSISTENCY-COMPLETENESS-AUDIT.md`](ROUND-11-CROSS-WORKSHOP-CONSISTENCY-COMPLETENESS-AUDIT.md) — PASS AFTER HARDENING（加固后通过）
+- [`ROUND-11-CROSS-WORKSHOP-HARDENING-ADDENDUM.md`](ROUND-11-CROSS-WORKSHOP-HARDENING-ADDENDUM.md)
+- [`ROUND-11-V1-ADVERSARIAL-AUDIT.md`](ROUND-11-V1-ADVERSARIAL-AUDIT.md) — 120 explicit failure modes（120 个明确失效场景） / PASS
+- [`INK-EAST-ROUND-11-SEAL-RECORD.md`](INK-EAST-ROUND-11-SEAL-RECORD.md)
+
+User-confirmed provisional directions（用户确认的暂定方向）:
+
+- [`ROUND-11-WORKSHOP-A-PUBLISHED-ISSUE-MUTABILITY-DECISION.md`](ROUND-11-WORKSHOP-A-PUBLISHED-ISSUE-MUTABILITY-DECISION.md) — Versioned publication with stable historical snapshot（版本化出版 + 稳定历史快照）
+- [`ROUND-11-WORKSHOP-C-CURRENT-VERSION-DEFAULT-DECISION.md`](ROUND-11-WORKSHOP-C-CURRENT-VERSION-DEFAULT-DECISION.md) — Latest-valid-first（默认最新有效版本）
+
+Detailed Workshop provenance（详细工作坊溯源）:
+
+### Workshop A（工作坊 A）
+- [`INK-EAST-ROUND-11-ISSUES-EDITORIAL-CURATION-WORKSHOP-A.md`](INK-EAST-ROUND-11-ISSUES-EDITORIAL-CURATION-WORKSHOP-A.md)
+- [`ROUND-11-WORKSHOP-A-ADVERSARIAL-AUDIT.md`](ROUND-11-WORKSHOP-A-ADVERSARIAL-AUDIT.md)
+- [`ROUND-11-WORKSHOP-A-HARDENING-ADDENDUM.md`](ROUND-11-WORKSHOP-A-HARDENING-ADDENDUM.md)
+
+### Workshop B（工作坊 B）
+- [`INK-EAST-ROUND-11-ISSUES-EDITORIAL-CURATION-WORKSHOP-B.md`](INK-EAST-ROUND-11-ISSUES-EDITORIAL-CURATION-WORKSHOP-B.md)
+- [`ROUND-11-WORKSHOP-B-ADVERSARIAL-AUDIT.md`](ROUND-11-WORKSHOP-B-ADVERSARIAL-AUDIT.md)
+- [`ROUND-11-WORKSHOP-B-HARDENING-ADDENDUM.md`](ROUND-11-WORKSHOP-B-HARDENING-ADDENDUM.md)
+
+### Workshop C（工作坊 C）
+- [`INK-EAST-ROUND-11-ISSUES-EDITORIAL-CURATION-WORKSHOP-C.md`](INK-EAST-ROUND-11-ISSUES-EDITORIAL-CURATION-WORKSHOP-C.md)
+- [`ROUND-11-WORKSHOP-C-ADVERSARIAL-AUDIT.md`](ROUND-11-WORKSHOP-C-ADVERSARIAL-AUDIT.md)
+- [`ROUND-11-WORKSHOP-C-HARDENING-ADDENDUM.md`](ROUND-11-WORKSHOP-C-HARDENING-ADDENDUM.md)
+
+### Workshop D（工作坊 D）
+- [`INK-EAST-ROUND-11-ISSUES-EDITORIAL-CURATION-WORKSHOP-D.md`](INK-EAST-ROUND-11-ISSUES-EDITORIAL-CURATION-WORKSHOP-D.md)
+- [`ROUND-11-WORKSHOP-D-ADVERSARIAL-AUDIT.md`](ROUND-11-WORKSHOP-D-ADVERSARIAL-AUDIT.md)
+- [`ROUND-11-WORKSHOP-D-HARDENING-ADDENDUM.md`](ROUND-11-WORKSHOP-D-HARDENING-ADDENDUM.md)
+
+### Workshop E（工作坊 E）
+- [`INK-EAST-ROUND-11-ISSUES-EDITORIAL-CURATION-WORKSHOP-E.md`](INK-EAST-ROUND-11-ISSUES-EDITORIAL-CURATION-WORKSHOP-E.md)
+- [`ROUND-11-WORKSHOP-E-ADVERSARIAL-AUDIT.md`](ROUND-11-WORKSHOP-E-ADVERSARIAL-AUDIT.md)
+- [`ROUND-11-WORKSHOP-E-HARDENING-ADDENDUM.md`](ROUND-11-WORKSHOP-E-HARDENING-ADDENDUM.md)
+
+---
+
+# 13. Round 12 — Open Core / Economic Commitment Signal / Membership Boundary（第十二轮——开放核心 / 经济承诺信号 / 会员边界） — FOUNDATION RESOLVED / MEMBERSHIP PRODUCT DEFINITION DEFERRED
+
+Round 12 Workshop A（第十二轮工作坊 A） was found to have drifted into the superseded paywall / VIP-content model. It is now **historical / non-controlling** for current Membership product design.
+
+Current controlling chain:
+
+- [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md) — public-content/non-paywall baseline; later open-core baseline supersedes its old paid-value-first assumptions
+- [`ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md`](ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md) — **CURRENT CONTROLLING ROUND-12 RESTART BASELINE**
+- [`ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md`](ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md) — **RESEARCH / NON-CONTROLLING**
+- [`ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md`](ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md) — **RESOLVED / HISTORICAL DECISION PROVENANCE**
+- [`ROUND-12-ECONOMIC-COMMITMENT-SIGNAL-MEMBERSHIP-DEFERRED-DECISION.md`](ROUND-12-ECONOMIC-COMMITMENT-SIGNAL-MEMBERSHIP-DEFERRED-DECISION.md) — **USER-CONFIRMED DECISION**
+- [`INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md`](INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md) — **CURRENT TRUTH / 20 rules**
+- [`ROUND-12-V1-SOURCE-PARITY-PASS.md`](ROUND-12-V1-SOURCE-PARITY-PASS.md) — **PASS 20 / 20**
+- [`ROUND-12-V1-ADVERSARIAL-AUDIT.md`](ROUND-12-V1-ADVERSARIAL-AUDIT.md) — **PASS / 50 explicit failure modes / zero unresolved material blockers**
+- [`ROUND-12-FOUNDATION-CHECKPOINT-MEMBERSHIP-REENTRY-SCHEDULE.md`](ROUND-12-FOUNDATION-CHECKPOINT-MEMBERSHIP-REENTRY-SCHEDULE.md) — **CURRENT STATUS / RE-ENTRY SCHEDULE**
+- [`INK-EAST-ROUND-12-SEAL-RECORD.md`](INK-EAST-ROUND-12-SEAL-RECORD.md) — **SUPERSEDED AS FULL-ROUND SEAL / HISTORICAL PROVENANCE**
+- [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md)
+- [`PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md`](PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md)
+- [`PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md`](PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md) — current map of still-valid findings from the invalidated pre-resume audit
+- [`PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md`](PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md) — **INVALIDATED / historical certificate only**
+
+Historical / non-controlling Workshop A chain:
+
+- [`INK-EAST-ROUND-12-MEMBERSHIP-READING-ROOM-WORKSHOP-A.md`](INK-EAST-ROUND-12-MEMBERSHIP-READING-ROOM-WORKSHOP-A.md)
+- [`ROUND-12-WORKSHOP-A-ADVERSARIAL-AUDIT.md`](ROUND-12-WORKSHOP-A-ADVERSARIAL-AUDIT.md)
+- [`ROUND-12-WORKSHOP-A-HARDENING-ADDENDUM.md`](ROUND-12-WORKSHOP-A-HARDENING-ADDENDUM.md)
+- [`ROUND-12-WORKSHOP-A-MEMBERSHIP-PACKAGING-DECISION-DEFERRED.md`](ROUND-12-WORKSHOP-A-MEMBERSHIP-PACKAGING-DECISION-DEFERRED.md) — current only for the fact that packaging remains undecided
+
+Current product-provenance / baseline chain:
+
+- [`ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md`](ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-V2.md)
+- [`ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md`](ROUNDS-1-5-PRODUCT-PLANNING-RECONSTRUCTION-SOURCE-AUDIT-V1.md)
+- [`PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md`](PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2.md)
+- [`PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md`](PROJECT-3-PRODUCT-CONCEPT-PROVENANCE-MATRIX-V2-AUDIT.md)
+- [`PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md`](PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1.md)
+- [`PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md`](PROJECT-3-CURRENT-PRODUCT-SURFACE-CAPABILITY-BASELINE-V1-AUDIT.md)
+- [`PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md`](PROJECT-3-CURRENT-PRODUCT-BASELINE-CROSS-SOURCE-RECONCILIATION-V1.md)
+- [`PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md`](PROJECT-3-ROUNDS-12-16-SEQUENCE-PROVENANCE-RECONCILIATION-V1.md)
+
+Current product baseline:
+
+- normal published platform content remains publicly readable;
+- Membership（会员） is not a paywall/content-unlock product;
+- old VIP Library / VIP Long Read / 30% paywall assumptions are historical provenance, not current Membership truth;
+- R12-A1…A50 do not automatically carry forward;
+- exact Membership benefit catalogue, Reading Room（阅读室）, participation/service benefits and packaging remain unresolved;
+- public Membership packaging remains deferred.
+
+**Current status:** Round 12 foundation is resolved, but standalone Membership product definition is DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED. Economic Commitment Signal is confirmed as an independent contextual anti-abuse/capability concept; Membership may be one future source but is not the mechanism itself. Re-entry Review #1 is mandatory immediately after Round 13; Re-entry Review #2 is mandatory before Round 15. Round 13 may proceed now.
+
+Historical / candidate Workshop B chain (not authority to resume product design):
+
+- [`ROUND-12-WORKSHOP-B-SUPERSESSION-REGRESSION-GATE.md`](ROUND-12-WORKSHOP-B-SUPERSESSION-REGRESSION-GATE.md) — PASS
+- [`INK-EAST-ROUND-12-MEMBERSHIP-READING-ROOM-WORKSHOP-B.md`](INK-EAST-ROUND-12-MEMBERSHIP-READING-ROOM-WORKSHOP-B.md) — 80-item candidate benefit catalogue / DISCUSSION DRAFT
+- [`ROUND-12-WORKSHOP-B-ADVERSARIAL-AUDIT.md`](ROUND-12-WORKSHOP-B-ADVERSARIAL-AUDIT.md) — PASS AFTER HARDENING / validates framing, not unchosen benefits
+- [`ROUND-12-WORKSHOP-B-HARDENING-ADDENDUM.md`](ROUND-12-WORKSHOP-B-HARDENING-ADDENDUM.md) — 10 controlling discussion safeguards
+- [`ROUND-12-WORKSHOP-B-CHOICES-B-C1-B-C6-DEFERRED.md`](ROUND-12-WORKSHOP-B-CHOICES-B-C1-B-C6-DEFERRED.md) — B-C1…B-C6 deferred until product discovery
+- [`ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md`](ROUND-12-READING-ROOM-CONCEPT-PROVENANCE-AUDIT.md) — confirms Reading Room（阅读室） was inherited from legacy planning and was never independently revalidated after the Product Architecture reset
+- [`ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM.md`](ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM.md) — **WITHDRAWN AS CURRENT DIRECTION / provenance only**
+- [`ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM-AUDIT.md`](ROUND-12-MEMBERSHIP-VALUE-DISCOVERY-STEP-1-READING-ROOM-AUDIT.md) — historical audit of the hypothetical V0, not product-existence validation
+- [`ROUND-12-MEMBERSHIP-PURPOSE-ROLE-DISCOVERY-STEP-1-FREE-BASELINE-GAP-MAP.md`](ROUND-12-MEMBERSHIP-PURPOSE-ROLE-DISCOVERY-STEP-1-FREE-BASELINE-GAP-MAP.md) — **SUPERSEDED / NON-CONTROLLING**; rejected because it assumed Membership must first justify itself through a paid value bundle
+
+B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVED**.
+
+---
+
+# 14. Round 13（第十三轮）— Services / Monetization / Spatial Flow Relationship（服务 / 商业化 / Spatial Flow 关系） — FOUNDATION CORRECTED / CULTURAL RECOVERY CONFIRMED（基础已纠正 / 文化寻回已确认）
+
+- [`ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md`](ROUND-13-FOUNDATION-CORRECTION-INDEPENDENT-PRODUCTS-LEGACY-SERVICES-V2.md) — **CURRENT CONTROLLING FOUNDATION CORRECTION（当前控制基础纠正）**.
+- [`COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md`](COMMISSION-TARGETED-PROVENANCE-NECESSITY-REVIEW-V1.md) — **RESOLVED（已解决）**; Commission（约稿）is removed from Current Product Architecture（当前产品架构） and retained only as historical provenance（历史溯源）.
+- [`ROUND-13-OPEN-CULTURAL-RECOVERY-FOUNDATION-V2.md`](ROUND-13-OPEN-CULTURAL-RECOVERY-FOUNDATION-V2.md) — **USER-CONFIRMED CURRENT DIRECTION（用户已确认当前方向）**; defines Open Cultural Recovery（开放文化寻回）.
+- [`ROUND-13-CULTURAL-RECOVERY-CROSS-ROUND-RECONCILIATION-V1.md`](ROUND-13-CULTURAL-RECOVERY-CROSS-ROUND-RECONCILIATION-V1.md) — **PASS WITH TARGETED AMENDMENTS（定向修订后通过）**; reconnects the new capability with Round 4 / 7 / 11（第四 / 七 / 十一轮）.
+- [`ROUND-4-CULTURAL-CONTRIBUTION-ROLE-AMENDMENT-V1.md`](ROUND-4-CULTURAL-CONTRIBUTION-ROLE-AMENDMENT-V1.md) — Recovery Participation / Attribution（寻回参与 / 归因） != Contributor Qualification（贡献者资格）; Contributor（贡献者）retains its original Round 4（第四轮）qualified-identity meaning.
+- [`ROUND-7-CULTURAL-RECOVERY-PROVENANCE-EXTENSION-V1.md`](ROUND-7-CULTURAL-RECOVERY-PROVENANCE-EXTENSION-V1.md) — Recovery Provenance（寻回过程溯源）, custody / deposit / donation / institutional handoff（保管 / 寄存 / 捐赠 / 机构移交）extension.
+- [`ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md`](ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md) — Commission（约稿）removed from current terminology; cultural recovery + Directed Request / Collaboration（文化寻回 + 定向求助 / 合作）become the current acquisition / recovery model.
+- [`ROUND-13-CULTURAL-RECOVERY-HARDENING-ADDENDUM-V1.md`](ROUND-13-CULTURAL-RECOVERY-HARDENING-ADDENDUM-V1.md) — safety / rights / custody hardening（安全 / 权利 / 保管加固）.
+- [`ROUND-13-CULTURAL-RECOVERY-ADVERSARIAL-AUDIT-V1.md`](ROUND-13-CULTURAL-RECOVERY-ADVERSARIAL-AUDIT-V1.md) — **PASS AFTER HARDENING（加固后通过） / 50 explicit failure modes（50 个明确失效场景） / 0 unresolved material blockers（0 个未解决重大阻塞）**.
+- [`ROUND-13-PRE-RELATIONSHIP-CONCEPT-INTEGRITY-AUDIT-V1.md`](ROUND-13-PRE-RELATIONSHIP-CONCEPT-INTEGRITY-AUDIT-V1.md) — **PASS AFTER DOCUMENTATION REPAIR（文档修复后通过）**; 0 material conceptual blockers（0 个重大概念阻塞）.
+- [`ROUND-13-CONTRIBUTOR-VS-CULTURAL-RECOVERY-TERMINOLOGY-LOCK-V1.md`](ROUND-13-CONTRIBUTOR-VS-CULTURAL-RECOVERY-TERMINOLOGY-LOCK-V1.md) — **CONTROLLING TERMINOLOGY LOCK（控制性术语锁定）**; Contributor（贡献者）remains the Round 4 qualification identity, while cultural recovery uses Recovery Participant / Role / Attribution（寻回参与者 / 角色 / 归因）.
+- [`ROUND-13-INK-EAST-SPATIAL-FLOW-RELATIONSHIP-DISCUSSION-V1.md`](ROUND-13-INK-EAST-SPATIAL-FLOW-RELATIONSHIP-DISCUSSION-V1.md) — relationship discussion framework（关系讨论框架）.
+- [`ROUND-13-RELATIONSHIP-Q1-WHY-RELATIONSHIP-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-Q1-WHY-RELATIONSHIP-DISCUSSION-V1.md) — historical Q1 discussion（历史 Q1 讨论）.
+- [`ROUND-13-RELATIONSHIP-Q1-RESOLUTION-V1.md`](ROUND-13-RELATIONSHIP-Q1-RESOLUTION-V1.md) — **Q1 RESOLVED（Q1 已解决）**; relationship value is bidirectional, Spatial Flow（空间流）speaks as itself on Ink & East（墨与东方）, and special relationship does not equal platform privilege（特殊关系不等于平台特权）.
+- [`ROUND-13-RELATIONSHIP-Q2-SPECIAL-RELATIONSHIP-DEPTH-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-Q2-SPECIAL-RELATIONSHIP-DEPTH-DISCUSSION-V1.md) — historical Q2 discussion（历史 Q2 讨论）.
+- [`ROUND-13-RELATIONSHIP-Q2-RESOLUTION-STANDING-STRATEGIC-RELATIONSHIP-V1.md`](ROUND-13-RELATIONSHIP-Q2-RESOLUTION-STANDING-STRATEGIC-RELATIONSHIP-V1.md) — **Q2 RESOLVED（Q2 已解决）**; Standing Strategic Relationship（持续战略关系）confirmed.
+- [`ROUND-13-RELATIONSHIP-Q3-STANDING-RELATIONSHIP-SCOPE-BOUNDARIES-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-Q3-STANDING-RELATIONSHIP-SCOPE-BOUNDARIES-DISCUSSION-V1.md) — historical Q3 discussion（历史 Q3 讨论）.
+- [`ROUND-13-RELATIONSHIP-Q3-RESOLUTION-SCOPE-BOUNDARIES-V1.md`](ROUND-13-RELATIONSHIP-Q3-RESOLUTION-SCOPE-BOUNDARIES-V1.md) — **Q3 RESOLVED（Q3 已解决）**; persistent cooperation + explicit crossover + independent authority（合作长期存在 + 跨界显式 + 权威独立）.
+- [`ROUND-13-RELATIONSHIP-Q4-DEFAULT-EXPLICIT-NONTRANSFERABLE-BOUNDARIES-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-Q4-DEFAULT-EXPLICIT-NONTRANSFERABLE-BOUNDARIES-DISCUSSION-V1.md) — historical Q4 discussion（历史 Q4 讨论）.
+- [`ROUND-13-RELATIONSHIP-Q4-RESOLUTION-PREFERRED-PARTNER-CROSSREF-HARD-BOUNDARIES-V1.md`](ROUND-13-RELATIONSHIP-Q4-RESOLUTION-PREFERRED-PARTNER-CROSSREF-HARD-BOUNDARIES-V1.md) — **Q4 RESOLVED（Q4 已解决）**.
+- [`ROUND-13-RELATIONSHIP-PUBLIC-VISIBILITY-DEFERRED-V1.md`](ROUND-13-RELATIONSHIP-PUBLIC-VISIBILITY-DEFERRED-V1.md) — general public visibility（一般公开可见性） **DEFERRED（暂缓）**.
+- [`ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-COMMERCIAL-CONFLICT-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-COMMERCIAL-CONFLICT-DISCUSSION-V1.md) — superseded discussion provenance（已取代讨论溯源）; old conflict framing was too broad（旧“冲突”框架过宽）.
+- [`ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-RELATIONSHIP-INTEGRITY-RESOLUTION-V1.md`](ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-RELATIONSHIP-INTEGRITY-RESOLUTION-V1.md) — **RESOLVED（已解决）**; editorial independence / role separation / attribution integrity / platform neutrality（编辑独立性 / 角色分离 / 归因完整性 / 平台中立性）confirmed.
+- [`ROUND-13-RELATIONSHIP-COOPERATION-MODES-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-COOPERATION-MODES-DISCUSSION-V1.md) — supporting detailed inventory（支持性详细清单）.
+- [`ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md) — resolved discussion provenance（已解决讨论溯源）.
+- [`ROUND-13-RELATIONSHIP-COOPERATION-MODES-RESOLUTION-V1.md`](ROUND-13-RELATIONSHIP-COOPERATION-MODES-RESOLUTION-V1.md) — **RESOLVED（已解决）**; three-layer cooperation model（三层合作模型） confirmed.
+- [`ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md`](ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md) — **CURRENT CONTROLLING RELATIONSHIP BASELINE（当前控制关系基线）**.
+- [`ROUND-13-REMAINING-SERVICES-MONETIZATION-CLEAN-RESTART-DISCUSSION-V1.md`](ROUND-13-REMAINING-SERVICES-MONETIZATION-CLEAN-RESTART-DISCUSSION-V1.md) — **CURRENT ACTIVE ROUND-13 SUBJECT / USER INPUT REQUIRED（第十三轮当前主线 / 需要用户输入）**.
+- [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — superseded original scope（已取代原始范围）.
+- [`ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`](ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md) — superseded discussion provenance（已取代讨论溯源）.
+- [`ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md`](ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md) — superseded discussion provenance（已取代讨论溯源）.
+
+Current controlling facts（当前控制事实）:
+
+- Ink & East（墨与东方）and Spatial Flow（空间流）are **independent products/projects（独立产品 / 项目）**, not one Shared Platform（共享平台）.
+- They share a development/planning context（开发 / 规划上下文）and now have a confirmed Standing Strategic Relationship（持续战略关系）; Spatial Flow（空间流）is a non-exclusive Preferred Strategic Partner（优先战略合作伙伴）.
+- The strategic/product relationship is **RESOLVED AT CURRENT PRODUCT-ARCHITECTURE DEPTH（当前产品架构深度已解决）**; public brand/legal wording and selected infrastructure axes remain deferred（暂缓）.
+- The **ACTIVE ROUND-13 SUBJECT（第十三轮当前主线）** is now remaining Ink & East（墨与东方） Services / Monetization（服务 / 商业化）.
+- Custom Reading（定制解读）is **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**.
+- Custom Ebook Studio（定制电子书工作室）is **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**.
+- Standalone recurring Membership（独立持续订阅会员）remains deferred（暂缓）and does not control Round 13（第十三轮）.
+
+Correct sequence（正确顺序）:
+
+```text
+Open Cultural Recovery reconciliation（开放文化寻回跨轮复核）
+→ Ink & East ↔ Spatial Flow relationship discussion（墨与东方 ↔ 空间流关系完整讨论）
+→ remaining Services / Monetization architecture（剩余服务 / 商业化架构）
+→ Membership Re-entry Review #1（会员重启检查 #1）
+```
+
+---
+
+# 15. PR #53 final-review rule / PR #53 最终审阅规则
+
+After the complete Product Architecture sequence **1–16** is finished, PR #53 must receive a new **Full Comprehensive Adversarial Audit（全量综合对抗性审计）** across the entire architecture before final implementation authorization.
+
+PR #53 remains documentation-only, Draft / Open / Unmerged（草稿 / 开放 / 未合并） until explicitly authorized otherwise.
