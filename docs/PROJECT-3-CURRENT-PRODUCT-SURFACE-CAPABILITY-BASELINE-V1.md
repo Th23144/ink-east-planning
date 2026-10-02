@@ -248,13 +248,21 @@ user-facing governance workflows exist as confirmed capabilities; Report is an i
 
 Exact cross-platform governance UX and policy remain for the dedicated governance round.
 
-## C15 — Editorial submission / open call / Commission（约稿） intake（编辑投稿 / 公开征稿 / 约稿入口）
+## C15 — Editorial submission / open call / collaboration intake（编辑投稿 / 公开征集 / 合作入口）
 Meaning（含义）:
-Round 11（第十一轮）currently records multiple editorial acquisition routes（多路径编辑获取方式）including Submission（投稿）, Open Call（公开征稿）, Commission（约稿）, Reader Letter / Question（读者来信 / 提问）and Collaboration（合作）.
+Ink & East（墨与东方）supports multiple editorial acquisition routes（多路径编辑获取方式）including Submission（投稿）, Open Call（公开征集）, Reader Letter / Question（读者来信 / 提问）, Collaboration（合作）and, where actually useful, narrow Editorial Invitation / Commissioned Article（编辑邀请 / 约稿文章）.
 
-Commission（约稿）is now under explicit Targeted Revalidation（定向重新验证）because the user does not remember it as a standalone decision and requested a fresh necessity/boundary discussion. Until that review closes, downstream work must not treat Commission（约稿）as newly reconfirmed product truth.
+Commission（约稿）is no longer the umbrella concept.
 
 No single standalone page（独立页面）or universal workflow（统一工作流）is implied.
+
+## C16 — Open Cultural Contribution & Recovery（开放文化贡献与寻回）
+Meaning（含义）:
+Ink & East（墨与东方）has a confirmed capability family（已确认能力族）for public requests, source leads, knowledge/material contributions, deposit/donation distinction, provenance/rights/sensitivity review, recovery cases, contribution attribution, digitization/restoration/research linkage and institutional referral/handoff（公开求助、资料线索、知识 / 资料贡献、寄存 / 捐赠区分、来源 / 权利 / 敏感性复核、寻回案件、贡献署名、数字化 / 修复 / 研究关联、机构转介 / 移交）.
+
+Final public container / page / route（最终前台容器 / 页面 / 路由）remains open.
+
+Contribution Role（贡献角色）is separate from Contributor Qualification（贡献者资格）.
 
 ---
 
