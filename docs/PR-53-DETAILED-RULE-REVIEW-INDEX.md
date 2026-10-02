@@ -287,7 +287,8 @@ B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVE
 
 # 14. Round 13 — Services / Monetization / Spatial Flow Relationship（第十三轮——服务 / 商业化 / Spatial Flow 关系） — SCOPE OPEN
 
-- [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — current restart scope; product decisions not yet made.
+- [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — current restart scope.
+- [`ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`](ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md) — **CURRENT DISCUSSION / USER REVIEW REQUIRED**; commercial-role inventory and Ink & East ↔ Spatial Flow domain-relationship choice.
 - Custom Reading / Custom Ebook remain LEGACY-INHERITED / REVALIDATION PENDING.
 - Standalone recurring Membership remains deferred and does not control Round 13.
 - First genuine product discussion: identify what parts of Project 3 are naturally commercial and what must remain structurally independent from monetization.
