@@ -105,16 +105,16 @@ Round 8 and later architecture confirm user-facing governance workflows. Report 
 **Action:** added as a confirmed capability; the later governance round still owns unresolved platform-wide synthesis.
 
 ### F5 — Editorial submission / Open Call / collaboration intake（编辑投稿 / 公开征集 / 合作入口）
-Round 11（第十一轮）records multiple Editorial Acquisition Routes（编辑获取路径）beyond Reader Letter（读者来信）alone. Round 13（第十三轮）has since resolved the Commission（约稿）review: Commissioned Article / Editorial Invitation（约稿文章 / 编辑邀请）may remain as a narrow optional route, but Commission（约稿）is not the umbrella acquisition concept.
+Round 11（第十一轮）records multiple Editorial Acquisition Routes（编辑获取路径）beyond Reader Letter（读者来信）alone. Round 13（第十三轮）has since resolved the Commission（约稿）review: Commission（约稿）is removed from Current Product Architecture（当前产品架构）and retained only as historical provenance（历史溯源）. Direct contact is represented by the actual action, such as Directed Request（定向求助）or Research / Editorial Collaboration（研究 / 编辑合作）.
 
 **Classification（分类）:** DOCUMENTATION REPAIR + LATER TARGETED AMENDMENT（文档修复 + 后续定向修订）.  
-**Action（动作）:** preserve Submission（投稿）/ Open Call（公开征集）/ Collaboration（合作）capability; read narrow Commission（约稿）through the Round 11 cultural-recovery amendment（第十一轮文化寻回修订）; no single standalone page（独立页面）is implied.
+**Action（动作）:** preserve Submission（投稿）/ Open Call（公开征集）/ Directed Request（定向求助）/ Collaboration（合作）capability; treat Commission（约稿）as historical terminology only（仅历史术语）; no single standalone page（独立页面）is implied.
 
 ### F7 — Open Cultural Contribution & Recovery（开放文化贡献与寻回）
 Round 13（第十三轮）user confirmation establishes a new core cultural-recovery capability family（核心文化寻回能力族）covering public requests, source/knowledge/material contributions, recovery cases, contribution attribution, deposit/donation distinction, digitization/restoration/research linkage and institutional referral/handoff（公开求助、资料 / 知识 / 材料贡献、寻回案件、贡献署名、寄存 / 捐赠区分、数字化 / 修复 / 研究关联、机构转介 / 移交）.
 
 **Classification（分类）:** NEW USER-CONFIRMED PRODUCT CAPABILITY + CROSS-ROUND AMENDMENT（新增用户确认产品能力 + 跨轮修订）.  
-**Action（动作）:** add as confirmed capability family（已确认能力族）; keep final page/container/route（页面 / 容器 / 路由）deferred; preserve Contribution Role（贡献角色） != Contributor Qualification（贡献者资格） and Physical Original（实体原件） != Digital Surrogate（数字替代物）.
+**Action（动作）:** add as confirmed capability family（已确认能力族）; keep final page/container/route（页面 / 容器 / 路由）deferred; preserve Recovery Participation / Attribution（寻回参与 / 归因） != Contributor Qualification（贡献者资格） and Physical Original（实体原件） != Digital Surrogate（数字替代物）.
 
 ### F6 — Platform-wide Governance / Moderation / Corrections consolidation
 The domain already exists across Rounds 3 / 6 / 8 / 11, but the remaining dedicated later round is still legitimate.
