@@ -152,13 +152,17 @@ A. Foundation correction（基础纠正）
    ✓ Custom Ebook Studio（定制电子书工作室）淘汰
 
 B. Commission provenance & necessity review（约稿来源与必要性复核）
+   ✓ 已解决：Commission（约稿）不再作为总概念
+
+C. Open Cultural Contribution & Recovery cross-round reconciliation（开放文化贡献与寻回跨轮复核）
+   ✓ 已完成：Round 4 / Round 7 / Round 11（第四 / 七 / 十一轮）定向接入与对抗性审计通过
+
+D. Ink & East ↔ Spatial Flow relationship discussion（墨与东方 ↔ 空间流关系完整讨论）
    ← 当前下一步
 
-C. Ink & East ↔ Spatial Flow relationship discussion（墨与东方 ↔ 空间流关系完整讨论）
+E. Remaining Services / Monetization architecture（剩余服务 / 商业化架构）
 
-D. Remaining Services / Monetization architecture（剩余服务 / 商业化架构）
-
-E. Membership Re-entry Review #1（会员重启检查 #1）
+F. Membership Re-entry Review #1（会员重启检查 #1）
 ```
 
 ---
@@ -176,6 +180,4 @@ E. Membership Re-entry Review #1（会员重启检查 #1）
 
 ## 8. Current stop（当前停止点）
 
-先完成 Commission（约稿）来源 / 必要性复核。
-
-在用户明确说可以开始关系讨论之前，不进入 Ink & East ↔ Spatial Flow Relationship（墨与东方 ↔ 空间流关系）的正式方案设计。
+Commission（约稿）复核与 Open Cultural Contribution & Recovery（开放文化贡献与寻回）跨轮复核均已完成。当前下一步进入 Ink & East ↔ Spatial Flow Relationship（墨与东方 ↔ 空间流关系）的正式完整讨论；不得预设 Shared Platform（共享平台）或共享账户 / 数据 / 支付结构。
