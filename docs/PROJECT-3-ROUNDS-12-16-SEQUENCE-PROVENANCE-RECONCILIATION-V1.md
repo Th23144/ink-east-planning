@@ -282,13 +282,15 @@ Round 12 product design remains **PAUSED** until that restart question is review
 
 # 10. Post-reconciliation Round 12 resolution / 复核后的第十二轮最终落点
 
-After this sequence audit, Round 12 was subsequently resolved and sealed through:
+After this sequence audit, the Round 12 **foundation** was subsequently resolved and validated through:
 
 - `ROUND-12-ECONOMIC-COMMITMENT-SIGNAL-MEMBERSHIP-DEFERRED-DECISION.md`;
 - `INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md`;
 - `ROUND-12-V1-SOURCE-PARITY-PASS.md`;
 - `ROUND-12-V1-ADVERSARIAL-AUDIT.md`;
-- `INK-EAST-ROUND-12-SEAL-RECORD.md`.
+- `ROUND-12-FOUNDATION-CHECKPOINT-MEMBERSHIP-REENTRY-SCHEDULE.md`.
+
+The earlier `INK-EAST-ROUND-12-SEAL-RECORD.md` is superseded as a full-round seal.
 
 The resulting architecture is:
 
@@ -296,6 +298,9 @@ The resulting architecture is:
 - Membership may be one future signal source, but is not the mechanism itself;
 - standalone recurring Membership is DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED;
 - Reading Room remains unresolved/not required;
+- Round 12 is **not fully closed**;
+- Membership Re-entry Review #1 occurs immediately after Round 13;
+- Membership Re-entry Review #2 is mandatory before Round 15;
 - Round 13 may proceed without presuming a Membership bundle.
 
 This later resolution does not alter the 12–16 order established by this audit.
