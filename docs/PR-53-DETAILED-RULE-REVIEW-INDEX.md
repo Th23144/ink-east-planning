@@ -288,7 +288,8 @@ B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVE
 # 14. Round 13 — Services / Monetization / Spatial Flow Relationship（第十三轮——服务 / 商业化 / Spatial Flow 关系） — SCOPE OPEN
 
 - [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — current restart scope.
-- [`ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`](ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md) — **CURRENT DISCUSSION / USER REVIEW REQUIRED**; commercial-role inventory and Ink & East ↔ Spatial Flow domain-relationship choice.
+- [`ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`](ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md) — earlier Block 1（模块 1）discussion; retained as provenance（溯源）.
+- [`ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md`](ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md) — **CURRENT COMPLETE DISCUSSION / USER REVIEW REQUIRED（当前完整讨论 / 需要用户审阅）**; covers commercial-role inventory（商业角色盘点）, product-domain relationship（产品域关系）, service revalidation（服务重新验证）, commercial firewall（商业信号防火墙）, transaction/economics sequence（交易 / 经济模型顺序）, and Membership Re-entry Review #1（会员重启检查 #1）.
 - Custom Reading / Custom Ebook remain LEGACY-INHERITED / REVALIDATION PENDING.
 - Standalone recurring Membership remains deferred and does not control Round 13.
 - First genuine product discussion: identify what parts of Project 3 are naturally commercial and what must remain structurally independent from monetization.
