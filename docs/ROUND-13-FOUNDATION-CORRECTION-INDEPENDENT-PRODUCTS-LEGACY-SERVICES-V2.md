@@ -152,7 +152,7 @@ A. Foundation correction（基础纠正）
    ✓ Custom Ebook Studio（定制电子书工作室）淘汰
 
 B. Commission provenance & necessity review（约稿来源与必要性复核）
-   ✓ 已解决：Commission（约稿）不再作为总概念
+   ✓ 已解决：Commission（约稿）从当前产品架构移除，仅保留历史溯源
 
 C. Open Cultural Contribution & Recovery cross-round reconciliation（开放文化贡献与寻回跨轮复核）
    ✓ 已完成：Round 4 / Round 7 / Round 11（第四 / 七 / 十一轮）定向接入与对抗性审计通过
