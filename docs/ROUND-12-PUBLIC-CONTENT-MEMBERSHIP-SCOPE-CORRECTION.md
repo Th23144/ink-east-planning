@@ -3,7 +3,7 @@
 > **Status:** CORRECTION / WORKSHOP A REOPENED（真正修正 / 工作坊 A 重新打开）  
 > **Scope:** Public Content Baseline + Membership Value Proposition（公开内容基线 + 会员价值主张）  
 > **Implementation:** NOT AUTHORIZED（未授权实现）  
-> **Precedence:** This correction controls over Round 12 Workshop A wherever the earlier draft assumed paywalled/member-only platform content.
+> **Precedence:** This correction controls over Round 12 Workshop A for the public-content / non-paywall boundary. The later ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md controls where this file previously assumed that Membership must be justified through a bundle of supporter/participation/workspace/scarce-service benefits.
 
 ---
 
@@ -16,7 +16,7 @@ The current product direction is different:
 - published platform content is not being designed as a paywall product;
 - Membership（会员） is not a mechanism for selling access to the platform's knowledge/content corpus;
 - the old VIP Library / 30% paywall / unlock-content architecture is historical product provenance, not a controlling requirement;
-- Membership must first define **what relationship, participation, workspace/tooling and scarce-service value it creates when content itself remains public**.
+- Membership must **not** begin by manufacturing a paid benefit bundle. The current restart baseline is Open Core + contextual economic friction: ordinary core product use remains open, while payment may reduce selected zero-cost/Sybil friction for specific capabilities where that mechanism is genuinely relevant.
 
 This is a product-architecture correction, not an implementation change.
 
@@ -54,21 +54,20 @@ Historical preview/brief language that used those patterns is superseded for the
 
 ---
 
-## R12-COR3 — Membership monetizes relationship and scarce value, not information availability / 会员售卖关系与稀缺价值，不售卖信息可见性
+## R12-COR3 — Open Core; do not manufacture paid value / 核心开放；不为了会员制造付费价值
 
-**HARD PRODUCT DIRECTION（产品级硬方向）.**
+**SUPERSEDED AND REPLACED BY LATER CONTROLLING BASELINE（已被后续控制基线取代）.**
 
-Membership value must be designed from non-paywall dimensions such as:
+The earlier wording in this section incorrectly assumed that Membership must be designed around supporter relationship, participation, workspace/tooling, scarce-service courtesy or other paid-value dimensions.
 
-1. Supporter Relationship（支持者关系）;
-2. Participation Capacity（参与容量 / 参与机会）;
-3. Reading Room Workspace / Tools（阅读室工作空间 / 工具）;
-4. Editorial / Community Experiences（编辑 / 社区体验）;
-5. Scarce Service Courtesy / Priority（稀缺服务礼遇 / 优先级）;
-6. selected Account Capability Acceleration（特定账户能力加速） where anti-abuse logic justifies it;
-7. future legitimate non-authority benefits.
+Current controlling rule:
 
-The exact benefit catalogue is NOT yet decided. These are design dimensions, not automatically approved benefits.
+- ordinary core product capability remains available without Membership, subject to proportionate abuse/safety/resource controls;
+- Membership/payment may reduce selected zero-cost / Sybil friction where payment genuinely changes the risk economics;
+- this is capability/context-specific, not a global trust or prestige effect;
+- no supporter, workspace, participation, service or other benefit category is required merely because Membership exists.
+
+See: ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md.
 
 ---
 
@@ -84,30 +83,25 @@ Basic account, reading, saving, note-taking, participation or public-reading fun
 
 ---
 
-## R12-COR5 — Participation benefits must be concrete and bounded / 参与权益必须具体且有边界
+## R12-COR5 — Ordinary participation remains open; paid acceleration requires an independent risk/cost case / 普通参与保持开放；付费加速必须有独立风险或成本依据
 
-Membership may potentially create additional participation opportunities or capacity, but “participation” must be decomposed before packaging.
+Ordinary Community participation must not become member-only merely to create a Membership benefit.
 
-Questions to define later include:
+If any participation or publishing capacity differs for a paid account, the difference must be justified by the specific constraint being mitigated, such as genuine zero-cost/Sybil abuse or a separately established real resource cost.
 
-- which ordinary Community actions remain available to non-members;
-- whether members receive additional submission/Ask capacity;
-- whether members can join limited-capacity salons/editorial sessions;
-- whether members can express non-binding editorial preferences;
-- whether member spaces exist and how they relate to the unified Community System;
-- what is a convenience/capacity benefit versus governance power.
+The currently source-confirmed example is selected new/low-trust **publishing capacity**. No general member entitlement to more editorial attention, governance, nomination, Recognition or recommendation is implied.
 
 Payment must not purchase Work Recognition（作品认可）, Reviewer Trust（评审信任）, Formal Nomination/Governance Authority（正式推举 / 治理权力） or epistemic authority.
 
 ---
 
-## R12-COR6 — Service benefits may use courtesy/priority, not forced Membership dependency / 服务权益可以有礼遇或优先，但不强制绑会员
+## R12-COR6 — Service relationship is not a required Membership benefit / 服务关系不是会员的必选权益
 
-Custom Reading（定制解读）, Custom Ebook Studio（定制电子书工作室） and future scarce services remain separate commercial products unless later explicitly changed.
+Custom Reading（定制解读）, Custom Ebook Studio（定制电子书工作室） and other legacy service concepts require their own Round 13 revalidation.
 
-Membership may later provide a bounded courtesy, priority window, included allowance, booking access or other benefit if economically justified, but the service must not be redefined as Membership merely to create a bundle.
+Round 12 must not use service courtesy, priority, allowance, booking access or discounts merely to create a Membership bundle.
 
-The previously established direction that Custom Reading can be used by guest/free/member users and should not be strongly bound to Membership remains compatible with this correction.
+If a future service has a real commercial relationship with Membership, that relationship must be justified after the service itself is revalidated. It is not a current Membership requirement.
 
 ---
 
@@ -119,24 +113,20 @@ It must not manufacture Behavioral Trust（行为信任）, Contributor Qualific
 
 ---
 
-## R12-COR8 — Tier count and pricing come after the benefit system / 会员档位与价格必须在权益系统之后决定
+## R12-COR8 — Packaging comes only after Membership existence/role is justified / 必须先证明会员产品的存在与角色，再谈包装
 
-The previous A/B/C packaging question is still legitimately unresolved, but it was asked too early.
+The previous A/B/C packaging question is still unresolved and remains too early.
 
-Correct sequence:
+Current sequence:
 
-```text
-Public-content baseline（公开内容基线）
-→ Membership value proposition（会员价值主张）
-→ concrete benefit catalogue（具体权益清单）
-→ Reading Room definition（阅读室定义）
-→ participation/service/capability boundaries（参与 / 服务 / 能力边界）
-→ benefit economics / operational cost（权益经济性 / 运营成本）
-→ only then: one tier / two tiers / other packaging（最后才决定一档 / 双档 / 其他包装）
-→ pricing / billing cadence（价格 / 计费周期）
-```
+Open Core（核心开放）
+→ identify real anti-abuse / cost / capacity constraints（识别真实反滥用 / 成本 / 容量约束）
+→ decide where payment legitimately changes a specific constraint（判断付费在哪些具体约束上有效）
+→ separate that mechanism from trust / authority / recommendation（与信任 / 权威 / 推荐彻底分离）
+→ decide whether a distinct recurring Membership product is needed at all（判断是否真的需要独立的持续会员产品）
+→ only then consider optional benefits / packaging / tier / price（最后才考虑可选权益 / 包装 / 档位 / 价格）
 
-No plan count is selected by this correction.
+No plan count, recurring-subscription requirement or benefit catalogue is selected by this correction.
 
 ---
 
@@ -168,16 +158,15 @@ At minimum, the following Workshop A directions are explicitly superseded as Mem
 
 ## Still unresolved / 仍未决定
 
-- exact Membership benefit catalogue（会员权益清单）;
-- exact Reading Room（阅读室） product definition;
-- which participation opportunities are ordinary/free vs member-enhanced;
-- whether any member-only social/experience space should exist;
-- service courtesy / priority / allowance design;
-- capability acceleration boundaries beyond already established anti-abuse constraints;
-- one tier / two tiers / multiple plans;
-- names, prices, monthly/annual cadence, trials, gifts and packaging.
+- whether Membership needs a distinct recurring product role beyond contextual economic-friction signaling;
+- whether recurring subscription is even the correct commercial form;
+- exact Reading Room（阅读室） product existence/definition;
+- capability acceleration boundaries beyond the already established publishing/anti-abuse family;
+- any future real-cost or optional enhancement and whether it belongs to Membership at all;
+- one tier / two tiers / multiple plans, if a recurring Membership product survives;
+- names, prices, monthly/annual cadence, trials, gifts and packaging, if applicable.
 
-The only controlling Round 12 rules at this checkpoint are the public-content baseline, the non-paywall Membership boundary, the separation from purchased authority/governance, and the process rule that value/benefits must be defined before packaging/pricing.
+The controlling Round 12 rules at this checkpoint are the public-content baseline, Open Core, contextual payment-as-economic-friction, separation from purchased trust/authority/Recognition/governance/recommendation, and the process rule that Membership existence/role must be justified before benefits/packaging/pricing.
 
 ---
 
@@ -187,20 +176,29 @@ The previously proposed “Content Access, Archive, Paywall & Historical Entitle
 
 New sequence:
 
-### Workshop B — Membership Value Discovery / 会员价值发现
-Define current user/product capabilities and what additional value could legitimately support Membership when published content remains public.
+### Step 1 — Open Core & Economic-Friction Baseline / 核心开放与经济摩擦基线
+Revalidate what payment may and may not change before designing any consumer Membership value.
 
-Workshop B must not assume a Reading Room（阅读室） product exists. Reading/personal-utility, participation, supporter-relationship and service-relationship needs are discovered first.
+Current controlling file:
+- ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md.
 
-### Later Round 12 product-definition blocks / 后续第十二轮产品定义块
-After capability discovery:
-- define Participation / Community / Editorial Relationship（参与 / 社区 / 编辑关系）;
-- define Supporter Relationship（支持者关系）;
-- define Service / Courtesy / Scarce Resource（服务 / 礼遇 / 稀缺资源）;
-- test whether the discovered needs require a distinct personal workspace/product surface at all; `Reading Room` is only one possible historical label, not a required outcome.
+### Step 2 — Membership Product Existence / Role / 会员产品存在性与角色
+Ask whether Project 3 actually needs a distinct recurring Membership product beyond the already-confirmed use of payment as a contextual economic-friction signal.
 
-### Final Round 12 packaging/economics stage / 最后才进入会员包装与经济模型
-Only after value/capabilities are concrete: decide one/two/multiple plans, names, billing cadence, pricing logic, trials, gifts, migration and cancellation.
+Do not assume:
+- supporter relationship;
+- paid workspace;
+- member-only participation;
+- service courtesy;
+- Reading Room;
+- premium feature bundle.
+
+### Later Round 12 stages / 后续阶段
+Only if a distinct Membership product survives the existence/role question:
+- define any legitimate non-core role;
+- test the need for any distinct product/container;
+- evaluate economics and operational cost;
+- then consider packaging, tier count, billing cadence and pricing.
 
 No paywall workshop is currently planned.
 
@@ -225,5 +223,5 @@ Historical documents remain Decision Provenance（决策溯源）. They must not
 - Existing 50-rule draft: not eligible for sealing in its current wording.
 - Membership packaging A/B/C: **DEFERRED（暂缓）**.
 - Published-content paywall direction: **NOT AUTHORIZED（未授权）**.
-- Historical next-subject note: **Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）** was the next step at this correction checkpoint. This process instruction is now **SUPERSEDED** by the later Reading Room provenance audit, Current Product Baseline reconciliation and Rounds 12–16 sequence reconciliation; Round 12 product design is currently PAUSED.
+- Historical next-subject note: **Workshop B — Membership Value Proposition & Benefit Catalogue（会员价值主张与权益清单）** is **SUPERSEDED**. Round 12 has now restarted from the Open Core & Economic-Friction Baseline; the next unresolved product decision is whether a distinct recurring Membership product needs any role beyond that mechanism.
 - Product implementation: **NOT AUTHORIZED（未授权实现）**.
