@@ -1,10 +1,10 @@
-# Round 13（第十三轮）— Open Cultural Contribution & Recovery Adversarial Audit V1（开放文化贡献与寻回对抗性审计 V1）
+# Round 13（第十三轮）— Open Cultural Recovery Adversarial Audit V1（开放文化寻回对抗性审计 V1）
 
 > **Status（状态）:** PASS AFTER HARDENING / ZERO UNRESOLVED MATERIAL BLOCKERS（加固后通过 / 0 个未解决重大阻塞）
 > **Scope（范围）:** Product Architecture（产品架构） only
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 
-This audit tests the user-confirmed Open Cultural Contribution & Recovery（开放文化贡献与寻回）foundation, its cross-round reconciliation and hardening addendum.
+This audit tests the user-confirmed Open Cultural Recovery（开放文化寻回）foundation, its cross-round reconciliation and hardening addendum.
 
 | # | Failure mode（失效场景） | Result（结果） |
 |---:|---|---|
@@ -33,7 +33,7 @@ This audit tests the user-confirmed Open Cultural Contribution & Recovery（开�
 | 23 | Recovery Attribution（寻回归因）becomes generic prestige or Contributor（贡献者）identity（变成通用声望或贡献者身份） | PASS |
 | 24 | One useful lead or recovery role grants Contributor Qualification（一次有效线索或寻回角色自动获得贡献者资格） | PASS |
 | 25 | Contributor Qualification（贡献者资格）makes a submitted source authentic automatically（自动使资料真实） | PASS |
-| 26 | Paid participation buys contribution credit（付费购买贡献署名） | PASS |
+| 26 | Paid participation buys Recovery Attribution（付费购买寻回归因） | PASS |
 | 27 | High social engagement determines cultural significance（高互动决定文化重要性） | PASS |
 | 28 | High commercial value determines authenticity（高商业价值决定真实性） | PASS |
 | 29 | Recovered object automatically receives Work Recognition（作品认可） | PASS |
