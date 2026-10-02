@@ -31,13 +31,13 @@ Current architecture may include:
 - Submission（投稿）;
 - Open Call / Public Request（公开征集 / 公开求助）;
 - Directed Request（定向求助）;
-- Open Cultural Contribution & Recovery（开放文化贡献与寻回）;
+- Open Cultural Recovery（开放文化寻回）;
 - Reader Letter / Question（读者来信 / 提问）;
 - Research / Editorial / Institutional Collaboration（研究 / 编辑 / 机构合作）.
 
 ## A3 — Recovery Intake（寻回接收） != Article Submission（文章投稿）
 
-Lead（线索）, Knowledge Provision（知识提供）, Digital Material Contribution（数字资料提供）, Deposit（寄存）, Donation（捐赠）and Institutional Referral（机构转介）must not be forced into one Article Submission（文章投稿）workflow.
+Lead（线索）, Knowledge Provision（知识提供）, Digital Material Provision（数字资料提供）, Deposit（寄存）, Donation（捐赠）and Institutional Referral（机构转介）must not be forced into one Article Submission（文章投稿）workflow.
 
 They may create a Recovery Case（寻回案件）whose outputs later become eligible knowledge/editorial objects.
 
