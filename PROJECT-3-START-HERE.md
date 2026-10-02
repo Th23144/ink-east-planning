@@ -156,14 +156,14 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 9 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-9-CURRENT-TRUTH-V1.md`, source parity 162/162 PASS, adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-9-SEAL-RECORD.md`.
 - **Round 10 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-10-CURRENT-TRUTH-V1.md`, source parity 318/318 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-10-SEAL-RECORD.md`.
 - **Round 11 — SEALED / product architecture only.** Current truth: `docs/INK-EAST-ROUND-11-CURRENT-TRUTH-V1.md`, source parity 273/273 PASS, full adversarial audit PASS, sealed by `docs/INK-EAST-ROUND-11-SEAL-RECORD.md`.
-- **Round 12 — SEALED / PRODUCT ARCHITECTURE ONLY（已封存 / 仅产品架构）.** Current truth: `docs/INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md`; source parity PASS 20/20; full adversarial audit PASS with 50 explicit failure modes; sealed by `docs/INK-EAST-ROUND-12-SEAL-RECORD.md`.
+- **Round 12 — FOUNDATION RESOLVED / MEMBERSHIP PRODUCT DEFINITION DEFERRED（基础边界已解决 / 会员产品定义暂缓）.** Current foundation truth: `docs/INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md`; foundation source parity PASS 20/20; foundation adversarial audit PASS with 50 explicit failure modes. The previous full-round seal record is superseded. Re-entry checkpoints: immediately after Round 13, and mandatory before Round 15.
 - **Previous Pre-Resume blanket clearance — INVALIDATED / HISTORICAL（已失效 / 仅历史）.** `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` must not be used as a current “zero blockers / mainline cleared” certificate. Surviving correct findings are mapped by `docs/PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md`; future work must pass both semantic-supersession and product-concept-existence provenance checks.
 - **Product-planning reconstruction / concept-provenance pass — COMPLETE FOR CURRENT CHECKPOINT（当前检查点完成）.** Rounds 1–5 Product Planning Reconstruction V2 passed source/provenance audit; Product Concept Provenance Matrix V2 passed 74 adversarial provenance attacks; Current Product Surface & Capability Baseline V1 passed its own audit.
 - **Previous Pre-Resume Full Checkpoint PASS remains INVALIDATED（此前主线恢复前全盘检查仍失效）**; its surviving correct findings are mapped forward instead of restoring the old blanket clearance.
 - **Reading Room（阅读室） existence: UNRESOLVED（未决定）**; exact old Letters / Ask / Membership-page / Community-aggregate / service-page containers are likewise not inherited automatically.
 - **Current Product Baseline cross-source reconciliation — COMPLETE / PASS AFTER DOCUMENTATION REPAIR（已完成 / 文档修复后通过）.** Confirmed omissions restored include Domain projection, Create/Publish/Submit, scoped Identity/Claim Verification, governance user workflows and editorial acquisition capabilities; none creates a mandatory legacy container.
 - **Rounds 12–16 sequence provenance reconciliation — COMPLETE / NO REORDERING REQUIRED（已完成 / 无需重排）.** Membership remains a valid Round 12 subject, but Reading Room is removed from controlling title/scope assumptions; Round 13 legacy services require revalidation; Round 14 is a platform-wide reconciliation subject; Rounds 15–16 are downstream demo/business-narrative deliverables.
-- **Round 12 sealed decision:** Economic Commitment Signal（经济承诺信号） is an independent contextual anti-abuse/capability concept. Membership may become one source of that signal but is not the mechanism itself. Standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**; Reading Room remains unresolved/not required; no VIP feature bundle is invented merely to justify subscription economics.
+- **Round 12 foundation decision:** Economic Commitment Signal（经济承诺信号） is an independent contextual anti-abuse/capability concept. Membership may become one source of that signal but is not the mechanism itself. Standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**; Reading Room remains unresolved/not required; no VIP feature bundle is invented merely to justify subscription economics.
 - **Non-paying path preserved:** ordinary durable/long-form publishing must retain a legitimate non-paying path; payment may only reduce selected friction where payment genuinely mitigates the relevant zero-cost/Sybil risk.
 - **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` remains NON-CONTROLLING research only.
 - **Round 13 — SCOPE OPEN / PRODUCT DECISIONS NOT YET MADE.** Current restart scope: `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`. It starts from real monetization roles and the Ink & East ↔ Spatial Flow relationship, not from legacy Custom Reading / Custom Ebook pages or a presumed Membership bundle.
@@ -381,11 +381,12 @@ Those statements are superseded where they conflict with this file, accepted ame
 59. `docs/INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md` — Round 12 current truth.
 60. `docs/ROUND-12-V1-SOURCE-PARITY-PASS.md` — PASS 20 / 20.
 61. `docs/ROUND-12-V1-ADVERSARIAL-AUDIT.md` — PASS / 50 explicit failure modes / zero unresolved material blockers.
-62. `docs/INK-EAST-ROUND-12-SEAL-RECORD.md` — current Round 12 seal.
-63. `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` — external pattern research / non-controlling.
-64. `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md` — resolved historical decision provenance.
-65. `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md` — current Round 13 restart scope / product decisions not yet made.
-66. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
+62. `docs/ROUND-12-FOUNDATION-CHECKPOINT-MEMBERSHIP-REENTRY-SCHEDULE.md` — current Round 12 status and mandatory re-entry schedule.
+63. `docs/INK-EAST-ROUND-12-SEAL-RECORD.md` — SUPERSEDED as a full-round seal / historical provenance only.
+64. `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` — external pattern research / non-controlling.
+65. `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md` — resolved historical decision provenance.
+66. `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md` — current Round 13 restart scope / product decisions not yet made.
+67. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
 67. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
 68. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
 69. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
