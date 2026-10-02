@@ -311,7 +311,10 @@ B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVE
 - [`ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-COMMERCIAL-CONFLICT-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-COMMERCIAL-CONFLICT-DISCUSSION-V1.md) — superseded discussion provenance（已取代讨论溯源）; old conflict framing was too broad（旧“冲突”框架过宽）.
 - [`ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-RELATIONSHIP-INTEGRITY-RESOLUTION-V1.md`](ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-RELATIONSHIP-INTEGRITY-RESOLUTION-V1.md) — **RESOLVED（已解决）**; editorial independence / role separation / attribution integrity / platform neutrality（编辑独立性 / 角色分离 / 归因完整性 / 平台中立性）confirmed.
 - [`ROUND-13-RELATIONSHIP-COOPERATION-MODES-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-COOPERATION-MODES-DISCUSSION-V1.md) — supporting detailed inventory（支持性详细清单）.
-- [`ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md) — **CURRENT ACTIVE DISCUSSION / USER DECISION REQUIRED（当前主线讨论 / 需要用户决定）**.
+- [`ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md`](ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md) — resolved discussion provenance（已解决讨论溯源）.
+- [`ROUND-13-RELATIONSHIP-COOPERATION-MODES-RESOLUTION-V1.md`](ROUND-13-RELATIONSHIP-COOPERATION-MODES-RESOLUTION-V1.md) — **RESOLVED（已解决）**; three-layer cooperation model（三层合作模型） confirmed.
+- [`ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md`](ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md) — **CURRENT CONTROLLING RELATIONSHIP BASELINE（当前控制关系基线）**.
+- [`ROUND-13-REMAINING-SERVICES-MONETIZATION-CLEAN-RESTART-DISCUSSION-V1.md`](ROUND-13-REMAINING-SERVICES-MONETIZATION-CLEAN-RESTART-DISCUSSION-V1.md) — **CURRENT ACTIVE ROUND-13 SUBJECT / USER INPUT REQUIRED（第十三轮当前主线 / 需要用户输入）**.
 - [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — superseded original scope（已取代原始范围）.
 - [`ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`](ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md) — superseded discussion provenance（已取代讨论溯源）.
 - [`ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md`](ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md) — superseded discussion provenance（已取代讨论溯源）.
@@ -319,8 +322,9 @@ B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVE
 Current controlling facts（当前控制事实）:
 
 - Ink & East（墨与东方）and Spatial Flow（空间流）are **independent products/projects（独立产品 / 项目）**, not one Shared Platform（共享平台）.
-- They currently share a development/planning context（开发 / 规划上下文）because of workflow convenience and a possible future cooperation relationship（未来合作关系）.
-- Exact future cooperation relationship（未来合作关系）is **UNRESOLVED（未决定）** and is now the **ACTIVE ROUND-13 SUBJECT（第十三轮当前主线）** after completion of the cultural-recovery cross-round reconciliation（文化寻回跨轮复核）.
+- They share a development/planning context（开发 / 规划上下文）and now have a confirmed Standing Strategic Relationship（持续战略关系）; Spatial Flow（空间流）is a non-exclusive Preferred Strategic Partner（优先战略合作伙伴）.
+- The strategic/product relationship is **RESOLVED AT CURRENT PRODUCT-ARCHITECTURE DEPTH（当前产品架构深度已解决）**; public brand/legal wording and selected infrastructure axes remain deferred（暂缓）.
+- The **ACTIVE ROUND-13 SUBJECT（第十三轮当前主线）** is now remaining Ink & East（墨与东方） Services / Monetization（服务 / 商业化）.
 - Custom Reading（定制解读）is **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**.
 - Custom Ebook Studio（定制电子书工作室）is **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**.
 - Standalone recurring Membership（独立持续订阅会员）remains deferred（暂缓）and does not control Round 13（第十三轮）.
