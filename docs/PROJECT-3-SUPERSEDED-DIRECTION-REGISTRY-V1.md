@@ -70,7 +70,9 @@ Never infer “old file is more detailed, therefore old file is more authoritati
 | S40 | Ink & East（墨与东方）+ Spatial Flow（空间流）= one Shared Platform（共享平台） / shared product system（共享产品系统） | **SUPERSEDED.** They are independent products/projects（独立产品 / 项目）currently co-developed in one development/planning context（开发 / 规划上下文）; exact future cooperation relationship（未来合作关系）is unresolved | Round 13 foundation correction V2（第十三轮基础纠正 V2） |
 | S41 | Custom Reading（定制解读）remains a future service candidate（未来服务候选） | **SUPERSEDED / REJECTED.** Removed from Current Product Architecture（当前产品架构）; historical provenance only（仅历史溯源） | Round 13 foundation correction V2（第十三轮基础纠正 V2） |
 | S42 | Custom Ebook Studio（定制电子书工作室）remains a future service candidate（未来服务候选） | **SUPERSEDED / REJECTED.** Removed from Current Product Architecture（当前产品架构）; historical provenance only（仅历史溯源） | Round 13 foundation correction V2（第十三轮基础纠正 V2） |
-| S40 | Rules are hard-coded and changed by overwriting history（规则硬编码，变更直接覆盖历史） | Stable core + evolvable/versioned policy + explainable history + controlled migration/rollback | Rule Evolvability architecture |
+| S43 | Rules are hard-coded and changed by overwriting history（规则硬编码，变更直接覆盖历史） | Stable core + evolvable/versioned policy + explainable history + controlled migration/rollback | Rule Evolvability architecture |
+| S44 | Commission（约稿）is the umbrella for scarce-knowledge/source acquisition（约稿是稀缺知识 / 资料获取总概念） | **SUPERSEDED.** Open Cultural Contribution & Recovery（开放文化贡献与寻回）is the broader capability; Commissioned Article / Editorial Invitation（约稿文章 / 编辑邀请）is only an optional narrow route | Round 13 cultural recovery foundation + Round 11 amendment |
+| S45 | Anyone credited as a contributor automatically holds Contributor Qualification（任何有贡献署名的人自动获得贡献者资格） | **PROHIBITED.** Contribution Role / Attribution（贡献角色 / 署名）is separate from Contributor Qualification / Expertise Scope（贡献者资格 / 专业范围） | Round 13 cross-round reconciliation + Round 4 amendment |
 
 ---
 
