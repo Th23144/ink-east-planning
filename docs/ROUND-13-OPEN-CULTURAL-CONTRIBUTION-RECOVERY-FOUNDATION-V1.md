@@ -186,11 +186,16 @@ This is a working architecture label（架构工作标签）, not final public n
 
 ## 9. Current next step（当前下一步）
 
-Before returning to the Ink & East ↔ Spatial Flow（墨与东方 ↔ 空间流）relationship discussion, Round 13（第十三轮）should first reconcile this confirmed direction with:
+Cross-round reconciliation（跨轮复核）is now complete through:
 
-- Round 4（第四轮）Contributor（贡献者）semantics;
-- Round 7（第七轮）Knowledge Graph & Provenance（知识图谱与来源溯源）;
-- Round 11（第十一轮）Editorial Acquisition（编辑获取）and Commission（约稿）semantics;
-- rights / privacy / attribution / institutional handoff boundaries（权利 / 隐私 / 署名 / 机构移交边界）.
+- `ROUND-13-CULTURAL-RECOVERY-CROSS-ROUND-RECONCILIATION-V1.md`;
+- `ROUND-4-CULTURAL-CONTRIBUTION-ROLE-AMENDMENT-V1.md`;
+- `ROUND-7-CULTURAL-RECOVERY-PROVENANCE-EXTENSION-V1.md`;
+- `ROUND-11-CULTURAL-RECOVERY-ACQUISITION-AMENDMENT-V1.md`;
+- `ROUND-13-CULTURAL-RECOVERY-HARDENING-ADDENDUM-V1.md`;
+- `ROUND-13-CULTURAL-RECOVERY-ADVERSARIAL-AUDIT-V1.md` — PASS AFTER HARDENING（加固后通过）.
 
-No implementation is authorized.
+Current next subject（当前下一主题）:
+**Ink & East ↔ Spatial Flow Relationship（墨与东方 ↔ 空间流关系）**.
+
+No implementation is authorized（未授权实现）.
