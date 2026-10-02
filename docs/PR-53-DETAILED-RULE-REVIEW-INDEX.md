@@ -228,6 +228,7 @@ Current controlling chain:
 - [`ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md`](ROUND-12-PUBLIC-CONTENT-MEMBERSHIP-SCOPE-CORRECTION.md) — public-content/non-paywall baseline; later open-core baseline supersedes its old paid-value-first assumptions
 - [`ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md`](ROUND-12-MEMBERSHIP-OPEN-CORE-ECONOMIC-FRICTION-BASELINE-V1.md) — **CURRENT CONTROLLING ROUND-12 RESTART BASELINE**
 - [`ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md`](ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md) — **RESEARCH / NON-CONTROLLING**
+- [`ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md`](ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md) — **CURRENT STEP 2 DISCUSSION / USER DECISION REQUIRED**; tests whether recurring Membership should exist as a distinct product beyond the economic-friction mechanism
 - [`PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md`](PR-53-SUPERSESSION-REGRESSION-AUDIT-V2.md)
 - [`PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md`](PR-53-SUPERSESSION-REGRESSION-HARDENING-RECORD.md)
 - [`PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md`](PR-53-PRE-RESUME-AUDIT-SURVIVING-FINDINGS-MAP-V1.md) — current map of still-valid findings from the invalidated pre-resume audit
@@ -260,7 +261,7 @@ Current product baseline:
 - exact Membership benefit catalogue, Reading Room（阅读室）, participation/service benefits and packaging remain unresolved;
 - public Membership packaging remains deferred.
 
-**Current status:** Round 12 Step 1 is COMPLETE / REVALIDATED. The earlier paid-value-first restart framing was rejected. Current rule: Open Core + contextual payment-as-economic-friction; payment may reduce selected zero-cost/Sybil friction for a specific capability but does not create global trust/weight, authority, Recognition, governance or organic recommendation advantage. The next genuine product decision is Step 2: whether Project 3 needs a distinct recurring Membership product role beyond that mechanism.
+**Current status:** Round 12 Step 1 is COMPLETE / REVALIDATED. Step 2 is now OPEN as a genuine product decision. The current discussion draft separates the friction mechanism from the consumer subscription and provisionally recommends: do not force recurring Membership into the initial architecture; preserve it as a future open-core commercial layer only if genuine recurring value/cost emerges. This recommendation is not locked until user confirmation.
 
 Historical / candidate Workshop B chain (not authority to resume product design):
 
