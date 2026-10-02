@@ -409,7 +409,9 @@ Those statements are superseded where they conflict with this file, accepted ame
 87. `docs/ROUND-13-RELATIONSHIP-Q4-DEFAULT-EXPLICIT-NONTRANSFERABLE-BOUNDARIES-DISCUSSION-V1.md` — historical Q4 discussion（历史 Q4 讨论）.
 88. `docs/ROUND-13-RELATIONSHIP-Q4-RESOLUTION-PREFERRED-PARTNER-CROSSREF-HARD-BOUNDARIES-V1.md` — **Q4 RESOLVED（Q4 已解决）**: Preferred Strategic Partner（优先战略合作伙伴）, normal cross-product references（正常跨产品引用）, personal-data independence（个人数据独立）, hard editorial/source/recognition/governance boundaries（编辑 / 来源 / 认可 / 治理硬边界）.
 89. `docs/ROUND-13-RELATIONSHIP-PUBLIC-VISIBILITY-DEFERRED-V1.md` — general public visibility of the standing relationship（持续战略关系的一般公开可见性） **DEFERRED（暂缓）**.
-90. `docs/ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-COMMERCIAL-CONFLICT-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: editorial independence and commercial conflict boundaries（编辑独立性与商业利益冲突边界）.
+90. `docs/ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-COMMERCIAL-CONFLICT-DISCUSSION-V1.md` — superseded discussion provenance（已取代讨论溯源）; prior conflict framing was too broad（旧“冲突”框架过宽）.
+91. `docs/ROUND-13-RELATIONSHIP-EDITORIAL-INDEPENDENCE-RELATIONSHIP-INTEGRITY-RESOLUTION-V1.md` — **RESOLVED（已解决）**: editorial independence / role separation / attribution integrity / platform neutrality（编辑独立性 / 角色分离 / 归因完整性 / 平台中立性）confirmed without defining the relationship itself as a conflict.
+92. `docs/ROUND-13-RELATIONSHIP-COOPERATION-MODES-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: which cooperation families genuinely belong to the long-term relationship（哪些合作类型真正属于长期关系）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
