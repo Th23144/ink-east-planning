@@ -104,8 +104,8 @@
 | Issues list route（议题列表） | source prototype + Round 11 product | Issue product exists; exact list IA/route remains evolvable | **CURRENT PRODUCT SUBJECT; ROUTE/UX EVOLVABLE** |
 | Open Cultural Contribution & Recovery（开放文化贡献与寻回） | post-reset user-confirmed Round 13 direction（重构后第十三轮用户确认方向） | cultural recovery foundation + cross-round reconciliation with Rounds 4/7/11（文化寻回基础 + 第四/七/十一轮跨轮复核） | **POST-RESET CONFIRMED CAPABILITY FAMILY / FINAL CONTAINER DEFERRED（重构后已确认能力族 / 最终容器暂缓）** |
 | Recovery Case（寻回案件） | Round 13 derived architecture（第十三轮派生架构） | required to keep lead/material/recovery intake separate from Article Submission（用于将线索 / 资料 / 寻回接收与文章投稿分离） | **CONFIRMED DATA/WORKFLOW CONCEPT / EXACT UX DEFERRED（已确认数据 / 工作流概念 / 具体体验暂缓）** |
-| Contribution Role / Attribution（贡献角色 / 署名） | Round 13 cross-round amendment（第十三轮跨轮修订） | separates actual source/research/preservation contributions from Contributor Qualification（将实际资料 / 研究 / 保存贡献与贡献者资格分离） | **POST-RESET CONFIRMED SEMANTIC（重构后已确认语义）** |
-| Commissioned Article / Editorial Invitation（约稿文章 / 编辑邀请） | Round 4 example + Round 11 expanded, narrowed by Round 13（第四轮示例 + 第十一轮扩展，后被第十三轮收窄） | may exist only as an optional narrow editorial route（仅作为可选狭义编辑路径） | **SEMANTICALLY NARROWED / NOT UMBRELLA PRODUCT（语义已收窄 / 非总产品概念）** |
+| Recovery Participation / Attribution（寻回参与 / 归因） | Round 13 cross-round amendment（第十三轮跨轮修订） | records actual source/research/preservation participation while reserving Contributor（贡献者）for the qualified Round 4 identity system（记录实际资料 / 研究 / 保存参与，同时保留“贡献者”为第四轮资格身份体系） | **POST-RESET CONFIRMED SEMANTIC（重构后已确认语义）** |
+| Commission（约稿） | Round 4 example + Round 11 expansion（第四轮示例 + 第十一轮扩展） | user correction in Round 13 replaces it with Open Cultural Contribution & Recovery（开放文化贡献与寻回） plus explicit Directed Request / Collaboration（定向求助 / 合作） actions | **HISTORICAL / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（历史术语 / 从当前产品架构移除）** |
 
 ---
 
