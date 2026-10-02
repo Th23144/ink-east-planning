@@ -1,89 +1,43 @@
-# Ink & East Round 12 — Seal Record
-# 第十二轮封存记录
+# SUPERSEDED — Ink & East Round 12 Full Seal Record
+# 已取代——第十二轮完整封存记录
 
-> **Round:** Open Core / Economic Commitment Signal / Membership Boundary（开放核心 / 经济承诺信号 / 会员边界）
-> **Status:** SEALED — PRODUCT ARCHITECTURE ONLY（已封存——仅产品架构）
+> **Status:** SUPERSEDED / INVALID AS A FULL-ROUND SEAL（已取代 / 不能作为整轮封存证明）
 > **Implementation:** NOT AUTHORIZED（未授权实现）
-> **Merge:** NOT AUTHORIZED（未授权合并）
+> **Superseded by:** `ROUND-12-FOUNDATION-CHECKPOINT-MEMBERSHIP-REENTRY-SCHEDULE.md`
 
 ---
 
-## 1. Sealed controlling chain / 封存控制链
+## Why this seal was superseded / 为什么撤销“整轮封存”
 
-1. `INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md`
-2. `ROUND-12-V1-SOURCE-PARITY-PASS.md`
-3. `ROUND-12-V1-ADVERSARIAL-AUDIT.md`
-4. this Seal Record
+This file was created after the user confirmed the separation between:
 
-Primary user-confirmed decision:
-- `ROUND-12-ECONOMIC-COMMITMENT-SIGNAL-MEMBERSHIP-DEFERRED-DECISION.md`
+- Economic Commitment Signal（经济承诺信号）; and
+- standalone recurring Membership（独立持续订阅会员）.
 
-Earlier Workshop/Discussion files remain provenance only where superseded.
+The architecture decision itself remains valid.
 
----
+The error was procedural: the record described the **entire Round 12** as SEALED even though the standalone Membership product definition was explicitly deferred.
 
-## 2. Validation / 验证结果
+Correct current status:
 
-- Current Truth rules: **20**
-- Source Parity: **PASS 20 / 20**
-- Full Adversarial Audit: **PASS**
-- Explicit failure modes tested: **50**
-- Unresolved material architecture blockers: **0**
-- Implementation authorization created: **0**
+> **ROUND 12 — FOUNDATION RESOLVED / MEMBERSHIP PRODUCT DEFINITION DEFERRED.**
 
----
+The validated Round 12 foundation includes Open Core, Economic Commitment Signal, payment/authority separation, a legitimate non-paying publishing path, and Reading Room non-requirement.
 
-## 3. Sealed architecture / 已封存架构
+The following are still unresolved and may be reopened later:
 
-Round 12 now controls:
+- standalone recurring Membership existence/role;
+- benefits;
+- tiers;
+- pricing/billing cadence;
+- member container/surface;
+- Reading Room definition if ever justified.
 
-- Open Core;
-- normal published content is not a Membership paywall;
-- Economic Commitment Signal as an independent contextual risk/capability input;
-- payment as one possible source of economic-friction evidence;
-- Account × Capability × Context instead of universal paid account weight;
-- payment separated from Behavioral Trust, Qualification, Recognition, governance and organic Recommendation;
-- legitimate non-paying path for ordinary durable/long-form publishing;
-- publishing capacity as the currently source-confirmed acceleration family;
-- no automatic expansion of paid acceleration to unrelated capabilities;
-- standalone recurring Membership deferred rather than cancelled or approved;
-- Reading Room unresolved/not required;
-- no invented VIP feature bundle merely to justify subscription economics;
-- Round 13 free to define Services/Monetization without a presumed Membership bundle.
+Re-entry checkpoints:
 
----
+1. immediately after Round 13;
+2. mandatory before Round 15.
 
-## 4. Deliberately deferred / 明确延后
+Historical Git history preserves the earlier full-seal wording for provenance.
 
-- standalone recurring Membership product;
-- exact Membership benefits;
-- tier count / names / prices / billing cadence;
-- Reading Room;
-- exact Economic Commitment Signal sources/calibration/thresholds;
-- broader capability acceleration cases;
-- future real-cost Premium features;
-- final implementation model.
-
----
-
-## 5. Future amendment / 未来修改
-
-Round 12 is sealed as current Product Architecture, not as an irreversible business decision.
-
-Future mature-product evidence may justify reopening the standalone Membership product through an explicit provenance-bearing amendment.
-
-Such future work must preserve the separation:
-
-> **payment/economic commitment != trust/authority/Recognition/governance/organic distribution.**
-
----
-
-## 6. Seal status / 封存状态
-
-**ROUND 12 — SEALED.**
-
-Next architecture subject:
-
-**Round 13 — Services / Monetization / Spatial Flow Relationship（服务 / 商业化 / Spatial Flow 关系）.**
-
-PR #53 remains Draft / Open / Unmerged. No implementation or merge is authorized.
+No implementation or merge is authorized.
