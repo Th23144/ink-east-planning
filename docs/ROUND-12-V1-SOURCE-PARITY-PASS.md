@@ -1,7 +1,7 @@
 # Round 12 V1 — Source Parity Pass
 # 第十二轮 V1——来源完整性检查
 
-> **Status:** PASS 20 / 20（通过 20 / 20）
+> **Status:** PASS 20 / 20 — FOUNDATION SCOPE ONLY（通过 20 / 20——仅基础边界范围）
 > **Target Current Truth:** `docs/INK-EAST-ROUND-12-CURRENT-TRUTH-V1.md`
 > **Implementation:** NOT AUTHORIZED（未授权实现）
 
@@ -9,7 +9,7 @@
 
 ## 1. Purpose / 目的
 
-This pass verifies that Round 12 Current Truth V1 preserves the accepted/current Round 12 product decisions without reviving superseded Membership assumptions.
+This pass verifies that the resolved **Round 12 foundation** preserves the accepted/current decisions without reviving superseded Membership assumptions. It does not certify a finished standalone Membership product.
 
 This is a product-architecture source/parity check, not implementation testing.
 
@@ -115,4 +115,4 @@ It does not silently fill these gaps.
 - Unresolved product choices silently decided: 0
 - Implementation authorization introduced: 0
 
-Round 12 Current Truth V1 is ready for the Round 12 adversarial audit.
+The resolved Round 12 foundation is ready for adversarial audit. Standalone Membership product definition remains deferred.
