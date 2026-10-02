@@ -2,7 +2,8 @@
 # 项目三——当前产品面与能力基线 V1
 
 > **Status:** CURRENT PRODUCT BASELINE / PRODUCT ARCHITECTURE ONLY（当前产品基线 / 仅产品架构）  
-> **Purpose:** provide one safe product-level handoff that says what Project 3 currently has, what is only a capability, what is deferred, and what must not be inherited from legacy planning.  
+> **Purpose:** provide one safe product-level handoff that says what Project 3 currently has, what is only a capability, what is deferred, and what must not be inherited from legacy planning.
+> **Scope correction（范围纠正）:** Project 3（项目三）is a shared development/planning context（共同开发 / 规划上下文）, not one unified user-facing product platform（统一面向用户产品平台）. This baseline primarily describes Ink & East（墨与东方）product architecture（产品架构）; Spatial Flow（空间流）is an independent product/project（独立产品 / 项目）with separate commerce truth and an unresolved future cooperation relationship（未决定的未来合作关系）.  
 > **Sources:** Rounds 1–5 Product Planning Reconstruction V2 + source audit; Product Concept Provenance Matrix V2 + audit; sealed Round 6–11 current truth.  
 > **Implementation:** NOT AUTHORIZED（未授权实现）
 
@@ -248,10 +249,12 @@ user-facing governance workflows exist as confirmed capabilities; Report is an i
 Exact cross-platform governance UX and policy remain for the dedicated governance round.
 
 ## C15 — Editorial submission / open call / Commission（约稿） intake（编辑投稿 / 公开征稿 / 约稿入口）
-Meaning:
-Round 11 confirms multiple editorial acquisition routes including submission, open call, commission, reader letter/question and collaboration.
+Meaning（含义）:
+Round 11（第十一轮）currently records multiple editorial acquisition routes（多路径编辑获取方式）including Submission（投稿）, Open Call（公开征稿）, Commission（约稿）, Reader Letter / Question（读者来信 / 提问）and Collaboration（合作）.
 
-No single standalone page or one universal workflow is implied.
+Commission（约稿）is now under explicit Targeted Revalidation（定向重新验证）because the user does not remember it as a standalone decision and requested a fresh necessity/boundary discussion. Until that review closes, downstream work must not treat Commission（约稿）as newly reconfirmed product truth.
+
+No single standalone page（独立页面）or universal workflow（统一工作流）is implied.
 
 ---
 
