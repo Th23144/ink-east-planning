@@ -1,7 +1,7 @@
 # Round 13（第十三轮）— Ink & East ↔ Spatial Flow Relationship Q2
 # 墨与东方 ↔ 空间流关系 Q2：特殊关系应当存在于哪一层？
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISION REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY Q2 RESOLUTION（已解决 / 由 Q2 结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置结论）:** `ROUND-13-RELATIONSHIP-Q1-RESOLUTION-V1.md`
@@ -113,4 +113,4 @@ The immediate product-architecture question is:
 
 > **Even when Ink & East（墨与东方）and Spatial Flow（空间流）are not working on a specific joint project, should they still be treated as long-term strategic counterparts with a standing relationship（长期战略对应方 / 持续关系）, or should every relationship exist only project-by-project（完全按项目临时建立）?**
 
-A later step will separately decide whether any corporate / parent-brand / public-brand relationship（企业 / 母品牌 / 对外品牌关系）should sit above that strategic relationship.
+Resolution（结论）: `ROUND-13-RELATIONSHIP-Q2-RESOLUTION-STANDING-STRATEGIC-RELATIONSHIP-V1.md`.
