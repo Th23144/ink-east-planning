@@ -166,7 +166,7 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 12 sealed decision:** Economic Commitment Signal（经济承诺信号） is an independent contextual anti-abuse/capability concept. Membership may become one source of that signal but is not the mechanism itself. Standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**; Reading Room remains unresolved/not required; no VIP feature bundle is invented merely to justify subscription economics.
 - **Non-paying path preserved:** ordinary durable/long-form publishing must retain a legitimate non-paying path; payment may only reduce selected friction where payment genuinely mitigates the relevant zero-cost/Sybil risk.
 - **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` remains NON-CONTROLLING research only.
-- **Next architecture subject:** Round 13 — Services / Monetization / Spatial Flow Relationship.
+- **Round 13 — SCOPE OPEN / PRODUCT DECISIONS NOT YET MADE.** Current restart scope: `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`. It starts from real monetization roles and the Ink & East ↔ Spatial Flow relationship, not from legacy Custom Reading / Custom Ebook pages or a presumed Membership bundle.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
@@ -384,17 +384,18 @@ Those statements are superseded where they conflict with this file, accepted ame
 62. `docs/INK-EAST-ROUND-12-SEAL-RECORD.md` — current Round 12 seal.
 63. `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` — external pattern research / non-controlling.
 64. `docs/ROUND-12-MEMBERSHIP-PRODUCT-EXISTENCE-ROLE-STEP-2-DISCUSSION-V1.md` — resolved historical decision provenance.
-65. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
-66. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
-67. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
-68. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
-69. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
-70. PR #53 latest conversation/decision history while the workshop remains open
-71. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
-72. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
-73. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
-74. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
-75. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
-76. superseded Round 6 Final/Seal and older planning documents only as historical references
+65. `docs/ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md` — current Round 13 restart scope / product decisions not yet made.
+66. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate; provenance only
+67. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record / provenance
+68. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
+69. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-DECISION-LOG.md`
+70. historical Round 3/4 and Round 7–11 Workshop records when provenance is needed
+71. PR #53 latest conversation/decision history while the workshop remains open
+72. `INK-EAST-BRIEF.md` for product history only; ignore superseded paywall/VIP assumptions
+73. `INK-EAST-ROADMAP.md`, `.kiro/steering/ink-east-handoff.md` and `PROJECT-CONTROL-MASTER.md` for historical provenance only where later current truth does not supersede them
+74. `docs/PROJECT-2-TO-PROJECT-3-ECOMMERCE-PARITY-MATRIX.md`
+75. `docs/PROJECT-3-COMMERCE-BATCH-A-ACCEPTED.md`
+76. `docs/PROJECT-3-CURRENT-HANDOFF.md` — historical handoff name; warning banner controls
+77. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
