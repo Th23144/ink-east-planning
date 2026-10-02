@@ -8,7 +8,7 @@ This audit tests the user-confirmed Open Cultural Contribution & Recovery（开�
 
 | # | Failure mode（失效场景） | Result（结果） |
 |---:|---|---|
-| 1 | Commission（约稿）silently returns as the umbrella concept（重新变成总概念） | PASS |
+| 1 | Commission（约稿）silently returns as any current product concept（重新进入当前产品架构） | PASS |
 | 2 | Every contribution is forced into Article Submission（文章投稿） | PASS |
 | 3 | A Source Lead（资料线索）is treated as verified fact（已验证事实） | PASS |
 | 4 | A submitted scan is treated as proof of physical-object ownership（扫描件被当作实体所有权证明） | PASS |
@@ -30,8 +30,8 @@ This audit tests the user-confirmed Open Cultural Contribution & Recovery（开�
 | 20 | Reconstruction（重建）is presented as observed original（可观察原件） | PASS |
 | 21 | AI-assisted restoration（人工智能辅助修复）loses provenance（丢失来源记录） | PASS |
 | 22 | Later institutional custody erases discoverer/platform contribution（机构接收后抹除发现者 / 平台贡献） | PASS |
-| 23 | Contribution credit becomes generic prestige（贡献署名变成通用声望） | PASS |
-| 24 | One useful lead grants Contributor Qualification（一次有效线索自动获得贡献者资格） | PASS |
+| 23 | Recovery Attribution（寻回归因）becomes generic prestige or Contributor（贡献者）identity（变成通用声望或贡献者身份） | PASS |
+| 24 | One useful lead or recovery role grants Contributor Qualification（一次有效线索或寻回角色自动获得贡献者资格） | PASS |
 | 25 | Contributor Qualification（贡献者资格）makes a submitted source authentic automatically（自动使资料真实） | PASS |
 | 26 | Paid participation buys contribution credit（付费购买贡献署名） | PASS |
 | 27 | High social engagement determines cultural significance（高互动决定文化重要性） | PASS |
@@ -47,12 +47,12 @@ This audit tests the user-confirmed Open Cultural Contribution & Recovery（开�
 | 37 | Authenticity assessment is treated as ownership proof（真实性判断被当作所有权证明） | PASS |
 | 38 | Public benefit goal overrides law / rights / privacy（公共利益目标覆盖法律 / 权利 / 隐私） | PASS |
 | 39 | Removed/withdrawn digital asset destroys permissible provenance（撤下数字资产导致来源历史消失） | PASS |
-| 40 | Contributor attribution exposes a vulnerable holder without consent（署名暴露脆弱持有人） | PASS |
+| 40 | Recovery Attribution（寻回归因）exposes a vulnerable holder without consent（未经同意暴露脆弱持有人） | PASS |
 | 41 | Recovery workflow requires one fixed institution type（只允许一种机构类型） | PASS |
 | 42 | Museum（博物馆）is assumed always superior to library/archive/university（默认永远最优） | PASS |
 | 43 | Final public page/route is invented before product need/UX design（提前硬定页面 / 路由） | PASS |
 | 44 | Donation（捐赠）becomes the umbrella product name by accident（误成总产品名） | PASS |
-| 45 | Narrow Commissioned Article（约稿文章）is prohibited even when genuinely useful（过度删除合理狭义约稿） | PASS |
+| 45 | A real Directed Request / Editorial Collaboration（定向求助 / 编辑合作）is impossible because historical Commission（约稿）was removed（因删除旧“约稿”术语而误伤真实协作） | PASS |
 | 46 | Existing Round 7（第七轮）rights rules are weakened by new recovery workflow（被新流程削弱） | PASS |
 | 47 | Existing Round 11（第十一轮）Issue history / curation semantics are overwritten（被覆盖） | PASS |
 | 48 | Existing Round 4（第四轮）Contributor Qualification（贡献者资格）is collapsed into ordinary contribution（普通贡献） | PASS |
