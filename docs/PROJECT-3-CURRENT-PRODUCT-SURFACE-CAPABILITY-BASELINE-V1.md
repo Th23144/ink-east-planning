@@ -278,10 +278,12 @@ Not decided:
 Confirmed:
 the domain remains a later Product Architecture subject.
 
-Not yet revalidated:
-- Custom Reading（定制解读） final role;
-- Custom Ebook Studio（定制电子书工作室） final role;
-- old forms/routes/flows.
+Removed from current architecture（已从当前架构删除）:
+- Custom Reading（定制解读）;
+- Custom Ebook Studio（定制电子书工作室）;
+- their old forms/routes/flows（旧表单 / 路由 / 流程）.
+
+These remain historical provenance（历史溯源）only and are not candidates for Round 13（第十三轮）revalidation.
 
 ## D3 — Notifications / Delivery（通知 / 投递）
 Confirmed:
@@ -370,13 +372,13 @@ Status:
 
 Membership subject itself is confirmed.
 
-## L10 — Custom Reading old page/form
-Status:
-**REVALIDATION PENDING**.
+## L10 — Custom Reading old page/form（定制解读旧页面 / 表单）
+Status（状态）:
+**REJECTED PRODUCT / HISTORICAL PROVENANCE ONLY（产品已淘汰 / 仅历史溯源）**.
 
-## L11 — Custom Ebook Studio old page/form
-Status:
-**REVALIDATION PENDING**.
+## L11 — Custom Ebook Studio old page/form（定制电子书工作室旧页面 / 表单）
+Status（状态）:
+**REJECTED PRODUCT / HISTORICAL PROVENANCE ONLY（产品已淘汰 / 仅历史溯源）**.
 
 ## L12 — Patron Vote / paid governance
 Status:
@@ -485,10 +487,10 @@ The following product questions remain open and legitimate:
 6. Does the old Ask the Ancient Text idea survive as a distinct editorial product, merge into Question Mode, or disappear?
 7. Does unified Community need one dedicated aggregate page, and if yes what job does it perform?
 8. What is Membership actually for?
-9. Do Custom Reading / Custom Ebook survive the new platform/business model?
+9. What service / monetization products should Ink & East（墨与东方）actually have after removing the rejected Custom Reading（定制解读） / Custom Ebook Studio（定制电子书工作室） legacy concepts?
 10. What is the full Notifications / Delivery product?
 11. What public form/name should Recognized Works use?
-12. What is the final service/commerce relationship between Ink & East and Spatial Flow?
+12. What is the future cooperation relationship（未来合作关系）between the independent products Ink & East（墨与东方）and Spatial Flow（空间流）?
 
 These are product questions, not errors to fill from legacy documents.
 
