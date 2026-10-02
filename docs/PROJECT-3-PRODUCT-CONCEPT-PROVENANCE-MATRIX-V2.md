@@ -126,11 +126,11 @@
 | Concept / 概念 | Provenance / 来源 | Current evidence / 当前证据 | Status / 状态 |
 |---|---|---|---|
 | Services / monetization domain（服务 / 商业化领域） | workshop order + broader business intent | dedicated later round remains planned | **CONFIRMED SUBJECT / DETAILS DEFERRED** |
-| Custom Reading（定制解读） | pre-reset legacy service | carried forward, but dedicated Services round has not revalidated final Project 3 role | **LEGACY-INHERITED / REVALIDATION PENDING** |
-| Standalone Custom Reading page/form（定制解读独立页面 / 表单） | pre-reset | no dedicated post-reset revalidation | **LEGACY-INHERITED / EXISTENCE UNRESOLVED UNTIL SERVICES ROUND** |
-| Custom Ebook Studio（定制电子书工作室） | pre-reset legacy service | carried forward, dedicated Services round not yet complete | **LEGACY-INHERITED / REVALIDATION PENDING** |
-| Standalone Custom Ebook page/form（定制电子书独立页面 / 表单） | pre-reset | no dedicated post-reset revalidation | **LEGACY-INHERITED / EXISTENCE UNRESOLVED UNTIL SERVICES ROUND** |
-| Spatial Flow commerce bridge（Ink & East → Spatial Flow 商业桥接） | project-level source-native planning | Commerce Batch A accepted; exact Round 13 relationship still later | **POST-RESET CONFIRMED RELATIONSHIP / DETAILS DEFERRED** |
+| Custom Reading（定制解读） | pre-reset legacy service（重构前旧服务） | user explicitly confirmed it was already eliminated（用户明确确认早已淘汰） | **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）** |
+| Standalone Custom Reading page/form（定制解读独立页面 / 表单） | pre-reset（重构前） | parent product rejected（所属产品已淘汰） | **HISTORICAL PROVENANCE ONLY / NOT A CURRENT PRODUCT SURFACE（仅历史溯源 / 非当前产品面）** |
+| Custom Ebook Studio（定制电子书工作室） | pre-reset legacy service（重构前旧服务） | user explicitly confirmed it was already eliminated（用户明确确认早已淘汰） | **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）** |
+| Standalone Custom Ebook page/form（定制电子书独立页面 / 表单） | pre-reset（重构前） | parent product rejected（所属产品已淘汰） | **HISTORICAL PROVENANCE ONLY / NOT A CURRENT PRODUCT SURFACE（仅历史溯源 / 非当前产品面）** |
+| Ink & East ↔ Spatial Flow relationship（墨与东方 ↔ 空间流关系） | two independent products co-developed in one development context（两个独立产品在同一开发上下文协作开发） | user correction + Commerce Batch A implementation coexistence（用户纠正 + 电商批次 A 同仓开发事实） | **INDEPENDENT PRODUCTS / FUTURE COOPERATION RELATIONSHIP UNRESOLVED（独立产品 / 未来合作关系未决定）** |
 | Paid/sponsored recommendation（付费 / 赞助推荐） | later possible commercial module | Round 10 explicitly not authorized | **DEFERRED / NOT AUTHORIZED** |
 
 ---
@@ -197,8 +197,8 @@ These must not be defined further until the current architecture first proves th
 4. Ask the Ancient Text branded standalone form/page（“问古书”独立表单 / 页面）
 5. old Community aggregate page shape（旧 Community 聚合页形态）
 6. standalone Membership sales/join page as an inherited IA object（旧会员加入页形态）
-7. standalone Custom Reading page/form（旧定制解读页面 / 表单）
-8. standalone Custom Ebook Studio page/form（旧定制电子书页面 / 表单）
+7. standalone Custom Reading page/form（旧定制解读页面 / 表单） — rejected product provenance only（已淘汰产品溯源）
+8. standalone Custom Ebook Studio page/form（旧定制电子书页面 / 表单） — rejected product provenance only（已淘汰产品溯源）
 9. old Reader Notes public-comment component as a canonical product object（旧 Reader Notes 公开评论组件）
 10. old Reader / Patron tier architecture（旧 Reader / Patron 档位体系）
 
