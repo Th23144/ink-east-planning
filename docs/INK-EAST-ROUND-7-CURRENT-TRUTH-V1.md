@@ -2,6 +2,8 @@
 
 Status: **CURRENT TRUTH / CONSOLIDATED — PRODUCT ARCHITECTURE ONLY**. No implementation authorization.
 
+> **2026-10-01 targeted extension（定向扩展）:** `docs/ROUND-7-CULTURAL-RECOVERY-PROVENANCE-EXTENSION-V1.md` extends the accepted provenance model to Recovery Provenance（寻回过程溯源）, custody / deposit / donation / institutional handoff（保管 / 寄存 / 捐赠 / 机构移交）without weakening existing rights/provenance rules.
+
 This document consolidates the accepted Round 7 rules from Workshop A, Workshop B + Rights Policy Alignment Addendum, Workshop C, and Workshop D. It is a current-truth consolidation for architecture review and audit. It does not authorize product-code implementation.
 
 Standing rule: **The architecture must be precise about boundaries without being rigid about circumstances.** Preserve the distinction among HARD INVARIANT, ADAPTIVE RULE, DEFERRED CALIBRATION and EXAMPLE.
