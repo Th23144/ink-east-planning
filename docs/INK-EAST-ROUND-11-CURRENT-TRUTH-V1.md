@@ -151,7 +151,7 @@ Controlling range: **R11-B1…B29 + B51…B59**.
 Core separation:
 
 ```text
-Discovery / Submission / Open Call / Commission / Reader Letter / Collaboration
+Discovery / Submission / Open Call / Public Request / Directed Request / Reader Letter / Collaboration（发现 / 投稿 / 公开征集 / 公开求助 / 定向求助 / 读者来信 / 合作）
         ↓
 Editorial Consideration（编辑评估）
         ↓
@@ -169,12 +169,12 @@ Published Issue Snapshot（已发布议题快照）
 Key controls:
 
 - Editorial consideration is workflow context, not a new public content identity.
-- Submission/commission/case records may need stable identity across revisions and decisions.
+- Submission / request / collaboration / recovery-case records（投稿 / 求助 / 合作 / 寻回案件记录）may need stable identity across revisions and decisions.
 - Workflow states carry business meaning; exact vocabulary remains evolvable Workflow / Configuration（工作流 / 配置）.
 - Conditional acceptance is not final publication.
 - Final editorial selection and Issue placement/inclusion remain separable.
 - Non-selection does not create a negative platform judgment by default.
-- Editorial acquisition is multi-route: existing public works, contributor submission, open call, commission, reader letter/question, archive/canonical selection, institutional/partner collaboration and future legitimate routes.
+- Editorial acquisition（编辑获取）is multi-route: existing public works（已有公开作品）, Contributor（贡献者）submission（投稿）, Open Call（公开征集）, Public / Directed Request（公开 / 定向求助）, Reader Letter / Question（读者来信 / 提问）, archive/canonical selection（归档 / 规范内容选取）, institutional/partner collaboration（机构 / 合作方协作）and future legitimate routes（未来合法路径）.
 - Existing public platform Works may be curated without forced resubmission while preserving authorship/provenance/rights.
 - Contributor status may create stronger editorial channels, not guaranteed outcomes.
 - Open Calls（公开征稿） are optional per Issue.
