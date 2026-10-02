@@ -185,13 +185,13 @@ The reconciliation does not answer:
 - final Collections/reading-path product model;
 - final Community aggregate destination, if any;
 - Membership value proposition/benefits/page/tier/price;
-- Custom Reading / Custom Ebook future roles;
+- Custom Reading（定制解读） / Custom Ebook Studio（定制电子书工作室） are no longer future-role questions; both are rejected / removed from Current Product Architecture（当前产品架构）;
 - full Notifications / Delivery product;
 - final Recognized Works public shape/name;
-- final Ink & East ↔ Spatial Flow service/commerce relationship;
+- final future cooperation relationship（未来合作关系）between the independent products Ink & East（墨与东方）and Spatial Flow（空间流）;
 - unresolved platform-wide Governance / Moderation / Corrections synthesis.
 
-These remain legitimate future decisions.
+Remaining unresolved items remain legitimate future decisions. The rejected Custom Reading（定制解读）and Custom Ebook Studio（定制电子书工作室）concepts are not future decisions and must not be revived from this historical reconciliation.
 
 ---
 
