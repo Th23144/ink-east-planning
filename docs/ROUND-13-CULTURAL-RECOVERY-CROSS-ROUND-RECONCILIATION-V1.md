@@ -1,16 +1,16 @@
-# Round 13（第十三轮）— Open Cultural Contribution & Recovery（开放文化贡献与寻回）
+# Round 13（第十三轮）— Open Cultural Recovery（开放文化寻回）
 # Cross-Round Architecture Reconciliation V1（跨轮架构一致性复核 V1）
 
 > **Status（状态）:** PASS WITH TARGETED AMENDMENTS / CURRENT CONTROLLING RECONCILIATION（定向修订后通过 / 当前控制性复核）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
-> **Source direction（来源方向）:** `ROUND-13-OPEN-CULTURAL-CONTRIBUTION-RECOVERY-FOUNDATION-V1.md`
+> **Source direction（来源方向）:** `ROUND-13-OPEN-CULTURAL-RECOVERY-FOUNDATION-V2.md`
 
 ---
 
 # 0. Review target（复核目标）
 
-This review checks whether the user-confirmed Open Cultural Contribution & Recovery（开放文化贡献与寻回）direction can coexist with the already accepted architecture from:
+This review checks whether the user-confirmed Open Cultural Recovery（开放文化寻回）direction can coexist with the already accepted architecture from:
 
 - Round 4（第四轮）Contributor / Identity（贡献者 / 身份）;
 - Round 7（第七轮）Knowledge Graph & Provenance（知识图谱与来源溯源）;
@@ -26,7 +26,7 @@ No need exists to reopen those rounds wholesale（不需要整体重开这些轮
 
 # 1. New system identity（新系统身份）
 
-Open Cultural Contribution & Recovery（开放文化贡献与寻回）is a **core knowledge / cultural recovery capability（核心知识 / 文化寻回能力）**, not a Monetization Product（商业化产品）and not a reader-facing paid Service（面向读者的付费服务）.
+Open Cultural Recovery（开放文化寻回）is a **core knowledge / cultural recovery capability（核心知识 / 文化寻回能力）**, not a Monetization Product（商业化产品）and not a reader-facing paid Service（面向读者的付费服务）.
 
 Its bidirectional structure is:
 
@@ -54,8 +54,8 @@ Intake（接收）
   （必要时机构转介 / 移交）
 → Open Publication / Public Access where permitted
   （在允许范围内开放发布 / 公共访问）
-→ durable provenance / contribution history
-  （长期来源 / 贡献历史）
+→ durable provenance / recovery history
+  （长期来源 / 寻回历史）
 ```
 
 ---
@@ -82,7 +82,7 @@ These two meanings must **not** collapse.
 
 > **Recovery Participation Role（寻回参与角色） != Contributor Qualification（贡献者资格）.**
 
-A person can make a valuable Source Contribution（资料贡献）or Discovery Contribution（发现贡献）without holding Contributor Qualification（贡献者资格）.
+A person can play a valuable Source Provider（资料提供者）or Discoverer（发现者）role without holding Contributor Qualification（贡献者资格）.
 
 Likewise, holding Contributor Qualification（贡献者资格）does not automatically make every submitted source authentic, lawful, important or publication-ready.
 
@@ -94,17 +94,17 @@ The platform must be able to attribute actual Recovery Participation Roles（寻
 
 - Discoverer（发现者）;
 - Source Provider（资料提供者）;
-- Knowledge Contributor（知识贡献者）;
+- Knowledge Provider（知识提供者）;
 - Material Holder（资料持有人）;
 - Donor（捐赠者）;
 - Depositor（寄存者）;
 - Photographer / Imager（摄影 / 影像记录者）;
-- Digitization Contributor（数字化贡献者）;
+- Digitization Participant（数字化参与者）;
 - Transcriber（转录者）;
 - Collator（校勘者）;
 - Translator（翻译者）;
 - Researcher（研究者）;
-- Restorer / Reconstruction Contributor（修复 / 重建贡献者）;
+- Restorer / Reconstruction Participant（修复 / 重建参与者）;
 - Institutional Connector（机构联络促成者）;
 - Custodian / Holding Institution（保管者 / 收藏机构）.
 
@@ -114,8 +114,8 @@ Exact public vocabulary（最终公开词汇）remains evolvable.
 
 Recovery Attribution（寻回归因）:
 
-- records what someone actually contributed（记录真实贡献）;
-- may support a Profile / Portfolio（个人资料 / 作品与贡献档案）;
+- records what someone actually did in the recovery process（记录其在寻回过程中的实际角色）;
+- may support a Profile / Recovery History（个人资料 / 寻回经历记录）;
 - does **not** automatically create Expertise Scope（专业范围）;
 - does **not** automatically create Contributor Qualification（贡献者资格）;
 - does **not** automatically create Work Recognition（作品认可）;
@@ -143,7 +143,7 @@ Old “editorial commissioning（编辑约稿）” examples are historical word
 
 The broader valid direction is:
 
-> Contributor / user / institution participation may include **source discovery, knowledge contribution, research collaboration, preservation/digitization work and other scoped cultural-recovery collaboration（资料发现、知识贡献、研究合作、保存 / 数字化工作及其他范围化文化寻回合作）**.
+> Contributor / user / institution participation may include **source discovery, knowledge provision, research collaboration, preservation/digitization work and other scoped cultural-recovery collaboration（资料发现、知识提供、研究合作、保存 / 数字化工作及其他范围化文化寻回合作）**.
 
 If editors directly seek help from a known person or institution, use the actual current action label such as Directed Request（定向求助）, Research Collaboration（研究合作）or Editorial Collaboration（编辑合作） rather than reviving Commission（约稿）.
 
@@ -199,7 +199,7 @@ Not every object must use every event.
 
 ### Canonical rule（核心规则）
 
-> **Object custody may change; recovery and contribution provenance must remain reconstructable where lawful and appropriate（实体保管关系可以变化；在合法且适当的情况下，寻回与贡献来源链必须可重建）.**
+> **Object custody may change; recovery provenance must remain reconstructable where lawful and appropriate（实体保管关系可以变化；在合法且适当的情况下，寻回来源链必须可重建）.**
 
 ---
 
@@ -271,7 +271,7 @@ Discovery（发现）
 / Submission（投稿）
 / Open Call / Public Request（公开征集 / 公开求助）
 / Directed Request（定向求助）
-/ Open Cultural Contribution & Recovery（开放文化贡献与寻回）
+/ Open Cultural Recovery（开放文化寻回）
 / Reader Letter / Question（读者来信 / 提问）
 / Research / Editorial / Institutional Collaboration
   （研究 / 编辑 / 机构合作）
@@ -281,7 +281,7 @@ Discovery（发现）
 
 ## 4.2 Cultural recovery intake（文化寻回接收）is not ordinary Submission（投稿）
 
-A Source Lead（资料线索）, Material Deposit（资料寄存）, Donation（捐赠）, Oral Knowledge Contribution（口述知识贡献）or Institutional Referral（机构转介）must not be forced into the same object/workflow as an Article Submission（文章投稿）.
+A Source Lead（资料线索）, Material Deposit（资料寄存）, Donation（捐赠）, Oral Knowledge Provision（口述知识提供）or Institutional Referral（机构转介）must not be forced into the same object/workflow as an Article Submission（文章投稿）.
 
 They may later generate:
 
@@ -330,9 +330,9 @@ Historical Commission（约稿）records remain only for Decision Provenance（�
 
 # 5. Rights / privacy / cultural-sensitivity boundary（权利 / 隐私 / 文化敏感性边界）
 
-Open（开放）in “Open Cultural Contribution & Recovery（开放文化贡献与寻回）” means:
+Open（开放）in “Open Cultural Recovery（开放文化寻回）” means:
 
-> the system seeks broad public contribution and, where lawful/appropriate, broad public access to recovered knowledge.
+> the system seeks broad public participation and, where lawful/appropriate, broad public access to recovered knowledge.
 
 It does **not** mean every received item is immediately public or unrestricted.
 
@@ -356,13 +356,13 @@ Thus:
 
 # 6. Product-capability consequence（产品能力后果）
 
-Open Cultural Contribution & Recovery（开放文化贡献与寻回）should be treated as a confirmed **Capability Family（能力族）**, while its final public containers / page names / workflow screens（前台容器 / 页面名 / 工作流界面）remain open.
+Open Cultural Recovery（开放文化寻回）should be treated as a confirmed **Capability Family（能力族）**, while its final public containers / page names / workflow screens（前台容器 / 页面名 / 工作流界面）remain open.
 
 Minimum conceptual capability set（最低概念能力集）:
 
 - Public Request / Source Call（公开求助 / 资料征集）;
 - Lead Submission（线索提交）;
-- Knowledge Contribution Intake（知识贡献接收）;
+- Knowledge Provision Intake（知识提供接收）;
 - Digital Material Intake（数字资料接收）;
 - Physical Material Contact / Referral Intake（实体资料联系 / 转介接收）;
 - Deposit / Donation distinction（寄存 / 捐赠区分）;
@@ -398,7 +398,7 @@ No exact page or route is authorized yet.
 **PASS WITH TARGETED SEMANTIC AMENDMENT（定向语义修订后通过）**
 
 Needed:
-- introduce Recovery Participation / Attribution（寻回参与 / 归因）separate from Contributor Qualification（贡献者资格）;
+- use Recovery Participant / Recovery Role / Recovery Attribution（寻回参与者 / 寻回角色 / 寻回归因）separately from Contributor Qualification（贡献者资格）;
 - preserve Contributor（贡献者）as the original scoped qualification identity（范围化资格身份）;
 - replace historical Commission（约稿）wording with Public / Directed Request（公开 / 定向求助）and Research / Editorial Collaboration（研究 / 编辑合作）.
 
@@ -415,7 +415,7 @@ Needed:
 
 Needed:
 - remove Commission（约稿）from current acquisition terminology;
-- use Open Cultural Contribution & Recovery（开放文化贡献与寻回）plus actual action labels such as Directed Request（定向求助） / Research Collaboration（研究合作） / Editorial Collaboration（编辑合作）;
+- use Open Cultural Recovery（开放文化寻回）plus actual action labels such as Directed Request（定向求助） / Research Collaboration（研究合作） / Editorial Collaboration（编辑合作）;
 - keep recovered-material intake distinct from Article Submission（文章投稿）.
 
 ---
