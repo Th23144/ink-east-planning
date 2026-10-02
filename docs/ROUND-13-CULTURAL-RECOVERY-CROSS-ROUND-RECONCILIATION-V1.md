@@ -241,7 +241,7 @@ Ink & East（墨与东方）may preserve:
 - research record（研究记录）;
 - transcription / translation / annotation（转录 / 翻译 / 注释）;
 - recovery provenance（寻回溯源）;
-- contribution attribution（贡献署名）;
+- Recovery Attribution（寻回归因）;
 - institutional referral history（机构转介历史）;
 - public-access representation（公共访问呈现）,
 
@@ -253,14 +253,15 @@ subject to rights / privacy / legal / cultural-sensitivity limits（权利 / 隐
 
 ## 4.1 Main correction（主要纠正）
 
-Round 11（第十一轮）currently treats Commission（约稿）as a first-class Editorial Acquisition Route（一级编辑获取路径）.
+The historical pre-amendment Round 11（第十一轮修订前历史版本）treated the old Commission（约稿）term as a first-class Editorial Acquisition Route（一级编辑获取路径）. That framing is now superseded.
 
 That is now too narrow / too strong as the main concept.
 
 It should be amended from:
 
 ```text
-Discovery / Submission / Open Call / Commission / Reader Letter / Collaboration
+Historical pre-amendment wording（历史修订前表述）:
+Discovery / Submission / Open Call / [superseded old term] / Reader Letter / Collaboration
 ```
 
 to conceptually:
