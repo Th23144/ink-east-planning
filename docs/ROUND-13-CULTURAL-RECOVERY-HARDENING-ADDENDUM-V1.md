@@ -1,4 +1,4 @@
-# Round 13（第十三轮）— Open Cultural Contribution & Recovery Hardening Addendum V1（开放文化贡献与寻回加固补充 V1）
+# Round 13（第十三轮）— Open Cultural Recovery Hardening Addendum V1（开放文化寻回加固补充 V1）
 
 > **Status（状态）:** CONTROLLING HARDENING ADDENDUM（当前控制性加固补充）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
