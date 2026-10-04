@@ -1,7 +1,7 @@
 # Membership Re-entry Review #1（会员重启检查 #1）— Discussion V1
 # 会员重启检查 #1——讨论 V1
 
-> **Status（状态）:** ACTIVE REVIEW / USER DECISION REQUIRED（正在检查 / 需要用户决定）
+> **Status（状态）:** ACTIVE REVIEW / VALUE DISCOVERY REOPENED（正在检查 / 已重新打开价值发现）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Trigger（触发条件）:** Round 13（第十三轮） completed at current Product Architecture（产品架构） depth.
@@ -107,3 +107,14 @@ The user should now decide whether any genuine recurring Membership-specific val
 If none exists, Review #1（第一次检查） should conclude:
 
 > **Membership（会员） remains DEFERRED（暂缓） and Round 14（第十四轮） may begin.**
+
+
+---
+
+## 6. Reopened value discovery（重新打开价值发现）
+
+At user request, Review #1（第一次检查） will not immediately close Membership（会员） as deferred. A focused value-discovery discussion is now active:
+
+- `MEMBERSHIP-REENTRY-REVIEW-1-VALUE-DISCOVERY-DISCUSSION-V1.md`
+
+This does not approve Membership（会员） existence, benefits, pricing, tiers or Reading Room（阅读室）.
