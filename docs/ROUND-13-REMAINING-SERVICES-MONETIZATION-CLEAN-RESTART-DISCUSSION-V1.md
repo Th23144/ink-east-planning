@@ -1,7 +1,7 @@
 # Round 13（第十三轮）— Remaining Services / Monetization Clean Restart Discussion V1
 # 剩余服务 / 商业化干净重启讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / CLEAN RESTART（正在讨论 / 干净重启）
+> **Status（状态）:** ACTIVE / USER EARLY HYPOTHESES RECEIVED（进行中 / 已接收用户早期想法）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置结论）:** `ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md`
@@ -62,3 +62,14 @@ Any future Services / Monetization（服务 / 商业化） concept must first pr
 5. only then should page / workflow / pricing / packaging（页面 / 流程 / 定价 / 包装） be designed.
 
 No legacy service is revived by this restart.
+
+
+---
+
+## 5. Current discussion continuation（当前讨论承接）
+
+User early hypotheses（用户早期想法）:
+- `ROUND-13-MONETIZATION-EARLY-HYPOTHESES-INTAKE-V1.md`
+
+Current active model discussion（当前主线模型讨论）:
+- `ROUND-13-MONETIZATION-LAYER-MODEL-DISCUSSION-V1.md`
