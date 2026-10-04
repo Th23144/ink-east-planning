@@ -415,7 +415,9 @@ Those statements are superseded where they conflict with this file, accepted ame
 93. `docs/ROUND-13-RELATIONSHIP-COOPERATION-MODES-SIMPLIFIED-DISCUSSION-V1.md` — resolved discussion provenance（已解决讨论溯源）.
 94. `docs/ROUND-13-RELATIONSHIP-COOPERATION-MODES-RESOLUTION-V1.md` — **RESOLVED（已解决）**: three-layer cooperation model（三层合作模型） confirmed.
 95. `docs/ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md` — **CURRENT CONTROLLING RELATIONSHIP BASELINE（当前控制关系基线）**.
-96. `docs/ROUND-13-REMAINING-SERVICES-MONETIZATION-CLEAN-RESTART-DISCUSSION-V1.md` — **CURRENT ACTIVE ROUND-13 SUBJECT（第十三轮当前主线）**: clean restart for remaining Ink & East（墨与东方） Services / Monetization（服务 / 商业化）.
+96. `docs/ROUND-13-REMAINING-SERVICES-MONETIZATION-CLEAN-RESTART-DISCUSSION-V1.md` — Round 13（第十三轮） remaining Services / Monetization（服务 / 商业化） clean restart.
+97. `docs/ROUND-13-MONETIZATION-EARLY-HYPOTHESES-INTAKE-V1.md` — **USER EARLY HYPOTHESES / NON-FINAL（用户早期想法 / 非最终）**: advertising/traffic, high-intent vertical partnerships, Education / Teaching（教育 / 教学） examples.
+98. `docs/ROUND-13-MONETIZATION-LAYER-MODEL-DISCUSSION-V1.md` — **CURRENT ACTIVE ROUND-13 SUBJECT（第十三轮当前主线）**: Audience / Distribution Monetization（受众 / 分发商业化） + Vertical Partner Economy（垂直合作生态） + optional Project / First-party Monetization（可选项目型 / 第一方商业化）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
