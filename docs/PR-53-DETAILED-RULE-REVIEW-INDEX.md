@@ -316,7 +316,12 @@ B-C1…B-C6 are **DEFERRED**. Reading Room product existence is also **UNRESOLVE
 - [`ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md`](ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md) — **CURRENT CONTROLLING RELATIONSHIP BASELINE（当前控制关系基线）**.
 - [`ROUND-13-REMAINING-SERVICES-MONETIZATION-CLEAN-RESTART-DISCUSSION-V1.md`](ROUND-13-REMAINING-SERVICES-MONETIZATION-CLEAN-RESTART-DISCUSSION-V1.md) — Services / Monetization（服务 / 商业化） clean restart.
 - [`ROUND-13-MONETIZATION-EARLY-HYPOTHESES-INTAKE-V1.md`](ROUND-13-MONETIZATION-EARLY-HYPOTHESES-INTAKE-V1.md) — **USER EARLY HYPOTHESES / NON-FINAL（用户早期想法 / 非最终）**.
-- [`ROUND-13-MONETIZATION-LAYER-MODEL-DISCUSSION-V1.md`](ROUND-13-MONETIZATION-LAYER-MODEL-DISCUSSION-V1.md) — **CURRENT ACTIVE ROUND-13 SUBJECT / USER REVIEW REQUIRED（第十三轮当前主线 / 需要用户审阅）**.
+- [`ROUND-13-MONETIZATION-LAYER-MODEL-DISCUSSION-V1.md`](ROUND-13-MONETIZATION-LAYER-MODEL-DISCUSSION-V1.md) — resolved discussion provenance（已解决讨论溯源）.
+- [`ROUND-13-COMMERCIAL-ACTOR-CONTENT-DISTRIBUTION-SEPARATION-V1.md`](ROUND-13-COMMERCIAL-ACTOR-CONTENT-DISTRIBUTION-SEPARATION-V1.md) — **USER-CONFIRMED CURRENT DIRECTION（用户确认当前方向）**.
+- [`ROUND-13-COMMERCIAL-CONVERSION-DEPTH-RESOLUTION-V1.md`](ROUND-13-COMMERCIAL-CONVERSION-DEPTH-RESOLUTION-V1.md) — **RESOLVED（已解决）**.
+- [`ROUND-13-MONETIZATION-CURRENT-DIRECTION-V1.md`](ROUND-13-MONETIZATION-CURRENT-DIRECTION-V1.md) — **CURRENT CONTROLLING MONETIZATION DIRECTION（当前控制商业化方向）**.
+- [`ROUND-13-CURRENT-CHECKPOINT-V1.md`](ROUND-13-CURRENT-CHECKPOINT-V1.md) — **ROUND 13 RESOLVED AT CURRENT PRODUCT-ARCHITECTURE DEPTH（第十三轮当前产品架构深度已解决）**.
+- [`MEMBERSHIP-REENTRY-REVIEW-1-DISCUSSION-V1.md`](MEMBERSHIP-REENTRY-REVIEW-1-DISCUSSION-V1.md) — **CURRENT ACTIVE CHECKPOINT / USER DECISION REQUIRED（当前主线检查点 / 需要用户决定）**.
 - [`ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md`](ROUND-13-SERVICES-MONETIZATION-SPATIAL-FLOW-RESTART-SCOPE-V1.md) — superseded original scope（已取代原始范围）.
 - [`ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md`](ROUND-13-BLOCK-1-COMMERCIAL-ROLE-INVENTORY-DISCUSSION-V1.md) — superseded discussion provenance（已取代讨论溯源）.
 - [`ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md`](ROUND-13-COMPLETE-DISCUSSION-FRAMEWORK-V1.md) — superseded discussion provenance（已取代讨论溯源）.
@@ -326,7 +331,8 @@ Current controlling facts（当前控制事实）:
 - Ink & East（墨与东方）and Spatial Flow（空间流）are **independent products/projects（独立产品 / 项目）**, not one Shared Platform（共享平台）.
 - They share a development/planning context（开发 / 规划上下文）and now have a confirmed Standing Strategic Relationship（持续战略关系）; Spatial Flow（空间流）is a non-exclusive Preferred Strategic Partner（优先战略合作伙伴）.
 - The strategic/product relationship is **RESOLVED AT CURRENT PRODUCT-ARCHITECTURE DEPTH（当前产品架构深度已解决）**; public brand/legal wording and selected infrastructure axes remain deferred（暂缓）.
-- The **ACTIVE ROUND-13 SUBJECT（第十三轮当前主线）** is now remaining Ink & East（墨与东方） Services / Monetization（服务 / 商业化）.
+- Round 13（第十三轮） is **RESOLVED AT CURRENT PRODUCT-ARCHITECTURE DEPTH（当前产品架构深度已解决）**.
+- The **CURRENT ACTIVE CHECKPOINT（当前主线检查点）** is Membership Re-entry Review #1（会员重启检查 #1）.
 - Custom Reading（定制解读）is **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**.
 - Custom Ebook Studio（定制电子书工作室）is **REJECTED / REMOVED FROM CURRENT PRODUCT ARCHITECTURE（已淘汰 / 从当前产品架构删除）**.
 - Standalone recurring Membership（独立持续订阅会员）remains deferred（暂缓）and does not control Round 13（第十三轮）.
