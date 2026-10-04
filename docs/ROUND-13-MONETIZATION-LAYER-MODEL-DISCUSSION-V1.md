@@ -1,7 +1,7 @@
 # Round 13（第十三轮）— Monetization Layer Model Discussion V1
 # 商业化分层模型讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER REVIEW REQUIRED（正在讨论 / 需要用户审阅）
+> **Status（状态）:** RESOLVED AT CURRENT ARCHITECTURE DEPTH / CONSOLIDATED（当前架构深度已解决 / 已汇总）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Source input（来源输入）:** `ROUND-13-MONETIZATION-EARLY-HYPOTHESES-INTAKE-V1.md`
@@ -120,3 +120,6 @@ The next useful question is simple:
 > **Should Ink & East（墨与东方） treat “audience/distribution monetization + vertical partner economy（受众 / 分发商业化 + 垂直合作生态）” as the primary long-term commercial direction, while first-party paid services remain optional and need-based（第一方收费服务保持可选、按真实需求再决定）?**
 
 If confirmed, later discussion can focus on commercial integrity and partner/platform mechanics rather than inventing a service catalogue.
+
+
+Current controlling direction（当前控制方向）: `ROUND-13-MONETIZATION-CURRENT-DIRECTION-V1.md`.
