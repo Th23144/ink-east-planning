@@ -423,7 +423,9 @@ Those statements are superseded where they conflict with this file, accepted ame
 101. `docs/ROUND-13-MONETIZATION-CURRENT-DIRECTION-V1.md` — **CURRENT CONTROLLING MONETIZATION DIRECTION（当前控制商业化方向）**.
 102. `docs/ROUND-13-CURRENT-CHECKPOINT-V1.md` — **ROUND 13 RESOLVED AT CURRENT PRODUCT-ARCHITECTURE DEPTH（第十三轮当前产品架构深度已解决）**.
 103. `docs/MEMBERSHIP-REENTRY-REVIEW-1-DISCUSSION-V1.md` — Membership Re-entry Review #1（会员重启检查 #1） current review.
-104. `docs/MEMBERSHIP-REENTRY-REVIEW-1-VALUE-DISCOVERY-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: focused Membership Value Discovery（会员价值发现） reopened at user request; no Membership product approval implied.
+104. `docs/MEMBERSHIP-REENTRY-REVIEW-1-VALUE-DISCOVERY-DISCUSSION-V1.md` — focused Membership Value Discovery（会员价值发现）.
+105. `docs/MEMBERSHIP-REENTRY-REVIEW-1-USER-REACTION-VALUE-FAMILIES-V1.md` — **USER-SUPPLIED DIRECTION（用户提供方向）**: supporter strongly positive; utility cautious; participation positive but use cases unclear; ad-free later; economic commitment supporting only; partner courtesy future-positive.
+106. `docs/MEMBERSHIP-REENTRY-REVIEW-1-PHASED-SUPPORTER-FIRST-MODEL-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: phased Supporter-first Membership（分阶段支持者优先会员）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
