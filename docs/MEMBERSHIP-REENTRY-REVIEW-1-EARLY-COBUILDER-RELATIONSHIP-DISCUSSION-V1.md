@@ -1,7 +1,7 @@
 # Membership Re-entry Review #1（会员重启检查 #1）— Early Co-builder Relationship Discussion V1
 # 会员重启检查 #1——早期共建者关系讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
@@ -143,3 +143,6 @@ This would be compensation/reward for actual activity, not a return merely for b
 3. Should the platform allow special historical/relationship treatment without granting governance/editorial/Recognition authority（治理 / 编辑 / 认可权）?  
 4. Should future economic participation be explored primarily as activity-linked rewards/compensation（与实际行为挂钩的奖励 / 报酬）, rather than returns for supporter status itself?  
 5. Is “Spiritual Shareholder（精神股东）” better treated as public/community language while Early Co-builder Relationship（早期共建者关系） remains the underlying architecture?
+
+
+Resolution（结论）: `MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-RELATIONSHIP-RESOLUTION-V1.md`.
