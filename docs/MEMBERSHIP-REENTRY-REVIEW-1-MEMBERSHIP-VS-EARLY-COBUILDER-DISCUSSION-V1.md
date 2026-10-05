@@ -1,7 +1,7 @@
 # Membership Re-entry Review #1（会员重启检查 #1）— Membership vs Early Co-builder Relationship Discussion V1
 # 会员重启检查 #1——会员关系与早期共建者关系分离讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISION REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
@@ -111,3 +111,6 @@ Public wording remains open, but underlying architecture should keep it on the h
 3. Should paying Membership alone never be sufficient to buy Early Co-builder status?
 4. Should later users be able to become Members/Supporters without being treated as “lesser” merely because they were not early?
 5. Should “Spiritual Shareholder（精神股东）” remain outside Membership tier/pricing architecture?
+
+
+Resolution（结论）: `MEMBERSHIP-REENTRY-REVIEW-1-MEMBERSHIP-VS-EARLY-COBUILDER-RESOLUTION-V1.md`.
