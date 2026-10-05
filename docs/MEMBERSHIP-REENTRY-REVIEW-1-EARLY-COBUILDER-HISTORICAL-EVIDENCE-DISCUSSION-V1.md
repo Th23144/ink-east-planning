@@ -1,7 +1,7 @@
 # Membership Re-entry Review #1（会员重启检查 #1）— Early Co-builder Historical Evidence Discussion V1
 # 会员重启检查 #1——早期共建历史证据讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置）:** `MEMBERSHIP-REENTRY-REVIEW-1-FORMATIVE-STAGE-BOUNDARY-RESOLUTION-V1.md`
@@ -117,3 +117,6 @@ Prefer:
 3. Should user self-claims be allowed as input but never auto-confirmed as historical truth?
 4. Should confirmed history preserve time/context/evidence provenance so it remains explainable?
 5. Should the platform prefer automatic/lightweight recording and reserve manual review for ambiguous or consequential cases?
+
+
+Resolution（结论）: `MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-HISTORICAL-EVIDENCE-RESOLUTION-V1.md`.
