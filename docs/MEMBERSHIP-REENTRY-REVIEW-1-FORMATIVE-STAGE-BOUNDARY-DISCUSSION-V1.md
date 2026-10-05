@@ -1,7 +1,7 @@
 # Membership Re-entry Review #1（会员重启检查 #1）— Formative Stage Boundary Discussion V1
 # 会员重启检查 #1——平台形成阶段边界讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
@@ -109,3 +109,6 @@ Once the formative stage closes:
 3. Should the platform allow multiple typed Early Co-builder histories to remain open during the formative stage rather than one binary label?
 4. Should the formative stage close explicitly once the product/community reaches a defined maturity milestone?
 5. Should later users remain fully eligible for all non-historical platform roles/opportunities without being treated as lower status?
+
+
+Resolution（结论）: `MEMBERSHIP-REENTRY-REVIEW-1-FORMATIVE-STAGE-BOUNDARY-RESOLUTION-V1.md`.
