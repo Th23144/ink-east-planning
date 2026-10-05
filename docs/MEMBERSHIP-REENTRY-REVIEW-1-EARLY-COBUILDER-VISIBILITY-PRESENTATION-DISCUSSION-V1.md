@@ -1,7 +1,7 @@
 # Membership Re-entry Review #1（会员重启检查 #1）— Early Co-builder Visibility & Presentation Discussion V1
 # 会员重启检查 #1——早期共建历史可见性与呈现讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置）:** `MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-HISTORICAL-EVIDENCE-RESOLUTION-V1.md`
@@ -100,3 +100,6 @@ Public naming remains separate from backend architecture.
 3. Should sensitive evidence (amounts, private reports, private project details) remain internal even when the history itself is publicly acknowledged?
 4. Should full historical context live mainly on profile/detail surfaces rather than feed/content cards?
 5. Should “Spiritual Shareholder（精神股东）” remain an optional community-facing expression, while precise typed histories remain the real underlying record?
+
+
+Resolution（结论）: `MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-VISIBILITY-PRESENTATION-RESOLUTION-V1.md`.
