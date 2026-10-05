@@ -432,7 +432,10 @@ Those statements are superseded where they conflict with this file, accepted ame
 110. `docs/MEMBERSHIP-REENTRY-REVIEW-1-MEMBERSHIP-VS-EARLY-COBUILDER-DISCUSSION-V1.md` — resolved discussion provenance（已解决讨论溯源）.
 111. `docs/MEMBERSHIP-REENTRY-REVIEW-1-MEMBERSHIP-VS-EARLY-COBUILDER-RESOLUTION-V1.md` — **RESOLVED（已解决）**: Membership / Supporter Relationship（会员 / 支持者关系） and Early Co-builder Relationship（早期共建者关系） formally separated.
 112. `docs/MEMBERSHIP-REENTRY-REVIEW-1-FORMATIVE-STAGE-BOUNDARY-RESOLUTION-V1.md` — **RESOLVED（已解决）**: formative stage（形成阶段） is milestone-based; Early Presence（早期在场） != full Early Co-building（完整早期共建）.
-113. `docs/MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-HISTORICAL-EVIDENCE-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: evidence-backed, typed and explainable early co-builder history（有证据、按类型、可解释的早期共建历史）.
+113. `docs/MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-HISTORICAL-EVIDENCE-DISCUSSION-V1.md` — resolved discussion provenance（已解决讨论溯源）.
+114. `docs/MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-HISTORICAL-EVIDENCE-RESOLUTION-V1.md` — **RESOLVED（已解决）**: evidence-backed, typed and explainable early co-builder history（有证据、按类型、可解释的早期共建历史）.
+115. `docs/MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-VISIBILITY-PRESENTATION-RESOLUTION-V1.md` — **RESOLVED（已解决）**: private-first history, optional public acknowledgment, sensitive evidence internal（个人私有优先、公开致谢可选、敏感证据内部保存）.
+116. `docs/MEMBERSHIP-REENTRY-REVIEW-1-CORE-THESIS-SYNTHESIS-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: synthesize the governing Membership relationship thesis（综合会员控制性关系主张）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
