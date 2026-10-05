@@ -451,3 +451,4 @@ Those statements are superseded where they conflict with this file, accepted ame
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
 117. `docs/MEMBERSHIP-REENTRY-REVIEW-1-CORE-RELATIONSHIP-THESIS-RESOLUTION-V1.md` — **CORE RELATIONSHIP THESIS CONFIRMED / PRODUCT LAUNCH & PACKAGING DEFERRED（核心关系主张确认 / 产品上线与包装暂缓）**: Membership Re-entry Review #1（会员重启检查 #1） directional resolution（方向性结论）.
+118. `docs/ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: Round 14（第十四轮） Governance / Moderation / Corrections（治理 / 审核 / 纠错） foundation.
