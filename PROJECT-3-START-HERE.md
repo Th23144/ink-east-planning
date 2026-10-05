@@ -450,3 +450,4 @@ Those statements are superseded where they conflict with this file, accepted ame
 77. superseded Round 6 Final/Seal and older planning documents only as historical references
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
+117. `docs/MEMBERSHIP-REENTRY-REVIEW-1-CORE-RELATIONSHIP-THESIS-RESOLUTION-V1.md` — **CORE RELATIONSHIP THESIS CONFIRMED / PRODUCT LAUNCH & PACKAGING DEFERRED（核心关系主张确认 / 产品上线与包装暂缓）**: Membership Re-entry Review #1（会员重启检查 #1） directional resolution（方向性结论）.
