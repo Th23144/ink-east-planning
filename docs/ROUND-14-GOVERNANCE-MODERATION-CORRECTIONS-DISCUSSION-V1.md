@@ -1,7 +1,7 @@
 # Round 14（第十四轮）— Governance / Moderation / Corrections Discussion V1
 # 第十四轮——治理 / 审核 / 纠错讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / FOUNDATION OPENED（正在讨论 / 基础讨论已开启）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置）:** Membership Re-entry Review #1（会员重启检查 #1） resolved at CORE RELATIONSHIP THESIS CONFIRMED / PRODUCT LAUNCH & PACKAGING DEFERRED（核心关系主张确认 / 产品上线与包装暂缓）.
@@ -142,3 +142,6 @@ Actions should be scoped to the relevant behavior, capability, content or role w
 3. Should important public knowledge changes preserve explainable version history where appropriate?
 4. Should higher-impact decisions require stronger reasons, provenance, appeal and possible reversibility?
 5. Should enforcement remain scoped to the relevant content/behavior/capability instead of creating one universal punishment/trust ladder?
+
+
+Resolution（结论）: `ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-FOUNDATION-RESOLUTION-V1.md`.
