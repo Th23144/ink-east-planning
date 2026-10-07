@@ -1,7 +1,7 @@
 # Round 14（第十四轮）— Appeal / Review / Restoration Discussion V1
 # 第十四轮——申诉 / 复核 / 恢复机制讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置）:** `ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-FOUNDATION-RESOLUTION-V1.md`
@@ -150,3 +150,6 @@ Process may differ because the affected capability differs, not because one iden
 3. Should defined high-impact cases require human review?
 4. Should repeated appeals require material new evidence or changed circumstances after the first full review?
 5. If an appeal succeeds, should the platform restore the affected state and preserve a transparent reversal history rather than silently deleting the prior action?
+
+
+Resolution（结论）: `ROUND-14-APPEAL-REVIEW-RESTORATION-RESOLUTION-V1.md`.
