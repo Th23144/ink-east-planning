@@ -454,3 +454,5 @@ Do not restart visual-finalization work merely because an older roadmap says a s
 118. `docs/ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: Round 14（第十四轮） Governance / Moderation / Corrections（治理 / 审核 / 纠错） foundation.
 119. `docs/ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-FOUNDATION-RESOLUTION-V1.md` — **RESOLVED（已解决）**: separates moderation, correction, recognition review, and qualification/capability review; Correction（纠错） != Punishment（惩罚）; scoped enforcement（范围受限处理）.
 120. `docs/ROUND-14-APPEAL-REVIEW-RESTORATION-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: Appeal / Review / Restoration（申诉 / 复核 / 恢复） design.
+121. `docs/ROUND-14-APPEAL-REVIEW-RESTORATION-RESOLUTION-V1.md` — **RESOLVED（已解决）**: appeal intensity by impact, independent review for consequential cases, mandatory Human Review（人工复核） for defined high-impact cases, evidence-based reopening, real restoration.
+122. `docs/ROUND-14-MODERATION-ACTION-SCOPE-SEVERITY-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: Object / Capability / Role / Account（对象 / 能力 / 角色 / 账户）处理范围与严重程度.
