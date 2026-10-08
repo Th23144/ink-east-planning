@@ -6,6 +6,8 @@
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prior discussion（前置讨论）:** `ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-DISCUSSION-V1.md`
 
+> **Subsequent controlling scope clarification（后续控制性适用范围澄清）:** `ROUND-14-KNOWLEDGE-CORRECTION-APPLICABILITY-SCOPE-RESOLUTION-V1.md` — formal knowledge review is proportional to content responsibility and impact; not imposed universally on ordinary community works（严格知识审查依据内容责任与影响决定，不统一施加于普通社区作品）.
+
 ## 1. Distinct epistemic / conduct states（区分知识状态与行为违规）
 Ink & East（墨与东方） formally distinguishes:
 - **Error（错误）**: verifiable factual, citation, attribution, transcription or source mistake（可核实的事实、引用、归属、转录或来源错误）;
