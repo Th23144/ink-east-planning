@@ -1,7 +1,7 @@
 # Round 14（第十四轮）— Moderation Action Scope / Severity Discussion V1
 # 第十四轮——审核处理范围 / 严重程度讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置）:** `ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-FOUNDATION-RESOLUTION-V1.md` + `ROUND-14-APPEAL-REVIEW-RESTORATION-RESOLUTION-V1.md`
@@ -139,3 +139,7 @@ This prevents mysterious punishment jumps（避免莫名其妙的处罚跳级）
 3. Should severity be based on harm, pattern, scale, intent where knowable, reversibility and evasion — not prestige/payment status?
 4. Should temporary/time-bounded restrictions be preferred where proportionate, while preserving permanent actions for genuinely severe/systemic cases?
 5. Should every major escalation preserve an explainable reason history showing why narrower measures became insufficient?
+
+
+## Outcome（结论）
+Controlling resolution（控制性结论）: `ROUND-14-MODERATION-ACTION-SCOPE-SEVERITY-RESOLUTION-V1.md`.
