@@ -1,7 +1,7 @@
 # Round 14（第十四轮）— Knowledge Correction / Source Dispute / Revision Lifecycle Discussion V1
 # 第十四轮——知识纠错、来源争议与修订流程讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISIONS REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisites（前置）:** `ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-FOUNDATION-RESOLUTION-V1.md`; `ROUND-14-MODERATION-ACTION-SCOPE-SEVERITY-RESOLUTION-V1.md`
@@ -53,3 +53,6 @@ Keep confidential/private evidence access-limited（私密证据限制访问）.
 
 ## 7. Boundaries（边界）
 No editor, reviewer or contributor acquires global authority merely by holding a role. Correction, Recognition（认可）, Conduct Moderation（行为审核） and Qualification（资格） remain distinct decisions. Exact user flows, thresholds, storage format and reviewer permissions remain for later implementation/policy discussion.
+
+## Resolution（结论）
+All five decisions were confirmed by the user（五项判断均经用户确认）. Controlling resolution（控制性结论）: `ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-RESOLUTION-V1.md`.
