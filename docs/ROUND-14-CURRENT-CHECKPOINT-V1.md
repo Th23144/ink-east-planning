@@ -16,6 +16,12 @@ The user accepted all five Knowledge Correction / Source Dispute / Revision Life
 `ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-DISCUSSION-V1.md`
 Status: RESOLVED（已解决）.
 
+## Latest scope confirmation（最新适用范围确认）
+User confirmed that formal Knowledge Correction（知识纠错） / Source Dispute（来源争议） / Independent Review（独立复核） **is not mandatory for ordinary community works（不强制适用于普通社区作品）**. Baseline moderation still applies to all; substantive knowledge responsibility, source claims and real impact determine formal review intensity（基础社区审核仍适用全站，正式审查强度由实际知识 / 来源责任和影响决定）. Recognized Works（认可作品） do not automatically equal absolute authority（认可作品不自动等于绝对权威）.
+
+Controlling scope resolution（控制性适用范围结论）:
+`ROUND-14-KNOWLEDGE-CORRECTION-APPLICABILITY-SCOPE-RESOLUTION-V1.md`
+
 ## Next active discussion（下一项主线讨论）
 `ROUND-14-CORRECTION-OWNERSHIP-CONTESTED-DECISIONS-DISCUSSION-V1.md`
 
