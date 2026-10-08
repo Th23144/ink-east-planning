@@ -435,7 +435,7 @@ Those statements are superseded where they conflict with this file, accepted ame
 113. `docs/MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-HISTORICAL-EVIDENCE-DISCUSSION-V1.md` — resolved discussion provenance（已解决讨论溯源）.
 114. `docs/MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-HISTORICAL-EVIDENCE-RESOLUTION-V1.md` — **RESOLVED（已解决）**: evidence-backed, typed and explainable early co-builder history（有证据、按类型、可解释的早期共建历史）.
 115. `docs/MEMBERSHIP-REENTRY-REVIEW-1-EARLY-COBUILDER-VISIBILITY-PRESENTATION-RESOLUTION-V1.md` — **RESOLVED（已解决）**: private-first history, optional public acknowledgment, sensitive evidence internal（个人私有优先、公开致谢可选、敏感证据内部保存）.
-116. `docs/MEMBERSHIP-REENTRY-REVIEW-1-CORE-THESIS-SYNTHESIS-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: synthesize the governing Membership relationship thesis（综合会员控制性关系主张）.
+116. `docs/MEMBERSHIP-REENTRY-REVIEW-1-CORE-THESIS-SYNTHESIS-DISCUSSION-V1.md` — resolved discussion provenance（已解决讨论溯源）.
 71. `docs/PR-53-PRE-RESUME-FULL-CHECKPOINT-AUDIT-V1.md` — historical/invalidated certificate（历史 / 已失效证明）; provenance only（仅溯源）.
 72. `docs/PR-53-SUPERSESSION-REGRESSION-AUDIT-V1.md` — earlier regression record（早期回归记录） / provenance（溯源）.
 73. `docs/INK-EAST-PRODUCT-ARCHITECTURE-V1-WORKSHOP.md`
@@ -451,8 +451,10 @@ Those statements are superseded where they conflict with this file, accepted ame
 
 Do not restart visual-finalization work merely because an older roadmap says a static page is incomplete. First determine whether missing work affects product coverage, functional testing, shared architecture, accessibility or V0 coherence; launch-level visual refinement belongs to the final visual pass.
 117. `docs/MEMBERSHIP-REENTRY-REVIEW-1-CORE-RELATIONSHIP-THESIS-RESOLUTION-V1.md` — **CORE RELATIONSHIP THESIS CONFIRMED / PRODUCT LAUNCH & PACKAGING DEFERRED（核心关系主张确认 / 产品上线与包装暂缓）**: Membership Re-entry Review #1（会员重启检查 #1） directional resolution（方向性结论）.
-118. `docs/ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: Round 14（第十四轮） Governance / Moderation / Corrections（治理 / 审核 / 纠错） foundation.
+118. `docs/ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-DISCUSSION-V1.md` — resolved discussion provenance（已解决讨论溯源）.
 119. `docs/ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-FOUNDATION-RESOLUTION-V1.md` — **RESOLVED（已解决）**: separates moderation, correction, recognition review, and qualification/capability review; Correction（纠错） != Punishment（惩罚）; scoped enforcement（范围受限处理）.
-120. `docs/ROUND-14-APPEAL-REVIEW-RESTORATION-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: Appeal / Review / Restoration（申诉 / 复核 / 恢复） design.
+120. `docs/ROUND-14-APPEAL-REVIEW-RESTORATION-DISCUSSION-V1.md` — resolved discussion provenance（已解决讨论溯源）.
 121. `docs/ROUND-14-APPEAL-REVIEW-RESTORATION-RESOLUTION-V1.md` — **RESOLVED（已解决）**: appeal intensity by impact, independent review for consequential cases, mandatory Human Review（人工复核） for defined high-impact cases, evidence-based reopening, real restoration.
-122. `docs/ROUND-14-MODERATION-ACTION-SCOPE-SEVERITY-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: Object / Capability / Role / Account（对象 / 能力 / 角色 / 账户）处理范围与严重程度.
+122. `docs/ROUND-14-MODERATION-ACTION-SCOPE-SEVERITY-DISCUSSION-V1.md` — resolved discussion provenance（已解决讨论溯源）.
+123. `docs/ROUND-14-MODERATION-ACTION-SCOPE-SEVERITY-RESOLUTION-V1.md` — **USER-CONFIRMED / RESOLVED（用户确认 / 已解决）**: scoped effective enforcement, context-based severity, proportionate duration, explainable escalation（最窄有效处理 / 情境化严重程度 / 比例期限 / 可解释升级）.
+124. `docs/ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: Error / Uncertainty / Dispute / Misconduct（错误 / 不确定 / 争议 / 违规）与知识纠错修订流程.
