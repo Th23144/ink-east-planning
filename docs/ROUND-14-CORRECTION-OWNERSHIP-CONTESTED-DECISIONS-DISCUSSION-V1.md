@@ -5,6 +5,10 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置）:** `ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-RESOLUTION-V1.md`
+> **Controlling applicability scope（控制性适用范围）:** `ROUND-14-KNOWLEDGE-CORRECTION-APPLICABILITY-SCOPE-RESOLUTION-V1.md` — USER-CONFIRMED（用户确认）. Formal adjudication does not apply automatically to ordinary community works（正式裁定不自动适用于普通社区作品）.
+
+## Scope guardrail（适用范围约束）
+This discussion applies to substantive research/source-backed, accountable editorial or otherwise genuinely consequential knowledge claims（适用于实质研究 / 来源型、承担责任的编辑内容或其他确有重要影响的知识主张）. Ordinary Community / User（普通社区 / 用户） works ordinarily follow author editing, ordinary discussion and baseline conduct reporting（普通作者自行修改、正常讨论、基础违规举报）; they do not require scholarly source adjudication merely because someone disagrees（不会仅因观点不同就要求学术来源裁定）. **Recognition（认可） alone is not authority（认可本身不等于权威）**.
 
 ## 1. The next substantive question（下一个实质性问题）
 The prior round resolved which knowledge issues exist and the broad correction lifecycle. The remaining problem is not simply “can someone report an error（能不能举报错误）” but:
@@ -52,10 +56,10 @@ The user's public experience should be understandable:
 
 Avoid putting every ordinary post through scholarly fact adjudication（避免对每条普通帖子实施学术事实裁判）. Never publish private evidence merely to make the decision appear more transparent（不能为展示透明而公开私密证据）.
 
-## 6. First decision set（第一组待确认问题）
+## 6. First decision set for in-scope consequential cases（适用范围内重要案件的第一组待确认问题）
 1. Separate **Report / Edit / Decision（反馈 / 修改 / 决定）** as distinct capabilities; a report cannot itself overwrite another party's work.
 2. Assign correction responsibility **by content class（按内容类别）**, not through one global reviewer role.
-3. Give authors a reasonable chance to respond to substantial corrections to their work, **but not an unlimited veto（不享有无限否决权）**.
+3. In genuinely accountable/source-relevant cases（确有知识责任 / 来源责任的案件）, give authors a reasonable chance to respond to substantial corrections, **but not an unlimited veto（不享有无限否决权）**.
 4. For consequential interpretive/source disputes, prefer evidence-backed annotations and independent escalation when justified over forced one-sided deletion（有证据的争议标注与必要时独立升级，优于强制单方删除）.
 5. Preserve clear public correction/dispute notes where relevant, with privacy and proportionate treatment（必要时公开简明说明，同时保护隐私并按比例处理）.
 
