@@ -16,6 +16,8 @@ Adult-focused sexual/erotic literature and other mature content should **not rec
 
 This is a **distribution eligibility boundary（分发资格边界）**, not a statement that adult-themed writers or works are inferior, wrong, immoral, incapable of quality or automatically excluded from any future separate formal Recognition（作品认可） consideration（不是宣告成人作者低劣 / 不道德 / 永远不能获得质量认可）.
 
+**Adult literary publishing now confirmed at category level（成人文学发表原则已确认）:** An adult may ordinarily publish lawful adult-themed fiction/prose, including comparatively direct sexual description（成年用户原则上可以发表合法成人题材文学，包括较为直接的性描写）. This permission is for **publication**, not universal Home / Recommendation exposure（这只代表允许发表，不代表获得普通首页 / 推荐资格）. Applicable reader age, display/preview and precise illegal-content boundaries remain to be specified（年龄访问、展示预览及违法内容边界仍待细化）.
+
 ## 2. No surprise for users who have not chosen adult browsing（从未主动选择成人浏览者不得遭遇意外推送）
 
 For a user who has **not explicitly chosen** to browse adult/erotic-focused material:
