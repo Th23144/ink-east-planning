@@ -58,6 +58,29 @@ Example（案例）: An independent photographer without fame/institutional endo
 
 **Not decided（本例未决定）:** intentionally erotic photographic poses, sexually explicit acts and pornography-oriented images/video（明显情色姿势、露骨性行为和色情影像的最终分类及允许范围）, exact preview standards/age assurance（预览 / 限龄技术细则）. A self-applied “art（艺术）” label alone is neither guaranteed art classification nor automatic exposure eligibility（自行添加艺术标签不自动获得艺术归类 / 推荐资格）.
 
+## 4B. User-confirmed sexually suggestive photography scope（用户确认——明显性暗示摄影的管理边界）
+
+**Status（状态）:** USER-CONFIRMED PERMISSION / NO PROACTIVE DISTRIBUTION（用户确认原则上允许存在 / 不主动推荐）.
+
+### Covered case（适用案例）
+Lawful adult photography showing **prominently erotic or sexually suggestive poses and presentation**, including:
+- consensual intimate/provocative photographic poses without explicit sexual activity（没有具体性行为，但明显以挑逗、亲密姿态呈现的成年摄影）;
+- individual nude glamour/figure images posed in an obviously sexually suggestive manner（单人裸体写真中明显性暗示姿势）.
+
+These are not automatically treated like classical art-history material (e.g. David) or non-sexually-focused fine-art figure studies for public distribution（这类作品的公开分发不能自动视同《大卫》艺术史内容或不以性暗示为主体的正规人体艺术摄影）.
+
+### Decision（已确认处理）
+- **May exist / be published（原则上可以发表）:** within baseline law, rights, consent and safety rules; mere erotic suggestion in an otherwise lawful adult image is not itself grounds for forced deletion or punitive creator treatment（普通合法成人性暗示摄影不因性暗示本身强制删除或处罚）.
+- **No platform-initiated recommendations（不进入平台主动推荐）:** no automated Home / For You（首页 / 为你推荐）, ordinary Explore（综合探索）, Trending（热门自动推介）, autoplay/Next（自动播放 / 下一个）, push notifications（推送通知）, proactively personalized related-work slots（主动个性化相关推荐）, editorial algorithmic boosts or paid promotion used as an evasion（不得借算法、运营主动推荐或付费加热绕开）. Popularity, long browsing history, opted-in general cultural preferences, creator fame or creator's own “art” label do not override this boundary（高热度、长期成人阅读、名气和艺术自标不能绕过）.
+- **Intentional discovery remains possible（保留用户主动发现）:** a user may purposefully find lawful permitted material via explicit search, direct URL, deliberately visited creator page or appropriately classified manual browsing（可以通过主动检索、直接链接、主动进入作者主页及适当分类手动浏览发现）. This **does not** promise a dedicated commercial/adult feed, subscriptions or homepage promotion（不代表建立商业化成人内容信息流 / 订阅 / 首页推荐）.
+- **Distribution class, not an official aesthetic verdict（这是分发类别，不是艺术价值终审）:** the platform need not declare “this is not art（这绝对不是艺术）” in universal art history terms, and does not require the creator to prove personal credentials, fame or submit to formal Recognition（作品认可） just to be allowed to publish（不要求作者证明艺术资格或知名度）.
+- **No immediate promotion of classification into governance punishment（分类与处罚分离）:** a border-case reclassification modifies discovery/preview behavior, not automatically author trust, quality, Recognition standing or right to publish unrelated work（分类更正不自动触发惩罚、降权全账号或否定其他作品）.
+
+### Not locked（仍待讨论）
+Precise media-level depiction thresholds, age verification and region rules, borderline artistic intent versus erotic presentation, appeal process for misclassification, and whether explicit sex-act imagery/video is allowed at all（具体尺度、限龄、争议分类复核，以及明确性行为图影是否允许发表尚未决定）.
+
+**User expression（用户明确表达）:** "我觉得不可以进入主动推荐，我允许存在……包括单人摆出相对于的性姿势的那种裸体写真"（强调允许存在但不许主动推荐，明显性暗示裸体写真不按普通艺术推荐）.
+
 ## 5. Compatible architectural boundaries（与既有架构保持一致）
 - Round 10 ranking/retrieval systems already distinguish **Eligibility（资格门槛）** from Ranking（排序）, and Recommendation（推荐） from truth/Recognition. Adult-focused exposure restrictions should work as **surface- and intent-specific eligibility/safety limits**, not another popularity weight（成人内容普通推荐限制属于先判断能否展示，而非降低几点推荐分）.
 - Round 8 Community（社区） source content and separate presentation/projection allow a user to publish a legitimate work without promising it universal homepage distribution（允许发表不等于保证全站首页曝光）.
