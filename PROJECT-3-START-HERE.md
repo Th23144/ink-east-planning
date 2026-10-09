@@ -166,7 +166,7 @@ This prevents ordinary hardening or documentation repair from being misrepresent
 - **Round 12 foundation decision:** Economic Commitment Signal（经济承诺信号） is an independent contextual anti-abuse/capability concept. Membership may become one source of that signal but is not the mechanism itself. Standalone recurring Membership is **DEFERRED / PRODUCT EXISTENCE NOT YET JUSTIFIED**; Reading Room remains unresolved/not required; no VIP feature bundle is invented merely to justify subscription economics.
 - **Non-paying path preserved:** ordinary durable/long-form publishing must retain a legitimate non-paying path; payment may only reduce selected friction where payment genuinely mitigates the relevant zero-cost/Sybil risk.
 - **External benchmark:** `docs/ROUND-12-MEMBERSHIP-EXTERNAL-PREMIUM-PATTERN-BENCHMARK-V1.md` remains NON-CONTROLLING research only.
-- **Round 13 — CULTURAL RECOVERY RECONCILED / RELATIONSHIP DISCUSSION ACTIVE（文化寻回已完成跨轮复核 / 两者关系讨论已进入当前主线）.** Ink & East（墨与东方）and Spatial Flow（空间流）remain independent products/projects（独立产品 / 项目）. Open Cultural Recovery（开放文化寻回）is user-confirmed and reconciled with Round 4 / 7 / 11（第四 / 七 / 十一轮）; targeted adversarial audit（定向对抗性审计）PASS AFTER HARDENING（加固后通过）with 50 explicit failure modes（50 个明确失效场景）and zero unresolved material blockers（0 个未解决重大阻塞）. Current active discussion（当前主线讨论）: `docs/ROUND-13-INK-EAST-SPATIAL-FLOW-RELATIONSHIP-DISCUSSION-V1.md`.
+- **Round 13（第十三轮）— CULTURAL RECOVERY & RELATIONSHIP RESOLVED AT CURRENT ARCHITECTURE DEPTH（文化寻回及双项目关系在当前产品架构深度已解决）.** Use `docs/ROUND-13-INK-EAST-SPATIAL-FLOW-CURRENT-RELATIONSHIP-BASELINE-V1.md` for the current relationship; retained earlier discussions are historical only（以前讨论仅用于决策溯源）.
 - B-C1…B-C6 remain DEFERRED（暂缓）. The old 80-item Membership list remains a Capability / Value Candidate Pool（能力 / 价值候选池） only.
 
 `SEALED` means durable canonical record with no known unresolved material blocker at that checkpoint, not immunity from later evidence-based correction.
@@ -457,4 +457,12 @@ Do not restart visual-finalization work merely because an older roadmap says a s
 121. `docs/ROUND-14-APPEAL-REVIEW-RESTORATION-RESOLUTION-V1.md` — **RESOLVED（已解决）**: appeal intensity by impact, independent review for consequential cases, mandatory Human Review（人工复核） for defined high-impact cases, evidence-based reopening, real restoration.
 122. `docs/ROUND-14-MODERATION-ACTION-SCOPE-SEVERITY-DISCUSSION-V1.md` — resolved discussion provenance（已解决讨论溯源）.
 123. `docs/ROUND-14-MODERATION-ACTION-SCOPE-SEVERITY-RESOLUTION-V1.md` — **USER-CONFIRMED / RESOLVED（用户确认 / 已解决）**: scoped effective enforcement, context-based severity, proportionate duration, explainable escalation（最窄有效处理 / 情境化严重程度 / 比例期限 / 可解释升级）.
-124. `docs/ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-DISCUSSION-V1.md` — **CURRENT ACTIVE DISCUSSION（当前主线讨论）**: Error / Uncertainty / Dispute / Misconduct（错误 / 不确定 / 争议 / 违规）与知识纠错修订流程.
+124. `docs/ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-DISCUSSION-V1.md` — resolved historical discussion（已解决历史讨论）.
+125. `docs/ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-RESOLUTION-V1.md` — USER-CONFIRMED（用户确认）, **scope superseded/clarified（适用范围受后续结论限制）**.
+126. `docs/ROUND-14-KNOWLEDGE-CORRECTION-APPLICABILITY-SCOPE-RESOLUTION-V1.md` — USER-CONFIRMED / RESOLVED（用户确认 / 已解决）.
+127. `docs/ROUND-14-CORRECTION-OWNERSHIP-CONTESTED-DECISIONS-RESOLUTION-V1.md` — USER-CONFIRMED / RESOLVED（用户确认 / 已解决）.
+128. `docs/PR-53-COMPREHENSIVE-CROSS-ROUND-CONFLICT-REAUDIT-V2.md` — AUDIT REPORT / NOT DIRECT POLICY（审计报告 / 不直接构成政策）.
+129. `docs/ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md` — **CURRENT CONTROLLING SCOPE / USER-CONFIRMED（当前控制性范围 / 用户确认）**：普通社区开放、正式作品认可严格、原典来源忠实、基础安全独立.
+130. `docs/ROUND-14-OPEN-COMMUNITY-TARGETED-RULE-REPAIR-PLAN-V1.md` — PROPOSED（待批准的定向修订计划）.
+131. `docs/ROUND-14-ADULT-MATURE-CONTENT-OPENNESS-OPTIONS-DISCUSSION-V1.md` — **CURRENT ACTIVE DECISION（当前待决议题）**: 成人内容开放程度；尚未批准选项.
+132. `docs/ROUND-14-CURRENT-CHECKPOINT-V1.md` — current authoritative navigation checkpoint（当前导航断点）.
