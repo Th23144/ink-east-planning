@@ -6,6 +6,16 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
+## User-confirmed sexually suggestive photography boundary（明显性暗示摄影边界已确认）
+**Controlling decision（控制性结论）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` §4B.
+
+User confirms that lawful erotic/suggestive adult photographs, including solo nude pictures with clearly sexually suggestive poses, may **exist / be published** but are **NOT eligible for proactive platform recommendation（允许存在 / 发表，但不进入平台主动推荐）**.
+Deliberate search, direct link, intentional creator-page or classified browsing remain conceivable permitted discovery methods（主动搜索、直接链接、进入作者页和主动分类浏览仍可发现）; do not provide unsolicited feed/trending/related recommendation, paid amplification workaround or high-click-driven promotion（不进入突然出现的首页、热榜、相关推荐，也不能靠高热度绕过）.
+
+Classification concerns **presentation/distribution context**, not a universal judgment that a work has no artistic merit（归类针对展示与分发，而不是对艺术价值作绝对裁定）. This is distinct from previously confirmed §4A: genuine fine-art figure photography remains discoverable in Art with restrained general Home preview（区别于正规人体艺术：艺术板块正常发现、综合首页预览克制）.
+
+**Next unresolved category（下一待讨论类别）:** actual explicit sexual-activity photo/video publication boundary（明确性行为图片 / 视频是否允许发表）；age/classification appeals/technical preview remain undecided（限龄 / 误分类申诉 / 技术展示待议）.
+
 ## User-confirmed fine-art nude photography option B（人体艺术摄影方案 B 已确认）
 The user selected option B for a serious independent artistic figure-study photography series that may depict full-frontal adult nudity without explicit sex acts（用户选择 B：独立艺术摄影师的正规人体摄影，即使成年人正面裸体，只要不以性行为为主体，也允许作为艺术作品存在）.
 
