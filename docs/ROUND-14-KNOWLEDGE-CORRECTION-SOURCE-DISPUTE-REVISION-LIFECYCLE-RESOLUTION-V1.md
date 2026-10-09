@@ -4,6 +4,7 @@
 > **Status（状态）:** USER-CONFIRMED / RESOLVED（用户确认 / 已解决）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
+> **Subsequent controlling interpretation（后续控制性解释）:** `ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md` — normal diverse readings are not default factual-dispute cases（正常多元解读不是默认事实争议案件）.
 > **Prior discussion（前置讨论）:** `ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-DISCUSSION-V1.md`
 
 > **Subsequent controlling scope clarification（后续控制性适用范围澄清）:** `ROUND-14-KNOWLEDGE-CORRECTION-APPLICABILITY-SCOPE-RESOLUTION-V1.md` — formal knowledge review is proportional to content responsibility and impact; not imposed universally on ordinary community works（严格知识审查依据内容责任与影响决定，不统一施加于普通社区作品）.
