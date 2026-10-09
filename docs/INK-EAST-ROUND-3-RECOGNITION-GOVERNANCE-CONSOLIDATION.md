@@ -1,4 +1,5 @@
 > ⚠️ **SEALED HISTORICAL ROUND RECORD WITH LATER CROSS-ROUND SUPERSESSION（已封存历史轮次记录 / 存在后续跨轮取代）**  
+> **Later scope clarification（后续范围澄清）:** `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md` and `ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md` govern when formal review applies（控制正式评审何时适用）. Ordinary users are not automatically fact-checked; different classical interpretations do not establish fabrication（普通用户不自动核查事实，古籍观点差异不等于造假）. Historical decisions remain preserved（历史决策保留）.  
 > Round 3 Recognition（作品认可） semantics remain controlling where not superseded, but actor labels such as VIP / Verified Contributor / Institution reflect an earlier vocabulary layer.  
 > Later Rounds 1–6 amendments and Round 6 Current Truth（当前有效真相） control conflicting identity/organization/distribution semantics. See `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`.
 
