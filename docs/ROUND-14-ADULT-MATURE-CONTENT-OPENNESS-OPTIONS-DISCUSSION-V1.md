@@ -1,7 +1,8 @@
 # Round 14（第十四轮）— Adult / Mature Content Openness Options V1
 # 第十四轮——成人 / 成熟内容开放程度选项讨论 V1
 
-> **Status（状态）:** PARTIALLY RESOLVED / EXPRESSION CATEGORIES STILL OPEN（部分已解决 / 表达尺度仍待讨论）
+> **Status（状态）:** HISTORICAL OPTIONS / PARTIALLY SUPERSEDED BY LATER CONTROLLING RESOLUTIONS（历史选项 / 后续正式结论部分取代）
+> **Latest controlling decision（最新正式结论）:** `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` — 性行为影像专项“方案 B”原则已获批准；本文较早的“尚未决定”只代表历史状态，审核／限龄等执行细节仍待议；本文 A/B/C 套餐中的 B 不等同于新文件的专项方案 B。
 > **New confirmed erotic-photography distinction（新增确认情色摄影边界）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` §4B — lawful, clearly sexually suggestive photography (including provocative solo nude poses) may exist but **is excluded from proactive recommendation（明显性暗示摄影包括单人裸体挑逗姿势，可存在但禁止主动推荐）**. Deliberate navigation/search remains possible（可主动查找）. Sex-act imagery upload permissions remain **NOT DECIDED（性行为图影是否允许仍未决定）**.
 > **Confirmed publishing/discovery boundary（已确认发表 / 推荐边界）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` — adult literature may be published but is not inserted unexpectedly into general Home / For You feeds（成人文学可以发表，不得突然进入普通首页 / 为你推荐）；classical art such as David is different from ordinary erotic content（《大卫》不同于普通情色内容）.
 > **Confirmed positioning / long-term business exclusion（已确认定位 / 长期商业排除）:** `ROUND-14-MATURE-CULTURAL-EXPRESSION-ADULT-COMMERCE-BOUNDARY-RESOLUTION-V1.md`
