@@ -1,7 +1,9 @@
 # Round 14（第十四轮）— Targeted Rule Reconciliation Plan V1
 # 第十四轮——按开放社区 / 严格认可范围定向修订方案 V1
 
-> **Status（状态）:** PROPOSED REPAIR PLAN / USER DECISION PENDING（修订方案 / 等待用户判断）
+> **Status（状态）:** ALL SIX DIRECTIONS USER-CONFIRMED / FORMAL RECONCILIATION APPLIED（六项方向用户确认 / 已形成正式定向协调结论）
+> **Controlling repair addendum（控制性修订补充结论）:** `ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md`
+> **Decision provenance（用户确认记录）:** `ROUND-14-SIX-TARGETED-RULE-REPAIRS-APPROVAL-V1.md`
 > **Controlling scope（已确认控制性范围）:** `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`
 > **Audit basis（审查依据）:** `PR-53-COMPREHENSIVE-CROSS-ROUND-CONFLICT-REAUDIT-V2.md`
 > **No rule changes authorized by this plan（本方案不代表授权修改原正式规则）**
