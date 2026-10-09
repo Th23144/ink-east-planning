@@ -44,6 +44,20 @@ A faithful, context-rich museum/art-history/sculpture/cultural-education present
 
 Artistic importance is **not a mandatory creator credential, prestige tier, museum-membership requirement or universal censor's taste test（艺术价值不是作者身份门槛、名望等级、博物馆资格或主观审美考试）**. This art/content-class boundary should not indirectly force ordinary creators into high-level formal Recognition review（不能倒逼普通创作者接受高层作品认可审核）.
 
+## 4A. User-confirmed option B — independent fine-art nude photography（用户确认方案 B——独立摄影师的正规人体艺术）
+**Status（状态）:** USER-CONFIRMED / B SELECTED（用户确认 / 选择 B）.
+
+Example（案例）: An independent photographer without fame/institutional endorsement publishes a serious, lawful figure-study photographic series. Full-frontal adult nudity may be visible, including anatomical genital visibility; there is no depicted sexual activity and no explicit sexual-action focus（没有名气的独立摄影师发表正规人体艺术摄影，可包含成年人正面裸体 / 解剖学可见部位，但不包含性行为或以露骨动作展示为主体）.
+
+**Decision（确认结果）:**
+- **Publishable as artistic work（可作为艺术作品发表）** under applicable rights, consent, law and baseline safety; fame, museum acceptance or Recognized status are not prerequisites（不需要名气 / 馆藏 / 平台认可资格）.
+- **Discoverable in art contexts（可在艺术板块被发现）**, relevant taxonomy and intentional arts browsing/search（可在相关艺术分类与用户主动检索中发现）.
+- **General homepage preview is restrained（普通首页预览克制）**: a prominent frontal-nude/full-detail cover, thumbnail or snippet should not suddenly appear in an unsolicited mixed cultural stream. Use context-appropriate restrained preview or omit the image preview where necessary（明显正面裸像不能作为突然出现的混合信息流封面；可采用合适预览或不展示图像预览）.
+- **Full work vs preview are separate decisions（完整作品与公共预览分开处理）**. A restricted homepage preview does not mean the entire artwork is inherently prohibited or low quality（预览受限不等于作品被禁止或认定低质）.
+- **Michelangelo's David remains a valid contextual reference（《大卫》仍是有效艺术语境案例）** without creating a rule that only famous classics can receive arts treatment（不以经典名作身份作为唯一通行证）.
+
+**Not decided（本例未决定）:** intentionally erotic photographic poses, sexually explicit acts and pornography-oriented images/video（明显情色姿势、露骨性行为和色情影像的最终分类及允许范围）, exact preview standards/age assurance（预览 / 限龄技术细则）. A self-applied “art（艺术）” label alone is neither guaranteed art classification nor automatic exposure eligibility（自行添加艺术标签不自动获得艺术归类 / 推荐资格）.
+
 ## 5. Compatible architectural boundaries（与既有架构保持一致）
 - Round 10 ranking/retrieval systems already distinguish **Eligibility（资格门槛）** from Ranking（排序）, and Recommendation（推荐） from truth/Recognition. Adult-focused exposure restrictions should work as **surface- and intent-specific eligibility/safety limits**, not another popularity weight（成人内容普通推荐限制属于先判断能否展示，而非降低几点推荐分）.
 - Round 8 Community（社区） source content and separate presentation/projection allow a user to publish a legitimate work without promising it universal homepage distribution（允许发表不等于保证全站首页曝光）.
