@@ -6,6 +6,14 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
+## User-confirmed fine-art nude photography option B（人体艺术摄影方案 B 已确认）
+The user selected option B for a serious independent artistic figure-study photography series that may depict full-frontal adult nudity without explicit sex acts（用户选择 B：独立艺术摄影师的正规人体摄影，即使成年人正面裸体，只要不以性行为为主体，也允许作为艺术作品存在）.
+
+**Confirmed distribution scope（确认的分发范围）:** lawful publication（允许发表）; normal discoverability in Art categories / intentional art search（艺术板块和主动艺术搜索正常发现）; restrained general Home preview（普通首页封面 / 预览需克制，不突然显示明显正面裸体）; no fame/institution requirement（不以名气 / 博物馆身份设门槛）.
+
+**Controlling decision updated（控制性文档已更新）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` §4A.
+**Still active（继续讨论）:** sexually suggestive but non-act photography vs explicit sexual-activity media; age/preview details are not yet frozen（进一步区分情色姿态但未涉及性行为的摄影、露骨性行为影像，以及限龄 / 预览细节）.
+
 ## Adult content discovery confirmed（成人内容展示与推荐新增确认）
 **Controlling decision（控制性结论）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md`.
 
