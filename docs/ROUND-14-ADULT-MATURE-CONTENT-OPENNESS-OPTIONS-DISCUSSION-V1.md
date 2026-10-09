@@ -1,7 +1,9 @@
 # Round 14（第十四轮）— Adult / Mature Content Openness Options V1
 # 第十四轮——成人 / 成熟内容开放程度选项讨论 V1
 
-> **Status（状态）:** DISCUSSION ONLY / USER DECISION REQUIRED（仅讨论 / 待用户选择）
+> **Status（状态）:** PARTIALLY RESOLVED / EXPRESSION CATEGORIES STILL OPEN（部分已解决 / 表达尺度仍待讨论）
+> **Confirmed positioning / long-term business exclusion（已确认定位 / 长期商业排除）:** `ROUND-14-MATURE-CULTURAL-EXPRESSION-ADULT-COMMERCE-BOUNDARY-RESOLUTION-V1.md`
+> **Option B（方案 B）:** partly favored but not approved wholesale（部分倾向，但并未整体批准）
 > **Controlling community baseline（控制性社区原则）:** `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`
 > **No choice is approved by creating this file（建立此文件不等于确认选项）**
 > **Implementation / merge（实现 / 合并）:** NOT AUTHORIZED（未授权）
@@ -46,4 +48,4 @@ Whatever the breadth:
 4. Decide whether adult-tagged content has access to public Home, Search, Recommendation, Candidate, Recognition, commercial promotion（成人内容是否进入首页、搜索、推荐、候选 / 认可 / 付费加热）.
 5. Validate payments, hosting and mobile app distribution before implementation（实现前核实支付、托管和应用市场约束）.
 
-No actual adult content policy is approved yet（成人内容具体开放程度尚未确认）.
+Culture-platform positioning and long-term dedicated adult-content monetization exclusion are confirmed; exact mature-content categories, permitted explicitness, discovery and age rules are still undecided（文化平台定位和长期排除专门成人商业模式已经确认；具体成人表达尺度、发现及限龄政策尚未确认）.
