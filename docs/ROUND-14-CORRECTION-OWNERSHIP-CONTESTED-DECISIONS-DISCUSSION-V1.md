@@ -1,7 +1,7 @@
 # Round 14（第十四轮）— Correction Ownership / Contested Decisions Discussion V1
 # 第十四轮——纠错责任归属与争议处理讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISION REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** RESOLVED / SUPERSEDED BY RESOLUTION（已解决 / 由结论文档接管）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prerequisite（前置）:** `ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-RESOLUTION-V1.md`
@@ -64,3 +64,8 @@ Avoid putting every ordinary post through scholarly fact adjudication（避免�
 5. Preserve clear public correction/dispute notes where relevant, with privacy and proportionate treatment（必要时公开简明说明，同时保护隐私并按比例处理）.
 
 No decision in this document is final until separately user-confirmed（本文件待独立用户确认）.
+
+## Confirmed outcome（已确认结果）
+The user approved all five correction ownership and contested-decision principles（用户确认全部五项纠错责任与争议决定权原则）.
+Controlling resolution（控制性结论）: `ROUND-14-CORRECTION-OWNERSHIP-CONTESTED-DECISIONS-RESOLUTION-V1.md`.
+The concrete Knowledge Correction Outcome Taxonomy（知识纠错结案结果分类） remains under separate discussion（另外讨论中）: `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md`.
