@@ -6,6 +6,17 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
+## Current controlling scope（当前控制性适用范围）
+**USER-CONFIRMED / CONTROLLING（用户确认 / 控制性）:** `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`.
+
+**PROPOSED REPAIR / USER REVIEW PENDING（定向修订方案 / 等待用户讨论）:** `ROUND-14-OPEN-COMMUNITY-TARGETED-RULE-REPAIR-PLAN-V1.md`.
+
+**ACTIVE DECISION / NOT APPROVED（当前待决事项 / 尚未批准）:** `ROUND-14-ADULT-MATURE-CONTENT-OPENNESS-OPTIONS-DISCUSSION-V1.md`.
+
+Open ordinary publishing remains the default; Candidate/Recognition（候选 / 认可）, source fidelity（原典来源忠实） and baseline safety（基础安全） are distinct lanes. Adult content extent has not been chosen（尚未选择成人内容开放程度）.
+
+Older “Next active discussion（下一讨论）” headings below retain historical context, not current navigation status（下面历史“下一讨论”不再作为当前导航入口）.
+
 ## Confirmed this turn（本轮已确认）
 The user accepted all five Knowledge Correction / Source Dispute / Revision Lifecycle（知识纠错 / 来源争议 / 修订流程） decisions.
 
