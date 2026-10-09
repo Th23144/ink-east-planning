@@ -22,10 +22,16 @@ User confirmed that formal Knowledge Correction（知识纠错） / Source Dispu
 Controlling scope resolution（控制性适用范围结论）:
 `ROUND-14-KNOWLEDGE-CORRECTION-APPLICABILITY-SCOPE-RESOLUTION-V1.md`
 
-## Next active discussion（下一项主线讨论）
-`ROUND-14-CORRECTION-OWNERSHIP-CONTESTED-DECISIONS-DISCUSSION-V1.md`
+## Latest confirmed decision（最近确认的决定）
+All five Correction Ownership / Contested Decisions（纠错责任归属 / 争议决定权） principles were accepted by the user and documented in:
+`ROUND-14-CORRECTION-OWNERSHIP-CONTESTED-DECISIONS-RESOLUTION-V1.md`
 
-Subject: who may report, who may edit, who is responsible for decisions, and how to handle substantiated disagreements among authors/editors/reviewers（谁可反馈、谁可修改、谁承担决定责任，以及如何处理作者 / 编辑 / 复核者之间有证据的分歧）.
+Key scope: the approved rights separation is for responsibility-appropriate cases, **not** mandatory review of ordinary community works（只适用于责任程度相当的案件，不强制审查普通社区作品）.
+
+## Next active discussion（下一项主线讨论）
+`ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md`
+
+Subject: concrete results after a correction or source-dispute case closes（纠错 / 来源争议案件结案后的具体结果）. Five types are **PROPOSED / USER CONFIRMATION PENDING（提出方案 / 等待用户确认）**. Do not treat as settled policy（不能视为既定政策）.
 
 ## Carry-forward boundaries（继续有效的边界）
 - Error / Uncertainty / Dispute / Misconduct（错误 / 不确定 / 争议 / 违规） remain separate.
