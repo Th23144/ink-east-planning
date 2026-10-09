@@ -6,6 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
+## Latest user-confirmed decisions（最新用户确认决策）
+**Positioning（定位）:** Ink & East（墨与东方） is a cultural platform where mature/adult expression may exist, **not** an adult-entertainment or adult-commerce platform（成人内容可存在的文化平台，不是成人娱乐 / 商业平台）.
+
+**Long-term excluded business（长期排除）:** dedicated adult paid subscriptions, paid private explicit imagery and OnlyFans-style adult creator monetization; reopen only after explicit material reconsideration（专门成人付费订阅、私密影像商业化、类 OnlyFans 模式，除非重大重新决策，不作为发展方向）.
+Controlling file（正式结论）: `ROUND-14-MATURE-CULTURAL-EXPRESSION-ADULT-COMMERCE-BOUNDARY-RESOLUTION-V1.md`.
+
+**Six repairs（六项修订）:** RP1–RP6 USER-CONFIRMED（用户确认）; controlling addendum（控制性补充结论）: `ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md`; source/translation reading diagram clarified（原文 / 译注示意已修订）.
+Approval record（确认记录）: `ROUND-14-SIX-TARGETED-RULE-REPAIRS-APPROVAL-V1.md`.
+
+**Still undecided（仍待讨论）:** Exact permitted mature text/visual categories, exposure/discovery and age-based controls（成人文学 / 影像具体边界、展示分发、限龄）. The user's partial preference for Option B（方案 B） is not unconditional approval（部分倾向并不等于批准整个方案）.
+
+**Next active discussion（当前后续主线）:** adult expression categories and platform discovery/growth guardrails（成人表达类别与平台主动分发 / 增长边界）, not overturning the no-adult-commerce redline（不能反向推翻成人专门商业模式红线）.
+
 ## Current controlling scope（当前控制性适用范围）
 **USER-CONFIRMED / CONTROLLING（用户确认 / 控制性）:** `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`.
 
