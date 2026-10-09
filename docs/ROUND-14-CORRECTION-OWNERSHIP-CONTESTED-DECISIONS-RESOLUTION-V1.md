@@ -5,6 +5,7 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Prior discussion（前置讨论）:** `ROUND-14-CORRECTION-OWNERSHIP-CONTESTED-DECISIONS-DISCUSSION-V1.md`
+> **Later scope rule（后续适用范围规则）:** `ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md` — ordinary interpretations do not trigger formal dispute review（一般不同解读不触发正式争议审理）.
 > **Governing scope（控制性适用范围）:** `ROUND-14-KNOWLEDGE-CORRECTION-APPLICABILITY-SCOPE-RESOLUTION-V1.md`
 
 ## 1. Distinct rights（不同权力分离）
