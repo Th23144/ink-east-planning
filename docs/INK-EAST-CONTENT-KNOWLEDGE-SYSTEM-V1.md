@@ -56,6 +56,9 @@ At minimum the future product must distinguish the following conceptual lanes. N
 
 ### A. Canonical / Authoritative Classical Text Library
 
+> **Later clarification（后续权威归属澄清）:** `ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md` and Round 7 Current Truth（第七轮当前有效规则） distinguish exact documented source/witness/edition from authored translation, editorial punctuation, commentary and individual interpretation（明确区分原典 / 版本记录和署名翻译、整理标点、注释、个人理解）. The following historical examples may be co-displayed but **do not all inherit canonical source authority（可同屏展示，但不共享原典来源权威）**.
+
+
 Purpose: preserve and present authoritative ancient/classical text as a clean knowledge object.
 
 Examples:
@@ -81,7 +84,9 @@ Conceptually:
 ```text
 Canonical Work / Passage
         │
-        ├── authoritative text / edition / translation / notes
+        ├── source text / edition / witness / provenance
+        ├── attributed translation / punctuation / notes / interpretations
+        │           (linked derivative/editorial objects, NOT source authority)
         │
         └── "Discuss / related conversations"
                     ↓
