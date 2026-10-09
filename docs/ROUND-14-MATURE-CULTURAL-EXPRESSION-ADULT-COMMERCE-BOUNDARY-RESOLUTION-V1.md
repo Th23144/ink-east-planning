@@ -5,6 +5,7 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Controlling baseline（控制性前提）:** `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`
+> **Later user-confirmed discovery boundary（后续用户确认的推荐边界）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` — adult literary publication can be permitted without surprise exposure in general feeds; classical art such as David is not automatically treated as adult entertainment（成人文学允许发表不等于普通推荐可突然展示；《大卫》一类经典艺术不自动归入成人娱乐）.
 > **Unsettled categories（尚未决定）:** adult literature, nudity and explicit-image/video boundary details, visibility age controls, content discovery, case handling（成人文学细节、裸体 / 露骨图影边界、可见性 / 年龄控制 / 内容发现 / 个案规则）
 
 ## 1. Core identity（核心定位）
