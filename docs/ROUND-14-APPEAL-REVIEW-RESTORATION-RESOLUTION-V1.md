@@ -55,7 +55,7 @@ Human Review（人工复核） should be mandatory for defined high-impact cases
 - Contributor Qualification（贡献者资格） removal;
 - Organization Verification（组织验证） removal;
 - Recognition（认可） withdrawal;
-- disputed important/source-sensitive cultural records（有争议的重要 / 来源敏感文化记录）;
+- consequentially disputed source authenticity, editions, attribution or platform-held cultural records（涉及重大来源真伪、版本、归属或平台负责文化记录的实质争议）；**not ordinary differing interpretations of the same source（不包括同一文献的普通不同解读）**;
 - cases where automation cannot reliably interpret context（自动机制无法可靠理解上下文的案件）.
 
 Routine obvious spam/abuse does not require the same process intensity（普通明显垃圾 / 滥用不需要同等强度流程）.
