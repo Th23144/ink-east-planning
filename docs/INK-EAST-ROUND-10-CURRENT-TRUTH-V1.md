@@ -1,6 +1,7 @@
 # Round 10 — Discovery & Recommendation（发现与推荐） — Current Truth V1（当前有效真相 V1）
 
-> **Status:** CURRENT TRUTH / PRODUCT ARCHITECTURE ONLY（当前有效真相 / 仅产品架构）  
+> **Status:** CURRENT TRUTH / PRODUCT ARCHITECTURE ONLY（当前有效真相 / 仅产品架构）
+> **Later content eligibility constraint（后续内容分发资格约束）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` — Adult-focused writing can exist but ordinary general Home / recommendation must never unexpectedly include it; frequent adult readership is not automatic permission for general Home saturation; genuine art-historical nudes such as Michelangelo's David remain context-sensitive ordinary cultural works（成人作品可存在但不能突然进入普通首页 / 推荐；长期成人阅读不等于放宽综合首页；《大卫》等艺术史作品按真实文化语境处理）. This does **not** change other Round 10 ranking, exploration or discovery mechanisms（不更改第十轮其他推荐机制）.  
 > **Implementation:** NOT AUTHORIZED（未授权实现）  
 > **Rule inventory:** 318 controlling rule slots = A37 + B39 + C44 + D47 + E47 + F46 + G52 + X6
 
