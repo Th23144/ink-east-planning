@@ -469,3 +469,4 @@ Do not restart visual-finalization work merely because an older roadmap says a s
 133. `docs/ROUND-14-SIX-TARGETED-RULE-REPAIRS-APPROVAL-V1.md` — USER-CONFIRMED（六项最小修订方向已获用户确认）.
 134. `docs/ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md` — **CONTROLLING AMENDMENT（控制性补充结论）**：普通发表、文献来源、正式认可及纠错复核适用范围定向修订.
 135. `docs/ROUND-14-MATURE-CULTURAL-EXPRESSION-ADULT-COMMERCE-BOUNDARY-RESOLUTION-V1.md` — **USER-CONFIRMED（用户确认）**：允许成人表达存在的文化平台；原则上长期排除专门成人付费订阅 / 私密影像商业生态.
+136. `docs/ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` — **USER-CONFIRMED（用户确认）**：普通首页 / 推荐不得突然推送成人内容；长期浏览仍须克制；《大卫》等经典艺术作品按文化语境区别分类.
