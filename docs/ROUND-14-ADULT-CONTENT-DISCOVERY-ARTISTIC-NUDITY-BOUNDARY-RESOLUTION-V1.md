@@ -4,6 +4,7 @@
 > **Status（状态）:** USER-CONFIRMED PRINCIPLES / PRODUCT DETAILS DEFERRED（用户已确认核心原则 / 产品细节待议）
 > **Applies to（适用）:** Ink & East（墨与东方）成熟 / 成人内容的普通首页、发现流、推荐、相关内容、用户主动探索与艺术内容分类
 > **Build / merge（开发 / 合并）:** NOT AUTHORIZED（未授权）
+> **Later controlling explicit-act media resolution（后续性行为影像正式结论）:** `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` — 原文中“明确性行为影像是否允许仍未决定”是历史状态；现行方案 B 已确认，未定的是执行细节。不影响本文件 §4A 人体艺术、§4B 性暗示但无性行为的摄影，或成人文学及推荐限制。
 > **Preceding user-confirmed rules（前置确认结论）:** `ROUND-14-MATURE-CULTURAL-EXPRESSION-ADULT-COMMERCE-BOUNDARY-RESOLUTION-V1.md`, `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`
 > **Cross-round relevance（相关轮次）:** Round 8（第八轮）Community（社区） / Round 9（第九轮）Interest Graph（兴趣图谱） / Round 10（第十轮）Recommendation（推荐）
 > **This document does NOT decide（本文不决定）:** total permitted explicit video/image categories, precise age assurance technology, every class of nude painting/photo, quality/Recognition rubric, exact moderation classifiers, enforcement metrics（露骨图影最终允许范围、年龄核验技术、所有裸体作品具体判断、作品认可标准、具体审核分类器与指标）
