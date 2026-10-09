@@ -1,10 +1,12 @@
 # Round 14（第十四轮）— Knowledge Correction Outcome Taxonomy Discussion V1
 # 第十四轮——知识纠错结案结果分类讨论 V1
 
-> **Status（状态）:** ACTIVE DISCUSSION / USER DECISION REQUIRED（正在讨论 / 需要用户决定）
+> **Status（状态）:** REQUIRES REFRAMING / NOT USER-APPROVED（需要重新界定 / 尚未经用户批准）
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Preconditions（前置）:** `ROUND-14-CORRECTION-OWNERSHIP-CONTESTED-DECISIONS-RESOLUTION-V1.md`; `ROUND-14-KNOWLEDGE-CORRECTION-APPLICABILITY-SCOPE-RESOLUTION-V1.md`
+
+**Audit note（审计说明）:** Different interpretations of the same authentic source are normal platform publishing/discussion, not automatic formal dispute cases（对同一真实原典的不同理解属于正常发表与讨论，不自动构成正式争议案件）. This draft's Supported Dispute（确认合理争议） classification must be reviewed before approval. See `PR-53-INTERPRETATION-PLURALISM-RECOGNITION-GOVERNANCE-CROSS-ROUND-CONFLICT-AUDIT-V1.md`.
 
 ## 1. Distinguish procedure status from substantive outcome（程序状态与实质结论分离）
 Received / Under Review / Closed / Reopened（已受理 / 审查中 / 已结案 / 重新开启） describes the **case process（案件程序）**, not whether a claim is true（主张真假）.
