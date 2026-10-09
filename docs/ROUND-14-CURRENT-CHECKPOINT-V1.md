@@ -6,6 +6,16 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
+## Adult content discovery confirmed（成人内容展示与推荐新增确认）
+**Controlling decision（控制性结论）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md`.
+
+- Adult literary expression, including comparatively direct sexual prose, can be published within applicable baseline law/safety rules（合法成人文学包括较直接性描写可以作为普通创作发表）.
+- General Home / For You / mixed Recommendation / Explore cannot unexpectedly inject adult-focused work into ordinary cultural browsing for non-opted-in readers（未主动选择成人内容时，普通首页 / 综合推荐不得突然插入成人主题作品）.
+- Frequent reading is not permission to turn the mixed cultural homepage into adult-centered content（长期阅读也不得导致综合文化首页成人化）.
+- Michelangelo's David（米开朗基罗《大卫》） and genuinely contextually presented art-historical nude works are not treated as pornography merely because of bodily nudity（经典艺术裸像按具体艺术语境处理，不因裸体直接归入色情）.
+- The new **general-distribution eligibility** rule is a later constraint on Round 10 Recommendation（第十轮推荐）, not a quality or moral verdict and not a rewrite of the recommendation stack（推荐资格限制不是质量 / 道德裁决，不重写推荐算法架构）.
+- **Still deferred（尚未决定）:** details of opt-in specialist adult browsing, age safeguards, image/video admission, previews and edge-case art classification（成人专门主动浏览界面、限龄、图影尺度、预览和艺术边界个案）.
+
 ## Latest user-confirmed decisions（最新用户确认决策）
 **Positioning（定位）:** Ink & East（墨与东方） is a cultural platform where mature/adult expression may exist, **not** an adult-entertainment or adult-commerce platform（成人内容可存在的文化平台，不是成人娱乐 / 商业平台）.
 
