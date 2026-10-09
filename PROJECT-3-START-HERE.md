@@ -464,9 +464,10 @@ Do not restart visual-finalization work merely because an older roadmap says a s
 128. `docs/PR-53-COMPREHENSIVE-CROSS-ROUND-CONFLICT-REAUDIT-V2.md` — AUDIT REPORT / NOT DIRECT POLICY（审计报告 / 不直接构成政策）.
 129. `docs/ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md` — **CURRENT CONTROLLING SCOPE / USER-CONFIRMED（当前控制性范围 / 用户确认）**：普通社区开放、正式作品认可严格、原典来源忠实、基础安全独立.
 130. `docs/ROUND-14-OPEN-COMMUNITY-TARGETED-RULE-REPAIR-PLAN-V1.md` — SIX DIRECTIONS CONFIRMED（六项修订方向已确认；具体范围由正式补充结论控制）.
-131. `docs/ROUND-14-ADULT-MATURE-CONTENT-OPENNESS-OPTIONS-DISCUSSION-V1.md` — **PARTIALLY RESOLVED / STILL ACTIVE（部分解决 / 仍在讨论）**：文化平台定位与长期禁止专门成人商业模式已确认；具体内容尺度待议.
+131. `docs/ROUND-14-ADULT-MATURE-CONTENT-OPENNESS-OPTIONS-DISCUSSION-V1.md` — **HISTORICAL / PARTIALLY SUPERSEDED（历史选项 / 部分被取代）**：具体真实性行为影像的专项原则由第137项正式结论控制，执行细节仍待议。
 132. `docs/ROUND-14-CURRENT-CHECKPOINT-V1.md` — current authoritative navigation checkpoint（当前导航断点）.
 133. `docs/ROUND-14-SIX-TARGETED-RULE-REPAIRS-APPROVAL-V1.md` — USER-CONFIRMED（六项最小修订方向已获用户确认）.
 134. `docs/ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md` — **CONTROLLING AMENDMENT（控制性补充结论）**：普通发表、文献来源、正式认可及纠错复核适用范围定向修订.
 135. `docs/ROUND-14-MATURE-CULTURAL-EXPRESSION-ADULT-COMMERCE-BOUNDARY-RESOLUTION-V1.md` — **USER-CONFIRMED（用户确认）**：允许成人表达存在的文化平台；原则上长期排除专门成人付费订阅 / 私密影像商业生态.
 136. `docs/ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` — **USER-CONFIRMED（用户确认）**：普通首页 / 推荐不得突然推送成人内容；长期浏览仍须克制；《大卫》等经典艺术作品按文化语境区别分类.
+137. `docs/ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` — **USER-CONFIRMED TARGETED OPTION B / DETAILS DEFERRED（真实性行为影像方案 B 原则已确认，执行细节未定）**：不开放普通娱乐性行为影像一般上传；特殊文化用途保留受限发表可能；成人文学／人体艺术／性暗示但无性行为摄影仍按原规则。第十四轮继续，下一步重构知识纠错结案草案。
