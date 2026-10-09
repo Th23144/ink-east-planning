@@ -6,6 +6,12 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
+## Latest checkpoint — explicit-act media option B CONFIRMED / Round 14 governance resumed（最新断点：方案 B 原则确认 / 回归第十四轮主线）
+**Controlling decision（正式结论）:** `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` — USER-CONFIRMED principles（用户确认：普通成人娱乐性行为影像不开放一般上传；特殊文化／历史／纪录／研究／实验艺术保留受限发表可能；明显情色消费导向及以性行为直接展示为主要观看内容的影像原则上排除）。
+**Precedence（优先关系）:** 以下较早的“真实性行为影像仍未决定／仅倾向 B”措辞为历史记录，不再适用于现行原则。特殊媒体审核、限龄、预览技术及申诉执行细则仍待定；严肃电影少量相关真实镜头只是“可考虑特殊评估”，不是普遍许可。
+**Compatibility（保留）:** 成人文学、正规人体艺术摄影、性暗示但不展示性行为的摄影、既有分发规则与成人商业红线均不受推翻。
+**CURRENT NEXT MAINLINE（当前下一主线）:** Round 14 Governance / Correction / Appeal（治理／纠错／申诉），先重构 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md`（REQUIRES REFRAMING / NOT USER-APPROVED）；Round 14 尚未封存，不进入开发或合并。
+
 ## User-confirmed sexually suggestive photography boundary（明显性暗示摄影边界已确认）
 **Controlling decision（控制性结论）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` §4B.
 
@@ -14,7 +20,7 @@ Deliberate search, direct link, intentional creator-page or classified browsing 
 
 Classification concerns **presentation/distribution context**, not a universal judgment that a work has no artistic merit（归类针对展示与分发，而不是对艺术价值作绝对裁定）. This is distinct from previously confirmed §4A: genuine fine-art figure photography remains discoverable in Art with restrained general Home preview（区别于正规人体艺术：艺术板块正常发现、综合首页预览克制）.
 
-**Next unresolved category（下一待讨论类别）:** actual explicit sexual-activity photo/video publication boundary（明确性行为图片 / 视频是否允许发表）；age/classification appeals/technical preview remain undecided（限龄 / 误分类申诉 / 技术展示待议）.
+**Historical pending category（旧断点，原则已解决）:** 明确性行为影像的原则性准入边界现见 `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md`；年龄控制／分类申诉／预览细节仍待议。
 
 ## User-confirmed fine-art nude photography option B（人体艺术摄影方案 B 已确认）
 The user selected option B for a serious independent artistic figure-study photography series that may depict full-frontal adult nudity without explicit sex acts（用户选择 B：独立艺术摄影师的正规人体摄影，即使成年人正面裸体，只要不以性行为为主体，也允许作为艺术作品存在）.
@@ -22,7 +28,7 @@ The user selected option B for a serious independent artistic figure-study photo
 **Confirmed distribution scope（确认的分发范围）:** lawful publication（允许发表）; normal discoverability in Art categories / intentional art search（艺术板块和主动艺术搜索正常发现）; restrained general Home preview（普通首页封面 / 预览需克制，不突然显示明显正面裸体）; no fame/institution requirement（不以名气 / 博物馆身份设门槛）.
 
 **Controlling decision updated（控制性文档已更新）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` §4A.
-**Still active（继续讨论）:** sexually suggestive but non-act photography vs explicit sexual-activity media; age/preview details are not yet frozen（进一步区分情色姿态但未涉及性行为的摄影、露骨性行为影像，以及限龄 / 预览细节）.
+**Later resolution（后续结论）:** 性暗示但不展示性行为的摄影已由 §4B 确认，直接展示真实性行为的影像原则见 `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md`；年龄与预览细节仍未封存。
 
 ## Adult content discovery confirmed（成人内容展示与推荐新增确认）
 **Controlling decision（控制性结论）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md`.
@@ -43,9 +49,9 @@ Controlling file（正式结论）: `ROUND-14-MATURE-CULTURAL-EXPRESSION-ADULT-C
 **Six repairs（六项修订）:** RP1–RP6 USER-CONFIRMED（用户确认）; controlling addendum（控制性补充结论）: `ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md`; source/translation reading diagram clarified（原文 / 译注示意已修订）.
 Approval record（确认记录）: `ROUND-14-SIX-TARGETED-RULE-REPAIRS-APPROVAL-V1.md`.
 
-**Still undecided（仍待讨论）:** Exact permitted mature text/visual categories, exposure/discovery and age-based controls（成人文学 / 影像具体边界、展示分发、限龄）. The user's partial preference for Option B（方案 B） is not unconditional approval（部分倾向并不等于批准整个方案）.
+**Current distinction（现行区分）:** `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` 的真实性行为影像方案 B 原则已获 USER-CONFIRMED（用户确认），但年龄控制、具体分发实施、分类流程等执行细节仍未批准。
 
-**Next active discussion（当前后续主线）:** adult expression categories and platform discovery/growth guardrails（成人表达类别与平台主动分发 / 增长边界）, not overturning the no-adult-commerce redline（不能反向推翻成人专门商业模式红线）.
+**Next active MAINLINE（当前后续主线）:** 回归第十四轮知识纠错、治理与申诉问题，尤其重新审查尚未获批准的 Outcome Taxonomy（结案结果分类）草案；成人影像支线阶段性原则讨论已完成。
 
 ## Current controlling scope（当前控制性适用范围）
 **USER-CONFIRMED / CONTROLLING（用户确认 / 控制性）:** `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`.
