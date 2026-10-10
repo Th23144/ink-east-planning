@@ -6,7 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest controlling checkpoint — Knowledge correction three-outcome taxonomy confirmed（最新断点：知识纠错三类结果已确认）
+## Latest controlling checkpoint — Recognition interim protection and independent editorial responsibility scope CONFIRMED（最新断点：正式作品临时保护与独立编辑责任范围已确认）
+
+**Controlling decision（正式结论）:** `ROUND-14-RECOGNITION-INTERIM-PROTECTION-AND-EDITORIAL-SCOPE-RESOLUTION-V1.md` — USER-CONFIRMED / RESOLVED AT PRINCIPLE LEVEL（用户确认／本专题原则已确定）。
+- 仅 **Candidate（正式候选）／Recognized Work（正式认可）** 适用与其实际认可责任相称的专项调查期保护；普通发表／仅获推举机会不自动承担正式认可级别的事实审查。
+- **Editorial Selection / Issue Inclusion（编辑精选／议题收录） != Work Recognition（作品认可）**。非认可作品如被平台真正主动精选，平台可针对**自己特定的编辑主动推广**，在独立核实重大风险后作狭窄、可撤销、可复核的调整；常规算法推荐、阅读量或编辑链接不等于正式认可。
+- 保留恶意举报／伪造证据防范与方案 B：举报输入不是事实；重大限制需独立支持；限制应有限期、非污名化、可恢复；错误限制恢复原有资格，不自动补偿流量；核实原先已安排的官方精选展示被错误取消时可考虑恢复展示机会。
+- **Terminology（术语）:** `Authoritative Content（权威内容）` 已淘汰，不得恢复为本体系名称；内部沿用 `Work Recognition（作品认可）`、`Recognized Work（认可作品）`，公众命名未定。
+
+**Next mainline（下一主线）:** 不再重复讨论已确认的“保护范围／普通社区例外／编辑责任”原则。先根据现行 Round 14 文档审查剩余真正未定的必要治理事项与跨轮冲突；详细证据阈值、具体时间与人员、UI／技术实现仍待细化。Round 14 仍 ACTIVE；PR #53 Documentation-only / Draft / Open / Unmerged；Round 15 前仍须完成 Membership Re-entry Review #2。
+
+---
+
+## Previous checkpoint — Knowledge correction three-outcome taxonomy confirmed（上一正式断点：知识纠错三类结果已确认）
 
 **Decision（正式用户确认）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md` — USER-CONFIRMED / RESOLVED（用户已确认／该专题已解决）。经重整 V2 和 14 个假设案例定向复核后，正式采用三种结果：**A 确认错误；B 重要来源／事实暂无法确定；C 纠错请求不成立**。同一申请包含多个独立事实／主张时，可逐项给予不同结果，而非整案强制单选。
 
