@@ -401,3 +401,5 @@ PR #53 remains documentation-only, Draft / Open / Unmerged（草稿 / 开放 / �
 - [`ROUND-14-E07-SPECIAL-MEDIA-REVIEW-IMPLEMENTATION-DEFERRAL-V1.md`](ROUND-14-E07-SPECIAL-MEDIA-REVIEW-IMPLEMENTATION-DEFERRAL-V1.md) — **E07 PHASED DISPOSITION ACCEPTED WITH QUALIFIER（E07 带保留语气认可分阶段处理）**：既有特殊影像资格与 E06 公开前审核、权利／安全／申诉原则有效；申请材料、审核员、阈值、时限、访问控制等具体运营细节实施前补齐。五项定向审计阶段处理完成；未批准代码、上线或第十四轮封存。
 - [`ROUND-14-CURRENT-TRUTH-V1-CANDIDATE.md`](ROUND-14-CURRENT-TRUTH-V1-CANDIDATE.md) — **CURRENT TRUTH V1 CANDIDATE / NOT SEALED（第十四轮统一有效规则整合候选）**：按 22 份正式规则与阶段处置分类整合，附来源清单及 SHA；新增后 Round-14 文件共 41 份；完整来源核验和冻结对抗审计**尚未通过**，不授权实施或 PR 合并。
 - [`ROUND-14-CURRENT-TRUTH-V1-CANDIDATE-INVENTORY-ENTRY-QA-V1.md`](ROUND-14-CURRENT-TRUTH-V1-CANDIDATE-INVENTORY-ENTRY-QA-V1.md) — **CANDIDATE ENTRY QA ONLY（候选入口核对，不是完整来源核验）**：22/22 正式来源索引和关键主题初步存在性通过；最新 Round-14 文件含候选及报告共 42 份；仍需完整逐条 Source Parity 及冻结版对抗审计，不得直接封存。
+
+- [Round 14 frozen adversarial matrix](ROUND-14-CURRENT-TRUTH-V1-FROZEN-ADVERSARIAL-AUDIT-V1.md) — exact candidate a06c84268d406876c53feba652d2f37ca9375e27; 106 cases, 100 supported and 6 deferred. NOT SEALED.
