@@ -51,7 +51,7 @@
 
 1. 被普通发表、发现、读者推举以及 Formal Nomination 不需要先签署 Candidate 参加协议；但**作品真正进入 Candidate 正式评审前，必须取得有效作者参与同意**。作者的沉默、热门或被推荐不等于同意。拒绝不代表作品低质量、违法或其普通发表权消失。
 2. **Candidate 进行中**，作者可主动退出正式评审；退出与 Not Recognized、审查失败、处罚或造假不同，不能继续自动晋升 Recognized。普通文章、正常发现、必要审核历史与独立安全／权利责任继续有效。
-3. **获得 Recognized 后**，作者可以终止本人当前正式认可展示／参与。停止把其作为当下仍有作者参与的 Recognized 展示，但保存真实的历史授予时间和版本；普通发表与独立期刊历史不因退出自动删除。Recognition Invalidated / Not Recognized / Voluntary Withdrawal / Editorial Inclusion 分别是不同原因。
+3. **获得 Recognized 后**，作者可以终止本人当前正式认可展示／参与。对**单独作者作品**或依法依有效权限由作者处置的整件作品，应准确停止对应的当前认可标识和官方认可推广；但对**多作者共同作品**，一名作者退出自己的参与**不自动取消整件作品的认可**，须结合下文第 7 节的作品级授权及实际权利／关键证据是否改变另行判断。保留真实的历史授予时间和版本；普通发表与独立期刊历史不因退出自动删除。Recognition Invalidated / Not Recognized / Voluntary Withdrawal / Editorial Inclusion 是不同原因。
 4. 不规定强制说明退出理由、统一冷静期、手续费、永久不可重新参加或公开负面标签。具体通知、旧版资格再利用、重入路径、权限与恢复同步待设计。
 
 ## 7. 多作者作品和入 Candidate 同意（S15/S16/S17/S20/S21）
