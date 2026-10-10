@@ -2,7 +2,8 @@
 # 第十四轮——知识纠错结案结果分类讨论 V1
 
 > **Status（状态）:** HISTORICAL UNAPPROVED DRAFT / SUPERSEDED AS A WORKING DRAFT（未经批准的历史草案 / 工作稿已由 V2 重整）
-> **Current reframed draft（现行重整工作稿）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-REVIEW-V2.md` — 未批准最终分类，不得将本文五类候选结果当作平台正式政策。
+> **Current controlling result（当前正式结论）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md` — 用户已确认三个知识事实结案类别；本文五类候选始终是历史未批准草案。
+> **Reframed intermediate draft（中间重整草案）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-REVIEW-V2.md`（历史提案，A/C/D 编号已由正式 A/B/C 取代）。
 > **Controlling principles（正式原则）:** RP1–RP6 跨轮修订、Round 14 开放社区与来源事实范围规则仍优先；特别是普通不同解读不形成默认纠错案件、违规另案。
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
