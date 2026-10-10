@@ -471,4 +471,5 @@ Do not restart visual-finalization work merely because an older roadmap says a s
 135. `docs/ROUND-14-MATURE-CULTURAL-EXPRESSION-ADULT-COMMERCE-BOUNDARY-RESOLUTION-V1.md` — **USER-CONFIRMED（用户确认）**：允许成人表达存在的文化平台；原则上长期排除专门成人付费订阅 / 私密影像商业生态.
 136. `docs/ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` — **USER-CONFIRMED（用户确认）**：普通首页 / 推荐不得突然推送成人内容；长期浏览仍须克制；《大卫》等经典艺术作品按文化语境区别分类.
 137. `docs/ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` — **USER-CONFIRMED TARGETED OPTION B / DETAILS DEFERRED（真实性行为影像方案 B 原则已确认，执行细节未定）**：不开放普通娱乐性行为影像一般上传；特殊文化用途保留受限发表可能；原成人文学／人体艺术／性暗示但无性行为摄影规则继续有效。
-138. `docs/ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md` — **USER-CONFIRMED / CONTROLLING KNOWLEDGE CORRECTION OUTCOMES（已确认／知识纠错结案现行规则）**：正式 A 确认错误、B 重要事实未定、C 纠错请求不成立；按独立主张分别处理。第十四轮未封存，下一步复核其余真正待定治理项与跨轮一致性。
+138. `docs/ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md` — **USER-CONFIRMED / CONTROLLING KNOWLEDGE CORRECTION OUTCOMES（已确认／知识纠错结案现行规则）**：正式 A 确认错误、B 重要事实未定、C 纠错请求不成立；按独立主张分别处理。 
+139. `docs/ROUND-14-RECOGNITION-INTERIM-PROTECTION-AND-EDITORIAL-SCOPE-RESOLUTION-V1.md` — **USER-CONFIRMED / CONTROLLING INTERIM PROTECTION SCOPE（正式认可临时保护与编辑责任边界已确认）**：仅正式 Candidate／Recognized 适用专项调查保护；普通推举／社区不自动学术核验；独立编辑精选责任仅限特定当前官方推广；Work Recognition 沿用，`Authoritative Content` 已淘汰。第十四轮仍 ACTIVE，未授权开发／合并。
