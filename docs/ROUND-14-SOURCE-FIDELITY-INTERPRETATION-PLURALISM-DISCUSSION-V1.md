@@ -1,10 +1,11 @@
 # Round 14（第十四轮）— Source Fidelity and Interpretation Pluralism Discussion V1
 # 第十四轮——原典忠实与开放诠释讨论 V1
 
-> **Status（状态）:** USER-ARTICULATED PRODUCT DIRECTION / ARCHITECTURE IMPLICATIONS UNDER DISCUSSION（用户明确阐述平台方向 / 架构影响仍在讨论）
+> **Status（状态）:** HISTORICAL USER-ARTICULATED DIRECTION / LATER RESOLVED BY CONTROLLING RULES（历史用户愿景 / 后续由正式规则完成定向澄清）
+> **Later controlling policy（后续现行正式规则）:** `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`, `ROUND-14-SIX-TARGETED-RULE-REPAIRS-APPROVAL-V1.md`, `ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md`（尤其 RP1/RP2）及 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md`。本文保留当时真实提出的文化诠释自由理念，不是目前待用户重新决定的议题。
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
-> **Supersedes as next active topic（取代为当前讨论）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md` (five-result taxonomy proposed earlier, not approved / 之前提出但未批准的五类结案结果框架)
+> **Historical next-topic record（历史下一议题记录；现已完成）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md` (five-result taxonomy proposed earlier, not approved / 之前提出但未批准的五类结案结果框架)
 
 ## 1. User's explicit product vision（用户明确表达的平台愿景）
 The user emphasizes: the source text remains the source text; readers can legitimately reach many different conclusions from the same classical material. “A thousand readers have a thousand Hamlets（千人千个哈姆雷特）.” Publishing, exploring and openly discussing one's own understanding of the classics is a core attraction of Ink & East（墨与东方）, not a defect that the platform should adjudicate away.
