@@ -474,3 +474,8 @@ Do not restart visual-finalization work merely because an older roadmap says a s
 138. `docs/ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md` — **USER-CONFIRMED / CONTROLLING KNOWLEDGE CORRECTION OUTCOMES（已确认／知识纠错结案现行规则）**：正式 A 确认错误、B 重要事实未定、C 纠错请求不成立；按独立主张分别处理。 
 139. `docs/ROUND-14-RECOGNITION-INTERIM-PROTECTION-AND-EDITORIAL-SCOPE-RESOLUTION-V1.md` — **USER-CONFIRMED / CONTROLLING INTERIM PROTECTION SCOPE（正式认可临时保护与编辑责任边界已确认）**：仅正式 Candidate／Recognized 适用专项调查保护；普通推举／社区不自动学术核验；独立编辑精选责任仅限特定当前官方推广；Work Recognition 沿用，`Authoritative Content` 已淘汰。第十四轮仍 ACTIVE，未授权开发／合并。
 140. `docs/ROUND-14-REMAINING-GOVERNANCE-GAPS-TRIAGE-AND-SOURCE-RECONCILIATION-V1.md` — **AUDIT TRIAGE / NO NEW POLICY（剩余规则审查分流／非新政策）**：逐项核对旧跨轮审计 22 项与后来已确认规则，区分已解决原则、实施细则及仍待决的作者参与／退出正式认可、成人内容访问范围；第十四轮未封存。
+141. `docs/ROUND-14-AUTHOR-CONSENT-BEFORE-CANDIDATE-ENTRY-RESOLUTION-V1.md` — USER-CONFIRMED：普通推举可自然进行，正式 Candidate 入池前必须获得作者同意。
+142. `docs/ROUND-14-CANDIDATE-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md` — USER-CONFIRMED：作者可在 Candidate 正式评审中自愿退出，不算评审失败或处罚。
+143. `docs/ROUND-14-POST-RECOGNITION-AUTHOR-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md` — USER-CONFIRMED：已认可作者可终止当前认可展示／参与，保留准确的历史授予事实，不与违规或证据失效混淆。
+144. `docs/ROUND-14-READER-ACCESS-NOTICES-DIRECTION-V1.md` — USER-CONFIRMED DIRECTION：适当阅读提示、敏感影像预览保护及必要年龄核验；类别与技术细节暂缓。
+145. `docs/ROUND-14-POST-TRIAGE-DECISION-POINTER-V1.md` — CURRENT DECISION POINTER：以上已确认事项与当前下一步。Round 14 未整体封存；PR #53 不合并、不实施。
