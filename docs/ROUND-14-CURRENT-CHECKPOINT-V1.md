@@ -6,7 +6,21 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest controlling checkpoint — author choice across Recognition is confirmed（最新正式断点：作品认可三阶段作者选择权已确认）
+## Latest review checkpoint — Targeted source parity + adversarial audit（最新审计断点：来源覆盖＋对抗审计）
+
+**Current audit evidence（审计依据）:** `ROUND-14-TARGETED-SOURCE-COVERAGE-PARITY-V1.md`：从 PR #53 的当时 313 个变更文件清点出 **32 份 Round-14 文档**，其中 **18 份正式用户确认控制性结论、14 份历史／审计／导航**；32/32 完成归类、18/18 通过关键规则内容核对。该结果不等于整轮冻结版 Source Parity 完成。
+
+**Adversarial regression（对抗性场景复核）:** `ROUND-14-TARGETED-CROSS-ROUND-ADVERSARIAL-AUDIT-V1.md`：40 个假设场景，**35 PASS／2 DEFERRED／2 DOC HYGIENE／1 OPEN PRODUCT CHOICE**。均为文档规则测试，不是运行时测试或正式已通过的全轮综合审计。
+
+**Actual unsettled choice OPEN-P01（真实未决决策）:** 受限文化影像的发布资格审核，是**必须公开前审核**还是使用其他受控审核触发机制？`ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` §6 明确未选择。用户已经确认的**年龄核验与图像提示是阅读保护，不能代替发布准入审核决策**。先讨论或明确批准安全暂缓范围，不能擅自选方案。
+
+**Documentation hygiene（文档处理）:** 第十四轮 `ROUND-14-SOURCE-FIDELITY-INTERPRETATION-PLURALISM-DISCUSSION-V1.md` 的历史“仍在讨论”抬头已标记为后续 RP1/RP2 正式结论取代；第六轮冻结 V6 顶部 `NOT SEALED` 为历史状态，已在 PR 索引注明以替换封存记录为准，**不修改冻结 blob**。
+
+**Overall（整体）:** **Round 14 ACTIVE / NOT SEALED**。本轮未形成完整冻结 Current Truth 的整轮 Source Parity 证书，也未完成完整对抗性审计门槛。PR #53 保持 Draft / Open / Unmerged，未授权产品开发；第十二轮 Membership Re-entry Review #2 仍必须在进入第十五轮前执行。
+
+---
+
+## Previous controlling checkpoint — author choice across Recognition is confirmed（上一正式断点：作品认可三阶段作者选择权已确认）
 
 **Controlling sequence（现行正式结论）:** `ROUND-14-AUTHOR-CONSENT-BEFORE-CANDIDATE-ENTRY-RESOLUTION-V1.md`（正式入候选前需作者同意）→ `ROUND-14-CANDIDATE-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md`（Candidate 阶段可自愿退出）→ `ROUND-14-POST-RECOGNITION-AUTHOR-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md`（获得 Recognized 后可自愿终止当前认可展示／参与，真实历史授予事实仍保留）。
 
