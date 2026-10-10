@@ -6,7 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest confirmed C08 boundary — next joint Candidate consent（最新 C08 用户确认／下一项共同作品入池同意）
+## Latest confirmed C08 joint-entry case — next E07（最新共同作品 Candidate 入池决定／下一项 E07）
+
+**User-confirmed decision（已确认）:** `ROUND-14-C08-JOINT-WORK-CANDIDATE-ENTRY-CONSENT-RESOLUTION-V1.md` — A/B/C 同一作品，A/B 赞成但真实共同作者 C 明确反对且未授权任何人代同意：**整件共同作品不能进入正式 Candidate Review，先解决 C 的参与／授权问题**。不影响该作品普通发表或既有合法推举，不把拒绝记作 Not Recognized／违规。沉默不等于同意；有效授权必须限域可核实，具体代理工作流仍待设计。
+
+**C08 precedence（权限范围）:** 上一 C08 决议已确定个人参与权与整件 Work-level 操作权分离，当前新增的是**首次正式入 Candidate 前的拒绝场景**；不得倒推一人可单方撤销**已** Recognized 的整件共同作品。
+
+**Next actual step:** E07 审核申请材料、审查职责、证据校准、时限及申诉实施条件的**原则／执行范围分类复核**；不给出未经批准的人员数／截止天数／身份证实名要求。之后考虑 Round-14 Current Truth 合并候选及完整审计。
+
+**Status:** Round 14 ACTIVE / NOT SEALED, PR #53 Draft / Open / Unmerged, implementation NOT AUTHORIZED.
+
+---
+
+## Earlier confirmed C08 boundary — former joint-entry choice（历史断点：C08 原则与入池待决）
 
 **User-confirmed rule（用户正式确认）:** `ROUND-14-C08-MULTI-AUTHOR-PARTICIPATION-WORK-AUTHORITY-RESOLUTION-V1.md`。每位真实作者保有本人正式评审参与／退出权；一人的退出不自动撤销整件共同作品的 Candidate／Recognized 认可，也不能单方面代表其他作者。整件作品的正式认可处置需要有效且限域的 Work-level Authority（作品级授权）或适当争议依据。必要权利许可、关键证据或完整性发生实质变化时须独立复核，不能机械保留／撤销。
 
