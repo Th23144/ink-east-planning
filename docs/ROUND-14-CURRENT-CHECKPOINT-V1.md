@@ -6,7 +6,15 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest checkpoint — Candidate entry QA, full source parity still pending（最新断点：候选入口核对完成，下一步逐条来源核查）
+## Latest checkpoint — 22-source parity reviewed（最新断点：正式来源核对完成）
+
+已创建 `ROUND-14-CURRENT-TRUTH-V1-SOURCE-PARITY-REVIEW-V1.md`。针对统一规则候选 blob `8e6ea8a6e899ae6268b25539dbc759cb00c72b6b`，22 份正式来源的产品原则含义及限定范围核对通过，候选文案做了 8 处来源支持的修正，没有新增用户政策决定。**尚未完成针对冻结候选的完整 Adversarial Audit；第十四轮未封存**。下一步针对上述确切 blob 开展完整对抗审查，如需修正候选则重跑来源核查。
+
+PR #53 Draft / Open / Unmerged；不开发、不合并。
+
+---
+
+## Earlier checkpoint — entry QA（较早断点：候选入口核对）
 
 **QA report（初步核对）:** `ROUND-14-CURRENT-TRUTH-V1-CANDIDATE-INVENTORY-ENTRY-QA-V1.md` — 对候选 `ROUND-14-CURRENT-TRUTH-V1-CANDIDATE.md` 作首次读取校验：22/22 正式来源索引存在且路径有效，22/22 核心主题能够在候选找到，候选状态仍为 NOT SEALED。该报告是 **ENTRY QA / TARGETED COVERAGE ONLY（初步入口核对）**，不是完整 source-to-text parity、历史对话逐条证明或冻结综合对抗审计。
 
