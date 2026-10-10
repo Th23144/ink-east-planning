@@ -481,3 +481,4 @@ Do not restart visual-finalization work merely because an older roadmap says a s
 145. `docs/ROUND-14-POST-TRIAGE-DECISION-POINTER-V1.md` — CURRENT DECISION POINTER：以上已确认事项与当前下一步。Round 14 未整体封存；PR #53 不合并、不实施。
 146. `docs/ROUND-14-TARGETED-SOURCE-COVERAGE-PARITY-V1.md` — **TARGETED PARITY PASS ONLY（定向来源覆盖核查通过）**：清点 32 份 Round-14 文档及 18 份正式规则，完整冻结整轮来源核验尚未完成。
 147. `docs/ROUND-14-TARGETED-CROSS-ROUND-ADVERSARIAL-AUDIT-V1.md` — **40-CASE TARGETED AUDIT COMPLETED / ROUND NOT SEALED（40 场景定向对抗审计已完成／第十四轮未封存）**：35 条原则通过、2 执行待定、2 文档导航问题、1 特殊文化影像公开审核时点需要新的产品决策；当前主线见 `docs/ROUND-14-CURRENT-CHECKPOINT-V1.md`。
+148. `docs/ROUND-14-FIVE-FINDINGS-SCOPE-AND-SEAL-GATE-REAUDIT-V1.md` — **CURRENT FIVE-FINDING REAUDIT / NO NEW POLICY（当前五项问题审查／不新增规则）**：E06、C08、E07 可按既有决议保留实施前条件；F01、F02 已处理；不得把 E06 自动视为第十四轮必须重议的封存硬阻碍。下一步是整合 Round 14 Current Truth V1 候选并开展完整 Source Parity、对抗审计。
