@@ -7,6 +7,7 @@
 > **Not to confuse（勿混淆）:** 此处方案 B 是“**真实性行为影像受限文化例外**”，不是早期《Adult / Mature Content Openness Options》对整个成人表达范围的 A/B/C 套餐，也不是独立人体艺术摄影方案 B (§4A)。
 > **Existing controlling resolutions（既有规则继续有效）:** `ROUND-14-MATURE-CULTURAL-EXPRESSION-ADULT-COMMERCE-BOUNDARY-RESOLUTION-V1.md`；`ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md`；`ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`。
 > **Development / merge（开发 / 合并）:** NOT AUTHORIZED（未授权）。第十四轮仍 ACTIVE（进行中），本文不是整轮封存记录。
+> **Later user-confirmed E06 audit timing（后续 E06 正式确认）:** `ROUND-14-E06-SPECIAL-MEDIA-PREPUBLICATION-REVIEW-RESOLUTION-V1.md` 已由用户确认：申请特殊发表资格的真实性行为影像须**审核通过后才可公开**；普通作品不因此全面先审后发；正文与受限影像可分别对外发表。本文 §6 原来“审核时点尚未选择”的措辞只是**此文件创建时的历史状态**，现由该 E06 专项结论接管；其他实施细节仍待定。
 
 ## 1. Confirmed position（已确认的平台定位）
 
