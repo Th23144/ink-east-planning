@@ -6,7 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Current review task — second-pass five findings and pending user choice（二轮核查断点：五项遗留问题与待确认建议）
+## Latest confirmed E06 & next decision C08（最新 E06 用户确认／下一项 C08）
+
+**E06 user-confirmed controlling decision（正式规则已确认）:** `ROUND-14-E06-SPECIAL-MEDIA-PREPUBLICATION-REVIEW-RESOLUTION-V1.md`。对**申请文化／纪录／研究／实验艺术特殊发表资格的真实性行为影像**实行“**公开前完成资格审核，获准后才可能公开**”；不强制普通随笔／合法文化研究统一先审后发。文章正常正文与受限影像可以分别对外处理（媒体审核通过前保持不可公开访问）。历史春画图像不因描绘性行为就自动归入此真人特殊审核流程，原有版权、权利与访问保护仍适用。
+
+**Supersession（历史未决表述）:** 原 `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` §6 “未决定先审还是其他触发方式”与先前 `ROUND-14-FIVE-FINDINGS-INDEPENDENT-SECOND-PASS-REVIEW-V1.md` E06 建议均为**用户此次确认之前的历史状态**，不得当成当前未决。
+
+**Next user-facing governance choice（下一项）:** **C08 多作者个人退出权与合作作品整体状态变更的授权边界**，仍需用户明确审查；然后复核 E07 应当固定的底线与可暂缓的实施细节。F01／F02 处理结束，不重复决定。
+
+**Round 14 ACTIVE / NOT SEALED.** 不着手统一 Current Truth 直至这两项依序审完；PR #53 Draft / Open / Unmerged；不授权代码开发或合并。
+
+---
+
+## Previous review task — second-pass five findings and pending user choice（较早五项复核断点）
 
 **Latest audit (NOT a new approved policy):** `ROUND-14-FIVE-FINDINGS-INDEPENDENT-SECOND-PASS-REVIEW-V1.md`. Against two user-supplied prior-chat exports and controlling Round 3/6/8/11/14 records, **F01** is solved by replacement-seal precedence while the frozen Round-6 header stays unchanged; **F02** historical header was corrected. **E06** and **C08** are genuine *narrow principle choices that may be decided now*, but the audit's recommendations are NOT approved; **E07** detailed operations remain deferred.
 
