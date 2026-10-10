@@ -1,3 +1,6 @@
+> ⚠️ **LEGACY WORDPRESS PLAN / NOT PROJECT 3 IMPLEMENTATION AUTHORITY（旧 WordPress 计划 / 不是项目三实现依据）**  
+> Project 3 is source-native. This WordPress field schema is historical reference only and contains outdated Reader/Patron/Membership access assumptions. Do not use it to implement Project 3.
+
 # Ink & East · WordPress Field Schema Draft
 
 > 版本：v0.1  

@@ -1,3 +1,6 @@
+> ⚠️ **HISTORICAL STATIC REVIEW NOTES / NOT CURRENT MEMBERSHIP TRUTH（历史静态审阅记录 / 不是当前会员真相）**  
+> VIP Library, Patron Vote, Reader/Patron and membership/paywall references are preserved only as preview provenance. Do not treat them as current product requirements.
+
 # Project 3 · Core Static Completion Pass 1A Review Notes
 
 > Repository: `Th23144/ink-east-planning`  

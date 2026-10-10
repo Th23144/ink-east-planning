@@ -1,3 +1,7 @@
+> ⚠️ **PRE-PR#53 TECHNICAL BLUEPRINT / RESERVED VIP MODEL IS NOT CURRENT PRODUCT TRUTH（PR #53 之前的技术蓝图 / 旧 VIP 预留模型不是当前产品真相）**  
+> Technical stack/history may remain useful, but `is_vip`, Reader/Patron visibility, future VIP full-body protection and paid-content assumptions are superseded as product requirements.  
+> Any future implementation must derive access/product semantics from current Product Architecture, not from the reserved legacy fields in this file.
+
 # Ink & East · Phase 2 Technical Decision Plan
 
 - 本文件是 Project 3 / Ink & East 长期主站级项目的 Phase 2 技术决策规划。

@@ -1,3 +1,6 @@
+> ⚠️ **LEGACY WORDPRESS IMPLEMENTATION PLAN / NOT PROJECT 3 MAINLINE（旧 WordPress 实施计划 / 不属于项目三主线）**  
+> Kept for historical provenance only. Project 3 source-native implementation and current Product Architecture supersede this plan.
+
 # Ink & East · WordPress Implementation Plan
 
 > 版本：v0.1  

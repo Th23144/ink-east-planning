@@ -1,5 +1,7 @@
 # Project 3 · Commerce Batch A Accepted
 
+> ⚠️ **2026-10-01 product-relationship correction（产品关系纠正）:** Spatial Flow（空间流）and Ink & East（墨与东方）are independent products/projects（独立产品 / 项目）. Their coexistence in this repository / development context（仓库 / 开发上下文）, any temporary bridge（临时桥接）, and regression testing（回归测试）across both do not establish a Shared Platform（共享产品平台）or shared-account/data architecture（共享账户 / 数据架构）. Exact future cooperation relationship（未来合作关系）remains unresolved.
+
 > Accepted implementation baseline: 2026-08-16 / 2026-08-17 CI run  
 > Repository: `Th23144/ink-east-planning`  
 > PR: #51 — `feat(commerce): Batch A source-native shop foundation`  

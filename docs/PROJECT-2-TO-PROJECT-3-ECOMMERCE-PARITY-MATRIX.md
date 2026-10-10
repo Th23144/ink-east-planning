@@ -1,5 +1,7 @@
 # Project 2 → Project 3 Ecommerce Parity / Migration Matrix
 
+> ⚠️ **2026-10-01 relationship correction（关系纠正）:** Ink & East（墨与东方）and Spatial Flow（空间流）are independent products/projects（独立产品 / 项目）. They are currently co-developed in the same development/planning context（开发 / 规划上下文）because of implementation convenience and a possible future cooperation relationship（未来合作关系）. Any older wording in this matrix that places Spatial Flow（空间流）under Ink & East（墨与东方）, assumes one site root（统一站点根）, or treats a bridge as proof of one product platform is superseded. Preserve Spatial Flow（空间流）commerce product truth（电商产品事实）; final cross-product relationship / IA（信息架构）must be decided separately.
+
 > Audit date: 2026-08-15  
 > Project 2 reference repository: `Th23144/spatial-flow-v2-preview-lab`  
 > Project 3 implementation repository: `Th23144/ink-east-planning`  

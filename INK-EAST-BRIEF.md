@@ -1,3 +1,8 @@
+> ⚠️ **HISTORICAL / SUPERSEDED AS CURRENT PRODUCT TRUTH（历史文档 / 不再作为当前产品真相）**  
+> This file preserves an early Ink & East product stage and contains superseded 30% Paywall（30% 付费墙）, VIP Long Read（会员长文）, Reader / Patron（读者 / 赞助者） packaging/pricing, Archive gating and member-gated participation assumptions.  
+> **Do not use this file alone for current architecture.** Read `PROJECT-3-START-HERE.md` + `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` + latest Current Truth（当前有效真相） first.  
+> Current Round 12 direction: normal published platform content remains publicly readable; Membership（会员） is not a content-unlock/paywall product.
+
 # Ink & East · 完整项目需求文档
 
 > 期刊型数字阅读会员社区网站

@@ -56,6 +56,9 @@ At minimum the future product must distinguish the following conceptual lanes. N
 
 ### A. Canonical / Authoritative Classical Text Library
 
+> **Later clarification（后续权威归属澄清）:** `ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md` and Round 7 Current Truth（第七轮当前有效规则） distinguish exact documented source/witness/edition from authored translation, editorial punctuation, commentary and individual interpretation（明确区分原典 / 版本记录和署名翻译、整理标点、注释、个人理解）. The following historical examples may be co-displayed but **do not all inherit canonical source authority（可同屏展示，但不共享原典来源权威）**.
+
+
 Purpose: preserve and present authoritative ancient/classical text as a clean knowledge object.
 
 Examples:
@@ -81,7 +84,9 @@ Conceptually:
 ```text
 Canonical Work / Passage
         │
-        ├── authoritative text / edition / translation / notes
+        ├── source text / edition / witness / provenance
+        ├── attributed translation / punctuation / notes / interpretations
+        │           (linked derivative/editorial objects, NOT source authority)
         │
         └── "Discuss / related conversations"
                     ↓
@@ -102,10 +107,10 @@ Possible authors include:
 
 - Ink & East editorial staff;
 - invited experts;
-- verified/authoritative contributors;
+- contributors with appropriate Contributor Qualification（贡献者资格） / scoped provenance where relevant;
 - other future trusted contributor classes.
 
-This lane includes much of what older Project 3 documents loosely called `Articles`, `VIP Long Reads`, modern essays, original stories and educational/editorial posts.
+This lane includes much of what older Project 3 documents loosely called `Articles`, `VIP Long Reads`, modern essays, original stories and educational/editorial posts. **`VIP Long Reads` is a historical label only; it does not imply current member-only/paywalled editorial content. Current Round 12 direction keeps normal published platform content publicly readable.**
 
 Unlike the canonical text lane, normal Reader Notes / discussion may be attached here where the product permits it.
 
@@ -256,7 +261,7 @@ An Issue can curate and connect:
 - teaching/interpretive pieces;
 - stories;
 - selected reader questions;
-- VIP long reads;
+- long-form editorial / contributor works (historically some previews called these `VIP long reads`; no paid-access implication);
 - community responses where editorially appropriate.
 
 Therefore:
@@ -300,7 +305,7 @@ Digital magazine + membership + ecommerce
 A more faithful long-term product direction is:
 
 ```text
-Authoritative Eastern-culture knowledge layer
+Source-backed cultural knowledge layer (Eastern/Chinese culture as the initial wedge)
         +
 Editorial / teaching publishing
         +
@@ -310,7 +315,7 @@ Reader identity / interest graph
         +
 Discovery and recommendation
         +
-Membership / premium services
+Membership / supporter relationship + separately defined services
         +
 Spatial Flow commerce
 ```
@@ -329,9 +334,9 @@ The commercial layers create monetization paths without reducing the whole platf
 
 1. Ink & East content is a multi-class system, not a generic blog/article table.
 2. Shidianguji is a strong reference for the classical-text reading/research lane only, not the whole product.
-3. Canonical classical-text surfaces must preserve source integrity and must not host an ordinary social-comment feed directly under the authoritative text.
+3. Canonical classical-text surfaces must preserve source integrity and must not host an ordinary social-comment feed directly under the canonical/source-backed text.
 4. Social discussion about classical texts belongs to linked companion community/discussion objects.
-5. Editorial/teaching content, authoritative contributor content and user-generated posts are conceptually different classes.
+5. Editorial/teaching content, contributor content with appropriate scoped qualification/provenance, and user-generated posts are conceptually different classes.
 6. Authority/provenance must be first-class metadata and permission logic.
 7. Distinct content lanes should connect through a shared knowledge/interest relationship layer rather than remain isolated silos.
 8. Existing Issues remain an editorial curation product, not the definition of the entire content system.
@@ -341,7 +346,7 @@ The commercial layers create monetization paths without reducing the whole platf
 
 - final naming of each content lane;
 - exact taxonomy and number of subcategories;
-- contributor verification / authority tiers;
+- contributor qualification / scoped claims / relationship semantics;
 - canonical text acquisition/licensing/provenance policy;
 - edition/version/collation data model;
 - translation and annotation workflow;

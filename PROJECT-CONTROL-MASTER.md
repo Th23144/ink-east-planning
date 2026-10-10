@@ -1,3 +1,8 @@
+> ⚠️ **INTERMEDIATE HISTORICAL CONTROL FILE / NOT CURRENT TOP-LEVEL AUTHORITY（中间历史控制文件 / 不再是当前最高控制文件）**  
+> Despite older wording that future windows should read this file first, the current authoritative entry point is `PROJECT-3-START-HERE.md`.  
+> This file contains partially superseded Membership/VIP assumptions including `99% free + rare VIP content`, independent VIP Library（会员内容库） and older participation gating.  
+> Before reusing any rule here, check `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md` and the latest Current Truth（当前有效真相）.
+
 # Spatial Flow / Ink & East · 全项目接手总控文档 v0.3
 
 > 版本：v0.3.1  

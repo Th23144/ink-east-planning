@@ -1,3 +1,7 @@
+> ⚠️ **LEGACY PROJECT-2 / STATIC-VISUAL CONSTRAINTS — NOT PROJECT 3 CURRENT ARCHITECTURE（旧项目二 / 静态视觉约束——不是项目三当前架构）**  
+> This file predates the Project 3 source-native split and still describes a WordPress “换皮工程” plus old VIP/Paywall modules. Use it only for historical visual provenance where compatible.  
+> Current Project 3 entry: `PROJECT-3-START-HERE.md`. Current supersession guard: `docs/PROJECT-3-SUPERSEDED-DIRECTION-REGISTRY-V1.md`.
+
 # Design Constraints · 设计稿约束规范
 
 > **必读** · 所有 AI 助手 / 设计师 / 开发者在为 Spatial Flow 或 Ink & East 项目工作前，必须先读完这份文档。

@@ -1,3 +1,6 @@
+> ⚠️ **HISTORICAL STATIC-COMPLETION PLAN / NOT CURRENT PRODUCT ARCHITECTURE（历史静态稿补全计划 / 不是当前产品架构）**  
+> Membership/VIP/paywall references are preview-era scope markers only. Current Product Architecture and public-content baseline control.
+
 # Project 3 · Core Static Completion Pass 1
 
 > Repository: `Th23144/ink-east-planning`  
