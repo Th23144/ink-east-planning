@@ -3,6 +3,7 @@
 
 > **Status:** **TARGETED SCENARIO MATRIX COMPLETED / FULL ROUND AUDIT NOT PASSED, ROUND NOT SEALED**.
 > **Basis:** `ROUND-14-TARGETED-SOURCE-COVERAGE-PARITY-V1.md`, 18 active control documents, historical Round-14 documents, Round 3/6/7/8/10/11 current/seal records and Round 13 commercial-content split.
+> **Later five-finding reaudit（后续五项复核优先）:** `ROUND-14-FIVE-FINDINGS-SCOPE-AND-SEAL-GATE-REAUDIT-V1.md` finds that **E06 remains an unselected review-trigger design but was expressly deferred in the controlling media-exception resolution §6**, so the earlier suggestion that E06 necessarily prevents sealing Round 14 was too strong. Preserve the old scenario result as its historical finding; the current classification is **explicitly deferred to pre-implementation policy approval, not an automatic architecture-seal blocker**. C08/E07 remain deferred; F01/F02 are resolved documentation issues. A full Round-14 Source Parity and frozen adversarial audit are still required; no implementation or merge is authorized.
 > **Nature:** Written hypothetical scenario reasoning against documented rules. Not production runtime tests, full repository audit, legal compliance review or user approval of undecided conditions.
 > **Counts:** 40 cases = 35 PASS in principle, 2 implementation/policy-calibration DEFERRED, 2 documentation hygiene, 1 substantive OPEN PRODUCT CHOICE. This is **not** a zero-blocker certificate.
 
