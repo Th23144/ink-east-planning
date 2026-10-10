@@ -6,6 +6,7 @@
 > **Finding ID（审计编号）:** **C08 in `ROUND-14-TARGETED-CROSS-ROUND-ADVERSARIAL-AUDIT-V1.md` (40-case audit)**；不是早期跨轮 22 项审计中另一个叫 C08 的普通随笔亲历核验问题。
 > **Controlling predecessors（前置正式规则）:** `INK-EAST-ROUND-6-CURRENT-TRUTH-R1-R40-V6.md`（Author、Publisher、Operator、Authorship、Work 操作权限各自分离）；`INK-EAST-ROUND-3-SEAL-RECORD.md`；`ROUND-14-AUTHOR-CONSENT-BEFORE-CANDIDATE-ENTRY-RESOLUTION-V1.md`；`ROUND-14-CANDIDATE-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md`；`ROUND-14-POST-RECOGNITION-AUTHOR-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md`。
 > **Implementation / merge（实现／合并）:** NOT AUTHORIZED（未授权）。Round 14 ACTIVE / NOT SEALED。
+> **Later controlling joint-entry choice（后续共同作品入池确认）:** `ROUND-14-C08-JOINT-WORK-CANDIDATE-ENTRY-CONSENT-RESOLUTION-V1.md` 已由用户确认：当 A、B 同意而真实共同作者 C 明确拒绝且未有效授权他人时，**整件共同作品不能进入 Candidate，须先解决 C 的参与问题**。本文第 4 节“首次进入 Candidate 尚未决定”为创建时的历史状态；本人自愿退出／整件作品处置权的既有分离仍有效，其他授权实现细节仍待确定。
 
 ## 1. 用户已经批准的三个原则
 
