@@ -6,7 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest confirmed C08 joint-entry case — next E07（最新共同作品 Candidate 入池决定／下一项 E07）
+## Current checkpoint — five findings targeted closure / Round 14 consolidation next（最新断点：五项定向问题阶段处理完成／下一步第十四轮统一规则）
+
+**Latest E07 user response（E07 用户确认程度）:** 对“现有原则继续约束审核；实施人员、材料、证据、时限、界面及隐私细节延后到功能落地前设计”的明确方案答复“**算认可吧**”。`ROUND-14-E07-SPECIAL-MEDIA-REVIEW-IMPLEMENTATION-DEFERRAL-V1.md` 依此记录为**有限认可的阶段化处理**，绝不表示批准具体 SOP、审核人数或特殊内容立即上线。
+
+**Five-finding dispositions（五项审计最终阶段状态）:** **F01 / F02** 文档／历史状态问题已解决；**E06** 特殊高敏感影像先审再公开、文章正文与待审影像可分离已用户确认；**C08** 共同作者个人参与权和整件作品授权区分，以及明确反对且无授权的合作作者不得被绕过进入 Candidate 已用户确认；**E07** 原则沿用、运营细则待实施前补齐（认可有保留语气）。
+
+**Next mainline（下一主线）:** 开始整理 **Round 14 Current Truth V1 候选**，随后进行完整 Source Parity（来源完整核对）和 frozen Adversarial Audit（冻结版对抗审计）。这些尚未执行完成，不得宣称第十四轮封存。第五项结束不等于相关功能可部署，也不等于多作者全部实现细节已定。
+
+**PR #53:** Draft / Open / Unmerged. No coding or merge authorization. Membership Re-entry Review #2 still precedes Round 15.
+
+---
+
+## Earlier checkpoint — C08 confirmed and E07 pending（前一断点：C08 已定、E07 待议）
 
 **User-confirmed decision（已确认）:** `ROUND-14-C08-JOINT-WORK-CANDIDATE-ENTRY-CONSENT-RESOLUTION-V1.md` — A/B/C 同一作品，A/B 赞成但真实共同作者 C 明确反对且未授权任何人代同意：**整件共同作品不能进入正式 Candidate Review，先解决 C 的参与／授权问题**。不影响该作品普通发表或既有合法推举，不把拒绝记作 Not Recognized／违规。沉默不等于同意；有效授权必须限域可核实，具体代理工作流仍待设计。
 
