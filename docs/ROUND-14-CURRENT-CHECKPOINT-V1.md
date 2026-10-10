@@ -10,7 +10,7 @@
 **Controlling decision（正式结论）:** `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` — USER-CONFIRMED principles（用户确认：普通成人娱乐性行为影像不开放一般上传；特殊文化／历史／纪录／研究／实验艺术保留受限发表可能；明显情色消费导向及以性行为直接展示为主要观看内容的影像原则上排除）。
 **Precedence（优先关系）:** 以下较早的“真实性行为影像仍未决定／仅倾向 B”措辞为历史记录，不再适用于现行原则。特殊媒体审核、限龄、预览技术及申诉执行细则仍待定；严肃电影少量相关真实镜头只是“可考虑特殊评估”，不是普遍许可。
 **Compatibility（保留）:** 成人文学、正规人体艺术摄影、性暗示但不展示性行为的摄影、既有分发规则与成人商业红线均不受推翻。
-**CURRENT NEXT MAINLINE（当前下一主线）:** 旧五类知识纠错结案结果已依据 RP1–RP6 重整为 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-REVIEW-V2.md`（**REFRAMED WORKING DRAFT / NOT USER-APPROVED，已重整工作草案／仍未批准**）；按源事实、普通解读和独立违规划清范围，A/C/D 仅是候选三类，结案类型与 C/D 边界尚未封存。下一步：审查有无真正剩余的结案政策选择，而非重复要求确认既有 RP1 分离原则；Round 14 尚未封存、代码与合并仍未授权。
+**CURRENT NEXT MAINLINE（当前下一主线）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-REVIEW-V2.md` 已经按 RP1–RP6 重整，并由 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-SCENARIO-REGRESSION-V1.md` 完成 14 个假设情景的定向回归检查；未发现需要增加第四类事实结果的实例；已补上“同一申请多个独立主张可分别结案”。**A／C／D 仍是候选结果，最终分类未获用户批准**。当前下一步：提交这三个候选结案结果供用户独立确认；若获批，再形成正式决策文件并继续第十四轮剩余主线。不要重复询问普通解读不立案、违规另案等已经确认的原则。Round 14 ACTIVE；无代码或 PR 合并授权。
 
 ## User-confirmed sexually suggestive photography boundary（明显性暗示摄影边界已确认）
 **Controlling decision（控制性结论）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` §4B.
