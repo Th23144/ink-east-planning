@@ -16,4 +16,6 @@ The earlier `ROUND-14-REMAINING-GOVERNANCE-GAPS-TRIAGE-AND-SOURCE-RECONCILIATION
 
 **Next mainline:** The three-stage author consent/withdrawal principle is now settled. Review any remaining Round 14 substantive blockers and complete targeted source parity and adversarial checks before considering Round 14 closure. Age-gate implementation and multi-author/return mechanics remain deferred.
 
-Round 14 remains ACTIVE; PR #53 stays Draft / Open / Unmerged.
+**Later targeted audit (controlling current checkpoint):** `ROUND-14-TARGETED-SOURCE-COVERAGE-PARITY-V1.md` (32/32 inventory, 18/18 controlling docs checked) and `ROUND-14-TARGETED-CROSS-ROUND-ADVERSARIAL-AUDIT-V1.md` (40 cases). One real publishing-governance choice is still open: when/how exceptional cultural media eligibility review must occur relative to public release. Notices/age verification do not decide it.
+
+Round 14 remains ACTIVE / NOT SEALED; PR #53 stays Draft / Open / Unmerged.
