@@ -6,7 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest checkpoint — 22-source parity reviewed（最新断点：正式来源核对完成）
+## Latest checkpoint — Frozen candidate adversarial matrix audited（最新断点：冻结候选对抗审计完成／未封存）
+
+**Current controlling audit documents:** `ROUND-14-CURRENT-TRUTH-V1-CANDIDATE.md` — exact tested blob **`a06c84268d406876c53feba652d2f37ca9375e27`**; `ROUND-14-CURRENT-TRUTH-V1-SOURCE-PARITY-REVIEW-V1.md`（原候选 22/22 来源审计、8 项修订）；`ROUND-14-CURRENT-TRUTH-V1-SOURCE-PARITY-ADDENDUM-P09-V1.md`（共同作者退出歧义修正及 S17/S20/S21 复验）；`ROUND-14-CURRENT-TRUTH-V1-FROZEN-ADVERSARIAL-AUDIT-V1.md`（针对上述准确 blob 的 106 案跨轮对抗检查）。
+
+**Frozen adversarial result:** **100 PASS / 6 EXPLICITLY DEFERRED / 0 unresolved product-policy contradictions**, over 9 risk families with S01–S22 全覆盖。保留的 6 项为固定申诉期限、合作作者实务授权、主动成人浏览者综合首页详细处理、成人作品正式认可资格、特殊影像审核员配置及各法域年龄/数据细节；均不得被视为已批准产品实施。
+
+**Important limit:** 通过的是文档产品原则层面来源与情景一致性，不是完整项目历史聊天逐行审计、法域合规审查、审核系统实测或 PR 直接合并凭证。**Round 14 still ACTIVE / NOT SEALED.** PR #53 remains Draft / Open / Unmerged; no implementation or merge authorized.
+
+**Next gate:** 最终封存准备检查（候选 blob、来源版本、修订与审计证据、导航状态）并向用户呈现可直接审阅的第十四轮封存建议；得到明确许可之后才可讨论是否制作 Seal Record。既定顺序仍为 Round 12 Membership Re-entry Review #2 → Round 15。
+
+---
+
+## Previous checkpoint — Source Parity pass（前一断点：来源核对通过）
 
 已创建 `ROUND-14-CURRENT-TRUTH-V1-SOURCE-PARITY-REVIEW-V1.md`。针对统一规则候选 blob `8e6ea8a6e899ae6268b25539dbc759cb00c72b6b`，22 份正式来源的产品原则含义及限定范围核对通过，候选文案做了 8 处来源支持的修正，没有新增用户政策决定。**尚未完成针对冻结候选的完整 Adversarial Audit；第十四轮未封存**。下一步针对上述确切 blob 开展完整对抗审查，如需修正候选则重跑来源核查。
 
