@@ -6,7 +6,17 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest five-finding review — corrected seal-gate classification（最新五项复核：封存阻碍分类已修正）
+## Current review task — second-pass five findings and pending user choice（二轮核查断点：五项遗留问题与待确认建议）
+
+**Latest audit (NOT a new approved policy):** `ROUND-14-FIVE-FINDINGS-INDEPENDENT-SECOND-PASS-REVIEW-V1.md`. Against two user-supplied prior-chat exports and controlling Round 3/6/8/11/14 records, **F01** is solved by replacement-seal precedence while the frozen Round-6 header stays unchanged; **F02** historical header was corrected. **E06** and **C08** are genuine *narrow principle choices that may be decided now*, but the audit's recommendations are NOT approved; **E07** detailed operations remain deferred.
+
+**Next user discussion:** E06, specially restricted real explicit-activity media only: before-public-access eligibility screening vs other trigger; **not** universal prior review of ordinary cultural essays or historical illustrations. Then C08: individual coauthor participation vs authorization to alter joint Work Recognition. No numeric age/staff deadlines or other new rules; **do not start Current Truth V1 until the user has had the opportunity to decide or explicitly defer these choices**.
+
+**Status:** Round 14 ACTIVE / NOT SEALED, PR #53 Draft / Open / Unmerged, no code or deployment.
+
+---
+
+## Earlier five-finding review — corrected seal-gate classification（前次五项复核）
 
 **Controlling review（当前优先复核）:** `ROUND-14-FIVE-FINDINGS-SCOPE-AND-SEAL-GATE-REAUDIT-V1.md` — DOCUMENT AUDIT / NO NEW PRODUCT POLICY（文档复核／不新增产品规则）。
 
