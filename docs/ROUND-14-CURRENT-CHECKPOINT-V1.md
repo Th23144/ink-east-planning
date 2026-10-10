@@ -6,7 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest work checkpoint — remaining governance audit triage completed（最新工作断点：剩余治理问题审计分流已完成）
+## Latest controlling checkpoint — author choice across Recognition is confirmed（最新正式断点：作品认可三阶段作者选择权已确认）
+
+**Controlling sequence（现行正式结论）:** `ROUND-14-AUTHOR-CONSENT-BEFORE-CANDIDATE-ENTRY-RESOLUTION-V1.md`（正式入候选前需作者同意）→ `ROUND-14-CANDIDATE-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md`（Candidate 阶段可自愿退出）→ `ROUND-14-POST-RECOGNITION-AUTHOR-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md`（获得 Recognized 后可自愿终止当前认可展示／参与，真实历史授予事实仍保留）。
+
+**Strict distinction（严格区分）:** 作者自愿退出不等于评审未通过、正式认可因证据失效、作者违规或删除普通发表；不能以退出抹除独立事实／行为案件。最新官方展示与历史快照应各自真实。
+
+**Other accepted direction（另一已确认方向）:** `ROUND-14-READER-ACCESS-NOTICES-DIRECTION-V1.md`：已允许发表的材料采用正规阅读提示、敏感图像预览保护及适用时必要年龄核验；不得因此扩大内容准入／推荐范围。具体年龄技术及分类政策仍待实施／必要的独立评估。
+
+**Next phase（下一阶段）:** 三阶段作者参与／退出原则不再作为未决问题。继续核对真正剩余的 Round 14 产品规则及跨轮文档一致性，随后考虑定向 Source Parity / Adversarial Audit；在正式核查以前不得宣称整轮 SEALED。独立第十二轮 Membership Re-entry Review #2 仍需在第十五轮前进行。PR #53 仍 Draft / Open / Unmerged，不开发、不合并。
+
+---
+
+## Earlier working checkpoint — remaining governance audit triage completed（较早工作断点：剩余问题分流）
 
 **Audit record（审查文件）:** `ROUND-14-REMAINING-GOVERNANCE-GAPS-TRIAGE-AND-SOURCE-RECONCILIATION-V1.md` — **AUDIT FINDINGS / NOT A USER-APPROVED NEW RULE（审计发现／不是新批准规则）**。对旧跨轮审计 A01–A03、B01–B07、C01–C08、D01–D04 共 22 项历史发现逐一核对。多数原则已由后续正式确认覆盖；实施细则及局部旧导航表述单列。审查不构成 Round 14 封存或对所有仓库文件的全面审计。
 
