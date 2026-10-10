@@ -489,3 +489,7 @@ Do not restart visual-finalization work merely because an older roadmap says a s
 153. `docs/ROUND-14-E07-SPECIAL-MEDIA-REVIEW-IMPLEMENTATION-DEFERRAL-V1.md` — **E07 LIMITED ACCEPTANCE / FIVE FINDINGS TARGETED DISPOSITION（E07 有保留的阶段化认可／五项定向问题处理完毕）**：E07 使用既有资格、安全、权利、E06 先审再公开和复核保护原则；人员、申请材料、时限、证明方式与 UI 待实施前设计。接下来准备第十四轮 Current Truth V1 候选及全量来源／冻结对抗审计，仍不封存、不开发。
 154. `docs/ROUND-14-CURRENT-TRUTH-V1-CANDIDATE.md` — **ROUND 14 CURRENT TRUTH V1 CANDIDATE（统一规则候选／未封存）**：整合 22 份正式控制来源／有保留后置处置，含 S01–S22 源文件与读取 SHA；Round-14 前缀文件因新增候选成为 41 份。下一步完整 Source Parity 及冻结版对抗审计，不直接 Seal，不开发，不合并。
 155. `docs/ROUND-14-CURRENT-TRUTH-V1-CANDIDATE-INVENTORY-ENTRY-QA-V1.md` — **ROUND 14 CANDIDATE ENTRY QA / NOT FULL PARITY（统一候选初步核对／尚非完整来源审计）**：22 份来源索引与 22 个主题核对通过，当前 Round-14 前缀文件合计 42 份（22 controlling + 18 history/audit/navigation + 1 candidate + 1 entry QA）；下一步逐条来源核对与冻结对抗审计，不封存、不合并、不开发。
+
+157. `docs/ROUND-14-CURRENT-TRUTH-V1-SOURCE-PARITY-REVIEW-V1.md` — Round 14 22-source parity review of pre-P09 blob (historical baseline), 8 document fixes.
+158. `docs/ROUND-14-CURRENT-TRUTH-V1-SOURCE-PARITY-ADDENDUM-P09-V1.md` — S17/S20/S21 recheck for post-Recognition coauthor opt-out, candidate blob a06c84268d406876c53feba652d2f37ca9375e27.
+159. `docs/ROUND-14-CURRENT-TRUTH-V1-FROZEN-ADVERSARIAL-AUDIT-V1.md` — 106 frozen-document attack cases, 100 PASS and 6 deferred; product architecture only, NOT SEALED, PR #53 Draft/Unmerged. Next: seal-readiness verification and explicit approval.
