@@ -479,3 +479,5 @@ Do not restart visual-finalization work merely because an older roadmap says a s
 143. `docs/ROUND-14-POST-RECOGNITION-AUTHOR-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md` — USER-CONFIRMED：已认可作者可终止当前认可展示／参与，保留准确的历史授予事实，不与违规或证据失效混淆。
 144. `docs/ROUND-14-READER-ACCESS-NOTICES-DIRECTION-V1.md` — USER-CONFIRMED DIRECTION：适当阅读提示、敏感影像预览保护及必要年龄核验；类别与技术细节暂缓。
 145. `docs/ROUND-14-POST-TRIAGE-DECISION-POINTER-V1.md` — CURRENT DECISION POINTER：以上已确认事项与当前下一步。Round 14 未整体封存；PR #53 不合并、不实施。
+146. `docs/ROUND-14-TARGETED-SOURCE-COVERAGE-PARITY-V1.md` — **TARGETED PARITY PASS ONLY（定向来源覆盖核查通过）**：清点 32 份 Round-14 文档及 18 份正式规则，完整冻结整轮来源核验尚未完成。
+147. `docs/ROUND-14-TARGETED-CROSS-ROUND-ADVERSARIAL-AUDIT-V1.md` — **40-CASE TARGETED AUDIT COMPLETED / ROUND NOT SEALED（40 场景定向对抗审计已完成／第十四轮未封存）**：35 条原则通过、2 执行待定、2 文档导航问题、1 特殊文化影像公开审核时点需要新的产品决策；当前主线见 `docs/ROUND-14-CURRENT-CHECKPOINT-V1.md`。
