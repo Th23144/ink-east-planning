@@ -3,6 +3,7 @@
 
 > **Status:** AUDIT FINDINGS + UNAPPROVED RECOMMENDATIONS / NOT A USER CONFIRMATION（审计发现与待确认建议／非用户新规则）
 > **Date:** 2026-10-10
+> **Subsequent confirmed decision（后续用户确认优先）:** `ROUND-14-E06-SPECIAL-MEDIA-PREPUBLICATION-REVIEW-RESOLUTION-V1.md` 已由用户明确认可：特殊资格的真实性行为影像先审后公开、普通文化文章不统一先审后发、允许正文与受限媒体拆分发布。本报告下方 Proposal A 及“E06 not decided”仅代表**当时待审状态**；**C08 的建议 B 和 E07 参数仍未获用户批准**。
 > **Scope:** E06, C08, E07, F01, F02. Re-examined two user-provided older conversation exports (approx. 891 and 1201 lines), a separate project handoff file (historical orientation only), and current PR #53 repository sources. Verified explicit historical user choices and differentiated earlier assistant proposals from user confirmation and later controlling GitHub resolutions.
 > **Do not advance Current Truth until user review of the two actual policy choices below.** No coding, merge, repository frozen-blob rewrite, new numeric criteria or policy approval.
 
