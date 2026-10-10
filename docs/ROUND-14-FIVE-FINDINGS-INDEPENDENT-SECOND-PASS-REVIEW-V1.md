@@ -3,6 +3,7 @@
 
 > **Status:** AUDIT FINDINGS + UNAPPROVED RECOMMENDATIONS / NOT A USER CONFIRMATION（审计发现与待确认建议／非用户新规则）
 > **Date:** 2026-10-10
+> **Later joint-entry user choice（后续已确认）:** `ROUND-14-C08-JOINT-WORK-CANDIDATE-ENTRY-CONSENT-RESOLUTION-V1.md`：共同作品 A/B 同意而真实共同作者 C 明确反对且没有该事项授权时，不得将整件作品推进 Candidate，需先解决有效参与／授权争议。本文旧的共同入池 A/B 选择和相关“未决定”仅为历史报告状态；代理细节及 E07 仍待后续。
 > **Later C08 user-confirmed controlling rule（后续 C08 用户确认）:** `ROUND-14-C08-MULTI-AUTHOR-PARTICIPATION-WORK-AUTHORITY-RESOLUTION-V1.md` 已正式确认个人参与权与整件共同作品认可处置权分离、关键授权／证据变化独立复核。下文的 Proposal B 及“C08 未决定”仅代表本报告创建时的历史建议；共同作品首次进入 Candidate 的同意基础仍需另行确认。
 > **Subsequent confirmed decision（后续用户确认优先）:** `ROUND-14-E06-SPECIAL-MEDIA-PREPUBLICATION-REVIEW-RESOLUTION-V1.md` 已由用户明确认可：特殊资格的真实性行为影像先审后公开、普通文化文章不统一先审后发、允许正文与受限媒体拆分发布。本报告下方 Proposal A 及“E06 not decided”仅代表**当时待审状态**；**C08 的建议 B 和 E07 参数仍未获用户批准**。
 > **Scope:** E06, C08, E07, F01, F02. Re-examined two user-provided older conversation exports (approx. 891 and 1201 lines), a separate project handoff file (historical orientation only), and current PR #53 repository sources. Verified explicit historical user choices and differentiated earlier assistant proposals from user confirmation and later controlling GitHub resolutions.
