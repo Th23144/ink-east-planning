@@ -3,6 +3,7 @@
 
 > **Status:** AUDIT FINDINGS + UNAPPROVED RECOMMENDATIONS / NOT A USER CONFIRMATION（审计发现与待确认建议／非用户新规则）
 > **Date:** 2026-10-10
+> **Later E07 qualified acceptance（后续 E07 限域认可）:** `ROUND-14-E07-SPECIAL-MEDIA-REVIEW-IMPLEMENTATION-DEFERRAL-V1.md` 记录用户回复“算认可吧”，仅认可由既有产品原则覆盖、具体实施细节后置，**不代表**已批准人员数／时限／申请表／可上线审核系统。下文 E07 仍为未决的说法指运营细节，而非仍需要另作新的产品架构原则决策。
 > **Later joint-entry user choice（后续已确认）:** `ROUND-14-C08-JOINT-WORK-CANDIDATE-ENTRY-CONSENT-RESOLUTION-V1.md`：共同作品 A/B 同意而真实共同作者 C 明确反对且没有该事项授权时，不得将整件作品推进 Candidate，需先解决有效参与／授权争议。本文旧的共同入池 A/B 选择和相关“未决定”仅为历史报告状态；代理细节及 E07 仍待后续。
 > **Later C08 user-confirmed controlling rule（后续 C08 用户确认）:** `ROUND-14-C08-MULTI-AUTHOR-PARTICIPATION-WORK-AUTHORITY-RESOLUTION-V1.md` 已正式确认个人参与权与整件共同作品认可处置权分离、关键授权／证据变化独立复核。下文的 Proposal B 及“C08 未决定”仅代表本报告创建时的历史建议；共同作品首次进入 Candidate 的同意基础仍需另行确认。
 > **Subsequent confirmed decision（后续用户确认优先）:** `ROUND-14-E06-SPECIAL-MEDIA-PREPUBLICATION-REVIEW-RESOLUTION-V1.md` 已由用户明确认可：特殊资格的真实性行为影像先审后公开、普通文化文章不统一先审后发、允许正文与受限媒体拆分发布。本报告下方 Proposal A 及“E06 not decided”仅代表**当时待审状态**；**C08 的建议 B 和 E07 参数仍未获用户批准**。
