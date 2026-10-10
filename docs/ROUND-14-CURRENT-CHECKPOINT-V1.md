@@ -6,7 +6,17 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest controlling checkpoint — Recognition interim protection and independent editorial responsibility scope CONFIRMED（最新断点：正式作品临时保护与独立编辑责任范围已确认）
+## Latest work checkpoint — remaining governance audit triage completed（最新工作断点：剩余治理问题审计分流已完成）
+
+**Audit record（审查文件）:** `ROUND-14-REMAINING-GOVERNANCE-GAPS-TRIAGE-AND-SOURCE-RECONCILIATION-V1.md` — **AUDIT FINDINGS / NOT A USER-APPROVED NEW RULE（审计发现／不是新批准规则）**。对旧跨轮审计 A01–A03、B01–B07、C01–C08、D01–D04 共 22 项历史发现逐一核对。多数原则已由后续正式确认覆盖；实施细则及局部旧导航表述单列。审查不构成 Round 14 封存或对所有仓库文件的全面审计。
+
+**Remaining genuine product questions（真正未决的产品方向）:** 作者对正式 Candidate／Work Recognition 流程的参与／退出权，及成熟／成人内容的读者访问／年龄边界；均已在先前正式文档注明暂缓。证据阈值、具体复核时限、人员配置、算法和界面不要假装已经被批准。
+
+**Next focused discussion（下一项有必要的专题）:** 建议先讨论作者是否可以选择参与／退出正式作品认可程序，不能因为获得普通推举或首页曝光就强迫进行严格评审；讨论前不预设任何新资格或撤回规则。原 Candidate 状态机、普通社区自由、举报防滥用与独立编辑责任继续不变。
+
+---
+
+## Previous controlling checkpoint — Recognition interim protection and independent editorial responsibility scope CONFIRMED（上一正式断点：正式作品临时保护与独立编辑责任范围已确认）
 
 **Controlling decision（正式结论）:** `ROUND-14-RECOGNITION-INTERIM-PROTECTION-AND-EDITORIAL-SCOPE-RESOLUTION-V1.md` — USER-CONFIRMED / RESOLVED AT PRINCIPLE LEVEL（用户确认／本专题原则已确定）。
 - 仅 **Candidate（正式候选）／Recognized Work（正式认可）** 适用与其实际认可责任相称的专项调查期保护；普通发表／仅获推举机会不自动承担正式认可级别的事实审查。
@@ -80,7 +90,7 @@ Approval record（确认记录）: `ROUND-14-SIX-TARGETED-RULE-REPAIRS-APPROVAL-
 
 **ACTIVE DECISION / NOT APPROVED（当前待决事项 / 尚未批准）:** `ROUND-14-ADULT-MATURE-CONTENT-OPENNESS-OPTIONS-DISCUSSION-V1.md`.
 
-Open ordinary publishing remains the default; Candidate/Recognition（候选 / 认可）, source fidelity（原典来源忠实） and baseline safety（基础安全） are distinct lanes. Adult content extent has not been chosen（尚未选择成人内容开放程度）.
+Open ordinary publishing remains the default; Candidate/Recognition（候选 / 认可）, source fidelity（原典来源忠实） and baseline safety（基础安全） are distinct lanes. Adult content publication/distribution principles now have several later user-confirmed category resolutions（成人内容发表及分发已有后续若干正式类别结论）；读者年龄／特殊内容访问细节仍未确定。此句位于较早的历史断点，当前以顶部工作断点和成人内容专项正式结论为准。
 
 Older “Next active discussion（下一讨论）” headings below retain historical context, not current navigation status（下面历史“下一讨论”不再作为当前导航入口）.
 
