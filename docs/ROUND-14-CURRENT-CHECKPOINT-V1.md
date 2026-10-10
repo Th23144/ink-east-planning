@@ -10,7 +10,7 @@
 **Controlling decision（正式结论）:** `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` — USER-CONFIRMED principles（用户确认：普通成人娱乐性行为影像不开放一般上传；特殊文化／历史／纪录／研究／实验艺术保留受限发表可能；明显情色消费导向及以性行为直接展示为主要观看内容的影像原则上排除）。
 **Precedence（优先关系）:** 以下较早的“真实性行为影像仍未决定／仅倾向 B”措辞为历史记录，不再适用于现行原则。特殊媒体审核、限龄、预览技术及申诉执行细则仍待定；严肃电影少量相关真实镜头只是“可考虑特殊评估”，不是普遍许可。
 **Compatibility（保留）:** 成人文学、正规人体艺术摄影、性暗示但不展示性行为的摄影、既有分发规则与成人商业红线均不受推翻。
-**CURRENT NEXT MAINLINE（当前下一主线）:** Round 14 Governance / Correction / Appeal（治理／纠错／申诉），先重构 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md`（REQUIRES REFRAMING / NOT USER-APPROVED）；Round 14 尚未封存，不进入开发或合并。
+**CURRENT NEXT MAINLINE（当前下一主线）:** 旧五类知识纠错结案结果已依据 RP1–RP6 重整为 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-REVIEW-V2.md`（**REFRAMED WORKING DRAFT / NOT USER-APPROVED，已重整工作草案／仍未批准**）；按源事实、普通解读和独立违规划清范围，A/C/D 仅是候选三类，结案类型与 C/D 边界尚未封存。下一步：审查有无真正剩余的结案政策选择，而非重复要求确认既有 RP1 分离原则；Round 14 尚未封存、代码与合并仍未授权。
 
 ## User-confirmed sexually suggestive photography boundary（明显性暗示摄影边界已确认）
 **Controlling decision（控制性结论）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` §4B.
@@ -86,7 +86,7 @@ All five Correction Ownership / Contested Decisions（纠错责任归属 / 争�
 
 Key scope: the approved rights separation is for responsibility-appropriate cases, **not** mandatory review of ordinary community works（只适用于责任程度相当的案件，不强制审查普通社区作品）.
 
-## Next active discussion（下一项主线讨论）
+## Historical next-discussion record（历史“下一讨论”记录，当前以本文顶部主线为准）
 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md`
 
 Subject: concrete results after a correction or source-dispute case closes（纠错 / 来源争议案件结案后的具体结果）. Five types are **PROPOSED / USER CONFIRMATION PENDING（提出方案 / 等待用户确认）**. Do not treat as settled policy（不能视为既定政策）.
