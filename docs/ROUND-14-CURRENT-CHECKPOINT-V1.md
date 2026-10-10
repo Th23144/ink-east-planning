@@ -6,7 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest review checkpoint — Targeted source parity + adversarial audit（最新审计断点：来源覆盖＋对抗审计）
+## Latest five-finding review — corrected seal-gate classification（最新五项复核：封存阻碍分类已修正）
+
+**Controlling review（当前优先复核）:** `ROUND-14-FIVE-FINDINGS-SCOPE-AND-SEAL-GATE-REAUDIT-V1.md` — DOCUMENT AUDIT / NO NEW PRODUCT POLICY（文档复核／不新增产品规则）。
+
+对旧对抗审计中的 **E06 / C08 / E07 / F01 / F02** 定向核查：**E06、C08、E07 是既有正式规则允许暂缓、但产品实现前必须补齐的审核或权限细节；F01、F02 属于已解决的冻结状态／历史导航问题。**
+
+**E06 correction（重点纠正）:** `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` §6 明确把“特殊文化影像是否需要公开前审核、或其他审核触发方式”列入执行暂缓。**不能未经用户确认选择 A/B，也不能继续自动认定它是 Round-14 架构封存硬阻碍**；此类能力的实际公开运行必须在机制获得具体批准并满足必要合法性及既有内容约束后才能实施。现有 PR 本身不授权开发。
+
+**Next mainline（接下来）:** 五项遗留问题的定向复核完成。可以开始建立 **Round-14 Current Truth V1（第十四轮统一当前有效规则候选）**，再执行完整 Source Parity / frozen Adversarial Audit；当前本轮 **ACTIVE / NOT SEALED**。原 40 场景审计保留为历史，须一并读取本次新的优先复核。
+
+---
+
+## Previous review checkpoint — Targeted source parity + adversarial audit（较早审计断点：来源覆盖＋对抗审计）
 
 **Current audit evidence（审计依据）:** `ROUND-14-TARGETED-SOURCE-COVERAGE-PARITY-V1.md`：从 PR #53 的当时 313 个变更文件清点出 **32 份 Round-14 文档**，其中 **18 份正式用户确认控制性结论、14 份历史／审计／导航**；32/32 完成归类、18/18 通过关键规则内容核对。该结果不等于整轮冻结版 Source Parity 完成。
 
