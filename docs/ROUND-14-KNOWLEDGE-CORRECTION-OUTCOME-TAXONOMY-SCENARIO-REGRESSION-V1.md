@@ -1,7 +1,8 @@
 # Round 14 — Knowledge Correction Outcome Taxonomy Scenario Regression V1
 # 第十四轮——知识纠错结案分类实际案例回归核查 V1
 
-> **Status（状态）:** SCENARIO REVIEW COMPLETED / TAXONOMY STILL NOT USER-APPROVED（案例复核已完成／结案分类本身尚未获用户批准）
+> **Status（状态）:** SCENARIO REVIEW COMPLETED / HISTORICAL PRE-APPROVAL CHECK（案例复核已完成／批准前的历史测试记录）
+> **Subsequent controlling resolution（后续现行正式结论）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md` — 用户随后批准三类结果，编号由受测草案 A/C/D 规范为正式 A/B/C；本文原“尚待用户确认”是测试时的历史状态，不得视作仍未批准。
 > **Tested draft（受检工作稿）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-REVIEW-V2.md`
 > **Historical predecessor（历史草案）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md`
 > **Scope（范围）:** 只以假设案例检验候选 A（确认错误）、C（重要事实未定）、D（纠错请求不成立）是否覆盖实际应进入知识纠错的情形，并验证哪些情形应当在进入正式知识纠错之前被分流。不是实际平台运行测试、审核系统设计或对案件作出现实裁决。
