@@ -1,7 +1,8 @@
 # Round 14 — Knowledge Correction Outcome Taxonomy: Source-aligned Review V2
 # 第十四轮——知识纠错结案结果分类：依已确认规则重整的待审稿 V2
 
-> **Status（状态）:** REFRAMED WORKING DRAFT / NOT USER-APPROVED（已按正式来源重整的工作草案 / 结案分类方案尚未经用户批准）
+> **Status（状态）:** HISTORICAL REFRAMED PROPOSAL / SUPERSEDED BY USER-CONFIRMED RESOLUTION（历史重整提案 / 后续已正式批准并取代其工作稿地位）
+> **Current controlling resolution（现行正式结论）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md` — 用户确认新正式 A/B/C 三类；本文旧 A/C/D 是当时未批准的草案编号，阅读以下“待定”措辞时须遵守后续正式结论。后续具体人员／证据阈值／UI 等仍未定。
 > **Scope（范围）:** 只重整旧 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md` 的适用范围、候选结案类型与既有程序的关系；不新增治理权限、审核门槛、标签系统或开发任务。
 > **Authority（效力）:** 本文对已有已确认原则的转述不产生新的规则；候选分类及其精确边界仍待独立审定。与旧文件冲突时，优先遵守 `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`、`ROUND-14-SIX-TARGETED-RULE-REPAIRS-APPROVAL-V1.md`、`ROUND-14-TARGETED-CROSS-ROUND-RECONCILIATION-ADDENDUM-V1.md` 和现行第七轮来源规则。
 > **Implementation / merge（开发 / 合并）:** NOT AUTHORIZED（未授权）。
