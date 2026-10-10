@@ -6,7 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest confirmed E06 & next decision C08（最新 E06 用户确认／下一项 C08）
+## Latest confirmed C08 boundary — next joint Candidate consent（最新 C08 用户确认／下一项共同作品入池同意）
+
+**User-confirmed rule（用户正式确认）:** `ROUND-14-C08-MULTI-AUTHOR-PARTICIPATION-WORK-AUTHORITY-RESOLUTION-V1.md`。每位真实作者保有本人正式评审参与／退出权；一人的退出不自动撤销整件共同作品的 Candidate／Recognized 认可，也不能单方面代表其他作者。整件作品的正式认可处置需要有效且限域的 Work-level Authority（作品级授权）或适当争议依据。必要权利许可、关键证据或完整性发生实质变化时须独立复核，不能机械保留／撤销。
+
+**Unsettled C08 subquestion（仍待产品选择）:** **多作者共同作品首次进入 Candidate，需要怎样的同意基础？** 逐一同意／事先授权的共同代表／其他有限形式及拒绝参与情形均未选定。不要把这里的原则性认可误写成“必须全员同意”或“任何署名作者都有否决权”。下一步只讨论此事项；之后回到 E07，审查哪些定性底线已有、哪些实施细节明确暂缓。
+
+**Precedence（历史状态）:** `ROUND-14-FIVE-FINDINGS-INDEPENDENT-SECOND-PASS-REVIEW-V1.md` Proposal B 和以下旧断点中“C08 未批准”指该文件创建时的历史状态；本次 C08 权限边界已正式确认。
+
+**Round 14 ACTIVE / NOT SEALED.** PR #53 remains Draft / Open / Unmerged. No coding, merge or Round-14 Current Truth yet.
+
+---
+
+## Previous confirmed E06 & next decision C08（上一断点：E06 用户确认与 C08 待审）
 
 **E06 user-confirmed controlling decision（正式规则已确认）:** `ROUND-14-E06-SPECIAL-MEDIA-PREPUBLICATION-REVIEW-RESOLUTION-V1.md`。对**申请文化／纪录／研究／实验艺术特殊发表资格的真实性行为影像**实行“**公开前完成资格审核，获准后才可能公开**”；不强制普通随笔／合法文化研究统一先审后发。文章正常正文与受限影像可以分别对外处理（媒体审核通过前保持不可公开访问）。历史春画图像不因描绘性行为就自动归入此真人特殊审核流程，原有版权、权利与访问保护仍适用。
 
