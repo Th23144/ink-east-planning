@@ -14,7 +14,7 @@
 - `ROUND-14-KNOWLEDGE-CORRECTION-APPLICABILITY-SCOPE-RESOLUTION-V1.md` + `ROUND-14-KNOWLEDGE-CORRECTION-SOURCE-DISPUTE-REVISION-LIFECYCLE-RESOLUTION-V1.md` — 事实责任决定正式纠错适用性；纠错步骤、修订历史已确认。
 - `ROUND-14-CORRECTION-OWNERSHIP-CONTESTED-DECISIONS-RESOLUTION-V1.md` — 作者回应权、编辑权和纠错决定权各自独立；不能秘密覆写独立作者正文。
 - `ROUND-14-GOVERNANCE-MODERATION-CORRECTIONS-FOUNDATION-RESOLUTION-V1.md` + `ROUND-14-APPEAL-REVIEW-RESTORATION-RESOLUTION-V1.md` — 四条治理路径分离，重要影响的申诉与恢复；不将更正当成惩罚。
-- `INK-EAST-ROUND-7-CURRENT-TRUTH-V1.md` — R7-A8、B5、B7、B13、C6、C7、C8、C12、C13、D4：允许真实异本、来源事实不确定、独立 Claim、重要修改留痕，不把普通释义当作唯一真理。
+- `INK-EAST-ROUND-7-CURRENT-TRUTH-V1.md` — R7-A8、B5、B7、B13、B15、B22、C6、C7、C8、C12、C13、D4：允许真实异本、来源事实不确定、独立 Claim、重要修改留痕，不把普通释义当作唯一真理。
 - `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md` §3 — 旧草案**已经提出**一次案件可能既确认一项引用错误，又保留另一项解释分歧；结果不能当成“单一互斥万能分”。该要求原本不是最终批准的分类规则，但与现行第七轮不同主张独立记录原则一致。
 
 ## 2. Case checks（具体案例，全部为假设）
