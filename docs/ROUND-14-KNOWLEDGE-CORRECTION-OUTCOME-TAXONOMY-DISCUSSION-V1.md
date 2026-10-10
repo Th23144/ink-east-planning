@@ -1,7 +1,9 @@
 # Round 14（第十四轮）— Knowledge Correction Outcome Taxonomy Discussion V1
 # 第十四轮——知识纠错结案结果分类讨论 V1
 
-> **Status（状态）:** REQUIRES REFRAMING / NOT USER-APPROVED（需要重新界定 / 尚未经用户批准）
+> **Status（状态）:** HISTORICAL UNAPPROVED DRAFT / SUPERSEDED AS A WORKING DRAFT（未经批准的历史草案 / 工作稿已由 V2 重整）
+> **Current reframed draft（现行重整工作稿）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-REVIEW-V2.md` — 未批准最终分类，不得将本文五类候选结果当作平台正式政策。
+> **Controlling principles（正式原则）:** RP1–RP6 跨轮修订、Round 14 开放社区与来源事实范围规则仍优先；特别是普通不同解读不形成默认纠错案件、违规另案。
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 > **Preconditions（前置）:** `ROUND-14-CORRECTION-OWNERSHIP-CONTESTED-DECISIONS-RESOLUTION-V1.md`; `ROUND-14-KNOWLEDGE-CORRECTION-APPLICABILITY-SCOPE-RESOLUTION-V1.md`
