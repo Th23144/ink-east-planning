@@ -5,13 +5,15 @@
 
 Latest user-confirmed decisions:
 
-1. `ROUND-14-AUTHOR-CONSENT-BEFORE-CANDIDATE-ENTRY-RESOLUTION-V1.md` — the author must consent before a formally nominated work enters Candidate review; prior nomination itself does not require that consent. Author withdrawal during Candidate review was subsequently confirmed by `ROUND-14-CANDIDATE-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md`; withdrawal after Recognition remains undecided.
+1. `ROUND-14-AUTHOR-CONSENT-BEFORE-CANDIDATE-ENTRY-RESOLUTION-V1.md` — the author must consent before a formally nominated work enters Candidate review; prior nomination itself does not require that consent. Author withdrawal during Candidate review was subsequently confirmed by `ROUND-14-CANDIDATE-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md`; withdrawal after Recognition is now confirmed by `ROUND-14-POST-RECOGNITION-AUTHOR-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md`.
 2. `ROUND-14-READER-ACCESS-NOTICES-DIRECTION-V1.md` — reader notices, sensitive-media preview protection and age verification where appropriate are the confirmed general access direction for eligible publications. Existing publication and distribution rules remain unchanged. Category-level and implementation details are deferred.
 
 The earlier `ROUND-14-REMAINING-GOVERNANCE-GAPS-TRIAGE-AND-SOURCE-RECONCILIATION-V1.md` recorded these matters as open **at the time of audit**. They are now partly resolved by the two decisions above.
 
 3. `ROUND-14-CANDIDATE-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md` — author may withdraw during formal Candidate review without a negative quality verdict; retain necessary history and independent governance records.
 
-Next focused topic: author choice after formal Recognition is already awarded, keeping accurate historical records.
+4. `ROUND-14-POST-RECOGNITION-AUTHOR-VOLUNTARY-WITHDRAWAL-RESOLUTION-V1.md` — author may end current Recognition display/participation without rewriting historical award facts or turning voluntary withdrawal into a negative quality or conduct verdict.
+
+**Next mainline:** The three-stage author consent/withdrawal principle is now settled. Review any remaining Round 14 substantive blockers and complete targeted source parity and adversarial checks before considering Round 14 closure. Age-gate implementation and multi-author/return mechanics remain deferred.
 
 Round 14 remains ACTIVE; PR #53 stays Draft / Open / Unmerged.
