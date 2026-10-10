@@ -6,7 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Current checkpoint — five findings targeted closure / Round 14 consolidation next（最新断点：五项定向问题阶段处理完成／下一步第十四轮统一规则）
+## Current checkpoint — Round 14 Current Truth V1 consolidation candidate（最新断点：统一规则候选已形成，待来源完整核验）
+
+**Candidate document（整合候选）:** `ROUND-14-CURRENT-TRUTH-V1-CANDIDATE.md` — **CONSOLIDATION CANDIDATE / NOT SEALED**。已汇总用户确认的第十四轮控制性规则与有保留的 E07 后置执行边界；附 22 份正式控制来源／阶段处置的逐一文件路径及读取时 blob SHA。候选新增后 PR #53 的 Round-14 前缀文件为 **41 份**：**22 正式控制来源 + 18 历史／审计／导航 + 1 新候选**。此统计是当前文件清点，不代表来源逐条覆盖 PASS。
+
+**Five-finding disposition（五项问题）:** F01/F02 文档状态已修复；E06 公开前资格审查已正式确认；C08 个人参与／合作作品权限分离及共同作者明确拒绝时不得绕过正式入 Candidate 已确认；E07 仅认可原则性后置，细化运营与合规方案尚未批准。
+
+**Next step（下一步）:** 对此**具体候选文件**进行完整 Source Parity（已批准规则、历史用户来源与跨轮约束）及冻结版 Adversarial Audit，发现遗漏或新增约束时先修订候选，再重新核对；不能用此前 32/32、18/18、40 场景旧结果冒充当前整轮封存通过。
+
+**Status:** Round 14 ACTIVE / NOT SEALED; PR #53 Draft / Open / Unmerged. No implementation or merge. Round 12 Membership Re-entry Review #2 still precedes Round 15.
+
+---
+
+## Prior checkpoint — five findings closed; consolidation was next（较早断点：五项收束后准备汇总）
 
 **Latest E07 user response（E07 用户确认程度）:** 对“现有原则继续约束审核；实施人员、材料、证据、时限、界面及隐私细节延后到功能落地前设计”的明确方案答复“**算认可吧**”。`ROUND-14-E07-SPECIAL-MEDIA-REVIEW-IMPLEMENTATION-DEFERRAL-V1.md` 依此记录为**有限认可的阶段化处理**，绝不表示批准具体 SOP、审核人数或特殊内容立即上线。
 
