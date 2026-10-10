@@ -6,7 +6,17 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Current checkpoint — Round 14 Current Truth V1 consolidation candidate（最新断点：统一规则候选已形成，待来源完整核验）
+## Latest checkpoint — Candidate entry QA, full source parity still pending（最新断点：候选入口核对完成，下一步逐条来源核查）
+
+**QA report（初步核对）:** `ROUND-14-CURRENT-TRUTH-V1-CANDIDATE-INVENTORY-ENTRY-QA-V1.md` — 对候选 `ROUND-14-CURRENT-TRUTH-V1-CANDIDATE.md` 作首次读取校验：22/22 正式来源索引存在且路径有效，22/22 核心主题能够在候选找到，候选状态仍为 NOT SEALED。该报告是 **ENTRY QA / TARGETED COVERAGE ONLY（初步入口核对）**，不是完整 source-to-text parity、历史对话逐条证明或冻结综合对抗审计。
+
+**Inventory（现在的文件清点）:** Round-14 前缀文件现为 **42 份** = 22 份控制性来源／阶段处置 + 18 份历史／审计／导航基线 + 1 份统一规则候选 + 1 份候选入口 QA。新增 QA 文档本身并不增加一项用户已批准产品规则。
+
+**Next work（下一步）:** 按 22 份正式文档逐条对照候选的条件、例外、保留语气、禁止推断和跨轮引用，登记任何真正缺漏；修稿后针对确定的候选 blob 开展完整 adversarial audit。不提前宣布第十四轮 SEALED，不合并 PR、不开发。
+
+---
+
+## Earlier checkpoint — Candidate created; entry QA pending（前一断点：候选形成）
 
 **Candidate document（整合候选）:** `ROUND-14-CURRENT-TRUTH-V1-CANDIDATE.md` — **CONSOLIDATION CANDIDATE / NOT SEALED**。已汇总用户确认的第十四轮控制性规则与有保留的 E07 后置执行边界；附 22 份正式控制来源／阶段处置的逐一文件路径及读取时 blob SHA。候选新增后 PR #53 的 Round-14 前缀文件为 **41 份**：**22 正式控制来源 + 18 历史／审计／导航 + 1 新候选**。此统计是当前文件清点，不代表来源逐条覆盖 PASS。
 
