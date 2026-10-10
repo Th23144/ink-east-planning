@@ -6,11 +6,19 @@
 > **Implementation（实现）:** NOT AUTHORIZED（未授权）
 > **Merge（合并）:** NOT AUTHORIZED（未授权）
 
-## Latest checkpoint — explicit-act media option B CONFIRMED / Round 14 governance resumed（最新断点：方案 B 原则确认 / 回归第十四轮主线）
+## Latest controlling checkpoint — Knowledge correction three-outcome taxonomy confirmed（最新断点：知识纠错三类结果已确认）
+
+**Decision（正式用户确认）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md` — USER-CONFIRMED / RESOLVED（用户已确认／该专题已解决）。经重整 V2 和 14 个假设案例定向复核后，正式采用三种结果：**A 确认错误；B 重要来源／事实暂无法确定；C 纠错请求不成立**。同一申请包含多个独立事实／主张时，可逐项给予不同结果，而非整案强制单选。
+
+**Precedence（优先）:** 旧 V1 的五类与重整 V2 的旧 A/C/D 编号只是历史提案；**不得再次要求用户确认已批准的三分类**。普通观点分歧不自动立案；违规／作品认可／权利问题仍各走独立路径。证据量化阈值、人员、审核时限、展示 UI 和技术设计未获授权。
+
+**Next mainline（后续主线）:** 第十四轮仍 ACTIVE（未整轮封存）；先依据当前已确认决策核查本轮是否还有真正尚未覆盖的治理规则或跨轮冲突，再判断是否具备进入整轮验证／封存的条件。保留第十二轮会员重启检查 #2 在第十五轮前执行的顺序。PR #53 不合并、不开发。
+
+## Previous checkpoint — explicit-act media option B CONFIRMED（上一正式断点：成人影像方案 B 已确认）
 **Controlling decision（正式结论）:** `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` — USER-CONFIRMED principles（用户确认：普通成人娱乐性行为影像不开放一般上传；特殊文化／历史／纪录／研究／实验艺术保留受限发表可能；明显情色消费导向及以性行为直接展示为主要观看内容的影像原则上排除）。
 **Precedence（优先关系）:** 以下较早的“真实性行为影像仍未决定／仅倾向 B”措辞为历史记录，不再适用于现行原则。特殊媒体审核、限龄、预览技术及申诉执行细则仍待定；严肃电影少量相关真实镜头只是“可考虑特殊评估”，不是普遍许可。
 **Compatibility（保留）:** 成人文学、正规人体艺术摄影、性暗示但不展示性行为的摄影、既有分发规则与成人商业红线均不受推翻。
-**CURRENT NEXT MAINLINE（当前下一主线）:** `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-REVIEW-V2.md` 已经按 RP1–RP6 重整，并由 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-SCENARIO-REGRESSION-V1.md` 完成 14 个假设情景的定向回归检查；未发现需要增加第四类事实结果的实例；已补上“同一申请多个独立主张可分别结案”。**A／C／D 仍是候选结果，最终分类未获用户批准**。当前下一步：提交这三个候选结案结果供用户独立确认；若获批，再形成正式决策文件并继续第十四轮剩余主线。不要重复询问普通解读不立案、违规另案等已经确认的原则。Round 14 ACTIVE；无代码或 PR 合并授权。
+**Historical next-step note（历史下一步状态，已完成）:** 当时 V2 + 14 案例复核通过，尚待用户正式确认；这一请求现已由 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md` 解决。最新主线以上方 **Latest controlling checkpoint** 为准。
 
 ## User-confirmed sexually suggestive photography boundary（明显性暗示摄影边界已确认）
 **Controlling decision（控制性结论）:** `ROUND-14-ADULT-CONTENT-DISCOVERY-ARTISTIC-NUDITY-BOUNDARY-RESOLUTION-V1.md` §4B.
@@ -51,7 +59,7 @@ Approval record（确认记录）: `ROUND-14-SIX-TARGETED-RULE-REPAIRS-APPROVAL-
 
 **Current distinction（现行区分）:** `ROUND-14-EXPLICIT-SEX-ACT-MEDIA-EXCEPTION-BOUNDARY-RESOLUTION-V1.md` 的真实性行为影像方案 B 原则已获 USER-CONFIRMED（用户确认），但年龄控制、具体分发实施、分类流程等执行细节仍未批准。
 
-**Next active MAINLINE（当前后续主线）:** 回归第十四轮知识纠错、治理与申诉问题，尤其重新审查尚未获批准的 Outcome Taxonomy（结案结果分类）草案；成人影像支线阶段性原则讨论已完成。
+**Historical mainline note（历史主线记录）:** 当时需重新审查 Outcome Taxonomy 草案；此工作和后续正式批准已完成，现行有效结论见 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md`。
 
 ## Current controlling scope（当前控制性适用范围）
 **USER-CONFIRMED / CONTROLLING（用户确认 / 控制性）:** `ROUND-14-OPEN-COMMUNITY-STRICT-RECOGNITION-GOVERNANCE-SCOPE-RESOLUTION-V1.md`.
@@ -89,7 +97,7 @@ Key scope: the approved rights separation is for responsibility-appropriate case
 ## Historical next-discussion record（历史“下一讨论”记录，当前以本文顶部主线为准）
 `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-DISCUSSION-V1.md`
 
-Subject: concrete results after a correction or source-dispute case closes（纠错 / 来源争议案件结案后的具体结果）. Five types are **PROPOSED / USER CONFIRMATION PENDING（提出方案 / 等待用户确认）**. Do not treat as settled policy（不能视为既定政策）.
+Subject: historical pre-resolution five-category discussion（历史五类讨论）. Its five categories were never approved; the later three-result resolution `ROUND-14-KNOWLEDGE-CORRECTION-OUTCOME-TAXONOMY-RESOLUTION-V1.md` is controlling（现行有效）。
 
 ## Carry-forward boundaries（继续有效的边界）
 - Error / Uncertainty / Dispute / Misconduct（错误 / 不确定 / 争议 / 违规） remain separate.
